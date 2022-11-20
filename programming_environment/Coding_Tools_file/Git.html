@@ -1,0 +1,1690 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Git &amp; Github &#8212; Seismology Notebook</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="canonical" href="https://seismology101.github.io/Notebook/programming_environment/Coding_Tools_file/Git.html" />
+    <link rel="shortcut icon" href="../../_static/logo.png"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="VSCode" href="VScode.html" />
+    <link rel="prev" title="SSH &amp; SSHFS" href="SSH.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint">Welcome 👋</div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Seismology Notebook</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    Introduction ✨
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Programming Environment
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Overview.html">
+   Overview
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Overview_file/MacSoftware.html">
+     Mac Software
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Overview_file/SeisSoftware.html">
+     Seismology Software
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="../Coding_Tools.html">
+   Coding Tools
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="Xcode.html">
+     Xcode
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Homebrew.html">
+     Homebrew
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Iterm2-Zsh.html">
+     Iterm2 &amp; Zsh
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="SSH.html">
+     SSH &amp; SSHFS
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Git &amp; Github
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="VScode.html">
+     VSCode
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Latex.html">
+     Latex
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Python.html">
+     Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="C%2B%2B.html">
+     C++
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Fortran.html">
+     Fortran
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Seismology_Tools.html">
+   Seismology Tools
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Seismology_Tools_file/SAC.html">
+     SAC
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Seismology_Tools_file/PyGMT.html">
+     PyGMT
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Shortcuts.html">
+   Shortcuts
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Programming Scripts
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../programming_manual_and_scripts/Bash_Manual.html">
+   Shell Manual
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../programming_manual_and_scripts/Python_Scripts.html">
+   Python Scripts
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../programming_manual_and_scripts/Python_Scripts_file/File-IO.html">
+     File IO
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../programming_manual_and_scripts/Python_Scripts_file/Subprocess.html">
+     Subprocess
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../programming_manual_and_scripts/Python_Scripts_file/Numpy.html">
+     Numpy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../programming_manual_and_scripts/Python_Scripts_file/Matplotlib.html">
+     Matplotlib
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../programming_manual_and_scripts/C%2B%2B_Scripts.html">
+   C++ Scripts
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../programming_manual_and_scripts/C%2B%2B_Scripts_file/File-IO.html">
+     File IO
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../programming_manual_and_scripts/C%2B%2B_Scripts_file/Matrix.html">
+     Matrix
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../programming_manual_and_scripts/PyGMT_Scripts.html">
+   PyGMT Scripts
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../programming_manual_and_scripts/PyGMT_Scripts_file/Map.html">
+     Map
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../programming_manual_and_scripts/PyGMT_Scripts_file/Velocity_Model.html">
+     Velocity Model
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../programming_manual_and_scripts/PyGMT_Scripts_file/Lune.html">
+     Lune plot
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Parallel Computing and Hybrid Programming
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../parallel%20computing_and_hybrid_programming/Python.html">
+   Python
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../parallel%20computing_and_hybrid_programming/Python_file/Mpi4py.html">
+     Mpi4py
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../parallel%20computing_and_hybrid_programming/Python_file/Cupy.html">
+     Cupy
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../parallel%20computing_and_hybrid_programming/C%2B%2B.html">
+   C++
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../parallel%20computing_and_hybrid_programming/C%2B%2B_file/OpenMPI.html">
+     OpenMPI
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../parallel%20computing_and_hybrid_programming/C%2B%2B_file/Cuda.html">
+     Cuda
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../parallel%20computing_and_hybrid_programming/Hybrid_Python_C%2B%2B.html">
+   Hybrid Python &amp; C++
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Seismic Data Processing
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../seismic_data_processing/sac.html">
+   sac
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../seismic_data_processing/obspy.html">
+   obspy
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../seismic_data_processing/seed2sac.html">
+   seed2sac
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../seismic_data_processing/sac2mseed.html">
+   sac2mseed
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../seismic_data_processing/cutevent.html">
+   cutevent
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Earthquake Source
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../earthquake_source/Source_Theory.html">
+   Source Theory
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../earthquake_source/Moment_Tensor_Decompose.html">
+   Moment Tensor Decompose
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Ambient Noise
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../ambient_noise/Cross_Correlation.html">
+   Cross Correlation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../ambient_noise/Noise_Source_Analysis.html">
+   Noise Source Analysis
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Surface Wave
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../surface_wave/Rayleigh_Wave.html">
+   Rayleigh Wave
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../surface_wave/Love_Wave.html">
+   Love Wave
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../surface_wave/Sensitivity_Kernal.html">
+   Sensitivity Kernal
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Coda Wave
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../coda_wave/Theory.html">
+   Theory
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../coda_wave/Sensitivity_Kernal.html">
+   Sensitivity Kernal
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../coda_wave/Velocity_Change.html">
+   Velocity Change
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Links
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../links/link.html">
+   Links
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../links/AboutBook.html">
+   About the Book
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://yinfu.info/">
+   About Me
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/Seismology101/Notebook"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/Seismology101/Notebook/issues/new?title=Issue%20on%20page%20%2Fprogramming_environment/Coding_Tools_file/Git.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../../_sources/programming_environment/Coding_Tools_file/Git.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduction">
+   Introduction
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#install">
+   Install
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ssh-keys-for-github">
+   SSH keys for Github
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#github-ip-in-china">
+   Github IP in China
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#manual">
+   Manual
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#creating-a-repository">
+     creating a repository
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#add-commit-and-push">
+     add, commit and push
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#branch-merge-and-diff">
+     branch, merge and diff
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pull-fetch-merge">
+     pull = fetch + merge
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#tag">
+     tag
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#log">
+     log
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#delete-files">
+     delete files
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#working">
+     版本回退 (working…)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     撤销修改 (working…)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#figure">
+     figure
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#reference">
+   Reference
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Git & Github</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduction">
+   Introduction
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#install">
+   Install
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ssh-keys-for-github">
+   SSH keys for Github
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#github-ip-in-china">
+   Github IP in China
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#manual">
+   Manual
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#creating-a-repository">
+     creating a repository
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#add-commit-and-push">
+     add, commit and push
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#branch-merge-and-diff">
+     branch, merge and diff
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pull-fetch-merge">
+     pull = fetch + merge
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#tag">
+     tag
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#log">
+     log
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#delete-files">
+     delete files
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#working">
+     版本回退 (working…)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     撤销修改 (working…)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#figure">
+     figure
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#reference">
+   Reference
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="git-github">
+<h1>Git &amp; Github<a class="headerlink" href="#git-github" title="Permalink to this headline">#</a></h1>
+<ul class="simple">
+<li><p>Author: <em><a class="reference external" href="https://yinfu.info/">Fu Yin</a></em></p></li>
+<li><p>Update: <em>July 27, 2022</em></p></li>
+<li><p>Reading: <em>60 min</em></p></li>
+</ul>
+<hr class="docutils" />
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">#</a></h2>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header sd-bg-info sd-bg-text-info">
+<span class="sd-summary-icon"><svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-info" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M8 1.5a6.5 6.5 0 100 13 6.5 6.5 0 000-13zM0 8a8 8 0 1116 0A8 8 0 010 8zm6.5-.25A.75.75 0 017.25 7h1a.75.75 0 01.75.75v2.75h.25a.75.75 0 010 1.5h-2a.75.75 0 010-1.5h.25v-2h-.25a.75.75 0 01-.75-.75zM8 6a1 1 0 100-2 1 1 0 000 2z"></path></svg></span>Do you know git history?<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text"><strong>Linus</strong> created open source system Linux in 1991. In 2005, <strong>Linus</strong> spent two weeks writing a distributed version control system in C language to manage the Linux system’s source code. <strong>Github</strong> was founded in April 2008 by Chris Wanstrath, PJ Hyett, and Tom Preston-Werner to host versions based on <strong>Git</strong>.</p>
+<p class="sd-card-text">And now, <strong>paying users</strong> can build private repositories, <strong>free users</strong> can only use public repositories (or private repositories with up to 3 developers).</p>
+</div>
+</details><p>Git consists of three parts: <code class="docutils literal notranslate"><span class="pre">Working</span> <span class="pre">Directory</span></code>(工作区), <code class="docutils literal notranslate"><span class="pre">Index</span></code>(暂存区) and <code class="docutils literal notranslate"><span class="pre">Repository</span></code>(版本库):</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Working</span> <span class="pre">Directory</span></code>: the directory that you can see on your computer</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Index</span></code>: also called the <code class="docutils literal notranslate"><span class="pre">Stage</span></code>, it is usually stored in the <code class="docutils literal notranslate"><span class="pre">.git/index</span></code> file.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Repository</span></code>: the workspace has a hidden directory, the <code class="docutils literal notranslate"><span class="pre">.git</span></code>, which is the repository. It usually consists of a <code class="docutils literal notranslate"><span class="pre">branch</span></code> and <code class="docutils literal notranslate"><span class="pre">Head</span></code>, with the <code class="docutils literal notranslate"><span class="pre">Head</span></code> pointing to the result of your last submission.</p></li>
+</ul>
+<p><strong>GitHub</strong> is the single largest host for <strong>Git</strong> repositories, and we can host Git repositories on GitHub. The interaction between Git and Github is showing in <a class="reference internal" href="#git-1"><span class="std std-ref">figure</span></a> below:</p>
+<figure class="align-center" id="git-1">
+<a class="reference internal image-reference" href="../../_images/Git-Github-1.jpeg"><img alt="../../_images/Git-Github-1.jpeg" src="../../_images/Git-Github-1.jpeg" style="width: 534.0px; height: 272.0px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 3 </span><span class="caption-text">Project and Github</span><a class="headerlink" href="#git-1" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="install">
+<h2>Install<a class="headerlink" href="#install" title="Permalink to this headline">#</a></h2>
+<p>MacOS uses <strong>Xcode’s</strong> <code class="docutils literal notranslate"><span class="pre">Command</span> <span class="pre">Line</span> <span class="pre">Tools</span></code> to install Git in <code class="docutils literal notranslate"><span class="pre">/usr/bin/git</span></code> directory. However, Xcode usually comes with a lower version of Git, so you need <strong>brew</strong> to upgrade. After installation, remember to add the environment variable.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># install</span>
+$ brew install git
+
+<span class="c1"># add path</span>
+$ vim ~/.zshrc
+&gt; <span class="nb">export</span> <span class="nv">GIT</span><span class="o">=</span>/usr/local/Cellar/git/2.37.1
+&gt; <span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="nv">$GIT</span>/bin:<span class="nv">$PATH</span>
+$ <span class="nb">source</span> ~/.zshrc
+
+<span class="c1"># check version</span>
+$ git --version
+</pre></div>
+</div>
+<hr class="docutils" />
+<p>After the successful installation , we need to configure git.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header sd-bg-info sd-bg-text-info">
+<span class="sd-summary-icon"><svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-info" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M8 1.5a6.5 6.5 0 100 13 6.5 6.5 0 000-13zM0 8a8 8 0 1116 0A8 8 0 010 8zm6.5-.25A.75.75 0 017.25 7h1a.75.75 0 01.75.75v2.75h.25a.75.75 0 010 1.5h-2a.75.75 0 010-1.5h.25v-2h-.25a.75.75 0 01-.75-.75zM8 6a1 1 0 100-2 1 1 0 000 2z"></path></svg></span>Do you know the meaning of <em>git config –global</em> ?<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">The Git configuration file for each repository is stored in <code class="docutils literal notranslate"><span class="pre">.git/config</span></code> file in each repository. But the current user’s Git configuration file is stored in <code class="docutils literal notranslate"><span class="pre">~/.gitconfig</span></code> file. When configuring Git, add <code class="docutils literal notranslate"><span class="pre">--global</span></code> to apply to the current user, and if not, it applies only to the current repository.</p>
+</div>
+</details><p><strong><code class="docutils literal notranslate"><span class="pre">username</span> <span class="pre">and</span> <span class="pre">email</span></code></strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git config --global user.name <span class="s2">&quot;Your Name&quot;</span>
+$ git config --global user.email <span class="s2">&quot;email@example.com&quot;</span>
+</pre></div>
+</div>
+<p><strong><code class="docutils literal notranslate"><span class="pre">color</span> <span class="pre">ui</span> <span class="pre">and</span> <span class="pre">git</span> <span class="pre">log</span></code></strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># let Git show different colors</span>
+$ git config --global color.ui <span class="nb">true</span>
+
+<span class="c1"># configure log command --&gt; git lg</span>
+$ git config --global alias.lg <span class="s2">&quot;log --color --graph --pretty=format:&#39;%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)&lt;%an&gt;%Creset&#39; --abbrev-commit&quot;</span>
+</pre></div>
+</div>
+<p><strong><code class="docutils literal notranslate"><span class="pre">master</span> <span class="pre">to</span> <span class="pre">main</span></code></strong></p>
+<ul class="simple">
+<li><p>Manually modify the <code class="docutils literal notranslate"><span class="pre">~/.gitconfig</span></code> file and set <code class="docutils literal notranslate"><span class="pre">defaultBranch</span> <span class="pre">=</span> <span class="pre">main</span></code>. Or use the <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">config</span></code> command for git version &gt; v2.28:</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git config --global init.defaultBranch main
+</pre></div>
+</div>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header sd-bg-info sd-bg-text-info">
+<span class="sd-summary-icon"><svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-info" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M8 1.5a6.5 6.5 0 100 13 6.5 6.5 0 000-13zM0 8a8 8 0 1116 0A8 8 0 010 8zm6.5-.25A.75.75 0 017.25 7h1a.75.75 0 01.75.75v2.75h.25a.75.75 0 010 1.5h-2a.75.75 0 010-1.5h.25v-2h-.25a.75.75 0 01-.75-.75zM8 6a1 1 0 100-2 1 1 0 000 2z"></path></svg></span>Why change master to main ?<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">After 2020-10-01, the default branch of the GitHub repository will change to main (a neutral word) instead of master (because master is associated with master hierarchy and slavery), but will not affect all existing repositories.</p>
+<p class="sd-card-text">But notice that Git’s default branch is still the master. So be careful to keep the default branch names the same. It is recommended to change the local Git’s default branch from master to main.</p>
+<p class="sd-card-text">It is not recommended  to change the default branch name for past projects. If you want to change the default branch name, you can rename it under the master default branch:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># With the &#39;-m&#39; option, you can change the branch name without affecting the git commit history from master to main.</span>
+$ git branch -m master main
+
+<span class="c1"># the above changes are only local and need to be synchronized to the remote.</span>
+$ git push -u origin main
+</pre></div>
+</div>
+</div>
+</details><hr class="docutils" />
+<p>My complete <code class="docutils literal notranslate"><span class="pre">~/.gitconfig</span></code> file showing below:</p>
+<div class="toggle docutils container">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>user<span class="o">]</span>
+	<span class="nv">name</span> <span class="o">=</span> OUCyf
+	<span class="nv">email</span> <span class="o">=</span> fy21@rice.edu
+<span class="o">[</span>color<span class="o">]</span>
+	<span class="nv">ui</span> <span class="o">=</span> <span class="nb">true</span>
+<span class="o">[</span>alias<span class="o">]</span>
+	<span class="nv">lg</span> <span class="o">=</span> log --color --graph --pretty<span class="o">=</span>format:<span class="s1">&#39;%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)&lt;%an&gt;%Creset&#39;</span> --abbrev-commit
+<span class="o">[</span>init<span class="o">]</span>
+	<span class="nv">defaultBranch</span> <span class="o">=</span> main
+</pre></div>
+</div>
+</div>
+</section>
+<section id="ssh-keys-for-github">
+<h2>SSH keys for Github<a class="headerlink" href="#ssh-keys-for-github" title="Permalink to this headline">#</a></h2>
+<p>Imagine the scenario that you have a remote repository on GitHub, and one computer at home and one computer at the office all be needed to submit codes using SSH keys, and both the SSH public keys are needed to be stored in the <code class="docutils literal notranslate"><span class="pre">GitHub</span> <span class="pre">Setting</span></code>.</p>
+<div class="toggle docutils container">
+<figure class="align-center" id="git-github-2">
+<a class="reference internal image-reference" href="../../_images/Git-Github-2.jpg"><img alt="../../_images/Git-Github-2.jpg" src="../../_images/Git-Github-2.jpg" style="width: 539.0px; height: 362.0px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 4 </span><span class="caption-text">SSH keys in Github</span><a class="headerlink" href="#git-github-2" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+</div>
+<p>Then check git SSH status</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ ssh -T git@github.com
+</pre></div>
+</div>
+</section>
+<section id="github-ip-in-china">
+<h2>Github IP in China<a class="headerlink" href="#github-ip-in-china" title="Permalink to this headline">#</a></h2>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header sd-bg-info sd-bg-text-info">
+<span class="sd-summary-icon"><svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-info" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M8 1.5a6.5 6.5 0 100 13 6.5 6.5 0 000-13zM0 8a8 8 0 1116 0A8 8 0 010 8zm6.5-.25A.75.75 0 017.25 7h1a.75.75 0 01.75.75v2.75h.25a.75.75 0 010 1.5h-2a.75.75 0 010-1.5h.25v-2h-.25a.75.75 0 01-.75-.75zM8 6a1 1 0 100-2 1 1 0 000 2z"></path></svg></span>Why is it very slow to access GitHub domain in China ?<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<ul class="simple">
+<li><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">Github</span></code> is not blocked in China, but due to the contamination of <code class="docutils literal notranslate"><span class="pre">DNS</span> <span class="pre">resolution</span></code>, the access to Github domain is unusually slow in China. If domain name resolution points directly to the <code class="docutils literal notranslate"><span class="pre">IP</span> <span class="pre">address</span> <span class="pre">of</span> <span class="pre">GitHub</span></code>, that means the DNS resolution is bypassed, therefore the access to GitHub is accelerated.</p></li>
+<li><p class="sd-card-text">There are some organizations specialized in analyzing and maintaining the IP address of GitHub for China. You can query IP address of GitHub in real time by the <a class="reference external" href="https://ipaddress.com/website/www.github.com"><code class="docutils literal notranslate"><span class="pre">ipaddress</span></code></a> website, and add the latest IP address to the <code class="docutils literal notranslate"><span class="pre">/etc/hosts</span></code> file.</p></li>
+</ul>
+</div>
+</details><p>We can update the IP address manually or automatically</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="94684618-0ff8-4331-aba8-693c220c9ca0" name="ffdc1a41-b2c5-4694-a483-9043e1d4ef18" type="radio">
+</input><label class="sd-tab-label" for="94684618-0ff8-4331-aba8-693c220c9ca0">
+Manually update IP</label><div class="sd-tab-content docutils">
+<p><strong>Query the latest IP address of GitHub</strong></p>
+<p>usually query the following four domain names in <a class="reference external" href="https://ipaddress.com/website/www.github.com">ipaddress</a> website.</p>
+<ul class="simple">
+<li><p><a class="reference external" href="http://github.com">github.com</a></p></li>
+<li><p><a class="reference external" href="http://github.global.ssl.fastly.net">github.global.ssl.fastly.net</a></p></li>
+<li><p><a class="reference external" href="http://assets-cdn.github.com">assets-cdn.github.com</a></p></li>
+<li><p><a class="reference external" href="http://codeload.github.com">codeload.github.com</a></p></li>
+</ul>
+<p>Or you can connect the IP address with the ipaddress website to query directly:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="http://github.global.ssl.fastly.net.ipaddress.com/">github.global.ssl.fastly.net.ipaddress.com/</a></p></li>
+<li><p><a class="reference external" href="http://github.com.ipaddress.com/">github.com.ipaddress.com/</a></p></li>
+<li><p><a class="reference external" href="http://assets-cdn.github.com.ipaddress.com/">assets-cdn.github.com.ipaddress.com/</a></p></li>
+<li><p><a class="reference external" href="http://codeload.github.com.ipaddress.com/">codeload.github.com.ipaddress.com/</a></p></li>
+</ul>
+<p><strong>Change the <code class="docutils literal notranslate"><span class="pre">/etc/hosts</span></code> file</strong></p>
+<p>After querying the IP, map the IP with the website address, and add the mapping relationship to the <code class="docutils literal notranslate"><span class="pre">/etc/hosts</span></code> file with <code class="docutils literal notranslate"><span class="pre">sudo</span></code> permission. For example:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ vim /etc/hosts
+<span class="c1"># mapping format:  [ip] [domainName]</span>
+<span class="m">199</span>.232.69.194 github.global.ssl.Fastly.net
+<span class="m">140</span>.82.114.4 GitHub.com
+<span class="m">185</span>.199.108.153 assets-cdn.Github.com
+<span class="m">140</span>.82.114.9 codeload.Github.com
+</pre></div>
+</div>
+<p><strong>Refresh the <code class="docutils literal notranslate"><span class="pre">/etc/hosts</span></code> file</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ sudo killall -HUP mDNSResponder
+</pre></div>
+</div>
+</div>
+<input id="a1e640c0-2d6e-4e1d-be5f-faba505f6a09" name="ffdc1a41-b2c5-4694-a483-9043e1d4ef18" type="radio">
+</input><label class="sd-tab-label" for="a1e640c0-2d6e-4e1d-be5f-faba505f6a09">
+Automatically update IP</label><div class="sd-tab-content docutils">
+<p><a class="reference external" href="https://github.com/521xueweihan/GitHub520">GitHub520</a> is a project that can real-time update the IP resolution of GitHub domain, the project server’s mirror website is <a class="reference external" href="https://raw.hellogithub.com/">HelloGitHub 镜像站</a>. Run the following python code, then the IP resolution provided by GitHub520 will be obtained in real time, and the <code class="docutils literal notranslate"><span class="pre">/etc/hosts</span></code> file is automatically modified. The code is as follows:</p>
+<div class="toggle docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Created on Tue Feb 22 20:51:03 2022</span>
+
+<span class="sd">@author: yinfu</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">##############################</span>
+<span class="sd">##  origin /etc/hosts file  ##</span>
+<span class="sd">##############################</span>
+<span class="sd">#</span>
+<span class="sd"># Host Database</span>
+<span class="sd">#</span>
+<span class="sd"># localhost is used to configure the loopback interface</span>
+<span class="sd"># when the system is booting.  Do not change this entry.</span>
+<span class="sd">##</span>
+<span class="sd">127.0.0.1       localhost</span>
+<span class="sd">255.255.255.255 broadcasthost</span>
+<span class="sd">::1             localhost</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">from</span> <span class="nn">shutil</span> <span class="kn">import</span> <span class="n">copyfile</span>
+<span class="kn">import</span> <span class="nn">datetime</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+
+<span class="k">class</span> <span class="nc">GithubHost</span><span class="p">:</span>
+    <span class="n">winHostsPath</span><span class="o">=</span><span class="s1">&#39;C:\Windows\System32\drivers\etc\hosts&#39;</span>
+    <span class="n">macHostsPath</span><span class="o">=</span><span class="s1">&#39;/etc/hosts&#39;</span>
+
+    <span class="n">hostsDic</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;win32&#39;</span><span class="p">:</span><span class="n">winHostsPath</span><span class="p">,</span> <span class="s1">&#39;darwin&#39;</span><span class="p">:</span><span class="n">macHostsPath</span><span class="p">}</span>
+    <span class="n">dnsRefreshDic</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;win32&#39;</span><span class="p">:</span><span class="s1">&#39;ipconfig /flushdns&#39;</span><span class="p">,</span> <span class="s1">&#39;darwin&#39;</span><span class="p">:</span><span class="s1">&#39;&#39;</span><span class="p">}</span>
+
+    <span class="n">githubHostUrl</span><span class="o">=</span><span class="s1">&#39;https://raw.hellogithub.com/hosts&#39;</span>
+    <span class="n">googleHostUrl</span><span class="o">=</span><span class="s1">&#39;&#39;</span>
+
+    <span class="k">def</span> <span class="nf">refreshHosts</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1"># 备份原hosts文件</span>
+        <span class="n">hosts</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">hostsDic</span><span class="p">[</span><span class="n">sys</span><span class="o">.</span><span class="n">platform</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">backUpHosts</span><span class="p">(</span><span class="n">srcfile</span><span class="o">=</span><span class="n">hosts</span><span class="p">)</span>
+        
+        <span class="c1"># 获取并更新github新host内容</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">updateHosts</span><span class="p">(</span><span class="n">hosts</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">githubHostUrl</span><span class="p">,</span> <span class="s1">&#39;# GitHub520 Host Start&#39;</span><span class="p">,</span> <span class="s1">&#39;# GitHub520 Host End&#39;</span><span class="p">)</span>
+
+        <span class="c1"># 获取并更新google新host内容</span>
+        <span class="c1"># self.refreshHosts(hosts, self.googleHostUrl, &#39;&#39;, &#39;&#39;)</span>
+
+        <span class="c1"># 刷新</span>
+        <span class="n">refreshCmd</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">dnsRefreshDic</span><span class="p">[</span><span class="n">sys</span><span class="o">.</span><span class="n">platform</span><span class="p">]</span>
+        <span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="n">refreshCmd</span><span class="p">)</span>
+
+
+    <span class="k">def</span> <span class="nf">updateHosts</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">hosts</span><span class="p">,</span> <span class="n">hosturl</span><span class="p">,</span> <span class="n">beginRowStr</span><span class="p">,</span> <span class="n">endRowStr</span><span class="p">):</span>
+        <span class="c1"># 删除原有内容</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">removePartOfFile</span><span class="p">(</span><span class="n">hosts</span><span class="p">,</span> <span class="n">beginRowStr</span><span class="p">,</span> <span class="n">endRowStr</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">addHostsFromURL</span><span class="p">(</span><span class="n">hosts</span><span class="p">,</span> <span class="n">hosturl</span><span class="p">)</span>
+
+
+    <span class="k">def</span> <span class="nf">removePartOfFile</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">file</span><span class="p">,</span> <span class="n">beginRowStr</span><span class="p">,</span> <span class="n">endRowStr</span><span class="p">):</span>
+        <span class="n">lines</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">oldhosts</span><span class="p">:</span>
+            <span class="n">lineInRange</span> <span class="o">=</span> <span class="kc">False</span>
+            <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">oldhosts</span><span class="p">:</span>
+                <span class="c1"># 如果在beginRowStr 与 endRowStr 之间的，就不记录在新文件中</span>
+                <span class="k">if</span> <span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="o">==</span> <span class="n">beginRowStr</span><span class="o">.</span><span class="n">strip</span><span class="p">():</span>
+                    <span class="n">lineInRange</span> <span class="o">=</span> <span class="kc">True</span>
+                <span class="k">if</span> <span class="ow">not</span> <span class="n">lineInRange</span> <span class="ow">and</span> <span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="o">!=</span> <span class="s1">&#39;&#39;</span><span class="p">:</span> <span class="c1"># 删除空行</span>
+                    <span class="n">lines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+                <span class="k">if</span> <span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="o">==</span> <span class="n">endRowStr</span><span class="o">.</span><span class="n">strip</span><span class="p">():</span>
+                    <span class="n">lineInRange</span> <span class="o">=</span> <span class="kc">False</span>
+
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">newHosts</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">lines</span><span class="p">:</span>
+                <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">line</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">line</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">linesep</span><span class="p">:</span>
+                    <span class="n">newHosts</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+        
+
+    <span class="k">def</span> <span class="nf">backUpHosts</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">srcfile</span><span class="p">):</span>
+        <span class="n">dstfile</span> <span class="o">=</span> <span class="n">srcfile</span> <span class="o">+</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%Y-%m-</span><span class="si">%d</span><span class="s1">-%H-%M-%S&#39;</span><span class="p">)</span>
+        <span class="n">copyfile</span><span class="p">(</span><span class="n">src</span><span class="o">=</span><span class="n">srcfile</span><span class="p">,</span> <span class="n">dst</span><span class="o">=</span><span class="n">dstfile</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">addHostsFromURL</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">hostfile</span><span class="p">,</span> <span class="n">hostsurl</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;从github项目地址：读取最新的github的IP记录&#39;&#39;&#39;</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">hostfile</span><span class="p">,</span> <span class="s1">&#39;a+&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fw</span><span class="p">:</span>
+            <span class="c1"># 字符串给出当前平台使用的行终止符。例如，Windows使用&#39;\r\n&#39;，Linux使用&#39;\n&#39;而Mac使用&#39;\r&#39;。</span>
+            <span class="c1"># fw.write(os.linesep)</span>
+            <span class="n">fw</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">hostsurl</span><span class="p">)</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">GithubHost</span><span class="p">()</span><span class="o">.</span><span class="n">refreshHosts</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><code class="docutils literal notranslate"><span class="pre">sudo</span></code> permission is required to modify <code class="docutils literal notranslate"><span class="pre">/etc/hosts</span></code>. Make sure to back up the original <code class="docutils literal notranslate"><span class="pre">/etc/hosts</span></code>. The script will update the content between the line from <code class="docutils literal notranslate"><span class="pre">#</span> <span class="pre">GitHub520</span> <span class="pre">Host</span> <span class="pre">Start</span></code> to <code class="docutils literal notranslate"><span class="pre">#</span> <span class="pre">GitHub520</span> <span class="pre">Host</span> <span class="pre">End</span></code>, without deleting or modifying anything else.</p>
+</div>
+<p>The following is an example of a modified <code class="docutils literal notranslate"><span class="pre">/etc/hosts</span></code> file:</p>
+<div class="toggle docutils container">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1">##</span>
+<span class="c1"># Host Database</span>
+<span class="c1">#</span>
+<span class="c1"># localhost is used to configure the loopback interface</span>
+<span class="c1"># when the system is booting.  Do not change this entry.</span>
+<span class="c1">##</span>
+<span class="m">127</span>.0.0.1	localhost
+<span class="m">255</span>.255.255.255	broadcasthost
+::1             localhost
+<span class="c1"># MacWk.com Hosts Start</span>
+<span class="c1"># Macs Fan Control</span>
+<span class="m">127</span>.0.0.1 crystalidea.com
+<span class="m">127</span>.0.0.1 www.crystalidea.com
+<span class="m">127</span>.0.0.1 v3pro.crystalidea.com
+<span class="c1"># MacWk.com Hosts End</span>
+<span class="c1"># GitHub520 Host Start</span>
+<span class="m">140</span>.82.113.4                  alive.github.com
+<span class="m">140</span>.82.113.4                  live.github.com
+<span class="m">18</span>.232.140.192                github.githubassets.com
+<span class="m">140</span>.82.113.4                  central.github.com
+<span class="m">44</span>.201.249.207                desktop.githubusercontent.com
+<span class="m">140</span>.82.113.4                  assets-cdn.github.com
+<span class="m">44</span>.206.232.135                camo.githubusercontent.com
+<span class="m">151</span>.101.1.6                   github.map.fastly.net
+<span class="m">151</span>.101.1.6                   github.global.ssl.fastly.net
+<span class="m">140</span>.82.113.4                  gist.github.com
+<span class="m">185</span>.199.108.153               github.io
+<span class="m">140</span>.82.113.4                  github.com
+<span class="m">192</span>.0.66.2                    github.blog
+<span class="m">140</span>.82.113.4                  api.github.com
+<span class="m">18</span>.204.44.248                 raw.githubusercontent.com
+<span class="m">54</span>.163.208.41                 user-images.githubusercontent.com
+<span class="m">44</span>.204.67.163                 favicons.githubusercontent.com
+<span class="m">44</span>.192.65.19                  avatars5.githubusercontent.com
+<span class="m">18</span>.208.135.184                avatars4.githubusercontent.com
+<span class="m">54</span>.175.3.163                  avatars3.githubusercontent.com
+<span class="m">3</span>.239.50.191                  avatars2.githubusercontent.com
+<span class="m">54</span>.87.18.202                  avatars1.githubusercontent.com
+<span class="m">54</span>.197.52.125                 avatars0.githubusercontent.com
+<span class="m">3</span>.236.14.33                   avatars.githubusercontent.com
+<span class="m">140</span>.82.113.4                  codeload.github.com
+<span class="m">72</span>.21.206.80                  github-cloud.s3.amazonaws.com
+<span class="m">72</span>.21.206.80                  github-com.s3.amazonaws.com
+<span class="m">72</span>.21.206.80                  github-production-release-asset-2e65be.s3.amazonaws.com
+<span class="m">72</span>.21.206.80                  github-production-user-asset-6210df.s3.amazonaws.com
+<span class="m">72</span>.21.206.80                  github-production-repository-file-5c1aeb.s3.amazonaws.com
+<span class="m">185</span>.199.108.153               githubstatus.com
+<span class="m">64</span>.71.144.211                 github.community
+<span class="m">23</span>.100.27.125                 github.dev
+<span class="m">140</span>.82.113.4                  collector.github.com
+<span class="m">184</span>.72.161.117                pipelines.actions.githubusercontent.com
+<span class="m">44</span>.193.198.252                media.githubusercontent.com
+<span class="m">54</span>.196.61.168                 cloud.githubusercontent.com
+<span class="m">3</span>.236.14.33                   objects.githubusercontent.com
+<span class="m">13</span>.107.213.51                 vscode.dev
+
+
+<span class="c1"># Update time: 2022-07-15T22:10:03+08:00</span>
+<span class="c1"># Update url: https://raw.hellogithub.com/hosts</span>
+<span class="c1"># Star me: https://github.com/521xueweihan/GitHub520</span>
+<span class="c1"># GitHub520 Host End</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The IP address of the Github changes frequently, and we should update <code class="docutils literal notranslate"><span class="pre">/etc/hosts</span></code> file when it slows down again.</p>
+</div>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header sd-bg-info sd-bg-text-info">
+<span class="sd-summary-icon"><svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-info" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M8 1.5a6.5 6.5 0 100 13 6.5 6.5 0 000-13zM0 8a8 8 0 1116 0A8 8 0 010 8zm6.5-.25A.75.75 0 017.25 7h1a.75.75 0 01.75.75v2.75h.25a.75.75 0 010 1.5h-2a.75.75 0 010-1.5h.25v-2h-.25a.75.75 0 01-.75-.75zM8 6a1 1 0 100-2 1 1 0 000 2z"></path></svg></span>Why git push with error? OpenSSL SSL_connect…<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">The following error may occur when use <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span></code> with using an agent refer to <a class="reference external" href="https://blog.csdn.net/daerzei/article/details/79528153">SSL_connect: SSL_ERROR_SYSCALL…:443</a></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Push failed: Failed with error: unable to access <span class="s1">&#39;https://github.com/weidongcao/bigdata/&#39;</span>: 
+OpenSSL SSL_connect: SSL_ERROR_SYSCALL <span class="k">in</span> connection to github.com:443
+</pre></div>
+</div>
+<p class="sd-card-text">Git supports 3 network protocols:</p>
+<ul class="simple">
+<li><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">git://...</span></code></p></li>
+<li><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">ssh://...</span></code></p></li>
+<li><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">http://...</span></code></p></li>
+</ul>
+<p class="sd-card-text">The SSH tunnel is supposed to be used when use <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span></code> command. However, if the <code class="docutils literal notranslate"><span class="pre">http</span></code> proxy is set, the <code class="docutils literal notranslate"><span class="pre">http</span></code> proxy will be used. Therefore, the above error occurs. The solution is to cancel the <code class="docutils literal notranslate"><span class="pre">http</span></code> proxy:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git config --global --unset http.proxy
+</pre></div>
+</div>
+</div>
+</details></section>
+<section id="manual">
+<h2>Manual<a class="headerlink" href="#manual" title="Permalink to this headline">#</a></h2>
+<section id="creating-a-repository">
+<h3>creating a repository<a class="headerlink" href="#creating-a-repository" title="Permalink to this headline">#</a></h3>
+<p><strong>Init Locally</strong></p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header sd-bg-info sd-bg-text-info">
+<span class="sd-summary-icon"><svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-info" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M8 1.5a6.5 6.5 0 100 13 6.5 6.5 0 000-13zM0 8a8 8 0 1116 0A8 8 0 010 8zm6.5-.25A.75.75 0 017.25 7h1a.75.75 0 01.75.75v2.75h.25a.75.75 0 010 1.5h-2a.75.75 0 010-1.5h.25v-2h-.25a.75.75 0 01-.75-.75zM8 6a1 1 0 100-2 1 1 0 000 2z"></path></svg></span>Check that init locally is not recommended.<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<ul class="simple">
+<li><p class="sd-card-text">Initializes a local repository and make some commit as following:</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git init
+$ git add .
+$ git commit -m <span class="s1">&#39;first commit&#39;</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p class="sd-card-text">Create an empty repository in GitHub, then associate the remote repository with the local repository to keep synchronization as following, <code class="docutils literal notranslate"><span class="pre">origin</span></code> is the name of the remote repository which can be replaced arbitrarily:</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git remote add origin git@github.com:your_github_name/repo_name.git
+</pre></div>
+</div>
+<ul class="simple">
+<li><p class="sd-card-text">Since the remote library is empty, the first time we push the <code class="docutils literal notranslate"><span class="pre">main</span></code> branch, we should add the <code class="docutils literal notranslate"><span class="pre">-u</span></code> parameter. Git will not only push the contents of the local main branch to the new remote main branch, but also associate the local main branch with the remote main branch, which can simplify the command in the future when use <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span></code> or <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">pull</span></code></p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git push -u origin main
+</pre></div>
+</div>
+<ul class="simple">
+<li><p class="sd-card-text">Now the following commands can be used:</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># git push</span>
+$ git push origin main 
+
+<span class="c1"># check the origin repository address</span>
+$ git remote -v 
+
+<span class="c1"># if you want to remove the current repository address </span>
+$ git remote rm origin
+</pre></div>
+</div>
+</div>
+</details><p><strong>Init Remotely</strong></p>
+<ul class="simple">
+<li><p>Assuming you have created a remote repository on GitHub, you can use <code class="docutils literal notranslate"><span class="pre">ssh</span></code> for <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span></code>, which is fast than <code class="docutils literal notranslate"><span class="pre">https</span></code> in China.</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git clone git@github.com:your_Github_name/reop_name.git
+</pre></div>
+</div>
+<p><strong>Init Submodule</strong></p>
+<ul class="simple">
+<li><p>If your code needs to use other package, which is located on GitHub. You need to use <code class="docutils literal notranslate"><span class="pre">git</span></code> to initialize and update. <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">submodule</span> <span class="pre">init</span> <span class="pre">xxx</span></code> will download some info provided by <code class="docutils literal notranslate"><span class="pre">.gitmodules</span></code> file to fill <code class="docutils literal notranslate"><span class="pre">.git/config</span></code>. Then use <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">update</span></code> to clone those code. Here is an example refer to <a class="reference external" href="https://www.codenong.com/44366417/">https://www.codenong.com/44366417/</a>.</p></li>
+</ul>
+<div class="toggle docutils container">
+<ul class="simple">
+<li><p>For example a <code class="docutils literal notranslate"><span class="pre">.gitmodules</span></code> file contains three submodules to use:</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>submodule <span class="s2">&quot;pygments-style-algforopt&quot;</span><span class="o">]</span>
+    <span class="nv">path</span> <span class="o">=</span> style
+    <span class="nv">url</span> <span class="o">=</span> https://github.com/sisl/pygments-style-algforopt.git
+    <span class="nv">branch</span> <span class="o">=</span> master
+<span class="o">[</span>submodule <span class="s2">&quot;pygments-julia&quot;</span><span class="o">]</span>
+    <span class="nv">path</span> <span class="o">=</span> lexer
+    <span class="nv">url</span> <span class="o">=</span> https://github.com/sisl/pygments-julia.git
+    <span class="nv">branch</span> <span class="o">=</span> master
+<span class="o">[</span>submodule <span class="s2">&quot;juliaplots.sty&quot;</span><span class="o">]</span>
+    <span class="nv">path</span> <span class="o">=</span> juliaplots.sty
+    <span class="nv">url</span> <span class="o">=</span> https://github.com/sisl/juliaplots.sty.git
+    <span class="nv">branch</span> <span class="o">=</span> master
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>If we only need to use the <code class="docutils literal notranslate"><span class="pre">pygments-julia</span></code> and <code class="docutils literal notranslate"><span class="pre">juliaplots.sty</span></code> code, which means that do not require clone and checkout <code class="docutils literal notranslate"><span class="pre">pygments-style-algforopt</span></code>, we can use</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git submodule init pygments-julia juliaplots.sty
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Then run the following command to clone and check them</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git submodule update
+</pre></div>
+</div>
+</div>
+</section>
+<section id="add-commit-and-push">
+<h3>add, commit and push<a class="headerlink" href="#add-commit-and-push" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>Add changes to the local repository.</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Add the changes to the Index</span>
+$ git add &lt;filename&gt;
+
+<span class="c1"># Add all changes at once</span>
+$ git add .
+
+<span class="c1"># check status</span>
+$ git status
+
+<span class="c1"># Add the changes from Index to local Repository</span>
+$ git commit -m <span class="s2">&quot;your comment&quot;</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Push the last changes in the <code class="docutils literal notranslate"><span class="pre">Local</span> <span class="pre">Repository</span></code> to the <code class="docutils literal notranslate"><span class="pre">Remote</span> <span class="pre">Repository</span></code> in github.</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git push origin main
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>If you need to connect your local repository to a remote repository, use the following command</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git remote add origin &lt;server&gt;
+</pre></div>
+</div>
+</section>
+<section id="branch-merge-and-diff">
+<h3>branch, merge and diff<a class="headerlink" href="#branch-merge-and-diff" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>Create a new branch and switch to it</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># new branch&#39;s name is feature</span>
+$ git switch -c feature_x   <span class="c1"># or: git checkout -b feature_x </span>
+ 
+<span class="c1"># create the dev branch of the remote origin to the local</span>
+$ git checkout -b dev origin/dev
+
+<span class="c1"># switch to main branch</span>
+$ git switch main   <span class="c1"># or: git checkout main</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Delete a branch</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># delete a local branch</span>
+$ git branch -d &lt;branch-name&gt;
+
+<span class="c1"># delete a remote branch</span>
+$ git push origin --delete &lt;branch-name&gt;
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Compare 2 branches</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># show a file list with difference between 2 branches</span>
+$ git diff branch1 branch2 --stat
+
+<span class="c1"># show detailed differences for the specified file</span>
+$ git diff branch1 branch2 /path/to/file
+
+<span class="c1"># show the detailed differences of all the different files between 2 branches</span>
+$ git diff branch1 branch2
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Merge 2 branches</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># merge the contents of the dev branch under the main branch</span>
+$ git merge dev
+
+<span class="c1"># the &#39;--no-ff&#39; option disables fast-forward mode, and &#39;-m&#39; records the merge as a commit</span>
+$ git merge --no-ff -m <span class="s2">&quot;merge dev --add new blog-1&quot;</span> dev
+</pre></div>
+</div>
+</section>
+<section id="pull-fetch-merge">
+<h3>pull = fetch + merge<a class="headerlink" href="#pull-fetch-merge" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>If the team is developing on the <code class="docutils literal notranslate"><span class="pre">dev</span> <span class="pre">branch</span></code> and a teammate commits a new commit to <code class="docutils literal notranslate"><span class="pre">dev</span></code>, we need to <code class="docutils literal notranslate"><span class="pre">pull</span></code> the commit from GitHub to our local <code class="docutils literal notranslate"><span class="pre">dev</span> <span class="pre">branch</span></code> before developing</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># specify the link between the local dev branch and the remote origin&#39;s dev branch</span>
+$ git branch --set-upstream-to<span class="o">=</span>origin/dev dev
+
+<span class="c1"># pull code</span>
+$ git pull
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">pull</span></code> = <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">fetch</span></code> + <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">merge</span></code>, and <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">fetch</span></code> will only pull remote code to local repo and do not merge it.</p>
+</div>
+</section>
+<section id="tag">
+<h3>tag<a class="headerlink" href="#tag" title="Permalink to this headline">#</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># tag the current branch with v1.0</span>
+$ git tag v1.0
+
+<span class="c1"># show all the tags</span>
+$ git tag
+
+<span class="c1"># show the tag v0.9&#39;s information</span>
+$ git show v0.9
+
+<span class="c1"># tag a previous commit，f52c633 is the &#39;commit id&#39;</span>
+$ git tag v0.9 f52c633
+
+<span class="c1"># create a tag with instructions，&#39;-a&#39; add tga  ，&#39;-m&#39; add instructions</span>
+$ git tag -a v0.1 -m <span class="s2">&quot;version 0.1 released&quot;</span> 1094adb
+
+<span class="c1"># delete a tag</span>
+$ git tag -d v0.1
+
+<span class="c1"># push the tag to remote</span>
+$ git push origin v1.0
+
+<span class="c1"># Push all local tags that have not been pushed to the remote at one time</span>
+$ git push origin --tags
+
+<span class="c1"># delete a remote tag (make sure that you have deleted the local tag before)</span>
+$ git push origin :refs/tags/v0.9
+</pre></div>
+</div>
+</section>
+<section id="log">
+<h3>log<a class="headerlink" href="#log" title="Permalink to this headline">#</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git log --graph --pretty<span class="o">=</span>oneline --abbrev-commit
+$ git log --pretty<span class="o">=</span>oneline --abbrev-commit
+$ git log --pretty<span class="o">=</span>oneline
+
+<span class="c1"># check the latest commit</span>
+$ git log -1
+</pre></div>
+</div>
+</section>
+<section id="delete-files">
+<h3>delete files<a class="headerlink" href="#delete-files" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>delete one file</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># delete test.txt from repo and commit</span>
+$ git rm test.txt
+$ git commit -m <span class="s2">&quot;remove test.txt&quot;</span>
+
+<span class="c1"># use &#39;rm&#39; delete，then &#39;git add&#39; and &#39;git commit&#39;</span>
+$ rm text.txt
+$ git add .
+$ git commit -m <span class="s2">&quot;remove test.txt&quot;</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>delete untracked files from <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code></p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># delete untracked files</span>
+$ git clean -f
+
+<span class="c1"># delete untracked files and their directory</span>
+$ git clean -fd
+
+<span class="c1"># ? cautious</span>
+$ git clean -xfd
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>it is highly recommended to add the <code class="docutils literal notranslate"><span class="pre">-n</span></code> parameter to see which files will be deleted first to prevent the deletion of important files by mistake</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git clean -nxfd
+$ git clean -nf
+$ git clean -nfd
+</pre></div>
+</div>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header sd-bg-info sd-bg-text-info">
+<span class="sd-summary-icon"><svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-info" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M8 1.5a6.5 6.5 0 100 13 6.5 6.5 0 000-13zM0 8a8 8 0 1116 0A8 8 0 010 8zm6.5-.25A.75.75 0 017.25 7h1a.75.75 0 01.75.75v2.75h.25a.75.75 0 010 1.5h-2a.75.75 0 010-1.5h.25v-2h-.25a.75.75 0 01-.75-.75zM8 6a1 1 0 100-2 1 1 0 000 2z"></path></svg></span>How to remove all ‘.DS_Store’ files?<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<ul class="simple">
+<li><p class="sd-card-text">We need to remove those <code class="docutils literal notranslate"><span class="pre">.DS_Store</span></code> files from the directory which already added to git. Use the following command which will go through all the folders in your directory, and remove those files from git.</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ find . -name .DS_Store -print0 <span class="p">|</span> xargs -0 git rm -f --ignore-unmatch
+</pre></div>
+</div>
+<ul class="simple">
+<li><p class="sd-card-text">Add <code class="docutils literal notranslate"><span class="pre">.DS_Store</span></code> to the file <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code>, which can be found at the top level of your repository (or create the file if it isn’t there already). You can do this easily with this command in the top directory:</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">echo</span> .DS_Store &gt;&gt; .gitignore
+</pre></div>
+</div>
+<ul class="simple">
+<li><p class="sd-card-text">Last step, we need to actually commit the <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code> file.</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git status
+$ git add .gitignore
+$ git commit -m <span class="s1">&#39;.DS_Store banished!&#39;</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p class="sd-card-text">Clean the files recorded in <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code></p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git clean -X -f
+</pre></div>
+</div>
+</div>
+</details></section>
+<section id="working">
+<h3>版本回退 (working…)<a class="headerlink" href="#working" title="Permalink to this headline">#</a></h3>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>最新版本的git已经使用git restore 代替了原来的reset和checkout命令了</p>
+</div>
+<p>在 Git 中，用<code class="docutils literal notranslate"><span class="pre">HEAD</span></code>表示当前版本, 上一个版本是<code class="docutils literal notranslate"><span class="pre">HEAD^</span></code>，上上一个版本是<code class="docutils literal notranslate"><span class="pre">HEAD^^</span></code>，往上100个版本<code class="docutils literal notranslate"><span class="pre">HEAD~100</span></code>。但推荐使用<code class="docutils literal notranslate"><span class="pre">commit</span> <span class="pre">id</span></code>来退回版本：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># 退回到上一个版本</span>
+$ git reset --hard HEAD^
+
+<span class="c1"># 首先查看历史 commit 的 id</span>
+$ git log
+
+<span class="c1"># 例如发现 id 是 1094a，退回到该版本</span>
+$ git reset --hard 1094a
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Git的版本回退速度非常快，因为Git在内部有个指向当前版本的HEAD指针，当你回退版本的时候，Git仅仅是把HEAD从指向append GPL</p>
+</div>
+<p>现在退回到过去的版本了，想回到未来的版本：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># 要重返未来，用&#39;git reflog&#39;查看命令历史，以便确定要回到未来的哪个版本</span>
+$ git reflog
+
+<span class="c1"># 例如发现未来的 id 是 1094a，退回到该版本</span>
+$ git reset --hard 1094a
+</pre></div>
+</div>
+</section>
+<section id="id1">
+<h3>撤销修改 (working…)<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h3>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>需要替换成最新版本的 <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">restore</span></code></p>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git checkout -- xx.txt 
+</pre></div>
+</div>
+</section>
+<section id="figure">
+<h3>figure<a class="headerlink" href="#figure" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>Link from <a class="reference external" href="https://github.com/521xueweihan/git-tips">git-tips</a> project.</p></li>
+</ul>
+<p><img alt="" src="https://github.com/521xueweihan/git-tips/blob/master/assets/git.png?raw=true" /></p>
+</section>
+</section>
+<section id="reference">
+<h2>Reference<a class="headerlink" href="#reference" title="Permalink to this headline">#</a></h2>
+<ol class="simple">
+<li><p><a class="reference external" href="https://www.liaoxuefeng.com/wiki/896043488029600/900375748016320">廖雪峰的官方网站</a> <strong><em>推荐</em></strong></p></li>
+<li><p><a class="reference external" href="https://github.com/521xueweihan/git-tipss">Git 奇技淫巧</a>  <strong><em>推荐</em></strong></p></li>
+<li><p><a class="reference external" href="https://www.runoob.com/git/git-tutorial.html">Git 菜鸟教程</a></p></li>
+<li><p><a class="reference external" href="https://www.runoob.com/w3cnote/git-guide.html">Git 简明教程</a></p></li>
+<li><p><a class="reference external" href="https://rogerdudler.github.io/git-guide/index.zh.html">Git 简明指南</a></p></li>
+</ol>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./programming_environment/Coding_Tools_file"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="SSH.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">SSH &amp; SSHFS</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="VScode.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">VSCode</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Fu Yin<br/>
+  
+      &copy; Copyright 2021–2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

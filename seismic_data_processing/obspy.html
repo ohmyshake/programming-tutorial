@@ -1,0 +1,1247 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>obspy &#8212; Seismology Notebook</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="canonical" href="https://seismology101.github.io/Notebook/seismic_data_processing/obspy.html" />
+    <link rel="shortcut icon" href="../_static/logo.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="seed2sac" href="seed2sac.html" />
+    <link rel="prev" title="sac" href="sac.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint">Welcome 👋</div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Seismology Notebook</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Introduction ✨
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Programming Environment
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../programming_environment/Overview.html">
+   Overview
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../programming_environment/Overview_file/MacSoftware.html">
+     Mac Software
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../programming_environment/Overview_file/SeisSoftware.html">
+     Seismology Software
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../programming_environment/Coding_Tools.html">
+   Coding Tools
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../programming_environment/Coding_Tools_file/Xcode.html">
+     Xcode
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../programming_environment/Coding_Tools_file/Homebrew.html">
+     Homebrew
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../programming_environment/Coding_Tools_file/Iterm2-Zsh.html">
+     Iterm2 &amp; Zsh
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../programming_environment/Coding_Tools_file/SSH.html">
+     SSH &amp; SSHFS
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../programming_environment/Coding_Tools_file/Git.html">
+     Git &amp; Github
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../programming_environment/Coding_Tools_file/VScode.html">
+     VSCode
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../programming_environment/Coding_Tools_file/Latex.html">
+     Latex
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../programming_environment/Coding_Tools_file/Python.html">
+     Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../programming_environment/Coding_Tools_file/C%2B%2B.html">
+     C++
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../programming_environment/Coding_Tools_file/Fortran.html">
+     Fortran
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../programming_environment/Seismology_Tools.html">
+   Seismology Tools
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../programming_environment/Seismology_Tools_file/SAC.html">
+     SAC
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../programming_environment/Seismology_Tools_file/PyGMT.html">
+     PyGMT
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../programming_environment/Shortcuts.html">
+   Shortcuts
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Programming Scripts
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../programming_manual_and_scripts/Bash_Manual.html">
+   Shell Manual
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../programming_manual_and_scripts/Python_Scripts.html">
+   Python Scripts
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../programming_manual_and_scripts/Python_Scripts_file/File-IO.html">
+     File IO
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../programming_manual_and_scripts/Python_Scripts_file/Subprocess.html">
+     Subprocess
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../programming_manual_and_scripts/Python_Scripts_file/Numpy.html">
+     Numpy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../programming_manual_and_scripts/Python_Scripts_file/Matplotlib.html">
+     Matplotlib
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../programming_manual_and_scripts/C%2B%2B_Scripts.html">
+   C++ Scripts
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../programming_manual_and_scripts/C%2B%2B_Scripts_file/File-IO.html">
+     File IO
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../programming_manual_and_scripts/C%2B%2B_Scripts_file/Matrix.html">
+     Matrix
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../programming_manual_and_scripts/PyGMT_Scripts.html">
+   PyGMT Scripts
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../programming_manual_and_scripts/PyGMT_Scripts_file/Map.html">
+     Map
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../programming_manual_and_scripts/PyGMT_Scripts_file/Velocity_Model.html">
+     Velocity Model
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../programming_manual_and_scripts/PyGMT_Scripts_file/Lune.html">
+     Lune plot
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Parallel Computing and Hybrid Programming
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../parallel%20computing_and_hybrid_programming/Python.html">
+   Python
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../parallel%20computing_and_hybrid_programming/Python_file/Mpi4py.html">
+     Mpi4py
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../parallel%20computing_and_hybrid_programming/Python_file/Cupy.html">
+     Cupy
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../parallel%20computing_and_hybrid_programming/C%2B%2B.html">
+   C++
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../parallel%20computing_and_hybrid_programming/C%2B%2B_file/OpenMPI.html">
+     OpenMPI
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../parallel%20computing_and_hybrid_programming/C%2B%2B_file/Cuda.html">
+     Cuda
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../parallel%20computing_and_hybrid_programming/Hybrid_Python_C%2B%2B.html">
+   Hybrid Python &amp; C++
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Seismic Data Processing
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="sac.html">
+   sac
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   obspy
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="seed2sac.html">
+   seed2sac
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="sac2mseed.html">
+   sac2mseed
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="cutevent.html">
+   cutevent
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Earthquake Source
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../earthquake_source/Source_Theory.html">
+   Source Theory
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../earthquake_source/Moment_Tensor_Decompose.html">
+   Moment Tensor Decompose
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Ambient Noise
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ambient_noise/Cross_Correlation.html">
+   Cross Correlation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ambient_noise/Noise_Source_Analysis.html">
+   Noise Source Analysis
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Surface Wave
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../surface_wave/Rayleigh_Wave.html">
+   Rayleigh Wave
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../surface_wave/Love_Wave.html">
+   Love Wave
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../surface_wave/Sensitivity_Kernal.html">
+   Sensitivity Kernal
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Coda Wave
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../coda_wave/Theory.html">
+   Theory
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../coda_wave/Sensitivity_Kernal.html">
+   Sensitivity Kernal
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../coda_wave/Velocity_Change.html">
+   Velocity Change
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Links
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../links/link.html">
+   Links
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../links/AboutBook.html">
+   About the Book
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://yinfu.info/">
+   About Me
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/Seismology101/Notebook"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/Seismology101/Notebook/issues/new?title=Issue%20on%20page%20%2Fseismic_data_processing/obspy.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/seismic_data_processing/obspy.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#event-data-process">
+   Event Data Process
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>obspy</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#event-data-process">
+   Event Data Process
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="obspy">
+<h1>obspy<a class="headerlink" href="#obspy" title="Permalink to this headline">#</a></h1>
+<ul class="simple">
+<li><p>Author: <em><a class="reference external" href="https://yinfu.info/">Fu Yin</a></em></p></li>
+<li><p>Update: <em>August 5, 2022</em></p></li>
+<li><p>Reading: <em>30 min</em></p></li>
+</ul>
+<hr class="docutils" />
+<section id="event-data-process">
+<h2>Event Data Process<a class="headerlink" href="#event-data-process" title="Permalink to this headline">#</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python3</span>
+<span class="c1"># -*- coding: utf-8 -*-</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Created on Wed May  5 15:38:21 2021</span>
+<span class="sd">    sac 文件要求头文件内标记了发震时刻与震中距方位角信息</span>
+<span class="sd">@author: yf</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">glob</span>
+<span class="kn">import</span> <span class="nn">obspy</span>
+<span class="kn">import</span> <span class="nn">subprocess</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">obspy</span> <span class="kn">import</span> <span class="n">Stream</span>
+<span class="kn">from</span> <span class="nn">obspy.taup</span> <span class="kn">import</span> <span class="n">TauPyModel</span>
+<span class="kn">from</span> <span class="nn">obspy.taup.taup_create</span> <span class="kn">import</span> <span class="n">build_taup_model</span>
+<span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">sin</span><span class="p">,</span><span class="n">cos</span><span class="p">,</span><span class="n">pi</span>
+<span class="kn">from</span> <span class="nn">obspy.core</span> <span class="kn">import</span> <span class="n">UTCDateTime</span>
+<span class="kn">from</span> <span class="nn">MCMTpy.utils.asdf_function</span> <span class="kn">import</span> <span class="n">get_StationXML</span><span class="p">,</span><span class="n">Add_waveforms_head_info</span>
+<span class="kn">from</span> <span class="nn">MCMTpy.utils.asdf_function</span> <span class="kn">import</span> <span class="n">Add_waveforms</span><span class="p">,</span><span class="n">Add_stationxml</span><span class="p">,</span><span class="n">get_QuakeML</span><span class="p">,</span><span class="n">Add_quakeml</span>
+
+
+
+<span class="c1">######################</span>
+<span class="k">def</span> <span class="nf">get_taup_tp_ts</span><span class="p">(</span><span class="n">model</span><span class="p">,</span><span class="n">depth</span><span class="p">,</span><span class="n">distance</span><span class="p">,</span><span class="n">degree</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">degree</span><span class="o">==</span><span class="kc">False</span><span class="p">:</span>
+        <span class="n">distance</span> <span class="o">=</span> <span class="n">distance</span><span class="o">/</span><span class="mf">111.19</span>
+
+    <span class="n">time_p</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">get_travel_times</span><span class="p">(</span><span class="n">source_depth_in_km</span><span class="o">=</span><span class="n">depth</span><span class="p">,</span>
+                                    <span class="n">distance_in_degree</span><span class="o">=</span><span class="n">distance</span><span class="p">,</span>
+                                    <span class="n">phase_list</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;p&quot;</span><span class="p">,</span> <span class="s2">&quot;P&quot;</span><span class="p">])</span>
+
+    <span class="n">time_s</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">get_travel_times</span><span class="p">(</span><span class="n">source_depth_in_km</span><span class="o">=</span><span class="n">depth</span><span class="p">,</span>
+                                    <span class="n">distance_in_degree</span><span class="o">=</span><span class="n">distance</span><span class="p">,</span>
+                                    <span class="n">phase_list</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;s&quot;</span><span class="p">,</span> <span class="s2">&quot;S&quot;</span><span class="p">])</span>
+
+    <span class="n">ray_p</span> <span class="o">=</span> <span class="n">time_p</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">ray_param</span>
+    <span class="n">tp</span> <span class="o">=</span> <span class="n">time_p</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">time</span>
+    <span class="n">angle_p</span> <span class="o">=</span> <span class="n">time_p</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">incident_angle</span>
+
+    <span class="n">ray_s</span> <span class="o">=</span> <span class="n">time_s</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">ray_param</span>
+    <span class="n">ts</span> <span class="o">=</span> <span class="n">time_s</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">time</span>
+    <span class="n">angle_s</span> <span class="o">=</span> <span class="n">time_s</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">incident_angle</span>
+
+    <span class="k">return</span> <span class="n">ray_p</span><span class="p">,</span><span class="n">tp</span><span class="p">,</span><span class="n">angle_p</span><span class="p">,</span><span class="n">ray_s</span><span class="p">,</span><span class="n">ts</span><span class="p">,</span><span class="n">angle_s</span>
+
+
+
+<span class="k">def</span> <span class="nf">rotate</span><span class="p">(</span><span class="n">data_raw</span><span class="p">,</span><span class="n">chn</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;RTZ&#39;</span><span class="p">,</span><span class="s1">&#39;ENZ&#39;</span><span class="p">]):</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    data : TYPE</span>
+<span class="sd">        DESCRIPTION.</span>
+<span class="sd">    chn : TYPE, optional</span>
+<span class="sd">        DESCRIPTION. The default is [&#39;RTZ&#39;,&#39;ENZ&#39;].</span>
+
+<span class="sd">    Raises</span>
+<span class="sd">    ------</span>
+<span class="sd">    ValueError</span>
+<span class="sd">        DESCRIPTION.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    data : TYPE</span>
+<span class="sd">        DESCRIPTION.</span>
+
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">data_raw</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    <span class="k">if</span> <span class="p">(</span><span class="s1">&#39;R&#39;</span> <span class="ow">in</span> <span class="n">chn</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="ow">and</span> <span class="p">(</span><span class="s1">&#39;T&#39;</span> <span class="ow">in</span> <span class="n">chn</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="ow">and</span> <span class="p">(</span><span class="s1">&#39;Z&#39;</span> <span class="ow">in</span> <span class="n">chn</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="ow">and</span> <span class="p">(</span><span class="s1">&#39;E&#39;</span> <span class="ow">in</span> <span class="n">chn</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="ow">and</span> <span class="p">(</span><span class="s1">&#39;N&#39;</span> <span class="ow">in</span> <span class="n">chn</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="ow">and</span> <span class="p">(</span><span class="s1">&#39;Z&#39;</span> <span class="ow">in</span> <span class="n">chn</span><span class="p">[</span><span class="mi">1</span><span class="p">]):</span>
+        <span class="n">r_in_index</span> <span class="o">=</span> <span class="n">chn</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="s1">&#39;R&#39;</span><span class="p">)</span>
+        <span class="n">t_in_index</span> <span class="o">=</span> <span class="n">chn</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="s1">&#39;T&#39;</span><span class="p">)</span>
+        <span class="n">z_in_index</span> <span class="o">=</span> <span class="n">chn</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="s1">&#39;Z&#39;</span><span class="p">)</span>
+
+        <span class="n">e_out_index</span> <span class="o">=</span> <span class="n">chn</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="s1">&#39;E&#39;</span><span class="p">)</span>
+        <span class="n">n_out_index</span> <span class="o">=</span> <span class="n">chn</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="s1">&#39;N&#39;</span><span class="p">)</span>
+        <span class="n">z_out_index</span> <span class="o">=</span> <span class="n">chn</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="s1">&#39;Z&#39;</span><span class="p">)</span>
+
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">),</span><span class="mi">3</span><span class="p">):</span>
+            <span class="n">BAZ</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">back_azimuth</span><span class="o">/</span><span class="mi">180</span><span class="o">*</span><span class="n">pi</span> <span class="c1">#float( baz )   # labels[9] 表示 asdf 文件中 baz 的值 Raw_data[chn].stats.asdf[&#39;labels&#39;][9]</span>
+            <span class="n">R</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="n">r_in_index</span><span class="p">]</span><span class="o">.</span><span class="n">data</span>
+            <span class="n">T</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="n">t_in_index</span><span class="p">]</span><span class="o">.</span><span class="n">data</span>
+            <span class="n">Z</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="n">z_in_index</span><span class="p">]</span><span class="o">.</span><span class="n">data</span>
+            <span class="n">E</span> <span class="o">=</span> <span class="o">-</span><span class="n">cos</span><span class="p">(</span><span class="n">BAZ</span><span class="p">)</span><span class="o">*</span><span class="n">T</span> <span class="o">-</span> <span class="n">sin</span><span class="p">(</span><span class="n">BAZ</span><span class="p">)</span><span class="o">*</span><span class="n">R</span>
+            <span class="n">N</span> <span class="o">=</span> <span class="n">sin</span><span class="p">(</span><span class="n">BAZ</span><span class="p">)</span><span class="o">*</span><span class="n">T</span> <span class="o">-</span> <span class="n">cos</span><span class="p">(</span><span class="n">BAZ</span><span class="p">)</span><span class="o">*</span><span class="n">R</span>
+
+            <span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="n">e_out_index</span><span class="p">]</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">channel</span><span class="o">=</span><span class="s1">&#39;E&#39;</span>
+            <span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="n">e_out_index</span><span class="p">]</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">E</span>
+            <span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="n">n_out_index</span><span class="p">]</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">channel</span><span class="o">=</span><span class="s1">&#39;N&#39;</span>
+            <span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="n">n_out_index</span><span class="p">]</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">N</span>
+            <span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="n">z_out_index</span><span class="p">]</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">channel</span><span class="o">=</span><span class="s1">&#39;Z&#39;</span>
+            <span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="n">z_out_index</span><span class="p">]</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">Z</span>
+
+    <span class="k">elif</span> <span class="p">(</span><span class="s1">&#39;E&#39;</span> <span class="ow">in</span> <span class="n">chn</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="ow">and</span> <span class="p">(</span><span class="s1">&#39;N&#39;</span> <span class="ow">in</span> <span class="n">chn</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="ow">and</span> <span class="p">(</span><span class="s1">&#39;Z&#39;</span> <span class="ow">in</span> <span class="n">chn</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="ow">and</span> <span class="p">(</span><span class="s1">&#39;R&#39;</span> <span class="ow">in</span> <span class="n">chn</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="ow">and</span> <span class="p">(</span><span class="s1">&#39;T&#39;</span> <span class="ow">in</span> <span class="n">chn</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="ow">and</span> <span class="p">(</span><span class="s1">&#39;Z&#39;</span> <span class="ow">in</span> <span class="n">chn</span><span class="p">[</span><span class="mi">1</span><span class="p">]):</span>
+        <span class="n">e_in_index</span> <span class="o">=</span> <span class="n">chn</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="s1">&#39;E&#39;</span><span class="p">)</span>
+        <span class="n">n_in_index</span> <span class="o">=</span> <span class="n">chn</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="s1">&#39;N&#39;</span><span class="p">)</span>
+        <span class="n">z_in_index</span> <span class="o">=</span> <span class="n">chn</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="s1">&#39;Z&#39;</span><span class="p">)</span>
+
+        <span class="n">r_out_index</span> <span class="o">=</span> <span class="n">chn</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="s1">&#39;R&#39;</span><span class="p">)</span>
+        <span class="n">t_out_index</span> <span class="o">=</span> <span class="n">chn</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="s1">&#39;T&#39;</span><span class="p">)</span>
+        <span class="n">z_out_index</span> <span class="o">=</span> <span class="n">chn</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="s1">&#39;Z&#39;</span><span class="p">)</span>
+
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">),</span><span class="mi">3</span><span class="p">):</span>
+            <span class="n">BAZ</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">back_azimuth</span><span class="o">/</span><span class="mi">180</span><span class="o">*</span><span class="n">pi</span> <span class="c1">#float( baz )   # labels[9] 表示 asdf 文件中 baz 的值 Raw_data[chn].stats.asdf[&#39;labels&#39;][9]</span>
+            <span class="n">E</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="n">e_in_index</span><span class="p">]</span><span class="o">.</span><span class="n">data</span>
+            <span class="n">N</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="n">n_in_index</span><span class="p">]</span><span class="o">.</span><span class="n">data</span>
+            <span class="n">Z</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="n">z_in_index</span><span class="p">]</span><span class="o">.</span><span class="n">data</span>
+            <span class="n">R</span> <span class="o">=</span> <span class="o">-</span><span class="n">cos</span><span class="p">(</span><span class="n">BAZ</span><span class="p">)</span><span class="o">*</span><span class="n">N</span> <span class="o">-</span> <span class="n">sin</span><span class="p">(</span><span class="n">BAZ</span><span class="p">)</span><span class="o">*</span><span class="n">E</span>
+            <span class="n">T</span> <span class="o">=</span> <span class="n">sin</span><span class="p">(</span><span class="n">BAZ</span><span class="p">)</span><span class="o">*</span><span class="n">N</span> <span class="o">-</span> <span class="n">cos</span><span class="p">(</span><span class="n">BAZ</span><span class="p">)</span><span class="o">*</span><span class="n">E</span>
+
+            <span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="n">r_out_index</span><span class="p">]</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">channel</span><span class="o">=</span><span class="s1">&#39;R&#39;</span>
+            <span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="n">r_out_index</span><span class="p">]</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">R</span>
+            <span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="n">t_out_index</span><span class="p">]</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">channel</span><span class="o">=</span><span class="s1">&#39;T&#39;</span>
+            <span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="n">t_out_index</span><span class="p">]</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">T</span>
+            <span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="n">z_out_index</span><span class="p">]</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">channel</span><span class="o">=</span><span class="s1">&#39;Z&#39;</span>
+            <span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="n">z_out_index</span><span class="p">]</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">Z</span>
+
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;chn format error! abort!&#39;</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">data</span>
+<span class="c1">######################</span>
+
+
+
+
+
+
+<span class="c1">#######################################################</span>
+<span class="c1">################PARAMETER SECTION######################</span>
+<span class="c1">#######################################################</span>
+
+<span class="c1">#%% 1. data/file paths</span>
+<span class="n">RAWDATA</span>       <span class="o">=</span> <span class="s2">&quot;./YN.202105212148_MCMTpy_hpick&quot;</span>                              <span class="c1"># dir where SAC files are located</span>
+<span class="n">allfiles_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">RAWDATA</span><span class="p">,</span><span class="s1">&#39;*sac&#39;</span><span class="p">)</span>                                    <span class="c1"># make sure all sac files can be found through this format</span>
+
+
+<span class="c1"># 2. output data/file paths</span>
+<span class="n">Output_path</span>   <span class="o">=</span> <span class="s2">&quot;./YN.202105212148_MCMTpy_hpick_m_2&quot;</span>                                   <span class="c1"># 输出文件存放的位置</span>
+<span class="n">source_name</span>   <span class="o">=</span> <span class="s2">&quot;source_enz&quot;</span>                                                    <span class="c1"># asdf 文件的 source_tag</span>
+<span class="n">ASDF_filename</span> <span class="o">=</span> <span class="s2">&quot;YN.202105212148&quot;</span>                                               <span class="c1"># asdf 文件的名称</span>
+
+
+<span class="c1"># 3. 创建自己的速度模型，只有第一次需要 build_taup_model 计算走时表</span>
+<span class="n">taup_pick</span>     <span class="o">=</span> <span class="s1">&#39;no&#39;</span>                                                           <span class="c1"># select &#39;yes&#39; to do Ray tracing with taup</span>
+<span class="n">v_model_path</span>  <span class="o">=</span> <span class="s1">&#39;../v_model/v_model.nd&#39;</span>
+<span class="c1"># build_taup_model(v_model_path, output_folder=&#39;../v_model&#39;, verbose=True)</span>
+<span class="n">model_path</span>    <span class="o">=</span> <span class="s2">&quot;../v_model/v_model.npz&quot;</span>
+
+
+<span class="c1"># 4. useful parameters</span>
+<span class="n">rotate_mode</span>   <span class="o">=</span> <span class="kc">False</span>                                                            <span class="c1"># 是否要旋转分量</span>
+<span class="n">chn</span>           <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;RTZ&#39;</span><span class="p">,</span><span class="s1">&#39;ENZ&#39;</span><span class="p">]</span>                                                   <span class="c1"># rotate from chn[0] to chn[1]</span>
+
+<span class="n">freqmin</span>       <span class="o">=</span> <span class="mf">0.005</span>                                                           <span class="c1"># pre filtering frequency bandwidth (hz)</span>
+<span class="n">freqmax</span>       <span class="o">=</span> <span class="mi">2</span>                                                               <span class="c1"># note this cannot exceed Nquist frequency (hz)</span>
+<span class="n">samp_freq</span>     <span class="o">=</span> <span class="mi">5</span>                                                               <span class="c1"># targeted sampling rate (hz)</span>
+<span class="n">p_n0</span>          <span class="o">=</span> <span class="mi">100</span>                                                              <span class="c1"># P波到达前的采样点个数</span>
+<span class="n">npts</span>          <span class="o">=</span> <span class="mi">2048</span>                                                            <span class="c1"># 数据点长度(如果超过endtime,则按照endtime处理),trim时可能存在一个采样点的误差</span>
+
+
+<span class="c1"># 5. event infomation (需要手动输入)</span>
+<span class="n">UTCtime</span>       <span class="o">=</span> <span class="n">UTCDateTime</span><span class="p">(</span><span class="s1">&#39;2021-05-21&#39;</span><span class="o">+</span><span class="s1">&#39;T&#39;</span><span class="o">+</span><span class="s1">&#39;21:48:35.36&#39;</span><span class="o">+</span><span class="s1">&#39;+08&#39;</span><span class="p">)</span>               <span class="c1"># 地震目录的时间都是北京时间，时区为 UTC+8，需要转换成 UTC 时间统一标准</span>
+<span class="n">nptime</span>        <span class="o">=</span> <span class="n">UTCtime</span><span class="o">.</span><span class="n">timestamp</span>
+<span class="n">year</span>          <span class="o">=</span> <span class="n">UTCtime</span><span class="o">.</span><span class="n">year</span>
+<span class="n">julday</span>        <span class="o">=</span> <span class="n">UTCtime</span><span class="o">.</span><span class="n">julday</span>
+<span class="n">hour</span>          <span class="o">=</span> <span class="n">UTCtime</span><span class="o">.</span><span class="n">hour</span>
+<span class="n">minute</span>        <span class="o">=</span> <span class="n">UTCtime</span><span class="o">.</span><span class="n">minute</span>
+<span class="n">second</span>        <span class="o">=</span> <span class="n">UTCtime</span><span class="o">.</span><span class="n">second</span>
+<span class="n">microsecond</span>   <span class="o">=</span> <span class="mi">0</span>                                                               <span class="c1"># UTCtime.microsecond, 请始终保持 0 </span>
+<span class="n">evla</span>          <span class="o">=</span> <span class="mf">25.682</span>
+<span class="n">evlo</span>          <span class="o">=</span> <span class="mf">99.881</span>
+<span class="n">evdp</span>          <span class="o">=</span> <span class="mi">17</span>
+<span class="n">mag</span>           <span class="o">=</span> <span class="mf">6.6</span>
+
+
+
+
+
+<span class="c1">##################################################</span>
+<span class="c1"># we expect no parameters need to be changed below</span>
+
+<span class="c1"># assemble parameters for data pre-processing</span>
+<span class="n">prepro_para</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;RAWDATA&#39;</span><span class="p">:</span><span class="n">RAWDATA</span><span class="p">,</span> <span class="s1">&#39;allfiles_path&#39;</span><span class="p">:</span><span class="n">allfiles_path</span><span class="p">,</span>\
+               <span class="s1">&#39;Output_path&#39;</span><span class="p">:</span><span class="n">Output_path</span><span class="p">,</span> <span class="s1">&#39;source_name&#39;</span><span class="p">:</span><span class="n">source_name</span><span class="p">,</span> <span class="s1">&#39;ASDF_filename&#39;</span><span class="p">:</span><span class="n">ASDF_filename</span><span class="p">,</span>\
+               <span class="s1">&#39;taup_pick&#39;</span><span class="p">:</span><span class="n">taup_pick</span><span class="p">,</span> <span class="s1">&#39;v_model_path&#39;</span><span class="p">:</span><span class="n">v_model_path</span><span class="p">,</span> <span class="s1">&#39;model_path&#39;</span><span class="p">:</span><span class="n">model_path</span><span class="p">,</span>\
+               <span class="s1">&#39;freqmin&#39;</span><span class="p">:</span><span class="n">freqmin</span><span class="p">,</span> <span class="s1">&#39;freqmax&#39;</span><span class="p">:</span><span class="n">freqmax</span><span class="p">,</span> <span class="s1">&#39;samp_freq&#39;</span><span class="p">:</span><span class="n">samp_freq</span><span class="p">,</span> <span class="s1">&#39;p_n0&#39;</span><span class="p">:</span><span class="n">p_n0</span><span class="p">,</span> <span class="s1">&#39;npts&#39;</span><span class="p">:</span><span class="n">npts</span><span class="p">,</span>\
+               <span class="s1">&#39;UTCtime&#39;</span><span class="p">:</span><span class="n">UTCtime</span><span class="p">,</span> <span class="s1">&#39;evla&#39;</span><span class="p">:</span><span class="n">evla</span><span class="p">,</span> <span class="s1">&#39;evlo&#39;</span><span class="p">:</span><span class="n">evlo</span><span class="p">,</span> <span class="s1">&#39;evdp&#39;</span><span class="p">:</span><span class="n">evdp</span><span class="p">,</span> <span class="s1">&#39;mag&#39;</span><span class="p">:</span><span class="n">mag</span><span class="p">}</span>
+<span class="n">metadata</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">Output_path</span><span class="p">,</span><span class="s1">&#39;process_info.txt&#39;</span><span class="p">)</span> 
+
+<span class="c1"># output parameter info</span>
+<span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isdir</span><span class="p">(</span><span class="n">Output_path</span><span class="p">):</span><span class="n">os</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">Output_path</span><span class="p">)</span>
+<span class="n">fout</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">metadata</span><span class="p">,</span><span class="s1">&#39;w&#39;</span><span class="p">)</span>
+<span class="n">fout</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">prepro_para</span><span class="p">))</span>
+<span class="n">fout</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+
+
+<span class="c1">##########################################################</span>
+<span class="c1">#################PROCESSING SECTION#######################</span>
+<span class="c1">##########################################################</span>
+
+<span class="c1">#%% 0. sac 写入发震事件信息  (改成obspy更好！)</span>
+<span class="n">os</span><span class="o">.</span><span class="n">putenv</span><span class="p">(</span><span class="s2">&quot;SAC_DISPLAY_COPYRIGHT&quot;</span><span class="p">,</span> <span class="s1">&#39;0&#39;</span><span class="p">)</span>                                         <span class="c1"># 设置环境变量</span>
+<span class="n">cmd_sac</span> <span class="o">=</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">Popen</span><span class="p">([</span><span class="s1">&#39;/Users/yf/1.Software/1.SAC/sac/bin/sac&#39;</span><span class="p">],</span> <span class="n">stdin</span><span class="o">=</span><span class="n">subprocess</span><span class="o">.</span><span class="n">PIPE</span><span class="p">,</span> <span class="n">cwd</span><span class="o">=</span><span class="n">RAWDATA</span><span class="p">)</span>         <span class="c1"># 利用sac程序去除仪器响应 /Users/yf/1.Software/1.SAC/sac/bin/sac</span>
+<span class="n">s</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+<span class="k">for</span> <span class="n">sacfile</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="n">allfiles_path</span><span class="p">)):</span>
+    <span class="n">sac_name</span> <span class="o">=</span> <span class="n">sacfile</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">s</span> <span class="o">+=</span> <span class="s2">&quot;r </span><span class="si">%s</span><span class="s2"> </span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">sac_name</span> 
+    <span class="n">s</span> <span class="o">+=</span> <span class="s2">&quot;ch o gmt </span><span class="si">%s</span><span class="s2"> </span><span class="si">%s</span><span class="s2"> </span><span class="si">%s</span><span class="s2"> </span><span class="si">%s</span><span class="s2"> </span><span class="si">%s</span><span class="s2"> </span><span class="si">%s</span><span class="s2"> </span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">year</span><span class="p">,</span><span class="n">julday</span><span class="p">,</span><span class="n">hour</span><span class="p">,</span><span class="n">minute</span><span class="p">,</span><span class="n">second</span><span class="p">,</span><span class="n">microsecond</span><span class="p">)</span>  <span class="c1"># 使用 sac 把发震时间写入头部变量 o 中</span>
+    <span class="n">s</span> <span class="o">+=</span> <span class="s2">&quot;ch allt (0 - &amp;1,o&amp;) iztype IO </span><span class="se">\n</span><span class="s2">&quot;</span>                                     <span class="c1"># 将 发震时间 设置成 参考时间</span>
+    <span class="n">s</span> <span class="o">+=</span> <span class="s2">&quot;ch evla </span><span class="si">%f</span><span class="s2"> evlo </span><span class="si">%f</span><span class="s2"> evdp </span><span class="si">%f</span><span class="s2"> mag </span><span class="si">%f</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">evla</span><span class="p">,</span><span class="n">evlo</span><span class="p">,</span><span class="n">evdp</span><span class="p">,</span><span class="n">mag</span><span class="p">)</span>           <span class="c1"># 写入事件位置</span>
+    <span class="n">s</span> <span class="o">+=</span> <span class="s2">&quot;wh</span><span class="se">\n</span><span class="s2">&quot;</span>
+
+<span class="n">s</span> <span class="o">+=</span> <span class="s2">&quot;q </span><span class="se">\n</span><span class="s2">&quot;</span>
+
+<span class="n">stdout</span><span class="p">,</span> <span class="n">stderr</span> <span class="o">=</span> <span class="n">cmd_sac</span><span class="o">.</span><span class="n">communicate</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span>                                <span class="c1"># Popen.communicate 命令会自带 Popen.wait(), 但保险起见还是需要自己添加 wait()命令</span>
+<span class="n">cmd_sac</span><span class="o">.</span><span class="n">wait</span><span class="p">()</span>
+
+
+
+
+<span class="c1">#%% 1. obspy 读取原始数据 return: data</span>
+<span class="n">allfiles</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="n">allfiles_path</span><span class="p">)</span> <span class="p">)</span>
+<span class="n">data_raw</span> <span class="o">=</span> <span class="n">Stream</span><span class="p">()</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">allfiles</span><span class="p">),</span><span class="mi">1</span><span class="p">):</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">tr</span> <span class="o">=</span> <span class="n">obspy</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">allfiles</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+        <span class="c1"># print(tr[0].stats.sac.dist,tr[0].stats.sac.evdp)</span>
+        <span class="n">data_raw</span> <span class="o">+=</span> <span class="n">tr</span>
+    <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">allfiles</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="s1">&#39;: no such file or obspy read error&#39;</span><span class="p">);</span><span class="k">continue</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">data_raw</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+
+
+
+
+<span class="c1">#%% 2. 读取台站的经纬度信息output &quot;NET_STA&quot; used in samole_dc.json and plot_dc.json</span>
+
+<span class="c1"># 2.1 读取台站信息，并按照震中距排序</span>
+<span class="n">unique_stations</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">([</span><span class="n">tr</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">station</span> <span class="k">for</span> <span class="n">tr</span> <span class="ow">in</span> <span class="n">data</span><span class="p">])</span>                  <span class="c1"># 所有台站的名称 np.unique 去除重复元素</span>
+
+<span class="n">sta_num</span> <span class="o">=</span> <span class="n">unique_stations</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">NET_STA</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="n">sta_num</span><span class="p">,</span><span class="mi">6</span><span class="p">),</span><span class="n">dtype</span><span class="o">=</span><span class="s1">&#39;object&#39;</span><span class="p">)</span>                            <span class="c1"># 创建空数组，类型是 object 可以包含字符和数字</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">sta_num</span><span class="p">,</span><span class="mi">1</span><span class="p">):</span>
+    <span class="n">tr</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="n">station</span><span class="o">=</span><span class="n">unique_stations</span><span class="p">[</span><span class="n">i</span><span class="p">])[</span><span class="mi">0</span><span class="p">]</span>                             <span class="c1"># Just taking the first Trace if multiple</span>
+    <span class="n">NET_STA</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">tr</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">network</span>
+    <span class="n">NET_STA</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">tr</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">station</span>
+    <span class="n">NET_STA</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="n">tr</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">sac</span><span class="o">.</span><span class="n">stla</span>
+    <span class="n">NET_STA</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="n">tr</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">sac</span><span class="o">.</span><span class="n">stlo</span>
+    <span class="n">NET_STA</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>                                                            <span class="c1"># 台站的深度始终保持 0 </span>
+    <span class="n">NET_STA</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="mi">5</span><span class="p">]</span> <span class="o">=</span> <span class="n">tr</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">sac</span><span class="o">.</span><span class="n">dist</span>
+
+<span class="n">NET_STA</span> <span class="o">=</span> <span class="n">NET_STA</span><span class="p">[</span> <span class="n">NET_STA</span><span class="p">[:,</span><span class="mi">5</span><span class="p">]</span><span class="o">.</span><span class="n">argsort</span><span class="p">()</span> <span class="p">]</span>                                     <span class="c1"># 按照 dist 那一列排序</span>
+
+
+<span class="c1"># 2.2 将 NET_STA 写入文件</span>
+<span class="n">fp</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;./NET_STA.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span>                                                 <span class="c1"># &quot;NET_STA&quot; used in samole_dc.json and plot_dc.json</span>
+<span class="n">fp</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;[&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">sta_num</span><span class="p">,</span><span class="mi">1</span><span class="p">):</span>
+    <span class="n">fp</span><span class="o">.</span><span class="n">write</span><span class="p">(</span> <span class="nb">str</span><span class="p">(</span><span class="n">NET_STA</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="mi">0</span><span class="p">:</span><span class="mi">5</span><span class="p">]</span><span class="o">.</span><span class="n">tolist</span><span class="p">())</span> <span class="p">)</span>
+    <span class="n">fp</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">i</span> <span class="o">!=</span> <span class="p">(</span><span class="n">sta_num</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+        <span class="n">fp</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">fp</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;]&#39;</span><span class="p">)</span>
+<span class="n">fp</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+<span class="n">fp</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;./NET_STA_dist.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span>                                            <span class="c1"># 包含震中距信息</span>
+<span class="n">fp</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;[&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">sta_num</span><span class="p">,</span><span class="mi">1</span><span class="p">):</span>
+    <span class="n">fp</span><span class="o">.</span><span class="n">write</span><span class="p">(</span> <span class="nb">str</span><span class="p">(</span><span class="n">NET_STA</span><span class="p">[</span><span class="n">i</span><span class="p">,:]</span><span class="o">.</span><span class="n">tolist</span><span class="p">())</span> <span class="p">)</span>
+    <span class="n">fp</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">i</span> <span class="o">!=</span> <span class="p">(</span><span class="n">sta_num</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+        <span class="n">fp</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">fp</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;]&#39;</span><span class="p">)</span>
+<span class="n">fp</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+
+
+
+<span class="c1">#%% 3. taup射线追踪拾取到时</span>
+<span class="k">if</span> <span class="n">taup_pick</span><span class="o">==</span><span class="s1">&#39;yes&#39;</span><span class="p">:</span>
+    <span class="n">model</span> <span class="o">=</span> <span class="n">TauPyModel</span><span class="p">(</span><span class="n">model</span><span class="o">=</span><span class="n">model_path</span><span class="p">)</span>                                        <span class="c1"># model_path 还可以是 &quot;iasp91&quot;  &quot;prem&quot;</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">),</span><span class="mi">1</span><span class="p">):</span>
+        <span class="n">depth</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">sac</span><span class="p">[</span><span class="s1">&#39;evdp&#39;</span><span class="p">]</span>
+        <span class="n">distance</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">sac</span><span class="p">[</span><span class="s1">&#39;dist&#39;</span><span class="p">]</span>
+        <span class="n">ray_p</span><span class="p">,</span><span class="n">tp</span><span class="p">,</span><span class="n">angle_p</span><span class="p">,</span><span class="n">ray_s</span><span class="p">,</span><span class="n">ts</span><span class="p">,</span><span class="n">angle_s</span> <span class="o">=</span> <span class="n">get_taup_tp_ts</span><span class="p">(</span><span class="n">model</span><span class="p">,</span><span class="n">depth</span><span class="p">,</span><span class="n">distance</span><span class="p">,</span><span class="n">degree</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+        <span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">sac</span><span class="p">[</span><span class="s2">&quot;t1&quot;</span><span class="p">]</span><span class="o">=</span><span class="n">tp</span>                                              <span class="c1"># 与 pyfk 标记方法一致，多了 ray_p ray_s</span>
+        <span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">sac</span><span class="p">[</span><span class="s2">&quot;user1&quot;</span><span class="p">]</span><span class="o">=</span><span class="n">angle_p</span>
+        <span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">sac</span><span class="p">[</span><span class="s2">&quot;user3&quot;</span><span class="p">]</span><span class="o">=</span><span class="n">ray_p</span>
+        <span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">sac</span><span class="p">[</span><span class="s2">&quot;t2&quot;</span><span class="p">]</span><span class="o">=</span><span class="n">ts</span>
+        <span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">sac</span><span class="p">[</span><span class="s2">&quot;user2&quot;</span><span class="p">]</span><span class="o">=</span><span class="n">angle_s</span>
+        <span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">sac</span><span class="p">[</span><span class="s2">&quot;user4&quot;</span><span class="p">]</span><span class="o">=</span><span class="n">ray_s</span>
+
+
+<span class="c1"># 3.1. 利用 taup 画 最后一个事件的 raypath</span>
+<span class="c1"># if taup_pick==&#39;yes&#39;:</span>
+<span class="c1">#     path_p = model.get_ray_paths(source_depth_in_km=depth,</span>
+<span class="c1">#                                   distance_in_degree=distance/111.19,</span>
+<span class="c1">#                                 phase_list=[&quot;p&quot;, &quot;P&quot;,&quot;s&quot;, &quot;S&quot;])</span>
+<span class="c1">#     path_p[0].path.dtype</span>
+<span class="c1">#     ax = path_p.plot_rays(plot_type=&quot;cartesian&quot;,legend=True)                    # &#39;spherical&#39;  cartesian</span>
+
+
+
+
+<span class="c1">#%% 4. 去均值去趋势</span>
+<span class="n">data</span><span class="o">.</span><span class="n">detrend</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="s1">&#39;demean&#39;</span><span class="p">)</span>
+<span class="n">data</span><span class="o">.</span><span class="n">detrend</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="s1">&#39;simple&#39;</span><span class="p">)</span>
+<span class="n">data</span><span class="o">.</span><span class="n">taper</span><span class="p">(</span><span class="n">max_percentage</span><span class="o">=</span><span class="mf">0.05</span><span class="p">)</span>
+
+
+
+
+
+<span class="c1">#%% 5. 滤波然后降采样 and 裁剪数据</span>
+<span class="c1"># 5.1 滤波降采样</span>
+<span class="n">data</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="s1">&#39;bandpass&#39;</span><span class="p">,</span> <span class="n">freqmin</span><span class="o">=</span><span class="n">freqmin</span><span class="p">,</span> <span class="n">freqmax</span><span class="o">=</span><span class="n">freqmax</span><span class="p">,</span> <span class="n">corners</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">zerophase</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>  <span class="c1"># bandpass</span>
+<span class="n">data</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="n">samp_freq</span><span class="p">,</span><span class="n">window</span><span class="o">=</span><span class="s1">&#39;hanning&#39;</span><span class="p">,</span><span class="n">no_filter</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">strict_length</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>         <span class="c1"># resample</span>
+
+
+<span class="c1"># 5.2 裁剪每一个分量数据</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">),</span><span class="mi">1</span><span class="p">):</span>
+    <span class="n">b</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">sac</span><span class="p">[</span><span class="s1">&#39;b&#39;</span><span class="p">]</span>
+    <span class="n">t1</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">sac</span><span class="p">[</span><span class="s1">&#39;t1&#39;</span><span class="p">]</span>
+    <span class="n">t_start</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">starttime</span> <span class="o">+</span> <span class="p">(</span><span class="n">t1</span><span class="o">-</span><span class="n">b</span><span class="p">)</span> <span class="o">-</span> <span class="n">p_n0</span><span class="o">/</span><span class="n">samp_freq</span>
+    <span class="c1"># 判断数据长度 与 endtime 的关系</span>
+    <span class="n">t_end_npts</span> <span class="o">=</span> <span class="n">t_start</span><span class="o">+</span><span class="n">npts</span><span class="o">/</span><span class="n">samp_freq</span>
+    <span class="n">t_endtime</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">endtime</span>
+    <span class="k">if</span> <span class="n">t_end_npts</span> <span class="o">&gt;</span> <span class="n">t_endtime</span><span class="p">:</span>
+        <span class="n">t_end</span> <span class="o">=</span> <span class="n">t_endtime</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">t_end</span> <span class="o">=</span> <span class="n">t_end_npts</span>
+
+    <span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">trim</span><span class="p">(</span><span class="n">t_start</span><span class="p">,</span> <span class="n">t_end</span><span class="p">)</span>
+
+
+<span class="c1"># 5.3 把三分量数据裁成一样长</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">round</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)</span><span class="o">/</span><span class="mi">3</span><span class="p">)):</span>
+    <span class="n">t_start_1</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="mi">3</span><span class="o">*</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">starttime</span>
+    <span class="n">t_start_2</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="mi">3</span><span class="o">*</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">starttime</span>
+    <span class="n">t_start_3</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="mi">3</span><span class="o">*</span><span class="n">i</span><span class="o">+</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">starttime</span>
+    <span class="n">t_end_1</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="mi">3</span><span class="o">*</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">endtime</span>
+    <span class="n">t_end_2</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="mi">3</span><span class="o">*</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">endtime</span>
+    <span class="n">t_end_3</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="mi">3</span><span class="o">*</span><span class="n">i</span><span class="o">+</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">endtime</span>
+    <span class="n">t_start</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">t_start_1</span><span class="p">,</span><span class="n">t_start_2</span><span class="p">,</span><span class="n">t_start_3</span><span class="p">)</span>
+    <span class="n">t_end</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">t_end_1</span><span class="p">,</span><span class="n">t_end_2</span><span class="p">,</span><span class="n">t_end_3</span><span class="p">)</span>
+    <span class="n">data</span><span class="p">[</span><span class="mi">3</span><span class="o">*</span><span class="n">i</span><span class="p">:</span><span class="mi">3</span><span class="o">*</span><span class="n">i</span><span class="o">+</span><span class="mi">3</span><span class="p">]</span><span class="o">.</span><span class="n">trim</span><span class="p">(</span><span class="n">t_start</span><span class="p">,</span> <span class="n">t_end</span><span class="p">)</span>
+
+
+<span class="c1"># 5.4 转换波形数据的范围，去除仪器响应的单位是 velocity(nm/s), fk用的单位是 velocity(cm/s)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">),</span><span class="mi">1</span><span class="p">):</span>
+    <span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="mf">1e6</span><span class="o">*</span><span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">data</span>
+
+
+
+
+<span class="c1">#%% 6. 旋转到 ENZ 方向</span>
+<span class="k">if</span>  <span class="n">rotate_mode</span> <span class="o">==</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)):</span>
+        <span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">back_azimuth</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">sac</span><span class="o">.</span><span class="n">baz</span>
+    <span class="n">data_enz</span> <span class="o">=</span> <span class="n">rotate</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">,</span><span class="n">chn</span><span class="o">=</span><span class="n">chn</span><span class="p">)</span>                                        <span class="c1"># 反方位角需要有定义 data[i].stats.back_azimuth</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">data_enz</span> <span class="o">=</span> <span class="n">data</span>
+
+
+
+
+<span class="c1">#%% 7. 输出 ASDF 与 sac 文件</span>
+<span class="n">source_lat</span>   <span class="o">=</span> <span class="n">data_enz</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">sac</span><span class="o">.</span><span class="n">evla</span>
+<span class="n">source_lon</span>   <span class="o">=</span> <span class="n">data_enz</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">sac</span><span class="o">.</span><span class="n">evlo</span>
+<span class="n">source_depth</span> <span class="o">=</span> <span class="n">data_enz</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">sac</span><span class="o">.</span><span class="n">evdp</span>
+<span class="n">source_time</span>  <span class="o">=</span> <span class="n">data_enz</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">starttime</span> <span class="o">+</span> <span class="n">data_enz</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">sac</span><span class="o">.</span><span class="n">b</span>            <span class="c1"># UTCDateTime()</span>
+
+<span class="n">Output_file_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">Output_path</span><span class="p">,</span> <span class="n">ASDF_filename</span><span class="o">+</span><span class="s1">&#39;.h5&#39;</span><span class="p">)</span>
+<span class="n">catalog_create</span>   <span class="o">=</span> <span class="n">get_QuakeML</span><span class="p">(</span><span class="n">source_name</span><span class="p">,</span> <span class="n">source_lat</span><span class="p">,</span> <span class="n">source_lon</span><span class="p">,</span> <span class="n">source_depth</span><span class="p">,</span><span class="n">source_time</span><span class="p">)</span>
+<span class="n">Add_quakeml</span><span class="p">(</span><span class="n">Output_file_path</span><span class="p">,</span><span class="n">catalog_create</span><span class="p">)</span>
+
+<span class="n">Station_num</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">data_enz</span><span class="p">)</span><span class="o">/</span><span class="mi">3</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">Station_num</span><span class="p">,</span><span class="mi">1</span><span class="p">):</span>                                                <span class="c1"># 循环所有台站，写 ASDF 文件</span>
+    <span class="n">net_sta_name</span>     <span class="o">=</span> <span class="n">data_enz</span><span class="p">[</span><span class="mi">3</span><span class="o">*</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">network</span><span class="o">+</span><span class="s1">&#39;_&#39;</span><span class="o">+</span><span class="n">data</span><span class="p">[</span><span class="mi">3</span><span class="o">*</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">station</span>
+    <span class="n">station_network</span>  <span class="o">=</span> <span class="n">data_enz</span><span class="p">[</span><span class="mi">3</span><span class="o">*</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">network</span>
+    <span class="n">station_name</span>     <span class="o">=</span> <span class="n">data_enz</span><span class="p">[</span><span class="mi">3</span><span class="o">*</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">station</span>
+    <span class="n">station_lat</span>      <span class="o">=</span> <span class="n">data_enz</span><span class="p">[</span><span class="mi">3</span><span class="o">*</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">sac</span><span class="o">.</span><span class="n">stla</span>
+    <span class="n">station_lon</span>      <span class="o">=</span> <span class="n">data_enz</span><span class="p">[</span><span class="mi">3</span><span class="o">*</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">sac</span><span class="o">.</span><span class="n">stlo</span>
+    <span class="n">station_depth</span>    <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">station_distance</span> <span class="o">=</span> <span class="n">data_enz</span><span class="p">[</span><span class="mi">3</span><span class="o">*</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">sac</span><span class="o">.</span><span class="n">dist</span>
+    <span class="n">station_az</span>       <span class="o">=</span> <span class="n">data_enz</span><span class="p">[</span><span class="mi">3</span><span class="o">*</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">sac</span><span class="o">.</span><span class="n">az</span>
+    <span class="n">station_baz</span>      <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="mi">3</span><span class="o">*</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">sac</span><span class="o">.</span><span class="n">baz</span>
+    <span class="n">tp</span>               <span class="o">=</span> <span class="n">data_enz</span><span class="p">[</span><span class="mi">3</span><span class="o">*</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">sac</span><span class="o">.</span><span class="n">t1</span>
+    <span class="n">ts</span>               <span class="o">=</span> <span class="n">data_enz</span><span class="p">[</span><span class="mi">3</span><span class="o">*</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">sac</span><span class="o">.</span><span class="n">t2</span>
+    <span class="n">stream</span>           <span class="o">=</span> <span class="n">data_enz</span><span class="p">[</span><span class="mi">3</span><span class="o">*</span><span class="n">i</span><span class="p">:</span><span class="mi">3</span><span class="o">*</span><span class="n">i</span><span class="o">+</span><span class="mi">3</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    <span class="n">starttime</span>        <span class="o">=</span> <span class="n">data_enz</span><span class="p">[</span><span class="mi">3</span><span class="o">*</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">starttime</span>
+    <span class="n">time_before_first_arrival</span> <span class="o">=</span> <span class="n">p_n0</span><span class="o">/</span><span class="n">samp_freq</span>
+
+    <span class="n">inv</span><span class="o">=</span><span class="n">get_StationXML</span><span class="p">(</span><span class="n">station_network</span><span class="p">,</span> 
+                       <span class="n">station_name</span><span class="p">,</span>
+                       <span class="n">station_lat</span><span class="p">,</span> 
+                       <span class="n">station_lon</span><span class="p">,</span> 
+                       <span class="n">station_depth</span><span class="p">,</span> 
+                       <span class="s1">&#39;enz&#39;</span><span class="p">)</span>                                                   <span class="c1"># 生成台站元</span>
+
+    <span class="c1"># Add_waveforms_head_info([stream],</span>
+    <span class="c1">#                         station_network,</span>
+    <span class="c1">#                         station_name,</span>
+    <span class="c1">#                         &#39;enz&#39;,</span>
+    <span class="c1">#                         starttime)                                        # 修改头文件中 channel 的信息顺序，变成 E/N/Z 顺序 (该版本不需要)</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;now syn sac &quot;</span><span class="o">+</span><span class="n">station_network</span><span class="o">+</span><span class="s1">&#39;_&#39;</span><span class="o">+</span><span class="n">station_name</span><span class="o">+</span><span class="s1">&#39;:</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;lat:&#39;</span><span class="p">,</span><span class="n">station_lat</span><span class="p">,</span><span class="s1">&#39;   lon:&#39;</span><span class="p">,</span><span class="n">station_lon</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">stream</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n\n</span><span class="s1">&#39;</span><span class="p">)</span>
+
+    <span class="n">Add_waveforms</span><span class="p">([</span><span class="n">stream</span><span class="p">],</span> 
+                  <span class="n">catalog_create</span><span class="p">,</span>
+                  <span class="n">Output_file_path</span><span class="p">,</span>
+                  <span class="n">source_name</span><span class="p">,</span>
+                  <span class="n">tp</span><span class="p">,</span>
+                  <span class="n">ts</span><span class="p">,</span>
+                  <span class="n">station_distance</span><span class="p">,</span>
+                  <span class="n">station_az</span><span class="p">,</span>
+                  <span class="n">station_baz</span><span class="p">)</span>                                                  <span class="c1"># 添加波形</span>
+
+    <span class="n">Add_stationxml</span><span class="p">(</span><span class="n">inv</span><span class="p">,</span>
+                   <span class="n">Output_file_path</span><span class="p">)</span>                                            <span class="c1"># 添加台站元</span>
+
+    <span class="c1"># stream.plot()</span>
+
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">):</span>                                                      <span class="c1"># 输出 sac 文件</span>
+        <span class="n">CHN</span> <span class="o">=</span> <span class="n">stream</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">channel</span>
+        <span class="n">sac_filename</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">Output_path</span><span class="p">,</span><span class="n">source_name</span><span class="o">+</span><span class="s1">&#39;.&#39;</span><span class="o">+</span><span class="n">station_network</span><span class="o">+</span><span class="s1">&#39;.&#39;</span><span class="o">+</span><span class="n">station_name</span><span class="o">+</span><span class="s1">&#39;.&#39;</span><span class="o">+</span><span class="n">CHN</span><span class="o">+</span><span class="s1">&#39;.sac&#39;</span><span class="p">)</span>
+        <span class="n">stream</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">sac_filename</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s1">&#39;SAC&#39;</span><span class="p">)</span>
+
+</pre></div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./seismic_data_processing"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="sac.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">sac</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="seed2sac.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">seed2sac</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Fu Yin<br/>
+  
+      &copy; Copyright 2021–2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

@@ -1,0 +1,954 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>C++ &#8212; Seismology Notebook</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="canonical" href="https://seismology101.github.io/Notebook/programming_environment/Coding_Tools_file/C++.html" />
+    <link rel="shortcut icon" href="../../_static/logo.png"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Fortran" href="Fortran.html" />
+    <link rel="prev" title="Python" href="Python.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint">Welcome 👋</div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Seismology Notebook</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    Introduction ✨
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Programming Environment
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Overview.html">
+   Overview
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Overview_file/MacSoftware.html">
+     Mac Software
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Overview_file/SeisSoftware.html">
+     Seismology Software
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="../Coding_Tools.html">
+   Coding Tools
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="Xcode.html">
+     Xcode
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Homebrew.html">
+     Homebrew
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Iterm2-Zsh.html">
+     Iterm2 &amp; Zsh
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="SSH.html">
+     SSH &amp; SSHFS
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Git.html">
+     Git &amp; Github
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="VScode.html">
+     VSCode
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Latex.html">
+     Latex
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Python.html">
+     Python
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     C++
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Fortran.html">
+     Fortran
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Seismology_Tools.html">
+   Seismology Tools
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Seismology_Tools_file/SAC.html">
+     SAC
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Seismology_Tools_file/PyGMT.html">
+     PyGMT
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Shortcuts.html">
+   Shortcuts
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Programming Scripts
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../programming_manual_and_scripts/Bash_Manual.html">
+   Shell Manual
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../programming_manual_and_scripts/Python_Scripts.html">
+   Python Scripts
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../programming_manual_and_scripts/Python_Scripts_file/File-IO.html">
+     File IO
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../programming_manual_and_scripts/Python_Scripts_file/Subprocess.html">
+     Subprocess
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../programming_manual_and_scripts/Python_Scripts_file/Numpy.html">
+     Numpy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../programming_manual_and_scripts/Python_Scripts_file/Matplotlib.html">
+     Matplotlib
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../programming_manual_and_scripts/C%2B%2B_Scripts.html">
+   C++ Scripts
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../programming_manual_and_scripts/C%2B%2B_Scripts_file/File-IO.html">
+     File IO
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../programming_manual_and_scripts/C%2B%2B_Scripts_file/Matrix.html">
+     Matrix
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../programming_manual_and_scripts/PyGMT_Scripts.html">
+   PyGMT Scripts
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../programming_manual_and_scripts/PyGMT_Scripts_file/Map.html">
+     Map
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../programming_manual_and_scripts/PyGMT_Scripts_file/Velocity_Model.html">
+     Velocity Model
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../programming_manual_and_scripts/PyGMT_Scripts_file/Lune.html">
+     Lune plot
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Parallel Computing and Hybrid Programming
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../parallel%20computing_and_hybrid_programming/Python.html">
+   Python
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../parallel%20computing_and_hybrid_programming/Python_file/Mpi4py.html">
+     Mpi4py
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../parallel%20computing_and_hybrid_programming/Python_file/Cupy.html">
+     Cupy
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../parallel%20computing_and_hybrid_programming/C%2B%2B.html">
+   C++
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../parallel%20computing_and_hybrid_programming/C%2B%2B_file/OpenMPI.html">
+     OpenMPI
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../parallel%20computing_and_hybrid_programming/C%2B%2B_file/Cuda.html">
+     Cuda
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../parallel%20computing_and_hybrid_programming/Hybrid_Python_C%2B%2B.html">
+   Hybrid Python &amp; C++
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Seismic Data Processing
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../seismic_data_processing/sac.html">
+   sac
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../seismic_data_processing/obspy.html">
+   obspy
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../seismic_data_processing/seed2sac.html">
+   seed2sac
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../seismic_data_processing/sac2mseed.html">
+   sac2mseed
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../seismic_data_processing/cutevent.html">
+   cutevent
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Earthquake Source
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../earthquake_source/Source_Theory.html">
+   Source Theory
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../earthquake_source/Moment_Tensor_Decompose.html">
+   Moment Tensor Decompose
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Ambient Noise
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../ambient_noise/Cross_Correlation.html">
+   Cross Correlation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../ambient_noise/Noise_Source_Analysis.html">
+   Noise Source Analysis
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Surface Wave
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../surface_wave/Rayleigh_Wave.html">
+   Rayleigh Wave
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../surface_wave/Love_Wave.html">
+   Love Wave
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../surface_wave/Sensitivity_Kernal.html">
+   Sensitivity Kernal
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Coda Wave
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../coda_wave/Theory.html">
+   Theory
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../coda_wave/Sensitivity_Kernal.html">
+   Sensitivity Kernal
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../coda_wave/Velocity_Change.html">
+   Velocity Change
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Links
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../links/link.html">
+   Links
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../links/AboutBook.html">
+   About the Book
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://yinfu.info/">
+   About Me
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/Seismology101/Notebook"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/Seismology101/Notebook/issues/new?title=Issue%20on%20page%20%2Fprogramming_environment/Coding_Tools_file/C++.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../../_sources/programming_environment/Coding_Tools_file/C++.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduction">
+   Introduction
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#install">
+   Install
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#configuration">
+   Configuration
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vscode">
+     VSCode
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#makefile">
+   Makefile
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#package">
+   Package
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#resource">
+   Resource
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>C++</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduction">
+   Introduction
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#install">
+   Install
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#configuration">
+   Configuration
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vscode">
+     VSCode
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#makefile">
+   Makefile
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#package">
+   Package
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#resource">
+   Resource
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="c">
+<h1>C++<a class="headerlink" href="#c" title="Permalink to this headline">#</a></h1>
+<ul class="simple">
+<li><p>Author: <em><a class="reference external" href="https://yinfu.info/">Fu Yin</a></em></p></li>
+<li><p>Update: <em>July 29, 2022</em></p></li>
+<li><p>Reading: <em>30 min</em></p></li>
+</ul>
+<hr class="docutils" />
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="install">
+<h2>Install<a class="headerlink" href="#install" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="configuration">
+<h2>Configuration<a class="headerlink" href="#configuration" title="Permalink to this headline">#</a></h2>
+<section id="vscode">
+<h3>VSCode<a class="headerlink" href="#vscode" title="Permalink to this headline">#</a></h3>
+<p>Download the plugin, <code class="docutils literal notranslate"><span class="pre">C/C++</span></code>, in VSCode Extensions</p>
+<ul class="simple">
+<li><p>Manual refer to <a class="reference external" href="https://code.visualstudio.com/docs/python/python-tutorial"><code class="docutils literal notranslate"><span class="pre">Miscrosoft</span> <span class="pre">docs</span></code></a></p></li>
+</ul>
+</section>
+</section>
+<section id="makefile">
+<h2>Makefile<a class="headerlink" href="#makefile" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="package">
+<h2>Package<a class="headerlink" href="#package" title="Permalink to this headline">#</a></h2>
+<style>
+table th:first-of-type {
+    width: 30%;
+}
+table th:nth-of-type(2) {
+    width: 50%;
+}
+table th:nth-of-type(2) {
+    width: 20%;
+}
+</style>
+<p><strong>scientific computation-related package</strong>:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Purpose</p></th>
+<th class="text-align:center head"><p>Way</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>``</p></td>
+<td><p>…</p></td>
+<td class="text-align:center"><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>``</p></td>
+<td><p>…</p></td>
+<td class="text-align:center"><p></p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Seismology package</strong>:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Purpose</p></th>
+<th class="text-align:center head"><p>Way</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>``</p></td>
+<td><p></p></td>
+<td class="text-align:center"><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>``</p></td>
+<td><p></p></td>
+<td class="text-align:center"><p></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="resource">
+<h2>Resource<a class="headerlink" href="#resource" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://wangdoc.com/clang/">C 语言教程</a></p></li>
+<li><p><a class="reference external" href="https://www.runoob.com/cprogramming/c-tutorial.html">C 语言教程</a>（较全面、系统）</p></li>
+<li><p><a class="reference external" href="https://learnxinyminutes.com/docs/zh-cn/c-cn/">X 分钟速成 C</a>（简要）</p></li>
+<li><p><a class="reference external" href="https://fortran-lang.org/learn/building_programs">Building programs</a>（简要）</p></li>
+<li><p><a class="reference external" href="https://seisman.github.io/how-to-write-makefile/">跟我一起写 Makefile</a>（较全面、系统）</p></li>
+<li><p><a class="reference external" href="https://learnxinyminutes.com/docs/zh-cn/make-cn/">X 分钟速成 make</a>（简要）</p></li>
+</ul>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./programming_environment/Coding_Tools_file"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="Python.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Python</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="Fortran.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Fortran</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Fu Yin<br/>
+  
+      &copy; Copyright 2021–2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

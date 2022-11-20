@@ -1,0 +1,905 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>SAC &#8212; Seismology Notebook</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="canonical" href="https://seismology101.github.io/Notebook/programming_environment/Seismology_Tools_file/SAC.html" />
+    <link rel="shortcut icon" href="../../_static/logo.png"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="PyGMT" href="PyGMT.html" />
+    <link rel="prev" title="Seismology Tools" href="../Seismology_Tools.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint">Welcome 👋</div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Seismology Notebook</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    Introduction ✨
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Programming Environment
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Overview.html">
+   Overview
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Overview_file/MacSoftware.html">
+     Mac Software
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Overview_file/SeisSoftware.html">
+     Seismology Software
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Coding_Tools.html">
+   Coding Tools
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Coding_Tools_file/Xcode.html">
+     Xcode
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Coding_Tools_file/Homebrew.html">
+     Homebrew
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Coding_Tools_file/Iterm2-Zsh.html">
+     Iterm2 &amp; Zsh
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Coding_Tools_file/SSH.html">
+     SSH &amp; SSHFS
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Coding_Tools_file/Git.html">
+     Git &amp; Github
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Coding_Tools_file/VScode.html">
+     VSCode
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Coding_Tools_file/Latex.html">
+     Latex
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Coding_Tools_file/Python.html">
+     Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Coding_Tools_file/C%2B%2B.html">
+     C++
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Coding_Tools_file/Fortran.html">
+     Fortran
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="../Seismology_Tools.html">
+   Seismology Tools
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     SAC
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="PyGMT.html">
+     PyGMT
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Shortcuts.html">
+   Shortcuts
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Programming Scripts
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../programming_manual_and_scripts/Bash_Manual.html">
+   Shell Manual
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../programming_manual_and_scripts/Python_Scripts.html">
+   Python Scripts
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../programming_manual_and_scripts/Python_Scripts_file/File-IO.html">
+     File IO
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../programming_manual_and_scripts/Python_Scripts_file/Subprocess.html">
+     Subprocess
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../programming_manual_and_scripts/Python_Scripts_file/Numpy.html">
+     Numpy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../programming_manual_and_scripts/Python_Scripts_file/Matplotlib.html">
+     Matplotlib
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../programming_manual_and_scripts/C%2B%2B_Scripts.html">
+   C++ Scripts
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../programming_manual_and_scripts/C%2B%2B_Scripts_file/File-IO.html">
+     File IO
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../programming_manual_and_scripts/C%2B%2B_Scripts_file/Matrix.html">
+     Matrix
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../programming_manual_and_scripts/PyGMT_Scripts.html">
+   PyGMT Scripts
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../programming_manual_and_scripts/PyGMT_Scripts_file/Map.html">
+     Map
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../programming_manual_and_scripts/PyGMT_Scripts_file/Velocity_Model.html">
+     Velocity Model
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../programming_manual_and_scripts/PyGMT_Scripts_file/Lune.html">
+     Lune plot
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Parallel Computing and Hybrid Programming
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../parallel%20computing_and_hybrid_programming/Python.html">
+   Python
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../parallel%20computing_and_hybrid_programming/Python_file/Mpi4py.html">
+     Mpi4py
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../parallel%20computing_and_hybrid_programming/Python_file/Cupy.html">
+     Cupy
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../parallel%20computing_and_hybrid_programming/C%2B%2B.html">
+   C++
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../parallel%20computing_and_hybrid_programming/C%2B%2B_file/OpenMPI.html">
+     OpenMPI
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../parallel%20computing_and_hybrid_programming/C%2B%2B_file/Cuda.html">
+     Cuda
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../parallel%20computing_and_hybrid_programming/Hybrid_Python_C%2B%2B.html">
+   Hybrid Python &amp; C++
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Seismic Data Processing
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../seismic_data_processing/sac.html">
+   sac
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../seismic_data_processing/obspy.html">
+   obspy
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../seismic_data_processing/seed2sac.html">
+   seed2sac
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../seismic_data_processing/sac2mseed.html">
+   sac2mseed
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../seismic_data_processing/cutevent.html">
+   cutevent
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Earthquake Source
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../earthquake_source/Source_Theory.html">
+   Source Theory
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../earthquake_source/Moment_Tensor_Decompose.html">
+   Moment Tensor Decompose
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Ambient Noise
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../ambient_noise/Cross_Correlation.html">
+   Cross Correlation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../ambient_noise/Noise_Source_Analysis.html">
+   Noise Source Analysis
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Surface Wave
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../surface_wave/Rayleigh_Wave.html">
+   Rayleigh Wave
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../surface_wave/Love_Wave.html">
+   Love Wave
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../surface_wave/Sensitivity_Kernal.html">
+   Sensitivity Kernal
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Coda Wave
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../coda_wave/Theory.html">
+   Theory
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../coda_wave/Sensitivity_Kernal.html">
+   Sensitivity Kernal
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../coda_wave/Velocity_Change.html">
+   Velocity Change
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Links
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../links/link.html">
+   Links
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../links/AboutBook.html">
+   About the Book
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://yinfu.info/">
+   About Me
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/Seismology101/Notebook"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/Seismology101/Notebook/issues/new?title=Issue%20on%20page%20%2Fprogramming_environment/Seismology_Tools_file/SAC.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../../_sources/programming_environment/Seismology_Tools_file/SAC.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduction">
+   Introduction
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#install-source-code">
+   Install Source Code
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#configure-path">
+   Configure Path
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>SAC</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduction">
+   Introduction
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#install-source-code">
+   Install Source Code
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#configure-path">
+   Configure Path
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="sac">
+<h1>SAC<a class="headerlink" href="#sac" title="Permalink to this headline">#</a></h1>
+<ul class="simple">
+<li><p>Author: <em><a class="reference external" href="https://yinfu.info/">Fu Yin</a></em></p></li>
+<li><p>Update: <em>July 30, 2022</em></p></li>
+<li><p>Reading: <em>10 min</em></p></li>
+</ul>
+<hr class="docutils" />
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">SAC</span></code>, Seismic Analysis Code, is one of the most widely used data Analysis packages in the field of seismology.</p>
+</section>
+<section id="install-source-code">
+<h2>Install Source Code<a class="headerlink" href="#install-source-code" title="Permalink to this headline">#</a></h2>
+<p>The SAC protocol only allows IRIS to distribute the <code class="docutils literal notranslate"><span class="pre">source</span></code> and <code class="docutils literal notranslate"><span class="pre">binary</span></code> packages to seismological personnel. So if you want to get the SAC package from official channels, you have to apply on the <code class="docutils literal notranslate"><span class="pre">IRIS</span></code> website <a class="reference external" href="http://ds.iris.edu/ds/nodes/dmc/forms/sac/">http://ds.iris.edu/ds/nodes/dmc/forms/sac/</a></p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The SAC protocol specifies that users do not have the right to distribute SAC packages. Therefore, do not expose the SAC package on the network.</p>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">SAC</span></code> relys on <a class="reference external" href="https://www.xquartz.org/">XQuartz</a>, For MAC-OSX, if it is not already on your system, XQuartz needs to be downloaded from <a class="reference external" href="https://www.xquartz.org/">https://www.xquartz.org/</a> and installed. Refer to <a class="reference external" href="https://support.apple.com/zh-cn/HT201341">Apple’s support</a>, and we can download the <code class="docutils literal notranslate"><span class="pre">.dmg</span></code> file and install <code class="docutils literal notranslate"><span class="pre">XQuartz</span></code> directly.</p>
+<p><strong>Compile the source code</strong>:</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="adf2165b-acb4-454a-b939-31de13984aa3" name="874bfa72-52cc-4dea-9cad-6c39ae71dce0" type="radio">
+</input><label class="sd-tab-label" for="adf2165b-acb4-454a-b939-31de13984aa3">
+MacOS</label><div class="sd-tab-content docutils">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ tar -xvf sac-102.0.tar.gz
+$ <span class="nb">cd</span> sac-102.0
+$ mkdir build
+$ <span class="nb">cd</span> build
+$ ../configure --prefix<span class="o">=</span>/usr/local/sac
+$ make
+$ sudo make install
+</pre></div>
+</div>
+</div>
+<input id="91ac2f08-831c-478d-bd07-687fe6e48587" name="874bfa72-52cc-4dea-9cad-6c39ae71dce0" type="radio">
+</input><label class="sd-tab-label" for="91ac2f08-831c-478d-bd07-687fe6e48587">
+Linux(Ubuntu)</label><div class="sd-tab-content docutils">
+<p>Install dependency packages firstly:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ sudo apt update
+$ sudo apt install build-essential
+$ sudo apt install libncurses5-dev libsm-dev libice-dev
+$ sudo apt install libxpm-dev libx11-dev zlib1g-dev
+$ sudo apt install libedit-dev libxml2-dev libcurl4-openssl-dev
+</pre></div>
+</div>
+<p>Compile SAC:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ tar -xvf sac-102.0.tar.gz
+$ <span class="nb">cd</span> sac-102.0
+$ mkdir build
+$ <span class="nb">cd</span> build
+$ ../configure --prefix<span class="o">=</span>/usr/local/sac
+$ make
+$ sudo make install
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Some system software packages are required to compile the SAC, but Anaconda’s software package conflicts with the system software package. Therefore, the <code class="docutils literal notranslate"><span class="pre">Anaconda</span></code> user needs to temporarily block Anaconda’s environment variable settings.</p>
+</div>
+</section>
+<section id="configure-path">
+<h2>Configure Path<a class="headerlink" href="#configure-path" title="Permalink to this headline">#</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ vim ~/.zshrc
+<span class="c1"># add the following lines to ~/.zshrc file</span>
+<span class="nb">export</span> <span class="nv">SACHOME</span><span class="o">=</span>/usr/local/sac
+<span class="nb">export</span> <span class="nv">SACAUX</span><span class="o">=</span><span class="si">${</span><span class="nv">SACHOME</span><span class="si">}</span>/aux
+<span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="si">${</span><span class="nv">SACHOME</span><span class="si">}</span>/bin:<span class="si">${</span><span class="nv">PATH</span><span class="si">}</span>
+
+<span class="nb">export</span> <span class="nv">SAC_DISPLAY_COPYRIGHT</span><span class="o">=</span><span class="m">1</span>
+<span class="nb">export</span> <span class="nv">SAC_PPK_LARGE_CROSSHAIRS</span><span class="o">=</span><span class="m">1</span>
+<span class="nb">export</span> <span class="nv">SAC_USE_DATABASE</span><span class="o">=</span><span class="m">0</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">SACHOME</span></code>: the installation path</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SACAUX</span></code>: the directory of auxiliary files needed for SAC to run</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">PATH</span></code>: the system environment variable that enables the system to find the SAC executable correctly</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SAC_DISPLAY_COPYRIGHT</span></code>: control whether to display the version and copyright information when starting SAC, which is generally set to 1</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SAC_PPK_LARGE_CROSSHAIRS</span></code>:  control the cursor size during seismic phase picking</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SAC_USE_DATABASE</span></code>: control whether conversion of the SAC format to GSE2.0 format. This feature is not normally used and is therefore set to 0</p></li>
+</ul>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./programming_environment/Seismology_Tools_file"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="../Seismology_Tools.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Seismology Tools</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="PyGMT.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">PyGMT</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Fu Yin<br/>
+  
+      &copy; Copyright 2021–2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

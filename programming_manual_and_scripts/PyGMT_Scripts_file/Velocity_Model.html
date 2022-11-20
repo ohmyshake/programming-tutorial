@@ -1,0 +1,1078 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Velocity Model &#8212; Seismology Notebook</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="canonical" href="https://seismology101.github.io/Notebook/programming_manual_and_scripts/PyGMT_Scripts_file/Velocity_Model.html" />
+    <link rel="shortcut icon" href="../../_static/logo.png"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Lune plot" href="Lune.html" />
+    <link rel="prev" title="Map" href="Map.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint">Welcome 👋</div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Seismology Notebook</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    Introduction ✨
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Programming Environment
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../programming_environment/Overview.html">
+   Overview
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../programming_environment/Overview_file/MacSoftware.html">
+     Mac Software
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../programming_environment/Overview_file/SeisSoftware.html">
+     Seismology Software
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../programming_environment/Coding_Tools.html">
+   Coding Tools
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../programming_environment/Coding_Tools_file/Xcode.html">
+     Xcode
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../programming_environment/Coding_Tools_file/Homebrew.html">
+     Homebrew
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../programming_environment/Coding_Tools_file/Iterm2-Zsh.html">
+     Iterm2 &amp; Zsh
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../programming_environment/Coding_Tools_file/SSH.html">
+     SSH &amp; SSHFS
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../programming_environment/Coding_Tools_file/Git.html">
+     Git &amp; Github
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../programming_environment/Coding_Tools_file/VScode.html">
+     VSCode
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../programming_environment/Coding_Tools_file/Latex.html">
+     Latex
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../programming_environment/Coding_Tools_file/Python.html">
+     Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../programming_environment/Coding_Tools_file/C%2B%2B.html">
+     C++
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../programming_environment/Coding_Tools_file/Fortran.html">
+     Fortran
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../programming_environment/Seismology_Tools.html">
+   Seismology Tools
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../programming_environment/Seismology_Tools_file/SAC.html">
+     SAC
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../programming_environment/Seismology_Tools_file/PyGMT.html">
+     PyGMT
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../programming_environment/Shortcuts.html">
+   Shortcuts
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Programming Scripts
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Bash_Manual.html">
+   Shell Manual
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Python_Scripts.html">
+   Python Scripts
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Python_Scripts_file/File-IO.html">
+     File IO
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Python_Scripts_file/Subprocess.html">
+     Subprocess
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Python_Scripts_file/Numpy.html">
+     Numpy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Python_Scripts_file/Matplotlib.html">
+     Matplotlib
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../C%2B%2B_Scripts.html">
+   C++ Scripts
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../C%2B%2B_Scripts_file/File-IO.html">
+     File IO
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../C%2B%2B_Scripts_file/Matrix.html">
+     Matrix
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="../PyGMT_Scripts.html">
+   PyGMT Scripts
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="Map.html">
+     Map
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Velocity Model
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lune.html">
+     Lune plot
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Parallel Computing and Hybrid Programming
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../parallel%20computing_and_hybrid_programming/Python.html">
+   Python
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../parallel%20computing_and_hybrid_programming/Python_file/Mpi4py.html">
+     Mpi4py
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../parallel%20computing_and_hybrid_programming/Python_file/Cupy.html">
+     Cupy
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../parallel%20computing_and_hybrid_programming/C%2B%2B.html">
+   C++
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../parallel%20computing_and_hybrid_programming/C%2B%2B_file/OpenMPI.html">
+     OpenMPI
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../parallel%20computing_and_hybrid_programming/C%2B%2B_file/Cuda.html">
+     Cuda
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../parallel%20computing_and_hybrid_programming/Hybrid_Python_C%2B%2B.html">
+   Hybrid Python &amp; C++
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Seismic Data Processing
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../seismic_data_processing/sac.html">
+   sac
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../seismic_data_processing/obspy.html">
+   obspy
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../seismic_data_processing/seed2sac.html">
+   seed2sac
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../seismic_data_processing/sac2mseed.html">
+   sac2mseed
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../seismic_data_processing/cutevent.html">
+   cutevent
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Earthquake Source
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../earthquake_source/Source_Theory.html">
+   Source Theory
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../earthquake_source/Moment_Tensor_Decompose.html">
+   Moment Tensor Decompose
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Ambient Noise
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../ambient_noise/Cross_Correlation.html">
+   Cross Correlation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../ambient_noise/Noise_Source_Analysis.html">
+   Noise Source Analysis
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Surface Wave
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../surface_wave/Rayleigh_Wave.html">
+   Rayleigh Wave
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../surface_wave/Love_Wave.html">
+   Love Wave
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../surface_wave/Sensitivity_Kernal.html">
+   Sensitivity Kernal
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Coda Wave
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../coda_wave/Theory.html">
+   Theory
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../coda_wave/Sensitivity_Kernal.html">
+   Sensitivity Kernal
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../coda_wave/Velocity_Change.html">
+   Velocity Change
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Links
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../links/link.html">
+   Links
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../links/AboutBook.html">
+   About the Book
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://yinfu.info/">
+   About Me
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/Seismology101/Notebook/main?urlpath=tree/book/programming_manual_and_scripts/PyGMT_Scripts_file/Velocity_Model.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/Seismology101/Notebook"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/Seismology101/Notebook/issues/new?title=Issue%20on%20page%20%2Fprogramming_manual_and_scripts/PyGMT_Scripts_file/Velocity_Model.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../../_sources/programming_manual_and_scripts/PyGMT_Scripts_file/Velocity_Model.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download notebook file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-code"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="../../_sources/programming_manual_and_scripts/PyGMT_Scripts_file/Velocity_Model.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#longmen-mountain">
+   Longmen mountain
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Velocity Model</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#longmen-mountain">
+   Longmen mountain
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="velocity-model">
+<h1>Velocity Model<a class="headerlink" href="#velocity-model" title="Permalink to this headline">#</a></h1>
+<ul class="simple">
+<li><p>Author: <em><a class="reference external" href="https://yinfu.info/">Fu Yin</a></em></p></li>
+<li><p>Update: <em>August 5, 2022</em></p></li>
+<li><p>Reading: <em>30 min</em></p></li>
+</ul>
+<hr class="docutils" />
+<section id="longmen-mountain">
+<h2>Longmen mountain<a class="headerlink" href="#longmen-mountain" title="Permalink to this headline">#</a></h2>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python3</span>
+<span class="c1"># -*- coding: utf-8 -*-</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Created on Sat Jun 11 22:50:49 2022</span>
+
+<span class="sd">@author: yf</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">import</span> <span class="nn">pygmt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">Vs_path</span> <span class="o">=</span> <span class="s1">&#39;../files/longmen/Vs.xyz&#39;</span>
+<span class="n">Reloc_path</span> <span class="o">=</span> <span class="s1">&#39;../files/longmen/cd.reloc&#39;</span>
+
+<span class="n">dep</span><span class="o">=</span><span class="p">[</span><span class="mf">0.00</span><span class="p">,</span>  <span class="mf">0.200</span><span class="p">,</span>  <span class="mf">0.400</span><span class="p">,</span>  <span class="mf">0.600</span><span class="p">,</span>  <span class="mf">0.8</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">1.2</span><span class="p">,</span> <span class="mf">1.4</span><span class="p">,</span> <span class="mf">1.6</span><span class="p">,</span> <span class="mf">1.8</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span> <span class="p">]</span>
+<span class="n">start</span><span class="o">=</span><span class="p">[[</span><span class="mf">103.67</span><span class="p">,</span><span class="mf">31.36</span><span class="p">],</span> <span class="p">[</span><span class="mf">103.6</span><span class="p">,</span><span class="mf">31.26</span><span class="p">],</span> <span class="p">[</span><span class="mf">103.47</span><span class="p">,</span><span class="mf">31.25</span><span class="p">],</span> <span class="p">[</span><span class="mf">103.4</span><span class="p">,</span><span class="mf">31.18</span><span class="p">],</span> <span class="p">[</span><span class="mf">103.34</span><span class="p">,</span><span class="mf">31.1</span><span class="p">],</span> <span class="p">[</span><span class="mf">103.28</span><span class="p">,</span><span class="mf">30.95</span><span class="p">]]</span>
+<span class="n">end</span><span class="o">=</span><span class="p">[[</span><span class="mf">104.07</span><span class="p">,</span><span class="mf">30.96</span><span class="p">],</span> <span class="p">[</span><span class="mi">104</span><span class="p">,</span><span class="mf">30.86</span><span class="p">],</span> <span class="p">[</span><span class="mf">103.87</span><span class="p">,</span><span class="mf">30.85</span><span class="p">],</span> <span class="p">[</span><span class="mf">103.8</span><span class="p">,</span><span class="mf">30.78</span><span class="p">],</span> <span class="p">[</span><span class="mf">103.74</span><span class="p">,</span><span class="mf">30.7</span><span class="p">],</span> <span class="p">[</span><span class="mf">103.68</span><span class="p">,</span><span class="mf">30.55</span><span class="p">]]</span>
+
+<span class="n">region</span><span class="o">=</span><span class="p">[</span><span class="mf">103.2</span><span class="p">,</span> <span class="mf">104.1</span><span class="p">,</span> <span class="mf">30.5</span><span class="p">,</span> <span class="mf">31.4</span><span class="p">]</span>
+
+<span class="c1"># 1. read data</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">loadtxt</span><span class="p">(</span><span class="n">Vs_path</span><span class="p">)</span>
+
+<span class="n">dep_info</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)):</span>
+    <span class="k">if</span> <span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span> <span class="o">!=</span> <span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="mi">2</span><span class="p">]:</span>
+        <span class="n">dep_info</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+<span class="n">dep_info</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">))</span>
+
+<span class="n">reloc</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">loadtxt</span><span class="p">(</span><span class="n">Reloc_path</span><span class="p">)</span>
+<span class="n">reloc_all</span><span class="o">=</span><span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">start</span><span class="p">)):</span>
+    <span class="n">data1</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">vstack</span><span class="p">((</span><span class="n">reloc</span><span class="p">[:,</span><span class="mi">2</span><span class="p">],</span> <span class="n">reloc</span><span class="p">[:,</span><span class="mi">1</span><span class="p">],</span><span class="n">reloc</span><span class="p">[:,</span><span class="mi">3</span><span class="p">]))</span><span class="o">.</span><span class="n">T</span>
+    <span class="n">earthquakes</span> <span class="o">=</span> <span class="n">pygmt</span><span class="o">.</span><span class="n">project</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">data1</span><span class="p">,</span> <span class="n">center</span><span class="o">=</span><span class="n">start</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">endpoint</span><span class="o">=</span><span class="n">end</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">convention</span><span class="o">=</span><span class="s1">&#39;xyz&#39;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="s1">&#39;-0.05/0.05&#39;</span><span class="p">)</span>
+    <span class="n">reloc_all</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">earthquakes</span><span class="p">)</span>
+
+<span class="c1"># 2. track lines info</span>
+<span class="n">track_lines</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">start</span><span class="p">)):</span>  <span class="c1"># loop lines    </span>
+    <span class="n">track_all</span><span class="o">=</span><span class="p">[]</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">dep_info</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>  <span class="c1"># loop depth</span>
+        <span class="n">points</span> <span class="o">=</span> <span class="n">pygmt</span><span class="o">.</span><span class="n">project</span><span class="p">(</span><span class="n">center</span><span class="o">=</span><span class="n">start</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">endpoint</span><span class="o">=</span><span class="n">end</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">generate</span><span class="o">=</span><span class="s1">&#39;0.02&#39;</span><span class="p">)</span>
+        <span class="n">pygmt</span><span class="o">.</span><span class="n">surface</span><span class="p">(</span>
+            <span class="n">x</span><span class="o">=</span><span class="n">data</span><span class="p">[</span><span class="n">dep_info</span><span class="p">[</span><span class="n">j</span><span class="p">]:</span><span class="n">dep_info</span><span class="p">[</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">],</span><span class="mi">0</span><span class="p">],</span> 
+            <span class="n">y</span><span class="o">=</span><span class="n">data</span><span class="p">[</span><span class="n">dep_info</span><span class="p">[</span><span class="n">j</span><span class="p">]:</span><span class="n">dep_info</span><span class="p">[</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">],</span><span class="mi">1</span><span class="p">],</span> 
+            <span class="n">z</span><span class="o">=</span><span class="n">data</span><span class="p">[</span><span class="n">dep_info</span><span class="p">[</span><span class="n">j</span><span class="p">]:</span><span class="n">dep_info</span><span class="p">[</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">],</span><span class="mi">3</span><span class="p">],</span>
+            <span class="n">region</span><span class="o">=</span><span class="n">region</span><span class="p">,</span>
+            <span class="n">nodata</span><span class="o">=</span><span class="s2">&quot;o9999&quot;</span><span class="p">,</span>
+            <span class="n">spacing</span><span class="o">=</span><span class="s2">&quot;0.02&quot;</span><span class="p">,</span>
+            <span class="n">outgrid</span><span class="o">=</span><span class="s2">&quot;../files/longmen/sample.nc&quot;</span><span class="p">)</span>
+        <span class="n">track</span> <span class="o">=</span> <span class="n">pygmt</span><span class="o">.</span><span class="n">grdtrack</span><span class="p">(</span><span class="n">points</span><span class="o">=</span><span class="n">points</span><span class="p">,</span> <span class="n">grid</span><span class="o">=</span><span class="s2">&quot;../files/longmen/sample.nc&quot;</span><span class="p">,</span> <span class="n">newcolname</span><span class="o">=</span><span class="s2">&quot;vs&quot;</span><span class="p">)</span>
+        <span class="n">track_all</span><span class="o">.</span><span class="n">append</span><span class="p">(</span> <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">track</span><span class="o">.</span><span class="n">r</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">track</span><span class="o">.</span><span class="n">s</span><span class="p">),</span> <span class="n">dep</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">track</span><span class="o">.</span><span class="n">r</span><span class="p">))),</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">track</span><span class="o">.</span><span class="n">vs</span><span class="p">)]</span>  <span class="p">)</span>
+    <span class="c1"># print(&quot;i=&quot;,i,&quot;\n&quot;)</span>
+    <span class="n">track_lines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">track_all</span><span class="p">)</span>
+
+<span class="c1"># 4. colorbar</span>
+<span class="n">pygmt</span><span class="o">.</span><span class="n">makecpt</span><span class="p">(</span><span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;jet&quot;</span><span class="p">,</span><span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">background</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">series</span><span class="o">=</span><span class="p">[</span><span class="mf">2.2</span><span class="p">,</span> <span class="mf">3.7</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">],</span><span class="n">output</span><span class="o">=</span><span class="s2">&quot;../files/longmen/temp_cpt.cpt&quot;</span><span class="p">)</span>
+
+<span class="c1"># 3. plot fig</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">pygmt</span><span class="o">.</span><span class="n">Figure</span><span class="p">()</span>
+<span class="k">with</span> <span class="n">fig</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span>
+    <span class="n">nrows</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
+    <span class="n">ncols</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+    <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="s2">&quot;25c&quot;</span><span class="p">,</span> <span class="s2">&quot;11c&quot;</span><span class="p">),</span>
+    <span class="n">autolabel</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">frame</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;af&quot;</span><span class="p">,</span> <span class="s2">&quot;WSne&quot;</span><span class="p">],</span>
+    <span class="n">margins</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;0.1c&quot;</span><span class="p">,</span> <span class="s2">&quot;0.2c&quot;</span><span class="p">],</span>
+    <span class="c1"># title=&quot;My Subplot Heading&quot;,</span>
+<span class="p">):</span>
+    
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">start</span><span class="p">)):</span>  <span class="c1"># loop lines </span>
+        <span class="c1"># a. 剖面的信息</span>
+        <span class="n">Lon</span><span class="o">=</span><span class="p">[]</span>
+        <span class="n">Lat</span><span class="o">=</span><span class="p">[]</span>
+        <span class="n">Dep</span><span class="o">=</span><span class="p">[]</span>
+        <span class="n">Vs</span><span class="o">=</span><span class="p">[]</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">dep_info</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+            <span class="n">lon</span><span class="o">=</span><span class="n">track_lines</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+            <span class="n">lat</span><span class="o">=</span><span class="n">track_lines</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+            <span class="n">dep</span><span class="o">=</span><span class="n">track_lines</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+            <span class="n">vs</span><span class="o">=</span><span class="n">track_lines</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">][</span><span class="mi">3</span><span class="p">]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+            <span class="n">Lon</span><span class="o">=</span><span class="n">Lon</span><span class="o">+</span><span class="n">lon</span>
+            <span class="n">Lat</span><span class="o">=</span><span class="n">Lat</span><span class="o">+</span><span class="n">lat</span>
+            <span class="n">Dep</span><span class="o">=</span><span class="n">Dep</span><span class="o">+</span><span class="n">dep</span>
+            <span class="n">Vs</span><span class="o">=</span><span class="n">Vs</span><span class="o">+</span><span class="n">vs</span>
+        <span class="c1"># Lon.reverse()</span>
+        <span class="c1"># Lat.reverse()</span>
+        <span class="c1"># Dep.reverse()</span>
+        <span class="c1"># Vs.reverse()</span>
+        <span class="c1"># b. 剖面插值</span>
+        <span class="n">pygmt</span><span class="o">.</span><span class="n">surface</span><span class="p">(</span>
+            <span class="n">x</span><span class="o">=</span><span class="n">Lon</span><span class="p">,</span> 
+            <span class="n">y</span><span class="o">=</span><span class="n">Dep</span><span class="p">,</span> 
+            <span class="n">z</span><span class="o">=</span><span class="n">Vs</span><span class="p">,</span>
+            <span class="n">region</span><span class="o">=</span><span class="p">[</span><span class="n">start</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="n">end</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">9</span><span class="p">],</span>
+            <span class="n">nodata</span><span class="o">=</span><span class="s2">&quot;o9999&quot;</span><span class="p">,</span>
+            <span class="n">spacing</span><span class="o">=</span><span class="s2">&quot;0.002/0.1&quot;</span><span class="p">,</span>
+            <span class="n">outgrid</span><span class="o">=</span><span class="s2">&quot;../files/longmen/sample1.nc&quot;</span>
+            <span class="p">)</span>
+        <span class="c1"># c.剖面画图</span>
+        <span class="k">with</span> <span class="n">pygmt</span><span class="o">.</span><span class="n">config</span><span class="p">(</span>
+            <span class="n">PS_PAGE_ORIENTATION</span><span class="o">=</span><span class="s1">&#39;landscape&#39;</span><span class="p">,</span> 
+            <span class="n">PROJ_LENGTH_UNIT</span><span class="o">=</span><span class="s1">&#39;inch&#39;</span><span class="p">,</span> 
+            <span class="n">MAP_FRAME_TYPE</span><span class="o">=</span><span class="s1">&#39;plain&#39;</span><span class="p">,</span> 
+            <span class="n">MAP_TICK_LENGTH</span><span class="o">=</span><span class="s1">&#39;0.0c&#39;</span><span class="p">,</span> 
+            <span class="n">MAP_FRAME_PEN</span><span class="o">=</span><span class="s1">&#39;2p&#39;</span><span class="p">,</span> 
+            <span class="n">FONT_ANNOT_PRIMARY</span><span class="o">=</span><span class="s1">&#39;10p,Helvetica,black&#39;</span><span class="p">,</span> 
+            <span class="n">FONT_HEADING</span><span class="o">=</span><span class="s1">&#39;15p,Helvetica,black&#39;</span><span class="p">,</span> 
+            <span class="n">FONT_LABEL</span><span class="o">=</span><span class="s1">&#39;8p,Helvetica,black&#39;</span><span class="p">):</span>
+
+            <span class="n">xx</span><span class="o">=</span><span class="n">i</span><span class="o">//</span><span class="mi">2</span>
+            <span class="n">yy</span><span class="o">=</span><span class="n">i</span><span class="o">%</span><span class="k">2</span>
+            <span class="n">fig</span><span class="o">.</span><span class="n">basemap</span><span class="p">(</span>
+                <span class="n">zsize</span><span class="o">=</span><span class="s1">&#39;-4i&#39;</span><span class="p">,</span>
+                <span class="n">region</span><span class="o">=</span><span class="p">[</span><span class="n">start</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="n">end</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">9</span><span class="p">],</span> 
+                <span class="n">projection</span><span class="o">=</span><span class="s1">&#39;X10c/-3c&#39;</span><span class="p">,</span>
+                <span class="n">frame</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;xafg+l&quot;Longtitude&quot;&#39;</span><span class="p">,</span><span class="s1">&#39;yafg+l&quot;Depth (km)&quot;&#39;</span><span class="p">],</span>
+                <span class="n">panel</span><span class="o">=</span><span class="p">[</span><span class="n">xx</span><span class="p">,</span> <span class="n">yy</span><span class="p">])</span>
+
+            <span class="n">fig</span><span class="o">.</span><span class="n">grdimage</span><span class="p">(</span>
+                <span class="c1"># img_in=&#39;D&#39;,</span>
+                <span class="n">projection</span><span class="o">=</span><span class="s1">&#39;X10c/-3c&#39;</span><span class="p">,</span> 
+                <span class="n">region</span><span class="o">=</span><span class="p">[</span><span class="n">start</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="n">end</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">9</span><span class="p">],</span> 
+                <span class="n">grid</span><span class="o">=</span><span class="s2">&quot;../files/longmen/sample1.nc&quot;</span><span class="p">,</span>
+                <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;../files/longmen/temp_cpt.cpt&quot;</span><span class="p">,</span>
+                <span class="p">)</span>
+            
+            <span class="n">fig</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">reloc_all</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="n">y</span><span class="o">=</span><span class="n">reloc_all</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">2</span><span class="p">],</span> <span class="n">no_clip</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span><span class="n">style</span><span class="o">=</span><span class="s1">&#39;c0.1c&#39;</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">,</span><span class="n">pen</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span><span class="n">panel</span><span class="o">=</span><span class="p">[</span><span class="n">xx</span><span class="p">,</span> <span class="n">yy</span><span class="p">])</span>
+
+<span class="n">fig</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;../files/longmen/temp_cpt.cpt&quot;</span><span class="p">,</span><span class="n">position</span><span class="o">=</span><span class="s2">&quot;JMB+o4c/1c+w8c&quot;</span><span class="p">,</span> <span class="n">frame</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;xa0.5f0.25&quot;</span><span class="p">,</span> <span class="s1">&#39;y+l&quot;Vs (km/s)&quot;&#39;</span><span class="p">])</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="c1"># fig.savefig(&#39;yf.pdf&#39;)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">GMTCLibNotFoundError</span><span class="g g-Whitespace">                      </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">9</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1">#!/usr/bin/env python3</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="c1"># -*- coding: utf-8 -*-</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="sd">&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span><span class="sd"> Created on Sat Jun 11 22:50:49 2022</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span><span class="sd"> </span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span><span class="sd"> @author: yf</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span><span class="sd"> &quot;&quot;&quot;</span>
+<span class="ne">----&gt; </span><span class="mi">9</span> <span class="kn">import</span> <span class="nn">pygmt</span>
+<span class="g g-Whitespace">     </span><span class="mi">10</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="g g-Whitespace">     </span><span class="mi">12</span> <span class="n">Vs_path</span> <span class="o">=</span> <span class="s1">&#39;../files/longmen/Vs.xyz&#39;</span>
+
+<span class="n">File</span> <span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">hostedtoolcache</span><span class="o">/</span><span class="n">Python</span><span class="o">/</span><span class="mf">3.9.15</span><span class="o">/</span><span class="n">x64</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.9</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">pygmt</span><span class="o">/</span><span class="fm">__init__</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">74</span>
+<span class="g g-Whitespace">     </span><span class="mi">71</span> <span class="n">__commit__</span> <span class="o">=</span> <span class="n">__version__</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;+g&quot;</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="k">if</span> <span class="s2">&quot;+g&quot;</span> <span class="ow">in</span> <span class="n">__version__</span> <span class="k">else</span> <span class="s2">&quot;&quot;</span>  <span class="c1"># 0ab3cd78</span>
+<span class="g g-Whitespace">     </span><span class="mi">73</span> <span class="c1"># Start our global modern mode session</span>
+<span class="ne">---&gt; </span><span class="mi">74</span> <span class="n">_begin</span><span class="p">()</span>
+<span class="g g-Whitespace">     </span><span class="mi">75</span> <span class="c1"># Tell Python to run _end when shutting down</span>
+<span class="g g-Whitespace">     </span><span class="mi">76</span> <span class="n">_atexit</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="n">_end</span><span class="p">)</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.9.15/x64/lib/python3.9/site-packages/pygmt/session_management.py:16,</span> in <span class="ni">begin</span><span class="nt">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="sd">&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">      </span><span class="mi">9</span><span class="sd"> Initiate a new GMT modern mode session.</span>
+<span class="g g-Whitespace">     </span><span class="mi">10</span><span class="sd"> </span>
+<span class="sd">   (...)</span>
+<span class="g g-Whitespace">     </span><span class="mi">13</span><span class="sd"> Only meant to be used once for creating the global session.</span>
+<span class="g g-Whitespace">     </span><span class="mi">14</span><span class="sd"> &quot;&quot;&quot;</span>
+<span class="g g-Whitespace">     </span><span class="mi">15</span> <span class="n">prefix</span> <span class="o">=</span> <span class="s2">&quot;pygmt-session&quot;</span>
+<span class="ne">---&gt; </span><span class="mi">16</span> <span class="k">with</span> <span class="n">Session</span><span class="p">()</span> <span class="k">as</span> <span class="n">lib</span><span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">17</span>     <span class="n">lib</span><span class="o">.</span><span class="n">call_module</span><span class="p">(</span><span class="n">module</span><span class="o">=</span><span class="s2">&quot;begin&quot;</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="n">prefix</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">18</span>     <span class="c1"># pygmt relies on GMT modern mode with GMT_COMPATIBILITY at version 6</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.9.15/x64/lib/python3.9/site-packages/pygmt/clib/session.py:187,</span> in <span class="ni">Session.__enter__</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">174</span> <span class="k">def</span> <span class="fm">__enter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">175</span>     <span class="sd">&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">176</span><span class="sd">     Create a GMT API session and check the libgmt version.</span>
+<span class="g g-Whitespace">    </span><span class="mi">177</span><span class="sd"> </span>
+<span class="sd">   (...)</span>
+<span class="g g-Whitespace">    </span><span class="mi">185</span><span class="sd">         raising the exception.</span>
+<span class="g g-Whitespace">    </span><span class="mi">186</span><span class="sd">     &quot;&quot;&quot;</span>
+<span class="ne">--&gt; </span><span class="mi">187</span>     <span class="bp">self</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="s2">&quot;pygmt-session&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">188</span>     <span class="c1"># Need to store the version info because &#39;get_default&#39; won&#39;t work after</span>
+<span class="g g-Whitespace">    </span><span class="mi">189</span>     <span class="c1"># the session is destroyed.</span>
+<span class="g g-Whitespace">    </span><span class="mi">190</span>     <span class="n">version</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">info</span><span class="p">[</span><span class="s2">&quot;version&quot;</span><span class="p">]</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.9.15/x64/lib/python3.9/site-packages/pygmt/clib/session.py:334,</span> in <span class="ni">Session.create</span><span class="nt">(self, name)</span>
+<span class="g g-Whitespace">    </span><span class="mi">331</span> <span class="k">except</span> <span class="n">GMTCLibNoSessionError</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">332</span>     <span class="k">pass</span>
+<span class="ne">--&gt; </span><span class="mi">334</span> <span class="n">c_create_session</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_libgmt_func</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">335</span>     <span class="s2">&quot;GMT_Create_Session&quot;</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">336</span>     <span class="n">argtypes</span><span class="o">=</span><span class="p">[</span><span class="n">ctp</span><span class="o">.</span><span class="n">c_char_p</span><span class="p">,</span> <span class="n">ctp</span><span class="o">.</span><span class="n">c_uint</span><span class="p">,</span> <span class="n">ctp</span><span class="o">.</span><span class="n">c_uint</span><span class="p">,</span> <span class="n">ctp</span><span class="o">.</span><span class="n">c_void_p</span><span class="p">],</span>
+<span class="g g-Whitespace">    </span><span class="mi">337</span>     <span class="n">restype</span><span class="o">=</span><span class="n">ctp</span><span class="o">.</span><span class="n">c_void_p</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">338</span> <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">340</span> <span class="c1"># Capture the output printed by GMT into this list. Will use it later</span>
+<span class="g g-Whitespace">    </span><span class="mi">341</span> <span class="c1"># to generate error messages for the exceptions raised by API calls.</span>
+<span class="g g-Whitespace">    </span><span class="mi">342</span> <span class="bp">self</span><span class="o">.</span><span class="n">_error_log</span> <span class="o">=</span> <span class="p">[]</span>  <span class="c1"># pylint: disable=attribute-defined-outside-init</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.9.15/x64/lib/python3.9/site-packages/pygmt/clib/session.py:286,</span> in <span class="ni">Session.get_libgmt_func</span><span class="nt">(self, name, argtypes, restype)</span>
+<span class="g g-Whitespace">    </span><span class="mi">249</span> <span class="sd">&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">250</span><span class="sd"> Get a ctypes function from the libgmt shared library.</span>
+<span class="g g-Whitespace">    </span><span class="mi">251</span><span class="sd"> </span>
+<span class="sd">   (...)</span>
+<span class="g g-Whitespace">    </span><span class="mi">282</span><span class="sd"> &lt;class &#39;ctypes.CDLL.__init__.&lt;locals&gt;._FuncPtr&#39;&gt;</span>
+<span class="g g-Whitespace">    </span><span class="mi">283</span><span class="sd"> &quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">284</span> <span class="k">if</span> <span class="ow">not</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s2">&quot;_libgmt&quot;</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">285</span>     <span class="c1"># pylint: disable=attribute-defined-outside-init</span>
+<span class="ne">--&gt; </span><span class="mi">286</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_libgmt</span> <span class="o">=</span> <span class="n">load_libgmt</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">287</span> <span class="n">function</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_libgmt</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">288</span> <span class="k">if</span> <span class="n">argtypes</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.9.15/x64/lib/python3.9/site-packages/pygmt/clib/loading.py:59,</span> in <span class="ni">load_libgmt</span><span class="nt">(lib_fullnames)</span>
+<span class="g g-Whitespace">     </span><span class="mi">56</span>         <span class="n">failing_libs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">libname</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">58</span> <span class="k">if</span> <span class="n">error</span><span class="p">:</span>
+<span class="ne">---&gt; </span><span class="mi">59</span>     <span class="k">raise</span> <span class="n">GMTCLibNotFoundError</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">error_msg</span><span class="p">))</span>
+<span class="g g-Whitespace">     </span><span class="mi">61</span> <span class="k">return</span> <span class="n">libgmt</span>
+
+<span class="ne">GMTCLibNotFoundError</span>: Error loading GMT shared library at &#39;libgmt.so&#39;.
+<span class="n">libgmt</span><span class="o">.</span><span class="n">so</span><span class="p">:</span> <span class="n">cannot</span> <span class="nb">open</span> <span class="n">shared</span> <span class="nb">object</span> <span class="n">file</span><span class="p">:</span> <span class="n">No</span> <span class="n">such</span> <span class="n">file</span> <span class="ow">or</span> <span class="n">directory</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./programming_manual_and_scripts/PyGMT_Scripts_file"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="Map.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Map</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="Lune.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Lune plot</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Fu Yin<br/>
+  
+      &copy; Copyright 2021–2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>
