@@ -1,0 +1,1139 @@
+Inv_para:
+	GFs_json_file: /datapool/yinf/3.Project/MCMTpy_yunnan/Green_Funcs/build_GFs.json
+	GFs_file: /datapool/yinf/3.Project/MCMTpy_yunnan/Green_Funcs/GFs/GFs_splits
+	Raw_data_file: /datapool/yinf/3.Project/MCMTpy_yunnan/YN.202105212148_Inv_paper1/YN.202105212148_MCMTpy_hpick/YN.202105212148.h5
+	Source_tag: source_enz
+	Raw_p_n0: 100
+	Dt: 0.2
+	Output_path: /datapool/yinf/3.Project/MCMTpy_yunnan/YN.202105212148_Inv_paper1/rand_dc_inv/Output_rand_dc/Output_rand_19
+	Trapezoid_stf_mode: True
+	dura: 6
+	rise: 0.5
+	delta: 0.2
+	Stf_file: ./Stf_file/stf_file.sac
+	MPI_n: 1
+	Chains_n: 1
+	N: 20000
+	Geometrical_spreading_mode: True
+	Distance_0: 1
+	Amplitude_normalization_mode: False
+	Use_file_mode: True
+	Raw_data_inv_info: True
+	Raw_data_inv_info_writed: True
+	NET_STA: [['YN', 'EYA', 26.108801, 99.947502, 0], ['YN', 'YUL', 25.885401, 99.371696, 0], ['XG', 'CFT', 25.8486, 100.5173, 0], ['YN', 'BAS', 25.118, 99.146599, 0], ['YN', 'HEQ', 26.549, 100.1515, 0], ['YN', 'LUS', 25.831699, 98.851799, 0], ['YN', 'LIJ', 26.895599, 100.2322, 0], ['YN', 'YOS', 26.694099, 100.7683, 0], ['YN', 'DAY', 25.726801, 101.3164, 0], ['YN', 'TNC', 25.0289, 98.519798, 0], ['YN', 'HUP', 26.587099, 101.1993, 0], ['YN', 'CUX', 25.029301, 101.5356, 0], ['YN', 'MAS', 24.4245, 98.592499, 0], ['YN', 'YOD', 24.0357, 99.245399, 0], ['YN', 'YUM', 25.6894, 101.8607, 0], ['YN', 'LIC', 23.879499, 100.1688, 0], ['YN', 'ZOD', 27.8232, 99.698402, 0], ['YN', 'YIM', 24.700199, 102.144, 0], ['YN', 'WAD', 24.0851, 98.0709, 0], ['YN', 'JIG', 23.5019, 100.7351, 0], ['YN', 'LUQ', 25.5485, 102.463, 0], ['YN', 'CAY', 23.1364, 99.258499, 0], ['YN', 'KMI', 25.1483, 102.7475, 0], ['YN', 'HLT', 25.1483, 102.7475, 0], ['YN', 'YUJ', 23.565901, 101.978, 0], ['YN', 'DOC', 26.092199, 103.1866, 0], ['YN', 'QIJ', 26.9095, 102.9434, 0], ['YN', 'TOH', 24.112801, 102.7881, 0], ['YN', 'LAC', 22.552401, 99.920601, 0], ['YN', 'JIS', 23.6504, 102.7598, 0], ['YN', 'MEL', 22.3365, 99.579597, 0], ['YN', 'MAL', 25.427299, 103.5752, 0], ['YN', 'MIL', 24.4058, 103.3885, 0], ['YN', 'JIH', 22.0194, 100.7382, 0], ['YN', 'GEJ', 23.3535, 103.1596, 0], ['YN', 'ZAT', 27.4517, 103.655, 0], ['YN', 'XUW', 26.0881, 104.1357, 0], ['YN', 'LOP', 24.885599, 104.2911, 0], ['YN', 'JIP', 22.782499, 103.2234, 0], ['YN', 'YAJ', 28.1117, 104.2315, 0], ['YN', 'WES', 23.372, 104.253, 0], ['YN', 'MLP', 23.128401, 104.7024, 0], ['YN', 'FUN', 23.624901, 105.6202, 0]]
+	P_inv_comp: ['yes', 'yes', 'no']
+	S_inv_comp: ['no', 'no', 'no']
+	Surf_inv_comp: ['yes', 'yes', 'yes']
+	P_win: [-1, 15.2]
+	S_win: [-5, 25.2]
+	Surf_win: [-5, 50.2]
+	Phase_weight: [1, 1, 1]
+	Distance_weight: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+	P_maxlag: 5
+	S_maxlag: 15
+	Surf_maxlag: 5
+	P_filter: [0.01, 0.2]
+	S_filter: [0.01, 0.1]
+	Surf_filter: [0.005, 0.1]
+	InvType: dc
+	FM0: [5.49, 66.73, 27.82, -36.01, 25.7, 99.73, 3.59, -0.86]
+	Fixed_FM: ['variable', 'variable', 'variable', 'variable', 'variable', 'variable', 'variable', 'variable']
+	FM_boundary: [[5, 8], [0, 360], [0, 90], [-180, 180], [25.4, 25.9], [99.7, 100.2], [1, 30], [-5, 5]]
+	Noise_level_waveform: 0.45
+	Noise_level_phasetime: 0.3
+	N_k: 2000
+	N_mag: 10
+	sigma_mw: 0.02
+	sigma_mt: 1
+	sigma_dc: 2
+	sigma_sf: 1
+	sigma_lat_lon: 0.02
+	sigma_depth: 0.5
+	sigma_t: 0.1
+	Station_num: 43
+
+
+Sta_inv_info:
+	YN.EYA: 
+		Lat_lon_depth: [26.108801, 99.947502, 0.0]
+		P_inv_comp: ['yes', 'yes', 'no']
+		S_inv_comp: ['no', 'no', 'no']
+		Surf_inv_comp: ['yes', 'yes', 'yes']
+		P_win: [-6.0, 3.4]
+		S_win: [-5.0, 25.2]
+		Surf_win: [-8.0, 50.2]
+		Phase_weight: [1.0, 1.0, 1.0]
+		Distance_weight: [1.0]
+		P_maxlag: [5.0]
+		S_maxlag: [15.0]
+		Surf_maxlag: [10.0]
+		P_filter: [0.01, 0.2]
+		S_filter: [0.01, 0.1]
+		Surf_filter: [0.005, 0.1]
+  
+	YN.YUL: 
+		Lat_lon_depth: [25.885401, 99.371696, 0.0]
+		P_inv_comp: ['yes', 'yes', 'no']
+		S_inv_comp: ['no', 'no', 'no']
+		Surf_inv_comp: ['yes', 'yes', 'yes']
+		P_win: [-6.0, 6.2]
+		S_win: [-5.0, 25.2]
+		Surf_win: [-8.0, 50.2]
+		Phase_weight: [1.0, 1.0, 1.0]
+		Distance_weight: [1.0]
+		P_maxlag: [5.0]
+		S_maxlag: [15.0]
+		Surf_maxlag: [10.0]
+		P_filter: [0.01, 0.2]
+		S_filter: [0.01, 0.1]
+		Surf_filter: [0.005, 0.1]
+  
+	XG.CFT: 
+		Lat_lon_depth: [25.8486, 100.5173, 0.0]
+		P_inv_comp: ['yes', 'yes', 'no']
+		S_inv_comp: ['no', 'no', 'no']
+		Surf_inv_comp: ['yes', 'yes', 'yes']
+		P_win: [-6.0, 8.2]
+		S_win: [-5.0, 25.2]
+		Surf_win: [-12.0, 50.2]
+		Phase_weight: [1.0, 1.0, 1.0]
+		Distance_weight: [1.0]
+		P_maxlag: [5.0]
+		S_maxlag: [15.0]
+		Surf_maxlag: [10.0]
+		P_filter: [0.01, 0.2]
+		S_filter: [0.01, 0.1]
+		Surf_filter: [0.005, 0.1]
+  
+	YN.BAS: 
+		Lat_lon_depth: [25.118, 99.146599, 0.0]
+		P_inv_comp: ['yes', 'yes', 'no']
+		S_inv_comp: ['no', 'no', 'no']
+		Surf_inv_comp: ['yes', 'yes', 'yes']
+		P_win: [-10.0, 10.2]
+		S_win: [-5.0, 25.2]
+		Surf_win: [-8.0, 50.2]
+		Phase_weight: [1.0, 1.0, 1.0]
+		Distance_weight: [1.0]
+		P_maxlag: [5.0]
+		S_maxlag: [15.0]
+		Surf_maxlag: [10.0]
+		P_filter: [0.01, 0.2]
+		S_filter: [0.01, 0.1]
+		Surf_filter: [0.005, 0.1]
+  
+	YN.HEQ: 
+		Lat_lon_depth: [26.549, 100.1515, 0.0]
+		P_inv_comp: ['yes', 'yes', 'no']
+		S_inv_comp: ['no', 'no', 'no']
+		Surf_inv_comp: ['yes', 'yes', 'yes']
+		P_win: [-10.0, 10.2]
+		S_win: [-5.0, 25.2]
+		Surf_win: [-8.0, 50.2]
+		Phase_weight: [1.0, 1.0, 1.0]
+		Distance_weight: [1.0]
+		P_maxlag: [5.0]
+		S_maxlag: [15.0]
+		Surf_maxlag: [10.0]
+		P_filter: [0.01, 0.2]
+		S_filter: [0.01, 0.1]
+		Surf_filter: [0.005, 0.1]
+  
+	YN.LUS: 
+		Lat_lon_depth: [25.831699, 98.851799, 0.0]
+		P_inv_comp: ['yes', 'yes', 'no']
+		S_inv_comp: ['no', 'no', 'no']
+		Surf_inv_comp: ['yes', 'yes', 'yes']
+		P_win: [-10.0, 12.2]
+		S_win: [-5.0, 25.2]
+		Surf_win: [-10.0, 50.2]
+		Phase_weight: [1.0, 1.0, 1.0]
+		Distance_weight: [1.0]
+		P_maxlag: [5.0]
+		S_maxlag: [15.0]
+		Surf_maxlag: [10.0]
+		P_filter: [0.01, 0.2]
+		S_filter: [0.01, 0.1]
+		Surf_filter: [0.005, 0.1]
+  
+	YN.LIJ: 
+		Lat_lon_depth: [26.895599, 100.2322, 0.0]
+		P_inv_comp: ['yes', 'yes', 'no']
+		S_inv_comp: ['no', 'no', 'no']
+		Surf_inv_comp: ['yes', 'yes', 'yes']
+		P_win: [-10.0, 10.2]
+		S_win: [-5.0, 25.2]
+		Surf_win: [-12.0, 50.2]
+		Phase_weight: [1.0, 1.0, 1.0]
+		Distance_weight: [1.0]
+		P_maxlag: [5.0]
+		S_maxlag: [15.0]
+		Surf_maxlag: [10.0]
+		P_filter: [0.01, 0.2]
+		S_filter: [0.01, 0.1]
+		Surf_filter: [0.005, 0.1]
+  
+	YN.YOS: 
+		Lat_lon_depth: [26.694099, 100.7683, 0.0]
+		P_inv_comp: ['yes', 'yes', 'no']
+		S_inv_comp: ['no', 'no', 'no']
+		Surf_inv_comp: ['yes', 'yes', 'yes']
+		P_win: [-10.0, 10.2]
+		S_win: [-5.0, 25.2]
+		Surf_win: [-12.0, 50.2]
+		Phase_weight: [1.0, 1.0, 1.0]
+		Distance_weight: [1.0]
+		P_maxlag: [5.0]
+		S_maxlag: [15.0]
+		Surf_maxlag: [10.0]
+		P_filter: [0.01, 0.2]
+		S_filter: [0.01, 0.1]
+		Surf_filter: [0.005, 0.1]
+  
+	YN.DAY: 
+		Lat_lon_depth: [25.726801, 101.3164, 0.0]
+		P_inv_comp: ['yes', 'yes', 'no']
+		S_inv_comp: ['no', 'no', 'no']
+		Surf_inv_comp: ['yes', 'yes', 'yes']
+		P_win: [-10.0, 17.2]
+		S_win: [-5.0, 25.2]
+		Surf_win: [-10.0, 50.2]
+		Phase_weight: [1.0, 1.0, 1.0]
+		Distance_weight: [1.0]
+		P_maxlag: [5.0]
+		S_maxlag: [15.0]
+		Surf_maxlag: [10.0]
+		P_filter: [0.01, 0.2]
+		S_filter: [0.01, 0.1]
+		Surf_filter: [0.005, 0.1]
+  
+	YN.TNC: 
+		Lat_lon_depth: [25.0289, 98.519798, 0.0]
+		P_inv_comp: ['yes', 'yes', 'no']
+		S_inv_comp: ['no', 'no', 'no']
+		Surf_inv_comp: ['yes', 'yes', 'yes']
+		P_win: [-10.0, 18.2]
+		S_win: [-5.0, 25.2]
+		Surf_win: [-12.0, 50.2]
+		Phase_weight: [1.0, 1.0, 1.0]
+		Distance_weight: [1.0]
+		P_maxlag: [5.0]
+		S_maxlag: [15.0]
+		Surf_maxlag: [10.0]
+		P_filter: [0.01, 0.2]
+		S_filter: [0.01, 0.1]
+		Surf_filter: [0.005, 0.1]
+  
+	YN.HUP: 
+		Lat_lon_depth: [26.587099, 101.1993, 0.0]
+		P_inv_comp: ['yes', 'yes', 'no']
+		S_inv_comp: ['no', 'no', 'no']
+		Surf_inv_comp: ['yes', 'yes', 'yes']
+		P_win: [-10.0, 15.2]
+		S_win: [-5.0, 25.2]
+		Surf_win: [-12.0, 50.2]
+		Phase_weight: [1.0, 1.0, 1.0]
+		Distance_weight: [1.0]
+		P_maxlag: [5.0]
+		S_maxlag: [15.0]
+		Surf_maxlag: [10.0]
+		P_filter: [0.01, 0.2]
+		S_filter: [0.01, 0.1]
+		Surf_filter: [0.005, 0.1]
+  
+	YN.CUX: 
+		Lat_lon_depth: [25.029301, 101.5356, 0.0]
+		P_inv_comp: ['yes', 'yes', 'no']
+		S_inv_comp: ['no', 'no', 'no']
+		Surf_inv_comp: ['yes', 'yes', 'yes']
+		P_win: [-10.0, 15.2]
+		S_win: [-5.0, 25.2]
+		Surf_win: [-10.0, 50.2]
+		Phase_weight: [1.0, 1.0, 1.0]
+		Distance_weight: [1.0]
+		P_maxlag: [5.0]
+		S_maxlag: [15.0]
+		Surf_maxlag: [10.0]
+		P_filter: [0.01, 0.2]
+		S_filter: [0.01, 0.1]
+		Surf_filter: [0.005, 0.1]
+  
+	YN.MAS: 
+		Lat_lon_depth: [24.4245, 98.592499, 0.0]
+		P_inv_comp: ['yes', 'yes', 'no']
+		S_inv_comp: ['no', 'no', 'no']
+		Surf_inv_comp: ['yes', 'yes', 'yes']
+		P_win: [-10.0, 13.2]
+		S_win: [-5.0, 25.2]
+		Surf_win: [-12.0, 50.2]
+		Phase_weight: [1.0, 1.0, 1.0]
+		Distance_weight: [1.0]
+		P_maxlag: [5.0]
+		S_maxlag: [15.0]
+		Surf_maxlag: [10.0]
+		P_filter: [0.01, 0.2]
+		S_filter: [0.01, 0.1]
+		Surf_filter: [0.005, 0.1]
+  
+	YN.YOD: 
+		Lat_lon_depth: [24.0357, 99.245399, 0.0]
+		P_inv_comp: ['yes', 'yes', 'no']
+		S_inv_comp: ['no', 'no', 'no']
+		Surf_inv_comp: ['yes', 'yes', 'yes']
+		P_win: [-10.0, 15.2]
+		S_win: [-5.0, 25.2]
+		Surf_win: [-10.0, 50.2]
+		Phase_weight: [1.0, 1.0, 1.0]
+		Distance_weight: [1.0]
+		P_maxlag: [5.0]
+		S_maxlag: [15.0]
+		Surf_maxlag: [10.0]
+		P_filter: [0.01, 0.2]
+		S_filter: [0.01, 0.1]
+		Surf_filter: [0.005, 0.1]
+  
+	YN.YUM: 
+		Lat_lon_depth: [25.6894, 101.8607, 0.0]
+		P_inv_comp: ['yes', 'yes', 'no']
+		S_inv_comp: ['no', 'no', 'no']
+		Surf_inv_comp: ['yes', 'yes', 'yes']
+		P_win: [-10.0, 20.2]
+		S_win: [-5.0, 25.2]
+		Surf_win: [-12.0, 50.2]
+		Phase_weight: [1.0, 1.0, 1.0]
+		Distance_weight: [1.0]
+		P_maxlag: [5.0]
+		S_maxlag: [15.0]
+		Surf_maxlag: [10.0]
+		P_filter: [0.01, 0.2]
+		S_filter: [0.01, 0.1]
+		Surf_filter: [0.005, 0.1]
+  
+	YN.LIC: 
+		Lat_lon_depth: [23.879499, 100.1688, 0.0]
+		P_inv_comp: ['yes', 'yes', 'no']
+		S_inv_comp: ['no', 'no', 'no']
+		Surf_inv_comp: ['yes', 'yes', 'yes']
+		P_win: [-10.0, 20.2]
+		S_win: [-5.0, 25.2]
+		Surf_win: [-10.0, 50.2]
+		Phase_weight: [1.0, 1.0, 1.0]
+		Distance_weight: [1.0]
+		P_maxlag: [5.0]
+		S_maxlag: [15.0]
+		Surf_maxlag: [10.0]
+		P_filter: [0.01, 0.2]
+		S_filter: [0.01, 0.1]
+		Surf_filter: [0.005, 0.1]
+  
+	YN.ZOD: 
+		Lat_lon_depth: [27.8232, 99.698402, 0.0]
+		P_inv_comp: ['yes', 'yes', 'no']
+		S_inv_comp: ['no', 'no', 'no']
+		Surf_inv_comp: ['yes', 'yes', 'yes']
+		P_win: [-10.0, 17.2]
+		S_win: [-5.0, 25.2]
+		Surf_win: [-12.0, 50.2]
+		Phase_weight: [1.0, 1.0, 1.0]
+		Distance_weight: [1.0]
+		P_maxlag: [5.0]
+		S_maxlag: [15.0]
+		Surf_maxlag: [10.0]
+		P_filter: [0.01, 0.1]
+		S_filter: [0.01, 0.1]
+		Surf_filter: [0.005, 0.1]
+  
+	YN.YIM: 
+		Lat_lon_depth: [24.700199, 102.144, 0.0]
+		P_inv_comp: ['yes', 'yes', 'no']
+		S_inv_comp: ['no', 'no', 'no']
+		Surf_inv_comp: ['yes', 'yes', 'yes']
+		P_win: [-10.0, 17.2]
+		S_win: [-5.0, 25.2]
+		Surf_win: [-12.0, 50.2]
+		Phase_weight: [1.0, 1.0, 1.0]
+		Distance_weight: [1.0]
+		P_maxlag: [5.0]
+		S_maxlag: [15.0]
+		Surf_maxlag: [10.0]
+		P_filter: [0.01, 0.1]
+		S_filter: [0.01, 0.1]
+		Surf_filter: [0.005, 0.1]
+  
+	YN.WAD: 
+		Lat_lon_depth: [24.0851, 98.0709, 0.0]
+		P_inv_comp: ['yes', 'yes', 'no']
+		S_inv_comp: ['no', 'no', 'no']
+		Surf_inv_comp: ['yes', 'yes', 'yes']
+		P_win: [-10.0, 26.2]
+		S_win: [-5.0, 25.2]
+		Surf_win: [-12.0, 50.2]
+		Phase_weight: [1.0, 1.0, 1.0]
+		Distance_weight: [1.0]
+		P_maxlag: [5.0]
+		S_maxlag: [15.0]
+		Surf_maxlag: [10.0]
+		P_filter: [0.01, 0.1]
+		S_filter: [0.01, 0.1]
+		Surf_filter: [0.005, 0.1]
+  
+	YN.JIG: 
+		Lat_lon_depth: [23.5019, 100.7351, 0.0]
+		P_inv_comp: ['yes', 'yes', 'no']
+		S_inv_comp: ['no', 'no', 'no']
+		Surf_inv_comp: ['yes', 'yes', 'yes']
+		P_win: [-10.0, 26.2]
+		S_win: [-5.0, 25.2]
+		Surf_win: [-12.0, 50.2]
+		Phase_weight: [1.0, 1.0, 1.0]
+		Distance_weight: [1.0]
+		P_maxlag: [5.0]
+		S_maxlag: [15.0]
+		Surf_maxlag: [10.0]
+		P_filter: [0.01, 0.1]
+		S_filter: [0.01, 0.1]
+		Surf_filter: [0.005, 0.1]
+  
+	YN.LUQ: 
+		Lat_lon_depth: [25.5485, 102.463, 0.0]
+		P_inv_comp: ['yes', 'yes', 'no']
+		S_inv_comp: ['no', 'no', 'no']
+		Surf_inv_comp: ['yes', 'yes', 'yes']
+		P_win: [-10.0, 27.2]
+		S_win: [-5.0, 25.2]
+		Surf_win: [-12.0, 50.2]
+		Phase_weight: [1.0, 1.0, 1.0]
+		Distance_weight: [1.0]
+		P_maxlag: [5.0]
+		S_maxlag: [15.0]
+		Surf_maxlag: [10.0]
+		P_filter: [0.01, 0.1]
+		S_filter: [0.01, 0.1]
+		Surf_filter: [0.005, 0.1]
+  
+	YN.CAY: 
+		Lat_lon_depth: [23.1364, 99.258499, 0.0]
+		P_inv_comp: ['yes', 'yes', 'no']
+		S_inv_comp: ['no', 'no', 'no']
+		Surf_inv_comp: ['yes', 'yes', 'yes']
+		P_win: [-10.0, 30.2]
+		S_win: [-5.0, 25.2]
+		Surf_win: [-12.0, 50.2]
+		Phase_weight: [1.0, 1.0, 1.0]
+		Distance_weight: [1.0]
+		P_maxlag: [5.0]
+		S_maxlag: [15.0]
+		Surf_maxlag: [10.0]
+		P_filter: [0.01, 0.1]
+		S_filter: [0.01, 0.1]
+		Surf_filter: [0.005, 0.1]
+  
+	YN.KMI: 
+		Lat_lon_depth: [25.1483, 102.7475, 0.0]
+		P_inv_comp: ['yes', 'yes', 'no']
+		S_inv_comp: ['no', 'no', 'no']
+		Surf_inv_comp: ['yes', 'yes', 'yes']
+		P_win: [-10.0, 30.2]
+		S_win: [-5.0, 25.2]
+		Surf_win: [-12.0, 50.2]
+		Phase_weight: [1.0, 1.0, 1.0]
+		Distance_weight: [1.0]
+		P_maxlag: [5.0]
+		S_maxlag: [15.0]
+		Surf_maxlag: [10.0]
+		P_filter: [0.01, 0.1]
+		S_filter: [0.01, 0.1]
+		Surf_filter: [0.005, 0.1]
+  
+	YN.HLT: 
+		Lat_lon_depth: [25.1483, 102.7475, 0.0]
+		P_inv_comp: ['yes', 'yes', 'no']
+		S_inv_comp: ['no', 'no', 'no']
+		Surf_inv_comp: ['yes', 'yes', 'yes']
+		P_win: [-10.0, 30.2]
+		S_win: [-5.0, 25.2]
+		Surf_win: [-12.0, 50.2]
+		Phase_weight: [1.0, 1.0, 1.0]
+		Distance_weight: [1.0]
+		P_maxlag: [5.0]
+		S_maxlag: [15.0]
+		Surf_maxlag: [10.0]
+		P_filter: [0.01, 0.1]
+		S_filter: [0.01, 0.1]
+		Surf_filter: [0.005, 0.1]
+  
+	YN.YUJ: 
+		Lat_lon_depth: [23.565901, 101.978, 0.0]
+		P_inv_comp: ['yes', 'yes', 'no']
+		S_inv_comp: ['no', 'no', 'no']
+		Surf_inv_comp: ['yes', 'yes', 'yes']
+		P_win: [-10.0, 30.2]
+		S_win: [-5.0, 25.2]
+		Surf_win: [-12.0, 50.2]
+		Phase_weight: [1.0, 1.0, 1.0]
+		Distance_weight: [1.0]
+		P_maxlag: [5.0]
+		S_maxlag: [15.0]
+		Surf_maxlag: [10.0]
+		P_filter: [0.01, 0.1]
+		S_filter: [0.01, 0.1]
+		Surf_filter: [0.005, 0.1]
+  
+	YN.DOC: 
+		Lat_lon_depth: [26.092199, 103.1866, 0.0]
+		P_inv_comp: ['yes', 'yes', 'no']
+		S_inv_comp: ['no', 'no', 'no']
+		Surf_inv_comp: ['yes', 'yes', 'yes']
+		P_win: [-10.0, 30.2]
+		S_win: [-5.0, 25.2]
+		Surf_win: [-12.0, 50.2]
+		Phase_weight: [1.0, 1.0, 1.0]
+		Distance_weight: [1.0]
+		P_maxlag: [5.0]
+		S_maxlag: [15.0]
+		Surf_maxlag: [10.0]
+		P_filter: [0.01, 0.1]
+		S_filter: [0.01, 0.1]
+		Surf_filter: [0.005, 0.1]
+  
+	YN.QIJ: 
+		Lat_lon_depth: [26.9095, 102.9434, 0.0]
+		P_inv_comp: ['yes', 'yes', 'no']
+		S_inv_comp: ['no', 'no', 'no']
+		Surf_inv_comp: ['yes', 'yes', 'yes']
+		P_win: [-10.0, 30.2]
+		S_win: [-5.0, 25.2]
+		Surf_win: [-12.0, 50.2]
+		Phase_weight: [1.0, 1.0, 1.0]
+		Distance_weight: [1.0]
+		P_maxlag: [5.0]
+		S_maxlag: [15.0]
+		Surf_maxlag: [10.0]
+		P_filter: [0.01, 0.1]
+		S_filter: [0.01, 0.1]
+		Surf_filter: [0.005, 0.1]
+  
+	YN.TOH: 
+		Lat_lon_depth: [24.112801, 102.7881, 0.0]
+		P_inv_comp: ['yes', 'yes', 'no']
+		S_inv_comp: ['no', 'no', 'no']
+		Surf_inv_comp: ['yes', 'yes', 'yes']
+		P_win: [-10.0, 30.2]
+		S_win: [-5.0, 25.2]
+		Surf_win: [-12.0, 50.2]
+		Phase_weight: [1.0, 1.0, 1.0]
+		Distance_weight: [1.0]
+		P_maxlag: [5.0]
+		S_maxlag: [15.0]
+		Surf_maxlag: [10.0]
+		P_filter: [0.01, 0.1]
+		S_filter: [0.01, 0.1]
+		Surf_filter: [0.005, 0.1]
+  
+	YN.LAC: 
+		Lat_lon_depth: [22.552401, 99.920601, 0.0]
+		P_inv_comp: ['yes', 'yes', 'no']
+		S_inv_comp: ['no', 'no', 'no']
+		Surf_inv_comp: ['yes', 'yes', 'yes']
+		P_win: [-10.0, 30.2]
+		S_win: [-5.0, 25.2]
+		Surf_win: [-12.0, 50.2]
+		Phase_weight: [1.0, 1.0, 1.0]
+		Distance_weight: [1.0]
+		P_maxlag: [5.0]
+		S_maxlag: [15.0]
+		Surf_maxlag: [10.0]
+		P_filter: [0.01, 0.1]
+		S_filter: [0.01, 0.1]
+		Surf_filter: [0.005, 0.1]
+  
+	YN.JIS: 
+		Lat_lon_depth: [23.6504, 102.7598, 0.0]
+		P_inv_comp: ['yes', 'yes', 'no']
+		S_inv_comp: ['no', 'no', 'no']
+		Surf_inv_comp: ['yes', 'yes', 'yes']
+		P_win: [-10.0, 35.2]
+		S_win: [-5.0, 25.2]
+		Surf_win: [-12.0, 50.2]
+		Phase_weight: [1.0, 1.0, 1.0]
+		Distance_weight: [1.0]
+		P_maxlag: [5.0]
+		S_maxlag: [15.0]
+		Surf_maxlag: [10.0]
+		P_filter: [0.01, 0.1]
+		S_filter: [0.01, 0.1]
+		Surf_filter: [0.005, 0.1]
+  
+	YN.MEL: 
+		Lat_lon_depth: [22.3365, 99.579597, 0.0]
+		P_inv_comp: ['yes', 'yes', 'no']
+		S_inv_comp: ['no', 'no', 'no']
+		Surf_inv_comp: ['yes', 'yes', 'yes']
+		P_win: [-10.0, 35.2]
+		S_win: [-5.0, 25.2]
+		Surf_win: [-12.0, 50.2]
+		Phase_weight: [1.0, 1.0, 1.0]
+		Distance_weight: [1.0]
+		P_maxlag: [5.0]
+		S_maxlag: [15.0]
+		Surf_maxlag: [10.0]
+		P_filter: [0.01, 0.1]
+		S_filter: [0.01, 0.1]
+		Surf_filter: [0.005, 0.1]
+  
+	YN.MAL: 
+		Lat_lon_depth: [25.427299, 103.5752, 0.0]
+		P_inv_comp: ['yes', 'yes', 'no']
+		S_inv_comp: ['no', 'no', 'no']
+		Surf_inv_comp: ['yes', 'yes', 'yes']
+		P_win: [-10.0, 35.2]
+		S_win: [-5.0, 25.2]
+		Surf_win: [-12.0, 50.2]
+		Phase_weight: [1.0, 1.0, 1.0]
+		Distance_weight: [1.0]
+		P_maxlag: [5.0]
+		S_maxlag: [15.0]
+		Surf_maxlag: [10.0]
+		P_filter: [0.01, 0.1]
+		S_filter: [0.01, 0.1]
+		Surf_filter: [0.005, 0.1]
+  
+	YN.MIL: 
+		Lat_lon_depth: [24.4058, 103.3885, 0.0]
+		P_inv_comp: ['yes', 'yes', 'no']
+		S_inv_comp: ['no', 'no', 'no']
+		Surf_inv_comp: ['yes', 'yes', 'yes']
+		P_win: [-10.0, 35.2]
+		S_win: [-5.0, 25.2]
+		Surf_win: [-12.0, 50.2]
+		Phase_weight: [1.0, 1.0, 1.0]
+		Distance_weight: [1.0]
+		P_maxlag: [5.0]
+		S_maxlag: [15.0]
+		Surf_maxlag: [10.0]
+		P_filter: [0.01, 0.1]
+		S_filter: [0.01, 0.1]
+		Surf_filter: [0.005, 0.1]
+  
+	YN.JIH: 
+		Lat_lon_depth: [22.0194, 100.7382, 0.0]
+		P_inv_comp: ['yes', 'yes', 'no']
+		S_inv_comp: ['no', 'no', 'no']
+		Surf_inv_comp: ['yes', 'yes', 'yes']
+		P_win: [-10.0, 40.2]
+		S_win: [-5.0, 25.2]
+		Surf_win: [-12.0, 50.2]
+		Phase_weight: [1.0, 1.0, 1.0]
+		Distance_weight: [1.0]
+		P_maxlag: [5.0]
+		S_maxlag: [15.0]
+		Surf_maxlag: [10.0]
+		P_filter: [0.01, 0.1]
+		S_filter: [0.01, 0.1]
+		Surf_filter: [0.005, 0.1]
+  
+	YN.GEJ: 
+		Lat_lon_depth: [23.3535, 103.1596, 0.0]
+		P_inv_comp: ['yes', 'yes', 'no']
+		S_inv_comp: ['no', 'no', 'no']
+		Surf_inv_comp: ['yes', 'yes', 'yes']
+		P_win: [-10.0, 40.2]
+		S_win: [-5.0, 25.2]
+		Surf_win: [-12.0, 50.2]
+		Phase_weight: [1.0, 1.0, 1.0]
+		Distance_weight: [1.0]
+		P_maxlag: [5.0]
+		S_maxlag: [15.0]
+		Surf_maxlag: [10.0]
+		P_filter: [0.01, 0.1]
+		S_filter: [0.01, 0.1]
+		Surf_filter: [0.005, 0.1]
+  
+	YN.ZAT: 
+		Lat_lon_depth: [27.4517, 103.655, 0.0]
+		P_inv_comp: ['yes', 'yes', 'no']
+		S_inv_comp: ['no', 'no', 'no']
+		Surf_inv_comp: ['yes', 'yes', 'yes']
+		P_win: [-10.0, 40.2]
+		S_win: [-5.0, 25.2]
+		Surf_win: [-12.0, 70.2]
+		Phase_weight: [1.0, 1.0, 1.0]
+		Distance_weight: [1.0]
+		P_maxlag: [5.0]
+		S_maxlag: [15.0]
+		Surf_maxlag: [10.0]
+		P_filter: [0.01, 0.1]
+		S_filter: [0.01, 0.1]
+		Surf_filter: [0.005, 0.1]
+  
+	YN.XUW: 
+		Lat_lon_depth: [26.0881, 104.1357, 0.0]
+		P_inv_comp: ['yes', 'yes', 'no']
+		S_inv_comp: ['no', 'no', 'no']
+		Surf_inv_comp: ['yes', 'yes', 'yes']
+		P_win: [-10.0, 40.2]
+		S_win: [-5.0, 25.2]
+		Surf_win: [-12.0, 70.2]
+		Phase_weight: [1.0, 1.0, 1.0]
+		Distance_weight: [1.0]
+		P_maxlag: [5.0]
+		S_maxlag: [15.0]
+		Surf_maxlag: [10.0]
+		P_filter: [0.01, 0.1]
+		S_filter: [0.01, 0.1]
+		Surf_filter: [0.005, 0.1]
+  
+	YN.LOP: 
+		Lat_lon_depth: [24.885599, 104.2911, 0.0]
+		P_inv_comp: ['yes', 'yes', 'no']
+		S_inv_comp: ['no', 'no', 'no']
+		Surf_inv_comp: ['yes', 'yes', 'yes']
+		P_win: [-10.0, 40.2]
+		S_win: [-5.0, 25.2]
+		Surf_win: [-12.0, 70.2]
+		Phase_weight: [1.0, 1.0, 1.0]
+		Distance_weight: [1.0]
+		P_maxlag: [5.0]
+		S_maxlag: [15.0]
+		Surf_maxlag: [10.0]
+		P_filter: [0.01, 0.1]
+		S_filter: [0.01, 0.1]
+		Surf_filter: [0.005, 0.1]
+  
+	YN.JIP: 
+		Lat_lon_depth: [22.782499, 103.2234, 0.0]
+		P_inv_comp: ['yes', 'yes', 'no']
+		S_inv_comp: ['no', 'no', 'no']
+		Surf_inv_comp: ['yes', 'yes', 'yes']
+		P_win: [-10.0, 40.2]
+		S_win: [-5.0, 25.2]
+		Surf_win: [-12.0, 70.2]
+		Phase_weight: [1.0, 1.0, 1.0]
+		Distance_weight: [1.0]
+		P_maxlag: [5.0]
+		S_maxlag: [15.0]
+		Surf_maxlag: [10.0]
+		P_filter: [0.01, 0.1]
+		S_filter: [0.01, 0.1]
+		Surf_filter: [0.005, 0.1]
+  
+	YN.YAJ: 
+		Lat_lon_depth: [28.1117, 104.2315, 0.0]
+		P_inv_comp: ['yes', 'yes', 'no']
+		S_inv_comp: ['no', 'no', 'no']
+		Surf_inv_comp: ['yes', 'yes', 'yes']
+		P_win: [-10.0, 45.2]
+		S_win: [-5.0, 25.2]
+		Surf_win: [-12.0, 70.2]
+		Phase_weight: [1.0, 1.0, 1.0]
+		Distance_weight: [1.0]
+		P_maxlag: [5.0]
+		S_maxlag: [15.0]
+		Surf_maxlag: [10.0]
+		P_filter: [0.01, 0.1]
+		S_filter: [0.01, 0.1]
+		Surf_filter: [0.005, 0.1]
+  
+	YN.WES: 
+		Lat_lon_depth: [23.372, 104.253, 0.0]
+		P_inv_comp: ['yes', 'yes', 'no']
+		S_inv_comp: ['no', 'no', 'no']
+		Surf_inv_comp: ['yes', 'yes', 'yes']
+		P_win: [-10.0, 45.2]
+		S_win: [-5.0, 25.2]
+		Surf_win: [-12.0, 70.2]
+		Phase_weight: [1.0, 1.0, 1.0]
+		Distance_weight: [1.0]
+		P_maxlag: [5.0]
+		S_maxlag: [15.0]
+		Surf_maxlag: [10.0]
+		P_filter: [0.01, 0.1]
+		S_filter: [0.01, 0.1]
+		Surf_filter: [0.005, 0.1]
+  
+	YN.MLP: 
+		Lat_lon_depth: [23.128401, 104.7024, 0.0]
+		P_inv_comp: ['yes', 'yes', 'no']
+		S_inv_comp: ['no', 'no', 'no']
+		Surf_inv_comp: ['yes', 'yes', 'yes']
+		P_win: [-10.0, 45.2]
+		S_win: [-5.0, 25.2]
+		Surf_win: [-12.0, 70.2]
+		Phase_weight: [1.0, 1.0, 1.0]
+		Distance_weight: [1.0]
+		P_maxlag: [5.0]
+		S_maxlag: [15.0]
+		Surf_maxlag: [10.0]
+		P_filter: [0.01, 0.1]
+		S_filter: [0.01, 0.1]
+		Surf_filter: [0.005, 0.1]
+  
+	YN.FUN: 
+		Lat_lon_depth: [23.624901, 105.6202, 0.0]
+		P_inv_comp: ['yes', 'yes', 'no']
+		S_inv_comp: ['no', 'no', 'no']
+		Surf_inv_comp: ['yes', 'yes', 'yes']
+		P_win: [-10.0, 45.2]
+		S_win: [-5.0, 25.2]
+		Surf_win: [-12.0, 70.2]
+		Phase_weight: [1.0, 1.0, 1.0]
+		Distance_weight: [1.0]
+		P_maxlag: [5.0]
+		S_maxlag: [15.0]
+		Surf_maxlag: [10.0]
+		P_filter: [0.01, 0.1]
+		S_filter: [0.01, 0.1]
+		Surf_filter: [0.005, 0.1]
+  
+
+
+Sta_data:
+	XG.CFT: 
+		tp: 11.7393
+		ts: 19.715
+		data: 3 Trace(s) in Stream:
+XG.CFT.00.BHE | 2021-05-21T13:48:26.800000Z - 2021-05-21T13:55:16.400000Z | 5.0 Hz, 2049 samples
+XG.CFT.00.BHN | 2021-05-21T13:48:26.800000Z - 2021-05-21T13:55:16.400000Z | 5.0 Hz, 2049 samples
+XG.CFT.00.BHZ | 2021-05-21T13:48:26.800000Z - 2021-05-21T13:55:16.400000Z | 5.0 Hz, 2049 samples
+  
+	YN.BAS: 
+		tp: 16.741
+		ts: 28.2624
+		data: 3 Trace(s) in Stream:
+YN.BAS.00.BHE | 2021-05-21T13:48:31.800000Z - 2021-05-21T13:55:21.400000Z | 5.0 Hz, 2049 samples
+YN.BAS.00.BHN | 2021-05-21T13:48:31.800000Z - 2021-05-21T13:55:21.400000Z | 5.0 Hz, 2049 samples
+YN.BAS.00.BHZ | 2021-05-21T13:48:31.800000Z - 2021-05-21T13:55:21.400000Z | 5.0 Hz, 2049 samples
+  
+	YN.CAY: 
+		tp: 44.0865
+		ts: 82.6686
+		data: 3 Trace(s) in Stream:
+YN.CAY.00.BHE | 2021-05-21T13:48:59.000000Z - 2021-05-21T13:55:48.600000Z | 5.0 Hz, 2049 samples
+YN.CAY.00.BHN | 2021-05-21T13:48:59.000000Z - 2021-05-21T13:55:48.600000Z | 5.0 Hz, 2049 samples
+YN.CAY.00.BHZ | 2021-05-21T13:48:59.000000Z - 2021-05-21T13:55:48.600000Z | 5.0 Hz, 2049 samples
+  
+	YN.CUX: 
+		tp: 29.8514
+		ts: 53.3598
+		data: 3 Trace(s) in Stream:
+YN.CUX.00.BHE | 2021-05-21T13:48:44.800000Z - 2021-05-21T13:55:34.400000Z | 5.0 Hz, 2049 samples
+YN.CUX.00.BHN | 2021-05-21T13:48:44.800000Z - 2021-05-21T13:55:34.400000Z | 5.0 Hz, 2049 samples
+YN.CUX.00.BHZ | 2021-05-21T13:48:44.800000Z - 2021-05-21T13:55:34.400000Z | 5.0 Hz, 2049 samples
+  
+	YN.DAY: 
+		tp: 24.5921
+		ts: 46.2758
+		data: 3 Trace(s) in Stream:
+YN.DAY.00.BHE | 2021-05-21T13:48:39.600000Z - 2021-05-21T13:55:29.200000Z | 5.0 Hz, 2049 samples
+YN.DAY.00.BHN | 2021-05-21T13:48:39.600000Z - 2021-05-21T13:55:29.200000Z | 5.0 Hz, 2049 samples
+YN.DAY.00.BHZ | 2021-05-21T13:48:39.600000Z - 2021-05-21T13:55:29.200000Z | 5.0 Hz, 2049 samples
+  
+	YN.DOC: 
+		tp: 49.9656
+		ts: 94.2665
+		data: 3 Trace(s) in Stream:
+YN.DOC.00.BHE | 2021-05-21T13:49:05.000000Z - 2021-05-21T13:55:54.600000Z | 5.0 Hz, 2049 samples
+YN.DOC.00.BHN | 2021-05-21T13:49:05.000000Z - 2021-05-21T13:55:54.600000Z | 5.0 Hz, 2049 samples
+YN.DOC.00.BHZ | 2021-05-21T13:49:05.000000Z - 2021-05-21T13:55:54.600000Z | 5.0 Hz, 2049 samples
+  
+	YN.EYA: 
+		tp: 8.70017
+		ts: 14.7083
+		data: 3 Trace(s) in Stream:
+YN.EYA.00.BHE | 2021-05-21T13:48:23.800000Z - 2021-05-21T13:55:13.400000Z | 5.0 Hz, 2049 samples
+YN.EYA.00.BHN | 2021-05-21T13:48:23.800000Z - 2021-05-21T13:55:13.400000Z | 5.0 Hz, 2049 samples
+YN.EYA.00.BHZ | 2021-05-21T13:48:23.800000Z - 2021-05-21T13:55:13.400000Z | 5.0 Hz, 2049 samples
+  
+	YN.FUN: 
+		tp: 86.8535
+		ts: 178.472
+		data: 3 Trace(s) in Stream:
+YN.FUN.00.BHE | 2021-05-21T13:49:41.800003Z - 2021-05-21T13:56:31.400003Z | 5.0 Hz, 2049 samples
+YN.FUN.00.BHN | 2021-05-21T13:49:41.800003Z - 2021-05-21T13:56:31.400003Z | 5.0 Hz, 2049 samples
+YN.FUN.00.BHZ | 2021-05-21T13:49:41.800003Z - 2021-05-21T13:56:31.400003Z | 5.0 Hz, 2049 samples
+  
+	YN.GEJ: 
+		tp: 61.0112
+		ts: 119.563
+		data: 3 Trace(s) in Stream:
+YN.GEJ.00.BHE | 2021-05-21T13:49:16.000000Z - 2021-05-21T13:56:05.600000Z | 5.0 Hz, 2049 samples
+YN.GEJ.00.BHN | 2021-05-21T13:49:16.000000Z - 2021-05-21T13:56:05.600000Z | 5.0 Hz, 2049 samples
+YN.GEJ.00.BHZ | 2021-05-21T13:49:16.000000Z - 2021-05-21T13:56:05.600000Z | 5.0 Hz, 2049 samples
+  
+	YN.HEQ: 
+		tp: 17.2414
+		ts: 29.1146
+		data: 3 Trace(s) in Stream:
+YN.HEQ.00.BHE | 2021-05-21T13:48:32.200000Z - 2021-05-21T13:55:21.800000Z | 5.0 Hz, 2049 samples
+YN.HEQ.00.BHN | 2021-05-21T13:48:32.200000Z - 2021-05-21T13:55:21.800000Z | 5.0 Hz, 2049 samples
+YN.HEQ.00.BHZ | 2021-05-21T13:48:32.200000Z - 2021-05-21T13:55:21.800000Z | 5.0 Hz, 2049 samples
+  
+	YN.HLT: 
+		tp: 44.7954
+		ts: 87.119
+		data: 3 Trace(s) in Stream:
+YN.HLT.00.BHE | 2021-05-21T13:48:59.799999Z - 2021-05-21T13:55:49.399999Z | 5.0 Hz, 2049 samples
+YN.HLT.00.BHN | 2021-05-21T13:48:59.799999Z - 2021-05-21T13:55:49.399999Z | 5.0 Hz, 2049 samples
+YN.HLT.00.BHZ | 2021-05-21T13:48:59.799999Z - 2021-05-21T13:55:49.399999Z | 5.0 Hz, 2049 samples
+  
+	YN.HUP: 
+		tp: 27.6624
+		ts: 47.6253
+		data: 3 Trace(s) in Stream:
+YN.HUP.00.BHE | 2021-05-21T13:48:42.600000Z - 2021-05-21T13:55:32.200000Z | 5.0 Hz, 2049 samples
+YN.HUP.00.BHN | 2021-05-21T13:48:42.600000Z - 2021-05-21T13:55:32.200000Z | 5.0 Hz, 2049 samples
+YN.HUP.00.BHZ | 2021-05-21T13:48:42.600000Z - 2021-05-21T13:55:32.200000Z | 5.0 Hz, 2049 samples
+  
+	YN.JIG: 
+		tp: 39.8449
+		ts: 73.9866
+		data: 3 Trace(s) in Stream:
+YN.JIG.00.BHE | 2021-05-21T13:48:54.799999Z - 2021-05-21T13:55:44.399999Z | 5.0 Hz, 2049 samples
+YN.JIG.00.BHN | 2021-05-21T13:48:54.799999Z - 2021-05-21T13:55:44.399999Z | 5.0 Hz, 2049 samples
+YN.JIG.00.BHZ | 2021-05-21T13:48:54.799999Z - 2021-05-21T13:55:44.399999Z | 5.0 Hz, 2049 samples
+  
+	YN.JIH: 
+		tp: 60.2907
+		ts: 116.901
+		data: 3 Trace(s) in Stream:
+YN.JIH.00.BHE | 2021-05-21T13:49:15.200001Z - 2021-05-21T13:56:04.800001Z | 5.0 Hz, 2049 samples
+YN.JIH.00.BHN | 2021-05-21T13:49:15.200001Z - 2021-05-21T13:56:04.800001Z | 5.0 Hz, 2049 samples
+YN.JIH.00.BHZ | 2021-05-21T13:49:15.200001Z - 2021-05-21T13:56:04.800001Z | 5.0 Hz, 2049 samples
+  
+	YN.JIP: 
+		tp: 66.9711
+		ts: 132.09
+		data: 3 Trace(s) in Stream:
+YN.JIP.00.BHE | 2021-05-21T13:49:22.000000Z - 2021-05-21T13:56:11.600000Z | 5.0 Hz, 2049 samples
+YN.JIP.00.BHN | 2021-05-21T13:49:22.000000Z - 2021-05-21T13:56:11.600000Z | 5.0 Hz, 2049 samples
+YN.JIP.00.BHZ | 2021-05-21T13:49:22.000000Z - 2021-05-21T13:56:11.600000Z | 5.0 Hz, 2049 samples
+  
+	YN.JIS: 
+		tp: 54.2989
+		ts: 104.651
+		data: 3 Trace(s) in Stream:
+YN.JIS.00.BHE | 2021-05-21T13:49:09.200001Z - 2021-05-21T13:55:58.800001Z | 5.0 Hz, 2049 samples
+YN.JIS.00.BHN | 2021-05-21T13:49:09.200001Z - 2021-05-21T13:55:58.800001Z | 5.0 Hz, 2049 samples
+YN.JIS.00.BHZ | 2021-05-21T13:49:09.200001Z - 2021-05-21T13:55:58.800001Z | 5.0 Hz, 2049 samples
+  
+	YN.KMI: 
+		tp: 44.7954
+		ts: 86.1749
+		data: 3 Trace(s) in Stream:
+YN.KMI.00.BHE | 2021-05-21T13:48:59.799999Z - 2021-05-21T13:55:49.399999Z | 5.0 Hz, 2049 samples
+YN.KMI.00.BHN | 2021-05-21T13:48:59.799999Z - 2021-05-21T13:55:49.399999Z | 5.0 Hz, 2049 samples
+YN.KMI.00.BHZ | 2021-05-21T13:48:59.799999Z - 2021-05-21T13:55:49.399999Z | 5.0 Hz, 2049 samples
+  
+	YN.LAC: 
+		tp: 51.5434
+		ts: 98.7169
+		data: 3 Trace(s) in Stream:
+YN.LAC.00.BHE | 2021-05-21T13:49:06.600000Z - 2021-05-21T13:55:56.200000Z | 5.0 Hz, 2049 samples
+YN.LAC.00.BHN | 2021-05-21T13:49:06.600000Z - 2021-05-21T13:55:56.200000Z | 5.0 Hz, 2049 samples
+YN.LAC.00.BHZ | 2021-05-21T13:49:06.600000Z - 2021-05-21T13:55:56.200000Z | 5.0 Hz, 2049 samples
+  
+	YN.LIC: 
+		tp: 32.6006
+		ts: 56.3219
+		data: 3 Trace(s) in Stream:
+YN.LIC.00.BHE | 2021-05-21T13:48:47.600000Z - 2021-05-21T13:55:37.200000Z | 5.0 Hz, 2049 samples
+YN.LIC.00.BHN | 2021-05-21T13:48:47.600000Z - 2021-05-21T13:55:37.200000Z | 5.0 Hz, 2049 samples
+YN.LIC.00.BHZ | 2021-05-21T13:48:47.600000Z - 2021-05-21T13:55:37.200000Z | 5.0 Hz, 2049 samples
+  
+	YN.LIJ: 
+		tp: 23.731
+		ts: 43.463
+		data: 3 Trace(s) in Stream:
+YN.LIJ.00.BHE | 2021-05-21T13:48:38.800000Z - 2021-05-21T13:55:28.400000Z | 5.0 Hz, 2049 samples
+YN.LIJ.00.BHN | 2021-05-21T13:48:38.800000Z - 2021-05-21T13:55:28.400000Z | 5.0 Hz, 2049 samples
+YN.LIJ.00.BHZ | 2021-05-21T13:48:38.800000Z - 2021-05-21T13:55:28.400000Z | 5.0 Hz, 2049 samples
+  
+	YN.LOP: 
+		tp: 65.1293
+		ts: 130.72
+		data: 3 Trace(s) in Stream:
+YN.LOP.00.BHE | 2021-05-21T13:49:20.200001Z - 2021-05-21T13:56:09.800001Z | 5.0 Hz, 2049 samples
+YN.LOP.00.BHN | 2021-05-21T13:49:20.200001Z - 2021-05-21T13:56:09.800001Z | 5.0 Hz, 2049 samples
+YN.LOP.00.BHZ | 2021-05-21T13:49:20.200001Z - 2021-05-21T13:56:09.800001Z | 5.0 Hz, 2049 samples
+  
+	YN.LUQ: 
+		tp: 40.2712
+		ts: 73.4657
+		data: 3 Trace(s) in Stream:
+YN.LUQ.00.BHE | 2021-05-21T13:48:55.200001Z - 2021-05-21T13:55:44.800001Z | 5.0 Hz, 2049 samples
+YN.LUQ.00.BHN | 2021-05-21T13:48:55.200001Z - 2021-05-21T13:55:44.800001Z | 5.0 Hz, 2049 samples
+YN.LUQ.00.BHZ | 2021-05-21T13:48:55.200001Z - 2021-05-21T13:55:44.800001Z | 5.0 Hz, 2049 samples
+  
+	YN.LUS: 
+		tp: 18.0333
+		ts: 30.4624
+		data: 3 Trace(s) in Stream:
+YN.LUS.00.BHE | 2021-05-21T13:48:33.000000Z - 2021-05-21T13:55:22.600000Z | 5.0 Hz, 2049 samples
+YN.LUS.00.BHN | 2021-05-21T13:48:33.000000Z - 2021-05-21T13:55:22.600000Z | 5.0 Hz, 2049 samples
+YN.LUS.00.BHZ | 2021-05-21T13:48:33.000000Z - 2021-05-21T13:55:22.600000Z | 5.0 Hz, 2049 samples
+  
+	YN.MAL: 
+		tp: 54.8302
+		ts: 106.943
+		data: 3 Trace(s) in Stream:
+YN.MAL.00.BHE | 2021-05-21T13:49:09.799999Z - 2021-05-21T13:55:59.399999Z | 5.0 Hz, 2049 samples
+YN.MAL.00.BHN | 2021-05-21T13:49:09.799999Z - 2021-05-21T13:55:59.399999Z | 5.0 Hz, 2049 samples
+YN.MAL.00.BHZ | 2021-05-21T13:49:09.799999Z - 2021-05-21T13:55:59.399999Z | 5.0 Hz, 2049 samples
+  
+	YN.MAS: 
+		tp: 31.0779
+		ts: 53.6429
+		data: 3 Trace(s) in Stream:
+YN.MAS.00.BHE | 2021-05-21T13:48:46.000000Z - 2021-05-21T13:55:35.600000Z | 5.0 Hz, 2049 samples
+YN.MAS.00.BHN | 2021-05-21T13:48:46.000000Z - 2021-05-21T13:55:35.600000Z | 5.0 Hz, 2049 samples
+YN.MAS.00.BHZ | 2021-05-21T13:48:46.000000Z - 2021-05-21T13:55:35.600000Z | 5.0 Hz, 2049 samples
+  
+	YN.MEL: 
+		tp: 54.7676
+		ts: 104.786
+		data: 3 Trace(s) in Stream:
+YN.MEL.00.BHE | 2021-05-21T13:49:09.799999Z - 2021-05-21T13:55:59.399999Z | 5.0 Hz, 2049 samples
+YN.MEL.00.BHN | 2021-05-21T13:49:09.799999Z - 2021-05-21T13:55:59.399999Z | 5.0 Hz, 2049 samples
+YN.MEL.00.BHZ | 2021-05-21T13:49:09.799999Z - 2021-05-21T13:55:59.399999Z | 5.0 Hz, 2049 samples
+  
+	YN.MIL: 
+		tp: 55.9611
+		ts: 108.966
+		data: 3 Trace(s) in Stream:
+YN.MIL.00.BHE | 2021-05-21T13:49:11.000000Z - 2021-05-21T13:56:00.600000Z | 5.0 Hz, 2049 samples
+YN.MIL.00.BHN | 2021-05-21T13:49:11.000000Z - 2021-05-21T13:56:00.600000Z | 5.0 Hz, 2049 samples
+YN.MIL.00.BHZ | 2021-05-21T13:49:11.000000Z - 2021-05-21T13:56:00.600000Z | 5.0 Hz, 2049 samples
+  
+	YN.MLP: 
+		tp: 79.3598
+		ts: 161.434
+		data: 3 Trace(s) in Stream:
+YN.MLP.00.BHE | 2021-05-21T13:49:34.400002Z - 2021-05-21T13:56:24.000002Z | 5.0 Hz, 2049 samples
+YN.MLP.00.BHN | 2021-05-21T13:49:34.400002Z - 2021-05-21T13:56:24.000002Z | 5.0 Hz, 2049 samples
+YN.MLP.00.BHZ | 2021-05-21T13:49:34.400002Z - 2021-05-21T13:56:24.000002Z | 5.0 Hz, 2049 samples
+  
+	YN.QIJ: 
+		tp: 50.008
+		ts: 94.6711
+		data: 3 Trace(s) in Stream:
+YN.QIJ.00.BHE | 2021-05-21T13:49:05.000000Z - 2021-05-21T13:55:54.600000Z | 5.0 Hz, 2049 samples
+YN.QIJ.00.BHN | 2021-05-21T13:49:05.000000Z - 2021-05-21T13:55:54.600000Z | 5.0 Hz, 2049 samples
+YN.QIJ.00.BHZ | 2021-05-21T13:49:05.000000Z - 2021-05-21T13:55:54.600000Z | 5.0 Hz, 2049 samples
+  
+	YN.TNC: 
+		tp: 26.1875
+		ts: 46.4841
+		data: 3 Trace(s) in Stream:
+YN.TNC.00.BHE | 2021-05-21T13:48:41.200000Z - 2021-05-21T13:55:30.800000Z | 5.0 Hz, 2049 samples
+YN.TNC.00.BHN | 2021-05-21T13:48:41.200000Z - 2021-05-21T13:55:30.800000Z | 5.0 Hz, 2049 samples
+YN.TNC.00.BHZ | 2021-05-21T13:48:41.200000Z - 2021-05-21T13:55:30.800000Z | 5.0 Hz, 2049 samples
+  
+	YN.TOH: 
+		tp: 50.8536
+		ts: 98.8518
+		data: 3 Trace(s) in Stream:
+YN.TOH.00.BHE | 2021-05-21T13:49:05.799999Z - 2021-05-21T13:55:55.399999Z | 5.0 Hz, 2049 samples
+YN.TOH.00.BHN | 2021-05-21T13:49:05.799999Z - 2021-05-21T13:55:55.399999Z | 5.0 Hz, 2049 samples
+YN.TOH.00.BHZ | 2021-05-21T13:49:05.799999Z - 2021-05-21T13:55:55.399999Z | 5.0 Hz, 2049 samples
+  
+	YN.WAD: 
+		tp: 39.5737
+		ts: 73.3615
+		data: 3 Trace(s) in Stream:
+YN.WAD.00.BHE | 2021-05-21T13:48:54.600000Z - 2021-05-21T13:55:44.200000Z | 5.0 Hz, 2049 samples
+YN.WAD.00.BHN | 2021-05-21T13:48:54.600000Z - 2021-05-21T13:55:44.200000Z | 5.0 Hz, 2049 samples
+YN.WAD.00.BHZ | 2021-05-21T13:48:54.600000Z - 2021-05-21T13:55:44.200000Z | 5.0 Hz, 2049 samples
+  
+	YN.WES: 
+		tp: 72.5995
+		ts: 147.872
+		data: 3 Trace(s) in Stream:
+YN.WES.00.BHE | 2021-05-21T13:49:27.599998Z - 2021-05-21T13:56:17.199998Z | 5.0 Hz, 2049 samples
+YN.WES.00.BHN | 2021-05-21T13:49:27.599998Z - 2021-05-21T13:56:17.199998Z | 5.0 Hz, 2049 samples
+YN.WES.00.BHZ | 2021-05-21T13:49:27.599998Z - 2021-05-21T13:56:17.199998Z | 5.0 Hz, 2049 samples
+  
+	YN.XUW: 
+		tp: 62.0534
+		ts: 123.872
+		data: 3 Trace(s) in Stream:
+YN.XUW.00.BHE | 2021-05-21T13:49:17.000000Z - 2021-05-21T13:56:06.600000Z | 5.0 Hz, 2049 samples
+YN.XUW.00.BHN | 2021-05-21T13:49:17.000000Z - 2021-05-21T13:56:06.600000Z | 5.0 Hz, 2049 samples
+YN.XUW.00.BHZ | 2021-05-21T13:49:17.000000Z - 2021-05-21T13:56:06.600000Z | 5.0 Hz, 2049 samples
+  
+	YN.YAJ: 
+		tp: 72.2915
+		ts: 143.526
+		data: 3 Trace(s) in Stream:
+YN.YAJ.00.BHE | 2021-05-21T13:49:27.200001Z - 2021-05-21T13:56:16.800001Z | 5.0 Hz, 2049 samples
+YN.YAJ.00.BHN | 2021-05-21T13:49:27.200001Z - 2021-05-21T13:56:16.800001Z | 5.0 Hz, 2049 samples
+YN.YAJ.00.BHZ | 2021-05-21T13:49:27.200001Z - 2021-05-21T13:56:16.800001Z | 5.0 Hz, 2049 samples
+  
+	YN.YIM: 
+		tp: 39.3444
+		ts: 72.1114
+		data: 3 Trace(s) in Stream:
+YN.YIM.00.BHE | 2021-05-21T13:48:54.400000Z - 2021-05-21T13:55:44.000000Z | 5.0 Hz, 2049 samples
+YN.YIM.00.BHN | 2021-05-21T13:48:54.400000Z - 2021-05-21T13:55:44.000000Z | 5.0 Hz, 2049 samples
+YN.YIM.00.BHZ | 2021-05-21T13:48:54.400000Z - 2021-05-21T13:55:44.000000Z | 5.0 Hz, 2049 samples
+  
+	YN.YOD: 
+		tp: 31.4587
+		ts: 54.3121
+		data: 3 Trace(s) in Stream:
+YN.YOD.00.BHE | 2021-05-21T13:48:46.400000Z - 2021-05-21T13:55:36.000000Z | 5.0 Hz, 2049 samples
+YN.YOD.00.BHN | 2021-05-21T13:48:46.400000Z - 2021-05-21T13:55:36.000000Z | 5.0 Hz, 2049 samples
+YN.YOD.00.BHZ | 2021-05-21T13:48:46.400000Z - 2021-05-21T13:55:36.000000Z | 5.0 Hz, 2049 samples
+  
+	YN.YOS: 
+		tp: 24.3957
+		ts: 44.7131
+		data: 3 Trace(s) in Stream:
+YN.YOS.00.BHE | 2021-05-21T13:48:39.400000Z - 2021-05-21T13:55:29.000000Z | 5.0 Hz, 2049 samples
+YN.YOS.00.BHN | 2021-05-21T13:48:39.400000Z - 2021-05-21T13:55:29.000000Z | 5.0 Hz, 2049 samples
+YN.YOS.00.BHZ | 2021-05-21T13:48:39.400000Z - 2021-05-21T13:55:29.000000Z | 5.0 Hz, 2049 samples
+  
+	YN.YUJ: 
+		tp: 47.6323
+		ts: 87.5236
+		data: 3 Trace(s) in Stream:
+YN.YUJ.00.BHE | 2021-05-21T13:49:02.600000Z - 2021-05-21T13:55:52.200000Z | 5.0 Hz, 2049 samples
+YN.YUJ.00.BHN | 2021-05-21T13:49:02.600000Z - 2021-05-21T13:55:52.200000Z | 5.0 Hz, 2049 samples
+YN.YUJ.00.BHZ | 2021-05-21T13:49:02.600000Z - 2021-05-21T13:55:52.200000Z | 5.0 Hz, 2049 samples
+  
+	YN.YUL: 
+		tp: 10.0057
+		ts: 16.723
+		data: 3 Trace(s) in Stream:
+YN.YUL.00.BHE | 2021-05-21T13:48:25.000000Z - 2021-05-21T13:55:14.600000Z | 5.0 Hz, 2049 samples
+YN.YUL.00.BHN | 2021-05-21T13:48:25.000000Z - 2021-05-21T13:55:14.600000Z | 5.0 Hz, 2049 samples
+YN.YUL.00.BHZ | 2021-05-21T13:48:25.000000Z - 2021-05-21T13:55:14.600000Z | 5.0 Hz, 2049 samples
+  
+	YN.YUM: 
+		tp: 32.1891
+		ts: 57.631
+		data: 3 Trace(s) in Stream:
+YN.YUM.00.BHE | 2021-05-21T13:48:47.200000Z - 2021-05-21T13:55:36.800000Z | 5.0 Hz, 2049 samples
+YN.YUM.00.BHN | 2021-05-21T13:48:47.200000Z - 2021-05-21T13:55:36.800000Z | 5.0 Hz, 2049 samples
+YN.YUM.00.BHZ | 2021-05-21T13:48:47.200000Z - 2021-05-21T13:55:36.800000Z | 5.0 Hz, 2049 samples
+  
+	YN.ZAT: 
+		tp: 61.4526
+		ts: 120.792
+		data: 3 Trace(s) in Stream:
+YN.ZAT.00.BHE | 2021-05-21T13:49:16.400002Z - 2021-05-21T13:56:06.000002Z | 5.0 Hz, 2049 samples
+YN.ZAT.00.BHN | 2021-05-21T13:49:16.400002Z - 2021-05-21T13:56:06.000002Z | 5.0 Hz, 2049 samples
+YN.ZAT.00.BHZ | 2021-05-21T13:49:16.400002Z - 2021-05-21T13:56:06.000002Z | 5.0 Hz, 2049 samples
+  
+	YN.ZOD: 
+		tp: 37.4072
+		ts: 70.3404
+		data: 3 Trace(s) in Stream:
+YN.ZOD.00.BHE | 2021-05-21T13:48:52.400000Z - 2021-05-21T13:55:42.000000Z | 5.0 Hz, 2049 samples
+YN.ZOD.00.BHN | 2021-05-21T13:48:52.400000Z - 2021-05-21T13:55:42.000000Z | 5.0 Hz, 2049 samples
+YN.ZOD.00.BHZ | 2021-05-21T13:48:52.400000Z - 2021-05-21T13:55:42.000000Z | 5.0 Hz, 2049 samples
+  
+
+
+Stf:
+	... | 1970-01-01T00:00:00.000000Z - 1970-01-01T00:00:06.000000Z | 5.0 Hz, 31 samples
+

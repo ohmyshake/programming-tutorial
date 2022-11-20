@@ -1,0 +1,11 @@
+name: Notebook
+channels:
+  - conda-forge
+  - nodefaults
+dependencies:
+  - python=3.9
+  - pip
+  - obspy=1.3.0
+  - matplotlib
+  - jupyter-book>=0.13
+  - pygmt
