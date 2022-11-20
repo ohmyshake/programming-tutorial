@@ -3,3 +3,4 @@ matplotlib
 numpy
 obspy
 pygmt
+json5
