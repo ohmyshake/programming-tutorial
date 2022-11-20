@@ -274,7 +274,7 @@ for i in range(0,6,1):
 #%% 3. plot Hudson
 fig1, ax1 = plt.subplots(1 ,1,  dpi=800)
 
-plt.rc('font',family='Times New Roman')
+# plt.rc('font',family='Times New Roman')
 MTpy.Hudson_plot(ax=ax1)
 for i in range(0,len(FM),interval):  #len(FM)
     # print(i)
