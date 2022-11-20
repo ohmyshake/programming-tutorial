@@ -28,6 +28,7 @@ jobs:
     - name: Install dependencies
       run: |
         pip install -r book/requirements.txt
+        conda install --channel conda-forge pygmt
 
     # Build the book
     - name: Build the book

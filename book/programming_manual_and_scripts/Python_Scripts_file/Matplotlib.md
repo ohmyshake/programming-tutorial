@@ -98,7 +98,7 @@ fig.subplots_adjust(wspace=0.1, hspace=0.5)
 ### 3.1. 3-D subplot
 cmap = 'coolwarm'                                                               # coolwarm plasma viridis
 ax = plt.subplot(gs1[:-1, :], projection='3d')
-plt.rcParams['font.sans-serif'] = ['Times New Roman']
+# plt.rcParams['font.sans-serif'] = ['Times New Roman']
 surf = ax.plot_surface(X, Y, Z, cmap=cmap, shade=True, antialiased=True, rstride=1, cstride=1, alpha=0.7)
 ax.contour(X, Y, Z, zdir='z', offset=0, cmap=cmap)
 
@@ -391,7 +391,7 @@ FM2_sigma=np.around(np.mean(FM2_sigma_all,axis=0),decimals=2)
 
 #%% 3. plot
 fig, axs = plt.subplots(4, 2, dpi=800,figsize=(9, 13))
-plt.rcParams['font.sans-serif'] = ['Times New Roman']
+# plt.rcParams['font.sans-serif'] = ['Times New Roman']
 fig.subplots_adjust(wspace =0.2, hspace =0.5)
 for k in range(0,8,1):
     s1 = k//2
@@ -586,7 +586,7 @@ def plot_hist(FM_all,FM_accept_all,num_bins,num_std,labels_name,Fixed_FM,InvType
 
     plt.style.use('default')                                                # Use the default plotting style (make sure it's not the ggplot style)
     fig, axs = plt.subplots(N, N, dpi=800,figsize=(16, 16))
-    plt.rcParams['font.sans-serif'] = ['Times New Roman']
+    # plt.rcParams['font.sans-serif'] = ['Times New Roman']
     
     for i in range(0,N,1):
         for j in range(0,N,1):
