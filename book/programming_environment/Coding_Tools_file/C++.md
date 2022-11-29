@@ -201,6 +201,21 @@ Refer to
 - https://www.open-mpi.org/faq/?category=mpi-apps#override-wrappers-after-v1.0
 - https://unix.stackexchange.com/questions/346263/mpicc-with-different-versions-of-gcc
 
+
+
+
+
+
+
+## Specfem 2D
+
+```bash
+$ ./configure FC=gfortran CC=gcc MPIFC=mpif90 --with-mpi
+$ make
+```
+
+
+
 ## Configuration
 
 
