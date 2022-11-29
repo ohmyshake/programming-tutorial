@@ -34,7 +34,7 @@ $ clang++ main.cpp -o main -Xpreprocessor -fopenmp -lomp -I/opt/homebrew/opt/lib
 ```
 
 
-:::{dropdown} The `main.cpp` file is following:
+:::{dropdown} The **`main.cpp`** file is following:
 :color: info
 :icon: info
 ```c++
