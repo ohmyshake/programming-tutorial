@@ -14,7 +14,7 @@
 ## Install
 
 After install `Command Line Tools for Xcode`, M1 chip use `clang` to compile `.c file` and `clang++` to compile `.cpp file`. 
-And M1 chip also install 
+And M1 chip also has `gcc` and `g++`
 
 
 ## Configuration
