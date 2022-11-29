@@ -124,7 +124,7 @@ Check installation using following command:
 # Check openmpi version
 $ mpic++ --version
 
-# 
+# Check the detail of mpic++ command
 $ mpic++ -showme
 
 # Compile code using mpicc
