@@ -184,7 +184,12 @@ $ mpirun -np 4 openmpi
 :::{dropdown} Do you know `mpic++` is a wrapper?
 :color: info
 :icon: info
-mpicc is actually a wrapper over the system compiler. In my case, mpicc will use the clang compiler. To find what is behind mpicc you can execute the following command:
+Actually mpic++ is a wrapper over the system compiler. In my case, mpicc will use the clang compiler. To find what is behind mpicc you can execute the following command:
+
+```bash
+$ mpic++ -showme
+```
+
 :::
 
 Refer to 
