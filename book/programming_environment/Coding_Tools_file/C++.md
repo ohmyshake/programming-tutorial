@@ -19,7 +19,7 @@ There are 2 options in Macbook for parallel computing:
 
 ### 1.`clang` compiler + `openmp`
 
-The clang compiler doesn't bring **`openmp`** package, and install openmp for clang compiler
+The clang compiler doesn't bring **`openmp`** package, and install openmp for clang compiler:
 
 ```bash
 # Install
