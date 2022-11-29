@@ -211,6 +211,8 @@ Refer to
 
 Make sure you have installed `gcc`, `gfortran` and `openmpi` in advance.
 
+Then go to specfem2d folder, and run following command to install:
+
 ```bash
 $ ./configure FC=gfortran CC=gcc MPIFC=mpif90 --with-mpi
 $ make
