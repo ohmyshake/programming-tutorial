@@ -162,7 +162,7 @@ int main(int argc, char **argv) {
 ```
 :::
 
-
+Set our custom compiler (clang/gcc) to compile **`openmpi.cpp`** file.
 
 ```bash
 # Set openmpi's compiler before using mpi to compile code
