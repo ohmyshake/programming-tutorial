@@ -17,7 +17,7 @@ There are 2 options here:
 1. `clang` compiler + `openmp` + `openmpi` (notice: don't have `gfortran` compiler)
 2. `gcc` compiler + `openmp` + `openmpi`
 
-### 1.`clang` compiler + `openmp` + `openmpi`
+### 1.`clang` compiler + `openmp`
 
 The clang compiler doesn't bring **`openmp`** package, and install openmp for clang compiler
 
@@ -75,19 +75,9 @@ Refer to https://stackoverflow.com/questions/71061894/how-to-install-openmp-on-m
 :::
 
 
-Then install **`openmpi`** (I think brew will use `clang` to compile openmpi package).
 
-```bash
-$ brew install open-mpi
-```
 
-Check installation using following command:
-
-```bash
-$ mpicc --version
-```
-
-### 2. `gcc` compiler + `openmp` + `openmpi`
+### 2. `gcc` compiler + `openmp` 
 
 After install Command Line Tools for Xcode, M1 chip use clang to compile **`.c file`** and clang++ to compile **`.cpp file`**. 
 And at this moment M1 chip also has gcc and g++, but they are the **`soft links`** to clang compiler.
@@ -116,7 +106,19 @@ alias g++='g++-12'
 Refer to https://trinhminhchien.com/install-gcc-g-on-macos-monterey-apple-m1/
 
 
+### 3. Install `openmpi`
 
+Then install **`openmpi`** (I think brew will use `clang` to compile openmpi package).
+
+```bash
+$ brew install open-mpi
+```
+
+Check installation using following command:
+
+```bash
+$ mpicc --version
+```
 
 ## Configuration
 
