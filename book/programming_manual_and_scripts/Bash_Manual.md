@@ -10,8 +10,8 @@ Please refer to (./)[./]...
 # Print all links
 $ ls -al
 
-# Create a link
-$ ln -s file-1 file2
+# Create a link, file2 is the link of file1.
+$ ln -s file1 file2
 
 ```
 
