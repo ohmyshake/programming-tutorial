@@ -210,6 +210,7 @@ Refer to
 ## Specfem 2D
 
 Make sure you have installed `gcc`, `gfortran` and `openmpi` in advance.
+To suppress any potential limit to the size of the Unix stack, add `ulimit -S -s unlimited` to `~/.zshrc`.
 Then go to specfem2d folder, and run following command to install:
 
 ```bash
@@ -226,6 +227,16 @@ $ ./configure FC=gfortran CC=gcc MPIFC=mpif90 --with-mpi --enable-double-precisi
 $ make
 ```
 
+
+```bash
+# >>> specfem2d >>>
+# To suppress any potential limit to the size of the Unix stack.
+ulimit -S -s unlimited
+
+# bin
+export PATH=/Users/yinfu/package/specfem2d/bin:${PATH}
+# <<< specfem2d <<<
+```
 
 ## Specfem 3D
 
