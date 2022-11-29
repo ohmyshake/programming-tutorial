@@ -215,10 +215,10 @@ Then go to specfem2d folder, and run following command to install:
 
 ```bash
 # Configure in single precision
-$ ./configure FC=gfortran CC=gcc MPIFC=mpif90 --with-mpi
+$ ./configure FC=gfortran CC=gcc MPIFC=mpif90 MPI_INC=/opt/homebrew/include --with-mpi
 
 # Configure in double precision, solver's speed will be decreased
-$ ./configure FC=gfortran CC=gcc MPIFC=mpif90 --with-mpi --enable-double-precision
+$ ./configure FC=gfortran CC=gcc MPIFC=mpif90 MPI_INC=/opt/homebrew/include --with-mpi --enable-double-precision
 
 # Compile with CUDA (not finished)
 ./configure --with-cuda=cuda5 CUDA_FLAGS=.. CUDA_LIB=.. CUDA_INC=.. MPI_INC=..
