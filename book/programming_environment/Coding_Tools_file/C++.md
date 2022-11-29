@@ -181,6 +181,11 @@ $ mpicc xx.c -o xx
 $ mpirun -np 4 openmpi
 ```
 
+:::{dropdown} Do you know `mpic++` is a wrapper?
+:color: info
+:icon: info
+mpicc is actually a wrapper over the system compiler. In my case, mpicc will use the clang compiler. To find what is behind mpicc you can execute the following command:
+:::
 
 Refer to 
 - https://betterprogramming.pub/integrating-open-mpi-with-clion-on-apple-m1-76b7815c27f2
