@@ -113,6 +113,8 @@ Refer to https://trinhminhchien.com/install-gcc-g-on-macos-monterey-apple-m1/
 ### 3. Install `openmpi`
 
 Then install **`openmpi`**, brew will use default compiler (In my M1 chip is `clang`) to compile openmpi package.
+But we can use a custom compiler(clang or gcc) when compiling code.
+
 
 ```bash
 $ brew install open-mpi
