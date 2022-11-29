@@ -33,8 +33,10 @@ $ export CPPFLAGS="-I/opt/homebrew/opt/libomp/include"
 $ clang++ main.cpp -o main -Xpreprocessor -fopenmp -lomp -I/opt/homebrew/opt/libomp/include  -L/opt/homebrew/opt/libomp/lib 
 ```
 
-The `main.cpp` file is following:
-::::{toggle}
+
+:::{dropdown} The `main.cpp` file is following:
+:color: info
+:icon: info
 ```c++
 #include <iostream>  
 using namespace std;  
@@ -47,7 +49,7 @@ int main(){
     return 0;  
 }  
 ```
-::::
+:::
 
 :::{dropdown} Compile error?
 :color: info
