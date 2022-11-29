@@ -32,7 +32,7 @@ export CPPFLAGS="-I/opt/homebrew/opt/libomp/include"
 # Or compile directly (eg: c++ script)
 clang++ main.cpp -o main -Xpreprocessor -fopenmp -lomp -I/opt/homebrew/opt/libomp/include  -L/opt/homebrew/opt/libomp/lib 
 ```
-:::{dropdown} Do you know git history?
+:::{dropdown} Compile error?
 :color: info
 :icon: info
 The first time I compile the `cpp with openmp` code, I got an error as following
