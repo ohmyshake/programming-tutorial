@@ -19,7 +19,7 @@ There are 2 options here:
 
 ### 1.`clang` compiler + `openmp` + `openmpi`
 
-The `clang` compiler doesn't bring `openmp` package, and install `openmp` for `clang` compiler
+The clang compiler doesn't bring `**openmp**` package, and install `openmp` for `clang` compiler
 
 ```bash
 # Install
@@ -53,7 +53,7 @@ Refer to https://stackoverflow.com/questions/71061894/how-to-install-openmp-on-m
 :::
 
 
-Then install `openmpi`.
+Then install `openmpi` (I think brew will use `Clang`).
 
 ```bash
 $ brew install open-mpi
