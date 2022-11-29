@@ -119,6 +119,7 @@ But we can use a custom compiler(clang or gcc) when compiling code.
 ```bash
 $ brew install open-mpi
 ```
+
 This will install a lot of command we can use, such as 
 `mpic++` `mpicxx` `mpif77` `mpifort` `mpirun` `mpicc` `mpiexec` `mpif90` and `mpioutil`.
 Take `mpic++` for example:
