@@ -122,6 +122,11 @@ Check installation using following command:
 
 ```bash
 $ mpicc --version
+
+# Compile code using mpicc
+$ mpic++ openmpi.cpp -o openmpi
+
+$ mpirun -np 4 ./openmpi
 ```
 
 :::{dropdown} The example **`openmpi.cpp`** file is here:
@@ -149,10 +154,12 @@ int main(int argc, char **argv) {
 :::
 
 
+export OMPI_CXX=clang++
+export OMPI_CXX=g++-12
 
 
-
-
+export OMPI_CC=clang
+export OMPI_CXX=gcc-12
 
 
 ## Configuration
