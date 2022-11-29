@@ -213,6 +213,10 @@ Make sure you have installed `gcc`, `gfortran` and `openmpi` in advance.
 To suppress any potential limit to the size of the Unix stack, add `ulimit -S -s unlimited` to `~/.zshrc`.
 Then go to specfem2d folder, and run following command to install:
 
+:::{warning}
+Must download by the following command (from devel branch), otherwise it will be failed in installation
+:::
+
 ```bash
 # Download 
 $ git clone --recursive --branch devel https://github.com/SPECFEM/specfem2d.git
