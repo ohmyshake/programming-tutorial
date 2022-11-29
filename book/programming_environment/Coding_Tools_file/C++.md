@@ -153,6 +153,8 @@ int main(int argc, char **argv) {
 ```
 :::
 
+
+
 ```bash
 # Set openmpi's compiler before using mpi to compile code
 # [1] C++ language
