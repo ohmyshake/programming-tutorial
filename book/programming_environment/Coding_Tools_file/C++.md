@@ -17,7 +17,7 @@ There are 2 options here:
 1. `clang` compiler + `openmp` + `openmpi` (notice: don't have `gfortran` compiler)
 2. `gcc` compiler + `openmp` + `openmpi`
 
-### `clang` compiler + `openmp` + `openmpi`
+### 1.`clang` compiler + `openmp` + `openmpi`
 
 The `clang` compiler doesn't bring `openmp` package, and install `openmp` for `clang` compiler
 
