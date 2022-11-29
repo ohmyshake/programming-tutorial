@@ -214,6 +214,9 @@ To suppress any potential limit to the size of the Unix stack, add `ulimit -S -s
 Then go to specfem2d folder, and run following command to install:
 
 ```bash
+# Download 
+$ git clone --recursive --branch devel https://github.com/SPECFEM/specfem2d.git
+
 # Configure in single precision
 $ ./configure FC=gfortran CC=gcc MPIFC=mpif90 MPI_INC=/opt/homebrew/include --with-mpi
 
