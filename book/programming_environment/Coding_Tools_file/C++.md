@@ -182,8 +182,9 @@ $ mpirun -np 4 openmpi
 ```
 
 
-Refer to https://www.open-mpi.org/faq/?category=mpi-apps#override-wrappers-after-v1.0
-
+Refer to 
+- https://www.open-mpi.org/faq/?category=mpi-apps#override-wrappers-after-v1.0
+- https://unix.stackexchange.com/questions/346263/mpicc-with-different-versions-of-gcc
 
 ## Configuration
 
