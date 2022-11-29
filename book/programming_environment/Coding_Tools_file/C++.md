@@ -58,7 +58,7 @@ int main(){
 :::{dropdown} Compile error?
 :color: info
 :icon: info
-The first time I compile the `cpp with openmp` code, I got an error as following
+The first time I compile the `openmp` code, I got an error as following
 ```bash
 Undefined symbols for architecture arm64:
   "___kmpc_fork_call", referenced from:
