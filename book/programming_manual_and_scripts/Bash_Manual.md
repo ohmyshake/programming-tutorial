@@ -4,6 +4,15 @@
 
 Please refer to (./)[./]...
 
+
+## ln
+```bash
+# Print all links
+ls -al
+
+```
+
+
 ## scp
 
 
