@@ -32,6 +32,19 @@ $ export CPPFLAGS="-I/opt/homebrew/opt/libomp/include"
 # Or compile directly (eg: c++ script)
 $ clang++ main.cpp -o main -Xpreprocessor -fopenmp -lomp -I/opt/homebrew/opt/libomp/include  -L/opt/homebrew/opt/libomp/lib 
 ```
+
+
+#include <iostream>  
+using namespace std;  
+  
+int main(){  
+    #pragma omp parallel  
+    {  
+        cout << "Hello World!\n";  
+    }  
+    return 0;  
+}  
+
 :::{dropdown} Compile error?
 :color: info
 :icon: info
