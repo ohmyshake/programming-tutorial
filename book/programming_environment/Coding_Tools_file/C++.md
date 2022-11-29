@@ -14,8 +14,8 @@
 ## Install
 
 There are 2 options in Macbook for parallel computing:
-- The `clang` compiler + `openmp` + `openmpi`, clang don't have `gfortran` compiler.
-- The `gcc` compiler + `openmp` + `openmpi`, gcc has `gfortran` compiler.
+- **The `clang` compiler + `openmp` + `openmpi`**, clang don't have `gfortran` compiler.
+- **The `gcc` compiler + `openmp` + `openmpi`**, gcc has `gfortran` compiler.
 
 ### 1.`clang` compiler + `openmp`
 
