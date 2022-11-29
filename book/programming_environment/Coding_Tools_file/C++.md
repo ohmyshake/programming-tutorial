@@ -32,14 +32,18 @@ export CPPFLAGS="-I/opt/homebrew/opt/libomp/include"
 # Or compile directly (eg: c++ script)
 clang++ main.cpp -o main -Xpreprocessor -fopenmp -lomp -I/opt/homebrew/opt/libomp/include  -L/opt/homebrew/opt/libomp/lib 
 ```
-
+:::{dropdown} Do you know git history?
+:color: info
+:icon: info
 The first time I compile the `cpp with openmp` code, I got an error, then run the following command, it worked well now
 
 ```bash
 $ ln -s /opt/homebrew/opt/libomp/lib/libomp.dylib /usr/local/lib/libomp.dylib
 ```
 
-Refer to https://stackoverflow.com/questions/71061894/how-to-install-openmp-on-mac-m1
+Refer to https://stackoverflow.com/questions/71061894/how-to-install-openmp-on-mac-m1 
+:::
+
 
 Then install `openmpi`.
 
