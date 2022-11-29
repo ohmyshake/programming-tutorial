@@ -93,7 +93,7 @@ $ brew install gcc
 $ g++ openmp.cpp -o openmp -fopenmp
 ```
 
-Set the environment variables as following, you can also download different versions `gcc`:
+Set the environment variables as following, and you can also download different versions `gcc`:
 
 ```bash
 $ open ~/.zhsrc
