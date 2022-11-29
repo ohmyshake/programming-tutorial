@@ -219,6 +219,9 @@ $ ./configure FC=gfortran CC=gcc MPIFC=mpif90 --with-mpi
 # Compile in double precision, solver's speed will be decreased
 $ ./configure FC=gfortran CC=gcc MPIFC=mpif90 --with-mpi --enable-double-precision
 
+# Compile with CUDA (not finished)
+./configure --with-cuda=cuda5 CUDA_FLAGS=.. CUDA_LIB=.. CUDA_INC=.. MPI_INC=.. ..
+
 # Make
 $ make
 ```
