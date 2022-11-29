@@ -89,8 +89,6 @@ alias g++='g++-12'
 # <<< brew's gcc (GNU) <<<
 ```
 
-
-
 Refer to https://trinhminhchien.com/install-gcc-g-on-macos-monterey-apple-m1/
 
 
