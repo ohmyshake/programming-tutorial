@@ -209,7 +209,7 @@ Refer to
 
 ## Specfem 2D
 
-Make sure you have install `gcc`, `gfortran` and `openmpi`
+Make sure you have installed `gcc`, `gfortran` and `openmpi` in advance.
 
 ```bash
 $ ./configure FC=gfortran CC=gcc MPIFC=mpif90 --with-mpi
