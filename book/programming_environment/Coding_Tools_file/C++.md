@@ -227,6 +227,7 @@ $ ./configure FC=gfortran CC=gcc MPIFC=mpif90 --with-mpi --enable-double-precisi
 $ make
 ```
 
+Add executable command to environment variable:
 
 ```bash
 # >>> specfem2d >>>
