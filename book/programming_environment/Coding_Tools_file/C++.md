@@ -32,6 +32,7 @@ $ export CPPFLAGS="-I/opt/homebrew/opt/libomp/include"
 # Or compile directly (eg: c++ script)
 $ clang++ main.cpp -o main -Xpreprocessor -fopenmp -lomp -I/opt/homebrew/opt/libomp/include  -L/opt/homebrew/opt/libomp/lib 
 ```
+
 The `main.cpp` file is following:
 ::::{toggle}
 ```c++
