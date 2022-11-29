@@ -7,10 +7,6 @@
 ---
 
 
-## Introduction
-
-
-
 ## Install
 
 There are 2 options in Macbook for parallel computing:
