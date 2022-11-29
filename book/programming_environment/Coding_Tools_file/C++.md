@@ -83,7 +83,7 @@ Refer to https://stackoverflow.com/questions/71061894/how-to-install-openmp-on-m
 After installing Command Line Tools for Xcode, M1 chip use clang to compile **`.c file`** and clang++ to compile **`.cpp file`**. 
 And at this moment, M1 chip also has gcc and g++, but they are the **`soft links`** to clang compiler.
 
-To install `gcc` in M1 chip (it will also install `gfortran`), which will bring `openmp` package.
+To install `gcc` in M1 chip (it will also install `gfortran`), which will bring `openmp` package which is not need to install by yourself.
 
 ```bash
 $ brew search gcc
