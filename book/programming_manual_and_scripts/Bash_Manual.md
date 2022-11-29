@@ -8,7 +8,10 @@ Please refer to (./)[./]...
 ## ln
 ```bash
 # Print all links
-ls -al
+$ ls -al
+
+# Create a link
+$ ln -s file-1 file2
 
 ```
 
