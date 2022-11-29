@@ -88,7 +88,6 @@ $ mpicc --version
 
 After install Command Line Tools for Xcode, M1 chip use clang to compile **`.c file`** and clang++ to compile **`.cpp file`**. 
 And at this moment M1 chip also has gcc and g++, but they are the **`soft links`** to clang compiler.
-In addition, 
 
 To install `gcc` in M1 chip (it will also install `gfortran`), which will bring `openmp` package.
 
