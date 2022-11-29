@@ -230,6 +230,8 @@ $ make
 Add executable command to environment variable:
 
 ```bash
+$ open ~/.zshrc
+
 # >>> specfem2d >>>
 # To suppress any potential limit to the size of the Unix stack.
 ulimit -S -s unlimited
