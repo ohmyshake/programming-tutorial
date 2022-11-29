@@ -30,11 +30,11 @@ $ export LDFLAGS="-L/opt/homebrew/opt/libomp/lib"
 $ export CPPFLAGS="-I/opt/homebrew/opt/libomp/include"
 
 # Or compile directly (eg: c++ script)
-$ clang++ main.cpp -o main -Xpreprocessor -fopenmp -lomp -I/opt/homebrew/opt/libomp/include  -L/opt/homebrew/opt/libomp/lib 
+$ clang++ openmp.cpp -o openmp -Xpreprocessor -fopenmp -lomp -I/opt/homebrew/opt/libomp/include  -L/opt/homebrew/opt/libomp/lib 
 ```
 
 
-:::{dropdown} The example **`main.cpp`** file is here:
+:::{dropdown} The example **`openmp.cpp`** file is here:
 :color: info
 :icon: info
 ```c++
@@ -53,6 +53,7 @@ int main(){
 }  
 ```
 :::
+
 
 :::{dropdown} Compile error?
 :color: info
@@ -89,7 +90,7 @@ $ brew search gcc
 $ brew install gcc
 
 # To compile code directly (different from clang compiler)
-$ g++ main.cpp -o main -fopenmp
+$ g++ openmp.cpp -o openmp -fopenmp
 ```
 
 Set the environment variables as following:
@@ -106,6 +107,9 @@ alias g++='g++-12'
 Refer to https://trinhminhchien.com/install-gcc-g-on-macos-monterey-apple-m1/
 
 
+
+
+
 ### 3. Install `openmpi`
 
 Then install **`openmpi`** (I think brew will use `clang` to compile openmpi package).
@@ -119,6 +123,37 @@ Check installation using following command:
 ```bash
 $ mpicc --version
 ```
+
+:::{dropdown} The example **`openmpi.cpp`** file is here:
+:color: info
+:icon: info
+```c++
+#include <iostream>  
+#include <mpi.h>
+
+using namespace std;  
+int main(int argc, char **argv) {
+    int ierr, num_procs, my_id;
+
+    /* find out MY process ID, and how many processes were started. */
+    ierr = MPI_Init(&argc, &argv);
+    ierr = MPI_Comm_rank(MPI_COMM_WORLD, &my_id);
+    ierr = MPI_Comm_size(MPI_COMM_WORLD, &num_procs);
+
+    cout<< "Hello world! I'm process "<< my_id << " out of " << num_procs << " processes" << endl;
+
+    ierr = MPI_Finalize();
+    return 0;
+}
+```
+:::
+
+
+
+
+
+
+
 
 ## Configuration
 
