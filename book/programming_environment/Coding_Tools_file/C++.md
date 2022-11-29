@@ -247,7 +247,7 @@ export PATH=/Users/yinfu/package/specfem2d/bin:${PATH}
 
 :::{warning}
 - Must download by the following command (from devel branch), otherwise it will be failed in installation in **M1 chip**.
-- When you run the executable command from SEM2D in **M1 chip**, must use `mpirun -np 1 [xmeshfem2D/xspecfem2D/...]` otherwise it will be failed.
+- When you run code in **M1 chip**, must use `mpirun -np 1 [xmeshfem2D/xspecfem2D/...]` otherwise it will be failed.
 :::
 
 
