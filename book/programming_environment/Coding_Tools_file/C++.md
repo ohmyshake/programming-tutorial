@@ -13,8 +13,75 @@
 
 ## Install
 
+There are 2 options here:
+1. `clang` compiler + `openmp` + `openmpi` (notice: don't have `gfortran` compiler)
+2. `gcc` compiler + `openmp` + `openmpi`
+
+### `clang` compiler + `openmp` + `openmpi`
+
+The `clang` compiler doesn't bring `openmp` package, and install `openmp` for `clang` compiler
+
+```bash
+# Install
+$ brew install openmp
+
+# For compilers to find libomp you may need to set for Makefile
+export LDFLAGS="-L/opt/homebrew/opt/libomp/lib"
+export CPPFLAGS="-I/opt/homebrew/opt/libomp/include"
+
+# Or compile directly (eg: c++ script)
+clang++ main.cpp -o main -Xpreprocessor -fopenmp -lomp -I/opt/homebrew/opt/libomp/include  -L/opt/homebrew/opt/libomp/lib 
+```
+
+The first time I compile the `cpp with openmp` code, I got an error, then run the following command, it worked well now
+
+```bash
+$ ln -s /opt/homebrew/opt/libomp/lib/libomp.dylib /usr/local/lib/libomp.dylib
+```
+
+Refer to https://stackoverflow.com/questions/71061894/how-to-install-openmp-on-mac-m1
+
+Then install `openmpi`.
+
+```bash
+$ brew install open-mpi
+```
+
+Check installation using following command:
+
+```bash
+$ mpicc --version
+```
+
+### `gcc` compiler + `openmp` + `openmpi`
+
 After install `Command Line Tools for Xcode`, M1 chip use `clang` to compile `.c file` and `clang++` to compile `.cpp file`. 
-And M1 chip also has `gcc` and `g++`
+And M1 chip also has `gcc` and `g++`, but they are soft links to `clang` compiler.
+In addition, 
+
+To install `gcc` in M1 chip (it will also install `gfortran`), which will bring `openmp` package.
+
+```bash
+$ brew search gcc
+$ brew install gcc
+```
+
+Set the environment variables as following:
+
+```bash
+$ open ~/.zhsrc
+
+# >>> brew's gcc (GNU) >>>
+alias gcc='gcc-12'
+alias g++='g++-12'
+# <<< brew's gcc (GNU) <<<
+```
+
+
+
+Refer to https://trinhminhchien.com/install-gcc-g-on-macos-monterey-apple-m1/
+
+
 
 
 ## Configuration
