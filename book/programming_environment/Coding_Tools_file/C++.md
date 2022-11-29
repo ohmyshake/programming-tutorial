@@ -154,14 +154,17 @@ int main(int argc, char **argv) {
 :::
 
 ```bash
-export OMPI_CXX=clang++
-export OMPI_CXX=g++-12
+# Set openmpi's compiler before using mpi to compile code
+# [1] C++ language
+$ export OMPI_CXX=clang++
+$ export OMPI_CXX=g++-12
+# [2] C language
+$ export OMPI_CC=clang
+$ export OMPI_CXX=gcc-12
 
-export OMPI_CC=clang
-export OMPI_CXX=gcc-12
-
-mpic++ openmpi.cpp -o openmpi
-mpicc xx.c -o xx
+# Then use mpi to compile code
+$ mpic++ openmpi.cpp -o openmpi
+$ mpicc xx.c -o xx
 ```
 
 ## Configuration
