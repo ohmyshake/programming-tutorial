@@ -53,7 +53,7 @@ Refer to https://stackoverflow.com/questions/71061894/how-to-install-openmp-on-m
 :::
 
 
-Then install `openmpi` (I think brew will use `Clang`).
+Then install `openmpi` (I think brew will use `clang`).
 
 ```bash
 $ brew install open-mpi
