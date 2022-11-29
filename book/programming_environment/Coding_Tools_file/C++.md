@@ -162,7 +162,7 @@ $ export OMPI_CXX=g++-12
 $ export OMPI_CC=clang
 $ export OMPI_CXX=gcc-12
 
-# Then use mpi to compile code
+# Then use mpi to compile [c++|c] code
 $ mpic++ openmpi.cpp -o openmpi
 $ mpicc xx.c -o xx
 ```
