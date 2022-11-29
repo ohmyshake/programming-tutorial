@@ -13,7 +13,7 @@
 
 ## Install
 
-There are 2 options here:
+There are 2 options here for parallel computing:
 1. `clang` compiler + `openmp` + `openmpi` (notice: don't have `gfortran` compiler)
 2. `gcc` compiler + `openmp` + `openmpi`
 
