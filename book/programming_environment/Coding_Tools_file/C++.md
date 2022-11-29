@@ -77,7 +77,7 @@ To install `gcc` in M1 chip (it will also install `gfortran`), which will bring 
 $ brew search gcc
 $ brew install gcc
 
-# To compile code directly (differen from clang compiler)
+# To compile code directly (different from clang compiler)
 $ g++ main.cpp -o main -fopenmp
 ```
 
