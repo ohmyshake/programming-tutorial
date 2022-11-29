@@ -797,172 +797,172 @@ title="Print to PDF"
 <h2>2021 Yangbi Earthquake Map<a class="headerlink" href="#yangbi-earthquake-map" title="Permalink to this headline">#</a></h2>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python3</span>
-<span class="c1"># -*- coding: utf-8 -*-</span>
-<span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">Created on Tue May 25 22:44:49 2021</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+&quot;&quot;&quot;
+Created on Tue May 25 22:44:49 2021
 
-<span class="sd">@author: yf</span>
-<span class="sd">&quot;&quot;&quot;</span>
+@author: yf
+&quot;&quot;&quot;
 
-<span class="kn">import</span> <span class="nn">pygmt</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">os</span><span class="o">,</span><span class="nn">glob</span><span class="o">,</span><span class="nn">obspy</span>
-<span class="kn">from</span> <span class="nn">obspy</span> <span class="kn">import</span> <span class="n">Stream</span>
-<span class="kn">from</span> <span class="nn">obspy.taup</span> <span class="kn">import</span> <span class="n">TauPyModel</span>
-<span class="kn">from</span> <span class="nn">obspy.taup.taup_create</span> <span class="kn">import</span> <span class="n">build_taup_model</span>
-
-
-<span class="c1">#%% 1. data/file paths</span>
-<span class="n">allfiles_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s1">&#39;../files/yangbi/*.SAC&#39;</span><span class="p">)</span>             <span class="c1"># 某个地震事件的文件夹，通配所有SAC数据</span>
-<span class="n">limiting_sta</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;XG.CHT&#39;</span><span class="p">,</span><span class="s1">&#39;XG.HDQ&#39;</span><span class="p">,</span><span class="s1">&#39;XG.XBT&#39;</span><span class="p">,</span><span class="s1">&#39;XG.ZYT&#39;</span><span class="p">,</span><span class="s1">&#39;YN.TUS&#39;</span><span class="p">,</span><span class="s1">&#39;YN.YUX&#39;</span><span class="p">]</span>         <span class="c1"># 限幅的台站名称</span>
-
-<span class="c1">#%% 2.读取原始数据 return: data</span>
-<span class="n">allfiles</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="n">allfiles_path</span><span class="p">)</span> <span class="p">)</span>
-<span class="n">data_raw</span> <span class="o">=</span> <span class="n">Stream</span><span class="p">()</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">allfiles</span><span class="p">),</span><span class="mi">1</span><span class="p">):</span>
-    <span class="n">tr</span> <span class="o">=</span> <span class="n">obspy</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">allfiles</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
-    <span class="n">data_raw</span> <span class="o">+=</span> <span class="n">tr</span>
-<span class="n">data</span> <span class="o">=</span> <span class="n">data_raw</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
-
-<span class="c1">#%% 3.读取台站的经纬度信息</span>
-<span class="n">lons</span> <span class="o">=</span> <span class="p">[];</span> <span class="n">lats</span> <span class="o">=</span> <span class="p">[];</span> <span class="n">net</span> <span class="o">=</span> <span class="p">[];</span> <span class="n">sta</span> <span class="o">=</span> <span class="p">[];</span> <span class="n">names</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="n">unique_stations</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">([</span><span class="n">tr</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">station</span> <span class="k">for</span> <span class="n">tr</span> <span class="ow">in</span> <span class="n">data</span><span class="p">])</span>                  <span class="c1"># 所有台站的名称</span>
-<span class="k">for</span> <span class="n">station</span> <span class="ow">in</span> <span class="n">unique_stations</span><span class="p">:</span>
-    <span class="n">tr</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="n">station</span><span class="o">=</span><span class="n">station</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>                                        <span class="c1"># Just taking the first Trace if multiple</span>
-    <span class="n">lons</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">tr</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">sac</span><span class="o">.</span><span class="n">stlo</span><span class="p">)</span>
-    <span class="n">lats</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">tr</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">sac</span><span class="o">.</span><span class="n">stla</span><span class="p">)</span>
-    <span class="n">net</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">tr</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">network</span><span class="p">)</span>
-    <span class="n">sta</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">tr</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">station</span><span class="p">)</span>
-    <span class="n">names</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">tr</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">network</span><span class="si">}</span><span class="s1">.</span><span class="si">{</span><span class="n">tr</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">station</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>                      <span class="c1"># 所有台站台网的名称</span>
-<span class="n">evlo</span> <span class="o">=</span> <span class="n">tr</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">sac</span><span class="o">.</span><span class="n">evlo</span> <span class="c1"># 地震位置</span>
-<span class="n">evla</span> <span class="o">=</span> <span class="n">tr</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">sac</span><span class="o">.</span><span class="n">evla</span>
+import pygmt
+import numpy as np
+import os,glob,obspy
+from obspy import Stream
+from obspy.taup import TauPyModel
+from obspy.taup.taup_create import build_taup_model
 
 
-<span class="c1"># 3.1 Determine a nice, padded region</span>
-<span class="c1"># region = [np.min(lons), np.max(lons), np.min(lats), np.max(lats)]</span>
-<span class="c1"># x_pad = (region[1] - region[0]) * 0.1</span>
-<span class="c1"># y_pad = (region[3] - region[2]) * 0.1</span>
-<span class="c1"># region = [region[0] - x_pad, region[1] + x_pad, region[2] - y_pad, region[3] + y_pad]</span>
-<span class="n">region</span> <span class="o">=</span> <span class="p">[</span><span class="mf">96.5</span><span class="p">,</span> <span class="mi">107</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mf">29.5</span><span class="p">]</span>                                                    <span class="c1"># 手动指定 region 范围</span>
+#%% 1. data/file paths
+allfiles_path = os.path.join(&#39;../files/yangbi/*.SAC&#39;)             # 某个地震事件的文件夹，通配所有SAC数据
+limiting_sta = [&#39;XG.CHT&#39;,&#39;XG.HDQ&#39;,&#39;XG.XBT&#39;,&#39;XG.ZYT&#39;,&#39;YN.TUS&#39;,&#39;YN.YUX&#39;]         # 限幅的台站名称
 
-<span class="c1"># 3.2 Determine a nice stereographic projection</span>
-<span class="n">lon_0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">region</span><span class="p">[:</span><span class="mi">2</span><span class="p">])</span>
-<span class="n">lat_0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">region</span><span class="p">[</span><span class="mi">2</span><span class="p">:])</span>
-<span class="k">if</span> <span class="n">lat_0</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
-    <span class="n">ref_lat</span> <span class="o">=</span> <span class="mi">90</span>
-<span class="k">else</span><span class="p">:</span>
-    <span class="n">ref_lat</span> <span class="o">=</span> <span class="o">-</span><span class="mi">90</span>
-<span class="n">projection</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;S</span><span class="si">{</span><span class="n">lon_0</span><span class="si">}</span><span class="s1">/</span><span class="si">{</span><span class="n">ref_lat</span><span class="si">}</span><span class="s1">/6i&#39;</span>
-<span class="c1"># projection = f&#39;M{lon_0}/{lat_0}/6i&#39;</span>
+#%% 2.读取原始数据 return: data
+allfiles = sorted( glob.glob(allfiles_path) )
+data_raw = Stream()
+for i in range(0,len(allfiles),1):
+    tr = obspy.read(allfiles[i])
+    data_raw += tr
+data = data_raw.copy()
+
+#%% 3.读取台站的经纬度信息
+lons = []; lats = []; net = []; sta = []; names = []
+unique_stations = np.unique([tr.stats.station for tr in data])                  # 所有台站的名称
+for station in unique_stations:
+    tr = data.select(station=station)[0]                                        # Just taking the first Trace if multiple
+    lons.append(tr.stats.sac.stlo)
+    lats.append(tr.stats.sac.stla)
+    net.append(tr.stats.network)
+    sta.append(tr.stats.station)
+    names.append(f&#39;{tr.stats.network}.{tr.stats.station}&#39;)                      # 所有台站台网的名称
+evlo = tr.stats.sac.evlo # 地震位置
+evla = tr.stats.sac.evla
 
 
-<span class="c1">#%% 4. pygmt plot</span>
-<span class="n">fig</span> <span class="o">=</span> <span class="n">pygmt</span><span class="o">.</span><span class="n">Figure</span><span class="p">()</span>                                                            <span class="c1"># Create figure</span>
-<span class="c1"># 4.1 画行政边界图</span>
-<span class="n">fig</span><span class="o">.</span><span class="n">coast</span><span class="p">(</span><span class="n">region</span><span class="o">=</span><span class="n">region</span><span class="p">,</span>                                                        <span class="c1"># pygmt coast</span>
-          <span class="n">projection</span><span class="o">=</span><span class="n">projection</span><span class="p">,</span>
-          <span class="n">shorelines</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-          <span class="n">water</span><span class="o">=</span><span class="s1">&#39;lightblue&#39;</span><span class="p">,</span>
-          <span class="n">land</span><span class="o">=</span><span class="s1">&#39;lightgrey&#39;</span><span class="p">,</span>
-          <span class="n">borders</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>
-          <span class="n">frame</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;a2&#39;</span><span class="p">,</span><span class="s2">&quot;WSEN&quot;</span><span class="p">])</span>
+# 3.1 Determine a nice, padded region
+# region = [np.min(lons), np.max(lons), np.min(lats), np.max(lats)]
+# x_pad = (region[1] - region[0]) * 0.1
+# y_pad = (region[3] - region[2]) * 0.1
+# region = [region[0] - x_pad, region[1] + x_pad, region[2] - y_pad, region[3] + y_pad]
+region = [96.5, 107, 21, 29.5]                                                    # 手动指定 region 范围
 
-<span class="c1"># # 4.2 画台站图</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">names</span><span class="p">),</span><span class="mi">1</span><span class="p">):</span>
-    <span class="k">if</span> <span class="n">names</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="ow">in</span> <span class="n">limiting_sta</span><span class="p">:</span>
-        <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;red&#39;</span>
-        <span class="n">legend_red_index</span> <span class="o">=</span> <span class="n">i</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;blue&#39;</span>
-        <span class="n">legend_blue_index</span> <span class="o">=</span> <span class="n">i</span>
-    <span class="n">fig</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">lons</span><span class="p">[</span><span class="n">i</span><span class="p">],</span>                                                                  <span class="c1"># pygmt plot 画台站</span>
-              <span class="n">y</span><span class="o">=</span><span class="n">lats</span><span class="p">[</span><span class="n">i</span><span class="p">],</span>
-              <span class="n">style</span><span class="o">=</span><span class="s1">&#39;i0.1i&#39;</span><span class="p">,</span>
-              <span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="p">,</span>
-              <span class="n">pen</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+# 3.2 Determine a nice stereographic projection
+lon_0 = np.mean(region[:2])
+lat_0 = np.mean(region[2:])
+if lat_0 &gt; 0:
+    ref_lat = 90
+else:
+    ref_lat = -90
+projection = f&#39;S{lon_0}/{ref_lat}/6i&#39;
+# projection = f&#39;M{lon_0}/{lat_0}/6i&#39;
 
-<span class="c1"># 4.3 画legend需要的label</span>
-<span class="n">fig</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">lons</span><span class="p">[</span><span class="n">legend_red_index</span><span class="p">],</span>                                                                  <span class="c1"># pygmt plot 画台站</span>
-          <span class="n">y</span><span class="o">=</span><span class="n">lats</span><span class="p">[</span><span class="n">legend_red_index</span><span class="p">],</span>
-          <span class="n">style</span><span class="o">=</span><span class="s1">&#39;i0.1i&#39;</span><span class="p">,</span>
-          <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span>
-          <span class="n">pen</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-          <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Clipped_data+S0.25c&quot;</span><span class="p">)</span>                                                                     <span class="c1"># lagend 里面必须得加_,否则把空格当成文件，会报错</span>
-<span class="n">fig</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">lons</span><span class="p">[</span><span class="n">legend_blue_index</span><span class="p">],</span>                                                                  <span class="c1"># pygmt plot 画台站</span>
-          <span class="n">y</span><span class="o">=</span><span class="n">lats</span><span class="p">[</span><span class="n">legend_blue_index</span><span class="p">],</span>
-          <span class="n">style</span><span class="o">=</span><span class="s1">&#39;i0.1i&#39;</span><span class="p">,</span>
-          <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span>
-          <span class="n">pen</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-          <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Normal_data+S0.25c&quot;</span><span class="p">)</span>
 
-<span class="c1"># 4.4 标注台站名称 </span>
-<span class="n">fig</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="n">names</span><span class="p">,</span>                                                            <span class="c1"># pygmt text 台站名称</span>
-          <span class="n">x</span><span class="o">=</span><span class="n">lons</span><span class="p">,</span>
-          <span class="n">y</span><span class="o">=</span><span class="n">lats</span><span class="p">,</span>
-          <span class="n">xshift</span> <span class="o">=</span><span class="s1">&#39;0.2c&#39;</span><span class="p">,</span>
-          <span class="n">yshift</span> <span class="o">=</span><span class="s1">&#39;0.2c&#39;</span><span class="p">,</span>
-          <span class="n">font</span><span class="o">=</span><span class="s2">&quot;5p,Helvetica-Bold,white&quot;</span><span class="p">,</span>
-          <span class="n">fill</span><span class="o">=</span><span class="s2">&quot;orange&quot;</span><span class="p">,</span>
-          <span class="n">transparency</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+#%% 4. pygmt plot
+fig = pygmt.Figure()                                                            # Create figure
+# 4.1 画行政边界图
+fig.coast(region=region,                                                        # pygmt coast
+          projection=projection,
+          shorelines=True,
+          water=&#39;lightblue&#39;,
+          land=&#39;lightgrey&#39;,
+          borders=[1, 2],
+          frame=[&#39;a2&#39;,&quot;WSEN&quot;])
 
-<span class="c1"># 4.5 画地震的五角星</span>
-<span class="n">fig</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">evlo</span><span class="p">,</span>                                                                  <span class="c1"># pygmt plot 画台站</span>
-          <span class="n">y</span><span class="o">=</span><span class="n">evla</span><span class="p">,</span>
-          <span class="n">style</span><span class="o">=</span><span class="s1">&#39;a0.3i&#39;</span><span class="p">,</span>
-          <span class="n">color</span><span class="o">=</span><span class="s1">&#39;yellow&#39;</span><span class="p">,</span>
-          <span class="n">pen</span><span class="o">=</span><span class="kc">True</span><span class="p">,)</span>
+# # 4.2 画台站图
+for i in range(0,len(names),1):
+    if names[i] in limiting_sta:
+        color = &#39;red&#39;
+        legend_red_index = i
+    else:
+        color = &#39;blue&#39;
+        legend_blue_index = i
+    fig.plot(x=lons[i],                                                                  # pygmt plot 画台站
+              y=lats[i],
+              style=&#39;i0.1i&#39;,
+              color=color,
+              pen=True)
 
-<span class="c1"># 4.6 画震源机制</span>
-<span class="n">focal_mechanism</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">strike</span><span class="o">=</span><span class="mi">138</span><span class="p">,</span> <span class="n">dip</span><span class="o">=</span><span class="mi">76</span><span class="p">,</span> <span class="n">rake</span><span class="o">=-</span><span class="mi">170</span><span class="p">,</span> <span class="n">magnitude</span><span class="o">=</span><span class="mf">6.7</span><span class="p">)</span>            <span class="c1"># store focal mechanisms parameters in a dict</span>
-<span class="n">fig</span><span class="o">.</span><span class="n">meca</span><span class="p">(</span><span class="n">focal_mechanism</span><span class="p">,</span>                                                       <span class="c1"># pygmt meca 画沙滩球</span>
-          <span class="n">scale</span><span class="o">=</span><span class="s2">&quot;1.0c&quot;</span><span class="p">,</span>
-          <span class="n">longitude</span><span class="o">=</span><span class="mf">98.5</span><span class="p">,</span>
-          <span class="n">latitude</span><span class="o">=</span><span class="mf">26.6</span><span class="p">,</span>
-          <span class="n">depth</span><span class="o">=</span><span class="mf">12.0</span><span class="p">,</span>
-          <span class="n">G</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
+# 4.3 画legend需要的label
+fig.plot(x=lons[legend_red_index],                                                                  # pygmt plot 画台站
+          y=lats[legend_red_index],
+          style=&#39;i0.1i&#39;,
+          color=&#39;red&#39;,
+          pen=True,
+          label=&quot;Clipped_data+S0.25c&quot;)                                                                     # lagend 里面必须得加_,否则把空格当成文件，会报错
+fig.plot(x=lons[legend_blue_index],                                                                  # pygmt plot 画台站
+          y=lats[legend_blue_index],
+          style=&#39;i0.1i&#39;,
+          color=&#39;blue&#39;,
+          pen=True,
+          label=&quot;Normal_data+S0.25c&quot;)
 
-<span class="c1"># 4.7 画 箭头</span>
-<span class="n">fig</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">evlo</span><span class="p">,</span> 
-          <span class="n">y</span><span class="o">=</span><span class="n">evla</span><span class="p">,</span> 
-          <span class="n">style</span><span class="o">=</span><span class="s2">&quot;v0.3c+eA+a30&quot;</span><span class="p">,</span> 
-          <span class="n">direction</span><span class="o">=</span><span class="p">([</span><span class="mi">145</span><span class="p">],</span> <span class="p">[</span><span class="mf">1.6</span><span class="p">]),</span> 
-          <span class="n">pen</span><span class="o">=</span><span class="s2">&quot;0.8p&quot;</span>
-          <span class="p">)</span>
+# 4.4 标注台站名称 
+fig.text(text=names,                                                            # pygmt text 台站名称
+          x=lons,
+          y=lats,
+          xshift =&#39;0.2c&#39;,
+          yshift =&#39;0.2c&#39;,
+          font=&quot;5p,Helvetica-Bold,white&quot;,
+          fill=&quot;orange&quot;,
+          transparency=20)
 
-<span class="c1"># 4.8 添加图例</span>
-<span class="n">fig</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">spec</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">position</span><span class="o">=</span><span class="s2">&quot;JTR+jTR+o1.5c/0.7c&quot;</span><span class="p">,</span> <span class="n">box</span><span class="o">=</span><span class="s1">&#39;+gwhite+p0.5p&#39;</span><span class="p">)</span>
+# 4.5 画地震的五角星
+fig.plot(x=evlo,                                                                  # pygmt plot 画台站
+          y=evla,
+          style=&#39;a0.3i&#39;,
+          color=&#39;yellow&#39;,
+          pen=True,)
 
-<span class="c1"># 4.9 画插图</span>
-<span class="k">with</span> <span class="n">fig</span><span class="o">.</span><span class="n">inset</span><span class="p">(</span><span class="n">position</span><span class="o">=</span><span class="s2">&quot;jTL+w3c/2.3c+o1.0c/0.5c&quot;</span><span class="p">,</span> <span class="n">box</span><span class="o">=</span><span class="s2">&quot;+pblack&quot;</span><span class="p">):</span>
-    <span class="c1"># Use a plotting function to create a figure inside the inset</span>
-    <span class="n">fig</span><span class="o">.</span><span class="n">coast</span><span class="p">(</span>
-        <span class="n">region</span><span class="o">=</span><span class="p">[</span><span class="mi">70</span><span class="p">,</span> <span class="mi">135</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">55</span><span class="p">],</span>
-        <span class="n">projection</span><span class="o">=</span><span class="s2">&quot;M105/42.5/3c&quot;</span><span class="p">,</span>  <span class="c1">#&quot;M3c&quot;,</span>
-        <span class="n">land</span><span class="o">=</span><span class="s2">&quot;white&quot;</span><span class="p">,</span>
-        <span class="n">borders</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>
-        <span class="n">shorelines</span><span class="o">=</span><span class="s2">&quot;1/thin&quot;</span><span class="p">,</span>
-        <span class="n">water</span><span class="o">=</span><span class="s2">&quot;white&quot;</span><span class="p">,</span>
-        <span class="c1"># Use dcw to selectively highlight an area</span>
-        <span class="c1"># dcw=&quot;US.MA+gred&quot;,</span>
-    <span class="p">)</span>
+# 4.6 画震源机制
+focal_mechanism = dict(strike=138, dip=76, rake=-170, magnitude=6.7)            # store focal mechanisms parameters in a dict
+fig.meca(focal_mechanism,                                                       # pygmt meca 画沙滩球
+          scale=&quot;1.0c&quot;,
+          longitude=98.5,
+          latitude=26.6,
+          depth=12.0,
+          G=&#39;red&#39;)
+
+# 4.7 画 箭头
+fig.plot(x=evlo, 
+          y=evla, 
+          style=&quot;v0.3c+eA+a30&quot;, 
+          direction=([145], [1.6]), 
+          pen=&quot;0.8p&quot;
+          )
+
+# 4.8 添加图例
+fig.legend(spec=None, position=&quot;JTR+jTR+o1.5c/0.7c&quot;, box=&#39;+gwhite+p0.5p&#39;)
+
+# 4.9 画插图
+with fig.inset(position=&quot;jTL+w3c/2.3c+o1.0c/0.5c&quot;, box=&quot;+pblack&quot;):
+    # Use a plotting function to create a figure inside the inset
+    fig.coast(
+        region=[70, 135, 15, 55],
+        projection=&quot;M105/42.5/3c&quot;,  #&quot;M3c&quot;,
+        land=&quot;white&quot;,
+        borders=[1, 2],
+        shorelines=&quot;1/thin&quot;,
+        water=&quot;white&quot;,
+        # Use dcw to selectively highlight an area
+        # dcw=&quot;US.MA+gred&quot;,
+    )
     
-    <span class="n">fig</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">tr</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">sac</span><span class="o">.</span><span class="n">evlo</span><span class="p">,</span>                                                                  <span class="c1"># pygmt plot 画台站</span>
-          <span class="n">y</span><span class="o">=</span><span class="n">tr</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">sac</span><span class="o">.</span><span class="n">evla</span><span class="p">,</span>
-          <span class="n">style</span><span class="o">=</span><span class="s1">&#39;a0.15i&#39;</span><span class="p">,</span>
-          <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span>
-          <span class="n">pen</span><span class="o">=</span><span class="kc">True</span><span class="p">,)</span>
+    fig.plot(x=tr.stats.sac.evlo,                                                                  # pygmt plot 画台站
+          y=tr.stats.sac.evla,
+          style=&#39;a0.15i&#39;,
+          color=&#39;red&#39;,
+          pen=True,)
 
-<span class="c1">#%% 5 保存图片</span>
-<span class="c1"># fig.savefig(&quot;STA_location_yangbi.pdf&quot;)                                             # pygmt savefig 保存图片</span>
-<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+#%% 5 保存图片
+# fig.savefig(&quot;STA_location_yangbi.pdf&quot;)                                             # pygmt savefig 保存图片
+fig.show()
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">GMTCLibNotFoundError</span><span class="g g-Whitespace">                      </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">9</span>
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">9</span>
 <span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1">#!/usr/bin/env python3</span>
 <span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="c1"># -*- coding: utf-8 -*-</span>
 <span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="sd">&quot;&quot;&quot;</span>
@@ -1056,264 +1056,264 @@ $ gmt makecpt -Chaxby -Z -T-1000/4000/100 &gt; tmp.cpt
 <p><strong>Pygmt plot:</strong></p>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python3</span>
-<span class="c1"># -*- coding: utf-8 -*-</span>
-<span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">Created on Tue May 25 22:44:49 2021</span>
-<span class="sd">    1. run S1_get_cpt_grd.sh first.</span>
-<span class="sd">    2. run this script</span>
-<span class="sd">    </span>
-<span class="sd">@author: yf</span>
-<span class="sd">&quot;&quot;&quot;</span>
-<span class="kn">import</span> <span class="nn">pygmt</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">os</span><span class="o">,</span><span class="nn">glob</span>
-<span class="kn">from</span> <span class="nn">obspy.core</span> <span class="kn">import</span> <span class="n">UTCDateTime</span>
-
-<span class="c1">#%% 1.Set config</span>
-<span class="n">fig</span> <span class="o">=</span> <span class="n">pygmt</span><span class="o">.</span><span class="n">Figure</span><span class="p">()</span>
-<span class="n">pygmt</span><span class="o">.</span><span class="n">config</span><span class="p">(</span><span class="n">FONT_ANNOT_PRIMARY</span><span class="o">=</span><span class="s2">&quot;10p&quot;</span><span class="p">)</span>  <span class="c1"># 设置字体大小,define fig = pygmt.Figure() first</span>
-<span class="n">pygmt</span><span class="o">.</span><span class="n">config</span><span class="p">(</span><span class="n">MAP_FRAME_TYPE</span><span class="o">=</span><span class="s2">&quot;fancy&quot;</span><span class="p">)</span>
-<span class="n">pygmt</span><span class="o">.</span><span class="n">config</span><span class="p">(</span><span class="n">MAP_FRAME_WIDTH</span><span class="o">=</span><span class="s2">&quot;0.15c&quot;</span><span class="p">)</span>  <span class="c1"># 设置地图边界粗细</span>
-<span class="n">pygmt</span><span class="o">.</span><span class="n">config</span><span class="p">(</span><span class="n">FORMAT_GEO_MAP</span><span class="o">=</span><span class="s2">&quot;ddd.xx&quot;</span><span class="p">)</span>  <span class="c1"># 设置经纬度格式</span>
-<span class="n">pygmt</span><span class="o">.</span><span class="n">config</span><span class="p">(</span><span class="n">MAP_TICK_PEN_PRIMARY</span><span class="o">=</span><span class="s2">&quot;1.5p,black&quot;</span><span class="p">)</span> <span class="c1"># 控制比例尺的线及刻度属性</span>
-
-
-<span class="c1">#%% 2.Plot main fig</span>
-<span class="n">region</span> <span class="o">=</span> <span class="p">[</span><span class="mf">100.345</span><span class="p">,</span> <span class="mf">100.66</span><span class="p">,</span> <span class="mf">25.70</span><span class="p">,</span> <span class="mf">25.91</span><span class="p">]</span>
-<span class="n">projection</span> <span class="o">=</span> <span class="s1">&#39;M100.5/25.75/6i&#39;</span>
-<span class="n">fig</span><span class="o">.</span><span class="n">basemap</span><span class="p">(</span><span class="n">region</span><span class="o">=</span><span class="n">region</span><span class="p">,</span> <span class="n">projection</span><span class="o">=</span><span class="n">projection</span><span class="p">,</span><span class="n">frame</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;a0.1&#39;</span><span class="p">,</span><span class="s2">&quot;WSen&quot;</span><span class="p">])</span>    <span class="c1"># a后面加lat/lon的间隔</span>
-
-<span class="c1">### a.grimage</span>
-<span class="c1"># pygmt.makecpt(cmap=&quot;haxby&quot;, series=[1000, 4000])  # not used, use external cpt now</span>
-<span class="n">fig</span><span class="o">.</span><span class="n">grdimage</span><span class="p">(</span>
-    <span class="n">grid</span> <span class="o">=</span> <span class="s2">&quot;../files/dayindian/tmp.grd&quot;</span><span class="p">,</span>
-    <span class="n">shading</span> <span class="o">=</span> <span class="s2">&quot;../files/dayindian/tmp.ient&quot;</span><span class="p">,</span>
-    <span class="n">cmap</span> <span class="o">=</span> <span class="s2">&quot;../files/dayindian/tmp.cpt&quot;</span><span class="p">,</span>
-    <span class="c1"># region=region,</span>
-    <span class="c1"># projection=projection,</span>
-    <span class="c1"># frame=&#39;a0.2&#39;,</span>
-<span class="p">)</span>
-<span class="n">fig</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span>
-    <span class="c1"># Colorbar position justified outside map frame (J) at Middle Right (MR),</span>
-    <span class="c1"># offset (+o) by 1 cm horizontally and 0 cm vertically from anchor point,</span>
-    <span class="c1"># with a length/width (+w) of 7 cm by 0.5 cm</span>
-    <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;../files/dayindian/tmp.cpt&quot;</span><span class="p">,</span>
-    <span class="n">position</span><span class="o">=</span><span class="s2">&quot;JMR+o0.7c/-2c+w7c/0.5c&quot;</span><span class="p">,</span>  <span class="c1"># mu表示单位放在下面</span>
-    <span class="n">frame</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;xa500f250&quot;</span><span class="p">,</span> <span class="s2">&quot;y+l(m)&quot;</span><span class="p">],</span>
-    <span class="n">truncate</span> <span class="o">=</span> <span class="s2">&quot;1000/3000&quot;</span><span class="p">,</span>  <span class="c1"># 截断表示 从1000m至4000m</span>
-    <span class="n">scale</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
-<span class="p">)</span>
-<span class="c1"># replot map_scale</span>
-<span class="n">fig</span><span class="o">.</span><span class="n">basemap</span><span class="p">(</span><span class="n">region</span><span class="o">=</span><span class="n">region</span><span class="p">,</span> <span class="n">projection</span><span class="o">=</span><span class="n">projection</span><span class="p">,</span><span class="n">frame</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;a0.1&#39;</span><span class="p">,</span><span class="s2">&quot;WSen&quot;</span><span class="p">],</span><span class="n">map_scale</span><span class="o">=</span><span class="s2">&quot;g100.62/25.72+c25.7+w2k+u&quot;</span><span class="p">)</span>    <span class="c1"># a后面加lat/lon的间隔</span>
-
-<span class="c1">### b.fault</span>
-<span class="n">fig</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="c1">#data=&quot;../files/dayindian/fault/CN-faults.gmt&quot;,</span>
-         <span class="n">data</span><span class="o">=</span><span class="s2">&quot;../files/dayindian/fault/fault_paper.txt&quot;</span><span class="p">,</span>
-         <span class="n">region</span><span class="o">=</span><span class="n">region</span><span class="p">,</span> <span class="c1"># 必须添加，否则断层会画出界</span>
-         <span class="n">pen</span><span class="o">=</span><span class="s2">&quot;1.5p,red&quot;</span><span class="p">)</span>
-
-<span class="c1"># create space-delimited file</span>
-<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;../files/dayindian/fault/faultname_paper.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;100.40 25.705 5 8p,Helvetica-Bold,gray30 CM Honghegu</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
-    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;100.58 25.865 55 8p,Helvetica-Bold,gray30 CM Yongsheng-Binchuan</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
-
-<span class="n">fig</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">textfiles</span><span class="o">=</span><span class="s2">&quot;../files/dayindian/fault/faultname_paper.txt&quot;</span><span class="p">,</span> <span class="n">angle</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">font</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">justify</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-
-<span class="c1"># cleanups</span>
-<span class="n">os</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="s2">&quot;../files/dayindian/fault/faultname_paper.txt&quot;</span><span class="p">)</span>
-
-
-<span class="c1">### c.seismicity</span>
-<span class="n">time_bd</span> <span class="o">=</span> <span class="n">UTCDateTime</span><span class="p">(</span><span class="s2">&quot;2012-09-07T12:15:00&quot;</span><span class="p">)</span>
-<span class="n">earthquakes_path</span> <span class="o">=</span> <span class="s1">&#39;../files/dayindian/seismicity/20080106-20211121.txt&#39;</span>
-<span class="n">s1_lats</span> <span class="o">=</span> <span class="p">[];</span> <span class="n">s1_lons</span> <span class="o">=</span> <span class="p">[];</span> <span class="n">s1_M</span> <span class="o">=</span> <span class="p">[];</span> <span class="n">s1_t</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="n">s2_lats</span> <span class="o">=</span> <span class="p">[];</span> <span class="n">s2_lons</span> <span class="o">=</span> <span class="p">[];</span> <span class="n">s2_M</span> <span class="o">=</span> <span class="p">[];</span> <span class="n">s2_t</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">earthquakes_path</span><span class="p">,</span><span class="s1">&#39;r&#39;</span><span class="p">,</span><span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;ISO-8859-1&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-    <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">f</span><span class="p">:</span>
-        <span class="k">try</span><span class="p">:</span>
-            <span class="n">t</span> <span class="o">=</span> <span class="n">UTCDateTime</span><span class="p">(</span><span class="n">line</span><span class="o">.</span><span class="n">split</span><span class="p">()[</span><span class="mi">0</span><span class="p">])</span>
-            <span class="n">lat</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">line</span><span class="o">.</span><span class="n">split</span><span class="p">()[</span><span class="mi">2</span><span class="p">])</span>
-            <span class="n">lon</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">line</span><span class="o">.</span><span class="n">split</span><span class="p">()[</span><span class="mi">3</span><span class="p">])</span>
-            <span class="n">M</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">line</span><span class="o">.</span><span class="n">split</span><span class="p">()[</span><span class="mi">6</span><span class="p">])</span>
-            <span class="k">if</span> <span class="n">M</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">:</span>
-                <span class="k">if</span> <span class="n">time_bd</span><span class="o">&lt;=</span><span class="n">t</span><span class="p">:</span>
-                    <span class="n">s1_t</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
-                    <span class="n">s1_lats</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">lat</span><span class="p">)</span>
-                    <span class="n">s1_lons</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">lon</span><span class="p">)</span>
-                    <span class="n">s1_M</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">M</span><span class="p">)</span>
-                <span class="k">else</span><span class="p">:</span>
-                    <span class="n">s2_t</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
-                    <span class="n">s2_lats</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">lat</span><span class="p">)</span>
-                    <span class="n">s2_lons</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">lon</span><span class="p">)</span>
-                    <span class="n">s2_M</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">M</span><span class="p">)</span>
-        <span class="k">except</span><span class="p">:</span>
-            <span class="k">continue</span>
-<span class="c1"># before time_bd</span>
-<span class="n">fig</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">s1_lons</span><span class="p">,</span>
-         <span class="n">y</span><span class="o">=</span><span class="n">s1_lats</span><span class="p">,</span>
-         <span class="n">size</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">s1_M</span><span class="p">)</span><span class="o">*</span><span class="mf">0.03</span><span class="p">,</span>
-         <span class="n">style</span><span class="o">=</span><span class="s2">&quot;c&quot;</span><span class="p">,</span>
-         <span class="n">color</span><span class="o">=</span><span class="s2">&quot;148/0/211&quot;</span><span class="p">,</span>
-         <span class="n">pen</span><span class="o">=</span><span class="s2">&quot;0.25p,148/0/211&quot;</span><span class="p">)</span>
-<span class="c1"># after time_bd</span>
-<span class="n">fig</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">s2_lons</span><span class="p">,</span>
-         <span class="n">y</span><span class="o">=</span><span class="n">s2_lats</span><span class="p">,</span>
-         <span class="n">size</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">s2_M</span><span class="p">)</span><span class="o">*</span><span class="mf">0.03</span><span class="p">,</span>
-         <span class="n">style</span><span class="o">=</span><span class="s2">&quot;c&quot;</span><span class="p">,</span>
-         <span class="n">color</span><span class="o">=</span><span class="s2">&quot;255/0/255&quot;</span><span class="p">,</span>
-         <span class="n">pen</span><span class="o">=</span><span class="s2">&quot;0.25p,255/0/255&quot;</span><span class="p">)</span>
-
-
-<span class="c1">### d.reservoir</span>
-<span class="n">fig</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="s2">&quot;../files/dayindian/reservoir_shape/dayindian_reservoir_shape&quot;</span><span class="p">,</span>
-         <span class="n">pen</span><span class="o">=</span><span class="s2">&quot;0.2p,blue&quot;</span><span class="p">,</span>
-         <span class="n">color</span><span class="o">=</span><span class="s2">&quot;blue&quot;</span><span class="p">)</span>
-
-<span class="n">fig</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s2">&quot;Reservoir&quot;</span><span class="p">,</span>
-          <span class="n">x</span><span class="o">=</span><span class="mf">100.507</span><span class="p">,</span>
-          <span class="n">y</span><span class="o">=</span><span class="mf">25.793</span><span class="p">,</span>
-          <span class="n">font</span><span class="o">=</span><span class="s2">&quot;10p,Helvetica-Bold,blue&quot;</span><span class="p">,</span>
-          <span class="n">transparency</span><span class="o">=</span><span class="mi">30</span><span class="p">)</span>
-
-
-<span class="c1">### e.station</span>
-<span class="n">sta_lat_lon_path</span> <span class="o">=</span> <span class="s1">&#39;../files/dayindian/sta_lat_lon/sta_lat_lon_select.txt&#39;</span>
-<span class="n">Red_sta</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;53263&#39;</span><span class="p">,</span><span class="s1">&#39;53265&#39;</span><span class="p">]</span>         <span class="c1"># 红色的台站</span>
-<span class="n">lats</span> <span class="o">=</span> <span class="p">[];</span> <span class="n">lons</span> <span class="o">=</span> <span class="p">[];</span> <span class="n">names</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">sta_lat_lon_path</span><span class="p">,</span><span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-    <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">f</span><span class="p">:</span>
-        <span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
-        <span class="n">sta_name</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">split</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span>
-        <span class="n">lon</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">line</span><span class="o">.</span><span class="n">split</span><span class="p">()[</span><span class="mi">1</span><span class="p">])</span>
-        <span class="n">lat</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">line</span><span class="o">.</span><span class="n">split</span><span class="p">()[</span><span class="mi">2</span><span class="p">])</span>
-        <span class="n">names</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">sta_name</span><span class="p">)</span>
-        <span class="n">lats</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">lat</span><span class="p">)</span>
-        <span class="n">lons</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">lon</span><span class="p">)</span>
-
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">names</span><span class="p">),</span><span class="mi">1</span><span class="p">):</span>
-    <span class="k">if</span> <span class="n">names</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="ow">in</span> <span class="n">Red_sta</span><span class="p">:</span>
-        <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;red&#39;</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;black&#39;</span>
-    <span class="k">if</span> <span class="p">(</span><span class="n">lons</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">&lt;</span><span class="n">region</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">lons</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">&gt;</span><span class="n">region</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">lats</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">&lt;</span><span class="n">region</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">lats</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">&gt;</span><span class="n">region</span><span class="p">[</span><span class="mi">2</span><span class="p">]):</span>
-        <span class="n">fig</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
-            <span class="n">x</span><span class="o">=</span><span class="n">lons</span><span class="p">[</span><span class="n">i</span><span class="p">],</span>
-            <span class="n">y</span><span class="o">=</span><span class="n">lats</span><span class="p">[</span><span class="n">i</span><span class="p">],</span>
-            <span class="n">style</span><span class="o">=</span><span class="s1">&#39;t0.15i&#39;</span><span class="p">,</span>
-            <span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="p">,</span>
-            <span class="n">pen</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-
-<span class="n">fig</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="n">names</span><span class="p">,</span>
-          <span class="n">x</span><span class="o">=</span><span class="n">lons</span><span class="p">,</span>
-          <span class="n">y</span><span class="o">=</span><span class="n">lats</span><span class="p">,</span>
-          <span class="n">xshift</span> <span class="o">=</span><span class="s1">&#39;0.0c&#39;</span><span class="p">,</span>
-          <span class="n">yshift</span> <span class="o">=</span><span class="s1">&#39;-0.25c&#39;</span><span class="p">,</span>
-          <span class="n">font</span><span class="o">=</span><span class="s2">&quot;7p,Helvetica-Bold,black&quot;</span><span class="p">,</span>
-          <span class="p">)</span>
-
-
-<span class="c1">#%% 3.Inset</span>
-<span class="k">with</span> <span class="n">fig</span><span class="o">.</span><span class="n">inset</span><span class="p">(</span><span class="n">position</span><span class="o">=</span><span class="s2">&quot;jTL+w6c+o-0.3c/-1.6c&quot;</span><span class="p">,</span><span class="n">margin</span><span class="o">=</span><span class="s2">&quot;0.5c&quot;</span><span class="p">):</span> <span class="c1">#  box=&quot;+pblack&quot;</span>
-    <span class="n">pygmt</span><span class="o">.</span><span class="n">config</span><span class="p">(</span><span class="n">MAP_FRAME_WIDTH</span><span class="o">=</span><span class="s2">&quot;0.1c&quot;</span><span class="p">)</span>
-    <span class="c1"># a.basemap</span>
-    <span class="n">fig</span><span class="o">.</span><span class="n">basemap</span><span class="p">(</span><span class="n">region</span><span class="o">=</span><span class="p">[</span><span class="mf">70.0</span><span class="p">,</span> <span class="mf">130.0</span><span class="p">,</span> <span class="mf">10.0</span><span class="p">,</span> <span class="mf">40.0</span><span class="p">],</span> 
-                <span class="n">projection</span><span class="o">=</span><span class="s2">&quot;B100/5/10/40/?&quot;</span><span class="p">,</span>
-                <span class="n">frame</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;a15&#39;</span><span class="p">,</span><span class="s2">&quot;wsen&quot;</span><span class="p">])</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+&quot;&quot;&quot;
+Created on Tue May 25 22:44:49 2021
+    1. run S1_get_cpt_grd.sh first.
+    2. run this script
     
-    <span class="c1"># b.coast</span>
-    <span class="n">fig</span><span class="o">.</span><span class="n">coast</span><span class="p">(</span>
-        <span class="c1"># region=[70.0, 130.0, 10.0, 40.0],</span>
-        <span class="c1"># projection=&quot;B100/5/10/40/?&quot;,  #&quot;M3c&quot;,</span>
-        <span class="c1"># frame = [&#39;a10&#39;,&quot;wsen&quot;],</span>
-        <span class="n">land</span><span class="o">=</span><span class="s2">&quot;white&quot;</span><span class="p">,</span>
-        <span class="n">shorelines</span><span class="o">=</span><span class="s2">&quot;0.1p,black&quot;</span><span class="p">,</span>
-        <span class="c1"># area_thresh = 1000,</span>
-        <span class="n">water</span><span class="o">=</span><span class="s2">&quot;white&quot;</span><span class="p">,</span>
-        <span class="c1"># borders=1,</span>
-        <span class="p">)</span>
+@author: yf
+&quot;&quot;&quot;
+import pygmt
+import numpy as np
+import os,glob
+from obspy.core import UTCDateTime
+
+#%% 1.Set config
+fig = pygmt.Figure()
+pygmt.config(FONT_ANNOT_PRIMARY=&quot;10p&quot;)  # 设置字体大小,define fig = pygmt.Figure() first
+pygmt.config(MAP_FRAME_TYPE=&quot;fancy&quot;)
+pygmt.config(MAP_FRAME_WIDTH=&quot;0.15c&quot;)  # 设置地图边界粗细
+pygmt.config(FORMAT_GEO_MAP=&quot;ddd.xx&quot;)  # 设置经纬度格式
+pygmt.config(MAP_TICK_PEN_PRIMARY=&quot;1.5p,black&quot;) # 控制比例尺的线及刻度属性
+
+
+#%% 2.Plot main fig
+region = [100.345, 100.66, 25.70, 25.91]
+projection = &#39;M100.5/25.75/6i&#39;
+fig.basemap(region=region, projection=projection,frame=[&#39;a0.1&#39;,&quot;WSen&quot;])    # a后面加lat/lon的间隔
+
+### a.grimage
+# pygmt.makecpt(cmap=&quot;haxby&quot;, series=[1000, 4000])  # not used, use external cpt now
+fig.grdimage(
+    grid = &quot;../files/dayindian/tmp.grd&quot;,
+    shading = &quot;../files/dayindian/tmp.ient&quot;,
+    cmap = &quot;../files/dayindian/tmp.cpt&quot;,
+    # region=region,
+    # projection=projection,
+    # frame=&#39;a0.2&#39;,
+)
+fig.colorbar(
+    # Colorbar position justified outside map frame (J) at Middle Right (MR),
+    # offset (+o) by 1 cm horizontally and 0 cm vertically from anchor point,
+    # with a length/width (+w) of 7 cm by 0.5 cm
+    cmap=&quot;../files/dayindian/tmp.cpt&quot;,
+    position=&quot;JMR+o0.7c/-2c+w7c/0.5c&quot;,  # mu表示单位放在下面
+    frame=[&quot;xa500f250&quot;, &quot;y+l(m)&quot;],
+    truncate = &quot;1000/3000&quot;,  # 截断表示 从1000m至4000m
+    scale=1,
+)
+# replot map_scale
+fig.basemap(region=region, projection=projection,frame=[&#39;a0.1&#39;,&quot;WSen&quot;],map_scale=&quot;g100.62/25.72+c25.7+w2k+u&quot;)    # a后面加lat/lon的间隔
+
+### b.fault
+fig.plot(#data=&quot;../files/dayindian/fault/CN-faults.gmt&quot;,
+         data=&quot;../files/dayindian/fault/fault_paper.txt&quot;,
+         region=region, # 必须添加，否则断层会画出界
+         pen=&quot;1.5p,red&quot;)
+
+# create space-delimited file
+with open(&quot;../files/dayindian/fault/faultname_paper.txt&quot;, &quot;w&quot;) as f:
+    f.write(&quot;100.40 25.705 5 8p,Helvetica-Bold,gray30 CM Honghegu\n&quot;)
+    f.write(&quot;100.58 25.865 55 8p,Helvetica-Bold,gray30 CM Yongsheng-Binchuan\n&quot;)
+
+fig.text(textfiles=&quot;../files/dayindian/fault/faultname_paper.txt&quot;, angle=True, font=True, justify=True)
+
+# cleanups
+os.remove(&quot;../files/dayindian/fault/faultname_paper.txt&quot;)
+
+
+### c.seismicity
+time_bd = UTCDateTime(&quot;2012-09-07T12:15:00&quot;)
+earthquakes_path = &#39;../files/dayindian/seismicity/20080106-20211121.txt&#39;
+s1_lats = []; s1_lons = []; s1_M = []; s1_t = []
+s2_lats = []; s2_lons = []; s2_M = []; s2_t = []
+with open(earthquakes_path,&#39;r&#39;,encoding=&#39;ISO-8859-1&#39;) as f:
+    for line in f:
+        try:
+            t = UTCDateTime(line.split()[0])
+            lat = float(line.split()[2])
+            lon = float(line.split()[3])
+            M = float(line.split()[6])
+            if M &lt; 10:
+                if time_bd&lt;=t:
+                    s1_t.append(t)
+                    s1_lats.append(lat)
+                    s1_lons.append(lon)
+                    s1_M.append(M)
+                else:
+                    s2_t.append(t)
+                    s2_lats.append(lat)
+                    s2_lons.append(lon)
+                    s2_M.append(M)
+        except:
+            continue
+# before time_bd
+fig.plot(x=s1_lons,
+         y=s1_lats,
+         size=np.array(s1_M)*0.03,
+         style=&quot;c&quot;,
+         color=&quot;148/0/211&quot;,
+         pen=&quot;0.25p,148/0/211&quot;)
+# after time_bd
+fig.plot(x=s2_lons,
+         y=s2_lats,
+         size=np.array(s2_M)*0.03,
+         style=&quot;c&quot;,
+         color=&quot;255/0/255&quot;,
+         pen=&quot;0.25p,255/0/255&quot;)
+
+
+### d.reservoir
+fig.plot(data=&quot;../files/dayindian/reservoir_shape/dayindian_reservoir_shape&quot;,
+         pen=&quot;0.2p,blue&quot;,
+         color=&quot;blue&quot;)
+
+fig.text(text=&quot;Reservoir&quot;,
+          x=100.507,
+          y=25.793,
+          font=&quot;10p,Helvetica-Bold,blue&quot;,
+          transparency=30)
+
+
+### e.station
+sta_lat_lon_path = &#39;../files/dayindian/sta_lat_lon/sta_lat_lon_select.txt&#39;
+Red_sta = [&#39;53263&#39;,&#39;53265&#39;]         # 红色的台站
+lats = []; lons = []; names = []
+with open(sta_lat_lon_path,&#39;r&#39;) as f:
+    for line in f:
+        line.strip()
+        sta_name = line.split()[0]
+        lon = float(line.split()[1])
+        lat = float(line.split()[2])
+        names.append(sta_name)
+        lats.append(lat)
+        lons.append(lon)
+
+for i in range(0,len(names),1):
+    if names[i] in Red_sta:
+        color = &#39;red&#39;
+    else:
+        color = &#39;black&#39;
+    if (lons[i]&lt;region[1]) &amp; (lons[i]&gt;region[0]) &amp; (lats[i]&lt;region[3]) &amp; (lats[i]&gt;region[2]):
+        fig.plot(
+            x=lons[i],
+            y=lats[i],
+            style=&#39;t0.15i&#39;,
+            color=color,
+            pen=True)
+
+fig.text(text=names,
+          x=lons,
+          y=lats,
+          xshift =&#39;0.0c&#39;,
+          yshift =&#39;-0.25c&#39;,
+          font=&quot;7p,Helvetica-Bold,black&quot;,
+          )
+
+
+#%% 3.Inset
+with fig.inset(position=&quot;jTL+w6c+o-0.3c/-1.6c&quot;,margin=&quot;0.5c&quot;): #  box=&quot;+pblack&quot;
+    pygmt.config(MAP_FRAME_WIDTH=&quot;0.1c&quot;)
+    # a.basemap
+    fig.basemap(region=[70.0, 130.0, 10.0, 40.0], 
+                projection=&quot;B100/5/10/40/?&quot;,
+                frame=[&#39;a15&#39;,&quot;wsen&quot;])
     
-    <span class="c1"># c.plate_boundary</span>
-    <span class="n">fig</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="s2">&quot;../files/dayindian/plate_boundary/India_Eurasia&quot;</span><span class="p">,</span>
-         <span class="n">pen</span><span class="o">=</span><span class="s2">&quot;0.5p,red&quot;</span><span class="p">,</span>
-         <span class="n">style</span><span class="o">=</span><span class="s2">&quot;f0.5/6p+t+l&quot;</span><span class="p">,</span>
-         <span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;red&quot;</span><span class="p">)</span>
-    <span class="n">fig</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="s2">&quot;../files/dayindian/plate_boundary/Philippin_Eurasia&quot;</span><span class="p">,</span>
-         <span class="n">pen</span><span class="o">=</span><span class="s2">&quot;0.5p,red&quot;</span><span class="p">,</span>
-         <span class="n">style</span><span class="o">=</span><span class="s2">&quot;f0.5/6p+t+l&quot;</span><span class="p">,</span>
-         <span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;red&quot;</span><span class="p">)</span>
+    # b.coast
+    fig.coast(
+        # region=[70.0, 130.0, 10.0, 40.0],
+        # projection=&quot;B100/5/10/40/?&quot;,  #&quot;M3c&quot;,
+        # frame = [&#39;a10&#39;,&quot;wsen&quot;],
+        land=&quot;white&quot;,
+        shorelines=&quot;0.1p,black&quot;,
+        # area_thresh = 1000,
+        water=&quot;white&quot;,
+        # borders=1,
+        )
     
-    <span class="c1"># d.text</span>
-    <span class="n">fig</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;INDIA&quot;</span><span class="p">,</span><span class="s2">&quot;CHINA&quot;</span><span class="p">],</span>                                                            <span class="c1"># pygmt text 台站名称</span>
-          <span class="n">x</span><span class="o">=</span><span class="p">[</span><span class="mi">79</span><span class="p">,</span><span class="mi">108</span><span class="p">],</span>
-          <span class="n">y</span><span class="o">=</span><span class="p">[</span><span class="mi">22</span><span class="p">,</span><span class="mi">31</span><span class="p">],</span>
-          <span class="n">xshift</span> <span class="o">=</span><span class="s1">&#39;0.0c&#39;</span><span class="p">,</span>
-          <span class="n">yshift</span> <span class="o">=</span><span class="s1">&#39;0.0c&#39;</span><span class="p">,</span>
-          <span class="n">font</span><span class="o">=</span><span class="s2">&quot;8p,Helvetica-Bold,black&quot;</span><span class="p">,</span>
-          <span class="p">)</span>
-    <span class="n">fig</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Bengal Bay&quot;</span><span class="p">,</span><span class="s2">&quot;South China Sea&quot;</span><span class="p">],</span>                                                            <span class="c1"># pygmt text 台站名称</span>
-          <span class="n">x</span><span class="o">=</span><span class="p">[</span><span class="mi">88</span><span class="p">,</span><span class="mi">114</span><span class="p">],</span>
-          <span class="n">y</span><span class="o">=</span><span class="p">[</span><span class="mi">16</span><span class="p">,</span><span class="mi">16</span><span class="p">],</span>
-          <span class="n">xshift</span> <span class="o">=</span><span class="s1">&#39;0.0c&#39;</span><span class="p">,</span>
-          <span class="n">yshift</span> <span class="o">=</span><span class="s1">&#39;0.0c&#39;</span><span class="p">,</span>
-          <span class="n">font</span><span class="o">=</span><span class="s2">&quot;4p,Helvetica-Bold,black&quot;</span><span class="p">,</span>
-          <span class="n">transparency</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+    # c.plate_boundary
+    fig.plot(data=&quot;../files/dayindian/plate_boundary/India_Eurasia&quot;,
+         pen=&quot;0.5p,red&quot;,
+         style=&quot;f0.5/6p+t+l&quot;,
+         color = &quot;red&quot;)
+    fig.plot(data=&quot;../files/dayindian/plate_boundary/Philippin_Eurasia&quot;,
+         pen=&quot;0.5p,red&quot;,
+         style=&quot;f0.5/6p+t+l&quot;,
+         color = &quot;red&quot;)
     
-    <span class="c1"># e.start</span>
-    <span class="n">fig</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mf">100.500534</span><span class="p">,</span>
-             <span class="n">y</span><span class="o">=</span><span class="mf">25.809124</span><span class="p">,</span>
-             <span class="n">pen</span><span class="o">=</span><span class="s2">&quot;0.1p,green&quot;</span><span class="p">,</span>
-             <span class="n">style</span><span class="o">=</span><span class="s2">&quot;a0.5c&quot;</span><span class="p">,</span>
-             <span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;green&quot;</span><span class="p">)</span>
+    # d.text
+    fig.text(text=[&quot;INDIA&quot;,&quot;CHINA&quot;],                                                            # pygmt text 台站名称
+          x=[79,108],
+          y=[22,31],
+          xshift =&#39;0.0c&#39;,
+          yshift =&#39;0.0c&#39;,
+          font=&quot;8p,Helvetica-Bold,black&quot;,
+          )
+    fig.text(text=[&quot;Bengal Bay&quot;,&quot;South China Sea&quot;],                                                            # pygmt text 台站名称
+          x=[88,114],
+          y=[16,16],
+          xshift =&#39;0.0c&#39;,
+          yshift =&#39;0.0c&#39;,
+          font=&quot;4p,Helvetica-Bold,black&quot;,
+          transparency=20)
+    
+    # e.start
+    fig.plot(x=100.500534,
+             y=25.809124,
+             pen=&quot;0.1p,green&quot;,
+             style=&quot;a0.5c&quot;,
+             color = &quot;green&quot;)
 
-<span class="c1">#%% 4.Legend</span>
-<span class="c1">### a.set legend</span>
-<span class="n">leg</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
-<span class="s2">### station</span>
-<span class="s2">S 0.5c t 0.2i black 1.0p 2.0c  Seismic Stations</span>
-<span class="s2">G -1l</span>
-<span class="s2">S 1.2c t 0.2i red 1.0p 2.0c </span>
-<span class="s2">G -1l</span>
+#%% 4.Legend
+### a.set legend
+leg = &quot;&quot;&quot;
+### station
+S 0.5c t 0.2i black 1.0p 2.0c  Seismic Stations
+G -1l
+S 1.2c t 0.2i red 1.0p 2.0c 
+G -1l
 
-<span class="s2">### reservoir</span>
-<span class="s2">S 9.6c a 0.5c green 1.0p,green 10.8c  Dayindian Reservoir</span>
-<span class="s2">G 0.2c</span>
+### reservoir
+S 9.6c a 0.5c green 1.0p,green 10.8c  Dayindian Reservoir
+G 0.2c
 
-<span class="s2">### faults</span>
-<span class="s2">S 0.8c - 0.5i - 1.5p,red 2.0c  Faults</span>
-<span class="s2">G -1l</span>
+### faults
+S 0.8c - 0.5i - 1.5p,red 2.0c  Faults
+G -1l
 
-<span class="s2">### boundary</span>
-<span class="s2">S 9.6c f0.5/6p+l+t 0.3i red 1.0p,red 10.8c  Plate Boundary</span>
-<span class="s2">G 0.2c</span>
+### boundary
+S 9.6c f0.5/6p+l+t 0.3i red 1.0p,red 10.8c  Plate Boundary
+G 0.2c
 
-<span class="s2">### m1</span>
-<span class="s2">S 0.3c c 0.03c 148/0/211 0.25p 2.0c  Before Impoundment (Mb: 1~5)</span>
-<span class="s2">G -1l</span>
-<span class="s2">S 0.8c c 0.09c 148/0/211 0.25p</span>
-<span class="s2">G -1l</span>
-<span class="s2">S 1.4c c 0.15c 148/0/211 0.25p</span>
-<span class="s2">G -1l</span>
+### m1
+S 0.3c c 0.03c 148/0/211 0.25p 2.0c  Before Impoundment (Mb: 1~5)
+G -1l
+S 0.8c c 0.09c 148/0/211 0.25p
+G -1l
+S 1.4c c 0.15c 148/0/211 0.25p
+G -1l
 
-<span class="s2">### m2</span>
-<span class="s2">S 9.1c c 0.03c 255/0/255 0.25p 10.8c  After Impoundment (Mb: 1~5)</span>
-<span class="s2">G -1l</span>
-<span class="s2">S 9.6c c 0.09c 255/0/255 0.25p</span>
-<span class="s2">G -1l</span>
-<span class="s2">S 10.2c c 0.15c 255/0/255 0.25p</span>
-<span class="s2">&quot;&quot;&quot;</span>
+### m2
+S 9.1c c 0.03c 255/0/255 0.25p 10.8c  After Impoundment (Mb: 1~5)
+G -1l
+S 9.6c c 0.09c 255/0/255 0.25p
+G -1l
+S 10.2c c 0.15c 255/0/255 0.25p
+&quot;&quot;&quot;
 
-<span class="c1">### b.write temporary file</span>
-<span class="n">fout</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;../files/dayindian/tmp.legend&quot;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span>
-<span class="n">fout</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">leg</span><span class="p">)</span>
-<span class="n">fout</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+### b.write temporary file
+fout = open(&quot;../files/dayindian/tmp.legend&quot;, &#39;w&#39;)
+fout.write(leg)
+fout.close()
 
-<span class="c1">### c.legend</span>
-<span class="n">fig</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">spec</span><span class="o">=</span><span class="s2">&quot;../files/dayindian/tmp.legend&quot;</span><span class="p">,</span> <span class="n">position</span><span class="o">=</span><span class="s2">&quot;x-0.1c/-2.5c+w6.2i+l1.2+jBL&quot;</span><span class="p">,</span> <span class="n">box</span><span class="o">=</span><span class="s1">&#39;+gwhite+p0.5p&#39;</span><span class="p">)</span>
+### c.legend
+fig.legend(spec=&quot;../files/dayindian/tmp.legend&quot;, position=&quot;x-0.1c/-2.5c+w6.2i+l1.2+jBL&quot;, box=&#39;+gwhite+p0.5p&#39;)
 
-<span class="c1">#%% 5.Save fig</span>
-<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-<span class="c1"># fig.savefig(&quot;STA_location.pdf&quot;)</span>
+#%% 5.Save fig
+fig.show()
+# fig.savefig(&quot;STA_location.pdf&quot;)
 </pre></div>
 </div>
 </div>

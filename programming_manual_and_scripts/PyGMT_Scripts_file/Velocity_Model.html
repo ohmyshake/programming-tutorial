@@ -787,145 +787,145 @@ title="Print to PDF"
 <h2>Longmen mountain<a class="headerlink" href="#longmen-mountain" title="Permalink to this headline">#</a></h2>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python3</span>
-<span class="c1"># -*- coding: utf-8 -*-</span>
-<span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">Created on Sat Jun 11 22:50:49 2022</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+&quot;&quot;&quot;
+Created on Sat Jun 11 22:50:49 2022
 
-<span class="sd">@author: yf</span>
-<span class="sd">&quot;&quot;&quot;</span>
+@author: yf
+&quot;&quot;&quot;
 
-<span class="kn">import</span> <span class="nn">pygmt</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+import pygmt
+import numpy as np
 
-<span class="n">Vs_path</span> <span class="o">=</span> <span class="s1">&#39;../files/longmen/Vs.xyz&#39;</span>
-<span class="n">Reloc_path</span> <span class="o">=</span> <span class="s1">&#39;../files/longmen/cd.reloc&#39;</span>
+Vs_path = &#39;../files/longmen/Vs.xyz&#39;
+Reloc_path = &#39;../files/longmen/cd.reloc&#39;
 
-<span class="n">dep</span><span class="o">=</span><span class="p">[</span><span class="mf">0.00</span><span class="p">,</span>  <span class="mf">0.200</span><span class="p">,</span>  <span class="mf">0.400</span><span class="p">,</span>  <span class="mf">0.600</span><span class="p">,</span>  <span class="mf">0.8</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">1.2</span><span class="p">,</span> <span class="mf">1.4</span><span class="p">,</span> <span class="mf">1.6</span><span class="p">,</span> <span class="mf">1.8</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span> <span class="p">]</span>
-<span class="n">start</span><span class="o">=</span><span class="p">[[</span><span class="mf">103.67</span><span class="p">,</span><span class="mf">31.36</span><span class="p">],</span> <span class="p">[</span><span class="mf">103.6</span><span class="p">,</span><span class="mf">31.26</span><span class="p">],</span> <span class="p">[</span><span class="mf">103.47</span><span class="p">,</span><span class="mf">31.25</span><span class="p">],</span> <span class="p">[</span><span class="mf">103.4</span><span class="p">,</span><span class="mf">31.18</span><span class="p">],</span> <span class="p">[</span><span class="mf">103.34</span><span class="p">,</span><span class="mf">31.1</span><span class="p">],</span> <span class="p">[</span><span class="mf">103.28</span><span class="p">,</span><span class="mf">30.95</span><span class="p">]]</span>
-<span class="n">end</span><span class="o">=</span><span class="p">[[</span><span class="mf">104.07</span><span class="p">,</span><span class="mf">30.96</span><span class="p">],</span> <span class="p">[</span><span class="mi">104</span><span class="p">,</span><span class="mf">30.86</span><span class="p">],</span> <span class="p">[</span><span class="mf">103.87</span><span class="p">,</span><span class="mf">30.85</span><span class="p">],</span> <span class="p">[</span><span class="mf">103.8</span><span class="p">,</span><span class="mf">30.78</span><span class="p">],</span> <span class="p">[</span><span class="mf">103.74</span><span class="p">,</span><span class="mf">30.7</span><span class="p">],</span> <span class="p">[</span><span class="mf">103.68</span><span class="p">,</span><span class="mf">30.55</span><span class="p">]]</span>
+dep=[0.00,  0.200,  0.400,  0.600,  0.8, 1, 1.2, 1.4, 1.6, 1.8, 2, 2.5, 3, 4, 5, 6, 7, 8, 9 ]
+start=[[103.67,31.36], [103.6,31.26], [103.47,31.25], [103.4,31.18], [103.34,31.1], [103.28,30.95]]
+end=[[104.07,30.96], [104,30.86], [103.87,30.85], [103.8,30.78], [103.74,30.7], [103.68,30.55]]
 
-<span class="n">region</span><span class="o">=</span><span class="p">[</span><span class="mf">103.2</span><span class="p">,</span> <span class="mf">104.1</span><span class="p">,</span> <span class="mf">30.5</span><span class="p">,</span> <span class="mf">31.4</span><span class="p">]</span>
+region=[103.2, 104.1, 30.5, 31.4]
 
-<span class="c1"># 1. read data</span>
-<span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">loadtxt</span><span class="p">(</span><span class="n">Vs_path</span><span class="p">)</span>
+# 1. read data
+data = np.loadtxt(Vs_path)
 
-<span class="n">dep_info</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)):</span>
-    <span class="k">if</span> <span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span> <span class="o">!=</span> <span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="mi">2</span><span class="p">]:</span>
-        <span class="n">dep_info</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
-<span class="n">dep_info</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">))</span>
+dep_info = [0]
+for i in range(1,len(data)):
+    if data[i][2] != data[i-1][2]:
+        dep_info.append(i)
+dep_info.append(len(data))
 
-<span class="n">reloc</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">loadtxt</span><span class="p">(</span><span class="n">Reloc_path</span><span class="p">)</span>
-<span class="n">reloc_all</span><span class="o">=</span><span class="p">[]</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">start</span><span class="p">)):</span>
-    <span class="n">data1</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">vstack</span><span class="p">((</span><span class="n">reloc</span><span class="p">[:,</span><span class="mi">2</span><span class="p">],</span> <span class="n">reloc</span><span class="p">[:,</span><span class="mi">1</span><span class="p">],</span><span class="n">reloc</span><span class="p">[:,</span><span class="mi">3</span><span class="p">]))</span><span class="o">.</span><span class="n">T</span>
-    <span class="n">earthquakes</span> <span class="o">=</span> <span class="n">pygmt</span><span class="o">.</span><span class="n">project</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">data1</span><span class="p">,</span> <span class="n">center</span><span class="o">=</span><span class="n">start</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">endpoint</span><span class="o">=</span><span class="n">end</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">convention</span><span class="o">=</span><span class="s1">&#39;xyz&#39;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="s1">&#39;-0.05/0.05&#39;</span><span class="p">)</span>
-    <span class="n">reloc_all</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">earthquakes</span><span class="p">)</span>
+reloc = np.loadtxt(Reloc_path)
+reloc_all=[]
+for i in range(0,len(start)):
+    data1=np.vstack((reloc[:,2], reloc[:,1],reloc[:,3])).T
+    earthquakes = pygmt.project(data=data1, center=start[i], endpoint=end[i], convention=&#39;xyz&#39;, width=&#39;-0.05/0.05&#39;)
+    reloc_all.append(earthquakes)
 
-<span class="c1"># 2. track lines info</span>
-<span class="n">track_lines</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">start</span><span class="p">)):</span>  <span class="c1"># loop lines    </span>
-    <span class="n">track_all</span><span class="o">=</span><span class="p">[]</span>
-    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">dep_info</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>  <span class="c1"># loop depth</span>
-        <span class="n">points</span> <span class="o">=</span> <span class="n">pygmt</span><span class="o">.</span><span class="n">project</span><span class="p">(</span><span class="n">center</span><span class="o">=</span><span class="n">start</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">endpoint</span><span class="o">=</span><span class="n">end</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">generate</span><span class="o">=</span><span class="s1">&#39;0.02&#39;</span><span class="p">)</span>
-        <span class="n">pygmt</span><span class="o">.</span><span class="n">surface</span><span class="p">(</span>
-            <span class="n">x</span><span class="o">=</span><span class="n">data</span><span class="p">[</span><span class="n">dep_info</span><span class="p">[</span><span class="n">j</span><span class="p">]:</span><span class="n">dep_info</span><span class="p">[</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">],</span><span class="mi">0</span><span class="p">],</span> 
-            <span class="n">y</span><span class="o">=</span><span class="n">data</span><span class="p">[</span><span class="n">dep_info</span><span class="p">[</span><span class="n">j</span><span class="p">]:</span><span class="n">dep_info</span><span class="p">[</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">],</span><span class="mi">1</span><span class="p">],</span> 
-            <span class="n">z</span><span class="o">=</span><span class="n">data</span><span class="p">[</span><span class="n">dep_info</span><span class="p">[</span><span class="n">j</span><span class="p">]:</span><span class="n">dep_info</span><span class="p">[</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">],</span><span class="mi">3</span><span class="p">],</span>
-            <span class="n">region</span><span class="o">=</span><span class="n">region</span><span class="p">,</span>
-            <span class="n">nodata</span><span class="o">=</span><span class="s2">&quot;o9999&quot;</span><span class="p">,</span>
-            <span class="n">spacing</span><span class="o">=</span><span class="s2">&quot;0.02&quot;</span><span class="p">,</span>
-            <span class="n">outgrid</span><span class="o">=</span><span class="s2">&quot;../files/longmen/sample.nc&quot;</span><span class="p">)</span>
-        <span class="n">track</span> <span class="o">=</span> <span class="n">pygmt</span><span class="o">.</span><span class="n">grdtrack</span><span class="p">(</span><span class="n">points</span><span class="o">=</span><span class="n">points</span><span class="p">,</span> <span class="n">grid</span><span class="o">=</span><span class="s2">&quot;../files/longmen/sample.nc&quot;</span><span class="p">,</span> <span class="n">newcolname</span><span class="o">=</span><span class="s2">&quot;vs&quot;</span><span class="p">)</span>
-        <span class="n">track_all</span><span class="o">.</span><span class="n">append</span><span class="p">(</span> <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">track</span><span class="o">.</span><span class="n">r</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">track</span><span class="o">.</span><span class="n">s</span><span class="p">),</span> <span class="n">dep</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">track</span><span class="o">.</span><span class="n">r</span><span class="p">))),</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">track</span><span class="o">.</span><span class="n">vs</span><span class="p">)]</span>  <span class="p">)</span>
-    <span class="c1"># print(&quot;i=&quot;,i,&quot;\n&quot;)</span>
-    <span class="n">track_lines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">track_all</span><span class="p">)</span>
+# 2. track lines info
+track_lines = []
+for i in range(0,len(start)):  # loop lines    
+    track_all=[]
+    for j in range(0,len(dep_info)-1):  # loop depth
+        points = pygmt.project(center=start[i], endpoint=end[i], generate=&#39;0.02&#39;)
+        pygmt.surface(
+            x=data[dep_info[j]:dep_info[j+1],0], 
+            y=data[dep_info[j]:dep_info[j+1],1], 
+            z=data[dep_info[j]:dep_info[j+1],3],
+            region=region,
+            nodata=&quot;o9999&quot;,
+            spacing=&quot;0.02&quot;,
+            outgrid=&quot;../files/longmen/sample.nc&quot;)
+        track = pygmt.grdtrack(points=points, grid=&quot;../files/longmen/sample.nc&quot;, newcolname=&quot;vs&quot;)
+        track_all.append( [np.array(track.r), np.array(track.s), dep[j]*np.ones(len(np.array(track.r))), np.array(track.vs)]  )
+    # print(&quot;i=&quot;,i,&quot;\n&quot;)
+    track_lines.append(track_all)
 
-<span class="c1"># 4. colorbar</span>
-<span class="n">pygmt</span><span class="o">.</span><span class="n">makecpt</span><span class="p">(</span><span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;jet&quot;</span><span class="p">,</span><span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">background</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">series</span><span class="o">=</span><span class="p">[</span><span class="mf">2.2</span><span class="p">,</span> <span class="mf">3.7</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">],</span><span class="n">output</span><span class="o">=</span><span class="s2">&quot;../files/longmen/temp_cpt.cpt&quot;</span><span class="p">)</span>
+# 4. colorbar
+pygmt.makecpt(cmap=&quot;jet&quot;,reverse=True, background=True, series=[2.2, 3.7, 0.01],output=&quot;../files/longmen/temp_cpt.cpt&quot;)
 
-<span class="c1"># 3. plot fig</span>
-<span class="n">fig</span> <span class="o">=</span> <span class="n">pygmt</span><span class="o">.</span><span class="n">Figure</span><span class="p">()</span>
-<span class="k">with</span> <span class="n">fig</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span>
-    <span class="n">nrows</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
-    <span class="n">ncols</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
-    <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="s2">&quot;25c&quot;</span><span class="p">,</span> <span class="s2">&quot;11c&quot;</span><span class="p">),</span>
-    <span class="n">autolabel</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-    <span class="n">frame</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;af&quot;</span><span class="p">,</span> <span class="s2">&quot;WSne&quot;</span><span class="p">],</span>
-    <span class="n">margins</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;0.1c&quot;</span><span class="p">,</span> <span class="s2">&quot;0.2c&quot;</span><span class="p">],</span>
-    <span class="c1"># title=&quot;My Subplot Heading&quot;,</span>
-<span class="p">):</span>
+# 3. plot fig
+fig = pygmt.Figure()
+with fig.subplot(
+    nrows=3,
+    ncols=2,
+    figsize=(&quot;25c&quot;, &quot;11c&quot;),
+    autolabel=True,
+    frame=[&quot;af&quot;, &quot;WSne&quot;],
+    margins=[&quot;0.1c&quot;, &quot;0.2c&quot;],
+    # title=&quot;My Subplot Heading&quot;,
+):
     
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">start</span><span class="p">)):</span>  <span class="c1"># loop lines </span>
-        <span class="c1"># a. 剖面的信息</span>
-        <span class="n">Lon</span><span class="o">=</span><span class="p">[]</span>
-        <span class="n">Lat</span><span class="o">=</span><span class="p">[]</span>
-        <span class="n">Dep</span><span class="o">=</span><span class="p">[]</span>
-        <span class="n">Vs</span><span class="o">=</span><span class="p">[]</span>
-        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">dep_info</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
-            <span class="n">lon</span><span class="o">=</span><span class="n">track_lines</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
-            <span class="n">lat</span><span class="o">=</span><span class="n">track_lines</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
-            <span class="n">dep</span><span class="o">=</span><span class="n">track_lines</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
-            <span class="n">vs</span><span class="o">=</span><span class="n">track_lines</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">][</span><span class="mi">3</span><span class="p">]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
-            <span class="n">Lon</span><span class="o">=</span><span class="n">Lon</span><span class="o">+</span><span class="n">lon</span>
-            <span class="n">Lat</span><span class="o">=</span><span class="n">Lat</span><span class="o">+</span><span class="n">lat</span>
-            <span class="n">Dep</span><span class="o">=</span><span class="n">Dep</span><span class="o">+</span><span class="n">dep</span>
-            <span class="n">Vs</span><span class="o">=</span><span class="n">Vs</span><span class="o">+</span><span class="n">vs</span>
-        <span class="c1"># Lon.reverse()</span>
-        <span class="c1"># Lat.reverse()</span>
-        <span class="c1"># Dep.reverse()</span>
-        <span class="c1"># Vs.reverse()</span>
-        <span class="c1"># b. 剖面插值</span>
-        <span class="n">pygmt</span><span class="o">.</span><span class="n">surface</span><span class="p">(</span>
-            <span class="n">x</span><span class="o">=</span><span class="n">Lon</span><span class="p">,</span> 
-            <span class="n">y</span><span class="o">=</span><span class="n">Dep</span><span class="p">,</span> 
-            <span class="n">z</span><span class="o">=</span><span class="n">Vs</span><span class="p">,</span>
-            <span class="n">region</span><span class="o">=</span><span class="p">[</span><span class="n">start</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="n">end</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">9</span><span class="p">],</span>
-            <span class="n">nodata</span><span class="o">=</span><span class="s2">&quot;o9999&quot;</span><span class="p">,</span>
-            <span class="n">spacing</span><span class="o">=</span><span class="s2">&quot;0.002/0.1&quot;</span><span class="p">,</span>
-            <span class="n">outgrid</span><span class="o">=</span><span class="s2">&quot;../files/longmen/sample1.nc&quot;</span>
-            <span class="p">)</span>
-        <span class="c1"># c.剖面画图</span>
-        <span class="k">with</span> <span class="n">pygmt</span><span class="o">.</span><span class="n">config</span><span class="p">(</span>
-            <span class="n">PS_PAGE_ORIENTATION</span><span class="o">=</span><span class="s1">&#39;landscape&#39;</span><span class="p">,</span> 
-            <span class="n">PROJ_LENGTH_UNIT</span><span class="o">=</span><span class="s1">&#39;inch&#39;</span><span class="p">,</span> 
-            <span class="n">MAP_FRAME_TYPE</span><span class="o">=</span><span class="s1">&#39;plain&#39;</span><span class="p">,</span> 
-            <span class="n">MAP_TICK_LENGTH</span><span class="o">=</span><span class="s1">&#39;0.0c&#39;</span><span class="p">,</span> 
-            <span class="n">MAP_FRAME_PEN</span><span class="o">=</span><span class="s1">&#39;2p&#39;</span><span class="p">,</span> 
-            <span class="n">FONT_ANNOT_PRIMARY</span><span class="o">=</span><span class="s1">&#39;10p,Helvetica,black&#39;</span><span class="p">,</span> 
-            <span class="n">FONT_HEADING</span><span class="o">=</span><span class="s1">&#39;15p,Helvetica,black&#39;</span><span class="p">,</span> 
-            <span class="n">FONT_LABEL</span><span class="o">=</span><span class="s1">&#39;8p,Helvetica,black&#39;</span><span class="p">):</span>
+    for i in range(0,len(start)):  # loop lines 
+        # a. 剖面的信息
+        Lon=[]
+        Lat=[]
+        Dep=[]
+        Vs=[]
+        for j in range(0,len(dep_info)-1):
+            lon=track_lines[i][j][0].tolist()
+            lat=track_lines[i][j][1].tolist()
+            dep=track_lines[i][j][2].tolist()
+            vs=track_lines[i][j][3].tolist()
+            Lon=Lon+lon
+            Lat=Lat+lat
+            Dep=Dep+dep
+            Vs=Vs+vs
+        # Lon.reverse()
+        # Lat.reverse()
+        # Dep.reverse()
+        # Vs.reverse()
+        # b. 剖面插值
+        pygmt.surface(
+            x=Lon, 
+            y=Dep, 
+            z=Vs,
+            region=[start[i][0], end[i][0], 0, 9],
+            nodata=&quot;o9999&quot;,
+            spacing=&quot;0.002/0.1&quot;,
+            outgrid=&quot;../files/longmen/sample1.nc&quot;
+            )
+        # c.剖面画图
+        with pygmt.config(
+            PS_PAGE_ORIENTATION=&#39;landscape&#39;, 
+            PROJ_LENGTH_UNIT=&#39;inch&#39;, 
+            MAP_FRAME_TYPE=&#39;plain&#39;, 
+            MAP_TICK_LENGTH=&#39;0.0c&#39;, 
+            MAP_FRAME_PEN=&#39;2p&#39;, 
+            FONT_ANNOT_PRIMARY=&#39;10p,Helvetica,black&#39;, 
+            FONT_HEADING=&#39;15p,Helvetica,black&#39;, 
+            FONT_LABEL=&#39;8p,Helvetica,black&#39;):
 
-            <span class="n">xx</span><span class="o">=</span><span class="n">i</span><span class="o">//</span><span class="mi">2</span>
-            <span class="n">yy</span><span class="o">=</span><span class="n">i</span><span class="o">%</span><span class="k">2</span>
-            <span class="n">fig</span><span class="o">.</span><span class="n">basemap</span><span class="p">(</span>
-                <span class="n">zsize</span><span class="o">=</span><span class="s1">&#39;-4i&#39;</span><span class="p">,</span>
-                <span class="n">region</span><span class="o">=</span><span class="p">[</span><span class="n">start</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="n">end</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">9</span><span class="p">],</span> 
-                <span class="n">projection</span><span class="o">=</span><span class="s1">&#39;X10c/-3c&#39;</span><span class="p">,</span>
-                <span class="n">frame</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;xafg+l&quot;Longtitude&quot;&#39;</span><span class="p">,</span><span class="s1">&#39;yafg+l&quot;Depth (km)&quot;&#39;</span><span class="p">],</span>
-                <span class="n">panel</span><span class="o">=</span><span class="p">[</span><span class="n">xx</span><span class="p">,</span> <span class="n">yy</span><span class="p">])</span>
+            xx=i//2
+            yy=i%2
+            fig.basemap(
+                zsize=&#39;-4i&#39;,
+                region=[start[i][0], end[i][0], 0, 9], 
+                projection=&#39;X10c/-3c&#39;,
+                frame=[&#39;xafg+l&quot;Longtitude&quot;&#39;,&#39;yafg+l&quot;Depth (km)&quot;&#39;],
+                panel=[xx, yy])
 
-            <span class="n">fig</span><span class="o">.</span><span class="n">grdimage</span><span class="p">(</span>
-                <span class="c1"># img_in=&#39;D&#39;,</span>
-                <span class="n">projection</span><span class="o">=</span><span class="s1">&#39;X10c/-3c&#39;</span><span class="p">,</span> 
-                <span class="n">region</span><span class="o">=</span><span class="p">[</span><span class="n">start</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="n">end</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">9</span><span class="p">],</span> 
-                <span class="n">grid</span><span class="o">=</span><span class="s2">&quot;../files/longmen/sample1.nc&quot;</span><span class="p">,</span>
-                <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;../files/longmen/temp_cpt.cpt&quot;</span><span class="p">,</span>
-                <span class="p">)</span>
+            fig.grdimage(
+                # img_in=&#39;D&#39;,
+                projection=&#39;X10c/-3c&#39;, 
+                region=[start[i][0], end[i][0], 0, 9], 
+                grid=&quot;../files/longmen/sample1.nc&quot;,
+                cmap=&quot;../files/longmen/temp_cpt.cpt&quot;,
+                )
             
-            <span class="n">fig</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">reloc_all</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="n">y</span><span class="o">=</span><span class="n">reloc_all</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">2</span><span class="p">],</span> <span class="n">no_clip</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span><span class="n">style</span><span class="o">=</span><span class="s1">&#39;c0.1c&#39;</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">,</span><span class="n">pen</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span><span class="n">panel</span><span class="o">=</span><span class="p">[</span><span class="n">xx</span><span class="p">,</span> <span class="n">yy</span><span class="p">])</span>
+            fig.plot(x=reloc_all[i][0], y=reloc_all[i][2], no_clip=False,style=&#39;c0.1c&#39;,color=&quot;black&quot;,pen=True,panel=[xx, yy])
 
-<span class="n">fig</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;../files/longmen/temp_cpt.cpt&quot;</span><span class="p">,</span><span class="n">position</span><span class="o">=</span><span class="s2">&quot;JMB+o4c/1c+w8c&quot;</span><span class="p">,</span> <span class="n">frame</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;xa0.5f0.25&quot;</span><span class="p">,</span> <span class="s1">&#39;y+l&quot;Vs (km/s)&quot;&#39;</span><span class="p">])</span>
-<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-<span class="c1"># fig.savefig(&#39;yf.pdf&#39;)</span>
+fig.colorbar(cmap=&quot;../files/longmen/temp_cpt.cpt&quot;,position=&quot;JMB+o4c/1c+w8c&quot;, frame=[&quot;xa0.5f0.25&quot;, &#39;y+l&quot;Vs (km/s)&quot;&#39;])
+fig.show()
+# fig.savefig(&#39;yf.pdf&#39;)
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">GMTCLibNotFoundError</span><span class="g g-Whitespace">                      </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">9</span>
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">9</span>
 <span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1">#!/usr/bin/env python3</span>
 <span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="c1"># -*- coding: utf-8 -*-</span>
 <span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="sd">&quot;&quot;&quot;</span>

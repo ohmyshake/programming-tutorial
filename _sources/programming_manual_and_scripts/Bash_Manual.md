@@ -4,6 +4,18 @@
 
 Please refer to (./)[./]...
 
+
+## ln
+```bash
+# Print all links
+$ ls -al
+
+# Create a link, file2 is the link of file1.
+$ ln -s file1 file2
+
+```
+
+
 ## scp
 
 

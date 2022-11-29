@@ -118,8 +118,8 @@ ax.yaxis.set_major_locator(y_major_locator)
 ax.zaxis.set_major_locator(z_major_locator)
 ax.grid(False)   # 关闭网格
 # ax.invert_xaxis()  # 反转x轴
-ax.w_xaxis.set_pane_color((1.0, 1.0, 1.0, 1.0))  # x 面的背景色设置为透明
-ax.w_yaxis.set_pane_color((1.0, 1.0, 1.0, 1.0))  # y 面的背景色设置为透明
+ax.xaxis.set_pane_color((1.0, 1.0, 1.0, 1.0))  # x 面的背景色设置为透明
+ax.yaxis.set_pane_color((1.0, 1.0, 1.0, 1.0))  # y 面的背景色设置为透明
 ax.view_init(elev=18, azim=220)    # 20 60
 # ax.set_axis_off()
 # ax.set_xticks([])#不显示x坐标轴

@@ -180,7 +180,7 @@ fig.show()
 
 [0;31m---------------------------------------------------------------------------[0m
 [0;31mGMTCLibNotFoundError[0m                      Traceback (most recent call last)
-Cell [0;32mIn [1], line 9[0m
+Cell [0;32mIn[1], line 9[0m
 [1;32m      1[0m [38;5;66;03m#!/usr/bin/env python3[39;00m
 [1;32m      2[0m [38;5;66;03m# -*- coding: utf-8 -*-[39;00m
 [1;32m      3[0m [38;5;124;03m"""[39;00m
