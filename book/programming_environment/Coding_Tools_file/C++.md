@@ -153,14 +153,14 @@ int main(int argc, char **argv) {
 ```
 :::
 
-
+```bash
 export OMPI_CXX=clang++
 export OMPI_CXX=g++-12
 
 
 export OMPI_CC=clang
 export OMPI_CXX=gcc-12
-
+```
 
 ## Configuration
 
