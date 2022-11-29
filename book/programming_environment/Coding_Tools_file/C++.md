@@ -214,7 +214,13 @@ Make sure you have installed `gcc`, `gfortran` and `openmpi` in advance.
 Then go to specfem2d folder, and run following command to install:
 
 ```bash
+# Compile in single precision
 $ ./configure FC=gfortran CC=gcc MPIFC=mpif90 --with-mpi
+
+# Compile in double precision, solver's speed will be decreased
+$ ./configure FC=gfortran CC=gcc MPIFC=mpif90 --with-mpi --enable-double-precision
+
+# Make
 $ make
 ```
 
