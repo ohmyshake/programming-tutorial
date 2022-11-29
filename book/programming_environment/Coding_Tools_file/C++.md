@@ -78,7 +78,7 @@ $ brew search gcc
 $ brew install gcc
 
 # To compile code directly
-g++ main.cpp -o main  -fopenmp
+$ g++ main.cpp -o main  -fopenmp
 ```
 
 Set the environment variables as following:
