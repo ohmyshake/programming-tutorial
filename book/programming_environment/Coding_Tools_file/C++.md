@@ -26,11 +26,11 @@ The clang compiler doesn't bring **`openmp`** package, and install openmp for cl
 $ brew install openmp
 
 # For compilers to find libomp you may need to set for Makefile
-export LDFLAGS="-L/opt/homebrew/opt/libomp/lib"
-export CPPFLAGS="-I/opt/homebrew/opt/libomp/include"
+$ export LDFLAGS="-L/opt/homebrew/opt/libomp/lib"
+$ export CPPFLAGS="-I/opt/homebrew/opt/libomp/include"
 
 # Or compile directly (eg: c++ script)
-clang++ main.cpp -o main -Xpreprocessor -fopenmp -lomp -I/opt/homebrew/opt/libomp/include  -L/opt/homebrew/opt/libomp/lib 
+$ clang++ main.cpp -o main -Xpreprocessor -fopenmp -lomp -I/opt/homebrew/opt/libomp/include  -L/opt/homebrew/opt/libomp/lib 
 ```
 :::{dropdown} Compile error?
 :color: info
@@ -76,6 +76,9 @@ To install `gcc` in M1 chip (it will also install `gfortran`), which will bring 
 ```bash
 $ brew search gcc
 $ brew install gcc
+
+# To compile code directly
+g++ main.cpp -o main  -fopenmp
 ```
 
 Set the environment variables as following:
