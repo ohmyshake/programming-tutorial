@@ -35,8 +35,16 @@ clang++ main.cpp -o main -Xpreprocessor -fopenmp -lomp -I/opt/homebrew/opt/libom
 :::{dropdown} Do you know git history?
 :color: info
 :icon: info
-The first time I compile the `cpp with openmp` code, I got an error, then run the following command, it worked well now
+The first time I compile the `cpp with openmp` code, I got an error as following
+```bash
+Undefined symbols for architecture arm64:
+  "___kmpc_fork_call", referenced from:
+      _main in main-4f8dcc.o
+ld: symbol(s) not found for architecture arm64
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+```
 
+Then run the following command, it worked well now
 ```bash
 $ ln -s /opt/homebrew/opt/libomp/lib/libomp.dylib /usr/local/lib/libomp.dylib
 ```
