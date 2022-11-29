@@ -174,7 +174,7 @@ $ mpic++ openmpi.cpp -o openmpi
 $ mpicc xx.c -o xx
 
 # Run code
-$ mpirun -np 4 ./openmpi
+$ mpirun -np 4 openmpi
 ```
 
 ## Configuration
