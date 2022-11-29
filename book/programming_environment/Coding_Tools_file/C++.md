@@ -58,7 +58,7 @@ int main(){
 :::{dropdown} Compile error?
 :color: info
 :icon: info
-The first time I compile the `openmp` code, I got an error as following
+The first time I compile the `openmp` code, I got an error as following:
 ```bash
 Undefined symbols for architecture arm64:
   "___kmpc_fork_call", referenced from:
@@ -67,7 +67,7 @@ ld: symbol(s) not found for architecture arm64
 clang: error: linker command failed with exit code 1 (use -v to see invocation)
 ```
 
-Then run the following command, it worked well now
+Then run the following command, it worked well now:
 ```bash
 $ ln -s /opt/homebrew/opt/libomp/lib/libomp.dylib /usr/local/lib/libomp.dylib
 ```
