@@ -67,7 +67,7 @@ $ mpicc --version
 
 ### 2. `gcc` compiler + `openmp` + `openmpi`
 
-After install `Command Line Tools for Xcode`, M1 chip use `clang` to compile **`.c file`** and `clang++` to compile **`.cpp file`**. 
+After install `Command Line Tools for Xcode`, M1 chip use clang to compile **`.c file`** and clang++ to compile **`.cpp file`**. 
 And M1 chip also has `gcc` and `g++`, but they are soft links to `clang` compiler.
 In addition, 
 
