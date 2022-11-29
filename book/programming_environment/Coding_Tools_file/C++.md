@@ -121,11 +121,16 @@ $ brew install open-mpi
 Check installation using following command:
 
 ```bash
-$ mpicc --version
+# Check openmpi version
+$ mpic++ --version
+
+# 
+$ mpic++ -showme
 
 # Compile code using mpicc
 $ mpic++ openmpi.cpp -o openmpi
 
+# Run code
 $ mpirun -np 4 ./openmpi
 ```
 
@@ -167,6 +172,9 @@ $ export OMPI_CXX=gcc-12
 # Then use mpi to compile [c/c++] code
 $ mpic++ openmpi.cpp -o openmpi
 $ mpicc xx.c -o xx
+
+# Run code
+$ mpirun -np 4 ./openmpi
 ```
 
 ## Configuration
