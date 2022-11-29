@@ -39,9 +39,12 @@ $ clang++ main.cpp -o main -Xpreprocessor -fopenmp -lomp -I/opt/homebrew/opt/lib
 :icon: info
 ```c++
 #include <iostream>  
+#include <omp.h>  
+
 using namespace std;  
   
 int main(){  
+    omp_set_num_threads(15);
     #pragma omp parallel  
     {  
         cout << "Hello World!\n";  
