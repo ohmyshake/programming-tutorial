@@ -190,6 +190,14 @@ Actually mpic++ is a wrapper over the system compiler. In my case, mpicc will us
 $ mpic++ -showme
 ```
 
+Here is my output:
+```bash
+clang++ -I/opt/homebrew/Cellar/open-mpi/4.1.4_2/include 
+-L/opt/homebrew/Cellar/open-mpi/4.1.4_2/lib 
+-L/opt/homebrew/opt/libevent/lib 
+-lmpi
+```
+
 :::
 
 Refer to 
