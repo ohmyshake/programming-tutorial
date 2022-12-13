@@ -89,8 +89,23 @@ My `diskutil list`
 `df` full name is `disk free`.
 
 ```bash
+# The space size of each currently mounted directory
 $ df -h
+
+# -ll: display bytes || -lh: display KB/MB/G/T...
+ls -ll
+ls -lh
+
+# Display total file size in current directory
+du -sh
+
+# View the size of each file and folder in the current directory
+du -h --max-depth=1
+du -h --max-depth=1*
 ```
+
+
+
 
 ## cat
 
@@ -234,3 +249,32 @@ If you want view video from webpage or local, the above setting also can work.
 It is worth mentioning that if you use `Chrome`, you can use `Live Caption` function
 provided by Chrome itself.
 
+
+
+## FwiFlow
+Install `miniconda` firstly, use pip install `jill` which is a juila installer.
+Then use jill install julia@1.3 version and quit the conda environment.
+Other verison will be failed.
+
+```bash
+# install julia
+$ jill install 1.3
+
+# quit conda env
+$ conda deactivate
+
+# install FwiFlow
+$ julia > using Pkg
+$ julia > Pkg.add("FwiFlow")
+$ julia > Pkg.build("FwiFlow")
+
+```
+
+
+## Seis4CCS
+
+```bash
+$ julia > ] add https://github.com/slimgroup/Seis4CCS.jl.git
+$ julia > ] add ColorSchemes@3.19
+$ julia > ] add https://github.com/slimgroup/SlimPlotting.jl.git
+```
