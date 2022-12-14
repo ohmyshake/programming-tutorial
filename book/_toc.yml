@@ -31,7 +31,7 @@ parts:
     # numbered: True 
     # maxdepth: 2
     chapters:    
-    - file: programming_environment/Coding_Tools_file/Python_Package  # poetry github-action sphnix || Buy and Bind Domain Name with Github Pages
+    - file: programming_environment/Coding_Tools_file/Python-Package  # poetry github-action sphnix || Buy and Bind Domain Name with Github Pages
     - file: programming_manual_and_scripts/Pyside6 # PySide6 is QT6 for python  https://www.qt.io/qt-for-python
     - file: programming_manual_and_scripts/Dash  # https://dash.gallery/Portal/
 
@@ -41,10 +41,10 @@ parts:
     # maxdepth: 2
     chapters:
     - file: parallel computing_and_hybrid_programming/Python  # File-IO Subprocess Numpy h5py setup.py
-    - file: parallel computing_and_hybrid_programming/Python_HPC  # Mpi4py Numba Cupy Ray 
+    - file: parallel computing_and_hybrid_programming/Python-HPC  # Mpi4py Numba Cupy Ray 
     - file: parallel computing_and_hybrid_programming/C++  # OpenMP OpenMPI CUDA
-    - file: parallel computing_and_hybrid_programming/Make_Cmake # Vscode-Makefile-Cmake
-    - file: parallel computing_and_hybrid_programming/Pybind11_Cython 
+    - file: parallel computing_and_hybrid_programming/Make-Cmake # Vscode-Makefile-Cmake
+    - file: parallel computing_and_hybrid_programming/Pybind11-Cython 
     - file: programming_environment/Coding_Tools_file/Rice-NOTS
     - file: programming_environment/Coding_Tools_file/Azure
     - file: programming_environment/Coding_Tools_file/Amazon-S3
@@ -58,7 +58,7 @@ parts:
     - file: programming_environment/Seismology_Tools_file/Globus
     - file: programming_environment/Seismology_Tools_file/ImageMagick
     - file: programming_environment/Seismology_Tools_file/Otter
-    - file: programming_environment/Seismology_Tools_file/PROMISE_Utility
+    - file: programming_environment/Seismology_Tools_file/PROMISE-Utility
 
 
   - caption: Seismology Software
