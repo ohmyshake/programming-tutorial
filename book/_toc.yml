@@ -73,7 +73,7 @@ parts:
     - file: programming_environment/Seismology_Tools_file/SPECFEM
     - file: programming_environment/Seismology_Tools_file/Gmesh
     - file: programming_environment/Seismology_Tools_file/Paraview  # https://www.paraview.org/
-    - file: programming_environment/Seismology_Tools_file/Geosh
+    - file: programming_environment/Seismology_Tools_file/GEOSX # https://github.com/GEOSX/GEOSX
     - file: programming_environment/Seismology_Tools_file/FwiFlow
 
 
