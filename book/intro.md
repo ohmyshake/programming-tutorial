@@ -14,9 +14,16 @@ There is no guarantees of correctness and if you spot an error or a doubtful sta
 
 The main content of the notebook as follows:
 
+
+
+
+
+
+
+
 ::::{grid} 1 1 2 2
 :class-container: text-center
-:gutter: 3
+:gutter: 1
 
 
 
