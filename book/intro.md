@@ -14,6 +14,130 @@ There is no guarantees of correctness and if you spot an error or a doubtful sta
 
 The main content of the notebook as follows:
 
+
+
+::::{card-carousel} 3
+
+:::{card}
+:margin: 3
+:class-body: text-center
+:class-header: bg-light text-center
+:link: https://www.inferentialthinking.com/
+**Inferential Thinking**
+^^^
+```{image} https://inferentialthinking.com/_static/favicon.png
+:height: 100
+```
+
+The textbook used by UC Berkeley's popular Data 8 class.
++++
+Explore this book {fas}`arrow-right`
+:::
+
+:::{card}
+:margin: 3
+:class-body: text-center
+:class-header: bg-light text-center
+:link: https://python.quantecon.org/
+
+**QuantEcon**
+^^^
+```{image} https://python.quantecon.org/_static/qe-logo-large.png
+:height: 100
+```
+
+A free online book to teach computational economics with open source tools.
++++
+Explore this book {fas}`arrow-right`
+:::
+
+:::{card}
+:margin: 3
+:class-body: text-center
+:class-header: bg-light text-center
+:link: https://the-turing-way.netlify.app
+
+**The Turing Way**
+^^^
+```{image} https://the-turing-way.netlify.app/_static/logo.jpg
+:height: 100
+```
+
+A guidebook for best-practices in reproducible and community-driven science.
++++
+Explore this book {fas}`arrow-right`
+:::
+
+:::{card}
+:margin: 3
+:class-body: text-center
+:class-header: bg-light text-center
+:link: https://inria.github.io/scikit-learn-mooc/
+
+**The SciKit Learn MOOC**
+^^^
+```{image} https://inria.github.io/scikit-learn-mooc/_static/scikit-learn-logo.png
+:height: 100
+```
+
+A large online course for machine learning with the PyData stack.
++++
+Explore this book {fas}`arrow-right`
+:::
+
+:::{card}
+:margin: 3
+:class-body: text-center
+:class-header: bg-light text-center
+:link: https://uwdata.github.io/visualization-curriculum/intro.html
+
+**Data Science @ UW**
+^^^
+```{image} https://uwdata.github.io/visualization-curriculum/_static/altair-hist.png
+:height: 100
+```
+
+Interactive data visualization with Python, as taught at the University of Washington.
++++
+Explore this book {fas}`arrow-right`
+:::
+
+:::{card}
+:margin: 3
+:class-body: text-center
+:class-header: bg-light text-center
+:link: https://py-pkgs.org/
+
+**Py-Pkgs**
+^^^
+```{image} https://d33wubrfki0l68.cloudfront.net/9ff174183b5af5c3a177bfccd4796454883bc1f7/86cde/_static/py-pkgs-hex.png
+:height: 100
+```
+
+A book describing how to create and use modern packages in the Python ecosystem.
++++
+Explore this book {fas}`arrow-right`
+:::
+
+:::{card}
+:margin: 3
+:class-body: text-center
+:class-header: bg-light text-center
+:link: https://geographicdata.science/book/intro.html
+
+**Geographic Data Science**
+^^^
+```{image} https://geographicdata.science/book/_static/logo.png
+:height: 100
+```
+
+Solving geographic data problems with modern open source tools.
++++
+Explore this book {fas}`arrow-right`
+:::
+::::
+#######################
+#######################
 ::::{grid}
 :gutter: 1
 
