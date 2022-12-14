@@ -27,13 +27,14 @@ parts:
     - file: programming_environment/Coding_Tools_file/Shell_Manual
 
 
-  - caption: Software Develop
+  - caption: Develop App
     # numbered: True 
     # maxdepth: 2
     chapters:    
     - file: programming_environment/Coding_Tools_file/Python_Package  # poetry github-action sphnix || Buy and Bind Domain Name with Github Pages
     - file: programming_manual_and_scripts/Pyside6 # PySide6 is QT6 for python  https://www.qt.io/qt-for-python
     - file: programming_manual_and_scripts/Dash  # https://dash.gallery/Portal/
+
 
   - caption: Parallel Computing and HPC Job
     # numbered: True 
