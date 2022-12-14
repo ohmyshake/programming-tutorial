@@ -15,8 +15,7 @@ There is no guarantees of correctness and if you spot an error or a doubtful sta
 The main content of the notebook as follows:
 
 
-```{toggle}
-:show:
+
 
 ::::{grid}
 :gutter: 1
@@ -56,8 +55,7 @@ Certificate.
 ...
 :::
 
-::::
-```
+
 <!-- about how to use {toggle} refer to https://jupyterbook.org/en/stable/interactive/hiding.html#hiding-remove-content -->
 
 
