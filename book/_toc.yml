@@ -25,7 +25,15 @@ parts:
     - file: programming_environment/Coding_Tools_file/Julia
     - file: programming_environment/Coding_Tools_file/Matlab
     - file: programming_environment/Coding_Tools_file/Shell_Manual
-    - file: programming_environment/Coding_Tools_file/Develop_Package  # poetry github-action sphnix || Buy and Bind Domain Name with Github Pages
+
+
+  - caption: Parallel Computing and HPC Job
+    # numbered: True 
+    # maxdepth: 2
+    chapters:    
+    - file: programming_environment/Coding_Tools_file/Python_Package  # poetry github-action sphnix || Buy and Bind Domain Name with Github Pages
+    - file: programming_manual_and_scripts/Pyside6 # PySide6 is QT6 for python  https://www.qt.io/qt-for-python
+    - file: programming_manual_and_scripts/Dash  # https://dash.gallery/Portal/
 
   - caption: Parallel Computing and HPC Job
     # numbered: True 
@@ -46,8 +54,6 @@ parts:
     # maxdepth: 2
     - file: programming_manual_and_scripts/Matplotlib
     - file: programming_environment/Seismology_Tools_file/PyGMT
-    - file: programming_manual_and_scripts/Pyside6 # PySide6 is QT6 for python  https://www.qt.io/qt-for-python
-    - file: programming_manual_and_scripts/Dash  # https://dash.gallery/Portal/
     - file: programming_environment/Seismology_Tools_file/Globus
     - file: programming_environment/Seismology_Tools_file/ImageMagick
     - file: programming_environment/Seismology_Tools_file/Otter
