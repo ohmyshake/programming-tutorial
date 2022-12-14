@@ -71,6 +71,7 @@ parts:
     - file: seismic_data_processing/DAS_format
     - file: programming_environment/Seismology_Tools_file/CPS
     - file: programming_environment/Seismology_Tools_file/SPECFEM
+    - file: programming_environment/Seismology_Tools_file/Gmesh
     - file: programming_environment/Seismology_Tools_file/FwiFlow
 
 
