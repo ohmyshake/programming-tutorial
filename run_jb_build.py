@@ -42,7 +42,7 @@ def git_commit():
 def main():
     driver= webdriver.Chrome()
     driver.get(url)
-    os.system("git switch dev")
+    # os.system("git switch dev")
     jb_build(driver, book)
     while True:
         time.sleep(sleep_time)
