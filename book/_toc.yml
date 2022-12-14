@@ -10,8 +10,7 @@ parts:
     chapters:
     - file: programming_environment/Overview
       sections:
-      - file: programming_environment/Overview_md/MacSoftware
-      - file: programming_environment/Overview_md/SeisSoftware
+      
       - file: programming_environment/Overview_md/Shortcuts
     - file: programming_environment/Xcode
     - file: programming_environment/Homebrew
@@ -74,6 +73,7 @@ parts:
   # - caption: Geo Software
   #   # numbered: True 
   #   # maxdepth: 2
+  #   - file: programming_environment/Overview_md/SeisSoftware
   #   - file: programming_environment/Seismology_Tools_file/SAC
   #   - file: seismic_data_processing/obspy
   #   - file: seismic_data_processing/seed_mseed_sac  # seed2sac  sac2mseed cutevent
