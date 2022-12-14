@@ -21,7 +21,7 @@ The main content of the notebook as follows:
 
 
 
-::::{grid} 1 1 2 2
+::::{grid} 1 2 2 2
 :class-container: text-center
 :gutter: 3
 
