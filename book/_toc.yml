@@ -26,8 +26,8 @@ parts:
       - file: programming_environment/Coding_Tools_file/Julia
       - file: programming_environment/Coding_Tools_file/Matlab
       - file: programming_environment/Coding_Tools_file/Bash_Manual
-      - file: programming_environment/Shortcuts
-    - file: programming_environment/Software Tutrial
+      - file: programming_environment/Coding_Tools_file/Shortcuts
+    - file: programming_environment/Software_Tutrial
       sections:
       - file: programming_environment/Seismology_Tools_file/SAC
       - file: programming_environment/Seismology_Tools_file/PyGMT
