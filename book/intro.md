@@ -54,7 +54,7 @@ We have community discussions, talk about ideas, and share general questions and
 :link: https://github.com/orgs/executablebooks/discussions
 :class-body: text-center
 :class-header: bg-light text-center
-**🙌 Parallel Computing & HPC Platform**
+**Parallel Computing & HPC Platform**
 ^^^
 ```{image} https://inferentialthinking.com/_static/favicon.png
 :height: 100
@@ -68,7 +68,7 @@ We have community discussions, talk about ideas, and share general questions and
 :link: https://github.com/orgs/executablebooks/discussions
 :class-body: text-center
 :class-header: bg-light text-center
-**🙌 Machine Learning & Deep Learning**
+**Machine Learning & Deep Learning**
 ^^^
 ```{image} https://inferentialthinking.com/_static/favicon.png
 :height: 100
@@ -82,7 +82,7 @@ We have community discussions, talk about ideas, and share general questions and
 :link: https://github.com/orgs/executablebooks/discussions
 :class-body: text-center
 :class-header: bg-light text-center
-**🙌 Daily Software**
+**Daily Software**
 ^^^
 ```{image} https://inferentialthinking.com/_static/favicon.png
 :height: 100
@@ -96,7 +96,7 @@ We have community discussions, talk about ideas, and share general questions and
 :link: https://github.com/orgs/executablebooks/discussions
 :class-body: text-center
 :class-header: bg-light text-center
-**🙌 Geo Software**
+**Geo Software**
 ^^^
 ```{image} https://inferentialthinking.com/_static/favicon.png
 :height: 100
