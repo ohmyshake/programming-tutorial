@@ -16,7 +16,7 @@ The main content of the notebook as follows:
 
 
 
-::::{card-carousel} 4
+::::{card-carousel} 10
 
 :::{card}
 :margin: 3
