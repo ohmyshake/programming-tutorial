@@ -46,7 +46,7 @@ parts:
     # maxdepth: 2
     - file: programming_manual_and_scripts/Matplotlib
     - file: programming_environment/Seismology_Tools_file/PyGMT
-    - file: programming_manual_and_scripts/Pyside6 # PySide6 is QT6 for python
+    - file: programming_manual_and_scripts/Pyside6 # PySide6 is QT6 for python  https://www.qt.io/qt-for-python
     - file: programming_environment/Seismology_Tools_file/Globus
     - file: programming_environment/Seismology_Tools_file/ImageMagick
     - file: programming_environment/Seismology_Tools_file/Otter
