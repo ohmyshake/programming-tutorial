@@ -52,6 +52,12 @@ parts:
     - file: programming_environment/Coding_Tools_file/Amazon-S3
 
 
+  - caption: ML and DL
+    # numbered: True 
+    # maxdepth: 2
+    - file: programming_manual_and_scripts/PyTorch
+
+
   - caption: Daily Software
     # numbered: True 
     # maxdepth: 2
