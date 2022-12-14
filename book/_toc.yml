@@ -28,14 +28,14 @@ parts:
       - file: programming_environment/Coding_Tools_file/Bash_Manual
     - file: programming_environment/Seismology_Tools
       sections:
+
+    - file: programming_environment/Shortcuts
+
+  - caption: Software Tutrial
       - file: programming_environment/Seismology_Tools_file/SAC
       - file: programming_environment/Seismology_Tools_file/PyGMT
       - file: programming_environment/Seismology_Tools_file/CPS
       - file: programming_environment/Seismology_Tools_file/Specfem
-    - file: programming_environment/Shortcuts
-
-
-
 
   - caption: Programming Scripts
     # numbered: True 
