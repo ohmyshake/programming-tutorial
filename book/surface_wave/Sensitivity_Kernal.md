@@ -1,2 +1,0 @@
-# Sensitivity Kernal
-1

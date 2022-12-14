@@ -10,90 +10,92 @@ parts:
     chapters:
     - file: programming_environment/Overview
       sections:
-      - file: programming_environment/Overview_file/MacSoftware
-      - file: programming_environment/Overview_file/SeisSoftware
-      - file: programming_environment/Overview_file/Shortcuts
-    - file: programming_environment/Coding_Tools_file/Xcode
-    - file: programming_environment/Coding_Tools_file/Homebrew
-    - file: programming_environment/Coding_Tools_file/Iterm2-Zsh
-    - file: programming_environment/Coding_Tools_file/SSH
-    - file: programming_environment/Coding_Tools_file/Git
-    - file: programming_environment/Coding_Tools_file/VScode
-    - file: programming_environment/Coding_Tools_file/Latex
-    - file: programming_environment/Coding_Tools_file/GUN
-    - file: programming_environment/Coding_Tools_file/Python
-    - file: programming_environment/Coding_Tools_file/Julia
-    - file: programming_environment/Coding_Tools_file/Matlab
-    - file: programming_environment/Coding_Tools_file/Shell-Manual
+      - file: programming_environment/Overview_md/MacSoftware
+      - file: programming_environment/Overview_md/SeisSoftware
+      - file: programming_environment/Overview_md/Shortcuts
+    - file: programming_environment/Xcode
+    - file: programming_environment/Homebrew
+    - file: programming_environment/Iterm2_Zsh
+    - file: programming_environment/SSH
+    - file: programming_environment/Git
+    - file: programming_environment/VScode
+    - file: programming_environment/Latex
+    - file: programming_environment/GUN
+    - file: programming_environment/Python
+    - file: programming_environment/Julia
+    - file: programming_environment/Matlab
+    - file: programming_environment/Shell_Manual
 
 
-  - caption: App Development
-    # numbered: True 
-    # maxdepth: 2
-    chapters:    
-    - file: programming_environment/Coding_Tools_file/Python-Package  # setup.py poetry github-action sphnix  || Buy and Bind Domain Name with Github Pages
-    - file: programming_manual_and_scripts/Pyside6 # PySide6 is QT6 for python  https://www.qt.io/qt-for-python
-    - file: programming_manual_and_scripts/Dash  # https://dash.gallery/Portal/
-    - file: programming_manual_and_scripts/Docker
+  # - caption: App Development
+  #   # numbered: True 
+  #   # maxdepth: 2
+  #   chapters:    
+  #   - file: programming_environment/Coding_Tools_file/Python-Package  # setup.py poetry github-action sphnix  || Buy and Bind Domain Name with Github Pages
+  #   - file: programming_manual_and_scripts/Pyside6 # PySide6 is QT6 for python  https://www.qt.io/qt-for-python
+  #   - file: programming_manual_and_scripts/Dash  # https://dash.gallery/Portal/
+  #   - file: programming_manual_and_scripts/Docker
 
 
-  - caption: Supercomputer and Parallel Computing
-    # numbered: True 
-    # maxdepth: 2
-    chapters:
-    - file: parallel computing_and_hybrid_programming/Python  # File-IO Subprocess Numpy h5py 
-    - file: parallel computing_and_hybrid_programming/Python-HPC  # Mpi4py Numba Cupy Ray 
-    - file: parallel computing_and_hybrid_programming/C++  # OpenMP OpenMPI CUDA
-    - file: parallel computing_and_hybrid_programming/Make-Cmake # Vscode-Makefile-Cmake
-    - file: parallel computing_and_hybrid_programming/Pybind11-Cython 
-    - file: parallel computing_and_hybrid_programming/Slurm
-    - file: programming_environment/Coding_Tools_file/Rice-NOTS
-    - file: programming_environment/Coding_Tools_file/Azure
-    - file: programming_environment/Coding_Tools_file/Amazon-S3
+  # - caption: Parallel Computing and HPC Platform
+  #   # numbered: True 
+  #   # maxdepth: 2
+  #   chapters:
+  #   - file: parallel computing_and_hybrid_programming/Python  # File-IO Subprocess Numpy h5py 
+  #   - file: parallel computing_and_hybrid_programming/Python-HPC  # Mpi4py Numba Cupy Ray 
+  #   - file: parallel computing_and_hybrid_programming/C++  # OpenMP OpenMPI CUDA
+  #   - file: parallel computing_and_hybrid_programming/Make-Cmake # Vscode-Makefile-Cmake
+  #   - file: parallel computing_and_hybrid_programming/Pybind11-Cython 
+  #   - file: parallel computing_and_hybrid_programming/Slurm  # https://github.com/accre/SLURM
+  #   - file: programming_environment/Coding_Tools_file/Rice-NOTS
+  #   - file: programming_environment/Coding_Tools_file/Azure
+  #   - file: programming_environment/Coding_Tools_file/Amazon-S3
 
 
-  - caption: ML and DL
-    # numbered: True 
-    # maxdepth: 2
-    - file: programming_manual_and_scripts/PyTorch
+  # - caption: ML and DL
+  #   # numbered: True 
+  #   # maxdepth: 2
+  #   - file: programming_manual_and_scripts/Scipy
+  #   - file: programming_manual_and_scripts/PyTorch
 
 
-  - caption: Daily Software
-    # numbered: True 
-    # maxdepth: 2
-    - file: programming_manual_and_scripts/Matplotlib
-    - file: programming_environment/Seismology_Tools_file/PyGMT
-    - file: programming_environment/Seismology_Tools_file/Globus
-    - file: programming_environment/Seismology_Tools_file/ImageMagick
-    - file: programming_environment/Seismology_Tools_file/Otter
-    - file: programming_environment/Seismology_Tools_file/PROMISE-Utility
+  # - caption: Daily Software
+  #   # numbered: True 
+  #   # maxdepth: 2
+  #   - file: programming_manual_and_scripts/Matplotlib
+  #   - file: programming_environment/Seismology_Tools_file/PyGMT
+  #   - file: programming_environment/Seismology_Tools_file/Globus
+  #   - file: programming_environment/Seismology_Tools_file/ImageMagick
+  #   - file: programming_environment/Seismology_Tools_file/Otter
+  #   - file: programming_environment/Seismology_Tools_file/PROMISE-Utility
 
 
-  - caption: Seismology Software
-    # numbered: True 
-    # maxdepth: 2
-    - file: programming_environment/Seismology_Tools_file/SAC
-    - file: seismic_data_processing/obspy
-    - file: seismic_data_processing/seed_mseed_sac  # seed2sac  sac2mseed cutevent
-    - file: seismic_data_processing/DAS_format
-    - file: programming_environment/Seismology_Tools_file/CPS
-    - file: programming_environment/Seismology_Tools_file/SPECFEM
-    - file: programming_environment/Seismology_Tools_file/Gmesh
-    - file: programming_environment/Seismology_Tools_file/Paraview  # https://www.paraview.org/
-    - file: programming_environment/Seismology_Tools_file/FwiFlow
-    - file: programming_environment/Seismology_Tools_file/GEOSX # https://github.com/GEOSX/GEOSX
+  # - caption: Geo Software
+  #   # numbered: True 
+  #   # maxdepth: 2
+  #   - file: programming_environment/Seismology_Tools_file/SAC
+  #   - file: seismic_data_processing/obspy
+  #   - file: seismic_data_processing/seed_mseed_sac  # seed2sac  sac2mseed cutevent
+  #   - file: seismic_data_processing/DAS_format # TDMS
+  #   - file: programming_environment/Seismology_Tools_file/CPS
+  #   - file: programming_environment/Seismology_Tools_file/SPECFEM  # adjtomo  https://github.com/adjtomo/seisflows
+  #   - file: programming_environment/Seismology_Tools_file/Gmsh  # pygmsh
+  #   - file: programming_environment/Seismology_Tools_file/Paraview  # https://www.paraview.org/
+  #   - file: programming_environment/Seismology_Tools_file/FwiFlow
+  #   - file: programming_environment/Seismology_Tools_file/GEOSX # https://github.com/GEOSX/GEOSX
 
 
-  - caption: Links
-    chapters:
-    - file: links/link.md
-    - url: https://yinfu.info/
-      title: About Me
+  # - caption: Links
+  #   chapters:
+  #   - file: links/link.md
+  #   - url: https://yinfu.info/
+  #     title: About Me
 
 
 
 
-
+################################################################
+################################################################
 
   # - caption: Earthquake Source
   #   # numbered: True 

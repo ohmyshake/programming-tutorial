@@ -1,2 +1,0 @@
-# Cross Correlation
-1
