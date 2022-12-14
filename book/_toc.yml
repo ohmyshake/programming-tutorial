@@ -24,7 +24,7 @@ parts:
     - file: programming_environment/Coding_Tools_file/Python
     - file: programming_environment/Coding_Tools_file/Julia
     - file: programming_environment/Coding_Tools_file/Matlab
-    - file: programming_environment/Coding_Tools_file/Shell_Manual
+    - file: programming_environment/Coding_Tools_file/Shell-Manual
 
 
   - caption: Develop App
