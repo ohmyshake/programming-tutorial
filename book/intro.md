@@ -21,6 +21,15 @@ The main content of the notebook as follows:
 :::{grid-item-card}
 :link: https://github.com/orgs/executablebooks/discussions
 :class-header: bg-light
+:margin: 3
+:class-body: text-center
+:class-header: bg-light text-center
+:link: https://www.inferentialthinking.com/
+**Inferential Thinking**
+^^^
+```{image} https://inferentialthinking.com/_static/favicon.png
+:height: 100
+```
 
 💬 Ask and answer questions
 ^^^
