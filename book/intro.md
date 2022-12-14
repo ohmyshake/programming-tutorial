@@ -61,7 +61,7 @@ We have community discussions, talk about ideas, and share general questions and
 ```{image} https://inferentialthinking.com/_static/favicon.png
 :height: 100
 ```
-We have community discussions, talk about ideas, and share general questions and feedback in our community forum.
+Common strategies for parallel computing and hybrid programming between Python and C++
 :::
 
 
@@ -114,12 +114,7 @@ We have community discussions, talk about ideas, and share general questions and
 
 
 
----
-**Programming:**
 
-1. **Programming Environment**: 
-
-2. **Programming Manual and Scripts**: some common and useful code scripts.
 
 3. **Parallel Computing and Hybrid Programming**: common strategies for parallel computing and hybrid programming between Python and C++.
 
