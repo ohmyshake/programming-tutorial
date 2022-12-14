@@ -31,7 +31,7 @@ The main content of the notebook as follows:
 :link: https://github.com/orgs/executablebooks/discussions
 :class-body: text-center
 :class-header: bg-light text-center
-**Inferential Thinking**
+**Programming Environment**
 ^^^
 ```{image} https://inferentialthinking.com/_static/favicon.png
 :height: 100
