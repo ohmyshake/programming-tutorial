@@ -31,8 +31,8 @@ parts:
     # numbered: True 
     # maxdepth: 2
     chapters:
-    - file: parallel computing_and_hybrid_programming/Python  # Mpi4py Numba Cupy Ray
-    - file: parallel computing_and_hybrid_programming/C++  # OpenMP OpenMPI CUDA and vscode-makefile-cmake
+    - file: parallel computing_and_hybrid_programming/Python  # Mpi4py Numba Cupy Ray 
+    - file: parallel computing_and_hybrid_programming/C++  # OpenMP OpenMPI CUDA and Vscode-Makefile-Cmake
     - file: parallel computing_and_hybrid_programming/Pybind11_Cython 
     - file: programming_environment/Coding_Tools_file/Rice-NOTS
     - file: programming_environment/Coding_Tools_file/Azure
