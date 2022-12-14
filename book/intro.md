@@ -24,17 +24,7 @@ The main content of the notebook as follows:
 4. **Seismic Data Processing**: seismic data processing process included *read/write/filter/trim...* and so on.
 
 ---
-**Seismology:**
 
-5. **Earthquake Source**: working...
-
-6. **Ambient Noise**: working...
-
-7. **Surface Wave**: working...
-
-8. **Coda Wave**: working...
-
-9. **DAS**: working...
 
 
 
