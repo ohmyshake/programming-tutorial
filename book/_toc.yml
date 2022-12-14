@@ -33,8 +33,8 @@ parts:
     chapters:
     - file: parallel computing_and_hybrid_programming/Python  # File-IO Subprocess Numpy h5py setup.py
     - file: parallel computing_and_hybrid_programming/Python_HPC  # Mpi4py Numba Cupy Ray 
-    - file: parallel computing_and_hybrid_programming/C++  # OpenMP OpenMPI CUDA and Vscode-Makefile-Cmake
-    - file: parallel computing_and_hybrid_programming/Make_Cmake
+    - file: parallel computing_and_hybrid_programming/C++  # OpenMP OpenMPI CUDA
+    - file: parallel computing_and_hybrid_programming/Make_Cmake # Vscode-Makefile-Cmake
     - file: parallel computing_and_hybrid_programming/Pybind11_Cython 
     - file: programming_environment/Coding_Tools_file/Rice-NOTS
     - file: programming_environment/Coding_Tools_file/Azure
