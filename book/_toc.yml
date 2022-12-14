@@ -43,6 +43,7 @@ parts:
     # numbered: True 
     # maxdepth: 2
     - file: programming_manual_and_scripts/Python  # File-IO Subprocess Numpy Matplotlib
+    - file: programming_manual_and_scripts/Python  # poetry github-action sphnix
     - file: programming_manual_and_scripts/Matplotlib
     - file: programming_environment/Seismology_Tools_file/PyGMT
     - file: programming_environment/Seismology_Tools_file/ImageMagick
