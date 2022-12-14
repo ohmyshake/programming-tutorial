@@ -62,14 +62,8 @@ parts:
     # numbered: True 
     # maxdepth: 2
     chapters:
-    - file: parallel computing_and_hybrid_programming/Python
-      sections:
-      - file: parallel computing_and_hybrid_programming/Python_file/Mpi4py
-      - file: parallel computing_and_hybrid_programming/Python_file/Cupy
-    - file: parallel computing_and_hybrid_programming/C++
-      sections:
-      - file: parallel computing_and_hybrid_programming/C++_file/OpenMPI
-      - file: parallel computing_and_hybrid_programming/C++_file/Cuda
+    - file: parallel computing_and_hybrid_programming/Python  # Mpi4py Numba Cupy Cython
+    - file: parallel computing_and_hybrid_programming/C++  # OpenMP OpenMPI CUDA
     - file: parallel computing_and_hybrid_programming/Hybrid_Python_C++
     - file: programming_environment/Coding_Tools_file/Rice-NOTS
     - file: programming_environment/Coding_Tools_file/Azure
