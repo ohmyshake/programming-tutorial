@@ -36,7 +36,7 @@ parts:
     - file: programming_manual_and_scripts/Dash  # https://dash.gallery/Portal/
 
 
-  - caption: Parallel Computing and HPC Job
+  - caption: Supercomputer and Parallel Computing
     # numbered: True 
     # maxdepth: 2
     chapters:
