@@ -84,7 +84,6 @@ parts:
     - file: programming_environment/Seismology_Tools_file/GEOSX # https://github.com/GEOSX/GEOSX
 
 
-
   - caption: Links
     chapters:
     - file: links/link.md
