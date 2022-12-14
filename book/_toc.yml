@@ -2,7 +2,7 @@
 # Learn more at https://jupyterbook.org/customize/toc.html
 
 format: jb-book
-root: intro
+root: intro  # links/AboutBook.md
 parts:
   - caption: Programming Environment
     # numbered: True 
@@ -76,7 +76,6 @@ parts:
   - caption: Links
     chapters:
     - file: links/link.md
-    - file: links/AboutBook.md
     - url: https://yinfu.info/
       title: About Me
 
