@@ -16,7 +16,7 @@ The main content of the notebook as follows:
 
 
 
-::::{card-carousel} 3
+::::{card-carousel} 4
 
 :::{card}
 :margin: 3
@@ -136,6 +136,9 @@ Solving geographic data problems with modern open source tools.
 Explore this book {fas}`arrow-right`
 :::
 ::::
+
+
+
 #######################
 #######################
 ::::{grid}
