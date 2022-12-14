@@ -23,8 +23,10 @@ parts:
       - file: programming_environment/Coding_Tools_file/Latex
       - file: programming_environment/Coding_Tools_file/Python
       - file: programming_environment/Coding_Tools_file/Julia
-      - file: programming_environment/Coding_Tools_file/C&C++
-      - file: programming_environment/Coding_Tools_file/Fortran 
+      - file: programming_environment/Coding_Tools_file/GUN
+      - file: programming_environment/Coding_Tools_file/Rice-NOTS
+      - file: programming_environment/Coding_Tools_file/Azure
+      - file: programming_environment/Coding_Tools_file/Amazon-S3
     - file: programming_environment/Seismology_Tools
       sections:
       - file: programming_environment/Seismology_Tools_file/SAC
