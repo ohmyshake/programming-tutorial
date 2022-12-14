@@ -34,6 +34,7 @@ parts:
     - file: programming_environment/Coding_Tools_file/Python-Package  # poetry github-action sphnix || Buy and Bind Domain Name with Github Pages
     - file: programming_manual_and_scripts/Pyside6 # PySide6 is QT6 for python  https://www.qt.io/qt-for-python
     - file: programming_manual_and_scripts/Dash  # https://dash.gallery/Portal/
+    - file: programming_manual_and_scripts/Docker
 
 
   - caption: Supercomputer and Parallel Computing
