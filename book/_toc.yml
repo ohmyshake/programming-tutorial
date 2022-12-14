@@ -39,7 +39,7 @@ parts:
     - file: programming_environment/Coding_Tools_file/Amazon-S3
 
 
-  - caption: None-Seis Software
+  - caption: None Seismology Software
     # numbered: True 
     # maxdepth: 2
     - file: programming_manual_and_scripts/Python  # File-IO Subprocess Numpy Matplotlib
@@ -49,7 +49,7 @@ parts:
     - file: programming_environment/Seismology_Tools_file/Otter
 
 
-  - caption: Seis Software
+  - caption: Seismology Software
     # numbered: True 
     # maxdepth: 2
     - file: programming_environment/Seismology_Tools_file/SAC
@@ -61,15 +61,6 @@ parts:
     - file: programming_environment/Seismology_Tools_file/SPECFEM
     - file: programming_environment/Seismology_Tools_file/FwiFlow
 
-
-
-
-
-  - caption: Seismic Data Processing
-    # numbered: True 
-    # maxdepth: 2
-    chapters:
-    - file: seismic_data_processing/sac
 
 
   - caption: Earthquake Source
