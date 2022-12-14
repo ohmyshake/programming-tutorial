@@ -12,21 +12,20 @@ parts:
       sections:
       - file: programming_environment/Overview_file/MacSoftware
       - file: programming_environment/Overview_file/SeisSoftware
-    - file: programming_environment/Coding_Tools
-      sections:
-      - file: programming_environment/Coding_Tools_file/Xcode
-      - file: programming_environment/Coding_Tools_file/Homebrew
-      - file: programming_environment/Coding_Tools_file/Iterm2-Zsh
-      - file: programming_environment/Coding_Tools_file/SSH
-      - file: programming_environment/Coding_Tools_file/Git
-      - file: programming_environment/Coding_Tools_file/VScode
-      - file: programming_environment/Coding_Tools_file/Latex
-      - file: programming_environment/Coding_Tools_file/GUN
-      - file: programming_environment/Coding_Tools_file/Python
-      - file: programming_environment/Coding_Tools_file/Julia
-      - file: programming_environment/Coding_Tools_file/Matlab
-      - file: programming_environment/Coding_Tools_file/Bash_Manual
-      - file: programming_environment/Coding_Tools_file/Shortcuts
+
+    - file: programming_environment/Coding_Tools_file/Xcode
+    - file: programming_environment/Coding_Tools_file/Homebrew
+    - file: programming_environment/Coding_Tools_file/Iterm2-Zsh
+    - file: programming_environment/Coding_Tools_file/SSH
+    - file: programming_environment/Coding_Tools_file/Git
+    - file: programming_environment/Coding_Tools_file/VScode
+    - file: programming_environment/Coding_Tools_file/Latex
+    - file: programming_environment/Coding_Tools_file/GUN
+    - file: programming_environment/Coding_Tools_file/Python
+    - file: programming_environment/Coding_Tools_file/Julia
+    - file: programming_environment/Coding_Tools_file/Matlab
+    - file: programming_environment/Coding_Tools_file/Bash_Manual
+    - file: programming_environment/Coding_Tools_file/Shortcuts
 
 
   - caption: Software_Tutrial
