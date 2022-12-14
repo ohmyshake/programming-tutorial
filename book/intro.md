@@ -62,7 +62,14 @@ We welcome anyone to join us in improving Jupyter Book and helping one another l
 To join, check out our contributing guide.
 :::
 
-
+:::{grid-item-card}
+:link: https://executablebooks.org
+:class-header: bg-light
+🌍 About our team
+^^^
+Jupyter Book is developed by the Executable Books community.
+Check out our community documentation to learn more about us and how we work.
+:::
 
 
 :::{grid-item-card}
