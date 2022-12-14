@@ -95,20 +95,6 @@ Certificate.
 ...
 :::
 
-:::{grid-item-card} Photo
-:columns: 4
-...
-:::
-
-:::{grid-item-card} Rice-file
-:columns: 4
-...
-:::
-
-:::{grid-item-card} USTC-file
-:columns: 4
-...
-:::
 ::::
 
 
