@@ -32,6 +32,15 @@ The main content of the notebook is as follows:
 ```{image} https://inferentialthinking.com/_static/favicon.png
 :height: 100
 ```
+```{figure} ./img/VSCode-2.jpg
+---
+scale: 100%
+align: center
+name: vscode-account
+---
+My `Microsoft` account to sign in VSCode
+```
+
 Configure the programming environment in MacOS.
 :::
 
