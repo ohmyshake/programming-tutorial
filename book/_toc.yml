@@ -27,15 +27,22 @@ parts:
       - file: programming_environment/Coding_Tools_file/Matlab
       - file: programming_environment/Coding_Tools_file/Bash_Manual
       - file: programming_environment/Coding_Tools_file/Shortcuts
-    - file: programming_environment/Software_Tutrial
-      sections:
-      - file: programming_environment/Seismology_Tools_file/SAC
-      - file: programming_environment/Seismology_Tools_file/PyGMT
-      - file: programming_environment/Seismology_Tools_file/CPS
-      - file: programming_environment/Seismology_Tools_file/Specfem
-      - file: programming_environment/Seismology_Tools_file/FwiFlow
-      - file: programming_environment/Seismology_Tools_file/ImageMagick
-      - file: programming_environment/Seismology_Tools_file/Otter
+
+
+  - caption: Software_Tutrial
+    # numbered: True 
+    # maxdepth: 2
+    - file: programming_environment/Seismology_Tools_file/SAC
+    - file: seismic_data_processing/obspy
+    - file: seismic_data_processing/seed2sac
+    - file: seismic_data_processing/sac2mseed
+    - file: seismic_data_processing/cutevent
+    - file: programming_environment/Seismology_Tools_file/PyGMT
+    - file: programming_environment/Seismology_Tools_file/CPS
+    - file: programming_environment/Seismology_Tools_file/Specfem
+    - file: programming_environment/Seismology_Tools_file/FwiFlow
+    - file: programming_environment/Seismology_Tools_file/ImageMagick
+    - file: programming_environment/Seismology_Tools_file/Otter
 
   - caption: Programming Scripts
     # numbered: True 
@@ -74,10 +81,7 @@ parts:
     # maxdepth: 2
     chapters:
     - file: seismic_data_processing/sac
-    - file: seismic_data_processing/obspy
-    - file: seismic_data_processing/seed2sac
-    - file: seismic_data_processing/sac2mseed
-    - file: seismic_data_processing/cutevent
+
 
   - caption: Earthquake Source
     # numbered: True 
