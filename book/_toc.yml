@@ -25,8 +25,6 @@ parts:
       - file: programming_environment/Coding_Tools_file/Python
       - file: programming_environment/Coding_Tools_file/Julia
       - file: programming_environment/Coding_Tools_file/Matlab
-      
-      
     - file: programming_environment/Seismology_Tools
       sections:
       - file: programming_environment/Seismology_Tools_file/SAC
