@@ -73,7 +73,7 @@ Check out our community documentation to learn more about us and how we work.
 #######################
 #######################
 ::::{grid}
-:gutter: 1
+:gutter: 2
 
 :::{grid-item-card} Health
 :columns: 4
