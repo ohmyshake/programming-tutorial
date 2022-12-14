@@ -76,7 +76,7 @@ Check out our community documentation to learn more about us and how we work.
 :gutter: 0
 
 :::{grid-item-card} Health
-:columns: 2
+:columns: 12
 Body health.
 :::
 
