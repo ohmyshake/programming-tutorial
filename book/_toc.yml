@@ -12,7 +12,7 @@ parts:
       sections:
       - file: programming_environment/Overview_file/MacSoftware
       - file: programming_environment/Overview_file/SeisSoftware
-      - file: programming_environment/Coding_Tools_file/Shortcuts
+      - file: programming_environment/Overview_file/Shortcuts
     - file: programming_environment/Coding_Tools_file/Xcode
     - file: programming_environment/Coding_Tools_file/Homebrew
     - file: programming_environment/Coding_Tools_file/Iterm2-Zsh
