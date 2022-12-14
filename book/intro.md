@@ -69,8 +69,6 @@ Check out our community documentation to learn more about us and how we work.
 ::::
 
 
-##########
-
 
 #######################
 #######################
