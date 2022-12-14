@@ -116,11 +116,6 @@ We have community discussions, talk about ideas, and share general questions and
 
 
 
-3. **Parallel Computing and Hybrid Programming**: common strategies for parallel computing and hybrid programming between Python and C++.
-
-4. **Seismic Data Processing**: seismic data processing process included *read/write/filter/trim...* and so on.
-
----
 
 
 
