@@ -70,32 +70,7 @@ Check out our community documentation to learn more about us and how we work.
 
 
 
-#######################
-#######################
-::::{grid}
-:gutter: 0
 
-:::{grid-item-card} Health
-:columns: 12
-Body health.
-:::
-
-:::{grid-item-card} Cook
-:columns: 2
-Cooking study.
-:::
-
-:::{grid-item-card} Information
-:columns: 2
-Certificate.
-:::
-
-:::{grid-item-card} PhD_application
-:columns: 4
-...
-:::
-
-::::
 
 
 
