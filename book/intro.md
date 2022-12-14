@@ -95,6 +95,20 @@ We have community discussions, talk about ideas, and share general questions and
 ```
 We have community discussions, talk about ideas, and share general questions and feedback in our community forum.
 :::
+
+
+
+:::{grid-item-card}
+:link: https://github.com/orgs/executablebooks/discussions
+:class-body: text-center
+:class-header: bg-light text-center
+**🙌 Geo Software**
+^^^
+```{image} https://inferentialthinking.com/_static/favicon.png
+:height: 100
+```
+We have community discussions, talk about ideas, and share general questions and feedback in our community forum.
+:::
 ::::
 
 
