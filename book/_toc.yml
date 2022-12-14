@@ -33,6 +33,7 @@ parts:
       - file: programming_environment/Seismology_Tools_file/PyGMT
       - file: programming_environment/Seismology_Tools_file/CPS
       - file: programming_environment/Seismology_Tools_file/Specfem
+      - file: programming_environment/Seismology_Tools_file/FwiFlow
       - file: programming_environment/Seismology_Tools_file/ImageMagick
       - file: programming_environment/Seismology_Tools_file/Otter
 
