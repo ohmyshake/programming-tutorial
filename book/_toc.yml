@@ -62,8 +62,6 @@ parts:
     - file: programming_environment/Seismology_Tools_file/FwiFlow
 
 
-
-
   - caption: Links
     chapters:
     - file: links/link.md
