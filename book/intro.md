@@ -60,7 +60,7 @@ We have community discussions, talk about ideas, and share general questions and
 :link: https://github.com/orgs/executablebooks/discussions
 :class-body: text-center
 :class-header: bg-light text-center
-**🙌 Programming Environment**
+**🙌 App Development**
 ^^^
 ```{image} https://inferentialthinking.com/_static/favicon.png
 :height: 100
