@@ -25,7 +25,7 @@ parts:
     - file: programming_environment/Coding_Tools_file/Julia
     - file: programming_environment/Coding_Tools_file/Matlab
     - file: programming_environment/Coding_Tools_file/Shell_Manual
-    - file: programming_environment/Coding_Tools_file/Develop_Package  # poetry github-action sphnix
+    - file: programming_environment/Coding_Tools_file/Develop_Package  # poetry github-action sphnix || Buy and Bind Domain Name with Github Pages
 
   - caption: Parallel Computing and HPC Job
     # numbered: True 
