@@ -49,6 +49,7 @@ parts:
     - file: programming_environment/Seismology_Tools_file/Globus
     - file: programming_environment/Seismology_Tools_file/ImageMagick
     - file: programming_environment/Seismology_Tools_file/Otter
+    - file: programming_environment/Seismology_Tools_file/PROMISE_Utility
 
 
   - caption: Seismology Software
