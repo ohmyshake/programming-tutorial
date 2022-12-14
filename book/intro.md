@@ -24,7 +24,7 @@ The main content of the notebook is as follows:
 
 
 :::{grid-item-card}
-:link: https://github.com/orgs/executablebooks/discussions
+:link: [Mac-Software.md](./programming_environment/Overview.md)
 :class-body: text-center
 :class-header: bg-light text-center
 **Programming Environment**
