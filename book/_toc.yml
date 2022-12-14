@@ -28,6 +28,8 @@ parts:
       sections:
       - file: programming_environment/Seismology_Tools_file/SAC
       - file: programming_environment/Seismology_Tools_file/PyGMT
+      - file: programming_environment/Seismology_Tools_file/CPS
+      - file: programming_environment/Seismology_Tools_file/Specfem
     - file: programming_environment/Shortcuts
 
   - caption: Programming Scripts
