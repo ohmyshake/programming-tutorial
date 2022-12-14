@@ -56,7 +56,7 @@ Certificate.
 :::
 
 
-<!-- about how to use {toggle} refer to https://jupyterbook.org/en/stable/interactive/hiding.html#hiding-remove-content -->
+
 
 
 ---
