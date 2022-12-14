@@ -31,8 +31,7 @@ The main content of the notebook as follows:
 :height: 100
 ```
 
-💬 Ask and answer questions
-^^^
+
 
 We have community discussions, talk about ideas, and share general questions and feedback in our community forum.
 
