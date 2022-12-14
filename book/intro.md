@@ -41,44 +41,59 @@ We have community discussions, talk about ideas, and share general questions and
 
 
 
+
 :::{grid-item-card}
-:link: https://executablebooks.org/en/latest/feature-vote.html
-:class-header: bg-light
-👍 Vote for new features
+:link: https://github.com/orgs/executablebooks/discussions
+:class-body: text-center
+:class-header: bg-light text-center
+**🙌 Programming Environment**
 ^^^
-Provides feedback by adding a 👍 reaction to issues in our repositories.
-You can find a list of the top issues in the Executable Books issue leader board.
+```{image} https://inferentialthinking.com/_static/favicon.png
+:height: 100
+```
+We have community discussions, talk about ideas, and share general questions and feedback in our community forum.
 :::
 
 
 
-
 :::{grid-item-card}
-:link: contribute/intro.md
-:class-header: bg-light
-🙌 Contribute to projects
+:link: https://github.com/orgs/executablebooks/discussions
+:class-body: text-center
+:class-header: bg-light text-center
+**🙌 Programming Environment**
 ^^^
-We welcome anyone to join us in improving Jupyter Book and helping one another learn and create their books.
-To join, check out our contributing guide.
-:::
-
-:::{grid-item-card}
-:link: https://executablebooks.org
-:class-header: bg-light
-🌍 About our team
-^^^
-Jupyter Book is developed by the Executable Books community.
-Check out our community documentation to learn more about us and how we work.
+```{image} https://inferentialthinking.com/_static/favicon.png
+:height: 100
+```
+We have community discussions, talk about ideas, and share general questions and feedback in our community forum.
 :::
 
 
+
 :::{grid-item-card}
-:link: https://executablebooks.org
-:class-header: bg-light
-🌍 About our team
+:link: https://github.com/orgs/executablebooks/discussions
+:class-body: text-center
+:class-header: bg-light text-center
+**🙌 Programming Environment**
 ^^^
-Jupyter Book is developed by the Executable Books community.
-Check out our community documentation to learn more about us and how we work.
+```{image} https://inferentialthinking.com/_static/favicon.png
+:height: 100
+```
+We have community discussions, talk about ideas, and share general questions and feedback in our community forum.
+:::
+
+
+
+:::{grid-item-card}
+:link: https://github.com/orgs/executablebooks/discussions
+:class-body: text-center
+:class-header: bg-light text-center
+**🙌 Programming Environment**
+^^^
+```{image} https://inferentialthinking.com/_static/favicon.png
+:height: 100
+```
+We have community discussions, talk about ideas, and share general questions and feedback in our community forum.
 :::
 ::::
 
