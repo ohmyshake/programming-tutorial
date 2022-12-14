@@ -14,8 +14,8 @@ There is no guarantees of correctness and if you spot an error or a doubtful sta
 
 The main content of the notebook as follows:
 
-<!-- ::::{grid}
-:gutter: 1 -->
+::::{grid}
+:gutter: 1
 
 :::{grid-item-card} Health
 :columns: 4
@@ -51,7 +51,7 @@ Certificate.
 :columns: 4
 ...
 :::
-
+::::
 
 
 
