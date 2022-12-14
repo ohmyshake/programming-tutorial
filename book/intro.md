@@ -32,7 +32,7 @@ The main content of the notebook is as follows:
 ```{image} https://inferentialthinking.com/_static/favicon.png
 :height: 100
 ```
-We have community discussions, talk about ideas, and share general questions and feedback in our community forum.
+Configure the programming environment in MacOS.
 :::
 
 
@@ -117,7 +117,7 @@ We have community discussions, talk about ideas, and share general questions and
 ---
 **Programming:**
 
-1. **Programming Environment**: configure the programming environment in MacOS.
+1. **Programming Environment**: 
 
 2. **Programming Manual and Scripts**: some common and useful code scripts.
 
