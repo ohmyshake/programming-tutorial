@@ -27,7 +27,7 @@ parts:
     - file: programming_environment/Coding_Tools_file/Shell_Manual
 
 
-  - caption: Parallel Computing and HPC Job
+  - caption: Software Develop
     # numbered: True 
     # maxdepth: 2
     chapters:    
