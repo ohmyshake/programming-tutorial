@@ -1,6 +1,6 @@
 # Introduction ✨
 
-Welcome to **Programming Notebook**, a notebook mainly about my scientific notes and gain in learning **Programming** and **Geophysics**, and I will be very glad if it is helpful for your researches too. 
+Welcome to **Programming Notebook**, a notebook mainly about my scientific notes and gain in learning **Programming** and **Geophysics**, and I am very glad if it is helpful for your researches too. 
 
 **Enjoy** 👋👋👋
 
