@@ -28,26 +28,11 @@ parts:
     
 
 
-  - caption: Software_Tutrial
-    # numbered: True 
-    # maxdepth: 2
-    - file: programming_environment/Seismology_Tools_file/SAC
-    - file: seismic_data_processing/obspy
-    - file: seismic_data_processing/seed2sac
-    - file: seismic_data_processing/sac2mseed
-    - file: seismic_data_processing/cutevent
-    - file: programming_environment/Seismology_Tools_file/PyGMT
-    - file: programming_environment/Seismology_Tools_file/CPS
-    - file: programming_environment/Seismology_Tools_file/Specfem
-    - file: programming_environment/Seismology_Tools_file/FwiFlow
-    - file: programming_environment/Seismology_Tools_file/ImageMagick
-    - file: programming_environment/Seismology_Tools_file/Otter
 
   - caption: Programming Scripts
     # numbered: True 
     # maxdepth: 2
     chapters:
-    
     - file: programming_manual_and_scripts/Python_Scripts
       sections:
       - file: programming_manual_and_scripts/Python_Scripts_file/File-IO
@@ -74,6 +59,26 @@ parts:
     - file: programming_environment/Coding_Tools_file/Rice-NOTS
     - file: programming_environment/Coding_Tools_file/Azure
     - file: programming_environment/Coding_Tools_file/Amazon-S3
+
+
+
+  - caption: Software_Tutrial
+    # numbered: True 
+    # maxdepth: 2
+    - file: programming_environment/Seismology_Tools_file/SAC
+    - file: seismic_data_processing/obspy
+    - file: seismic_data_processing/seed2sac
+    - file: seismic_data_processing/sac2mseed
+    - file: seismic_data_processing/cutevent
+    - file: programming_environment/Seismology_Tools_file/PyGMT
+    - file: programming_environment/Seismology_Tools_file/CPS
+    - file: programming_environment/Seismology_Tools_file/Specfem
+    - file: programming_environment/Seismology_Tools_file/FwiFlow
+    - file: programming_environment/Seismology_Tools_file/ImageMagick
+    - file: programming_environment/Seismology_Tools_file/Otter
+
+
+
 
   - caption: Seismic Data Processing
     # numbered: True 
