@@ -9,9 +9,6 @@ parts:
     # maxdepth: 2
     chapters:
     - file: programming_environment/Overview
-      sections:
-      
-      - file: programming_environment/Overview_md/Shortcuts
     - file: programming_environment/Xcode
     - file: programming_environment/Homebrew
     - file: programming_environment/Iterm2_Zsh
@@ -24,7 +21,7 @@ parts:
     - file: programming_environment/Julia
     - file: programming_environment/Matlab
     - file: programming_environment/Shell_Manual
-
+    - file: programming_environment/Overview_md/Shortcuts
 
   # - caption: App Development
   #   # numbered: True 
