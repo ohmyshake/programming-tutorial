@@ -81,12 +81,12 @@ Body health.
 :::
 
 :::{grid-item-card} Cook
-:columns: 4
+:columns: 2
 Cooking study.
 :::
 
 :::{grid-item-card} Information
-:columns: 4
+:columns: 2
 Certificate.
 :::
 
