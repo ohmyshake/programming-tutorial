@@ -116,6 +116,54 @@ Certificate.
 
 
 
+## Sponsoring ✨
+**If you enjoy the blog, please consider sponsoring 🍿 :**
+
+⏬ &nbsp; For Chinese guys:
+@@box-container
+  @@box
+    ~~~<a class="boxlink">~~~
+    @@description **Alipay** @@
+    @@box-content
+      ~~~<img src="/assets/blog-data/fig/Alipay.jpg">~~~
+    @@
+    ~~~</a>~~~
+  @@
+
+  @@box
+    ~~~<a class="boxlink">~~~
+    @@description **WeChat** @@
+    @@box-content
+      ~~~<img src="/assets/blog-data/fig/WeChat.jpg">~~~
+    @@
+    ~~~</a>~~~
+  @@
+@@
+~~~<br>~~~
+
+
+⏬ &nbsp; For Non-Chinese guys:
+@@box-container
+  @@box
+    ~~~<a class="boxlink" href="https://www.buymeacoffee.com/yinfu">~~~
+    @@description **Coffee** @@
+    @@box-content
+      ~~~<img src="https://user-images.githubusercontent.com/1376749/120938564-50c59780-c6e1-11eb-814f-22a0399623c5.png" alt="Buy Me a Coffee"> ~~~
+    @@
+    ~~~</a>~~~
+  @@
+
+  @@box
+    ~~~<a class="boxlink" href="https://www.paypal.me/yinfu123">~~~
+    @@description **PayPal** @@
+    @@box-content
+      ~~~<img src="https://cdn.jsdelivr.net/gh/twolfson/paypal-github-button@1.0.0/dist/button.svg" alt="Support via PayPal"> ~~~
+    @@
+    ~~~</a>~~~
+  @@
+@@
+
+
 ## About the Book
 
 The Seismology Notebook is powered by [Jupyter Book](https://jupyterbook.org/en/stable/intro.html), which use [MyST](https://sphinx-design.readthedocs.io/en/sbt-theme/grids.html) Markdown syntax.
