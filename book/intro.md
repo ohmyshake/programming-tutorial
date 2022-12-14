@@ -130,7 +130,7 @@ All the source file are edited by VSCode, `run_jb_build.py` is a Python script t
 - put `run_jb_build.py` in the root directory of your notebook project, and run it before you edit anytime.
 
 ::::{toggle}
-```bash
+```python
 #!/Users/yinfu/opt/miniconda3/bin python3
 # -*- coding: utf-8 -*-
 """
