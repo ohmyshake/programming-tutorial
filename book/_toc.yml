@@ -58,11 +58,11 @@ parts:
       - file: programming_manual_and_scripts/PyGMT_Scripts_file/Velocity_Model
       - file: programming_manual_and_scripts/PyGMT_Scripts_file/Lune
 
-  - caption: Parallel Computing and Hybrid Programming
+  - caption: Parallel Computing and HPC Job
     # numbered: True 
     # maxdepth: 2
     chapters:
-    - file: parallel computing_and_hybrid_programming/Python  # Mpi4py Numba Cupy Cython
+    - file: parallel computing_and_hybrid_programming/Python  # Mpi4py Numba Cupy Cython Ray
     - file: parallel computing_and_hybrid_programming/C++  # OpenMP OpenMPI CUDA
     - file: parallel computing_and_hybrid_programming/Hybrid_Python_C++
     - file: programming_environment/Coding_Tools_file/Rice-NOTS
