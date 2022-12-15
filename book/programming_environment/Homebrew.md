@@ -221,7 +221,7 @@ Look through https://formulae.brew.sh/ to check useful package.
 | `wget`            | ...   |
 | `blackhole-2ch`            | ...   |
 | ``            | ...   |
-
+| ``            | ...   |
 
 
 
