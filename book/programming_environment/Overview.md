@@ -180,7 +180,7 @@ Remember that after compiling, put the executable code in the {file}`~/bin` fold
 
 ### workspace
 
-- {file}`~/workspace` is a directory for doing occasional tests or simple experiments.
+- {file}`~/workspace` is a directory for doing tests or simple experiments.
 
 
 ### yinfu
