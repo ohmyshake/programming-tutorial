@@ -18,17 +18,6 @@ kernelspec:
 ---
 
 
-````{code-cell} ipython3
-```{eval-rst}
-
-
-.. literalinclude:: ./test.py
-  :language: python
-  :linenos:
-  
-```
-````
-.. include:: ./pygmt_files/test.rst
 
 ## 3D Misfit Space
 
