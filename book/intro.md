@@ -47,7 +47,7 @@ Configure the programming environment in MacOS.
 ```{image} ./intro_files/pyside6.png
 :height: 100
 ```
-Develop a python package, GUI, and WebGUI.
+Develop a python package, GUI, and Dashboards.
 :::
 
 
