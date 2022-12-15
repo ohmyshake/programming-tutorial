@@ -104,7 +104,7 @@ FuYin-MAC/
 
 ### Applications
 
-- Store apps downloaded from App Store and Internet, such as Chrome/Wechat...
+- Store apps downloaded from App Store and Internet, such as Chrome, Wechat...
 
 ### Desktop
 
