@@ -89,7 +89,7 @@ Machine learning and deep learning approaches in Python.
 ```{image} ./intro_files/software.webp
 :height: 100
 ```
-Useful software in MacOS system.
+Useful softwares in MacOS system.
 :::
 
 
@@ -103,7 +103,7 @@ Useful software in MacOS system.
 ```{image} ./intro_files/specfem3d.jpg
 :height: 100
 ```
-Geophysics 
+Useful geophysics softwares.
 :::
 ::::
 
