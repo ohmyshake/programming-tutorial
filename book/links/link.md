@@ -32,12 +32,6 @@
 - [Department of Earth, Environmental and Planetary Sciences, **Brown**](https://www.brown.edu/academics/earth-environmental-planetary-sciences/)
 
 
-## Geophysics Tutorial
-
-
-
-## Software
-
 
 
 
@@ -66,5 +60,14 @@
 - [CIG software](https://geodynamics.org/cig/software/)
 
 - [SPICE software](http://www.spice-rtn.org/)
+
+
+## Geophysics Tutorial
+
+
+
+## Software
+
+
 
 
