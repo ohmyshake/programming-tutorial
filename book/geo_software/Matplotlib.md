@@ -19,11 +19,11 @@ kernelspec:
 
 
 
-```python:
+```
 .. note::
 
    A note written in reStructuredText.
-   
+
 .. include:: ./pygmt_files/test.py
 ```
 
