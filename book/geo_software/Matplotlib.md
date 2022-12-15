@@ -43,7 +43,7 @@ from matplotlib import cm
 
 
 ############### 1. input parameter
-rank_path = "../matplotlib_files/3d-mcmtpy/"
+rank_path = "./matplotlib_files/3d-mcmtpy/"
 MPI_n = 30
 strike_num = 361                                                                # step:5度 = 73  ||  step:1度 = 361
 rake_num = 361
