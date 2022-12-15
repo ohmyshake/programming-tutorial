@@ -230,14 +230,14 @@ Iterm2 is a replacement for terminal in Mac.
 Type `Zsh --version` in terminal. If the ZSH version is displayed, then ZSH is installed. Otherwise, you need to install Zsh.
 
 ```bash
-$ brew install zsh
+brew install zsh
 ```
 
 
 Run the following command to set the default Shell to Zsh:
 
 ```bash
-$ chsh -s $(which zsh)
+chsh -s $(which zsh)
 ```
 
 
