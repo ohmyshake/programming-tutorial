@@ -74,7 +74,7 @@ scale: 50%
 align: center
 name: diskutil-list
 ---
-My `diskutil list`
+My Domain Name Info
 ```
 
 - **For `A`:**
