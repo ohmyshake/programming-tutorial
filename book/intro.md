@@ -229,7 +229,7 @@ def main():
 
 #%% Main
 url = "file:///path_to_your_notebook/book/_build/html/intro.html"
-book= "./book"         # jupyter-book build ./book
+book= "./book"          # jupyter-book build ./book
 sleep_time = 0.1        # unit/s
 
 if __name__ == '__main__':
