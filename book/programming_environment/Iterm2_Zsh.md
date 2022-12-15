@@ -437,6 +437,6 @@ export PATH=/storage/hpc/work/ja62/fy21/software/zsh/bin:$PATH
 1. [少数派Ternimal主题推荐](https://sspai.com/post/53008)
 1. [B站详细视频讲解](https://www.bilibili.com/video/BV19Z4y1P7ZL/?spm_id_from=autoNext)
 1. [B站讲解tmux](https://www.bilibili.com/video/BV1rb411t7kd?from=search&seid=15827394807027530041&spm_id_from=333.337.0.0)
-1. [大佬参考配置GitHub](https://github.com/wangshub/dotfile)
-1. [大佬参考配置GitHub](https://github.com/thehalfspace/dotfiles2)
+1. [参考配置GitHub](https://github.com/wangshub/dotfile)
+1. [参考配置GitHub](https://github.com/thehalfspace/dotfiles2)
 1. [洪鹤庭CSDN](https://blog.csdn.net/icestars/article/details/121098804?spm=1001.2014.3001.5501)
