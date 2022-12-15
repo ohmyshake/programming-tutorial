@@ -1,4 +1,4 @@
-# Seismology Software
+# Geophysics Software
 
 ```{contents}
 ```
