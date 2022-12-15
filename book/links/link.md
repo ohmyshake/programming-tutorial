@@ -33,8 +33,6 @@
 
 
 
-
-
 ## Societies of Geosciences
 
 
@@ -45,9 +43,6 @@
 - [Seismological Society of America (SSA)](https://www.seismosoc.org/)
 
 - [Society of Exploration Geophysicists (SEG)](https://seg.org/)
-
-
-
 
 
 
