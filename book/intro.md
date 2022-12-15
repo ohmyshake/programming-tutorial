@@ -38,7 +38,7 @@ The main content of the notebook is as follows:
 **Programming Environment**
 ^^^
 
-```{figure} ./intro_files/macos.jpg
+```{image} ./intro_files/macos.jpg
 :height: 100
 ```
 
