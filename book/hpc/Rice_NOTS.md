@@ -132,6 +132,7 @@ sbatch jobs.slurm
 # 
 ```
 
+**The `jobs.slurm` content:**
 
 ```bash
 #!/bin/bash 
