@@ -74,6 +74,9 @@ export PATH=/storage/hpc/work/ja62/fy21/software/zsh/bin:$PATH
 :::{admonition} How to start new `zsh` when login?
 :class:  dropdown
 ```bash
+vim ~/.zshrc
+
+# Output:
 #------------------------------------------#
 #--- >>> 0. Run Fu's Zsh when login >>> ---#
 #------------------------------------------#
