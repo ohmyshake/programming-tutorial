@@ -6,11 +6,11 @@ Welcome to **Programming Notebook**, a notebook mainly about my scientific notes
 I'm [**Fu Yin**](https://yinfu.info/), a geophysics graduate student at Rice University.
 ```
 
-
-
 :::{admonition} Admonition
 There is no guarantees of correctness, and if you spot an error or a doubtful statement, kindly let me know.
 :::
+
+
 
 ## Enjoy ✨
 
