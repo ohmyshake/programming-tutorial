@@ -218,8 +218,8 @@ Look through https://formulae.brew.sh/ to check useful package.
 | `open-mpi`            | ...   |
 | `python@3.11`            | ...   |
 | `tree`            | ...   |
+| `wget`            | ...   |
 | ``            | ...   |
-
 
 
 
