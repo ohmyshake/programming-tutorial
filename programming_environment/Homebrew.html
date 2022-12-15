@@ -1,0 +1,1001 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Homebrew &#8212; Programming Notebook</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="canonical" href="https://seismology101.github.io/Notebook/programming_environment/Homebrew.html" />
+    <link rel="shortcut icon" href="../_static/logo.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Iterm2 &amp; Zsh" href="Iterm2_Zsh.html" />
+    <link rel="prev" title="Xcode" href="Xcode.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Programming Notebook</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Introduction ✨
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Programming Environment
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Overview.html">
+   Overview
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Xcode.html">
+   Xcode
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Homebrew
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Iterm2_Zsh.html">
+   Iterm2 &amp; Zsh
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="SSH.html">
+   SSH &amp; SSHFS
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Git.html">
+   Git &amp; Github
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="VScode.html">
+   VSCode
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Latex.html">
+   Latex
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="GUN.html">
+   GUN
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Python.html">
+   Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Julia.html">
+   Julia
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Matlab.html">
+   Matlab
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Shell_Manual.html">
+   Shell Manual
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Shortcuts.html">
+   Shortcuts
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  App Development
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../apps/Python_Package.html">
+   Python Package
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../apps/Pyside6.html">
+   Pyside6
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../apps/Dash.html">
+   Dash
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../apps/Docker.html">
+   Docker
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Parallel Computing and HPC Platform
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../hpc/Python.html">
+   Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../hpc/Python_HPC.html">
+   Python HPC
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../hpc/C%2B%2B.html">
+   C++
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../hpc/Make_Cmake.html">
+   Make Cmake
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../hpc/Pybind11_Cython.html">
+   Pybind11 Cython
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../hpc/Slurm.html">
+   Slurm
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../hpc/Rice_NOTS.html">
+   NOTS
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../hpc/Azure.html">
+   Azure
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../hpc/Amazon_S3.html">
+   Amazon S3
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  ML and DL
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ml_dl/Scipy.html">
+   Scipy
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ml_dl/PyTorch.html">
+   PyTorch
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  MacOS Software
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../macos_software/MacSoftware.html">
+   Mac Software
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../macos_software/Globus.html">
+   Globus
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../macos_software/ImageMagick.html">
+   ImageMagick
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../macos_software/Otter.html">
+   Otter
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../macos_software/PROMISE_Utility.html">
+   PROMISE Utility
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Geo Software
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../geo_software/GeoSoftware.html">
+   Geophysics Software
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../geo_software/Matplotlib.html">
+   Matplotlib
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../geo_software/PyGMT.html">
+   PyGMT
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../geo_software/SAC.html">
+   SAC
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../geo_software/Obspy.html">
+   Obspy
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../geo_software/DAS_format.html">
+   DAS Data Format
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../geo_software/CPS.html">
+   CPS
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../geo_software/SPECFEM.html">
+   SPECFEM
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../geo_software/Gmsh.html">
+   Gmsh
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../geo_software/Paraview.html">
+   Paraview
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../geo_software/FwiFlow.html">
+   FwiFlow
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../geo_software/GEOSX.html">
+   GEOSX
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Links
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../links/link.html">
+   Links ✨
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://yinfu.info/">
+   About Me
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/Seismology101/Notebook"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/Seismology101/Notebook/issues/new?title=Issue%20on%20page%20%2Fprogramming_environment/Homebrew.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/programming_environment/Homebrew.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduction">
+   Introduction
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#install">
+   Install
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#uninstall">
+   Uninstall
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#manual">
+   Manual
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#my-brew-list">
+   My brew list
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Homebrew</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduction">
+   Introduction
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#install">
+   Install
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#uninstall">
+   Uninstall
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#manual">
+   Manual
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#my-brew-list">
+   My brew list
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="homebrew">
+<h1>Homebrew<a class="headerlink" href="#homebrew" title="Permalink to this headline">#</a></h1>
+<ul class="simple">
+<li><p>Author: <em><a class="reference external" href="https://yinfu.info/">Fu Yin</a></em></p></li>
+<li><p>Update: <em>July 25, 2022</em></p></li>
+<li><p>Reading: <em>10 min</em></p></li>
+</ul>
+<hr class="docutils" />
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">#</a></h2>
+<p><a class="reference external" href="https://brew.sh/index_zh-cn.html"><strong>Homebrew</strong></a> is the most popular third-party package manager for macOS, consisted of the following 4 parts:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Purpose</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">brew</span></code></p></td>
+<td><p>Homebrew 源代码仓库</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">homebrew-core</span></code></p></td>
+<td><p>Homebrew 核心源</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">homebrew-cask</span></code></p></td>
+<td><p>提供 macOS 应用(用户图形界面)和大型二进制文件的安装</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">homebrew-bottles</span></code></p></td>
+<td><p>预编译二进制软件包</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<hr class="docutils" />
+<section id="install">
+<h2>Install<a class="headerlink" href="#install" title="Permalink to this headline">#</a></h2>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="69b533e8-f83e-4dd9-94cd-add0de6a5245" name="77b4a1df-04d3-451a-aac6-47bc051e5c5d" type="radio">
+</input><label class="sd-tab-label" for="69b533e8-f83e-4dd9-94cd-add0de6a5245">
+Foreign</label><div class="sd-tab-content docutils">
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Please check <a class="reference external" href="https://brew.sh/index_zh-cn.html">Homebrew</a> webpage for more info.</p>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>/bin/bash -c <span class="s2">&quot;</span><span class="k">$(</span>curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh<span class="k">)</span><span class="s2">&quot;</span>
+</pre></div>
+</div>
+</div>
+<input id="4fa8e6ae-dc52-4807-9229-ce3e2ffa60c6" name="77b4a1df-04d3-451a-aac6-47bc051e5c5d" type="radio">
+</input><label class="sd-tab-label" for="4fa8e6ae-dc52-4807-9229-ce3e2ffa60c6">
+China</label><div class="sd-tab-content docutils">
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p>针对国内用户的 Homebrew 安装和配置指南来自于 <a class="reference external" href="https://brew.idayer.com/">https://brew.idayer.com/</a> 与 <a class="reference external" href="https://seismo-learn.org/seismology101/computer/macos-setup/">https://seismo-learn.org/seismology101/computer/macos-setup/</a></p></li>
+<li><p>Homebrew 以及通过 Homebrew 安装的所有软件包都会被安装到特定目录下, 通常是 <code class="docutils literal notranslate"><span class="pre">/usr/local/</span></code> 目录. 而在 Apple M1 芯片的 Mac 下， 这一目录为 <code class="docutils literal notranslate"><span class="pre">/opt/homebrew/</span></code></p></li>
+</ul>
+</div>
+<ul class="simple">
+<li><p>如果你是初次安装，这里使用中科大源:</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># 1.执行安装脚本</span>
+<span class="nb">export</span> <span class="nv">HOMEBREW_BREW_GIT_REMOTE</span><span class="o">=</span><span class="s2">&quot;https://mirrors.ustc.edu.cn/brew.git&quot;</span>
+<span class="nb">export</span> <span class="nv">HOMEBREW_CORE_GIT_REMOTE</span><span class="o">=</span><span class="s2">&quot;https://mirrors.ustc.edu.cn/homebrew-core.git&quot;</span>
+/bin/bash -c <span class="s2">&quot;</span><span class="k">$(</span>curl -fsSL https://gitee.com/ineo6/homebrew-install/raw/master/install.sh<span class="k">)</span><span class="s2">&quot;</span>
+
+<span class="c1"># 2.安装完成后设置 bottles 镜像</span>
+<span class="nb">echo</span> <span class="s1">&#39;export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.ustc.edu.cn/homebrew-bottles/bottles&#39;</span> &gt;&gt; ~/.zshrc
+<span class="nb">source</span> ~/.zshrc
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>如果你已经安装过，需要换源:</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># 1. 设置中科大源</span>
+git -C <span class="s2">&quot;</span><span class="k">$(</span>brew --repo<span class="k">)</span><span class="s2">&quot;</span> remote set-url origin https://mirrors.ustc.edu.cn/brew.git
+git -C <span class="s2">&quot;</span><span class="k">$(</span>brew --repo homebrew/core<span class="k">)</span><span class="s2">&quot;</span> remote set-url origin https://mirrors.ustc.edu.cn/homebrew-core.git
+git -C <span class="s2">&quot;</span><span class="k">$(</span>brew --repo homebrew/cask<span class="k">)</span><span class="s2">&quot;</span> remote set-url origin https://mirrors.ustc.edu.cn/homebrew-cask.git
+
+<span class="c1"># 2. 设置 bottles 镜像</span>
+<span class="nb">echo</span> <span class="s1">&#39;export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.ustc.edu.cn/homebrew-bottles/bottles&#39;</span> &gt;&gt; ~/.zshrc
+<span class="nb">source</span> ~/.zshrc
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>恢复默认源</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git -C <span class="s2">&quot;</span><span class="k">$(</span>brew --repo<span class="k">)</span><span class="s2">&quot;</span> remote set-url origin https://github.com/Homebrew/brew.git
+git -C <span class="s2">&quot;</span><span class="k">$(</span>brew --repo homebrew/core<span class="k">)</span><span class="s2">&quot;</span> remote set-url origin https://github.com/Homebrew/homebrew-core.git
+git -C <span class="s2">&quot;</span><span class="k">$(</span>brew --repo homebrew/cask<span class="k">)</span><span class="s2">&quot;</span> remote set-url origin https://github.com/Homebrew/homebrew-cask.git
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">homebrew-bottles</span></code> 配置只能手动删除，将 <code class="docutils literal notranslate"><span class="pre">~/.zshrc</span></code> 文件中的 <code class="docutils literal notranslate"><span class="pre">HOMEBREW_BOTTLE_DOMAIN=https://mirrors.xxx.com</span></code> 内容删除，并执行 <code class="docutils literal notranslate"><span class="pre">source</span> <span class="pre">~/.zshrc</span></code></p>
+</div>
+</div>
+</section>
+<section id="uninstall">
+<h2>Uninstall<a class="headerlink" href="#uninstall" title="Permalink to this headline">#</a></h2>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="8abb2099-d415-4a88-921b-cb5f37e8aafd" name="9b0e4630-2469-47c1-8b76-8f81574a59ad" type="radio">
+</input><label class="sd-tab-label" for="8abb2099-d415-4a88-921b-cb5f37e8aafd">
+Foreign</label><div class="sd-tab-content docutils">
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>More information please refer to:
+<a class="reference external" href="https://docs.brew.sh/FAQ">https://docs.brew.sh/FAQ</a> and
+<a class="reference external" href="https://github.com/homebrew/install#uninstall-homebrew">https://github.com/homebrew/install#uninstall-homebrew</a></p>
+</div>
+<p>Uninstall script from the Homebrew/install repository</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>/bin/bash -c <span class="s2">&quot;</span><span class="k">$(</span>curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/uninstall.sh<span class="k">)</span><span class="s2">&quot;</span>
+</pre></div>
+</div>
+<p>If you want to run the Homebrew uninstaller non-interactively, you can use:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">NONINTERACTIVE</span><span class="o">=</span><span class="m">1</span> /bin/bash -c <span class="s2">&quot;</span><span class="k">$(</span>curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/uninstall.sh<span class="k">)</span><span class="s2">&quot;</span>
+</pre></div>
+</div>
+</div>
+<input id="e109234c-97cd-4a35-9736-cb4bc6b125c2" name="9b0e4630-2469-47c1-8b76-8f81574a59ad" type="radio">
+</input><label class="sd-tab-label" for="e109234c-97cd-4a35-9736-cb4bc6b125c2">
+China</label><div class="sd-tab-content docutils">
+<p>使用官方脚本同样会遇到uninstall地址无法访问问题，可以使用下面脚本:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>/bin/bash -c <span class="s2">&quot;</span><span class="k">$(</span>curl -fsSL https://gitee.com/ineo6/homebrew-install/raw/master/uninstall.sh<span class="k">)</span><span class="s2">&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="manual">
+<h2>Manual<a class="headerlink" href="#manual" title="Permalink to this headline">#</a></h2>
+<p>Once Homebrew is installed, you can use the brew commands provided by Homebrew.  Check <a class="reference external" href="https://docs.brew.sh/Manpage">documentation</a> for detailed manual.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># 模糊搜索与 wget 相关的软件</span>
+brew search wget
+
+<span class="c1"># 安装 wget 软件包</span>
+brew install wget
+
+<span class="c1"># 安装 Visual Studio Code, 其是带图形界面的软件，因而这里需要使用 --cask 选项</span>
+brew install --cask visual-studio-code
+
+<span class="c1"># 升级某个软件</span>
+brew upgrade xxx
+
+<span class="c1"># 卸载某个软件</span>
+brew uninstall xxx
+
+<span class="c1"># Brew 安装列表</span>
+brew list
+
+<span class="c1"># 查看brew配置信息</span>
+brew config
+
+<span class="c1"># 查看安装了多少package</span>
+brew info
+</pre></div>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Look through <a class="reference external" href="https://formulae.brew.sh/">https://formulae.brew.sh/</a> to check useful package.</p>
+</div>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header sd-bg-info sd-bg-text-info">
+<span class="sd-summary-icon"><svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-info" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M8 1.5a6.5 6.5 0 100 13 6.5 6.5 0 000-13zM0 8a8 8 0 1116 0A8 8 0 010 8zm6.5-.25A.75.75 0 017.25 7h1a.75.75 0 01.75.75v2.75h.25a.75.75 0 010 1.5h-2a.75.75 0 010-1.5h.25v-2h-.25a.75.75 0 01-.75-.75zM8 6a1 1 0 100-2 1 1 0 000 2z"></path></svg></span>Homebrew 相关名词解释<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">使用 Homebrew 时会碰到很多名词。这里做简单解释，
+更详细的解释请查看<a class="reference external" href="https://docs.brew.sh/Formula-Cookbook#homebrew-terminology">官方文档</a>。</p>
+<p class="sd-card-text"><strong>brew</strong></p>
+<ul class="simple">
+<li><p class="sd-card-text">Homebrew 提供的命令，用于查询、安装、卸载、升级以及管理软件包。</p></li>
+</ul>
+<p class="sd-card-text"><strong>Formula</strong></p>
+<ul class="simple">
+<li><p class="sd-card-text">软件的描述文件，包含了软件的基本信息和编译安装方法。
+Homebrew 根据 Formula 提供的信息，即可编译或安装软件。
+每个软件对应一个 Formula。例如，git 对应的 Formula 是
+<code class="file docutils literal notranslate"><span class="pre">/usr/local/Homebrew/Library/Taps/homebrew/homebrew-core/Formula/git.rb</span></code></p></li>
+</ul>
+<p class="sd-card-text"><strong>Bottle</strong></p>
+<ul class="simple">
+<li><p class="sd-card-text">预先编译好的二进制软件包。使用 Bottle 安装软件，
+比从源码编译和安装更快。如果一个软件仓库包含预编译的软件包，使用 <code class="docutils literal notranslate"><span class="pre">brew</span> <span class="pre">install</span></code>
+时会自动使用它。</p></li>
+</ul>
+<p class="sd-card-text"><strong>Tap</strong></p>
+<ul class="simple">
+<li><p class="sd-card-text">一个含有一系列软件的 git 仓库。使用
+<a class="reference external" href="https://docs.brew.sh/Taps#the-brew-tap-command">brew tap</a>
+命令查看已启用的仓库列表或启用仓库。已启用的仓库位于
+<code class="file docutils literal notranslate"><span class="pre">/usr/local/Homebrew/Library/Taps/homebrew/</span></code> 目录。
+常见软件仓库有 <a class="reference external" href="https://github.com/Homebrew/homebrew-core">homebrew-core</a>
+和 <a class="reference external" href="https://github.com/Homebrew/homebrew-cask">homebrew-cask</a>。
+其中，homebrew-core 是内置核心仓库，
+homebrew-cask 仓库则含有各种 macOS 系统下带图形界面的应用程序。</p></li>
+</ul>
+<p class="sd-card-text"><strong>Cask</strong></p>
+<ul class="simple">
+<li><p class="sd-card-text">Homebrew 的扩展功能，用于安装 macOS 下的图形界面应用程序。
+使用 <code class="docutils literal notranslate"><span class="pre">brew</span> <span class="pre">list</span> <span class="pre">--cask</span></code> 命令可以查看已安装的 casks。</p></li>
+</ul>
+<p class="sd-card-text"><strong>Cellar</strong></p>
+<ul class="simple">
+<li><p class="sd-card-text">所有软件的安装目录，即 <code class="file docutils literal notranslate"><span class="pre">/usr/local/Cellar</span></code>。</p></li>
+</ul>
+<p class="sd-card-text"><strong>Keg</strong></p>
+<ul class="simple">
+<li><p class="sd-card-text">某一软件的安装目录，如 <code class="file docutils literal notranslate"><span class="pre">/usr/local/Cellar/git/2.30.0</span></code>。</p></li>
+</ul>
+</div>
+</details></section>
+<section id="my-brew-list">
+<h2>My brew list<a class="headerlink" href="#my-brew-list" title="Permalink to this headline">#</a></h2>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Purpose</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">git</span></code></p></td>
+<td><p>…</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">zsh</span></code></p></td>
+<td><p>…</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">pfetch</span></code></p></td>
+<td><p>…</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">neofetch</span></code></p></td>
+<td><p>…</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">ncurses</span></code></p></td>
+<td><p>I forget…</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">autojump</span></code></p></td>
+<td><p>…</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">cmake</span></code></p></td>
+<td><p>…</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">gcc</span></code></p></td>
+<td><p>…</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">libomp</span></code></p></td>
+<td><p>…</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">open-mpi</span></code></p></td>
+<td><p>…</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">python&#64;3.11</span></code></p></td>
+<td><p>…</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">tree</span></code></p></td>
+<td><p>…</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">wget</span></code></p></td>
+<td><p>…</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">blackhole-2ch</span></code></p></td>
+<td><p>…</p></td>
+</tr>
+<tr class="row-even"><td><p>``</p></td>
+<td><p>…</p></td>
+</tr>
+<tr class="row-odd"><td><p>``</p></td>
+<td><p>…</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./programming_environment"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="Xcode.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Xcode</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="Iterm2_Zsh.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Iterm2 &amp; Zsh</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Fu Yin<br/>
+  
+      &copy; Copyright 2021–2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

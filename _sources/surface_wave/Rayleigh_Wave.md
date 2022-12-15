@@ -1,2 +1,0 @@
-# Rayleigh Wave
-1

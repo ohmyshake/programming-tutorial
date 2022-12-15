@@ -1,0 +1,984 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Shell Manual &#8212; Programming Notebook</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="canonical" href="https://seismology101.github.io/Notebook/programming_environment/Shell_Manual.html" />
+    <link rel="shortcut icon" href="../_static/logo.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Shortcuts" href="Shortcuts.html" />
+    <link rel="prev" title="Matlab" href="Matlab.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Programming Notebook</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Introduction ✨
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Programming Environment
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Overview.html">
+   Overview
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Xcode.html">
+   Xcode
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Homebrew.html">
+   Homebrew
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Iterm2_Zsh.html">
+   Iterm2 &amp; Zsh
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="SSH.html">
+   SSH &amp; SSHFS
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Git.html">
+   Git &amp; Github
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="VScode.html">
+   VSCode
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Latex.html">
+   Latex
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="GUN.html">
+   GUN
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Python.html">
+   Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Julia.html">
+   Julia
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Matlab.html">
+   Matlab
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Shell Manual
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Shortcuts.html">
+   Shortcuts
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  App Development
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../apps/Python_Package.html">
+   Python Package
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../apps/Pyside6.html">
+   Pyside6
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../apps/Dash.html">
+   Dash
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../apps/Docker.html">
+   Docker
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Parallel Computing and HPC Platform
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../hpc/Python.html">
+   Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../hpc/Python_HPC.html">
+   Python HPC
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../hpc/C%2B%2B.html">
+   C++
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../hpc/Make_Cmake.html">
+   Make Cmake
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../hpc/Pybind11_Cython.html">
+   Pybind11 Cython
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../hpc/Slurm.html">
+   Slurm
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../hpc/Rice_NOTS.html">
+   NOTS
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../hpc/Azure.html">
+   Azure
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../hpc/Amazon_S3.html">
+   Amazon S3
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  ML and DL
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ml_dl/Scipy.html">
+   Scipy
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ml_dl/PyTorch.html">
+   PyTorch
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  MacOS Software
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../macos_software/MacSoftware.html">
+   Mac Software
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../macos_software/Globus.html">
+   Globus
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../macos_software/ImageMagick.html">
+   ImageMagick
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../macos_software/Otter.html">
+   Otter
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../macos_software/PROMISE_Utility.html">
+   PROMISE Utility
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Geo Software
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../geo_software/GeoSoftware.html">
+   Geophysics Software
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../geo_software/Matplotlib.html">
+   Matplotlib
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../geo_software/PyGMT.html">
+   PyGMT
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../geo_software/SAC.html">
+   SAC
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../geo_software/Obspy.html">
+   Obspy
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../geo_software/DAS_format.html">
+   DAS Data Format
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../geo_software/CPS.html">
+   CPS
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../geo_software/SPECFEM.html">
+   SPECFEM
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../geo_software/Gmsh.html">
+   Gmsh
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../geo_software/Paraview.html">
+   Paraview
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../geo_software/FwiFlow.html">
+   FwiFlow
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../geo_software/GEOSX.html">
+   GEOSX
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Links
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../links/link.html">
+   Links ✨
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://yinfu.info/">
+   About Me
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/Seismology101/Notebook"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/Seismology101/Notebook/issues/new?title=Issue%20on%20page%20%2Fprogramming_environment/Shell_Manual.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/programming_environment/Shell_Manual.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ln">
+   ln
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#scp">
+   scp
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#rsync">
+   rsync
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#conda-mamba">
+   conda/mamba
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ssh-sshfs">
+   ssh/sshfs
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#mount-umount">
+   mount/umount
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#df">
+   df
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#cat">
+   cat
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#wc">
+   wc
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#head-tail">
+   head/tail
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#top">
+   top
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#kill">
+   kill
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#nohup">
+   nohup
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Shell Manual</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ln">
+   ln
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#scp">
+   scp
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#rsync">
+   rsync
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#conda-mamba">
+   conda/mamba
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ssh-sshfs">
+   ssh/sshfs
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#mount-umount">
+   mount/umount
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#df">
+   df
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#cat">
+   cat
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#wc">
+   wc
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#head-tail">
+   head/tail
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#top">
+   top
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#kill">
+   kill
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#nohup">
+   nohup
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="shell-manual">
+<h1>Shell Manual<a class="headerlink" href="#shell-manual" title="Permalink to this headline">#</a></h1>
+<ul class="simple">
+<li><p>Author: <em><a class="reference external" href="https://yinfu.info/">Fu Yin</a></em></p></li>
+<li><p>Update: <em>Dec 15, 2022</em></p></li>
+<li><p>Reading: <em>10 min</em></p></li>
+</ul>
+<hr class="docutils" />
+<section id="ln">
+<h2>ln<a class="headerlink" href="#ln" title="Permalink to this headline">#</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Print all links</span>
+ls -al
+
+<span class="c1"># Create a link, file2 is the link of file1.</span>
+ln -s file1 file2
+</pre></div>
+</div>
+</section>
+<section id="scp">
+<h2>scp<a class="headerlink" href="#scp" title="Permalink to this headline">#</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>scp
+</pre></div>
+</div>
+</section>
+<section id="rsync">
+<h2>rsync<a class="headerlink" href="#rsync" title="Permalink to this headline">#</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>rsync
+</pre></div>
+</div>
+</section>
+<section id="conda-mamba">
+<h2>conda/mamba<a class="headerlink" href="#conda-mamba" title="Permalink to this headline">#</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># check all packages</span>
+conda list
+
+<span class="c1"># install package</span>
+conda install -c conda-forge xxx
+
+<span class="c1"># create new env</span>
+conda create -n envname <span class="nv">python</span><span class="o">=</span><span class="m">3</span>.9 numpy pandas
+
+<span class="c1"># activate env</span>
+conda activate pygmt
+
+<span class="c1"># deactivate env</span>
+conda deactivate
+
+<span class="c1"># env list</span>
+conda env list
+
+<span class="c1"># remove a env</span>
+conda env remove -n yourEnv
+</pre></div>
+</div>
+</section>
+<section id="ssh-sshfs">
+<h2>ssh/sshfs<a class="headerlink" href="#ssh-sshfs" title="Permalink to this headline">#</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># ssh -p port -X user@hostname</span>
+ssh -p <span class="m">22</span> -X fy21@nots.rice.edu
+ssh nots
+
+<span class="c1"># sshfs NOTS HPC in Rice</span>
+sshfs -o follow_symlinks fy21@nots.rice.edu:/ /Users/yinfu/share1/
+
+<span class="c1"># set alias before in &#39;~/.zshrc&#39;</span>
+<span class="nb">alias</span> sshfs-nots<span class="o">=</span><span class="s1">&#39;sshfs -o follow_symlinks -p 22 fy21@nots.rice.edu:/ /Users/yinfu/share1/&#39;</span>
+<span class="nb">alias</span> resshfs-nots<span class="o">=</span><span class="s1">&#39;diskutil umountDisk /Users/yinfu/share1; sshfs-nots&#39;</span>
+sshfs-nots 
+resshfs-nots
+</pre></div>
+</div>
+</section>
+<section id="mount-umount">
+<h2>mount/umount<a class="headerlink" href="#mount-umount" title="Permalink to this headline">#</a></h2>
+<p>Use <code class="docutils literal notranslate"><span class="pre">diskutil</span></code> on MacOS, <code class="docutils literal notranslate"><span class="pre">mount/umount</span></code> on Linux.
+Disk softwares on Mac, such as <code class="docutils literal notranslate"><span class="pre">Disk</span> <span class="pre">Utility</span></code>, <code class="docutils literal notranslate"><span class="pre">Tuxera</span></code>…</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># List the partitions of a disk</span>
+diskutil list
+
+<span class="c1"># mount a single volume</span>
+diskutil mount <span class="o">[</span>IDENTIFIER<span class="o">]</span>
+diskutil mountDisk disk2s1
+
+<span class="c1"># mount an entire disk</span>
+diskutil mountDisk <span class="o">[</span>IDENTIFIER<span class="o">]</span>/<span class="o">[</span>PATH<span class="o">]</span>
+diskutil mountDisk disk2s1
+diskutil mountDisk /dev/disk2
+
+<span class="c1"># umount a single volume</span>
+diskutil umount <span class="o">[</span>IDENTIFIER<span class="o">]</span>
+diskutil umount disk2s1
+
+<span class="c1"># umount an entire disk</span>
+diskutil umountDisk <span class="o">[</span>IDENTIFIER<span class="o">]</span>/<span class="o">[</span>PATH<span class="o">]</span>
+diskutil umountDisk disk2s1
+diskutil umountDisk /dev/disk2
+
+<span class="c1"># umount sshfs</span>
+diskutil umountDisk <span class="o">[</span>PATH<span class="o">]</span>
+diskutil umountDisk /Users/yinfu/share1
+</pre></div>
+</div>
+<figure class="align-center" id="diskutil-list">
+<a class="reference internal image-reference" href="../_images/diskutil-list.jpg"><img alt="../_images/diskutil-list.jpg" src="../_images/diskutil-list.jpg" style="width: 499.79999999999995px; height: 285.59999999999997px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 7 </span><span class="caption-text">My <code class="docutils literal notranslate"><span class="pre">diskutil</span> <span class="pre">list</span></code></span><a class="headerlink" href="#diskutil-list" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="df">
+<h2>df<a class="headerlink" href="#df" title="Permalink to this headline">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">df</span></code> full name is <code class="docutils literal notranslate"><span class="pre">disk</span> <span class="pre">free</span></code>.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># The space size of each currently mounted directory</span>
+df -h
+
+<span class="c1"># -ll: display bytes || -lh: display KB/MB/G/T...</span>
+ls -ll
+ls -lh
+
+<span class="c1"># Display total file size in current directory</span>
+du -sh
+
+<span class="c1"># View the size of each file and folder in the current directory</span>
+du -h --max-depth<span class="o">=</span><span class="m">1</span>
+du -h --max-depth<span class="o">=</span><span class="m">1</span>*
+</pre></div>
+</div>
+</section>
+<section id="cat">
+<h2>cat<a class="headerlink" href="#cat" title="Permalink to this headline">#</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cat
+</pre></div>
+</div>
+</section>
+<section id="wc">
+<h2>wc<a class="headerlink" href="#wc" title="Permalink to this headline">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">wc</span></code> full name is <code class="docutils literal notranslate"><span class="pre">word</span> <span class="pre">count</span></code></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Find the lines, words, bytes, filenames of the file</span>
+wc file
+
+<span class="c1"># Find the lines of the file</span>
+cat file <span class="p">|</span> wc -l
+</pre></div>
+</div>
+</section>
+<section id="head-tail">
+<h2>head/tail<a class="headerlink" href="#head-tail" title="Permalink to this headline">#</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>head
+
+tail
+</pre></div>
+</div>
+</section>
+<section id="top">
+<h2>top<a class="headerlink" href="#top" title="Permalink to this headline">#</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>top
+
+<span class="c1">#quit</span>
+q
+</pre></div>
+</div>
+</section>
+<section id="kill">
+<h2>kill<a class="headerlink" href="#kill" title="Permalink to this headline">#</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ps -ef <span class="p">|</span> grep yinfu <span class="p">|</span> awk <span class="s1">&#39;{ print $2 }&#39;</span> <span class="p">|</span> xargs <span class="nb">kill</span> -9
+</pre></div>
+</div>
+</section>
+<section id="nohup">
+<h2>nohup<a class="headerlink" href="#nohup" title="Permalink to this headline">#</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>nohup 
+</pre></div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./programming_environment"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="Matlab.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Matlab</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="Shortcuts.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Shortcuts</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Fu Yin<br/>
+  
+      &copy; Copyright 2021–2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

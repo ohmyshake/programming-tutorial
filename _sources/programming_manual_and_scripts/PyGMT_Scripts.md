@@ -1,2 +1,0 @@
-# PyGMT Scripts
-1

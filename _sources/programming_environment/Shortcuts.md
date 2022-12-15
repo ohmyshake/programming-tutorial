@@ -95,9 +95,10 @@ table th:nth-of-type(2) {
 |    |    |
 
 
+
 Follow the process to set shortcuts: `System Preferences` -> `Keyboard` -> `Shortcuts` -> `App Shortcuts` -> `+ Applicaiton` -> `PDF Expert`
 :::{toggle}
-```{figure} ./Shortcuts_file/Shortcuts-1.jpg
+```{figure} ./files/Shortcuts-1.jpg
 ---
 scale: 100%
 align: center
@@ -125,7 +126,7 @@ PDF Expert Shortcuts
 Double-click to open `ipynb` file in Mac.
 
 :::{toggle}
-```{figure} ./Shortcuts_file/Shortcuts-2.jpg
+```{figure} ./files/Shortcuts-2.jpg
 ---
 scale: 50%
 align: center

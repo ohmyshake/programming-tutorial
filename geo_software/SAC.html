@@ -1,0 +1,1119 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>SAC &#8212; Programming Notebook</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="canonical" href="https://seismology101.github.io/Notebook/geo_software/SAC.html" />
+    <link rel="shortcut icon" href="../_static/logo.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Obspy" href="Obspy.html" />
+    <link rel="prev" title="PyGMT" href="PyGMT.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Programming Notebook</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Introduction ✨
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Programming Environment
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../programming_environment/Overview.html">
+   Overview
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../programming_environment/Xcode.html">
+   Xcode
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../programming_environment/Homebrew.html">
+   Homebrew
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../programming_environment/Iterm2_Zsh.html">
+   Iterm2 &amp; Zsh
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../programming_environment/SSH.html">
+   SSH &amp; SSHFS
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../programming_environment/Git.html">
+   Git &amp; Github
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../programming_environment/VScode.html">
+   VSCode
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../programming_environment/Latex.html">
+   Latex
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../programming_environment/GUN.html">
+   GUN
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../programming_environment/Python.html">
+   Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../programming_environment/Julia.html">
+   Julia
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../programming_environment/Matlab.html">
+   Matlab
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../programming_environment/Shell_Manual.html">
+   Shell Manual
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../programming_environment/Shortcuts.html">
+   Shortcuts
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  App Development
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../apps/Python_Package.html">
+   Python Package
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../apps/Pyside6.html">
+   Pyside6
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../apps/Dash.html">
+   Dash
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../apps/Docker.html">
+   Docker
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Parallel Computing and HPC Platform
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../hpc/Python.html">
+   Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../hpc/Python_HPC.html">
+   Python HPC
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../hpc/C%2B%2B.html">
+   C++
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../hpc/Make_Cmake.html">
+   Make Cmake
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../hpc/Pybind11_Cython.html">
+   Pybind11 Cython
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../hpc/Slurm.html">
+   Slurm
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../hpc/Rice_NOTS.html">
+   NOTS
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../hpc/Azure.html">
+   Azure
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../hpc/Amazon_S3.html">
+   Amazon S3
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  ML and DL
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ml_dl/Scipy.html">
+   Scipy
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ml_dl/PyTorch.html">
+   PyTorch
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  MacOS Software
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../macos_software/MacSoftware.html">
+   Mac Software
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../macos_software/Globus.html">
+   Globus
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../macos_software/ImageMagick.html">
+   ImageMagick
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../macos_software/Otter.html">
+   Otter
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../macos_software/PROMISE_Utility.html">
+   PROMISE Utility
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Geo Software
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="GeoSoftware.html">
+   Geophysics Software
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Matplotlib.html">
+   Matplotlib
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="PyGMT.html">
+   PyGMT
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   SAC
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Obspy.html">
+   Obspy
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="DAS_format.html">
+   DAS Data Format
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="CPS.html">
+   CPS
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="SPECFEM.html">
+   SPECFEM
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Gmsh.html">
+   Gmsh
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Paraview.html">
+   Paraview
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="FwiFlow.html">
+   FwiFlow
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="GEOSX.html">
+   GEOSX
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Links
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../links/link.html">
+   Links ✨
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://yinfu.info/">
+   About Me
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/Seismology101/Notebook"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/Seismology101/Notebook/issues/new?title=Issue%20on%20page%20%2Fgeo_software/SAC.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/geo_software/SAC.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#read-and-write">
+   Read and Write
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#phase-pick">
+   Phase Pick
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#data-process">
+   Data Process
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#install-rseed">
+   Install rseed
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#rseed-to-sac">
+   rseed to sac
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>SAC</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#read-and-write">
+   Read and Write
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#phase-pick">
+   Phase Pick
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#data-process">
+   Data Process
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#install-rseed">
+   Install rseed
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#rseed-to-sac">
+   rseed to sac
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="sac">
+<h1>SAC<a class="headerlink" href="#sac" title="Permalink to this headline">#</a></h1>
+<ul class="simple">
+<li><p>Author: <em><a class="reference external" href="https://yinfu.info/">Fu Yin</a></em></p></li>
+<li><p>Update: <em>August 4, 2022</em></p></li>
+<li><p>Reading: <em>30 min</em></p></li>
+</ul>
+<hr class="docutils" />
+ <!-- seed2sac  sac2mseed cutevent -->
+<section id="read-and-write">
+<h2>Read and Write<a class="headerlink" href="#read-and-write" title="Permalink to this headline">#</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">SAC</span></code> wildcard is the same as the <code class="docutils literal notranslate"><span class="pre">Unix</span></code> wildcard, and contains only the following three types</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">*</span></code>: matches a string of any length (including zero length)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">?</span></code>: matches any single non-null character</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[]</span></code>: matches any single character in the list</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">[ABC]</span></code> or <code class="docutils literal notranslate"><span class="pre">[A,B,C]</span></code> matches a single character A or B or C</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[0-9]</span></code> matches any digit from 0 to 9</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[a-g]</span></code> matches any single character in the range from a to g</p></li>
+</ul>
+</li>
+</ul>
+<p><strong>read:</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ sac
+ SEISMIC ANALYSIS CODE <span class="o">[</span><span class="m">07</span>/17/2022 <span class="o">(</span>Version <span class="m">102</span>.0<span class="o">)]</span>
+ Copyright <span class="m">1995</span> Regents of the University of California
+
+SAC&gt; r cdv.n cdv.e cdv.z
+
+SAC&gt; r cdv.?                
+./cdv.e ...cdv.n ...cdv.z   <span class="c1"># attention! Here the file is read in character sort order</span>
+
+SAC&gt; r cdv.<span class="o">[</span>nez<span class="o">]</span>
+./cdv.e ...cdv.n ...cdv.z
+
+SAC&gt; r *   
+./cdv.e ...cdv.n ...cdv.z
+
+SAC&gt; r more ./cdv.e         <span class="c1"># one MORE file, and do not delete the past files in memory</span>
+</pre></div>
+</div>
+<p><strong>write:</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>SAC&gt; w test.n test.e test.z        <span class="c1"># write into 3 new files</span>
+
+SAC&gt; w over                        <span class="c1"># overwrite the original disk files</span>
+
+SAC&gt; wh                            <span class="c1"># only overwrite the `header` parameters to the disk files</span>
+
+SAC&gt; w append .new                 <span class="c1"># add &quot;.new&quot; to the original file name</span>
+cdv.e.new cdv.n.new cdv.z.new
+</pre></div>
+</div>
+</section>
+<section id="phase-pick">
+<h2>Phase Pick<a class="headerlink" href="#phase-pick" title="Permalink to this headline">#</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>SAC&gt; qdp off
+SAC&gt; ppk p <span class="m">9</span>        <span class="c1"># plot 9 trances together</span>
+<span class="c1"># 键入&quot;t&quot;和&quot;0&quot;标记到时，然后按&quot;q&quot;退出ppk模式</span>
+SAC&gt; wh 
+</pre></div>
+</div>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-align:center head"><p>Command</p></th>
+<th class="text-align:center head"><p>Function</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">b</span></code></p></td>
+<td class="text-align:center"><p>previous figure</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">n</span></code></p></td>
+<td class="text-align:center"><p>next figure</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">x</span></code></p></td>
+<td class="text-align:center"><p>zoom in</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">o</span></code></p></td>
+<td class="text-align:center"><p>zoom out</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">q</span></code></p></td>
+<td class="text-align:center"><p>quit</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">t</span></code></p></td>
+<td class="text-align:center"><p>mark phase time</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="data-process">
+<h2>Data Process<a class="headerlink" href="#data-process" title="Permalink to this headline">#</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">glob</span>
+<span class="kn">import</span> <span class="nn">subprocess</span>
+
+<span class="c1">#%% parameters</span>
+<span class="n">file_path</span> <span class="o">=</span> <span class="s1">&#39;./&#39;</span>
+<span class="n">f1</span> <span class="o">=</span> <span class="mf">0.001</span>  <span class="c1"># remove instrument response then filter</span>
+<span class="n">f2</span> <span class="o">=</span> <span class="mf">0.003</span>
+<span class="n">f3</span> <span class="o">=</span> <span class="mf">2.1</span>
+<span class="n">f4</span> <span class="o">=</span> <span class="mf">2.3</span>
+<span class="n">delta</span> <span class="o">=</span> <span class="mf">0.2</span>  <span class="c1"># downsample to 0.2s</span>
+<span class="n">evla</span> <span class="o">=</span> <span class="mf">10.0</span>
+<span class="n">evlo</span> <span class="o">=</span> <span class="mf">10.0</span>
+<span class="n">evdp</span> <span class="o">=</span> <span class="mf">10.0</span>
+<span class="n">mag</span> <span class="o">=</span> <span class="mf">5.0</span>
+
+<span class="c1">#%% run</span>
+<span class="n">os</span><span class="o">.</span><span class="n">putenv</span><span class="p">(</span><span class="s2">&quot;SAC_DISPLAY_COPYRIGHT&quot;</span><span class="p">,</span> <span class="s1">&#39;0&#39;</span><span class="p">)</span>  <span class="c1"># set ernvironment variable</span>
+<span class="n">cmd_sac</span> <span class="o">=</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">Popen</span><span class="p">([</span><span class="s1">&#39;sac&#39;</span><span class="p">],</span> <span class="n">stdin</span><span class="o">=</span><span class="n">subprocess</span><span class="o">.</span><span class="n">PIPE</span><span class="p">,</span> <span class="n">cwd</span><span class="o">=</span><span class="n">file_path</span><span class="p">)</span>
+<span class="n">s</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+<span class="k">for</span> <span class="n">sacfile</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span><span class="s1">&#39;*.SAC&#39;</span><span class="p">))):</span>
+    <span class="n">s</span> <span class="o">+=</span> <span class="s2">&quot;r </span><span class="si">%s</span><span class="s2"> </span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">sacfile</span> 
+    <span class="n">s</span> <span class="o">+=</span> <span class="s2">&quot;rmean; rtr; taper </span><span class="se">\n</span><span class="s2">&quot;</span> 
+    <span class="n">s</span> <span class="o">+=</span> <span class="s2">&quot;ch evla </span><span class="si">%f</span><span class="s2"> evlo </span><span class="si">%f</span><span class="s2"> evdp </span><span class="si">%f</span><span class="s2"> mag </span><span class="si">%f</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">evla</span><span class="p">,</span><span class="n">evlo</span><span class="p">,</span><span class="n">evdp</span><span class="p">,</span><span class="n">mag</span><span class="p">)</span>
+    <span class="n">s</span> <span class="o">+=</span> <span class="s2">&quot;wh</span><span class="se">\n</span><span class="s2">&quot;</span>
+    <span class="n">s</span> <span class="o">+=</span> <span class="s2">&quot;trans from polezero s SAC.PZs to vel freq </span><span class="si">%f</span><span class="s2"> </span><span class="si">%f</span><span class="s2"> </span><span class="si">%f</span><span class="s2"> </span><span class="si">%f</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">f1</span><span class="p">,</span><span class="n">f2</span><span class="p">,</span><span class="n">f3</span><span class="p">,</span><span class="n">f4</span><span class="p">)</span>   <span class="c1"># remove response to velocity records</span>
+    <span class="n">s</span> <span class="o">+=</span> <span class="s2">&quot;mul 1.0e9 </span><span class="se">\n</span><span class="s2">&quot;</span> 
+    <span class="n">s</span> <span class="o">+=</span> <span class="s2">&quot;lp c </span><span class="si">%f</span><span class="s2"> </span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">delta</span><span class="p">))</span>
+    <span class="n">s</span> <span class="o">+=</span> <span class="s2">&quot;interpolate delta </span><span class="si">%f</span><span class="s2"> </span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">delta</span>
+    <span class="n">s</span> <span class="o">+=</span> <span class="s2">&quot;w over </span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="n">s</span> <span class="o">+=</span> <span class="s2">&quot;q </span><span class="se">\n</span><span class="s2">&quot;</span>
+
+<span class="n">stdout</span><span class="p">,</span> <span class="n">stderr</span> <span class="o">=</span> <span class="n">cmd_sac</span><span class="o">.</span><span class="n">communicate</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span>  <span class="c1"># Popen.communicate will auto with Popen.wait(), but add wait() by yourself in case</span>
+<span class="n">cmd_sac</span><span class="o">.</span><span class="n">wait</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+<section id="install-rseed">
+<h2>Install rseed<a class="headerlink" href="#install-rseed" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="rseed-to-sac">
+<h2>rseed to sac<a class="headerlink" href="#rseed-to-sac" title="Permalink to this headline">#</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python3</span>
+<span class="c1"># -*- coding: utf-8 -*-</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Created on Mon May 31 15:16:39 2021</span>
+<span class="sd">    参考网页：https://docs.python.org/zh-cn/3/library/subprocess.html</span>
+<span class="sd">    命令：subprocess.Popen 本质是创建一个子进程，主（父）进程是调用它的Python程序。子进程创建完成后，父进程会继续执行子进程后面的程序而不管</span>
+<span class="sd">        子进程有没有执行结束。所以可以阻塞父进程，等待子进程结束再执行后面的语句，使用Popen.wait()函数命令，使之变成串行程序。</span>
+<span class="sd">        subprocess.call()函数自带阻塞功能。</span>
+
+<span class="sd">    Python 中使用 subprocess 模块的 Popen 方法调用 SAC，通过 p.communicate() </span>
+<span class="sd">    将命令 s.encode() 传递给 SAC</span>
+
+<span class="sd">    1. os.putenv(&quot;SAC_DISPLAY_COPYRIGHT&quot;, &#39;0&#39;) </span>
+<span class="sd">        # a. 设置环境变量 SAC_DISPLAY_COPYRIGHT 的值为 0，这样就不用打印启动sac程序的欢迎页面了</span>
+
+<span class="sd">    2. p = subprocess.Popen([&quot;sac&quot;], stdin=subprocess.PIPE, stdout=open(&#39;dirtest.txt&#39;,&#39;w&#39;))  </span>
+<span class="sd">        # a. stdin=subprocess.PIPE表示标准输入通过管道p.communicate输入</span>
+<span class="sd">        # b. stdout=open(&#39;dirtest.txt&#39;,&#39;w&#39;)表示将标准输出到一个文本文件中,也可以使用subprocess.PIPE这个时候就不会打印到屏幕了，</span>
+<span class="sd">            而是托管到第三方PIPE下面，不打印到主进程下</span>
+<span class="sd">        # c. [&quot;sac&quot;]列表第一个字符串表示要执行的命令程序，列表后面的字符串表示该命令程序的输入</span>
+
+<span class="sd">    3. p.communicate(s.encode()) </span>
+<span class="sd">        # a. p.communicate表示向 stdin 发送数据，或者从stdout和stderr中读取数据（参数stdin必须</span>
+<span class="sd">            被设置为PIPE。同样，如果希望从stdout和stderr获取数据，必须将stdout和stderr设置为PIPE）</span>
+<span class="sd">        # b. s.encode() 表示指定字符串s的编码格式</span>
+
+<span class="sd">    4. 利用系统的 Shell 命令执行时，需要确保 shell=True，第一个变量例如 cmd_cat 就是shell格式下命令字符串.cwd=&#39;/&#39;用于设置该子进程</span>
+<span class="sd">        执行的路径。</span>
+<span class="sd">       注意：系统的shell命令有自己的通配符正则化形式，所以这里的*会起到通配符的作用，第1、2、3中的通配符*将不起作用，会解释为字符串*</span>
+<span class="sd">       cmd_cat = &#39;cat %s &gt;&gt; %s&#39; % (&#39;*_PZs_*&#39;,&#39;SAC.PZs1&#39;)  # shell命令的字符串格式</span>
+<span class="sd">       subprocess.Popen(cmd_cat, shell=True,cwd=&#39;/&#39;)  # 利用Popen执行shell命令</span>
+<span class="sd">       或者 subprocess.Popen(&#39;cat *_PZs_* &gt;&gt; SAC.PZs1&#39;, shell=True,cwd=&#39;/&#39;)</span>
+
+<span class="sd">    5. a=subprocess.getstatusoutput(&#39;MCMTpy -h&#39;) 返回在 shell 中执行 cmd 产生的 (exitcode, output)</span>
+
+<span class="sd">    6. subprocess.Popen([&#39;rdseed&#39;, &#39;-pdf&#39;,seed_name],cwd=file_path) 注意 seed_name 只能用相对路径，</span>
+<span class="sd">       因为popen命令只会找当前路径下的文件名称，该文件名称不包含路径信息</span>
+
+
+<span class="sd">@author: yf</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">import</span> <span class="nn">os</span> 
+<span class="kn">import</span> <span class="nn">subprocess</span>
+<span class="kn">import</span> <span class="nn">glob</span>
+<span class="kn">import</span> <span class="nn">shutil</span> 
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">obspy.core</span> <span class="kn">import</span> <span class="n">UTCDateTime</span>
+
+
+<span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">该程序会将 file_path 的 seed 文件全部解压成sac，并去除仪器响应添加到 output_path 目录下</span>
+
+<span class="sd">&#39;&#39;&#39;</span>
+
+
+<span class="c1">############################</span>
+<span class="c1">## 1. 输入参数 (路径必须是全英文，否则 subprocess.Popen 会报错)</span>
+
+<span class="c1"># file_path = &#39;./1_three_earthquke&#39;</span>
+<span class="n">file_path</span> <span class="o">=</span> <span class="s1">&#39;./2_M_more_than_4/yunnan_network&#39;</span>                                 <span class="c1"># 输入文件夹路径 yunnan_network  ||  instability_network</span>
+<span class="n">output_path</span> <span class="o">=</span> <span class="s1">&#39;./sac_data&#39;</span>                                                      <span class="c1"># 输出文件路径</span>
+
+<span class="n">readme_file</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">output_path</span><span class="p">,</span><span class="s1">&#39;readme&#39;</span><span class="p">)</span>                                <span class="c1"># 输出 logging 文件路径</span>
+
+<span class="n">rm_old_output_path</span> <span class="o">=</span> <span class="kc">True</span>                                                       <span class="c1"># 是否删除已经存在的 output_path 文件夹，如果想处理多个 file_path 时，请保持 False</span>
+
+<span class="n">f1</span> <span class="o">=</span> <span class="mf">0.001</span>                                                                      <span class="c1"># 去除仪器响应希望的滤波范围, 先去除仪器响应，再降采样</span>
+<span class="n">f2</span> <span class="o">=</span> <span class="mf">0.003</span>
+<span class="n">f3</span> <span class="o">=</span> <span class="mf">2.1</span>
+<span class="n">f4</span> <span class="o">=</span> <span class="mf">2.3</span>
+
+<span class="n">delta</span> <span class="o">=</span> <span class="mf">0.2</span>                                                                     <span class="c1"># 降采样到 0.2s</span>
+
+
+
+
+<span class="c1">############################</span>
+<span class="c1">## 2. 读取地震目录信息</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="s1">&#39;./fast_20210601232138.xls&#39;</span><span class="p">)</span>
+<span class="n">catalog_raw</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">values</span>                                                         <span class="c1"># pandas 转成 numpy</span>
+
+<span class="c1"># catalog_new format: UTCtime/lat/lon/dep/mag</span>
+<span class="n">catalog_new</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="n">catalog_raw</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">catalog_raw</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]):</span>
+    <span class="n">UTCtime</span> <span class="o">=</span> <span class="n">UTCDateTime</span><span class="p">(</span><span class="n">catalog_raw</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span><span class="o">+</span><span class="s1">&#39;T&#39;</span><span class="o">+</span><span class="n">catalog_raw</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="s1">&#39;+08&#39;</span><span class="p">)</span>          <span class="c1"># 地震目录的时间都是北京时间，时区为 UTC+8，需要转换成 UTC 时间统一标准</span>
+    <span class="n">nptime</span> <span class="o">=</span> <span class="n">UTCtime</span><span class="o">.</span><span class="n">timestamp</span>
+    <span class="n">lat</span> <span class="o">=</span> <span class="n">catalog_raw</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span>
+    <span class="n">lon</span> <span class="o">=</span> <span class="n">catalog_raw</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
+    <span class="n">dep</span> <span class="o">=</span> <span class="n">catalog_raw</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span>
+    <span class="n">mag</span> <span class="o">=</span> <span class="n">catalog_raw</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="mi">5</span><span class="p">]</span>
+
+    <span class="n">catalog_new</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">nptime</span>
+    <span class="n">catalog_new</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">lat</span>
+    <span class="n">catalog_new</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="n">lon</span>
+
+    <span class="c1">## 地震深度可能不存在，设成999</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">catalog_new</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">dep</span><span class="p">)</span>
+    <span class="k">except</span><span class="p">:</span>
+        <span class="n">catalog_new</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="mi">999</span>
+
+    <span class="c1">## 地震震级可能不存在，设成999</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">catalog_new</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">mag</span><span class="p">)</span>
+    <span class="k">except</span><span class="p">:</span>
+        <span class="n">catalog_new</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span> <span class="o">=</span> <span class="mi">999</span>
+
+
+
+<span class="c1">############################</span>
+<span class="c1">## 3. rdseed to sac</span>
+<span class="n">seed_path</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span><span class="s1">&#39;*.seed&#39;</span><span class="p">)</span> <span class="p">))</span>               <span class="c1"># *.seed</span>
+
+<span class="k">if</span> <span class="n">rm_old_output_path</span><span class="p">:</span>                                                          <span class="c1"># remove old output_path</span>
+    <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">output_path</span><span class="p">):</span>
+        <span class="n">shutil</span><span class="o">.</span><span class="n">rmtree</span><span class="p">(</span><span class="n">output_path</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">output_path</span><span class="p">)</span> <span class="o">==</span> <span class="kc">False</span><span class="p">:</span>                                          <span class="c1"># mkdir new output_path</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">output_path</span><span class="p">)</span>
+
+<span class="n">fp</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">readme_file</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">seed_path</span><span class="p">)):</span>
+    <span class="n">seed_name</span> <span class="o">=</span> <span class="n">seed_path</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>                                     <span class="c1"># seed_name的时间是北京时间，只精确到分钟</span>
+
+    <span class="c1">### a.rdseed</span>
+    <span class="n">cmd_rdseed</span> <span class="o">=</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">Popen</span><span class="p">([</span><span class="s1">&#39;rdseed&#39;</span><span class="p">,</span> <span class="s1">&#39;-pdf&#39;</span><span class="p">,</span><span class="n">seed_name</span><span class="p">],</span> <span class="n">cwd</span><span class="o">=</span><span class="n">file_path</span><span class="p">)</span>   <span class="c1"># rdseed 解压文件, 注意 seed_name 只能用相对路径，因为popen命令只会找当前路径下的文件名称，该文件名称不包含路径信息</span>
+    <span class="n">cmd_rdseed</span><span class="o">.</span><span class="n">wait</span><span class="p">()</span>
+
+
+    <span class="c1">### b.cat</span>
+    <span class="n">cmd_cat</span> <span class="o">=</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">Popen</span><span class="p">(</span><span class="s1">&#39;cat *_PZs_* &gt;&gt; SAC.PZs&#39;</span><span class="p">,</span> <span class="n">shell</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">cwd</span><span class="o">=</span><span class="n">file_path</span><span class="p">)</span> <span class="c1"># 合并单个seed文件所有的仪器响应文件</span>
+    <span class="n">cmd_cat</span><span class="o">.</span><span class="n">wait</span><span class="p">()</span>
+
+    <span class="c1">### b.1 将 rdseed 生成的原始 sac 文件保存起来</span>
+    <span class="n">output_seed_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">output_path</span><span class="p">,</span><span class="s1">&#39;RAW_SAC&#39;</span><span class="p">,</span><span class="n">seed_name</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">output_seed_path</span><span class="p">)</span><span class="o">==</span><span class="kc">False</span><span class="p">:</span>                                 <span class="c1"># mkdir new output seed path</span>
+        <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">output_seed_path</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="n">file_path</span><span class="o">+</span><span class="s1">&#39;/*.SAC&#39;</span><span class="p">):</span>                                  <span class="c1"># cp sac</span>
+        <span class="n">file_name</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+        <span class="n">out_name</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">output_seed_path</span><span class="p">,</span><span class="n">file_name</span><span class="p">)</span>
+        <span class="n">shutil</span><span class="o">.</span><span class="n">copyfile</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="n">out_name</span><span class="p">)</span>
+
+    <span class="n">PZ_file</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span><span class="s1">&#39;SAC.PZs&#39;</span><span class="p">)</span>                               <span class="c1"># cp SAC.PZs</span>
+    <span class="n">shutil</span><span class="o">.</span><span class="n">copyfile</span><span class="p">(</span><span class="n">PZ_file</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">output_seed_path</span><span class="p">,</span><span class="s1">&#39;SAC.PZs&#39;</span><span class="p">))</span>
+
+
+    <span class="c1">### c.sac</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">putenv</span><span class="p">(</span><span class="s2">&quot;SAC_DISPLAY_COPYRIGHT&quot;</span><span class="p">,</span> <span class="s1">&#39;0&#39;</span><span class="p">)</span>                                     <span class="c1"># 设置环境变量</span>
+    <span class="n">cmd_sac</span> <span class="o">=</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">Popen</span><span class="p">([</span><span class="s1">&#39;sac&#39;</span><span class="p">],</span> <span class="n">stdin</span><span class="o">=</span><span class="n">subprocess</span><span class="o">.</span><span class="n">PIPE</span><span class="p">,</span> <span class="n">cwd</span><span class="o">=</span><span class="n">file_path</span><span class="p">)</span>   <span class="c1"># 利用sac程序去除仪器响应 /Users/yf/1.Software/1.SAC/sac/bin/sac</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+    <span class="k">for</span> <span class="n">sacfile</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span><span class="s1">&#39;*.SAC&#39;</span><span class="p">))):</span>
+        <span class="n">sac_name</span> <span class="o">=</span> <span class="n">sacfile</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>                                       <span class="c1"># sac_name的时间是UTC时间，精确到毫秒</span>
+
+        <span class="n">year</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">sac_name</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">])</span>                                      <span class="c1"># 通过sac文件名称读取时间，后续可以修改成读取 sac 的头部变量</span>
+        <span class="n">julday</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">sac_name</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">)[</span><span class="mi">1</span><span class="p">])</span>
+        <span class="n">hour</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">sac_name</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">)[</span><span class="mi">2</span><span class="p">])</span>
+        <span class="n">minute</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">sac_name</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">)[</span><span class="mi">3</span><span class="p">])</span>
+        <span class="n">second</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">sac_name</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">)[</span><span class="mi">4</span><span class="p">])</span>
+        <span class="n">UTCtime</span> <span class="o">=</span> <span class="n">UTCDateTime</span><span class="p">(</span><span class="n">year</span><span class="o">=</span><span class="n">year</span><span class="p">,</span> <span class="n">julday</span><span class="o">=</span><span class="n">julday</span><span class="p">,</span> <span class="n">hour</span><span class="o">=</span><span class="n">hour</span><span class="p">,</span> <span class="n">minute</span><span class="o">=</span><span class="n">minute</span><span class="p">,</span> <span class="n">second</span><span class="o">=</span><span class="n">second</span><span class="p">)</span> 
+        <span class="n">nptime</span> <span class="o">=</span> <span class="n">UTCtime</span><span class="o">.</span><span class="n">timestamp</span>
+
+        <span class="n">evla</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">evlo</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">evdp</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">mag</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">catalog_new</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]):</span>
+            <span class="k">if</span> <span class="nb">abs</span><span class="p">(</span><span class="n">catalog_new</span><span class="p">[</span><span class="n">j</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span><span class="o">-</span><span class="n">nptime</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">60</span><span class="p">:</span>                               <span class="c1"># 精确到60秒, 因为sac文件开始记录的时间不是地震开始时刻，seed文件对秒进行舍入到分钟</span>
+                <span class="n">evla</span> <span class="o">=</span> <span class="n">catalog_new</span><span class="p">[</span><span class="n">j</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span>
+                <span class="n">evlo</span> <span class="o">=</span> <span class="n">catalog_new</span><span class="p">[</span><span class="n">j</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span>
+                <span class="n">evdp</span> <span class="o">=</span> <span class="n">catalog_new</span><span class="p">[</span><span class="n">j</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
+                <span class="n">mag</span> <span class="o">=</span> <span class="n">catalog_new</span><span class="p">[</span><span class="n">j</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span>
+                <span class="k">break</span>
+
+        <span class="n">s</span> <span class="o">+=</span> <span class="s2">&quot;r </span><span class="si">%s</span><span class="s2"> </span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">sac_name</span> 
+        <span class="n">s</span> <span class="o">+=</span> <span class="s2">&quot;rmean; rtr; taper </span><span class="se">\n</span><span class="s2">&quot;</span> 
+        <span class="n">s</span> <span class="o">+=</span> <span class="s2">&quot;ch evla </span><span class="si">%f</span><span class="s2"> evlo </span><span class="si">%f</span><span class="s2"> evdp </span><span class="si">%f</span><span class="s2"> mag </span><span class="si">%f</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">evla</span><span class="p">,</span><span class="n">evlo</span><span class="p">,</span><span class="n">evdp</span><span class="p">,</span><span class="n">mag</span><span class="p">)</span>
+        <span class="n">s</span> <span class="o">+=</span> <span class="s2">&quot;wh</span><span class="se">\n</span><span class="s2">&quot;</span>
+        <span class="n">s</span> <span class="o">+=</span> <span class="s2">&quot;trans from polezero s SAC.PZs to vel freq </span><span class="si">%f</span><span class="s2"> </span><span class="si">%f</span><span class="s2"> </span><span class="si">%f</span><span class="s2"> </span><span class="si">%f</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">f1</span><span class="p">,</span><span class="n">f2</span><span class="p">,</span><span class="n">f3</span><span class="p">,</span><span class="n">f4</span><span class="p">)</span>   <span class="c1"># 去完仪器响应变成速度记录 to vel</span>
+        <span class="n">s</span> <span class="o">+=</span> <span class="s2">&quot;mul 1.0e9 </span><span class="se">\n</span><span class="s2">&quot;</span> 
+        <span class="n">s</span> <span class="o">+=</span> <span class="s2">&quot;lp c </span><span class="si">%f</span><span class="s2"> </span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">delta</span><span class="p">))</span>
+        <span class="n">s</span> <span class="o">+=</span> <span class="s2">&quot;interpolate delta </span><span class="si">%f</span><span class="s2"> </span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">delta</span>
+        <span class="n">s</span> <span class="o">+=</span> <span class="s2">&quot;w over </span><span class="se">\n</span><span class="s2">&quot;</span>
+    <span class="n">s</span> <span class="o">+=</span> <span class="s2">&quot;q </span><span class="se">\n</span><span class="s2">&quot;</span>
+
+    <span class="n">stdout</span><span class="p">,</span> <span class="n">stderr</span> <span class="o">=</span> <span class="n">cmd_sac</span><span class="o">.</span><span class="n">communicate</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span>                            <span class="c1"># Popen.communicate 命令会自带 Popen.wait(), 但保险起见还是需要自己添加 wait()命令</span>
+    <span class="n">cmd_sac</span><span class="o">.</span><span class="n">wait</span><span class="p">()</span>
+
+
+    <span class="c1">### d.write logging readme</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">evla</span><span class="o">==</span><span class="mi">0</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">evlo</span><span class="o">==</span><span class="mi">0</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">evdp</span><span class="o">==</span><span class="mi">0</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">mag</span><span class="o">==</span><span class="mi">0</span><span class="p">):</span>                      <span class="c1"># 判断该seed事件，是否在地震目录中找到</span>
+        <span class="n">fp</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;not_find_in_catalog:   &#39;</span><span class="o">+</span><span class="n">seed_name</span><span class="p">)</span>
+        <span class="n">fp</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">fp</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;catalog_time:</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">)</span>                                             <span class="c1"># 判断该seed事件,存在地震目录</span>
+        <span class="n">fp</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">UTCDateTime</span><span class="p">(</span><span class="n">catalog_new</span><span class="p">[</span><span class="n">j</span><span class="p">,</span><span class="mi">0</span><span class="p">]))</span><span class="o">+</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">)</span>
+        <span class="n">fp</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;sac_time:</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">)</span>
+        <span class="n">fp</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">UTCDateTime</span><span class="p">(</span><span class="n">nptime</span><span class="p">))</span><span class="o">+</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">)</span>
+        <span class="n">fp</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;difference_time:</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">)</span>
+        <span class="n">fp</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">catalog_new</span><span class="p">[</span><span class="n">j</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span><span class="o">-</span><span class="n">nptime</span><span class="p">)</span><span class="o">+</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">)</span>
+        <span class="n">fp</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+
+
+    <span class="c1">### e.remove file</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">evla</span><span class="o">==</span><span class="mi">0</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">evlo</span><span class="o">==</span><span class="mi">0</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">evdp</span><span class="o">==</span><span class="mi">0</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">mag</span><span class="o">==</span><span class="mi">0</span><span class="p">):</span>
+        <span class="n">output_seed_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">output_path</span><span class="p">,</span><span class="s1">&#39;no_event_&#39;</span><span class="o">+</span><span class="n">seed_name</span><span class="p">)</span>      <span class="c1"># 没有地震目录的文件夹名称</span>
+        <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">output_seed_path</span><span class="p">)</span><span class="o">==</span><span class="kc">False</span><span class="p">:</span>                             <span class="c1"># mkdir new output seed path</span>
+            <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">output_seed_path</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">output_seed_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">output_path</span><span class="p">,</span><span class="n">seed_name</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">output_seed_path</span><span class="p">)</span><span class="o">==</span><span class="kc">False</span><span class="p">:</span>                             <span class="c1"># mkdir new output seed path</span>
+            <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">output_seed_path</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="n">file_path</span><span class="o">+</span><span class="s1">&#39;/*.SAC&#39;</span><span class="p">):</span>                                  <span class="c1"># cp</span>
+        <span class="n">file_name</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+        <span class="n">out_name</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">output_seed_path</span><span class="p">,</span><span class="n">file_name</span><span class="p">)</span>
+        <span class="n">shutil</span><span class="o">.</span><span class="n">copyfile</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="n">out_name</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="n">file_path</span><span class="o">+</span><span class="s1">&#39;/*.SAC&#39;</span><span class="p">):</span>                                  <span class="c1"># remove sac file</span>
+        <span class="n">os</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">file</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="n">file_path</span><span class="o">+</span><span class="s1">&#39;/SAC_PZs_*&#39;</span><span class="p">):</span>                              <span class="c1"># remove PZs file</span>
+        <span class="n">os</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">file</span><span class="p">)</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">file_path</span><span class="o">+</span><span class="s1">&#39;/SAC.PZs&#39;</span><span class="p">)</span>                                             <span class="c1"># remove SAC.PZs</span>
+
+
+<span class="n">fp</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+
+
+
+
+
+<span class="c1">#%% 可能用到的命令：</span>
+
+<span class="c1">############################</span>
+<span class="c1">### python os 修改路径</span>
+<span class="c1"># pwd_path = os.getcwd()</span>
+<span class="c1"># os.chdir(file_path)   # 进入需要操作的文件夹，rdseed 程序在此文件夹下生成sac数据</span>
+<span class="c1"># os.chdir(pwd_path)</span>
+
+<span class="c1">### Popen stdout 输出到文件</span>
+<span class="c1"># log = open(&#39;some file.txt&#39;, &#39;a&#39;)</span>
+<span class="c1"># log.write(&#39;some text, as header of the file\n&#39;)</span>
+<span class="c1"># log.flush()  # &lt;-- here&#39;s something not to forget!</span>
+<span class="c1"># c = subprocess.Popen([&#39;dir&#39;, &#39;/p&#39;], stdout=log, stderr=log, shell=True)</span>
+
+<span class="c1">### os shutil python对文件的操作</span>
+<span class="c1"># shutil.copytree(&#39;./data_sac_1&#39;) # 拷贝整个文件夹文件</span>
+<span class="c1"># shutil.copyfile(&quot;oldfile&quot;,&quot;newfile&quot;) # 拷贝单个文件</span>
+<span class="c1"># shutil.rmtree(&#39;./data_sac_1&#39;) # 删除该目录下所有文件</span>
+<span class="c1"># os.remove(&quot;aa.txt&quot;) # 删除文件</span>
+<span class="c1"># os.mkdir(&#39;要清空的文件夹名&#39;) # 创建文件夹 创建单个目录</span>
+<span class="c1"># os.makedirs(&quot;/Users/ximi/version&quot;) # 创建多级目录</span>
+<span class="c1"># os.path.exists() # # 检验给出的路径是否真地存</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./geo_software"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="PyGMT.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">PyGMT</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="Obspy.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Obspy</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Fu Yin<br/>
+  
+      &copy; Copyright 2021–2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

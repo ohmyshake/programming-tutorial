@@ -1,18 +1,18 @@
 # Overview
 
 - Author: *{{Fu}}*
-- Update: *July 24, 2022*
+- Update: *Dec 14, 2022*
 - Reading: *10 min*
 
 ---
 
 :::{warning}
-This tutorial supports **Monterey (12.4)**, and may also be valid for Big Sur (11) and macOS Catalina (10.15). **MacOS M1**  will be supplemented later...
+This tutorial supports **MacOS M1** (Ventura 13.0.1), and may also be valid for the Monterey, Big Sur, and Catalina. **MacOS M2** will be supplemented in the future.
 :::
 
 
 
-## Re-Install MacOS
+## Reinstall MacOS
 
 ::::{tab-set}
 
@@ -38,7 +38,7 @@ Working...
 
 ## APP
 
-Complete list in my mac please check [Mac-Software.md](./Overview_file/MacSoftware.md) list. Here are several resources website.
+Complete list in my mac please check [Mac-Software.md](./macos_software/MacSoftware.md) list. Here are several resources website.
 
 - [**awesome-mac**](https://github.com/jaywcjlove/awesome-mac) is a github collecting awesome macOS software.
 
@@ -54,7 +54,7 @@ Complete list in my mac please check [Mac-Software.md](./Overview_file/MacSoftwa
 
 **Pirated Software**. Refuse piracy from me. Software vendors can go to these places rights.
 
-* MacWk: [`https://macwk.com/`](https://macwk.com/)
+* MacWk: [`https://macwk.com/`](https://macwk.com/) blocked
 * AppKed: [`http://www.macbed.com`](http://www.macbed.com)
 * Softasm: [`https://softasm.com/`](https://softasm.com/)
 * Appstorrent: [`https://appstorrent.ru/`](https://appstorrent.ru/)
@@ -82,29 +82,46 @@ Complete list in my mac please check [Mac-Software.md](./Overview_file/MacSoftwa
 
 Toctree Mac finder as follows:
 
-::::{toggle}
-```
-$ toctree Mac finder
-FuYin-MAC/
-├── Applications    # built-in
-├── Desktop         # built-in
-├── Documents       # built-in
-├── Downloads       # built-in
-├── me
+```bash
+cd ~
+tree -L 1
+
+## output
+.
+├── Applications # built-in
+├── Applications (Parallels)
+├── Desktop
+├── Documents
+├── Downloads
+├── Library
+├── Movies
+├── Music
+├── Parallels
+├── Pictures
+├── Public
+├── Rice Geophysics Dropbox
+├── Zotero
 ├── bin
-├── src
-├── code
 ├── data
 ├── learn
+├── me
+├── miniconda3
+├── package
 ├── project
-├── workspace
-└── yinfu           # built-in
+├── share1
+├── share2
+├── src
+└── workspace
+
+24 directories, 0 files
 ```
-::::
+
+
+
 
 ### Applications
 
-- Store apps downloaded from App Store and the Internet, such as Chrome/Wechat...
+- Store apps downloaded from App Store and Internet, such as Chrome, Wechat...
 
 ### Desktop
 
@@ -112,61 +129,15 @@ FuYin-MAC/
 
 ### Documents
 
-- Some software uses this folder to store files, such as Matlab/Adobe, but I don't usually use it to store my files.
+- Some softwares use this folder to store files, such as Matlab/Adobe, but I don't usually use it to store my files.
 
 ### Download
 
-- Default directory for browser downloads
+- Default directory of browser downloads
 
 ### me
 
-- {file}`~/me` stores my life files, which have nothing to do with scientific research.
-
-```{toggle}
-:show:
-
-::::{grid}
-:gutter: 1
-
-:::{grid-item-card} Health
-:columns: 4
-Body health.
-:::
-
-:::{grid-item-card} Cook
-:columns: 4
-Cooking study.
-:::
-
-:::{grid-item-card} Information
-:columns: 4
-Certificate.
-:::
-
-:::{grid-item-card} PhD_application
-:columns: 4
-...
-:::
-
-:::{grid-item-card} Photo
-:columns: 4
-...
-:::
-
-:::{grid-item-card} Rice-file
-:columns: 4
-...
-:::
-
-:::{grid-item-card} USTC-file
-:columns: 4
-...
-:::
-
-::::
-```
-<!-- about how to use {toggle} refer to https://jupyterbook.org/en/stable/interactive/hiding.html#hiding-remove-content -->
-
+- {file}`~/me` stores my personal files.
 
 
 ### bin
@@ -174,45 +145,48 @@ Certificate.
 - {file}`~/bin` stores simple **executable code** and tool-based scripts, 
 such as `rdseed`. And also put executable files of large programs here, such `specfem` and `matlab`.
 
-- Adds the directory's path to the environment variable `PATH`.
+- Add the directory's path to the environment variable `PATH`.
 
-- More information please check [Seis-Software.md](./Overview_file/SeisSoftware.md) list.
+- More information please check [Geo-Software.md](../geo_software/GeoSoftware.md) list.
+
 
 
 ### src
 
-- {file}`~/src` stores source code from **other institutions’ software**, such as SAC, OpenMPI, Specfem-2D...
-
-- More information please check [Seis-Software.md](./Overview_file/SeisSoftware.md) list.
-
-```{note}
-Remember that after compiling, put the executable code in the {file}`~/bin` folder.
-```
-
-
-### code
-
 - {file}`~/code` stores source code wrote by myself, and it's **my personal code**.
 
-- More information please check [Seis-Software.md](./Overview_file/SeisSoftware.md) list.
+- More information please check [Geo-Software.md](../geo_software/GeoSoftware.md) list.
 
 ```{note}
 Remember that after compiling, put the executable code in the {file}`~/bin` folder.
 ```
+
+
+
+### package
+
+- {file}`~/src` stores source code from **other institutions’ software**, such as SAC, Specfem-2D...
+
+- More information please check [Geo-Software.md](../geo_software/GeoSoftware.md) list.
+
+```{note}
+Remember that after compiling, put the executable code in the {file}`~/bin` folder.
+```
+
 
 
 ### data
 
 - {file}`~/data` stores some common data, such as seismic waveform, fault data, earthquake catalog, etc., which can be shared by multiple different research projects.
 
-- And {file}`~/data` stores my **Bachelor & Master Thesis**, **meeting report slides** (*Group/SSA/AGU/CGU...*), and some **meeting video**.
+- {file}`~/data` also stores my **Bachelor & Master Thesis**, **meeting report slides** (*Group/SSA/AGU/CGU...*), and some **meeting video**.
 
 
 ### learn
 
-- {file}`~/learn` stores some **reference book** about seismology and some **seismology lesson**.
+- {file}`~/learn` stores some **reference books** about seismology, and some **seismology lesson**.
 
-- And {file}`~/learn` stores **skill lessons** such as Bayes and C++.
+- {file}`~/learn` also stores **skill lessons** such as Bayes and C++.
 
 
 
@@ -223,7 +197,7 @@ Remember that after compiling, put the executable code in the {file}`~/bin` fold
 
 ### workspace
 
-- {file}`~/workspace` is a directory for doing occasional tests or simple experiments.
+- {file}`~/workspace` is a directory for doing tests or simple experiments.
 
 
 ### yinfu
