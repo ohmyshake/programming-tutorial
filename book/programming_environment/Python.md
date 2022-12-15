@@ -67,7 +67,7 @@ Installing Anaconda is equivalent to installing the `Python interpreter` + `core
 :icon: info
 ```bash
 # delete install directory
-rm -rf ~/opt/miniconda3
+rm -rf ~/miniconda3
 
 # delete environment variable
 vim ~/.zshrc
