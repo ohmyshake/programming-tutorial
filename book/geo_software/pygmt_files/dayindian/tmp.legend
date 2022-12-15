@@ -1,0 +1,33 @@
+
+### station
+S 0.5c t 0.2i black 1.0p 2.0c  Seismic Stations
+G -1l
+S 1.2c t 0.2i red 1.0p 2.0c 
+G -1l
+
+### reservoir
+S 9.6c a 0.5c green 1.0p,green 10.8c  Dayindian Reservoir
+G 0.2c
+
+### faults
+S 0.8c - 0.5i - 1.5p,red 2.0c  Faults
+G -1l
+
+### boundary
+S 9.6c f0.5/6p+l+t 0.3i red 1.0p,red 10.8c  Plate Boundary
+G 0.2c
+
+### m1
+S 0.3c c 0.03c 148/0/211 0.25p 2.0c  Before Impoundment (Mb: 1~5)
+G -1l
+S 0.8c c 0.09c 148/0/211 0.25p
+G -1l
+S 1.4c c 0.15c 148/0/211 0.25p
+G -1l
+
+### m2
+S 9.1c c 0.03c 255/0/255 0.25p 10.8c  After Impoundment (Mb: 1~5)
+G -1l
+S 9.6c c 0.09c 255/0/255 0.25p
+G -1l
+S 10.2c c 0.15c 255/0/255 0.25p
