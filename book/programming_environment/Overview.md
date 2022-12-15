@@ -7,7 +7,7 @@
 ---
 
 :::{warning}
-This tutorial supports **MacOS M1**, and may also be valid for Monterey (12.4), Big Sur (11), and macOS Catalina (10.15). **MacOS M2** will be supplemented later...
+This tutorial supports **MacOS M1**(Ventura 13.0.1), and may also be valid for Monterey (12.4), Big Sur (11), and macOS Catalina (10.15). **MacOS M2** will be supplemented later...
 :::
 
 
