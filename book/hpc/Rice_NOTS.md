@@ -77,10 +77,6 @@ export PATH=/storage/hpc/work/ja62/fy21/software/zsh/bin:$PATH
 vim ~/.zshrc
 
 # Output:
-#------------------------------------------#
-#--- >>> 0. Run Fu's Zsh when login >>> ---#
-#------------------------------------------#
-
 # [1].run Fu's zsh when login at the first time
 ZshName=$(which zsh)
 if [ "$ZshName" = "/usr/bin/zsh" ];then
