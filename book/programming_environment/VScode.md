@@ -76,13 +76,13 @@ table th:nth-of-type(2) {
 | `reStructuredText`| reStructuredText language support (RST/ReST linter, preview, IntelliSense and more) |
 |   `vscode-pdf`    | Display pdf file in VSCode |
 |   `vscode-icons`  | Icons for Visual Studio Code |
-|   `CMake Tools`         | Extended CMake support in Visual Studio Code |
+|   `CMake Tools`   | Extended CMake support in Visual Studio Code |
 |   `Julia`         | Julia Language Support |
-|   `C/C++`              | C/C++ IntelliSense, debugging, and code browsing.                    |
-| `C/C++ Themes` | UI Themes for C/C++ extension.  |
-| `C/C++ Extension Pack` | Popular extensions for C++ development in Visual Studio Code.  |
-| `LaTeX Workshop` | Boost LaTeX typesetting efficiency with preview, compile, autocomplete, colorize, and more. |
-| `Makefile Tools` | Provide makefile support in VS Code: C/C++ IntelliSense, build, debug/run.  |
+|   `C/C++`         | C/C++ IntelliSense, debugging, and code browsing |
+|  `C/C++ Themes`   | UI Themes for C/C++ extension  |
+| `C/C++ Extension Pack` | Popular extensions for C++ development in Visual Studio Code  |
+| `LaTeX Workshop`  | Boost LaTeX typesetting efficiency with preview, compile, autocomplete, colorize, and more |
+| `Makefile Tools`  | Provide makefile support in VS Code: C/C++ IntelliSense, build, debug/run  |
 
 :::
 
