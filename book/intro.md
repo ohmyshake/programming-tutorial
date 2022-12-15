@@ -157,7 +157,6 @@ Useful geophysics softwares.
 :height: 100
 ```
 :::
-
 ::::
 
 
