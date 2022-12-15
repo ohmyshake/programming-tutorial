@@ -19,7 +19,8 @@ kernelspec:
 
 
 
-```python:./pygmt_files/test.py
+```python:
+.. include:: ./pygmt_files/test.py
 ```
 
 ## 3D Misfit Space
