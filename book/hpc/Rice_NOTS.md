@@ -99,4 +99,18 @@ fi
 
 |        Name       |       Purpose       |        Url        |         Date        |
 |    ------------   |    -------------    |  :-------------:  |   :-------------:   |
-|   `chromedriver`  | Chrome plugin to fresh html when using jupyter-book to build project |  [link](https://chromedriver.chromium.org/)      |    July 24, 2022    |
+|     `miniconda`   |                     |                   |                     |
+|     ``            |                     |                   |                     |
+|     ``            |                     |                   |                     |
+|     ``            |                     |                   |                     |
+|     ``            |                     |                   |                     |
+|     ``            |                     |                   |                     |
+
+
+
+
+
+
+
+
+
