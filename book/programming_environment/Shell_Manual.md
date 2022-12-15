@@ -1,5 +1,10 @@
 # Shell Manual
 
+- Author: *{{Fu}}*
+- Update: *Dec 15, 2022*
+- Reading: *10 min*
+
+---
 
 ## ln
 ```bash
