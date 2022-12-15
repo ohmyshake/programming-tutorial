@@ -232,7 +232,6 @@ if __name__ == '__main__':
 ```{image} ./intro_files/macos.jpg
 :height: 100
 ```
-Configure the programming environment in MacOS.
 :::
 
 :::{grid-item-card}
@@ -244,7 +243,6 @@ Configure the programming environment in MacOS.
 ```{image} ./intro_files/macos.jpg
 :height: 100
 ```
-Configure the programming environment in MacOS.
 :::
 
 ::::
