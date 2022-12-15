@@ -11,7 +11,7 @@ I'm [**Fu Yin**](https://yinfu.info/), a geophysics graduate student at Rice Uni
 :::{admonition} Admonition
 There is no guarantees of correctness, and if you spot an error or a doubtful statement, kindly let me know.
 :::
-./programming_environment/Overview.html
+
 
 ---
 The main content of the notebook is as follows:
@@ -20,7 +20,7 @@ The main content of the notebook is as follows:
 :gutter: 2
 
 :::{grid-item-card}
-:link: [VSCode](https://code.visualstudio.com/download) 
+:link: ./programming_environment/Overview.md
 :class-body: text-center
 :class-header: bg-light text-center
 **Programming Environment**
