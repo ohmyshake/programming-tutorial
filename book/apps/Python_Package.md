@@ -107,7 +107,7 @@ scale: 50%
 align: center
 name: diskutil-list
 ---
-My `diskutil list`
+My Setting
 ```
 
 - **Renew domains**
