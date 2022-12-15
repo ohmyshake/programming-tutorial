@@ -169,3 +169,13 @@ srun python ./mission.py
 
 ```
 
+:::{warning}
+```bash
+# Use only single node 
+#SBATCH -N 1 
+
+# SMP execution, only one task 
+#SBATCH -n 1 
+```
+:::
+
