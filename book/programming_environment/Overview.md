@@ -147,7 +147,7 @@ such as `rdseed`. And also put executable files of large programs here, such `sp
 
 - Add the directory's path to the environment variable `PATH`.
 
-- More information please check [Geo-Software.md](./geo_software/GeoSoftware.md) list.
+- More information please check [Geo-Software.md](../geo_software/GeoSoftware.md) list.
 
 
 
@@ -155,7 +155,7 @@ such as `rdseed`. And also put executable files of large programs here, such `sp
 
 - {file}`~/code` stores source code wrote by myself, and it's **my personal code**.
 
-- More information please check [Geo-Software.md](./geo_software/GeoSoftware.md) list.
+- More information please check [Geo-Software.md](../geo_software/GeoSoftware.md) list.
 
 ```{note}
 Remember that after compiling, put the executable code in the {file}`~/bin` folder.
@@ -167,7 +167,7 @@ Remember that after compiling, put the executable code in the {file}`~/bin` fold
 
 - {file}`~/src` stores source code from **other institutions’ software**, such as SAC, Specfem-2D...
 
-- More information please check [Geo-Software.md](./geo_software/GeoSoftware.md) list.
+- More information please check [Geo-Software.md](../geo_software/GeoSoftware.md) list.
 
 ```{note}
 Remember that after compiling, put the executable code in the {file}`~/bin` folder.
