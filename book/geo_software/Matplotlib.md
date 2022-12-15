@@ -19,13 +19,14 @@ kernelspec:
 
 
 
-```{eval-rst}
+````{eval-rst}
 .. note::
 
    A note written in reStructuredText.
-
+```{code-cell} ipython3
 .. include:: ./pygmt_files/test.rst
 ```
+````
 
 ## 3D Misfit Space
 
