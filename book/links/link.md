@@ -92,15 +92,15 @@ Society of Exploration Geophysicists (SEG)
 
 ## Data and Geo-software Center
 
--~~~<a class="link-university" href="https://www.iris.edu/hq/">
+-<a class="link-university" href="https://www.iris.edu/hq/">
 Incorporated Research Institutions of Seismology (IRIS)
-</a>~~~
+</a>
 
--~~~<a class="link-university" href="https://geodynamics.org/cig/software/">
+-<a class="link-university" href="https://geodynamics.org/cig/software/">
 CIG software
-</a>~~~
+</a>
 
--~~~<a class="link-university" href="http://www.spice-rtn.org/">
+-<a class="link-university" href="http://www.spice-rtn.org/">
 SPICE software
-</a>~~~
+</a>
 
