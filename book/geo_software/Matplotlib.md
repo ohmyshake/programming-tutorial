@@ -17,7 +17,7 @@ kernelspec:
 
 ---
 
-```{code-cell} ipython3
+```{code-cell}
 :tags: [hide-input]
 import os
 
