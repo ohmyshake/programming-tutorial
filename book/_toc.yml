@@ -37,15 +37,15 @@ parts:
   #   # numbered: True 
   #   # maxdepth: 2
   #   chapters:
-  #   - file: parallel computing_and_hybrid_programming/Python  # File-IO Subprocess Numpy h5py 
-  #   - file: parallel computing_and_hybrid_programming/Python-HPC  # Mpi4py Numba Cupy Ray 
-  #   - file: parallel computing_and_hybrid_programming/C++  # OpenMP OpenMPI CUDA
-  #   - file: parallel computing_and_hybrid_programming/Make-Cmake # Vscode-Makefile-Cmake
-  #   - file: parallel computing_and_hybrid_programming/Pybind11-Cython 
-  #   - file: parallel computing_and_hybrid_programming/Slurm  # https://github.com/accre/SLURM
-  #   - file: programming_environment/Coding_Tools_file/Rice-NOTS
-  #   - file: programming_environment/Coding_Tools_file/Azure
-  #   - file: programming_environment/Coding_Tools_file/Amazon-S3
+  #   - file: hpc/Python  # File-IO Subprocess Numpy h5py 
+  #   - file: hpc/Python_HPC  # Mpi4py Numba Cupy Ray 
+  #   - file: hpc/C++  # OpenMP OpenMPI CUDA
+  #   - file: hpc/Make_Cmake # Vscode-Makefile-Cmake
+  #   - file: hpc/Pybind11_Cython 
+  #   - file: hpc/Slurm  # https://github.com/accre/SLURM
+  #   - file: hpc/Rice_NOTS
+  #   - file: hpc/Azure
+  #   - file: hpc/Amazon_S3
 
 
   # - caption: ML and DL
