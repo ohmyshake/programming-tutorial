@@ -24,7 +24,7 @@ kernelspec:
 
    A note written in reStructuredText.
 
-.. include:: ./pygmt_files/test.py
+.. include:: ./pygmt_files/test.rst
 ```
 
 ## 3D Misfit Space
