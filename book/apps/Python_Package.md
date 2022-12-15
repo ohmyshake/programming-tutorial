@@ -6,10 +6,13 @@
 
 ---
 
-`setup.py` `poetry` `github-action` `sphnix`   `Buy and Bind Domain Name with Github Pages`
+`setup.py` `poetry` `github-actions` `sphnix`   `Buy and Bind Domain Name with Github Pages`
+
+## Setup.py
 
 
-## poetry
+
+## Poetry
 
 follow the instructions below: https://ealizadeh.com/blog/guide-to-python-env-pkg-dependency-using-conda-poetry/
 
@@ -39,6 +42,16 @@ poetry install  # this command will install some package mentioned in 'pyproject
 # Now you can change 'pyproject.toml' by hand
 poetry update # update the new info in 'pyproject.toml' into 'poetry.lock' file
 ```
+
+
+
+## Sphnix
+
+
+
+
+## Github Action
+
 
 
 
