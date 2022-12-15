@@ -9,7 +9,7 @@ I'm [**Fu Yin**](https://yinfu.info/), a geophysics graduate student at Rice Uni
 ```
 
 :::{admonition} Admonition
-There is no guarantees of correctness and if you spot an error or a doubtful statement, kindly let me know.
+There is no guarantees of correctness, and if you spot an error or a doubtful statement, kindly let me know.
 :::
 
 
