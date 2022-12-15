@@ -39,7 +39,7 @@ NOTS Resources
 
 ## Teriminal Configuraion
 
-NOTS is a Red Hat linux system, the default shell is `bash`.
+NOTS is a `Red Hat` linux system, the default shell is `bash`.
 Becasue I'm not the administrator, so I don't have the root permissions,
 which means I can't use `yum` to install packages. 
 I must install `zsh` by myself.
