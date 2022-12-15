@@ -167,7 +167,7 @@ Remember that after compiling, put the executable code in the {file}`~/bin` fold
 
 ### learn
 
-- {file}`~/learn` stores some **reference book** about seismology and some **seismology lesson**.
+- {file}`~/learn` stores some **reference books** about seismology, and some **seismology lesson**.
 
 - {file}`~/learn` also stores **skill lessons** such as Bayes and C++.
 
