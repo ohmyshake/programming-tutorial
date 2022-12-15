@@ -40,7 +40,7 @@ Installing Anaconda is equivalent to installing the `Python interpreter` + `core
     ```bash
     bash Miniconda3-latest-MacOSX-x86_64.sh
     ```
-    Miniconda will be installed into `~/miniconda3` path by default. The installation package will write the initialization statement to the `shell`'s configuration file, e.g. `~/.zshrc` in my Mac.
+    Miniconda will be installed into `~/miniconda3` path in M1 by default. The installation package will write the initialization statement to the `shell`'s configuration file, e.g. `~/.zshrc` in my Mac.
 
     :::{toggle}
     ```bash
