@@ -6,7 +6,7 @@
 
 ---
 
-`setup.py` `poetry` `github-actions` `sphnix`   `Buy and Bind Domain Name with Github Pages`
+
 
 ## Setup.py
 
