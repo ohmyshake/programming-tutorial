@@ -14,6 +14,12 @@ There is no guarantees of correctness and if you spot an error or a doubtful sta
 
 
 ---
+scale: 6%
+align: center
+name: vscode-account
+---
+
+---
 The main content of the notebook is as follows:
 
 
@@ -21,11 +27,7 @@ The main content of the notebook is as follows:
 :class-container: text-center
 :gutter: 2
 
----
-scale: 6%
-align: center
-name: vscode-account
----
+
 
 :::{grid-item-card}
 :link: ./programming_environment/Overview.html
