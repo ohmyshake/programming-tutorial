@@ -38,7 +38,6 @@ scale: 10%
 align: center
 name: vscode-account
 ---
-My `Microsoft` account to sign in VSCode
 ```
 
 Configure the programming environment in MacOS.
