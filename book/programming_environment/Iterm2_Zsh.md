@@ -31,88 +31,176 @@ Terminal preview
 
 ::::{toggle}
 ```bash
-#-------------------------------------------------------------#
-#----------- <<< Fu Yin set --- oh-my-zsh+p10k <<<------------#
-#-------------------------------------------------------------#
-echo "\n~ Hi! you can use *neofetch* for detailed info (from Fu Yin ~/.zshrc)"
+#------------------------------------------#
+#-------- >>> 1. OhMyZsh & p10k >>> -------#
+#------------------------------------------#
+echo "\n~ Hi! you can use *neofetch* for detailed info (from ~/.zshrc)"
 
-# [1].source .bash_profile (activate environment variable)
+# [1].enable Powerlevel10k instant prompt
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
+
+# [2].source '.bash_profile' if you also use 'bash' (activate environment variable)
 # source ~/.bash_profile
 # source ~/.bashrc
 
-# [2].set font and close INSTANT PROMPT
-POWERLEVEL9K_MODE="nerdfont-complete" 
-POWERLEVEL9K_INSTANT_PROMPT="off"
 
-# [3].pfetch and neofetch
-pfetch
-# neofetch
-
-# [4].plugins download by Fu Yin
-# Add wisely, as too many plugins slow down shell startup.
-plugins=(git
-	extract
-	autojump
-	zsh-autosuggestions
-	zsh-syntax-highlighting)
-# activate autojump
-[[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
-
-# [5].use p10k theme
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+# [3].use p10k theme and set 'POWERLEVEL9K_INSTANT_PROMPT=off'. 
+# To customize prompt, run `p10k configure` or edit '~/.p10k.zsh'
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+typeset -g POWERLEVEL9K_INSTANT_PROMPT=off
 
-# [6].use colors
-alias lc='colorls -lA --sd'
 
-# [7]. If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
+# [4].set font
+POWERLEVEL9K_MODE="nerdfont-complete" 
 
-# [8]. Path to your oh-my-zsh installation.
-export ZSH=$HOME"/.oh-my-zsh"
+
+# [5].path to your oh-my-zsh installation and zsh's theme.
+export ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME="powerlevel10k/powerlevel10k"
+source ~/.oh-my-zsh/custom/themes/powerlevel10k/powerlevel10k.zsh-theme
+
+
+# [6].which plugins would you like to load?
+plugins=(
+    git
+    extract
+    autojump
+    zsh-autosuggestions
+    zsh-syntax-highlighting
+    poetry
+)
 source $ZSH/oh-my-zsh.sh
 
 
-#------------------------------------------------------#
-#----------- <<< Fu Yin set -- software <<<------------#
-#------------------------------------------------------#
+# [7].use colors
+alias lc='colorls -lA --sd'
+
+
+
+#------------------------------------------#
+#--------- >>> 2. Software  >>> -----------#
+#------------------------------------------#
+
+# >>> homebrew >>>
+export PATH=/opt/homebrew/bin:$PATH
+# export HOMEBREW_NO_INSTALL_CLEANUP=TRUE
+# export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.ustc.edu.cn/homebrew-bottles/bottles
+# <<< homebrew <<<
+
+
+# >>> when I install 'SAC', I import those variable >>>
+#export PATH="/opt/homebrew/opt/libxml2/bin:$PATH"
+#export PKG_CONFIG_PATH="/usr/local/opt/libxml2/lib/pkgconfig"
+# >>> when I install 'SAC', I import those variable >>>
+
+
+# >>> pfetch or neofetch >>>
+# pfetch must be enable after brew, because pfetch is installed by brew
+# neofetch
+pfetch
+# <<< pfetch or neofetch <<<
+
+
 # >>> yinfu_code path >>>
 export PATH=/Users/yinfu/bin:${PATH}
-# >>> yinfu_code path >>>
+# <<< yinfu_code path <<<
 
-# >>> Homebrew mirrors >>>
-export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.ustc.edu.cn/homebrew-bottles/bottles
-# >>> Homebrew mirrors>>>
 
-# >>> conda initialize >>>
+# >>> sshfs alias >>>
+alias sshfs-nots='sshfs -o follow_symlinks -p 22 fy21@nots.rice.edu:/ /Users/yinfu/share1/'
+alias resshfs-nots='umount -f /Users/yinfu/share1; sshfs-nots'
+# the following command may be wrong sometime
+# alias resshfs-nots='diskutil umountDisk /Users/yinfu/share1; sshfs-nots'
+# <<< sshfs alias <<<
+
+
+# >>> brew's git >>>
+export GIT=/opt/homebrew/Cellar/git/2.38.1
+export PATH=$GIT/bin:$PATH
+# <<< brew's git <<<
+
+
+# >>> conda >>>
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/Users/yinfu/opt/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+__conda_setup="$('/Users/yinfu/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
 if [ $? -eq 0 ]; then
     eval "$__conda_setup"
 else
-    if [ -f "/Users/yinfu/opt/miniconda3/etc/profile.d/conda.sh" ]; then
-        . "/Users/yinfu/opt/miniconda3/etc/profile.d/conda.sh"
+    if [ -f "/Users/yinfu/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/Users/yinfu/miniconda3/etc/profile.d/conda.sh"
     else
-        export PATH="/Users/yinfu/opt/miniconda3/bin:$PATH"
+        export PATH="/Users/yinfu/miniconda3/bin:$PATH"
     fi
 fi
 unset __conda_setup
-# <<< conda initialize <<<
+# <<< conda <<<
+
 
 # >>> sac >>>
 export SACHOME=/usr/local/sac
 export SACAUX=${SACHOME}/aux
 export PATH=${SACHOME}/bin:${PATH}
+
 export SAC_DISPLAY_COPYRIGHT=1
 export SAC_PPK_LARGE_CROSSHAIRS=1
 export SAC_USE_DATABASE=0
 # <<< sac <<<
 
-# >>> brew's git >>>
-export GIT=/usr/local/Cellar/git/2.37.1
-export PATH=$GIT/bin:$PATH
-# <<< brew's git <<<
+
+# >>> pygmt >>>
+export GMT_DATADIR=/Users/yinfu/data/GMTDB/
+# <<< pygmt <<<
+
+
+# >>> poetry >>>
+export PATH="/Users/yinfu/.local/bin:$PATH"
+# <<< poetry <<<
+
+
+# >>> VSCode >>>
+vscode () { VSCODE_CWD="$PWD" open -n -b "com.microsoft.VSCode" --args $* ;}
+# <<< VSCode <<<
+
+
+# >>> gem >>>
+export GEM_HOME=$HOME/gems
+export PATH=$HOME/gems/bin:$PATH
+# <<< gem <<<
+
+
+# >>> julia >>>
+export PATH=/Users/yinfu/.local/bin:$PATH
+# <<< julia <<<
+
+
+# >>> Globus >>>
+if type globus > /dev/null 2>&1; then
+    eval "$(globus --zsh-completer)"
+fi
+# <<< Globus <<<
+
+
+# >>> brew's gcc (GNU) >>>
+alias gcc='gcc-12'
+alias g++='g++-12'
+# <<< brew's gcc (GNU) <<<
+
+
+# >>> specfem2d >>>
+# To suppress any potential limit to the size of the Unix stack.
+ulimit -S -s unlimited
+
+# bin
+export PATH=/Users/yinfu/package/specfem2d/bin:${PATH}
+# <<< specfem2d <<<
+
+
+#------------------------------------------#
+#--------- >>> 3. New here  >>> -----------#
+#------------------------------------------#
 
 ```
 ::::
