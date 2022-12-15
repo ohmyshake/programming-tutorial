@@ -235,7 +235,7 @@ ax.text(-185, 1.3,'(b)',horizontalalignment='center', verticalalignment='center'
           fontsize=20, color='k',alpha=1,zorder=1) 
     
 #%% 4. save figure
-plt.show()
+# plt.show()
 # figurename=os.path.join('./grid1.pdf')
 # fig.savefig(figurename,dpi=800, format='pdf')
 
