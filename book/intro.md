@@ -98,35 +98,7 @@ Useful geophysics softwares.
 
 
 ## Sponsoring ✨
-**If you enjoy the blog, please consider sponsoring 🍿 :**
 
-⏬ &nbsp; For Chinese friends:
-
-::::{grid} 1 1 2 2
-:class-container: text-center
-:gutter: 2
-
-:::{grid-item-card}
-:class-body: text-center
-:class-header: bg-light text-center
-**Alipay**
-^^^
-```{image} ./intro_files/Alipay.jpg
-:height: 150
-```
-:::
-
-:::{grid-item-card}
-:class-body: text-center
-:class-header: bg-light text-center
-**WeChat**
-^^^
-```{image} ./intro_files/WeChat.jpg
-:height: 150
-```
-:::
-
-::::
 
 
 
@@ -241,3 +213,33 @@ if __name__ == '__main__':
 
 ## Acknowledgements ✨
 Many thanks to...
+
+**If you enjoy the blog, please consider sponsoring 🍿 :**
+
+⏬ &nbsp; For Chinese friends:
+
+::::{grid} 1 1 2 2
+:class-container: text-center
+:gutter: 2
+
+:::{grid-item-card}
+:class-body: text-center
+:class-header: bg-light text-center
+**Alipay**
+^^^
+```{image} ./intro_files/Alipay.jpg
+:height: 150
+```
+:::
+
+:::{grid-item-card}
+:class-body: text-center
+:class-header: bg-light text-center
+**WeChat**
+^^^
+```{image} ./intro_files/WeChat.jpg
+:height: 150
+```
+:::
+
+::::
