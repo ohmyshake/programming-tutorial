@@ -29,11 +29,9 @@ The main content of the notebook is as follows:
 :class-header: bg-light text-center
 **Programming Environment**
 ^^^
-
 ```{image} ./intro_files/macos.jpg
 :height: 100
 ```
-
 Configure the programming environment in MacOS.
 :::
 
@@ -46,11 +44,9 @@ Configure the programming environment in MacOS.
 :class-header: bg-light text-center
 **App Development**
 ^^^
-
 ```{image} ./intro_files/pyside6.png
 :height: 100
 ```
-
 We have community discussions, talk about ideas, and share general questions and feedback in our community forum.
 :::
 
