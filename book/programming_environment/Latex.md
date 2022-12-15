@@ -103,13 +103,13 @@ The uninstallation instructions provided by the [official website](https://www.t
 
 ```bash
 # Uninstalling TeX
-$ sudo rm -r /usr/local/texlive/2022 # In general, we can also see that there is another directory called "texmf-local" under TexLive path. It is just an empty directory tree according to offical website. If you are obsessive-compulsive, delete it.
+sudo rm -r /usr/local/texlive/2022 # In general, we can also see that there is another directory called "texmf-local" under TexLive path. It is just an empty directory tree according to offical website. If you are obsessive-compulsive, delete it.
 
 # Uninstalling the GUI Applications
-$ sudo rm -r /Applications/Tex 
+sudo rm -r /Applications/Tex 
 
 # Uninstalling the TeX Distribution Data Structure
-$ sudo rm -r /Library/TeX
+sudo rm -r /Library/TeX
 ```
 ::::
 
@@ -123,10 +123,10 @@ If you use `cross-references` or use `BibTeX` for your bibliography, you often h
 The following code is about how to compile the document with `BibTex` references, refer to the [example](https://www.cnblogs.com/yifdu25/p/8330652.html).
 
 ```bash
-$ xelatex -shell-escape file.tex
-$ bibtex file.aux
-$ xelatex -shell-escape file.tex
-$ xelatex -shell-escape file.tex
+xelatex -shell-escape file.tex
+bibtex file.aux
+xelatex -shell-escape file.tex
+xelatex -shell-escape file.tex
 ```
 
 ::::{dropdown} Why it need compile multiple times?
