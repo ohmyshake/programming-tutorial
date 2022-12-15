@@ -86,12 +86,10 @@ Machine learning and deep learning approaches in Python.
 :class-header: bg-light text-center
 **Daily Software**
 ^^^
-
 ```{image} ./intro_files/software.webp
 :height: 100
 ```
-
-We have community discussions, talk about ideas, and share general questions and feedback in our community forum.
+Useful software in MacOS system.
 :::
 
 
