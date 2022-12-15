@@ -24,6 +24,10 @@ kernelspec:
 
    A note written in reStructuredText.
 
+.. literalinclude:: ./test.py
+  :language: python
+  :linenos:
+  
 .. include:: ./pygmt_files/test.rst
 
 ````
