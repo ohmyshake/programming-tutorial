@@ -28,7 +28,16 @@ rsync
 conda list
 
 # install package
-conda install xxx
+conda install -c conda-forge xxx
+
+# create new env
+conda create -n envname python=3.9 numpy pandas
+
+# activate env
+conda activate pygmt
+
+# deactivate env
+conda deactivate
 ```
 
 
