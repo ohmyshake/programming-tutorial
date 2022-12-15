@@ -218,6 +218,7 @@ if __name__ == '__main__':
 ## Sponsoring ✨
 **If you enjoy the blog, please consider sponsoring 🍿 :**
 
+⏬ &nbsp; For Chinese guys:
 
 ::::{grid} 1 1 2 2
 :class-container: text-center
@@ -227,9 +228,9 @@ if __name__ == '__main__':
 :link: ./programming_environment/Overview.html
 :class-body: text-center
 :class-header: bg-light text-center
-**Programming Environment**
+**Alipay**
 ^^^
-```{image} ./intro_files/macos.jpg
+```{image} ./intro_files/Alipay.jpg
 :height: 150
 ```
 :::
@@ -238,9 +239,9 @@ if __name__ == '__main__':
 :link: ./programming_environment/Overview.html
 :class-body: text-center
 :class-header: bg-light text-center
-**Programming Environment**
+**WeChat**
 ^^^
-```{image} ./intro_files/macos.jpg
+```{image} ./intro_files/WeChat.jpg
 :height: 150
 ```
 :::
@@ -250,27 +251,9 @@ if __name__ == '__main__':
 
 
 
-⏬ &nbsp; For Chinese guys:
-@@box-container
-  @@box
-    ~~~<a class="boxlink">~~~
-    @@description **Alipay** @@
-    @@box-content
-      ~~~<img src="/assets/blog-data/fig/Alipay.jpg">~~~
-    @@
-    ~~~</a>~~~
-  @@
 
-  @@box
-    ~~~<a class="boxlink">~~~
-    @@description **WeChat** @@
-    @@box-content
-      ~~~<img src="/assets/blog-data/fig/WeChat.jpg">~~~
-    @@
-    ~~~</a>~~~
-  @@
-@@
-~~~<br>~~~
+**Alipay** 
+**WeChat** 
 
 
 ⏬ &nbsp; For Non-Chinese guys:
