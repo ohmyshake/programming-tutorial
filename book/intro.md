@@ -47,7 +47,7 @@ Configure the programming environment in MacOS.
 ```{image} ./intro_files/pyside6.png
 :height: 100
 ```
-We have community discussions, talk about ideas, and share general questions and feedback in our community forum.
+Develop a python package, GUI, and WebGUI.
 :::
 
 
