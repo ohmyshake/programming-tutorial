@@ -71,6 +71,7 @@ diskutil umountDisk [PATH]
 diskutil umountDisk /Users/yinfu/share1
 ```
 
+
 ```{figure} ./files/diskutil-list.jpg
 ---
 scale: 30%
