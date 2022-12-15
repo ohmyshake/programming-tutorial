@@ -279,7 +279,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k
 Run the following command to start the automatic configuration process:
 
 ```bash
-$ p10k configure
+p10k configure
 ```
 
 After executing the command, p10k is initialized: `~/.p10k.zsh` is generated in the root directory, and some code will be written at the bottom of `~/.zshrc` as following:
