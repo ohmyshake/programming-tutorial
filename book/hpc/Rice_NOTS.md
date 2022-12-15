@@ -121,6 +121,16 @@ fi
 
 ## Job Example
 
+The following is an example named with `jobs.slurm`,
+and some common command to run the job.
+
+
+```bash
+# submit a job
+sbatch jobs.slurm
+
+```
+
 
 ```bash
 #!/bin/bash 
