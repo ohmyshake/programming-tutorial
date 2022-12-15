@@ -67,19 +67,13 @@ Department of Earth, Environmental and Planetary Sciences, <strong>Brown</strong
 ## Societies of Geosciences
 
 
-[Chinese Geophysical Society (CGS)](http://www.cgscgs.org.cn/)
+- [Chinese Geophysical Society (CGS)](http://www.cgscgs.org.cn/)
 
+- [American Geophysical Union (AGU)](https://www.agu.org/)
 
+- [Seismological Society of America (SSA)](https://www.seismosoc.org/)
 
-[American Geophysical Union (AGU)](https://www.agu.org/)
-
-
-
-[Seismological Society of America (SSA)](https://www.seismosoc.org/)
-
-
-
-[Society of Exploration Geophysicists (SEG)](https://seg.org/)
+- [Society of Exploration Geophysicists (SEG)](https://seg.org/)
 
 
 
@@ -90,10 +84,10 @@ Department of Earth, Environmental and Planetary Sciences, <strong>Brown</strong
 ## Data and Geo-software Center
 
 
-1. [Incorporated Research Institutions of Seismology (IRIS)](https://www.iris.edu/hq/)
+- [Incorporated Research Institutions of Seismology (IRIS)](https://www.iris.edu/hq/)
 
-1. [CIG software](https://geodynamics.org/cig/software/)
+- [CIG software](https://geodynamics.org/cig/software/)
 
-1. [SPICE software](http://www.spice-rtn.org/)
+- [SPICE software](http://www.spice-rtn.org/)
 
 
