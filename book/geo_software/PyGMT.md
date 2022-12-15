@@ -150,7 +150,7 @@ pygmt.config(PARAMETER = value)
 
 ## MAP
 
-
+<!-- 
 ### 1. 2021 Yangbi Earthquake Map
 
 ```{code-cell} ipython3
@@ -1308,4 +1308,7 @@ figurename=os.path.join('./pygmt_files/lune/beachball_project.pdf')
 plt.savefig(figurename,dpi=800, format="pdf")
 
 
-```
+``` -->
+
+
+
