@@ -9,7 +9,7 @@
 
 ## File Management
 
-This is Fu's home on NOTS, the following is my data managerment
+The following is my data managerment, more info please refer to [Rice CRC Tutorial](https://kb.rice.edu/108237).
 
 
 | **Filesystem**   | **Use** | **Physical Path** | **Size** | **Quota** | **Type** | **Purge Policy** | 
@@ -21,7 +21,7 @@ This is Fu's home on NOTS, the following is my data managerment
 |Local Scratch on each node| <font color=red> Not use now </font>|/tmp|4 TB|None|Local|at the end of each job | 
 
 
-[Rice CRC Tutorial](https://kb.rice.edu/108237)
+
 
 
 
@@ -30,6 +30,8 @@ This is Fu's home on NOTS, the following is my data managerment
 $SHARED_SCRATCH is not permanent storage
 
 $SHARED_SCRATCH is to be used only for job I/O.  Delete everything you do not need for another run at the end of the job or move to $WORK for analysis. Staff may periodically delete files from the $SHARED_SCRATCH file system even if files are less than 14 days old.
+
+
 
 ## Computing Resources
 
