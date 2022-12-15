@@ -130,14 +130,14 @@ such as `rdseed`. And also put executable files of large programs here, such `sp
 
 - Adds the directory's path to the environment variable `PATH`.
 
-- More information please check [Seis-Software.md](./Overview_file/SeisSoftware.md) list.
+- More information please check [Geo-Software.md](./geophysics_software/GeoSoftware.md) list.
 
 
 ### src
 
 - {file}`~/src` stores source code from **other institutions’ software**, such as SAC, OpenMPI, Specfem-2D...
 
-- More information please check [Seis-Software.md](./Overview_file/SeisSoftware.md) list.
+- More information please check [Geo-Software.md](./geophysics_software/SeisSoftware.md) list.
 
 ```{note}
 Remember that after compiling, put the executable code in the {file}`~/bin` folder.
