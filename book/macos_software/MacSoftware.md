@@ -43,7 +43,6 @@ table th:nth-of-type(3) {
 |        Name       |       Purpose       |        Url        | 
 |    ------------   |    -------------    |  :-------------:  |   
 | `Microsoft Office 365` | Unmistakably Office, designed for education              | [link](https://www.office.com/?auth=2) |   
-|     `WPS`         | Is a cross-platform office software suite                     |   AppStore   |  
 |     `Keynote`     | Build stunning presentations                                  |   AppStore   |                     
 |     `Numbers`     | Create impressive spreadsheets                                |   AppStore   |                     
 |     `Pages`       | Documents that stand apart                                    |   AppStore   |            
@@ -197,4 +196,9 @@ table th:nth-of-type(3) {
 |     `Caffeinated` | Prevent Mac from going to sleep | AppStore | 
 | `DisplayLink Manager` | Program expansion dock driver software for multi-screen display | [link](https://www.synaptics.com/products/displaylink-graphics/downloads/macos) | 
 | `Google Earth Pro` | Earth map          |  MacWk            | 
+|     ``            |                     |                   | 
+|     ``            |                     |                   | 
+|     ``            |                     |                   | 
+|     ``            |                     |                   | 
+|     ``            |                     |                   | 
 |     ``            |                     |                   | 
