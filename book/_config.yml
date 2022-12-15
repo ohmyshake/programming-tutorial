@@ -3,7 +3,7 @@
 
 #######################################################################################
 # Book settings
-title                       : Seismology Notebook  # The title of the book. Will be placed in the left navbar.
+title                       : Programming Notebook  # The title of the book. Will be placed in the left navbar.
 author                      : Fu Yin  # The author of the book
 logo                        : logo.png
 copyright                   : "2021–2022"   # Copyright year to be placed in the footer
