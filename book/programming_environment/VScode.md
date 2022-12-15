@@ -70,6 +70,7 @@ table th:nth-of-type(2) {
 |   `Remote-SSH`    | Open any folder on a remote machine using SSH and take advantage of VS Code's full feature set |  
 |   `MyST-Markdown` | The official Markdown syntax extension for MyST (Markedly Structured Text) |
 |   `Python`        | IntelliSense (Pylance), Linting, Debugging (multi-threaded, remote), Jupyter Notebooks, code formatting, refactoring, unit tests... |
+| `Pylance` | A performant, feature-rich language server for Python in VS Code |
 |   `Jupyter`       | Jupyter notebook support, interactive programming and computing that supports Intellisense, debugging and more |
 |   `Live Preview`  | Hosts a local server in your workspace for you to preview your webpages on |
 | `reStructuredText`| reStructuredText language support (RST/ReST linter, preview, IntelliSense and more) |
@@ -77,7 +78,12 @@ table th:nth-of-type(2) {
 |   `vscode-icons`  | Icons for Visual Studio Code |
 |   `CMake Tools`         | Extended CMake support in Visual Studio Code |
 |   `Julia`         | Julia Language Support |
-|   ``              |                     |
+|   `C/C++`              | C/C++ IntelliSense, debugging, and code browsing.                    |
+| `C/C++ Themes` | UI Themes for C/C++ extension.  |
+| `C/C++ Extension Pack` | Popular extensions for C++ development in Visual Studio Code.  |
+| `LaTeX Workshop` | Boost LaTeX typesetting efficiency with preview, compile, autocomplete, colorize, and more. |
+| `Makefile Tools` | Provide makefile support in VS Code: C/C++ IntelliSense, build, debug/run.  |
+
 :::
 
 
