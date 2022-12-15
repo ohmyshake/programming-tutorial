@@ -218,6 +218,22 @@ if __name__ == '__main__':
 ## Sponsoring ✨
 **If you enjoy the blog, please consider sponsoring 🍿 :**
 
+
+
+:::{grid-item-card}
+:link: ./programming_environment/Overview.html
+:class-body: text-center
+:class-header: bg-light text-center
+**Programming Environment**
+^^^
+
+```{image} ./intro_files/macos.jpg
+:height: 100
+```
+
+Configure the programming environment in MacOS.
+:::
+
 ⏬ &nbsp; For Chinese guys:
 @@box-container
   @@box
