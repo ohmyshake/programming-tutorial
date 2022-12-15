@@ -22,7 +22,7 @@ rsync
 ```
 
 
-## mamba/conda
+## conda/mamba
 ```bash
 # check all packages
 conda list
