@@ -117,3 +117,42 @@ fi
 |  ``   |   |
 |  ``   |   |
 
+
+
+## Job Example
+
+
+```bash
+#!/bin/bash 
+##################################### 
+# Mission name
+#SBATCH --job-name=fy-test
+
+# Use only single node 
+#SBATCH -N 1 
+
+# SMP execution, only one task 
+#SBATCH -n 1 
+
+# Use physical cores only not hyperthreads 
+#SBATCH --threads-per-core=1 
+
+# Request multiple cores 
+#SBATCH --cpus-per-task=1 
+
+# Time for your request 
+#SBATCH --time=00:10:10
+
+
+#SBATCH --gres=gpu:1 
+
+
+# load package
+module load GCC
+
+# run job
+srun echo "ssss" >> 2.txt
+srun python ./mission.py
+
+```
+
