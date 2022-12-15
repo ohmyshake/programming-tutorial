@@ -32,7 +32,7 @@ File-IO Subprocess Numpy h5py
 ### Case-1
 
 ```{code-cell} ipython3
-:tags: [hide-output,output_scroll,remove-stderr,raises-exception]
+:tags: [hide-input,hide-output,output_scroll,remove-stderr,raises-exception]
 
 import sys
 print("this is some stdddout")
