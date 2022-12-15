@@ -214,11 +214,11 @@ Download the plugin, `C/C++`, in VSCode Extensions
 - Manual refer to [`Miscrosoft docs`](https://code.visualstudio.com/docs/python/python-tutorial)
 
 
-## Makefile
+### Makefile
 
 MacOS comes with `make`.
 
-## CMake
+### CMake
 
 Install via `brew install cmake` in MacOS system.
 
