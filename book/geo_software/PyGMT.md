@@ -148,7 +148,7 @@ pygmt.config(PARAMETER = value)
 
 ## MAP
 
-
+<!-- 
 ### 2021 Yangbi Earthquake Map
 
 ```{code-cell} ipython3
@@ -313,7 +313,7 @@ with fig.inset(position="jTL+w3c/2.3c+o1.0c/0.5c", box="+pblack"):
 #%% 5 保存图片
 # fig.savefig("STA_location_yangbi.pdf")                                             # pygmt savefig 保存图片
 fig.show()
-```
+``` -->
 
 
 
