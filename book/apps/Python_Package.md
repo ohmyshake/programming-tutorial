@@ -2,7 +2,7 @@
 
 - Author: *{{Fu}}*
 - Update: *Dec 15, 2022*
-- Reading: *30 min*
+- Reading: *60 min*
 
 ---
 
