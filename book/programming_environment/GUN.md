@@ -13,7 +13,7 @@ There are 2 options in Macbook for parallel computing:
 - **`clang` compiler + `openmp` + `openmpi`**, clang don't have `gfortran` compiler.
 - **`gcc` compiler + `openmp` + `openmpi`**, gcc has `gfortran` compiler.
 
-### 1.`clang` compiler + `openmp`
+### `clang` compiler + `openmp`
 
 The clang compiler doesn't bring **`openmp`** package, and install openmp for clang compiler:
 
@@ -74,7 +74,7 @@ Refer to https://stackoverflow.com/questions/71061894/how-to-install-openmp-on-m
 
 
 
-### 2. `gcc` compiler + `openmp` 
+### `gcc` compiler + `openmp` 
 
 After installing Command Line Tools for Xcode, M1 chip use clang to compile **`.c file`** and clang++ to compile **`.cpp file`**. 
 And at this moment, M1 chip also has gcc and g++, but they are the **`soft links`** to clang compiler.
@@ -105,7 +105,7 @@ Refer to https://trinhminhchien.com/install-gcc-g-on-macos-monterey-apple-m1/
 
 
 
-### 3. Install `openmpi`
+### Install `openmpi`
 
 Then install **`openmpi`**, brew will use default compiler (In my M1 chip is `clang`) to compile openmpi package.
 But we can use a custom compiler(clang or gcc) when compiling code.
