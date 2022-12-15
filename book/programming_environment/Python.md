@@ -189,17 +189,16 @@ table th:nth-of-type(2) {
 | `jupyterlab`  | ...           | conda  |
 | `jupyter notebook` | ...        | conda  |
 | `jupyterlab_myst`   |  ...       | pip     |
-| `openmpi`   | ...       | conda     |
-| `openmp`   | ...       | conda     |
-| ``   |        |      |
+| `h5py`   |  ...      |   pip   |
+| `jill`   | for installing Julia       | pip     |
 
 **geophysics package**:
 
 |     Name     |    Purpose    |     Way       |     
 | ------------ | ------------- | :-----------: |
-| `obspy`       | ...           | mamba/conda   |
-| `pygmt`       | ...           | mamba/conda   |
-| `cartopy`     | Geo-Map       | mamba/conda   |
+| `obspy`       | ...           | conda   |
+| `pygmt`       | ...           | conda   |
+| `cartopy`     | Geo-Map       | conda   |
 | `pyfk`        | ...           | pip           |
 | ``   |        |      |
 | ``   |        |      |
