@@ -96,7 +96,6 @@ Useful geophysics softwares.
 
 
 
-
 ## About the Book ✨
 
 The Seismology Notebook is powered by [Jupyter Book](https://jupyterbook.org/en/stable/intro.html), which use [MyST](https://sphinx-design.readthedocs.io/en/sbt-theme/grids.html) Markdown syntax.
