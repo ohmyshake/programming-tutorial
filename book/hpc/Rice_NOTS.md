@@ -70,6 +70,8 @@ vim ~/.bashrc
 export PATH=/storage/hpc/work/ja62/fy21/software/zsh/bin:$PATH
 ```
 
+
+::::{toggle}
 ```bash
 #------------------------------------------#
 #--- >>> 0. Run Fu's Zsh when login >>> ---#
@@ -90,6 +92,6 @@ if [ -f /etc/zshrc ]; then
 	. /etc/zshrc
 fi
 ```
-
+::::
 
 
