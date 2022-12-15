@@ -22,7 +22,7 @@ xcode-select --install
 ```
 
 :::{warning}
-`Xcode` also can be installed in `App Store`, but is so large usually needed >10G. So we recommend to install `Command Line Tools for Xcode`.
+`Xcode` also can be installed in `App Store`, but is so large usually needed >10G. So I recommend to install `Command Line Tools for Xcode`.
 :::
 
 - The `Command Line Tools for Xcode` installed here may not be the latest version. Click the Apple icon in the upper left corner of your desktop and check for updates in Software Updates under System Preferences. If so, upgrade it to the latest version. 
