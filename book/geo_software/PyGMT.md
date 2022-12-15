@@ -128,7 +128,7 @@ $ gmt --show-datadir
 
 
 
-## Parameters Setting
+### Parameters Setting
 
 
 Please check [GMT Chinese Manual about parameter configuration](https://docs.gmt-china.org/latest/conf/overview/)
