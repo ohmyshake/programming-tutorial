@@ -70,7 +70,7 @@ Create an account and check your favorite domain-name whether be used or not, th
 
 ```{figure} ./files/2022-02-21-2.jpg
 ---
-scale: 30%
+scale: 80%
 align: center
 name: diskutil-list
 ---
