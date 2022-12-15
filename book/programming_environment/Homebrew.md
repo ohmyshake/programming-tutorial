@@ -83,8 +83,6 @@ git -C "$(brew --repo homebrew/cask)" remote set-url origin https://github.com/H
 
 ## Uninstall
 
-
-
 :::::{tab-set}
 ::::{tab-item} Foreign
 :::{note}
