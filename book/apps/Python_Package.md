@@ -67,7 +67,15 @@ Create an account and check your favorite domain-name whether be used or not, th
 
 - **My domain-name information:**
 
-![](./files/2022-02-21-2.jpg)
+
+```{figure} ./files/2022-02-21-2.jpg
+---
+scale: 30%
+align: center
+name: diskutil-list
+---
+My `diskutil list`
+```
 
 - **For `A`:**
 
