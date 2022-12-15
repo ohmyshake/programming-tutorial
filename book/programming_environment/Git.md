@@ -6,6 +6,10 @@
 
 ---
 
+```{tableofcontents}
+```
+
+
 ## Introduction
 
 :::{dropdown} Do you know git history?
