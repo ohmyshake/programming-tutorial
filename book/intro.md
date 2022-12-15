@@ -21,7 +21,11 @@ The main content of the notebook is as follows:
 :class-container: text-center
 :gutter: 2
 
-
+---
+scale: 6%
+align: center
+name: vscode-account
+---
 
 :::{grid-item-card}
 :link: ./programming_environment/Overview.html
@@ -33,11 +37,8 @@ The main content of the notebook is as follows:
 :height: 100
 ```
 ```{figure} ./intro_files/macos.jpg
----
-scale: 6%
-align: center
-name: vscode-account
----
+:height: 100
+
 ```
 
 Configure the programming environment in MacOS.
