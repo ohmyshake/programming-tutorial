@@ -272,9 +272,9 @@ if __name__ == '__main__':
 :link: ./programming_environment/Overview.html
 :class-body: text-center
 :class-header: bg-light text-center
-**WeChat**
+**PayPal**
 ^^^
-```{image} ./intro_files/WeChat.jpg
+```{image} https://cdn.jsdelivr.net/gh/twolfson/paypal-github-button@1.0.0/dist/button.svg
 :height: 150
 ```
 :::
