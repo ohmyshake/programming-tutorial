@@ -2,8 +2,6 @@
 
 Welcome to **Programming Notebook**, a notebook mainly about my scientific notes and gains in learning **Programming** and **Geophysics**, and I am very glad if it is helpful for your researches. 
 
-
-
 ```{margin} About Author
 I'm [**Fu Yin**](https://yinfu.info/), a geophysics graduate student at Rice University.
 ```
