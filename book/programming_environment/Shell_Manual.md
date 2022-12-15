@@ -104,6 +104,9 @@ du -h --max-depth=1*
 
 
 ## cat
+```bash
+cat
+```
 
 
 ## wc
