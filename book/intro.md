@@ -99,7 +99,7 @@ Useful geophysics softwares.
 ## Sponsoring ✨
 **If you enjoy the blog, please consider sponsoring 🍿 :**
 
-⏬ &nbsp; For Chinese guys:
+⏬ &nbsp; For Chinese friends:
 
 ::::{grid} 1 1 2 2
 :class-container: text-center
@@ -129,7 +129,7 @@ Useful geophysics softwares.
 
 
 
-⏬ &nbsp; For Non-Chinese guys:
+⏬ &nbsp; For Non-Chinese friends:
 
 ::::{grid} 1 1 2 2
 :class-container: text-center
