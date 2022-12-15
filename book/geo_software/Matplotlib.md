@@ -20,7 +20,7 @@ kernelspec:
 
 
 ## 3D Misfit Space
-
+::::{toggle}
 ```{code-cell} ipython3
 :tags: [hide-input]
 #!/usr/bin/env python3
@@ -240,7 +240,7 @@ plt.show()
 # figurename=os.path.join('./grid1.pdf')
 # fig.savefig(figurename,dpi=800, format='pdf')
 ```
-
+::::
 
 
 
