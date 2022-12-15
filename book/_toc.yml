@@ -27,10 +27,10 @@ parts:
   #   # numbered: True 
   #   # maxdepth: 2
   #   chapters:    
-  #   - file: app/Python-Package  # setup.py poetry github-action sphnix  || Buy and Bind Domain Name with Github Pages
-  #   - file: app/Pyside6 # PySide6 is QT6 for python  https://www.qt.io/qt-for-python
-  #   - file: app/Dash  # https://dash.gallery/Portal/
-  #   - file: app/Docker
+  #   - file: apps/Python-Package  # setup.py poetry github-action sphnix  || Buy and Bind Domain Name with Github Pages
+  #   - file: apps/Pyside6 # PySide6 is QT6 for python  https://www.qt.io/qt-for-python
+  #   - file: apps/Dash  # https://dash.gallery/Portal/
+  #   - file: apps/Docker
 
 
   # - caption: Parallel Computing and HPC Platform
