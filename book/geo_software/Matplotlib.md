@@ -267,7 +267,7 @@ from obspy.imaging.beachball import beachball
 
 
 #%% 1.input path
-sample_path      = '../files/1d-histogram'
+sample_path      = './matplotlib_files/1d-histogram'
 
 MPI_n=30                                                                         # 第一次试验：其中 MPI-3 与 MPI-9 采样陷入了极小值，从0开始数 || 第二次实验：MPI-24
 MPI_n_st           = 0
@@ -655,7 +655,7 @@ def plot_hist(FM_all,FM_accept_all,num_bins,num_std,labels_name,Fixed_FM,InvType
 ##############################################################################
 
 
-sample_path      = '../files/2d-histogram/'
+sample_path      = './matplotlib_files/2d-histogram/'
 fig_format       = 'pdf'                              # history: Jun 28 11:08:02 2021
 MPI_n          = 1
 Chains_n       = 1
