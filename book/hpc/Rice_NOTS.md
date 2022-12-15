@@ -24,12 +24,22 @@ This is Fu's home on NOTS, the following is my data managerment
 https://kb.rice.edu/108237
 
 
+
+
+
 $SHARED_SCRATCH is not permanent storage
 
 $SHARED_SCRATCH is to be used only for job I/O.  Delete everything you do not need for another run at the end of the job or move to $WORK for analysis. Staff may periodically delete files from the $SHARED_SCRATCH file system even if files are less than 14 days old.
 
 
-
+```{figure} ./files/cpu_gpu.jpg
+---
+scale: 30%
+align: center
+name: cpu_gpu
+---
+NOTS Resources 
+```
 
 ## NOTS Cluster
 
