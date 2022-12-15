@@ -65,3 +65,8 @@ make install
 vim ~/.bashrc
 export PATH=/storage/hpc/work/ja62/fy21/software/zsh/bin:$PATH
 ```
+
+
+
+
+
