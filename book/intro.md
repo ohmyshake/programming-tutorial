@@ -178,7 +178,7 @@ if __name__ == '__main__':
 ## Acknowledgements ✨
 Many thanks to...
 
-**If you enjoy the blog, please consider sponsoring 🍿 :**
+**🍿 If you enjoy the blog, please consider sponsoring 🍿**
 
 ⏬ &nbsp; For Chinese friends:
 
