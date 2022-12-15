@@ -14,9 +14,9 @@
 
 ## Poetry
 
-follow the instructions below: https://ealizadeh.com/blog/guide-to-python-env-pkg-dependency-using-conda-poetry/
+Follow the instructions below: https://ealizadeh.com/blog/guide-to-python-env-pkg-dependency-using-conda-poetry/
 
-1. use `conda` create a new environment, only install `python`
+1. Use `conda` create a new environment, only install `python`
 
     ```bash
     conda env create -f environment.yml  # create env according to .yml file
@@ -24,15 +24,15 @@ follow the instructions below: https://ealizadeh.com/blog/guide-to-python-env-pk
     conda activate jupiter-dev  # activate env
     ```
 
-2. use `poetry` install other python package
+2. Use `poetry` install other python package
 
-install poetry first
-```bash
-curl -sSL https://install.python-poetry.org | python3 - # do not use pip
+    Install poetry first
+    ```bash
+    curl -sSL https://install.python-poetry.org | python3 - # do not use pip
 
-mkdir $ZSH_CUSTOM/plugins/poetry # add poetry into oh-my-zsh plugins
-poetry completions zsh > $ZSH_CUSTOM/plugins/poetry/_poetry
-```
+    mkdir $ZSH_CUSTOM/plugins/poetry # add poetry into oh-my-zsh plugins
+    poetry completions zsh > $ZSH_CUSTOM/plugins/poetry/_poetry
+    ```
 
 
 ```bash
