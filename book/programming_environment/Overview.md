@@ -83,23 +83,40 @@ Complete list in my mac please check [Mac-Software.md](./macos_software/MacSoftw
 Toctree Mac finder as follows:
 
 ```bash
-$ toctree Mac finder
-FuYin-MAC/
-├── Dropbox
-├── Applications    # built-in
-├── Desktop         # built-in
-├── Documents       # built-in
-├── Downloads       # built-in
-├── me
+cd ~
+tree -L 1
+
+## output
+.
+├── Applications # built-in
+├── Applications (Parallels)
+├── Desktop
+├── Documents
+├── Downloads
+├── Library
+├── Movies
+├── Music
+├── Parallels
+├── Pictures
+├── Public
+├── Rice Geophysics Dropbox
+├── Zotero
 ├── bin
-├── src
-├── package
 ├── data
 ├── learn
+├── me
+├── miniconda3
+├── package
 ├── project
-├── workspace
-└── yinfu           # built-in
+├── share1
+├── share2
+├── src
+└── workspace
+
+24 directories, 0 files
 ```
+
+
 
 
 ### Applications
