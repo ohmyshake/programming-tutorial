@@ -12,14 +12,24 @@ ln -s file1 file2
 
 
 ## scp
-
+```bash
+scp
+```
 
 ## rsync
-
+```bash
+rsync
+```
 
 
 ## mamba/conda
+```bash
+# check all packages
+conda list
 
+# install package
+conda install xxx
+```
 
 
 ## ssh/sshfs
