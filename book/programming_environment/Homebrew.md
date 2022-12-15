@@ -223,5 +223,3 @@ Look through https://formulae.brew.sh/ to check useful package.
 | ``            | ...   |
 | ``            | ...   |
 
-
-
