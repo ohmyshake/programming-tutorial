@@ -6,7 +6,7 @@
 
 ---
 
-setup.py poetry github-action sphnix   Buy and Bind Domain Name with Github Pages
+`setup.py` `poetry` `github-action` `sphnix`   `Buy and Bind Domain Name with Github Pages`
 
 
 ## poetry
@@ -40,3 +40,7 @@ poetry install  # this command will install some package mentioned in 'pyproject
 poetry update # update the new info in 'pyproject.toml' into 'poetry.lock' file
 ```
 
+
+
+
+## Buy and Bind Domain Name with Github Pages
