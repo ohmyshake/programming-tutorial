@@ -38,7 +38,7 @@ Installing Anaconda is equivalent to installing the `Python interpreter` + `core
 1. Download [Miniconda3 macOS Intel x86 64-bit bash](https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-x86_64.sh).
 2. Install Miniconda
     ```bash
-    $ bash Miniconda3-latest-MacOSX-x86_64.sh
+    bash Miniconda3-latest-MacOSX-x86_64.sh
     ```
     Miniconda will be installed into `~/opt/miniconda3` path by default. The installation package will write the initialization statement to the `shell`'s configuration file, e.g. `~/.zshrc` in my Mac.
 
@@ -67,13 +67,13 @@ Installing Anaconda is equivalent to installing the `Python interpreter` + `core
 :icon: info
 ```bash
 # delete install directory
-$ rm -rf ~/opt/miniconda3
+rm -rf ~/opt/miniconda3
 
 # delete environment variable
-$ vim ~/.zshrc
+vim ~/.zshrc
 
 # delete configuration files
-$ rm -rf ~/.condarc ~/.conda ~/.continuum
+rm -rf ~/.condarc ~/.conda ~/.continuum
 ```
 ::::
 
@@ -107,7 +107,7 @@ Install `mamba`
 ::::{tab-item} Foreign
 To get `mamba` via `conda`, just install it into the base environment from the `conda-forge` channel:
 ```bash
-$ conda install mamba -n base -c conda-forge
+conda install mamba -n base -c conda-forge
 ```
 ::::
 
@@ -117,7 +117,7 @@ Use [Tsinghua](https://mirrors.tuna.tsinghua.edu.cn/help/anaconda/) mirror to sp
 Here is my `~/.condarc` file:
 
 ```bash
-$ cat ~/.condarc
+cat ~/.condarc
 channels:
   - defaults
 show_channel_urls: true
@@ -136,7 +136,7 @@ custom_channels:
 ```
 Then you can use `conda` to install `mamba`, and just install it into the **base environment** from the `conda-forge` channel:
 ```bash
-$ conda install mamba -n base -c conda-forge
+conda install mamba -n base -c conda-forge
 ```
 ::::
 
@@ -144,7 +144,7 @@ $ conda install mamba -n base -c conda-forge
 
 Now you can use `mamba` to manage your packages, e.g.:
 ```bash
-$ mamba install numpy
+mamba install numpy
 ```
 
 :::{warning}
