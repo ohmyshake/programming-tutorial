@@ -2,7 +2,7 @@
 # Learn more at https://jupyterbook.org/customize/toc.html
 
 format: jb-book
-root: intro  # 打赏 links/AboutBook.md
+root: intro 
 parts:
   - caption: Programming Environment
     # numbered: True 
@@ -23,13 +23,14 @@ parts:
     - file: programming_environment/Shell_Manual
     - file: programming_environment/Shortcuts
 
+
   - caption: App Development
     # numbered: True 
     # maxdepth: 2
     chapters:    
-    - file: apps/Python_Package  # setup.py poetry github-action sphnix  || Buy and Bind Domain Name with Github Pages
-    - file: apps/Pyside6 # PySide6 is QT6 for python  https://www.qt.io/qt-for-python
-    - file: apps/Dash  # https://dash.gallery/Portal/
+    - file: apps/Python_Package 
+    - file: apps/Pyside6 
+    - file: apps/Dash
     - file: apps/Docker
 
 
