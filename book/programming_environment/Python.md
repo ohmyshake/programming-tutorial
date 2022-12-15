@@ -181,13 +181,13 @@ table th:nth-of-type(2) {
 |    Name       |    Purpose    |    Way       |     
 | ------------  | ------------- | :----------: |
 | `mamba`       | ...           | conda        |
-| `numpy`       | ...           | mamba/conda  |
-| `matplotlib`  | ...           | mamba/conda  |
-| `scipy`       | ...           | mamba/conda  |
-| `pandas`      | ...           | mamba/conda  |
-| `jupyter book`| ...           | mamba/conda  |
-| `jupyterlab`  | ...           | mamba/conda  |
-| `jupyter notebook` | ...        | mamba/conda  |
+| `numpy`       | ...           | conda  |
+| `matplotlib`  | ...           | conda  |
+| `scipy`       | ...           | conda  |
+| `pandas`      | ...           | conda  |
+| `jupyter book`| ...           | conda  |
+| `jupyterlab`  | ...           | conda  |
+| `jupyter notebook` | ...        | conda  |
 | `jupyterlab_myst`   |  ...       | pip     |
 | `openmpi`   | ...       | conda     |
 | `openmp`   | ...       | conda     |
