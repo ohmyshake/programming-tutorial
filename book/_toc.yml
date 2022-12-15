@@ -21,7 +21,7 @@ parts:
     - file: programming_environment/Julia
     - file: programming_environment/Matlab
     - file: programming_environment/Shell_Manual
-    - file: programming_environment/Overview_md/Shortcuts
+    - file: programming_environment/Shortcuts
 
   # - caption: App Development
   #   # numbered: True 
