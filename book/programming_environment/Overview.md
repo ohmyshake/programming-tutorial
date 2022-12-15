@@ -135,7 +135,7 @@ such as `rdseed`. And also put executable files of large programs here, such `sp
 
 ### src
 
-- {file}`~/src` stores source code from **other institutions’ software**, such as SAC, OpenMPI, Specfem-2D...
+- {file}`~/src` stores source code from **other institutions’ software**, such as SAC, Specfem-2D...
 
 - More information please check [Geo-Software.md](./geophysics_software/GeoSoftware.md) list.
 
