@@ -171,7 +171,7 @@ from obspy.taup.taup_create import build_taup_model
 
 
 #%% 1. data/file paths
-allfiles_path = os.path.join('../files/yangbi/*.SAC')             # 某个地震事件的文件夹，通配所有SAC数据
+allfiles_path = os.path.join('./pygmt_files/yangbi/*.SAC')             # 某个地震事件的文件夹，通配所有SAC数据
 limiting_sta = ['XG.CHT','XG.HDQ','XG.XBT','XG.ZYT','YN.TUS','YN.YUX']         # 限幅的台站名称
 
 #%% 2.读取原始数据 return: data
@@ -328,10 +328,10 @@ fig.show()
 **Make grd files:**
 
 ```bash
-$ range=99.0/102.0/24.0/27.5
-$ gmt grdsample ./topo_data/srtm_57_07.asc -I0.0005 -Gtmp.grd -R$range
-$ gmt grdgradient tmp.grd -Gtmp.ient -A0/270 -Ne0.5
-$ gmt makecpt -Chaxby -Z -T-1000/4000/100 > tmp.cpt
+range=99.0/102.0/24.0/27.5
+gmt grdsample ./topo_data/srtm_57_07.asc -I0.0005 -Gtmp.grd -R$range
+gmt grdgradient tmp.grd -Gtmp.ient -A0/270 -Ne0.5
+gmt makecpt -Chaxby -Z -T-1000/4000/100 > tmp.cpt
 ```
 
 **Pygmt plot:**
@@ -370,9 +370,9 @@ fig.basemap(region=region, projection=projection,frame=['a0.1',"WSen"])    # a�
 ### a.grimage
 # pygmt.makecpt(cmap="haxby", series=[1000, 4000])  # not used, use external cpt now
 fig.grdimage(
-    grid = "../files/dayindian/tmp.grd",
-    shading = "../files/dayindian/tmp.ient",
-    cmap = "../files/dayindian/tmp.cpt",
+    grid = "./pygmt_files/dayindian/tmp.grd",
+    shading = "./pygmt_files/dayindian/tmp.ient",
+    cmap = "./pygmt_files/dayindian/tmp.cpt",
     # region=region,
     # projection=projection,
     # frame='a0.2',
@@ -381,7 +381,7 @@ fig.colorbar(
     # Colorbar position justified outside map frame (J) at Middle Right (MR),
     # offset (+o) by 1 cm horizontally and 0 cm vertically from anchor point,
     # with a length/width (+w) of 7 cm by 0.5 cm
-    cmap="../files/dayindian/tmp.cpt",
+    cmap="./pygmt_files/dayindian/tmp.cpt",
     position="JMR+o0.7c/-2c+w7c/0.5c",  # mu表示单位放在下面
     frame=["xa500f250", "y+l(m)"],
     truncate = "1000/3000",  # 截断表示 从1000m至4000m
@@ -392,24 +392,24 @@ fig.basemap(region=region, projection=projection,frame=['a0.1',"WSen"],map_scale
 
 ### b.fault
 fig.plot(#data="../files/dayindian/fault/CN-faults.gmt",
-         data="../files/dayindian/fault/fault_paper.txt",
+         data="./pygmt_files/dayindian/fault/fault_paper.txt",
          region=region, # 必须添加，否则断层会画出界
          pen="1.5p,red")
 
 # create space-delimited file
-with open("../files/dayindian/fault/faultname_paper.txt", "w") as f:
+with open("./pygmt_files/dayindian/fault/faultname_paper.txt", "w") as f:
     f.write("100.40 25.705 5 8p,Helvetica-Bold,gray30 CM Honghegu\n")
     f.write("100.58 25.865 55 8p,Helvetica-Bold,gray30 CM Yongsheng-Binchuan\n")
 
-fig.text(textfiles="../files/dayindian/fault/faultname_paper.txt", angle=True, font=True, justify=True)
+fig.text(textfiles="./pygmt_files/dayindian/fault/faultname_paper.txt", angle=True, font=True, justify=True)
 
 # cleanups
-os.remove("../files/dayindian/fault/faultname_paper.txt")
+os.remove("./pygmt_files/dayindian/fault/faultname_paper.txt")
 
 
 ### c.seismicity
 time_bd = UTCDateTime("2012-09-07T12:15:00")
-earthquakes_path = '../files/dayindian/seismicity/20080106-20211121.txt'
+earthquakes_path = './pygmt_files/dayindian/seismicity/20080106-20211121.txt'
 s1_lats = []; s1_lons = []; s1_M = []; s1_t = []
 s2_lats = []; s2_lons = []; s2_M = []; s2_t = []
 with open(earthquakes_path,'r',encoding='ISO-8859-1') as f:
@@ -449,7 +449,7 @@ fig.plot(x=s2_lons,
 
 
 ### d.reservoir
-fig.plot(data="../files/dayindian/reservoir_shape/dayindian_reservoir_shape",
+fig.plot(data="./pygmt_files/dayindian/reservoir_shape/dayindian_reservoir_shape",
          pen="0.2p,blue",
          color="blue")
 
@@ -461,7 +461,7 @@ fig.text(text="Reservoir",
 
 
 ### e.station
-sta_lat_lon_path = '../files/dayindian/sta_lat_lon/sta_lat_lon_select.txt'
+sta_lat_lon_path = './pygmt_files/dayindian/sta_lat_lon/sta_lat_lon_select.txt'
 Red_sta = ['53263','53265']         # 红色的台站
 lats = []; lons = []; names = []
 with open(sta_lat_lon_path,'r') as f:
@@ -517,11 +517,11 @@ with fig.inset(position="jTL+w6c+o-0.3c/-1.6c",margin="0.5c"): #  box="+pblack"
         )
     
     # c.plate_boundary
-    fig.plot(data="../files/dayindian/plate_boundary/India_Eurasia",
+    fig.plot(data="./pygmt_files/dayindian/plate_boundary/India_Eurasia",
          pen="0.5p,red",
          style="f0.5/6p+t+l",
          color = "red")
-    fig.plot(data="../files/dayindian/plate_boundary/Philippin_Eurasia",
+    fig.plot(data="./pygmt_files/dayindian/plate_boundary/Philippin_Eurasia",
          pen="0.5p,red",
          style="f0.5/6p+t+l",
          color = "red")
@@ -587,12 +587,12 @@ S 10.2c c 0.15c 255/0/255 0.25p
 """
 
 ### b.write temporary file
-fout = open("../files/dayindian/tmp.legend", 'w')
+fout = open("./pygmt_files/dayindian/tmp.legend", 'w')
 fout.write(leg)
 fout.close()
 
 ### c.legend
-fig.legend(spec="../files/dayindian/tmp.legend", position="x-0.1c/-2.5c+w6.2i+l1.2+jBL", box='+gwhite+p0.5p')
+fig.legend(spec="./pygmt_files/dayindian/tmp.legend", position="x-0.1c/-2.5c+w6.2i+l1.2+jBL", box='+gwhite+p0.5p')
 
 #%% 5.Save fig
 fig.show()
@@ -619,8 +619,8 @@ Created on Sat Jun 11 22:50:49 2022
 import pygmt
 import numpy as np
 
-Vs_path = '../files/longmen/Vs.xyz'
-Reloc_path = '../files/longmen/cd.reloc'
+Vs_path = './pygmt_files/longmen/Vs.xyz'
+Reloc_path = './pygmt_files/longmen/cd.reloc'
 
 dep=[0.00,  0.200,  0.400,  0.600,  0.8, 1, 1.2, 1.4, 1.6, 1.8, 2, 2.5, 3, 4, 5, 6, 7, 8, 9 ]
 start=[[103.67,31.36], [103.6,31.26], [103.47,31.25], [103.4,31.18], [103.34,31.1], [103.28,30.95]]
@@ -705,7 +705,7 @@ with fig.subplot(
             region=[start[i][0], end[i][0], 0, 9],
             nodata="o9999",
             spacing="0.002/0.1",
-            outgrid="../files/longmen/sample1.nc"
+            outgrid="./pygmt_files/longmen/sample1.nc"
             )
         # c.剖面画图
         with pygmt.config(
@@ -731,13 +731,13 @@ with fig.subplot(
                 # img_in='D',
                 projection='X10c/-3c', 
                 region=[start[i][0], end[i][0], 0, 9], 
-                grid="../files/longmen/sample1.nc",
-                cmap="../files/longmen/temp_cpt.cpt",
+                grid="./pygmt_files/longmen/sample1.nc",
+                cmap="./pygmt_files/longmen/temp_cpt.cpt",
                 )
             
             fig.plot(x=reloc_all[i][0], y=reloc_all[i][2], no_clip=False,style='c0.1c',color="black",pen=True,panel=[xx, yy])
 
-fig.colorbar(cmap="../files/longmen/temp_cpt.cpt",position="JMB+o4c/1c+w8c", frame=["xa0.5f0.25", 'y+l"Vs (km/s)"'])
+fig.colorbar(cmap="./pygmt_files/longmen/temp_cpt.cpt",position="JMB+o4c/1c+w8c", frame=["xa0.5f0.25", 'y+l"Vs (km/s)"'])
 fig.show()
 # fig.savefig('yf.pdf')
 
@@ -767,7 +767,7 @@ import xarray as xr
 import MomentTensor as MTpy
 
 #%%# 1. input parameters
-path='../files/lune/'
+path='./pygmt_files/lune/'
 MPI_n = 20                       # total MPI cores
 chain_n = 1                     # total chain in each core
 N =  0                           # from N to compute in each chain
@@ -870,7 +870,7 @@ with pygmt.config(
         x=xyzdata_np[:,0],
         y=xyzdata_np[:,1],
         z=xyzdata_np[:,2],
-        levels= "../files/lune/temp_cpt1.cpt",
+        levels= "./pygmt_files/lune/temp_cpt1.cpt",
         no_clip=True,
         # annotation=0.2,
         I=True,
@@ -887,22 +887,22 @@ with pygmt.config(
 
 
     # 4.lines
-    x,y = np.genfromtxt('../files/lune/dfiles/sourcetype_arc_01.dat', unpack=True, usecols=(0,1))
+    x,y = np.genfromtxt('./pygmt_files/lune/dfiles/sourcetype_arc_01.dat', unpack=True, usecols=(0,1))
     fig.plot(x=x, y=y, pen='1p,gray,-')
 
-    x,y = np.genfromtxt('../files/lune/dfiles/sourcetype_arc_02.dat', unpack=True, usecols=(0,1))
+    x,y = np.genfromtxt('./pygmt_files/lune/dfiles/sourcetype_arc_02.dat', unpack=True, usecols=(0,1))
     fig.plot(x=x, y=y, pen='1p,gray,-')
 
-    x,y = np.genfromtxt('../files/lune/dfiles/sourcetype_arc_03.dat', unpack=True, usecols=(0,1))
+    x,y = np.genfromtxt('./pygmt_files/lune/dfiles/sourcetype_arc_03.dat', unpack=True, usecols=(0,1))
     fig.plot(x=x, y=y, pen='1p,gray,-')
 
-    x,y = np.genfromtxt('../files/lune/dfiles/sourcetype_arc_04.dat', unpack=True, usecols=(0,1))
+    x,y = np.genfromtxt('./pygmt_files/lune/dfiles/sourcetype_arc_04.dat', unpack=True, usecols=(0,1))
     fig.plot(x=x, y=y, pen='1p,gray,-')
 
-    x,y = np.genfromtxt('../files/lune/dfiles/sourcetype_arc_05.dat', unpack=True, usecols=(0,1))
+    x,y = np.genfromtxt('./pygmt_files/lune/dfiles/sourcetype_arc_05.dat', unpack=True, usecols=(0,1))
     fig.plot(x=x, y=y, pen='1p,gray,-')
     
-    x,y = np.genfromtxt('../files/lune/dfiles/sourcetype_arc_06.dat', unpack=True, usecols=(0,1))
+    x,y = np.genfromtxt('./pygmt_files/lune/dfiles/sourcetype_arc_06.dat', unpack=True, usecols=(0,1))
     fig.plot(x=x, y=y, pen='1p,gray,-')
 
 
@@ -917,7 +917,7 @@ with pygmt.config(
 
 
 #%% 5.save
-fig.colorbar(cmap="../files/lune/temp_cpt1.cpt",yshift="-0.5c",frame=["xa0.2f0.1", "y+l(marginal-posterior)"], )
+fig.colorbar(cmap="./pygmt_files/lune/temp_cpt1.cpt",yshift="-0.5c",frame=["xa0.2f0.1", "y+l(marginal-posterior)"], )
 fig.show()
 # fig.savefig('lune_us.pdf')
 
@@ -953,7 +953,7 @@ import MomentTensor as MTpy
 
 
 #%%# 1. input parameters
-FM_path='../files/lune/'
+FM_path='./pygmt_files/lune/'
 
 MPI_n=20
 N = 2000  # 从多少开始计算解
@@ -1128,7 +1128,7 @@ def get_taup_tp_ts(model,depth,distance,degree=None):
 
 
 #%%# 1. input parameters
-FM_path='../files/lune/'
+FM_path='./pygmt_files/lune/'
 
 MPI_n=20
 N = 2000  # 从多少开始计算解
@@ -1180,7 +1180,7 @@ for i in range(0,6,1):
 
 
 #%% 3.read station
-allfiles_path=os.path.join('../files/yangbi/*.SAC')
+allfiles_path=os.path.join('./pygmt_files/yangbi/*.SAC')
 allfiles = sorted( glob.glob(allfiles_path) )
 data_raw = Stream()
 for i in range(0,len(allfiles),1):
@@ -1195,9 +1195,9 @@ data = data_raw.copy()
 data.filter('bandpass', freqmin=0.005, freqmax=0.5, corners=4, zerophase=True)  # bandpass
 
 
-v_model_path  = '../files/yangbi/v_model//v_model.nd'
+v_model_path  = './pygmt_files/yangbi/v_model//v_model.nd'
 # build_taup_model(v_model_path, output_folder='./', verbose=True)
-model_path    = "../files/yangbi/v_model//v_model.npz"
+model_path    = "./pygmt_files/yangbi/v_model//v_model.npz"
 model = TauPyModel(model=model_path)    # "iasp91"  "prem"
 for i in range(0,len(data),1):
     depth = data[i].stats.sac['evdp']
@@ -1308,7 +1308,7 @@ ax0.set_xlim(0,100)
 ax0.set_ylim(0,100)
 ax0.set_axis_off() 
 # fig.show()
-figurename=os.path.join('../files/lune/beachball_project.pdf')
+figurename=os.path.join('./pygmt_files/lune/beachball_project.pdf')
 plt.savefig(figurename,dpi=800, format="pdf")
 
 
