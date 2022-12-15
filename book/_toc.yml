@@ -37,7 +37,7 @@ parts:
     # numbered: True 
     # maxdepth: 2
     chapters:
-    - file: hpc/Python  # File-IO Subprocess Numpy h5py 
+    - file: hpc/Python 
     - file: hpc/Python_HPC  # Mpi4py Numba Cupy Ray 
     - file: hpc/C++  # OpenMP OpenMPI CUDA
     - file: hpc/Make_Cmake # Vscode-Makefile-Cmake
