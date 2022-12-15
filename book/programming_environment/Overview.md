@@ -86,6 +86,7 @@ Toctree Mac finder as follows:
 ```
 $ toctree Mac finder
 FuYin-MAC/
+├── Dropbox
 ├── Applications    # built-in
 ├── Desktop         # built-in
 ├── Documents       # built-in
@@ -93,7 +94,7 @@ FuYin-MAC/
 ├── me
 ├── bin
 ├── src
-├── code
+├── package
 ├── data
 ├── learn
 ├── project
