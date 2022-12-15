@@ -23,6 +23,22 @@ kernelspec:
 
 ```{code-cell} ipython3
 :tags: [hide-input]
+
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Tue May 25 22:44:49 2021
+
+@author: yf
+"""
+
+import pygmt
+```
+
+
+```{code-cell} ipython3
+:tags: [hide-input]
+
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
