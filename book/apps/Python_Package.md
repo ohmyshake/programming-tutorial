@@ -60,7 +60,7 @@ poetry update # update the new info in 'pyproject.toml' into 'poetry.lock' file
 
 
 ### Buy from Namesilo
-The default domain-name in github pages is `your_name.github.io`, but you can set your own domain-name. Firstly, buy a domain-name; I got `yinfu.info` domain-name from [**Namesilo**](https://www.namesilo.com/), the purchase process show below:
+The default domain-name in github pages is `your_name.github.io`, but you can set your own domain-name. Firstly, buy a domain-name; I got `yinfu.info` domain-name from [**Namesilo**](https://www.namesilo.com/), the purchase process showing below:
 
 Create an account and check your favorite domain-name whether be used or not, then just buy it. Now use **Namesilo** to resolve the domain-name: click on the `blue ball` to edit `DNS`; you can set by yourself or using the template provided below. Generally setting `example.com` and `www.example.com` to point to your own server IP address is sufficent, set `A` and `CNAME`:
 
