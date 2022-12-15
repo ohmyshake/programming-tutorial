@@ -57,7 +57,7 @@ Parallel computing skills in Python and C++, and HPC tutrials.
 :::
 
 :::{grid-item-card}
-:link: https://github.com/orgs/executablebooks/discussions
+:link: ./ml_dl/PyTorch
 :class-body: text-center
 :class-header: bg-light text-center
 **Machine Learning & Deep Learning**
