@@ -45,7 +45,7 @@ Develop a python package, GUI, and Dashboards.
 :::
 
 :::{grid-item-card}
-:link: https://github.com/orgs/executablebooks/discussions
+:link: ./hpc/Python.html
 :class-body: text-center
 :class-header: bg-light text-center
 **Parallel Computing & HPC Platform**
