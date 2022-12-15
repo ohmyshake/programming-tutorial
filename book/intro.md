@@ -169,7 +169,7 @@ The notebook is powered by [Jupyter Book](https://jupyterbook.org/en/stable/intr
 
 All the source files are edited in VSCode, `run_jb_build.py` is a Python script to build the HTML and fresh it in Chrome browser automatically. 
 
-- `run_jb_build.py` uses `git` to check whether any of the files have been changed. If something changed, it will rebuild the notebook and refresh the HTML in Chrome browser.
+- `run_jb_build.py` uses `git` to check whether any of the files have been changed. If something are changed, it will rebuild the notebook and refresh the HTML in Chrome browser.
 
 - `run_jb_build.py` uses `git` in `dev` branch, and after modifying all files, you need switch to `main` branch, and push it to Github.
 
