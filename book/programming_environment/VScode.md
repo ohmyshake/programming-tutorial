@@ -95,27 +95,6 @@ Open the command panel, input the `Remote-SSH: Settings`, search `terminal.integ
 
 
 
-### Python
-
-Refer to [Microsoft docs](https://code.visualstudio.com/docs/python/python-tutorial)
-
-
-
-
-
-### Latex
-
-
-
-
-### C++
-
-
-### Git
-
-
-
-
 
 ## Reference
 
