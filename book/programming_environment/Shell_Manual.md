@@ -117,9 +117,13 @@ wc file
 cat file | wc -l
 ```
 
-## tail/head
+## head/tail
 
+```bash
+head
 
+tail
+```
 
 
 
