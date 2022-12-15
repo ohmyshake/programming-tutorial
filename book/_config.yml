@@ -73,7 +73,7 @@ html:
   comments:
     hypothesis              : false
     utterances              : false
-  announcement              : "Welcome 👋" # A banner announcement at the top of the site.
+  # announcement              : "Welcome 👋" # A banner announcement at the top of the site.
 
 
 #######################################################################################
