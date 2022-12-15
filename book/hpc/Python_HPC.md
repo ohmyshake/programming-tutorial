@@ -2,4 +2,16 @@
 
 
 
-## Mpi4py Numba Cupy Ray 
+## Mpi4py 
+
+
+
+
+## Numba 
+
+
+## Cupy 
+
+
+
+## Ray 
