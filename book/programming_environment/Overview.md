@@ -122,52 +122,6 @@ FuYin-MAC/
 
 - {file}`~/me` stores my life files, which have nothing to do with scientific research.
 
-```{toggle}
-:show:
-
-::::{grid}
-:gutter: 1
-
-:::{grid-item-card} Health
-:columns: 4
-Body health.
-:::
-
-:::{grid-item-card} Cook
-:columns: 4
-Cooking study.
-:::
-
-:::{grid-item-card} Information
-:columns: 4
-Certificate.
-:::
-
-:::{grid-item-card} PhD_application
-:columns: 4
-...
-:::
-
-:::{grid-item-card} Photo
-:columns: 4
-...
-:::
-
-:::{grid-item-card} Rice-file
-:columns: 4
-...
-:::
-
-:::{grid-item-card} USTC-file
-:columns: 4
-...
-:::
-
-::::
-```
-<!-- about how to use {toggle} refer to https://jupyterbook.org/en/stable/interactive/hiding.html#hiding-remove-content -->
-
-
 
 ### bin
 
