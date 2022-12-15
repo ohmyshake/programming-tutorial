@@ -170,7 +170,8 @@ srun python ./mission.py
 ```
 
 :::{warning}
-Note there is no blank space between `#` and `SBATCH`.
+Note there is no blank space between `#` and `SBATCH`, for example:
+
 ```bash
 # Use only single node 
 #SBATCH -N 1 
