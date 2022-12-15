@@ -98,7 +98,7 @@ Useful software in MacOS system.
 :link: https://github.com/orgs/executablebooks/discussions
 :class-body: text-center
 :class-header: bg-light text-center
-**GeoPhysics Software**
+**Geophysics Software**
 ^^^
 ```{image} ./intro_files/specfem3d.jpg
 :height: 100
