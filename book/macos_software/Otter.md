@@ -25,7 +25,9 @@ More info can be found in https://blog.tai2.net/how-to-use-otter-en.html
     brew install blackhole-2ch
     ```
 
+
 2. Download `Loopback` software. You can download it from its official [website](https://rogueamoeba.com/loopback/) or other ways.
+
 
 3. Set sound environment in your Macbook as following:
 
