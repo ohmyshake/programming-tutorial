@@ -242,7 +242,7 @@ if __name__ == '__main__':
 **WeChat**
 ^^^
 ```{image} ./intro_files/WeChat.jpg
-:height: 200
+:height: 150
 ```
 :::
 
