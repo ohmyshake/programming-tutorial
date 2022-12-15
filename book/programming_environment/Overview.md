@@ -54,7 +54,7 @@ Complete list in my mac please check [Mac-Software.md](./Overview_file/MacSoftwa
 
 **Pirated Software**. Refuse piracy from me. Software vendors can go to these places rights.
 
-* MacWk: [`https://macwk.com/`](https://macwk.com/) Blocked
+* MacWk: [`https://macwk.com/`](https://macwk.com/) blocked
 * AppKed: [`http://www.macbed.com`](http://www.macbed.com)
 * Softasm: [`https://softasm.com/`](https://softasm.com/)
 * Appstorrent: [`https://appstorrent.ru/`](https://appstorrent.ru/)
