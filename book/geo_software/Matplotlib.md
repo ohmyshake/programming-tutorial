@@ -19,7 +19,7 @@ kernelspec:
 
 
 
-```{code-cell} ipytho3:./pygmt_files/test.py
+```{code-cell} ipython3:./pygmt_files/test.py
 
 ```
 
