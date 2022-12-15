@@ -34,7 +34,7 @@ The main content of the notebook is as follows:
 ```
 ```{figure} ./intro_files/macos.jpg
 ---
-scale: 10%
+scale: 6%
 align: center
 name: vscode-account
 ---
