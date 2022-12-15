@@ -14,7 +14,7 @@ There is no guarantees of correctness, and if you spot an error or a doubtful st
 
 
 ---
-The main content of the notebook is as follows:
+The main contents of the notebook are as follows:
 ::::{grid} 1 1 2 2
 :class-container: text-center
 :gutter: 2
