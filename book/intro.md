@@ -20,7 +20,7 @@ The main content of the notebook is as follows:
 :gutter: 2
 
 :::{grid-item-card}
-:link: ./programming_environment/Overview.md
+:link: ./programming_environment/Overview.html
 :class-body: text-center
 :class-header: bg-light text-center
 **Programming Environment**
