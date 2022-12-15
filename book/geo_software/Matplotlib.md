@@ -19,8 +19,7 @@ kernelspec:
 
 
 
-```{code-cell} ipython3:./pygmt_files/test.py
-
+```ipython3: ./pygmt_files/test.py
 ```
 
 ## 3D Misfit Space
