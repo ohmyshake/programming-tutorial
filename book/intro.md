@@ -284,26 +284,6 @@ if __name__ == '__main__':
 
 
 
-@@box-container
-  @@box
-    ~~~<a class="boxlink" href="https://www.buymeacoffee.com/yinfu">~~~
-    @@description **Coffee** @@
-    @@box-content
-      ~~~<img src="https://user-images.githubusercontent.com/1376749/120938564-50c59780-c6e1-11eb-814f-22a0399623c5.png" alt="Buy Me a Coffee"> ~~~
-    @@
-    ~~~</a>~~~
-  @@
-
-  @@box
-    ~~~<a class="boxlink" href="https://www.paypal.me/yinfu123">~~~
-    @@description **PayPal** @@
-    @@box-content
-      ~~~<img src="https://cdn.jsdelivr.net/gh/twolfson/paypal-github-button@1.0.0/dist/button.svg" alt="Support via PayPal"> ~~~
-    @@
-    ~~~</a>~~~
-  @@
-@@
-
 
 
 <!-- ```{tableofcontents}
