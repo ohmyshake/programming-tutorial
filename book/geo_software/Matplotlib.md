@@ -17,7 +17,7 @@ kernelspec:
 
 ---
 
-```{code-cell}
+```{code-cell} ./pygmt_files/test.py
 :tags: [hide-input]
 import os
 print("sss")
