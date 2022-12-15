@@ -72,7 +72,7 @@ Machine learning and deep learning approaches in Python.
 :link: https://github.com/orgs/executablebooks/discussions
 :class-body: text-center
 :class-header: bg-light text-center
-**Daily Software**
+**MacOS Software**
 ^^^
 ```{image} ./intro_files/software.webp
 :height: 100
