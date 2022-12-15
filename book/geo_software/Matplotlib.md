@@ -19,7 +19,7 @@ kernelspec:
 
 
 
-```
+```{eval-rst}
 .. note::
 
    A note written in reStructuredText.
