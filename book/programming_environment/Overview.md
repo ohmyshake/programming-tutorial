@@ -82,7 +82,6 @@ Complete list in my mac please check [Mac-Software.md](./macos_software/MacSoftw
 
 Toctree Mac finder as follows:
 
-::::{toggle}
 ```
 $ toctree Mac finder
 FuYin-MAC/
@@ -101,7 +100,7 @@ FuYin-MAC/
 ├── workspace
 └── yinfu           # built-in
 ```
-::::
+
 
 ### Applications
 
