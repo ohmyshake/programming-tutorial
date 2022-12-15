@@ -51,6 +51,7 @@ parts:
   - caption: ML and DL
     # numbered: True 
     # maxdepth: 2
+    chapters:
     - file: ml_dl/Scipy
     - file: ml_dl/PyTorch
 
@@ -58,6 +59,7 @@ parts:
   - caption: MacOS Software
     # numbered: True 
     # maxdepth: 2
+    chapters:
     - file: macos_software/MacSoftware
     - file: macos_software/Matplotlib
     - file: macos_software/PyGMT
@@ -70,6 +72,7 @@ parts:
   - caption: Geo Software
     # numbered: True 
     # maxdepth: 2
+    chapters:
     - file: geo_software/SeisSoftware
     - file: geo_software/SAC
     - file: geo_software/Obspy
