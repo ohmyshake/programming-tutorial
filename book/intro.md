@@ -15,13 +15,9 @@ There is no guarantees of correctness and if you spot an error or a doubtful sta
 
 ---
 The main content of the notebook is as follows:
-
-
 ::::{grid} 1 1 2 2
 :class-container: text-center
 :gutter: 2
-
-
 
 :::{grid-item-card}
 :link: ./programming_environment/Overview.html
@@ -35,9 +31,6 @@ The main content of the notebook is as follows:
 Configure the programming environment in MacOS.
 :::
 
-
-
-
 :::{grid-item-card}
 :link: https://github.com/orgs/executablebooks/discussions
 :class-body: text-center
@@ -49,8 +42,6 @@ Configure the programming environment in MacOS.
 ```
 Develop a python package, GUI, and Dashboards.
 :::
-
-
 
 :::{grid-item-card}
 :link: https://github.com/orgs/executablebooks/discussions
