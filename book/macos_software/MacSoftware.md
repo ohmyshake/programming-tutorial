@@ -199,6 +199,6 @@ table th:nth-of-type(3) {
 |     `PROMISE Utility Pro`            | For my storage                    |                   | 
 |     `Peek`            |  For Previewer                   | Appstore                  | 
 |     `Loopback`            | For Otter translate                    |                   | 
-|     `jupyter Viewer`            |                     | Github                  | 
+|     `jupyter Viewer`            | For previewer of jupyter-notebook                    | Github                  | 
 |     ``            |                     |                   | 
 |     ``            |                     |                   | 
