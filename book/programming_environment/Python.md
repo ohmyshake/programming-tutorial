@@ -118,6 +118,8 @@ Here is my `~/.condarc` file:
 
 ```bash
 cat ~/.condarc
+
+# output
 channels:
   - defaults
 show_channel_urls: true
