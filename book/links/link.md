@@ -67,7 +67,7 @@ Department of Earth, Environmental and Planetary Sciences, <strong>Brown</strong
 ## Societies of Geosciences
 
 
-[Chinese Geophysical Society (CGS)(http://www.cgscgs.org.cn/)
+[Chinese Geophysical Society (CGS)](http://www.cgscgs.org.cn/)
 
 
 
