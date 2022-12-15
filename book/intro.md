@@ -33,6 +33,7 @@ The main content of the notebook is as follows:
 ```{image} ./intro_files/macos.jpg
 :height: 100
 ```
+
 Configure the programming environment in MacOS.
 :::
 
@@ -45,9 +46,11 @@ Configure the programming environment in MacOS.
 :class-header: bg-light text-center
 **App Development**
 ^^^
-```{image} https://inferentialthinking.com/_static/favicon.png
+
+```{image} ./intro_files/pyside6.png
 :height: 100
 ```
+
 We have community discussions, talk about ideas, and share general questions and feedback in our community forum.
 :::
 
@@ -59,9 +62,11 @@ We have community discussions, talk about ideas, and share general questions and
 :class-header: bg-light text-center
 **Parallel Computing & HPC Platform**
 ^^^
-```{image} https://inferentialthinking.com/_static/favicon.png
+
+```{image} ./intro_files/hpc.webp
 :height: 100
 ```
+
 Common strategies for parallel computing and hybrid programming between Python and C++
 :::
 
@@ -73,9 +78,11 @@ Common strategies for parallel computing and hybrid programming between Python a
 :class-header: bg-light text-center
 **Machine Learning & Deep Learning**
 ^^^
-```{image} https://inferentialthinking.com/_static/favicon.png
+
+```{image} ./intro_files/network.jpg
 :height: 100
 ```
+
 We have community discussions, talk about ideas, and share general questions and feedback in our community forum.
 :::
 
@@ -87,9 +94,11 @@ We have community discussions, talk about ideas, and share general questions and
 :class-header: bg-light text-center
 **Daily Software**
 ^^^
-```{image} https://inferentialthinking.com/_static/favicon.png
+
+```{image} ./intro_files/software.webp
 :height: 100
 ```
+
 We have community discussions, talk about ideas, and share general questions and feedback in our community forum.
 :::
 
@@ -101,9 +110,11 @@ We have community discussions, talk about ideas, and share general questions and
 :class-header: bg-light text-center
 **Geo Software**
 ^^^
-```{image} https://inferentialthinking.com/_static/favicon.png
+
+```{image} ./intro_files/specfem3d.jpg
 :height: 100
 ```
+
 We have community discussions, talk about ideas, and share general questions and feedback in our community forum.
 :::
 ::::
