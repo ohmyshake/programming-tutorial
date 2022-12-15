@@ -43,9 +43,11 @@ NOTS is a `Red Hat` linux system, the default shell is `bash`.
 Becasue I'm not the administrator, so I don't have the root permissions,
 which means I can't use `yum` to install packages. 
 
-I must install `zsh` by myself.
-In addition, I can't change the default shell from `bash` to `zsh`, 
+
+In addition, I can't change the default shell from `bash` to `zsh` by myself, 
 but I let the administrator change it to `zsh` which is a old version.
+So I install `zsh` by myself, and auto-run new zsh when I login.
+
 
 ```bash
 # use wget to download source package 
