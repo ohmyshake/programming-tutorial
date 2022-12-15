@@ -16,20 +16,20 @@ In practice, it is mainly used to ensure the security of remote login and remote
 Use the `-V` parameter to check the version number
 
 ```bash
-$ ssh -V
+ssh -V
 ```
 
 The following commands are used to log in to the server over `SSH`
 
 ```bash
-$ ssh user@hostname
+ssh user@hostname
 ```
 
 By default, `SSH` connects to port `22` of the server
 
 
 ```bash
-$ ssh -p 22 -X user@hostname
+ssh -p 22 -X user@hostname
 ```
 
 - `-p`: specifies the server port that the SSH client connects to
@@ -58,7 +58,7 @@ The following ssh-keygen command generates SSH RSA public and private key files 
 
 
 ```bash
-$ ssh-keygen -t rsa -C "fy21@rice.edu"
+ssh-keygen -t rsa -C "fy21@rice.edu"
 ```
 
 - `ssh-keygen`: the program used to create the keys
@@ -70,7 +70,7 @@ $ ssh-keygen -t rsa -C "fy21@rice.edu"
 The `~/.ssh` directory has some personal key files and other files.
 
 ```bash
-$ ls -l ~/.ssh
+ls -l ~/.ssh
 total 32
 -rw-r--r--@ 1 yinfu  staff  1479 Jul 26 16:23 config
 -rw-------  1 yinfu  staff  2602 Jul 20 22:53 id_rsa
@@ -96,8 +96,8 @@ The permission of the `authorized_keys` file must be set to `644`, that is, only
 User can edit the `authorized_keys` file manually and paste the public key into it, or can run the following command on the local computer.
 
 ```bash
-$ cat ~/.ssh/id_rsa.pub | ssh user@host "mkdir -p ~/.ssh && cat >> ~/.ssh/authorized_keys"
-$ chmod 644 ~/.ssh/authorized_keys
+cat ~/.ssh/id_rsa.pub | ssh user@host "mkdir -p ~/.ssh && cat >> ~/.ssh/authorized_keys"
+chmod 644 ~/.ssh/authorized_keys
 ```
 ::::
 
@@ -106,7 +106,7 @@ OpenSSH comes with the `ssh-copy-id` command to automatically copy the public ke
  
 
 ```bash
-$ ssh-copy-id -i ~/.ssh/id_rsa.pub user@host
+ssh-copy-id -i ~/.ssh/id_rsa.pub user@host
 ```
 :::{note}
 `ssh-copy-id` adds the public key directly to the end of the `authorized_keys` file. If the end of the `authorized_keys` file is not a newline character, the new public key will be added to the end of the previous public key, and the two public keys will be linked together, making neither of them valid. Therefore, if the `authorized_keys` file already exists, make sure that the `authorized_keys` file ends with a newline character before using the `ssh-copy-id` command (assuming the file already exists).
@@ -238,8 +238,8 @@ Host seislab2
 It can be used after the installation is complete, for example:
 
 ```bash
-$ sshfs -o follow_symlinks -p 1012 yinf@222.195.74.184:/ /Users/yf/share1/
-$ sshfs -o follow_symlinks fy21@nots.rice.edu:/ /Users/yinfu/share2/
+sshfs -o follow_symlinks -p 1012 yinf@222.195.74.184:/ /Users/yf/share1/
+sshfs -o follow_symlinks fy21@nots.rice.edu:/ /Users/yinfu/share2/
 ```
 
 ## Reference
