@@ -85,7 +85,10 @@ My `diskutil list`
 | none      | A         | 185.199.108.153 |
 
 
-\note{Use `ping OUCyf.github.io` to get id of ADDRESS/VALUE}
+:::{admonition} Admonition
+Use `ping OUCyf.github.io` to get id of ADDRESS/VALUE
+:::
+
 
 - **For `CNAME`:**
 
