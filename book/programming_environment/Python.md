@@ -193,7 +193,7 @@ table th:nth-of-type(2) {
 | `openmp`   | ...       | conda     |
 | ``   |        |      |
 
-**Seismology package**:
+**geophysics package**:
 
 |     Name     |    Purpose    |     Way       |     
 | ------------ | ------------- | :-----------: |
