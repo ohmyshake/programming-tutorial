@@ -151,7 +151,7 @@ pygmt.config(PARAMETER = value)
 
 ### 2021 Yangbi Earthquake Map
 
-```{code-cell} ipython3
+```{code-cell} python
 :tags: [hide-input]
 """
 Created on Tue May 25 22:44:49 2021
