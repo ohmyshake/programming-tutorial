@@ -82,7 +82,7 @@ Complete list in my mac please check [Mac-Software.md](./macos_software/MacSoftw
 
 Toctree Mac finder as follows:
 
-```
+```bash
 $ toctree Mac finder
 FuYin-MAC/
 ├── Dropbox
