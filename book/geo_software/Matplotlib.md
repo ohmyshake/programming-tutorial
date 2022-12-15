@@ -18,7 +18,7 @@ kernelspec:
 ---
 
 
-
+````{code-cell} ipython3
 ```{eval-rst}
 
 
@@ -26,9 +26,8 @@ kernelspec:
   :language: python
   :linenos:
   
-
-
 ```
+````
 .. include:: ./pygmt_files/test.rst
 
 ## 3D Misfit Space
