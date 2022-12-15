@@ -17,9 +17,7 @@ kernelspec:
 
 ---
 
-- [x] Write the press release
-- [ ] Update the website
-- [ ] Contact the media
+
 
 ```{code-cell} ./pygmt_files/test.py
 :tags: [hide-input]
