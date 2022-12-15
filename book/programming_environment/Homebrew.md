@@ -46,32 +46,32 @@ Please check [Homebrew](https://brew.sh/index_zh-cn.html) webpage for more info.
 - 如果你是初次安装，这里使用中科大源:
 ```bash
 # 1.执行安装脚本
-$ export HOMEBREW_BREW_GIT_REMOTE="https://mirrors.ustc.edu.cn/brew.git"
-$ export HOMEBREW_CORE_GIT_REMOTE="https://mirrors.ustc.edu.cn/homebrew-core.git"
-$ /bin/bash -c "$(curl -fsSL https://gitee.com/ineo6/homebrew-install/raw/master/install.sh)"
+export HOMEBREW_BREW_GIT_REMOTE="https://mirrors.ustc.edu.cn/brew.git"
+export HOMEBREW_CORE_GIT_REMOTE="https://mirrors.ustc.edu.cn/homebrew-core.git"
+/bin/bash -c "$(curl -fsSL https://gitee.com/ineo6/homebrew-install/raw/master/install.sh)"
 
 # 2.安装完成后设置 bottles 镜像
-$ echo 'export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.ustc.edu.cn/homebrew-bottles/bottles' >> ~/.zshrc
-$ source ~/.zshrc
+echo 'export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.ustc.edu.cn/homebrew-bottles/bottles' >> ~/.zshrc
+source ~/.zshrc
 ```
 
 - 如果你已经安装过，需要换源:
 ```bash
 # 1. 设置中科大源
-$ git -C "$(brew --repo)" remote set-url origin https://mirrors.ustc.edu.cn/brew.git
-$ git -C "$(brew --repo homebrew/core)" remote set-url origin https://mirrors.ustc.edu.cn/homebrew-core.git
-$ git -C "$(brew --repo homebrew/cask)" remote set-url origin https://mirrors.ustc.edu.cn/homebrew-cask.git
+git -C "$(brew --repo)" remote set-url origin https://mirrors.ustc.edu.cn/brew.git
+git -C "$(brew --repo homebrew/core)" remote set-url origin https://mirrors.ustc.edu.cn/homebrew-core.git
+git -C "$(brew --repo homebrew/cask)" remote set-url origin https://mirrors.ustc.edu.cn/homebrew-cask.git
 
 # 2. 设置 bottles 镜像
-$ echo 'export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.ustc.edu.cn/homebrew-bottles/bottles' >> ~/.zshrc
-$ source ~/.zshrc
+echo 'export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.ustc.edu.cn/homebrew-bottles/bottles' >> ~/.zshrc
+source ~/.zshrc
 ```
 
 - 恢复默认源
 ```bash
-$ git -C "$(brew --repo)" remote set-url origin https://github.com/Homebrew/brew.git
-$ git -C "$(brew --repo homebrew/core)" remote set-url origin https://github.com/Homebrew/homebrew-core.git
-$ git -C "$(brew --repo homebrew/cask)" remote set-url origin https://github.com/Homebrew/homebrew-cask.git
+git -C "$(brew --repo)" remote set-url origin https://github.com/Homebrew/brew.git
+git -C "$(brew --repo homebrew/core)" remote set-url origin https://github.com/Homebrew/homebrew-core.git
+git -C "$(brew --repo homebrew/cask)" remote set-url origin https://github.com/Homebrew/homebrew-cask.git
 ```
 `homebrew-bottles` 配置只能手动删除，将 `~/.zshrc` 文件中的 `HOMEBREW_BOTTLE_DOMAIN=https://mirrors.xxx.com` 内容删除，并执行 `source ~/.zshrc`
 ::::
