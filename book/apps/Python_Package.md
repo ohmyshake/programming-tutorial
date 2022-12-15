@@ -79,26 +79,33 @@ My `diskutil list`
 
 - **For `A`:**
 
-@@ctable
+
 | HOSTNAME  | TYPE      | ADDRESS/VALUE |
 | :-------: | :-------: | :-----------: |
 | none      | A         | 185.199.108.153 |
-@@
+
 
 \note{Use `ping OUCyf.github.io` to get id of ADDRESS/VALUE}
 
 - **For `CNAME`:**
 
-@@ctable
+
 | HOSTNAME | TYPE | ADDRESS/VALUE|
 |-----------|-----------|-----------|
 | www | CNAME | oucyf.github.io |
-@@
+
 
 - **The screenshot of my setting:**
 
-![](./files/2022-02-21-1.jpg)
 
+```{figure} ./files/2022-02-21-1.jpg
+---
+scale: 50%
+align: center
+name: diskutil-list
+---
+My `diskutil list`
+```
 
 - **Renew domains**
 
@@ -111,13 +118,27 @@ My `diskutil list`
 
 Add the `CNAME` file to the github Pages repository at root directory and write your domain name inside:
 
-![](./files/2022-02-21-3.jpg)
 
+```{figure} ./files/2022-02-21-3.jpg
+---
+scale: 50%
+align: center
+name: diskutil-list
+---
+My `diskutil list`
+```
 
 Or set `custom domain` directly to `Github Pages` in `Settings` of github. Github will automatically adds the `CNAME` file.
 
 
-![](./files/2022-02-21-4.jpg)
+```{figure} ./files/2022-02-21-4.jpg
+---
+scale: 50%
+align: center
+name: diskutil-list
+---
+My `diskutil list`
+```
 
 Enforce `HTTPS` which provides a layer of encryption that prevents others from snooping on or tampering with traffic to your site. When `HTTPS` is enforced, your site will only be served over `HTTPS` instead of `HTTP`.
 
