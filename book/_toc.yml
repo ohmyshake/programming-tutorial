@@ -38,11 +38,11 @@ parts:
     # maxdepth: 2
     chapters:
     - file: hpc/Python 
-    - file: hpc/Python_HPC  # Mpi4py Numba Cupy Ray 
-    - file: hpc/C++  # OpenMP OpenMPI CUDA
-    - file: hpc/Make_Cmake # Vscode-Makefile-Cmake
+    - file: hpc/Python_HPC 
+    - file: hpc/C++ 
+    - file: hpc/Make_Cmake
     - file: hpc/Pybind11_Cython 
-    - file: hpc/Slurm  # https://github.com/accre/SLURM
+    - file: hpc/Slurm
     - file: hpc/Rice_NOTS
     - file: hpc/Azure
     - file: hpc/Amazon_S3
@@ -80,7 +80,7 @@ parts:
     - file: geo_software/CPS
     - file: geo_software/SPECFEM 
     - file: geo_software/Gmsh  
-    - file: geo_software/Paraview  # https://www.paraview.org/
+    - file: geo_software/Paraview
     - file: geo_software/FwiFlow
     - file: geo_software/GEOSX # https://github.com/GEOSX/GEOSX
 
