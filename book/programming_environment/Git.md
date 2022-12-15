@@ -112,7 +112,7 @@ My complete `~/.gitconfig` file showing below:
 ```bash
 [user]
 	name = OUCyf
-	email = fy21@rice.edu
+	email = oucyinfu@gmail.com
 [color]
 	ui = true
 [alias]
