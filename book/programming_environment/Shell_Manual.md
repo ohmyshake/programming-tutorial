@@ -1,9 +1,5 @@
 # Shell Manual
 
-## git
-
-Please refer to (./)[./]...
-
 
 ## ln
 ```bash
