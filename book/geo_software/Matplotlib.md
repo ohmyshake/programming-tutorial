@@ -41,7 +41,7 @@ import math
 from mpl_toolkits.mplot3d import Axes3D
 from matplotlib import cm
 
-############### 1. input parameter
+#%% 1. input parameter
 rank_path = "./matplotlib_files/3d-mcmtpy/"
 MPI_n = 30
 strike_num = 361                                                                # step:5度 = 73  ||  step:1度 = 361
@@ -53,7 +53,7 @@ Rake = -170                                                                     
 Num_stem = 40
 
 
-############### 2. read data
+#%% 2. read data
 for i in range(0, MPI_n, 1):
     FM_all_path = os.path.join(rank_path, 'rank_'+str(i)+'_FM_all')
     if i == 0:
@@ -88,14 +88,14 @@ strike_2D = Z[ rake_index,:]                                                    
 
 
 
-############### 3. plot
+#%% 3. plot
 fig = plt.figure(figsize=(10, 10))
 gs1 = gridspec.GridSpec(4, 2)
 # fig.suptitle('Strike and Rake Grid-Search')
 fig.subplots_adjust(wspace=0.1, hspace=0.5)
 
 
-### 3.1. 3-D subplot
+# 3.1. 3-D subplot
 cmap = 'coolwarm'                                                               # coolwarm plasma viridis
 ax = plt.subplot(gs1[:-1, :], projection='3d')
 # plt.rcParams['font.sans-serif'] = ['Times New Roman']
