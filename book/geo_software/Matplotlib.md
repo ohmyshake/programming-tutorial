@@ -21,9 +21,6 @@ kernelspec:
 
 ## 3D Misfit Space
 
-
-
-
 ```{code-cell} ipython3
 :tags: [hide-input]
 
@@ -43,8 +40,6 @@ from matplotlib.pyplot import MultipleLocator
 import math
 from mpl_toolkits.mplot3d import Axes3D
 from matplotlib import cm
-
-
 
 ############### 1. input parameter
 rank_path = "./matplotlib_files/3d-mcmtpy/"
