@@ -38,6 +38,12 @@ conda activate pygmt
 
 # deactivate env
 conda deactivate
+
+# env list
+conda env list
+
+# remove a env
+conda env remove -n yourEnv
 ```
 
 
