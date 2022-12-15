@@ -55,7 +55,7 @@ parts:
   #   - file: programming_manual_and_scripts/PyTorch
 
 
-  # - caption: Daily Software
+  # - caption: MacOS Software
   #   # numbered: True 
   #   # maxdepth: 2
   #   - file: daily/MacSoftware
