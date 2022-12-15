@@ -22,7 +22,7 @@ kernelspec:
 ## 3D Misfit Space
 ::::{toggle}
 ```{code-cell} ipython3
-:tags: [hide-input]
+# :tags: [hide-input]
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
