@@ -151,7 +151,7 @@ pygmt.config(PARAMETER = value)
 ## MAP
 
 
-### 2021 Yangbi Earthquake Map
+### 1. 2021 Yangbi Earthquake Map
 
 ```{code-cell} ipython3
 :tags: [hide-input]
@@ -322,7 +322,7 @@ fig.show()
 
 
 
-### Dayindian Water reservoir
+### 2. Dayindian Water reservoir
 
 **Make grd files:**
 
@@ -599,7 +599,7 @@ fig.show()
 
 ## Velocity Model
 
-### Longmen mountain
+### 1. Longmen mountain
 
 
 ```{code-cell} ipython3
@@ -743,7 +743,7 @@ fig.show()
 
 ## Earthquake Source
 
-### Lune
+### 1. Lune
 
 ```{code-cell} ipython3
 :tags: [hide-input]
@@ -922,7 +922,7 @@ fig.show()
 
 
 
-### Hudson Plot
+### 2. Hudson Plot
 
 ```{code-cell} ipython3
 :tags: [hide-input]
@@ -1068,7 +1068,7 @@ ax1.set_ylim(-1-0.1, 1+0.1)
 
 
 
-### Beachball
+### 3. Beachball
 
 ```{code-cell} ipython3
 :tags: [hide-input]
