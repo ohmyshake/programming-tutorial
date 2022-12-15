@@ -33,7 +33,6 @@ The main content of the notebook is as follows:
 ```{image} ./intro_files/macos.jpg
 :height: 100
 ```
-
 Configure the programming environment in MacOS.
 :::
 
