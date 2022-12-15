@@ -129,7 +129,8 @@ and some common command to run the job.
 # submit a job
 sbatch jobs.slurm
 
-# 
+# check the state of job
+sacct -j JobID
 ```
 
 **The `jobs.slurm` content:**
