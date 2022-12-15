@@ -1,7 +1,7 @@
 # Python Package 
 
 
-setup.py poetry github-action sphnix  || Buy and Bind Domain Name with Github Pages
+setup.py poetry github-action sphnix   Buy and Bind Domain Name with Github Pages
 
 
 ## poetry
