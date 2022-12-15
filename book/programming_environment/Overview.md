@@ -137,7 +137,7 @@ such as `rdseed`. And also put executable files of large programs here, such `sp
 
 - {file}`~/src` stores source code from **other institutions’ software**, such as SAC, OpenMPI, Specfem-2D...
 
-- More information please check [Geo-Software.md](./geophysics_software/SeisSoftware.md) list.
+- More information please check [Geo-Software.md](./geophysics_software/GeoSoftware.md) list.
 
 ```{note}
 Remember that after compiling, put the executable code in the {file}`~/bin` folder.
