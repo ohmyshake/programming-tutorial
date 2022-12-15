@@ -30,7 +30,7 @@ File-IO Subprocess Numpy h5py
 ### Manual
 
 ### Case-1
-<!-- ,remove-output -->
+
 ```{code-cell} ipython3
 :tags: [hide-input,hide-output,output_scroll,remove-stderr,raises-exception]
 
