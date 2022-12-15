@@ -102,34 +102,6 @@ Useful geophysics softwares.
 
 
 
-⏬ &nbsp; For Non-Chinese friends:
-
-::::{grid} 1 1 2 2
-:class-container: text-center
-:gutter: 2
-
-:::{grid-item-card}
-:link: https://www.buymeacoffee.com/yinfu
-:class-body: text-center
-:class-header: bg-light text-center
-**Coffee**
-^^^
-```{image} https://user-images.githubusercontent.com/1376749/120938564-50c59780-c6e1-11eb-814f-22a0399623c5.png
-:height: 70
-```
-:::
-
-:::{grid-item-card}
-:link: https://www.paypal.me/yinfu123
-:class-body: text-center
-:class-header: bg-light text-center
-**PayPal**
-^^^
-```{image} https://cdn.jsdelivr.net/gh/twolfson/paypal-github-button@1.0.0/dist/button.svg
-:height: 100
-```
-:::
-::::
 
 
 
@@ -242,4 +214,35 @@ Many thanks to...
 ```
 :::
 
+::::
+
+
+
+⏬ &nbsp; For Non-Chinese friends:
+
+::::{grid} 1 1 2 2
+:class-container: text-center
+:gutter: 2
+
+:::{grid-item-card}
+:link: https://www.buymeacoffee.com/yinfu
+:class-body: text-center
+:class-header: bg-light text-center
+**Coffee**
+^^^
+```{image} https://user-images.githubusercontent.com/1376749/120938564-50c59780-c6e1-11eb-814f-22a0399623c5.png
+:height: 70
+```
+:::
+
+:::{grid-item-card}
+:link: https://www.paypal.me/yinfu123
+:class-body: text-center
+:class-header: bg-light text-center
+**PayPal**
+^^^
+```{image} https://cdn.jsdelivr.net/gh/twolfson/paypal-github-button@1.0.0/dist/button.svg
+:height: 100
+```
+:::
 ::::
