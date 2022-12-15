@@ -45,8 +45,10 @@ $ mamba install --channel conda-forge pygmt
 :::::
 
 
+## Configuration
 
-## Data Set Config
+
+### Data Set Config
 <!-- 269.69 -->
 
 The directory that GMT automatically downloads the data file from the server is `~/.gmt/server`. About the detailed info, please check [GMT Chinese Manual about Geodata set session](https://docs.gmt-china.org/latest/dataset/usage/#gmt)
@@ -116,7 +118,7 @@ $ gmt --show-datadir
 
 
 
-## My Data List
+### My Data List
 
 :::{toggle}
 |    Name       |    From       |   Directory  |     
