@@ -20,9 +20,7 @@ kernelspec:
 
 
 ```{eval-rst}
-.. note::
 
-   A note written in reStructuredText.
 
 .. literalinclude:: ./test.py
   :language: python
