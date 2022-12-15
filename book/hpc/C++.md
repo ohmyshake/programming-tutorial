@@ -1,2 +1,4 @@
 # C++
-1
+
+
+## OpenMP OpenMPI CUDA
