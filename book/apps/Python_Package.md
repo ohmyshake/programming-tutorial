@@ -128,7 +128,7 @@ scale: 50%
 align: center
 name: diskutil-list
 ---
-My `diskutil list`
+
 ```
 
 Or set `custom domain` directly to `Github Pages` in `Settings` of github. Github will automatically adds the `CNAME` file.
