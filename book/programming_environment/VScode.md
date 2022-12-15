@@ -17,7 +17,7 @@ Download [VSCode](https://code.visualstudio.com/download) (Visual Studio Code) a
 
 Recommend to use `Microsoft` account to sign in, and `Github` account is not worked now (until July 28, 2022).
 
-```{figure} ./img/VSCode-2.jpg
+```{figure} ./files/VSCode-2.jpg
 ---
 scale: 100%
 align: center
