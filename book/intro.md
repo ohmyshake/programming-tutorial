@@ -275,7 +275,7 @@ if __name__ == '__main__':
 **PayPal**
 ^^^
 ```{image} https://cdn.jsdelivr.net/gh/twolfson/paypal-github-button@1.0.0/dist/button.svg
-:height: 150
+:height: 100
 ```
 :::
 
