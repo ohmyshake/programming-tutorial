@@ -200,7 +200,7 @@ table th:nth-of-type(2) {
 |     Name     |    Purpose    |     Way       |     
 | ------------ | ------------- | :-----------: |
 | `obspy`       | ...           | conda   |
-| `pygmt`       | ...           | conda (pygmt env)   |
+| `pygmt`       | ... in (pygmt env)           | -c forge conda   |
 | `cartopy`     | Geo-Map       | conda   |
 | `pyfk`        | ...           | pip           |
 | ``   |        |      |
