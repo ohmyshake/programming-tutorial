@@ -225,7 +225,7 @@ MacOS comes with `make`.
 
 ## CMake
 
-Install `brew install cmake` in MacOS system.
+Install via `brew install cmake` in MacOS system.
 
 
 ## Package
