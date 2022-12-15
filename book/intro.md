@@ -63,7 +63,7 @@ Develop a python package, GUI, and Dashboards.
 :height: 100
 ```
 
-Common strategies for parallel computing and hybrid programming between Python and C++
+Parallel computing skill in Python and C++, and HPC tutrial.
 :::
 
 
