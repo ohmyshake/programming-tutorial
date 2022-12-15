@@ -195,11 +195,6 @@ clang++ -I/opt/homebrew/Cellar/open-mpi/4.1.4_2/include
 
 :::
 
-Refer to 
-- https://betterprogramming.pub/integrating-open-mpi-with-clion-on-apple-m1-76b7815c27f2
-- https://www.open-mpi.org/faq/?category=mpi-apps#override-wrappers-after-v1.0
-- https://unix.stackexchange.com/questions/346263/mpicc-with-different-versions-of-gcc
-
 
 
 
@@ -262,6 +257,9 @@ table th:nth-of-type(2) {
 ## Resource
 
 
+- https://betterprogramming.pub/integrating-open-mpi-with-clion-on-apple-m1-76b7815c27f2
+- https://www.open-mpi.org/faq/?category=mpi-apps#override-wrappers-after-v1.0
+- https://unix.stackexchange.com/questions/346263/mpicc-with-different-versions-of-gcc
 - [C 语言教程](https://wangdoc.com/clang/)
 - [C 语言教程](https://www.runoob.com/cprogramming/c-tutorial.html)（较全面、系统）
 - [X 分钟速成 C](https://learnxinyminutes.com/docs/zh-cn/c-cn/)（简要）
