@@ -116,7 +116,7 @@ FuYin-MAC/
 
 ### Download
 
-- Default directory for browser downloads
+- Default directory of browser downloads
 
 ### me
 
