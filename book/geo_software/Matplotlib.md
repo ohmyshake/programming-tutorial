@@ -17,6 +17,11 @@ kernelspec:
 
 ---
 
+```{code-cell} ipython3
+:tags: [hide-input]
+import os
+
+```
 
 ## 3D Misfit Space
 
