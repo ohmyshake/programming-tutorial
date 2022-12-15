@@ -184,7 +184,7 @@ import subprocess
 from selenium import webdriver
 
 """
-Use jupyter-book generate html automatically.
+Use jupyter-book to generate html automatically.
     1. Download Chrome-driver Plug-in for selenium package from https://chromedriver.chromium.org/
     2. Make sure the project have 'dev' branch
     3. Run this script in the root directory of book-project
