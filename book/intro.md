@@ -57,7 +57,7 @@ Parallel computing skills in Python and C++, and HPC tutrials.
 :::
 
 :::{grid-item-card}
-:link: ./ml_dl/PyTorch
+:link: ./ml_dl/PyTorch.html
 :class-body: text-center
 :class-header: bg-light text-center
 **Machine Learning & Deep Learning**
@@ -69,7 +69,7 @@ Machine learning and deep learning approaches in Python.
 :::
 
 :::{grid-item-card}
-:link: https://github.com/orgs/executablebooks/discussions
+:link: ./macos_software/MacSoftware.html
 :class-body: text-center
 :class-header: bg-light text-center
 **MacOS Software**
@@ -81,7 +81,7 @@ Useful softwares in MacOS system.
 :::
 
 :::{grid-item-card}
-:link: https://github.com/orgs/executablebooks/discussions
+:link: ./geo_software/GeoSoftware.html
 :class-body: text-center
 :class-header: bg-light text-center
 **Geophysics Software**
