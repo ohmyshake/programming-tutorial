@@ -72,12 +72,10 @@ Parallel computing skills in Python and C++, and HPC tutrials.
 :class-header: bg-light text-center
 **Machine Learning & Deep Learning**
 ^^^
-
 ```{image} ./intro_files/network.jpg
 :height: 100
 ```
-
-We have community discussions, talk about ideas, and share general questions and feedback in our community forum.
+Machine learning and deep learning approach in Python.
 :::
 
 
