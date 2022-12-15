@@ -114,10 +114,8 @@ fi
 
 |    Name       |    Purpose    |    Way       |     
 | ------------  | ------------- | :----------: |
-| `mamba`       | ...           | conda        |
 | `numpy`       | ...           | conda  |
 | `matplotlib`  | ...           | conda  |
-| `scipy`       | ...           | conda  |
 
 
 
