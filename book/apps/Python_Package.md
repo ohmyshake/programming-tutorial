@@ -26,7 +26,7 @@ Follow the instructions below: https://ealizadeh.com/blog/guide-to-python-env-pk
 
 2. Use `poetry` install other python package
 
-    Install poetry first
+    Install poetry firstly
     ```bash
     curl -sSL https://install.python-poetry.org | python3 - # do not use pip
 
