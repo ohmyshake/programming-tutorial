@@ -21,7 +21,7 @@ This is Fu's home on NOTS, the following is my data managerment
 |Local Scratch on each node| <font color=red> Not use now </font>|/tmp|4 TB|None|Local|at the end of each job | 
 
 
-https://kb.rice.edu/108237
+[Rice CRC Tutorial](https://kb.rice.edu/108237)
 
 
 
