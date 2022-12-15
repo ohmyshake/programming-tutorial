@@ -63,7 +63,7 @@ Develop a python package, GUI, and Dashboards.
 :height: 100
 ```
 
-Parallel computing skill in Python and C++, and HPC tutrial.
+Parallel computing skill in Python and C++, and HPC tutrials.
 :::
 
 
