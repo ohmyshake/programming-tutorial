@@ -196,9 +196,9 @@ table th:nth-of-type(3) {
 |     `Caffeinated` | Prevent Mac from going to sleep | AppStore | 
 | `DisplayLink Manager` | Program expansion dock driver software for multi-screen display | [link](https://www.synaptics.com/products/displaylink-graphics/downloads/macos) | 
 | `Google Earth Pro` | Earth map          |  MacWk            | 
-|     `PROMISE Utility Pro`            |                     |                   | 
-|     `Peek`            |                     | Appstore                  | 
-|     `Loopback`            |                     |                   | 
+|     `PROMISE Utility Pro`            | For my storage                    |                   | 
+|     `Peek`            |  For Previewer                   | Appstore                  | 
+|     `Loopback`            | For Otter translate                    |                   | 
 |     `jupyter Viewer`            |                     | Github                  | 
 |     ``            |                     |                   | 
 |     ``            |                     |                   | 
