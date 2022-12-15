@@ -250,7 +250,6 @@ if __name__ == '__main__':
 
 ⏬ &nbsp; For Non-Chinese guys:
 
-
 ::::{grid} 1 1 2 2
 :class-container: text-center
 :gutter: 2
