@@ -19,7 +19,7 @@ kernelspec:
 
 
 
-````{eval-rst}
+```{eval-rst}
 .. note::
 
    A note written in reStructuredText.
@@ -28,9 +28,10 @@ kernelspec:
   :language: python
   :linenos:
   
-.. include:: ./pygmt_files/test.rst
 
-````
+
+```
+.. include:: ./pygmt_files/test.rst
 
 ## 3D Misfit Space
 
