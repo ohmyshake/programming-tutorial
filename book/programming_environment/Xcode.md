@@ -45,8 +45,8 @@ Update Xcode
 
 ```bash
 # print the install path which usually is "/Library/Developer/CommandLineTools"
-$ xcode-select --print-path
+xcode-select --print-path
 
 # delete it
-$ sudo rm -rf /Library/Developer/CommandLineTools
+sudo rm -rf /Library/Developer/CommandLineTools
 ```
