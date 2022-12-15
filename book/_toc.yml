@@ -27,7 +27,7 @@ parts:
   #   # numbered: True 
   #   # maxdepth: 2
   #   chapters:    
-  #   - file: apps/Python-Package  # setup.py poetry github-action sphnix  || Buy and Bind Domain Name with Github Pages
+  #   - file: apps/Python_Package  # setup.py poetry github-action sphnix  || Buy and Bind Domain Name with Github Pages
   #   - file: apps/Pyside6 # PySide6 is QT6 for python  https://www.qt.io/qt-for-python
   #   - file: apps/Dash  # https://dash.gallery/Portal/
   #   - file: apps/Docker
