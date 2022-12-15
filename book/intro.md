@@ -230,7 +230,7 @@ if __name__ == '__main__':
 **Programming Environment**
 ^^^
 ```{image} ./intro_files/macos.jpg
-:height: 100
+:height: 150
 ```
 :::
 
