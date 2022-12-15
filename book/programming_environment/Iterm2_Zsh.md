@@ -26,7 +26,7 @@ name: preview
 Terminal preview
 ```
 
-**My `~/.zshrc`**:
+**My `~/.zshrc`** file
 
 
 ::::{toggle}
