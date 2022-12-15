@@ -225,7 +225,6 @@ if __name__ == '__main__':
 :gutter: 2
 
 :::{grid-item-card}
-:link: ./programming_environment/Overview.html
 :class-body: text-center
 :class-header: bg-light text-center
 **Alipay**
@@ -236,7 +235,6 @@ if __name__ == '__main__':
 :::
 
 :::{grid-item-card}
-:link: ./programming_environment/Overview.html
 :class-body: text-center
 :class-header: bg-light text-center
 **WeChat**
