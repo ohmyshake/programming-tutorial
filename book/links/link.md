@@ -66,28 +66,25 @@ Department of Earth, Environmental and Planetary Sciences, <strong>Brown</strong
 
 ## Societies of Geosciences
 
--~~~<a class="link-university" href="http://www.cgscgs.org.cn/">
-Chinese Geophysical Society (CGS)
-</a>~~~
 
--~~~<a class="link-university" href="https://www.agu.org/">
-American Geophysical Union (AGU)
-</a>~~~
-
--~~~<a class="link-university" href="https://www.seismosoc.org/">
-Seismological Society of America (SSA)
-</a>~~~
-
--~~~<a class="link-university" href="https://seg.org/">
-Society of Exploration Geophysicists (SEG)
-</a>~~~
+[Chinese Geophysical Society (CGS)(http://www.cgscgs.org.cn/)
 
 
 
+[American Geophysical Union (AGU)](https://www.agu.org/)
 
-<!-- ###########################################
-     ###### Data and Geo-software Center #######
-     ########################################### -->
+
+
+[Seismological Society of America (SSA)](https://www.seismosoc.org/)
+
+
+
+[Society of Exploration Geophysicists (SEG)](https://seg.org/)
+
+
+
+
+
 
 
 ## Data and Geo-software Center
