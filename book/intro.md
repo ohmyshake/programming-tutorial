@@ -177,8 +177,6 @@ All the source file are edited by VSCode, `run_jb_build.py` is a Python script t
 
 ::::{toggle}
 ```python
-#!/Users/yinfu/opt/miniconda3/bin python3
-# -*- coding: utf-8 -*-
 """
 Use jupyter-book generate html automatically.
     1. Download Chrome-driver Plug-in for selenium package from https://chromedriver.chromium.org/
