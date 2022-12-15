@@ -191,7 +191,7 @@ table th:nth-of-type(2) {
 | `jupyterlab_myst`   |  ...       | pip     |
 | `h5py`   |  ...      |   pip   |
 | `jill`   | for installing Julia       | pip     |
-| ``   |        |      |
+| `openpyxl`   | read excel       | pip     |
 | ``   |        |      |
 
 
