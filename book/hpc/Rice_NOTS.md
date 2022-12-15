@@ -71,7 +71,7 @@ export PATH=/storage/hpc/work/ja62/fy21/software/zsh/bin:$PATH
 ```
 
 
-:::{admonition} Activating `Dracula` Theme!
+:::{admonition} How to start new `zsh` when login?
 :class:  dropdown
 ```bash
 #------------------------------------------#
