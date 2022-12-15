@@ -200,11 +200,7 @@ clang++ -I/opt/homebrew/Cellar/open-mpi/4.1.4_2/include
 
 
 
-
-
 ## Configuration
-
-
 
 
 ### VSCode
