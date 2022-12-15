@@ -19,7 +19,7 @@ kernelspec:
 
 
 
-```ipython3: ./pygmt_files/test.py
+```python: ./pygmt_files/test.py
 ```
 
 ## 3D Misfit Space
