@@ -135,7 +135,7 @@ ps -ef | grep yinf | awk '{ print $2 }' | xargs kill -9
 ## nohup
 
 ```bash
-$ nohup 
+nohup 
 ```
 
 
@@ -148,28 +148,28 @@ follow the instructions below: https://ealizadeh.com/blog/guide-to-python-env-pk
 1. use `conda` create a new environment, only install `python`
 
     ```bash
-    $ conda env create -f environment.yml  # create env according to .yml file
-    $ conda env export > environment.yml  # export .yml file
-    $ conda activate jupiter-dev  # activate env
+    conda env create -f environment.yml  # create env according to .yml file
+    conda env export > environment.yml  # export .yml file
+    conda activate jupiter-dev  # activate env
     ```
 
 2. use `poetry` install other python package
 
 install poetry first
 ```bash
-$ curl -sSL https://install.python-poetry.org | python3 - # do not use pip
+curl -sSL https://install.python-poetry.org | python3 - # do not use pip
 
-$ mkdir $ZSH_CUSTOM/plugins/poetry # add poetry into oh-my-zsh plugins
-$ poetry completions zsh > $ZSH_CUSTOM/plugins/poetry/_poetry
+mkdir $ZSH_CUSTOM/plugins/poetry # add poetry into oh-my-zsh plugins
+poetry completions zsh > $ZSH_CUSTOM/plugins/poetry/_poetry
 ```
 
 
 ```bash
-$ poetry config virtualenvs.create false  # do not allow poetry create env
-$ poetry init  # this command will create pyproject.toml file
-$ poetry install  # this command will install some package mentioned in 'pyproject.toml', and also generate a 'poetry.lock' file
+poetry config virtualenvs.create false  # do not allow poetry create env
+poetry init  # this command will create pyproject.toml file
+poetry install  # this command will install some package mentioned in 'pyproject.toml', and also generate a 'poetry.lock' file
 # Now you can change 'pyproject.toml' by hand
-$ poetry update # update the new info in 'pyproject.toml' into 'poetry.lock' file
+poetry update # update the new info in 'pyproject.toml' into 'poetry.lock' file
 ```
 
 
@@ -194,7 +194,7 @@ More info can be found in https://blog.tai2.net/how-to-use-otter-en.html
 1. Firstly install `BlackHole-2ch` using `brew`, and the github repository is [here.](https://github.com/ExistentialAudio/BlackHole)
 
     ```bash
-    $ brew install blackhole-2ch
+    brew install blackhole-2ch
     ```
 
 2. Download `Loopback` software. You can download it from its official [website](https://rogueamoeba.com/loopback/) or other ways.
@@ -253,15 +253,15 @@ Other verison will be failed.
 
 ```bash
 # install julia
-$ jill install 1.3
+jill install 1.3
 
 # quit conda env
-$ conda deactivate
+conda deactivate
 
 # install FwiFlow
-$ julia > using Pkg
-$ julia > Pkg.add("FwiFlow")
-$ julia > Pkg.build("FwiFlow")
+julia > using Pkg
+julia > Pkg.add("FwiFlow")
+julia > Pkg.build("FwiFlow")
 
 ```
 
@@ -269,7 +269,7 @@ $ julia > Pkg.build("FwiFlow")
 ## Seis4CCS
 
 ```bash
-$ julia > ] add https://github.com/slimgroup/Seis4CCS.jl.git
-$ julia > ] add ColorSchemes@3.19
-$ julia > ] add https://github.com/slimgroup/SlimPlotting.jl.git
+julia > ] add https://github.com/slimgroup/Seis4CCS.jl.git
+julia > ] add ColorSchemes@3.19
+julia > ] add https://github.com/slimgroup/SlimPlotting.jl.git
 ```
