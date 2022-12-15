@@ -34,7 +34,7 @@ $SHARED_SCRATCH is to be used only for job I/O.  Delete everything you do not ne
 
 ```{figure} ./files/cpu_gpu.jpg
 ---
-scale: 30%
+scale: 70%
 align: center
 name: cpu_gpu
 ---
