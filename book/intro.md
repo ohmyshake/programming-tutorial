@@ -12,14 +12,6 @@ I'm [**Fu Yin**](https://yinfu.info/), a geophysics graduate student at Rice Uni
 There is no guarantees of correctness and if you spot an error or a doubtful statement, kindly let me know.
 :::
 
-```{image} https://inferentialthinking.com/_static/favicon.png
-:height: 100
-```
----
-scale: 6%
-align: center
-name: vscode-account
----
 
 ---
 The main content of the notebook is as follows:
