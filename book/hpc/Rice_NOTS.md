@@ -37,7 +37,7 @@ name: cpu_gpu
 NOTS Resources 
 ```
 
-## NOTS Cluster
+## Teriminal Configuraion
 
 NOTS is a Red Hat linux system, the default shell is `bash`.
 Becasue I'm not the administrator, so I don't have the root permissions,
