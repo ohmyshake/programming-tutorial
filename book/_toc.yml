@@ -23,71 +23,70 @@ parts:
     - file: programming_environment/Shell_Manual
     - file: programming_environment/Shortcuts
 
-  # - caption: App Development
-  #   # numbered: True 
-  #   # maxdepth: 2
-  #   chapters:    
-  #   - file: apps/Python_Package  # setup.py poetry github-action sphnix  || Buy and Bind Domain Name with Github Pages
-  #   - file: apps/Pyside6 # PySide6 is QT6 for python  https://www.qt.io/qt-for-python
-  #   - file: apps/Dash  # https://dash.gallery/Portal/
-  #   - file: apps/Docker
+  - caption: App Development
+    # numbered: True 
+    # maxdepth: 2
+    chapters:    
+    - file: apps/Python_Package  # setup.py poetry github-action sphnix  || Buy and Bind Domain Name with Github Pages
+    - file: apps/Pyside6 # PySide6 is QT6 for python  https://www.qt.io/qt-for-python
+    - file: apps/Dash  # https://dash.gallery/Portal/
+    - file: apps/Docker
 
 
-  # - caption: Parallel Computing and HPC Platform
-  #   # numbered: True 
-  #   # maxdepth: 2
-  #   chapters:
-  #   - file: hpc/Python  # File-IO Subprocess Numpy h5py 
-  #   - file: hpc/Python_HPC  # Mpi4py Numba Cupy Ray 
-  #   - file: hpc/C++  # OpenMP OpenMPI CUDA
-  #   - file: hpc/Make_Cmake # Vscode-Makefile-Cmake
-  #   - file: hpc/Pybind11_Cython 
-  #   - file: hpc/Slurm  # https://github.com/accre/SLURM
-  #   - file: hpc/Rice_NOTS
-  #   - file: hpc/Azure
-  #   - file: hpc/Amazon_S3
+  - caption: Parallel Computing and HPC Platform
+    # numbered: True 
+    # maxdepth: 2
+    chapters:
+    - file: hpc/Python  # File-IO Subprocess Numpy h5py 
+    - file: hpc/Python_HPC  # Mpi4py Numba Cupy Ray 
+    - file: hpc/C++  # OpenMP OpenMPI CUDA
+    - file: hpc/Make_Cmake # Vscode-Makefile-Cmake
+    - file: hpc/Pybind11_Cython 
+    - file: hpc/Slurm  # https://github.com/accre/SLURM
+    - file: hpc/Rice_NOTS
+    - file: hpc/Azure
+    - file: hpc/Amazon_S3
 
 
-  # - caption: ML and DL
-  #   # numbered: True 
-  #   # maxdepth: 2
-  #   - file: ml_dl/Scipy
-  #   - file: ml_dl/PyTorch
+  - caption: ML and DL
+    # numbered: True 
+    # maxdepth: 2
+    - file: ml_dl/Scipy
+    - file: ml_dl/PyTorch
 
 
-  # - caption: MacOS Software
-  #   # numbered: True 
-  #   # maxdepth: 2
-  #   - file: macos_software/MacSoftware
-  #   - file: macos_software/Matplotlib
-  #   - file: macos_software/PyGMT
-  #   - file: macos_software/Globus
-  #   - file: macos_software/ImageMagick
-  #   - file: macos_software/Otter
-  #   - file: macos_software/PROMISE-Utility
+  - caption: MacOS Software
+    # numbered: True 
+    # maxdepth: 2
+    - file: macos_software/MacSoftware
+    - file: macos_software/Matplotlib
+    - file: macos_software/PyGMT
+    - file: macos_software/Globus
+    - file: macos_software/ImageMagick
+    - file: macos_software/Otter
+    - file: macos_software/PROMISE_Utility
 
 
-  # - caption: Geo Software
-  #   # numbered: True 
-  #   # maxdepth: 2
-  #   - file: geo_software/SeisSoftware
-  #   - file: geo_software/SAC
-  #   - file: geo_software/Obspy
-  #   - file: geo_software/seed_mseed_sac  # seed2sac  sac2mseed cutevent
-  #   - file: geo_software/DAS_format # TDMS
-  #   - file: geo_software/CPS
-  #   - file: geo_software/SPECFEM  # adjtomo  https://github.com/adjtomo/seisflows
-  #   - file: geo_software/Gmsh  # pygmsh
-  #   - file: geo_software/Paraview  # https://www.paraview.org/
-  #   - file: geo_software/FwiFlow
-  #   - file: geo_software/GEOSX # https://github.com/GEOSX/GEOSX
+  - caption: Geo Software
+    # numbered: True 
+    # maxdepth: 2
+    - file: geo_software/SeisSoftware
+    - file: geo_software/SAC
+    - file: geo_software/Obspy
+    - file: geo_software/DAS_format # TDMS
+    - file: geo_software/CPS
+    - file: geo_software/SPECFEM  # adjtomo  https://github.com/adjtomo/seisflows
+    - file: geo_software/Gmsh  # pygmsh
+    - file: geo_software/Paraview  # https://www.paraview.org/
+    - file: geo_software/FwiFlow
+    - file: geo_software/GEOSX # https://github.com/GEOSX/GEOSX
 
 
-  # - caption: Links
-  #   chapters:
-  #   - file: links/link.md
-  #   - url: https://yinfu.info/
-  #     title: About Me
+  - caption: Links
+    chapters:
+    - file: links/link.md
+    - url: https://yinfu.info/
+      title: About Me
 
 
 
