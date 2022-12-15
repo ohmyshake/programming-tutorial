@@ -264,7 +264,7 @@ if __name__ == '__main__':
 **Coffee**
 ^^^
 ```{image} https://user-images.githubusercontent.com/1376749/120938564-50c59780-c6e1-11eb-814f-22a0399623c5.png
-:height: 150
+:height: 100
 ```
 :::
 
