@@ -171,7 +171,7 @@ All the source files are edited in VSCode, `run_jb_build.py` is a Python script 
 
 - `run_jb_build.py` uses `git` to check whether any of the files have been changed. If something are changed, it will rebuild the notebook and refresh the HTML in Chrome browser.
 
-- `run_jb_build.py` uses `git` in `dev` branch, and after modifying all files, you need switch to `main` branch, and push it to Github.
+- `run_jb_build.py` uses `git` in `dev` branch, and after modifying all files, you need to switch to `main` branch, and push it to Github.
 
 - put `run_jb_build.py` in the root directory of your notebook project, and run it before you edit anytime.
 
