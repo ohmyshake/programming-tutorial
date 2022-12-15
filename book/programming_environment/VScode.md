@@ -72,7 +72,6 @@ table th:nth-of-type(2) {
 |   `Python`        | IntelliSense (Pylance), Linting, Debugging (multi-threaded, remote), Jupyter Notebooks, code formatting, refactoring, unit tests... |
 |   `Jupyter`       | Jupyter notebook support, interactive programming and computing that supports Intellisense, debugging and more |
 |   `Live Preview`  | Hosts a local server in your workspace for you to preview your webpages on |
-|   `Code Runner`   | Run C, C++, Java, JS, PHP, Python, Perl, Ruby, Go, Lua, Groovy, PowerShell, CMD, BASH, F#, C#, VBScript, TypeScript, CoffeeScri... |
 | `reStructuredText`| reStructuredText language support (RST/ReST linter, preview, IntelliSense and more) |
 |   `vscode-pdf`    | Display pdf file in VSCode |
 |   `vscode-icons`  | Icons for Visual Studio Code |
