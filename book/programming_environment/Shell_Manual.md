@@ -129,7 +129,7 @@ cat file | wc -l
 ## kill
 
 ```bash
-ps -ef | grep yinf | awk '{ print $2 }' | xargs kill -9
+ps -ef | grep yinfu | awk '{ print $2 }' | xargs kill -9
 ```
 
 
