@@ -219,6 +219,9 @@ if __name__ == '__main__':
 **If you enjoy the blog, please consider sponsoring 🍿 :**
 
 
+::::{grid} 1 1 2 2
+:class-container: text-center
+:gutter: 2
 
 :::{grid-item-card}
 :link: ./programming_environment/Overview.html
@@ -226,13 +229,28 @@ if __name__ == '__main__':
 :class-header: bg-light text-center
 **Programming Environment**
 ^^^
-
 ```{image} ./intro_files/macos.jpg
 :height: 100
 ```
-
 Configure the programming environment in MacOS.
 :::
+
+:::{grid-item-card}
+:link: ./programming_environment/Overview.html
+:class-body: text-center
+:class-header: bg-light text-center
+**Programming Environment**
+^^^
+```{image} ./intro_files/macos.jpg
+:height: 100
+```
+Configure the programming environment in MacOS.
+:::
+
+::::
+
+
+
 
 ⏬ &nbsp; For Chinese guys:
 @@box-container
