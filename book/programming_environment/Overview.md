@@ -128,7 +128,7 @@ FuYin-MAC/
 - {file}`~/bin` stores simple **executable code** and tool-based scripts, 
 such as `rdseed`. And also put executable files of large programs here, such `specfem` and `matlab`.
 
-- Adds the directory's path to the environment variable `PATH`.
+- Add the directory's path to the environment variable `PATH`.
 
 - More information please check [Geo-Software.md](./geophysics_software/GeoSoftware.md) list.
 
