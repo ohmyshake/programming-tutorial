@@ -32,7 +32,7 @@ The main content of the notebook is as follows:
 ```{image} https://inferentialthinking.com/_static/favicon.png
 :height: 100
 ```
-```{figure} ./img/VSCode-2.jpg
+```{figure} ./intro_files/macos.jpg
 ---
 scale: 100%
 align: center
