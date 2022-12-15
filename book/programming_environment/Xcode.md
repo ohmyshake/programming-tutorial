@@ -18,7 +18,7 @@
 Type the following command in terminal to install `Command Line Tools for Xcode`
 
 ```bash
-$ xcode-select --install
+xcode-select --install
 ```
 
 :::{warning}
