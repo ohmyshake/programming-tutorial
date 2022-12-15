@@ -12,7 +12,7 @@ This tutorial supports **MacOS M1** (Ventura 13.0.1), and may also be valid for 
 
 
 
-## Re-Install MacOS
+## Reinstall MacOS
 
 ::::{tab-set}
 
