@@ -431,7 +431,7 @@ export PATH=/storage/hpc/work/ja62/fy21/software/zsh/bin:$PATH
 
 ## References
 
-1. [zhihu-超全教程](https://www.zhihu.com/column/p/145437836) (**_推荐_**)
+1. [zhihu-超全教程](https://www.zhihu.com/column/p/145437836) (**_recommend_**)
 1. [个性化p10k配置](https://suixinblog.cn/2019/09/beautify-terminal.html)
 1. [个性化p10k配置](https://www.packetmania.net/2021/11/13/iTerm2-OMZ-Powerlevel10k/)
 1. [少数派Ternimal主题推荐](https://sspai.com/post/53008)
