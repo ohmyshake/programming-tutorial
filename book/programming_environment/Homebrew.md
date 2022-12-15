@@ -94,13 +94,13 @@ More information please refer to:
 Uninstall script from the Homebrew/install repository
 
 ```bash
-$ /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/uninstall.sh)"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/uninstall.sh)"
 ```
 
 If you want to run the Homebrew uninstaller non-interactively, you can use:
 
 ```bash
-$ NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/uninstall.sh)"
+NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/uninstall.sh)"
 ```
 ::::
 
@@ -108,7 +108,7 @@ $ NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/
 ::::{tab-item} China
 使用官方脚本同样会遇到uninstall地址无法访问问题，可以使用下面脚本:
 ```bash
-$ /bin/bash -c "$(curl -fsSL https://gitee.com/ineo6/homebrew-install/raw/master/uninstall.sh)"
+/bin/bash -c "$(curl -fsSL https://gitee.com/ineo6/homebrew-install/raw/master/uninstall.sh)"
 ```
 ::::
 :::::
@@ -121,28 +121,28 @@ Once Homebrew is installed, you can use the brew commands provided by Homebrew. 
 
 ```bash
 # 模糊搜索与 wget 相关的软件
-$ brew search wget
+brew search wget
 
 # 安装 wget 软件包
-$ brew install wget
+brew install wget
 
 # 安装 Visual Studio Code, 其是带图形界面的软件，因而这里需要使用 --cask 选项
-$ brew install --cask visual-studio-code
+brew install --cask visual-studio-code
 
 # 升级某个软件
-$ brew upgrade xxx
+brew upgrade xxx
 
 # 卸载某个软件
-$ brew uninstall xxx
+brew uninstall xxx
 
 # Brew 安装列表
-$ brew list
+brew list
 
 # 查看brew配置信息
-$ brew config
+brew config
 
 # 查看安装了多少package
-$ brew info
+brew info
 ```
 
 
