@@ -97,14 +97,6 @@ Useful geophysics softwares.
 
 
 
-## Sponsoring ✨
-
-
-
-
-
-
-
 
 ## About the Book ✨
 
@@ -213,7 +205,6 @@ Many thanks to...
 :height: 150
 ```
 :::
-
 ::::
 
 
