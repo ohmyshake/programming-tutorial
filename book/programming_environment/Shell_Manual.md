@@ -125,6 +125,13 @@ cat file | wc -l
 
 
 ## top
+```bash
+top
+
+#quit
+q
+```
+
 
 ## kill
 
