@@ -1,4 +1,36 @@
-# Nots
+# NOTS
+
+- Author: *{{Fu}}*
+- Update: *Dec 15, 2022*
+- Reading: *10 min*
+
+---
+
+
+##
+
+# Hello World
+This is Fu's home on NOTS, the following is my data managerment
+
+
+| **Filesystem**   | **Use** | **Physical Path** | **Size** | **Quota** | **Type** | **Purge Policy** | 
+| :-----| :---- | :---- | :----: | :----: |:----: |:----: | 
+| Home directories | <font color=red>Only configuration file (eg. `.zshrc` `.vscode-server`)</font> |/home | 5 TB | 10 GB | NFS |none | 
+|Group Project directories| <font color=red>Not use now</font> |/projects |20 TB |100 GB per group |NFS| none |  
+|Work storage space |	<font color=red> Install software and store small data </font>|	/storage/hpc/work|	456 TB|	2 TB per group|	NFS	|none | 
+|Shared Scratch high performance I/O | <font color=red> Workspace </font>|/scratch |157 TB |None|Lustre|14 days| 
+|Local Scratch on each node| <font color=red> Not use now </font>|/tmp|4 TB|None|Local|at the end of each job | 
+
+
+https://kb.rice.edu/108237
+
+
+$SHARED_SCRATCH is not permanent storage
+
+$SHARED_SCRATCH is to be used only for job I/O.  Delete everything you do not need for another run at the end of the job or move to $WORK for analysis. Staff may periodically delete files from the $SHARED_SCRATCH file system even if files are less than 14 days old.
+
+
+
 
 ## NOTS Cluster
 
