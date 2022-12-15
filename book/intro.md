@@ -64,8 +64,6 @@ Develop a python package, GUI, and Dashboards.
 Parallel computing skills in Python and C++, and HPC tutrials.
 :::
 
-
-
 :::{grid-item-card}
 :link: https://github.com/orgs/executablebooks/discussions
 :class-body: text-center
@@ -77,8 +75,6 @@ Parallel computing skills in Python and C++, and HPC tutrials.
 ```
 Machine learning and deep learning approaches in Python.
 :::
-
-
 
 :::{grid-item-card}
 :link: https://github.com/orgs/executablebooks/discussions
@@ -92,8 +88,6 @@ Machine learning and deep learning approaches in Python.
 Useful softwares in MacOS system.
 :::
 
-
-
 :::{grid-item-card}
 :link: https://github.com/orgs/executablebooks/discussions
 :class-body: text-center
@@ -106,16 +100,7 @@ Useful softwares in MacOS system.
 Useful geophysics softwares.
 :::
 ::::
-
 ---
-
-
-
-
-
-
-
-
 
 
 
