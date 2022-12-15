@@ -289,7 +289,7 @@ table th:nth-of-type(2) {
 </style>
 
 
-**scientific computation-related package**:
+**Scientific computation-related package**:
 
 |    Name       |    Purpose    |    Way       |     
 | ------------  | ------------- | :----------: |
