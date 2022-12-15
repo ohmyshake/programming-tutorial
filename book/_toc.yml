@@ -74,7 +74,7 @@ parts:
     chapters:
     - file: geo_software/GeoSoftware
     - file: geo_software/Matplotlib
-    - file: geo_software/PyGMT
+    # - file: geo_software/PyGMT
     - file: geo_software/SAC
     - file: geo_software/Obspy
     - file: geo_software/DAS_format
