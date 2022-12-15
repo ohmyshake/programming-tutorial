@@ -372,13 +372,13 @@ plugins=([plugins...] zsh-syntax-highlighting)
 
 ```bash
 # install
-$ gem install colorls
+gem install colorls
 
 # set alias in ~/.zshrc file
 alias lc='colorls -lA --sd'
 
 # use
-$ lc
+lc
 ```
 
 
