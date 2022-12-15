@@ -120,7 +120,7 @@ FuYin-MAC/
 
 ### me
 
-- {file}`~/me` stores my life files, which have nothing to do with scientific research.
+- {file}`~/me` stores my personal files, which have nothing to do with scientific research.
 
 
 ### bin
