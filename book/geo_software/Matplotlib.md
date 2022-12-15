@@ -17,7 +17,9 @@ kernelspec:
 
 ---
 
-
+.. literalinclude:: ./test.py
+  :language: python
+  :linenos:
 
 ````{eval-rst}
 .. note::
