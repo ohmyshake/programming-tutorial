@@ -29,7 +29,7 @@ xcode-select --install
 
 - After the MacOS is updated, sometimes you need to reinstall the `Command Line Tools for Xcode` and run the preceding commands again.
 
-```{figure} ./img/Xcode-1.jpg
+```{figure} ./files/Xcode-1.jpg
 ---
 scale: 70%
 align: center
