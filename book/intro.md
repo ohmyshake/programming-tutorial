@@ -12,7 +12,7 @@ I'm [**Fu Yin**](https://yinfu.info/), a geophysics graduate student at Rice Uni
 There is no guarantees of correctness, and if you spot an error or a doubtful statement, kindly let me know.
 :::
 
-## Enjoy 👋👋👋
+## Enjoy ✨
 
 ---
 The main contents of the notebook are as follows:
