@@ -42,16 +42,16 @@ MacOS uses **Xcode's** `Command Line Tools` to install Git in `/usr/bin/git` dir
 
 ```bash
 # install
-$ brew install git
+brew install git
 
 # add path
-$ vim ~/.zshrc
+vim ~/.zshrc
 > export GIT=/usr/local/Cellar/git/2.37.1
 > export PATH=$GIT/bin:$PATH
-$ source ~/.zshrc
+source ~/.zshrc
 
 # check version
-$ git --version
+git --version
 ```
 
 ---
@@ -67,16 +67,16 @@ The Git configuration file for each repository is stored in `.git/config` file i
 **`username and email`**
 
 ```bash
-$ git config --global user.name "Your Name"
-$ git config --global user.email "email@example.com"
+git config --global user.name "Your Name"
+git config --global user.email "email@example.com"
 ```
 **`color ui and git log`**
 ```bash
 # let Git show different colors
-$ git config --global color.ui true
+git config --global color.ui true
 
 # configure log command --> git lg
-$ git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
+git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
 ```
 
 **`master to main`**
@@ -84,7 +84,7 @@ $ git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Cre
 - Manually modify the `~/.gitconfig` file and set `defaultBranch = main`. Or use the `git config` command for git version &gt; v2.28:
 
 ```bash
-$ git config --global init.defaultBranch main
+git config --global init.defaultBranch main
 ```
 
 :::{dropdown} Why change master to main ?
@@ -98,10 +98,10 @@ It is not recommended  to change the default branch name for past projects. If y
 
 ```bash
 # With the '-m' option, you can change the branch name without affecting the git commit history from master to main.
-$ git branch -m master main
+git branch -m master main
 
 # the above changes are only local and need to be synchronized to the remote.
-$ git push -u origin main
+git push -u origin main
 ```
 :::
 
@@ -127,7 +127,7 @@ My complete `~/.gitconfig` file showing below:
 
 Imagine the scenario that you have a remote repository on GitHub, and one computer at home and one computer at the office all be needed to submit codes using SSH keys, and both the SSH public keys are needed to be stored in the `GitHub Setting`.
 ::::{toggle}
-```{figure} ./img/Git-Github-2.jpg
+```{figure} ./files/Git-Github-2.jpg
 ---
 scale: 50%
 align: center
@@ -140,7 +140,7 @@ SSH keys in Github
 Then check git SSH status 
 
 ```bash
-$ ssh -T git@github.com
+ssh -T git@github.com
 ```
 
 
@@ -406,7 +406,7 @@ Git supports 3 network protocols:
 The SSH tunnel is supposed to be used when use `git push` command. However, if the `http` proxy is set, the `http` proxy will be used. Therefore, the above error occurs. The solution is to cancel the `http` proxy:
 
 ```bash
-$ git config --global --unset http.proxy
+git config --global --unset http.proxy
 ```
 :::
 
@@ -426,30 +426,30 @@ $ git config --global --unset http.proxy
 - Initializes a local repository and make some commit as following:
 
 ```bash
-$ git init
-$ git add .
-$ git commit -m 'first commit'
+git init
+git add .
+git commit -m 'first commit'
 ```
 - Create an empty repository in GitHub, then associate the remote repository with the local repository to keep synchronization as following, `origin` is the name of the remote repository which can be replaced arbitrarily:
 
 ```bash
-$ git remote add origin git@github.com:your_github_name/repo_name.git
+git remote add origin git@github.com:your_github_name/repo_name.git
 ```
 - Since the remote library is empty, the first time we push the `main` branch, we should add the `-u` parameter. Git will not only push the contents of the local main branch to the new remote main branch, but also associate the local main branch with the remote main branch, which can simplify the command in the future when use `git push` or `git pull`
 ```bash
-$ git push -u origin main
+git push -u origin main
 ```
 
 - Now the following commands can be used:
 ```bash
 # git push
-$ git push origin main 
+git push origin main 
 
 # check the origin repository address
-$ git remote -v 
+git remote -v 
 
 # if you want to remove the current repository address 
-$ git remote rm origin
+git remote rm origin
 ```
 :::
 
@@ -459,7 +459,7 @@ $ git remote rm origin
 - Assuming you have created a remote repository on GitHub, you can use `ssh` for `git clone`, which is fast than `https` in China.
 
 ```bash
-$ git clone git@github.com:your_Github_name/reop_name.git
+git clone git@github.com:your_Github_name/reop_name.git
 ```
 
 **Init Submodule**
@@ -485,12 +485,12 @@ $ git clone git@github.com:your_Github_name/reop_name.git
 
 - If we only need to use the `pygments-julia` and `juliaplots.sty` code, which means that do not require clone and checkout `pygments-style-algforopt`, we can use
 ```bash
-$ git submodule init pygments-julia juliaplots.sty
+git submodule init pygments-julia juliaplots.sty
 ```
 
 - Then run the following command to clone and check them
 ```bash
-$ git submodule update
+git submodule update
 ```
 
 
@@ -502,29 +502,29 @@ $ git submodule update
  
 ```bash
 # Add the changes to the Index
-$ git add <filename>
+git add <filename>
 
 # Add all changes at once
-$ git add .
+git add .
 
 # check status
-$ git status
+git status
 
 # Add the changes from Index to local Repository
-$ git commit -m "your comment"
+git commit -m "your comment"
 ```
 
 - Push the last changes in the `Local Repository` to the `Remote Repository` in github.
 
 
 ```bash
-$ git push origin main
+git push origin main
 ```
 
 - If you need to connect your local repository to a remote repository, use the following command
 
 ```bash
-$ git remote add origin <server>
+git remote add origin <server>
 ```
 
 
@@ -534,44 +534,44 @@ $ git remote add origin <server>
 - Create a new branch and switch to it
 ```bash
 # new branch's name is feature
-$ git switch -c feature_x   # or: git checkout -b feature_x 
+git switch -c feature_x   # or: git checkout -b feature_x 
  
 # create the dev branch of the remote origin to the local
-$ git checkout -b dev origin/dev
+git checkout -b dev origin/dev
 
 # switch to main branch
-$ git switch main   # or: git checkout main
+git switch main   # or: git checkout main
 ```
 
 
 - Delete a branch
 ```bash
 # delete a local branch
-$ git branch -d <branch-name>
+git branch -d <branch-name>
 
 # delete a remote branch
-$ git push origin --delete <branch-name>
+git push origin --delete <branch-name>
 ```
 
 - Compare 2 branches
 ```bash
 # show a file list with difference between 2 branches
-$ git diff branch1 branch2 --stat
+git diff branch1 branch2 --stat
 
 # show detailed differences for the specified file
-$ git diff branch1 branch2 /path/to/file
+git diff branch1 branch2 /path/to/file
 
 # show the detailed differences of all the different files between 2 branches
-$ git diff branch1 branch2
+git diff branch1 branch2
 ```
 
 - Merge 2 branches
 ```bash
 # merge the contents of the dev branch under the main branch
-$ git merge dev
+git merge dev
 
 # the '--no-ff' option disables fast-forward mode, and '-m' records the merge as a commit
-$ git merge --no-ff -m "merge dev --add new blog-1" dev
+git merge --no-ff -m "merge dev --add new blog-1" dev
 ```
 
 
@@ -585,10 +585,10 @@ $ git merge --no-ff -m "merge dev --add new blog-1" dev
 
 ```bash
 # specify the link between the local dev branch and the remote origin's dev branch
-$ git branch --set-upstream-to=origin/dev dev
+git branch --set-upstream-to=origin/dev dev
 
 # pull code
-$ git pull
+git pull
 ```
 :::{note}
 `git pull` = `git fetch` + `git merge`, and `git fetch` will only pull remote code to local repo and do not merge it.
@@ -598,43 +598,43 @@ $ git pull
 
 ```bash
 # tag the current branch with v1.0
-$ git tag v1.0
+git tag v1.0
 
 # show all the tags
-$ git tag
+git tag
 
 # show the tag v0.9's information
-$ git show v0.9
+git show v0.9
 
 # tag a previous commit，f52c633 is the 'commit id'
-$ git tag v0.9 f52c633
+git tag v0.9 f52c633
 
 # create a tag with instructions，'-a' add tga  ，'-m' add instructions
-$ git tag -a v0.1 -m "version 0.1 released" 1094adb
+git tag -a v0.1 -m "version 0.1 released" 1094adb
 
 # delete a tag
-$ git tag -d v0.1
+git tag -d v0.1
 
 # push the tag to remote
-$ git push origin v1.0
+git push origin v1.0
 
 # Push all local tags that have not been pushed to the remote at one time
-$ git push origin --tags
+git push origin --tags
 
 # delete a remote tag (make sure that you have deleted the local tag before)
-$ git push origin :refs/tags/v0.9
+git push origin :refs/tags/v0.9
 ```
 
 
 ### log
 
 ```bash
-$ git log --graph --pretty=oneline --abbrev-commit
-$ git log --pretty=oneline --abbrev-commit
-$ git log --pretty=oneline
+git log --graph --pretty=oneline --abbrev-commit
+git log --pretty=oneline --abbrev-commit
+git log --pretty=oneline
 
 # check the latest commit
-$ git log -1
+git log -1
 ```
 
 ### delete files
@@ -643,13 +643,13 @@ $ git log -1
 
 ```bash
 # delete test.txt from repo and commit
-$ git rm test.txt
-$ git commit -m "remove test.txt"
+git rm test.txt
+git commit -m "remove test.txt"
 
 # use 'rm' delete，then 'git add' and 'git commit'
-$ rm text.txt
-$ git add .
-$ git commit -m "remove test.txt"
+rm text.txt
+git add .
+git commit -m "remove test.txt"
 ```
 
 
@@ -657,22 +657,22 @@ $ git commit -m "remove test.txt"
 - delete untracked files from `.gitignore`
 ```bash
 # delete untracked files
-$ git clean -f
+git clean -f
 
 # delete untracked files and their directory
-$ git clean -fd
+git clean -fd
 
 # ? cautious
-$ git clean -xfd
+git clean -xfd
 ```
 
 
 
 - it is highly recommended to add the `-n` parameter to see which files will be deleted first to prevent the deletion of important files by mistake
 ```bash
-$ git clean -nxfd
-$ git clean -nf
-$ git clean -nfd
+git clean -nxfd
+git clean -nf
+git clean -nfd
 ```
 
 
@@ -684,24 +684,24 @@ $ git clean -nfd
 - We need to remove those `.DS_Store` files from the directory which already added to git. Use the following command which will go through all the folders in your directory, and remove those files from git.
 
 ```bash
-$ find . -name .DS_Store -print0 | xargs -0 git rm -f --ignore-unmatch
+find . -name .DS_Store -print0 | xargs -0 git rm -f --ignore-unmatch
 ```
 
 - Add `.DS_Store` to the file `.gitignore`, which can be found at the top level of your repository (or create the file if it isn't there already). You can do this easily with this command in the top directory:
 ```bash
-$ echo .DS_Store >> .gitignore
+echo .DS_Store >> .gitignore
 ```
 
 - Last step, we need to actually commit the `.gitignore` file.
 ```bash
-$ git status
-$ git add .gitignore
-$ git commit -m '.DS_Store banished!'
+git status
+git add .gitignore
+git commit -m '.DS_Store banished!'
 ```
 
 - Clean the files recorded in `.gitignore`
 ```bash
-$ git clean -X -f
+git clean -X -f
 ```
 
 ::::
@@ -723,13 +723,13 @@ $ git clean -X -f
 
 ```bash
 # 退回到上一个版本
-$ git reset --hard HEAD^
+git reset --hard HEAD^
 
 # 首先查看历史 commit 的 id
-$ git log
+git log
 
 # 例如发现 id 是 1094a，退回到该版本
-$ git reset --hard 1094a
+git reset --hard 1094a
 ```
 
 
@@ -740,10 +740,10 @@ Git的版本回退速度非常快，因为Git在内部有个指向当前版本�
 现在退回到过去的版本了，想回到未来的版本：
 ```bash
 # 要重返未来，用'git reflog'查看命令历史，以便确定要回到未来的哪个版本
-$ git reflog
+git reflog
 
 # 例如发现未来的 id 是 1094a，退回到该版本
-$ git reset --hard 1094a
+git reset --hard 1094a
 ```
 
 ### 撤销修改 (working...)
@@ -752,7 +752,7 @@ $ git reset --hard 1094a
 :::
 
 ```bash
-$ git checkout -- xx.txt 
+git checkout -- xx.txt 
 ```
 
 
