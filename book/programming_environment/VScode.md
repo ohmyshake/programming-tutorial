@@ -76,7 +76,7 @@ table th:nth-of-type(2) {
 |   `vscode-pdf`    | Display pdf file in VSCode |
 |   `vscode-icons`  | Icons for Visual Studio Code |
 |   `CMake`         | CMake langage support for Visual Studio Code |
-|   ``              |                     |
+|   `Julia`         | Julia Language Support |
 |   ``              |                     |
 :::
 
