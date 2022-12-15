@@ -185,8 +185,9 @@ Or you can connect the IP address with the ipaddress website to query directly:
 
 After querying the IP, map the IP with the website address, and add the mapping relationship to the `/etc/hosts` file with `sudo` permission. For example:
 ```bash
-$ vim /etc/hosts
-# mapping format:  [ip] [domainName]
+vim /etc/hosts
+
+# output with mapping format:  [ip] [domainName]
 199.232.69.194 github.global.ssl.Fastly.net
 140.82.114.4 GitHub.com
 185.199.108.153 assets-cdn.Github.com
@@ -196,7 +197,7 @@ $ vim /etc/hosts
 **Refresh the `/etc/hosts` file**
 
 ```bash
-$ sudo killall -HUP mDNSResponder
+sudo killall -HUP mDNSResponder
 ```
 
 
