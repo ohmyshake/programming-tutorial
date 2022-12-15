@@ -177,6 +177,11 @@ All the source file are edited by VSCode, `run_jb_build.py` is a Python script t
 
 ::::{toggle}
 ```python
+import os
+import time
+import subprocess
+from selenium import webdriver
+
 """
 Use jupyter-book generate html automatically.
     1. Download Chrome-driver Plug-in for selenium package from https://chromedriver.chromium.org/
@@ -185,11 +190,6 @@ Use jupyter-book generate html automatically.
 
 @Author: Fu Yin || Fri Jul 22 21:59:08 2022
 """
-
-import os
-import time
-import subprocess
-from selenium import webdriver
 
 #%% Functions
 def jb_build(driver,book):
