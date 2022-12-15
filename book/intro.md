@@ -251,6 +251,39 @@ if __name__ == '__main__':
 
 
 ⏬ &nbsp; For Non-Chinese guys:
+
+
+::::{grid} 1 1 2 2
+:class-container: text-center
+:gutter: 2
+
+:::{grid-item-card}
+:link: ./programming_environment/Overview.html
+:class-body: text-center
+:class-header: bg-light text-center
+**Coffee**
+^^^
+```{image} https://user-images.githubusercontent.com/1376749/120938564-50c59780-c6e1-11eb-814f-22a0399623c5.png
+:height: 150
+```
+:::
+
+:::{grid-item-card}
+:link: ./programming_environment/Overview.html
+:class-body: text-center
+:class-header: bg-light text-center
+**WeChat**
+^^^
+```{image} ./intro_files/WeChat.jpg
+:height: 150
+```
+:::
+
+::::
+
+
+
+
 @@box-container
   @@box
     ~~~<a class="boxlink" href="https://www.buymeacoffee.com/yinfu">~~~
