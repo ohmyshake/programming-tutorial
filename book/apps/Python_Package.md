@@ -1,5 +1,10 @@
 # Python Package 
 
+- Author: *{{Fu}}*
+- Update: *Dec 15, 2022*
+- Reading: *30 min*
+
+---
 
 setup.py poetry github-action sphnix   Buy and Bind Domain Name with Github Pages
 
