@@ -58,11 +58,9 @@ Develop a python package, GUI, and Dashboards.
 :class-header: bg-light text-center
 **Parallel Computing & HPC Platform**
 ^^^
-
 ```{image} ./intro_files/hpc.webp
 :height: 100
 ```
-
 Parallel computing skills in Python and C++, and HPC tutrials.
 :::
 
