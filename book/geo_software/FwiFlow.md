@@ -5,7 +5,7 @@
 
 ## FwiFlow
 Install `miniconda` firstly, use pip install `jill` which is a juila installer.
-Then use jill install julia@1.3 version and quit the conda environment.
+Then use `jill install julia@1.3` version and quit the conda environment.
 Other verison will be failed.
 
 ```bash
