@@ -67,7 +67,7 @@ Create an account and check your favorite domain-name whether be used or not, th
 
 - **My domain-name information:**
 
-![](/assets/blog-data/fig/2022-02-21-2.jpg)
+![](./files/2022-02-21-2.jpg)
 
 - **For `A`:**
 
@@ -89,7 +89,7 @@ Create an account and check your favorite domain-name whether be used or not, th
 
 - **The screenshot of my setting:**
 
-![](/assets/blog-data/fig/2022-02-21-1.jpg)
+![](./files/2022-02-21-1.jpg)
 
 
 - **Renew domains**
@@ -103,13 +103,13 @@ Create an account and check your favorite domain-name whether be used or not, th
 
 Add the `CNAME` file to the github Pages repository at root directory and write your domain name inside:
 
-![](/assets/blog-data/fig/2022-02-21-3.jpg)
+![](./files/2022-02-21-3.jpg)
 
 
 Or set `custom domain` directly to `Github Pages` in `Settings` of github. Github will automatically adds the `CNAME` file.
 
 
-![](/assets/blog-data/fig/2022-02-21-4.jpg)
+![](./files/2022-02-21-4.jpg)
 
 Enforce `HTTPS` which provides a layer of encryption that prevents others from snooping on or tampering with traffic to your site. When `HTTPS` is enforced, your site will only be served over `HTTPS` instead of `HTTP`.
 
