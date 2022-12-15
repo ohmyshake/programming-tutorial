@@ -242,18 +242,12 @@ if __name__ == '__main__':
 **WeChat**
 ^^^
 ```{image} ./intro_files/WeChat.jpg
-:height: 150
+:height: 200
 ```
 :::
 
 ::::
 
-
-
-
-
-**Alipay** 
-**WeChat** 
 
 
 ⏬ &nbsp; For Non-Chinese guys:
