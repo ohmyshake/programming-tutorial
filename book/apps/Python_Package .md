@@ -1,7 +1,7 @@
 # Python Package 
 
 
-https://dash.gallery/Portal/
+
 
 
 ## poetry
