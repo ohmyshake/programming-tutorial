@@ -151,7 +151,7 @@ pygmt.config(PARAMETER = value)
 
 ### 2021 Yangbi Earthquake Map
 
-```{code-cell} python
+```{code-cell} /Users/yinfu/miniconda3/envs/pygmt/bin/ipython3
 :tags: [hide-input]
 """
 Created on Tue May 25 22:44:49 2021
