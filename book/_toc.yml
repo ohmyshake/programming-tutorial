@@ -75,8 +75,8 @@ parts:
     - file: geo_software/Obspy
     - file: geo_software/DAS_format # TDMS
     - file: geo_software/CPS
-    - file: geo_software/SPECFEM  # adjtomo  https://github.com/adjtomo/seisflows
-    - file: geo_software/Gmsh  # pygmsh
+    - file: geo_software/SPECFEM 
+    - file: geo_software/Gmsh  
     - file: geo_software/Paraview  # https://www.paraview.org/
     - file: geo_software/FwiFlow
     - file: geo_software/GEOSX # https://github.com/GEOSX/GEOSX
