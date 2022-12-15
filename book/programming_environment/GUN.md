@@ -271,7 +271,7 @@ Download the plugin, `C/C++`, in VSCode Extensions
 
 ## CMake
 
-Install `brew install cmake`
+Install `brew install cmake` in MacOS system.
 
 
 ## Package
