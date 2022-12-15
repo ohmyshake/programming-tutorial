@@ -59,7 +59,7 @@ parts:
   #   # numbered: True 
   #   # maxdepth: 2
   #   - file: macos_software/MacSoftware
-  #   - file: programming_manual_and_scripts/Matplotlib
+  #   - file: macos_software/Matplotlib
   #   - file: programming_environment/Seismology_Tools_file/PyGMT
   #   - file: programming_environment/Seismology_Tools_file/Globus
   #   - file: programming_environment/Seismology_Tools_file/ImageMagick
