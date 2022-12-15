@@ -4,62 +4,58 @@
 
 ## Institutes of Geosciences
 
--~~~<a class="link-university" href="http://ess.ustc.edu.cn/">
-School of Earth and Space Sciences, <strong>USTC</strong>
-</a>~~~
+
+[School of Earth and Space Sciences, **USTC**](http://ess.ustc.edu.cn/)
 
 
--~~~<a class="link-university" href="https://geophy.pku.edu.cn/">
-School of Earth and Space Sciences, <strong>Peking</strong>
-</a>~~~
 
--~~~<a class="link-university" href="http://www.igg.cas.cn/">
-Institute of Geology and Geophysics, <strong>Chinese Academy of Sciences</strong>
-</a>~~~
 
--~~~<a class="link-university" href="https://eapsweb.mit.edu/">
-Department of Earth, Atomospheric, and Planetary Sciences, <strong>MIT</strong>
-</a>~~~
+[School of Earth and Space Sciences, **Peking**](https://geophy.pku.edu.cn/)
 
--~~~<a class="link-university" href="https://www.gps.caltech.edu/">
-Division of Geological and Planetary Sciences, <strong>Caltech</strong>
-</a>~~~
 
--~~~<a class="link-university" href="https://eps.harvard.edu/">
-Department of Earth and Planetary Sciences, <strong>Harvard</strong>
-</a>~~~
 
--~~~<a class="link-university" href="https://scripps.ucsd.edu/">
-Scripps Institution of Oceanography, <strong>UCSD</strong>
-</a>~~~
+[Institute of Geology and Geophysics, **Chinese Academy of Sciences**](http://www.igg.cas.cn/)
 
--~~~<a class="link-university" href="http://eps.berkeley.edu/">
-Department of Earth & Planetary Science, <strong>UC Berkeley</strong>
-</a>~~~
 
--~~~<a class="link-university" href="https://geosciences.princeton.edu/">
-The Geosciences Department, <strong>Princeton</strong>
-</a>~~~
 
--~~~<a class="link-university" href="https://lamont.columbia.edu/">
-Lamont-Doherty Earth Observatory, <strong>Columbia</strong>
-</a>~~~
+[Department of Earth, Atomospheric, and Planetary Sciences, **MIT**](https://eapsweb.mit.edu/)
 
--~~~<a class="link-university" href="https://earth.stanford.edu/">
-Department of Geophysics, <strong>Stanford</strong>
-</a>~~~
 
--~~~<a class="link-university" href="https://earthscience.rice.edu/">
-Department of Earth, Environmental and Planetary Sciences, <strong>Rice</strong>
-</a>~~~
 
--~~~<a class="link-university" href="https://www.brown.edu/academics/earth-environmental-planetary-sciences/">
-Department of Earth, Environmental and Planetary Sciences, <strong>Brown</strong>
-</a>~~~
+[Division of Geological and Planetary Sciences, **Caltech**](https://www.gps.caltech.edu/)
 
--~~~<a class="link-university" href="">
 
-</a>~~~
+
+[Department of Earth and Planetary Sciences, **Harvard**](https://eps.harvard.edu/)
+
+
+
+[Scripps Institution of Oceanography, **UCSD**](https://scripps.ucsd.edu/)
+
+
+
+[Department of Earth & Planetary Science, **UC Berkeley**](http://eps.berkeley.edu/)
+
+
+
+[The Geosciences Department, **Princeton**](https://geosciences.princeton.edu/)
+
+
+
+[Lamont-Doherty Earth Observatory, **Columbia**](https://lamont.columbia.edu/)
+
+
+
+[Department of Geophysics, **Stanford**](https://earth.stanford.edu/)
+
+
+
+[Department of Earth, Environmental and Planetary Sciences, **Rice**](https://earthscience.rice.edu/)
+
+
+
+[Department of Earth, Environmental and Planetary Sciences, **Brown**](https://www.brown.edu/academics/earth-environmental-planetary-sciences/)
+
 
 
 
