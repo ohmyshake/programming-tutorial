@@ -33,7 +33,7 @@ Configure the programming environment in MacOS.
 :::
 
 :::{grid-item-card}
-:link: https://github.com/orgs/executablebooks/discussions
+:link: ./apps/Python_Package.html
 :class-body: text-center
 :class-header: bg-light text-center
 **App Development**
