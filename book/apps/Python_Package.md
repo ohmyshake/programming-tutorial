@@ -43,7 +43,7 @@ poetry update # update the new info in 'pyproject.toml' into 'poetry.lock' file
 
 
 
-## Buy and Bind Domain Name with Github Pages\
+## Buy and Bind Domain Name with Github Pages
 
 
 
