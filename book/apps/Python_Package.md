@@ -72,7 +72,7 @@ Create an account and check your favorite domain-name whether be used or not, th
 ---
 scale: 50%
 align: center
-name: diskutil-list
+name: domain-name
 ---
 My Domain Name Info
 ```
@@ -105,7 +105,7 @@ Use `ping OUCyf.github.io` to get id of ADDRESS/VALUE
 ---
 scale: 50%
 align: center
-name: diskutil-list
+name: setting
 ---
 My Setting
 ```
@@ -126,7 +126,7 @@ Add the `CNAME` file to the github Pages repository at root directory and write 
 ---
 scale: 50%
 align: center
-name: diskutil-list
+name: cname
 ---
 CNAME File in Github
 ```
@@ -138,7 +138,7 @@ Or set `custom domain` directly to `Github Pages` in `Settings` of github. Githu
 ---
 scale: 50%
 align: center
-name: diskutil-list
+name: github-page
 ---
 Github Page
 ```
