@@ -133,7 +133,20 @@ such as `rdseed`. And also put executable files of large programs here, such `sp
 - More information please check [Geo-Software.md](./geophysics_software/GeoSoftware.md) list.
 
 
+
 ### src
+
+- {file}`~/code` stores source code wrote by myself, and it's **my personal code**.
+
+- More information please check [Seis-Software.md](./Overview_file/SeisSoftware.md) list.
+
+```{note}
+Remember that after compiling, put the executable code in the {file}`~/bin` folder.
+```
+
+
+
+### package
 
 - {file}`~/src` stores source code from **other institutions’ software**, such as SAC, Specfem-2D...
 
@@ -143,16 +156,6 @@ such as `rdseed`. And also put executable files of large programs here, such `sp
 Remember that after compiling, put the executable code in the {file}`~/bin` folder.
 ```
 
-
-### package
-
-- {file}`~/code` stores source code wrote by myself, and it's **my personal code**.
-
-- More information please check [Seis-Software.md](./Overview_file/SeisSoftware.md) list.
-
-```{note}
-Remember that after compiling, put the executable code in the {file}`~/bin` folder.
-```
 
 
 ### data
