@@ -108,9 +108,16 @@ fi
 
 
 
+**Conda list:**
 
+**scientific computation-related package**:
 
-
+|    Name       |    Purpose    |    Way       |     
+| ------------  | ------------- | :----------: |
+| `mamba`       | ...           | conda        |
+| `numpy`       | ...           | conda  |
+| `matplotlib`  | ...           | conda  |
+| `scipy`       | ...           | conda  |
 
 
 
