@@ -95,6 +95,7 @@ table th:nth-of-type(2) {
 |    |    |
 
 
+
 Follow the process to set shortcuts: `System Preferences` -> `Keyboard` -> `Shortcuts` -> `App Shortcuts` -> `+ Applicaiton` -> `PDF Expert`
 :::{toggle}
 ```{figure} ./files/Shortcuts-1.jpg
