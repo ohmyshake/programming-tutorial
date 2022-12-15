@@ -58,7 +58,7 @@ parts:
   # - caption: Daily Software
   #   # numbered: True 
   #   # maxdepth: 2
-  #   - file: programming_environment/Overview_md/MacSoftware
+  #   - file: daily/MacSoftware
   #   - file: programming_manual_and_scripts/Matplotlib
   #   - file: programming_environment/Seismology_Tools_file/PyGMT
   #   - file: programming_environment/Seismology_Tools_file/Globus
