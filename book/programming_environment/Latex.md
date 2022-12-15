@@ -245,7 +245,7 @@ Here is my `.vscode/settings.json` file:
 
 
 
-## Manual
+## Tutrial
 
 - The detailed manual, please refer to the book: 一份不太简短的 LaTeX2e 介绍（[lshort-zh-cn](http://mirrors.ustc.edu.cn/CTAN/info/lshort/chinese/lshort-zh-cn.pdf)).
 
