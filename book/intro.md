@@ -283,14 +283,3 @@ if __name__ == '__main__':
 
 
 
-<!-- ```{tableofcontents}
-```
-
-Here is my nifty citation {cite}`holdgraf_evidence_2014`.
-
-```{bibliography}
-``` -->
-
-
-
-
