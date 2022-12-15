@@ -268,6 +268,7 @@ Download the plugin, `C/C++`, in VSCode Extensions
 
 ## Makefile
 
+MacOS comes with `make`.
 
 ## CMake
 
