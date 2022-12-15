@@ -75,7 +75,7 @@ Parallel computing skills in Python and C++, and HPC tutrials.
 ```{image} ./intro_files/network.jpg
 :height: 100
 ```
-Machine learning and deep learning approach in Python.
+Machine learning and deep learning approaches in Python.
 :::
 
 
