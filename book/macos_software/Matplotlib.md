@@ -1,7 +1,3 @@
-# Matplotlib
-
-
-
 ---
 jupytext:
   text_representation:
