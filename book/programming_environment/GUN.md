@@ -223,7 +223,7 @@ MacOS comes with `make`.
 Install via `brew install cmake` in MacOS system.
 
 
-## Package
+### Package
 
 <style>
 table th:first-of-type {
