@@ -167,7 +167,7 @@ Useful geophysics softwares.
 The notebook is powered by [Jupyter Book](https://jupyterbook.org/en/stable/intro.html), which use [MyST](https://sphinx-design.readthedocs.io/en/sbt-theme/grids.html) Markdown syntax.
 
 
-All the source files are edited by VSCode, `run_jb_build.py` is a Python script to build the HTML and fresh it in Chrome browser automatically. 
+All the source files are edited in VSCode, `run_jb_build.py` is a Python script to build the HTML and fresh it in Chrome browser automatically. 
 
 - `run_jb_build.py` uses `git` to check whether any of the files have been changed. If something changed, it will rebuild the notebook and refresh the HTML in Chrome browser.
 
