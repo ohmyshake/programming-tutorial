@@ -4,10 +4,10 @@
 ## ln
 ```bash
 # Print all links
-$ ls -al
+ls -al
 
 # Create a link, file2 is the link of file1.
-$ ln -s file1 file2
+ln -s file1 file2
 ```
 
 
@@ -25,17 +25,17 @@ $ ln -s file1 file2
 ## ssh/sshfs
 ```bash
 # ssh -p port -X user@hostname
-$ ssh -p 22 -X fy21@nots.rice.edu
-$ ssh nots
+ssh -p 22 -X fy21@nots.rice.edu
+ssh nots
 
 # sshfs NOTS HPC in Rice
-$ sshfs -o follow_symlinks fy21@nots.rice.edu:/ /Users/yinfu/share1/
+sshfs -o follow_symlinks fy21@nots.rice.edu:/ /Users/yinfu/share1/
 
 # set alias before in '~/.zshrc'
-$ alias sshfs-nots='sshfs -o follow_symlinks -p 22 fy21@nots.rice.edu:/ /Users/yinfu/share1/'
-$ alias resshfs-nots='diskutil umountDisk /Users/yinfu/share1; sshfs-nots'
-$ sshfs-nots 
-$ resshfs-nots
+alias sshfs-nots='sshfs -o follow_symlinks -p 22 fy21@nots.rice.edu:/ /Users/yinfu/share1/'
+alias resshfs-nots='diskutil umountDisk /Users/yinfu/share1; sshfs-nots'
+sshfs-nots 
+resshfs-nots
 ```
 
 
@@ -46,29 +46,29 @@ Disk softwares on Mac, such as `Disk Utility`, `Tuxera`...
 
 ```bash
 # List the partitions of a disk
-$ diskutil list
+diskutil list
 
 # mount a single volume
-$ diskutil mount [IDENTIFIER]
-$ diskutil mountDisk disk2s1
+diskutil mount [IDENTIFIER]
+diskutil mountDisk disk2s1
 
 # mount an entire disk
-$ diskutil mountDisk [IDENTIFIER]/[PATH]
-$ diskutil mountDisk disk2s1
-$ diskutil mountDisk /dev/disk2
+diskutil mountDisk [IDENTIFIER]/[PATH]
+diskutil mountDisk disk2s1
+diskutil mountDisk /dev/disk2
 
 # umount a single volume
-$ diskutil umount [IDENTIFIER]
-$ diskutil umount disk2s1
+diskutil umount [IDENTIFIER]
+diskutil umount disk2s1
 
 # umount an entire disk
-$ diskutil umountDisk [IDENTIFIER]/[PATH]
-$ diskutil umountDisk disk2s1
-$ diskutil umountDisk /dev/disk2
+diskutil umountDisk [IDENTIFIER]/[PATH]
+diskutil umountDisk disk2s1
+diskutil umountDisk /dev/disk2
 
 # umount sshfs
-$ diskutil umountDisk [PATH]
-$ diskutil umountDisk /Users/yinfu/share1
+diskutil umountDisk [PATH]
+diskutil umountDisk /Users/yinfu/share1
 ```
 
 ```{figure} ./files/diskutil-list.jpg
@@ -85,7 +85,7 @@ My `diskutil list`
 
 ```bash
 # The space size of each currently mounted directory
-$ df -h
+df -h
 
 # -ll: display bytes || -lh: display KB/MB/G/T...
 ls -ll
@@ -110,10 +110,10 @@ du -h --max-depth=1*
 
 ```bash
 # Find the lines, words, bytes, filenames of the file
-$ wc file
+wc file
 
 # Find the lines of the file
-$ cat file | wc -l
+cat file | wc -l
 ```
 
 ## tail/head
