@@ -211,8 +211,14 @@ Look through https://formulae.brew.sh/ to check useful package.
 | `pfetch`            | ...   |
 | `neofetch`            | ...   |
 | `ncurses`            | I forget...   |
+| `autojump`            | ...   |
+| `cmake`            | ...   |
+| `gcc`            | ...   |
+| `libomp`            | ...   |
+| `open-mpi`            | ...   |
+| `python@3.11`            | ...   |
+| `tree`            | ...   |
 | ``            | ...   |
-
 
 
 
