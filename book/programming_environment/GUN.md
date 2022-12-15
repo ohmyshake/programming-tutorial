@@ -19,14 +19,14 @@ The clang compiler doesn't bring **`openmp`** package, and install openmp for cl
 
 ```bash
 # Install
-$ brew install openmp
+brew install openmp
 
 # For compilers to find libomp you may need to set for Makefile
-$ export LDFLAGS="-L/opt/homebrew/opt/libomp/lib"
-$ export CPPFLAGS="-I/opt/homebrew/opt/libomp/include"
+export LDFLAGS="-L/opt/homebrew/opt/libomp/lib"
+export CPPFLAGS="-I/opt/homebrew/opt/libomp/include"
 
 # Or compile directly (eg: c++ script)
-$ clang++ openmp.cpp -o openmp -Xpreprocessor -fopenmp -lomp -I/opt/homebrew/opt/libomp/include  -L/opt/homebrew/opt/libomp/lib 
+clang++ openmp.cpp -o openmp -Xpreprocessor -fopenmp -lomp -I/opt/homebrew/opt/libomp/include  -L/opt/homebrew/opt/libomp/lib 
 ```
 
 
@@ -65,7 +65,7 @@ clang: error: linker command failed with exit code 1 (use -v to see invocation)
 
 Then run the following command, it worked well now:
 ```bash
-$ ln -s /opt/homebrew/opt/libomp/lib/libomp.dylib /usr/local/lib/libomp.dylib
+ln -s /opt/homebrew/opt/libomp/lib/libomp.dylib /usr/local/lib/libomp.dylib
 ```
 
 Refer to https://stackoverflow.com/questions/71061894/how-to-install-openmp-on-mac-m1 
@@ -82,17 +82,17 @@ And at this moment, M1 chip also has gcc and g++, but they are the **`soft links
 To install `gcc` in M1 chip (it will also install `gfortran`), which will bring `openmp` package which is not needed to install by yourself.
 
 ```bash
-$ brew search gcc
-$ brew install gcc
+brew search gcc
+brew install gcc
 
 # To compile code directly (different from clang compiler)
-$ g++ openmp.cpp -o openmp -fopenmp
+g++ openmp.cpp -o openmp -fopenmp
 ```
 
 Set the environment variables as following, and you can also download different versions `gcc`:
 
 ```bash
-$ open ~/.zhsrc
+open ~/.zhsrc
 
 # >>> brew's gcc (GNU) >>>
 alias gcc='gcc-12'
@@ -112,7 +112,7 @@ But we can use a custom compiler(clang or gcc) when compiling code.
 
 
 ```bash
-$ brew install open-mpi
+brew install open-mpi
 ```
 
 This will install a lot of command we can use, such as 
@@ -121,16 +121,16 @@ Take `mpic++` for example:
 
 ```bash
 # Check openmpi version
-$ mpic++ --version
+mpic++ --version
 
 # Check the detail of mpic++ command
-$ mpic++ -showme
+mpic++ -showme
 
 # Compile code using mpicc
-$ mpic++ openmpi.cpp -o openmpi
+mpic++ openmpi.cpp -o openmpi
 
 # Run code
-$ mpirun -np 4 ./openmpi
+mpirun -np 4 ./openmpi
 ```
 
 :::{dropdown} The example **`openmpi.cpp`** file is here:
@@ -162,18 +162,18 @@ Set our custom compiler (clang/gcc) to compile **`openmpi.cpp`** file.
 ```bash
 # Set openmpi's compiler before using mpi to compile code
 # [1] C++ language
-$ export OMPI_CXX=clang++
-$ export OMPI_CXX=g++-12
+export OMPI_CXX=clang++
+export OMPI_CXX=g++-12
 # [2] C language
-$ export OMPI_CC=clang
-$ export OMPI_CXX=gcc-12
+export OMPI_CC=clang
+export OMPI_CXX=gcc-12
 
 # Then use mpi to compile [c/c++] code
-$ mpic++ openmpi.cpp -o openmpi
-$ mpicc xx.c -o xx
+mpic++ openmpi.cpp -o openmpi
+mpicc xx.c -o xx
 
 # Run code
-$ mpirun -np 4 openmpi
+mpirun -np 4 openmpi
 ```
 
 :::{dropdown} Do you know `mpic++` is a compiler's wrapper?
@@ -182,7 +182,7 @@ $ mpirun -np 4 openmpi
 Actually mpic++ is a wrapper over the system compiler. In my case, mpicc will use the clang compiler. To find what is behind mpicc you can execute the following command:
 
 ```bash
-$ mpic++ -showme
+mpic++ -showme
 ```
 
 Here is my output:
@@ -214,25 +214,25 @@ Then go to specfem2d folder, and run following command to install:
 
 ```bash
 # Download 
-$ git clone --recursive --branch devel https://github.com/SPECFEM/specfem2d.git
+git clone --recursive --branch devel https://github.com/SPECFEM/specfem2d.git
 
 # Configure in single precision
-$ ./configure FC=gfortran CC=gcc MPIFC=mpif90 MPI_INC=/opt/homebrew/include --with-mpi
+./configure FC=gfortran CC=gcc MPIFC=mpif90 MPI_INC=/opt/homebrew/include --with-mpi
 
 # Configure in double precision, solver's speed will be decreased
-$ ./configure FC=gfortran CC=gcc MPIFC=mpif90 MPI_INC=/opt/homebrew/include --with-mpi --enable-double-precision
+./configure FC=gfortran CC=gcc MPIFC=mpif90 MPI_INC=/opt/homebrew/include --with-mpi --enable-double-precision
 
 # Compile with CUDA (not finished)
 ./configure --with-cuda=cuda5 CUDA_FLAGS=.. CUDA_LIB=.. CUDA_INC=.. MPI_INC=..
 
 # Make
-$ make
+make
 ```
 
 Add executable command to environment variable:
 
 ```bash
-$ open ~/.zshrc
+open ~/.zshrc
 
 # >>> specfem2d >>>
 # To suppress any potential limit to the size of the Unix stack.
