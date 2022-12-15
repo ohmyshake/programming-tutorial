@@ -1,4 +1,4 @@
-# obspy
+# Obspy
 
 - Author: *{{Fu}}*
 - Update: *August 5, 2022*
