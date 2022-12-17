@@ -161,9 +161,6 @@ test XXX
 | `OhMyREPL`   |        |      |
 | `BenchmarkTools`   |        |      |
 | ``   |        |      |
-| ``   |        |      |
-| ``   |        |      |
-| ``   |        |      |
 
 **scientific computation-related package**:
 
