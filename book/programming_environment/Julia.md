@@ -39,6 +39,7 @@
 
 - If you use `jill` to install multiple versions of julia, just want to delete one version.
 Remove the symlinks in symlink_dir, e.g., `~/.local/bin/julia-1.6`.
+::::
 
 
 ::::{dropdown} Wether to delete `~/.julia` folder?
