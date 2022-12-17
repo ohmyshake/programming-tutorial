@@ -73,15 +73,15 @@ end
 
 
 
-共4中模式(官网是5种模式)，按住 ] 进入包管理模式
+Open the julia firstly, and then
 
-按住 ; 进入shell模式，可以使用bash中存在的shell命令，如ls,cd..
+- type `]` will into the pkg managment mode.
 
-按住 ？进入help模式，输入任意函数，即可返回使用说明
+- type `;` will into the shell mode.
 
-所有模式通过 ’删除键‘返回
+- type `?` will into help mode
 
-reference: https://docs.juliacn.com/latest/stdlib/REPL/#Pkg-mode
+- type `delete` will return the last mode
 
 
 
@@ -91,7 +91,7 @@ reference: https://docs.juliacn.com/latest/stdlib/REPL/#Pkg-mode
 	
 - Open the terminal, and then run `julia name.jl`.   
 
-- In Julia REPL, input `include("name.jl")`
+- In Julia REPL, type `include("name.jl")`
 
 
 
