@@ -170,7 +170,7 @@ test XXX
 | ------------  | ------------- | :----------: |
 | `SeisIO`       | Seismic data process          | pkg       |
 | `SeisNoise`   |  Ambient Noise cc      | Pkg     |
+| `FwiFlow`   | CO2 simulation       |      |
 | ``   |        |      |
-
 
 
