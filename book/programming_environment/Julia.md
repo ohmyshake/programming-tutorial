@@ -122,7 +122,7 @@ using XXX 			# 使用某个包
 
 
 # 安装本地开发包：
-]
+$ ]
 dev folder_name
 ```
 
