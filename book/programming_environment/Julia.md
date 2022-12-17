@@ -126,25 +126,26 @@ using XXX
 # install the local pkg
 $ ]
 dev folder_name
-```
 
-Package managment mode:
+# check all pkgs installed
+$ ]
+status or st
 
-```julia
-status or st			# 查看所有安装包的版本
-# 等价于 using Pkg; Pkg.status()
+# install pkg with the specifical version
+$ ]
+add XXX@1.6.2 		
 
-add XXX 			# 安装包
-# help 模式下查看 Pkg.add 说明文档，可安装指定版本与本地包
-# add XXX@1.6.2 安装指定版本？
+# remove pkg
+$ ]
+rm XXX 			
 
-rm XXX 				# 删除包
+# update pkg
+$ ]
+update XXX  
 
-update XXX  			# 更新包
-
-test XXX 			# 测试包
-
-add SeisIO; build [Package]; precompile # 构建与预编译包?
+# test pkg
+$ ]
+test XXX 			
 
 ```
 
