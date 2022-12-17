@@ -35,6 +35,20 @@
 :color: info
 :icon: info
 
+- If you install the `pkg` package into Applications, you can delete `~/.Julia` folder and the env variable.
+
+- If you use `jill` to install multiple versions of julia, just want to delete one version.
+Remove the symlinks in symlink_dir, e.g., `~/.local/bin/julia-1.6`.
+
+```note 
+Wether to delete `~/.julia` folder?
+
+* All Julia packages are installed in ~/.julia/packages/ in version-agnostic manner; whether a specific package version is used depends on the environment you're using. For instance, ~/.julia/environments/v1.6/Manifest.toml specifies all julia package versions. There isn't ~/.julia/packages/v1.6 stuff. Thus you don't need to worry about this at all.
+
+* If you want to cleanup some spaces, you can try pkg> gc in Pkg mode. Or if you insist, another way is to manually remove ~/.julia/packages folder and then pkg> instantiate to rebuild it.
+
+reference：https://github.com/johnnychen94/jill.py/issues/96
+```
 ::::
 
 2. Uninstall
