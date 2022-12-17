@@ -31,7 +31,7 @@
     jill switch 1.6 		
     ```
 
-::::{dropdown} Do you know how to uninstall
+::::{dropdown} Do you know how to uninstall julia?
 :color: info
 :icon: info
 
