@@ -40,7 +40,7 @@ cat ~/.ssh/id_rsa.pub | ssh user@host "mkdir -p ~/.ssh && cat >> ~/.ssh/authoriz
 chmod 644 ~/.ssh/authorized_keys
 ```
 ::::
-
+:::::
 
 2. Uninstall
 ###########################
