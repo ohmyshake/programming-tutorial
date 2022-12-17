@@ -54,6 +54,20 @@ reference：https://github.com/johnnychen94/jill.py/issues/96
 ::::
 
 
+## startup.jl  
+The `startup.jl ` is initialization file of julia REPL.
+Open the `~/.julia/config/startup.jl` file, and then add the following info for example:
+
+```julia
+if VERSION >= v"1.4"
+    try
+        using OhMyREPL
+    catch e
+        @warn "error while using OhMyREPL" e
+    end
+end
+```
+
 
 ## Three Modes in REPL
 
@@ -75,28 +89,16 @@ reference: https://docs.juliacn.com/latest/stdlib/REPL/#Pkg-mode
 ## Run Scripts
 
 	
-a. Bash terminal: julia 脚本名称.jl   
+- Open the terminal, and then run `julia name.jl`.   
 
-b. Julia REPL: include("脚本名称.jl")   # 可以查看变量的值，推荐
-
-c. IDE 中，见后文 VScode 内容
+- In Julia REPL, input `include("name.jl")`
 
 
 
 
-## startup.jl  
-The `startup.jl ` is initialization file of julia REPL.
-Open the `~/.julia/config/startup.jl` file, and then add the following info for example:
 
-```julia
-if VERSION >= v"1.4"
-    try
-        using OhMyREPL
-    catch e
-        @warn "error while using OhMyREPL" e
-    end
-end
-```
+
+
 
 
 
