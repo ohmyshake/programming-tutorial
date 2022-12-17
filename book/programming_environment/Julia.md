@@ -106,6 +106,12 @@ versioninfo() 			# 查看Julia配置信息，版本和下载源路径等
 
 using XXX 			# 使用某个包
 
+
+```
+
+Package managment mode:
+
+```bash
 status or st			# 查看所有安装包的版本
 # 等价于 using Pkg; Pkg.status()
 
@@ -122,7 +128,7 @@ test XXX 			# 测试包
 add SeisIO; build [Package]; precompile # 构建与预编译包?
 
 ```
-包管理模式下：
+
 
 
 
