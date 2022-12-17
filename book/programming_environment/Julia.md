@@ -60,27 +60,27 @@ reference：https://github.com/johnnychen94/jill.py/issues/96
 
 
 
-	共4中模式(官网是5种模式)，按住 ] 进入包管理模式
+共4中模式(官网是5种模式)，按住 ] 进入包管理模式
 
-	按住 ; 进入shell模式，可以使用bash中存在的shell命令，如ls,cd..
+按住 ; 进入shell模式，可以使用bash中存在的shell命令，如ls,cd..
 
-	按住 ？进入help模式，输入任意函数，即可返回使用说明
+按住 ？进入help模式，输入任意函数，即可返回使用说明
 
-	所有模式通过 ’删除键‘返回
+所有模式通过 ’删除键‘返回
 
-	reference: https://docs.juliacn.com/latest/stdlib/REPL/#Pkg-mode
-
-
+reference: https://docs.juliacn.com/latest/stdlib/REPL/#Pkg-mode
 
 
-4. Julia 执行脚本
+
+
+## Run Scripts
 
 	
-	a. Bash terminal: julia 脚本名称.jl   
+a. Bash terminal: julia 脚本名称.jl   
 
-	b. Julia REPL: include("脚本名称.jl")   # 可以查看变量的值，推荐
+b. Julia REPL: include("脚本名称.jl")   # 可以查看变量的值，推荐
 
-	c. IDE 中，见后文 VScode 内容
+c. IDE 中，见后文 VScode 内容
 
 
 
