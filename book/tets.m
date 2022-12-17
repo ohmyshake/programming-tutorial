@@ -1,4 +1,6 @@
 %% d
-printf("ssss 22")
+a=2
+b=4
+d=a+b
 
 %%
