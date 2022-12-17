@@ -135,24 +135,14 @@ add SeisIO; build [Package]; precompile # 构建与预编译包?
 
 
 
-安装本地开发包：
-
-	包管理模式下: dev .  或者给定包的路径 dev folder_name
 
 
+## VScode IDE for Julia
 
+- Install julia extensions, and set the interpreter that you want to use.
 
-7. VScode IDE for Julia
-###########################
-另外可选的 atom 或者 jupyterlab or jupyter notebook
-
-	a. 首先需要在自己环境中配置好 Julia，将其加入环境变量中
-
-	b. 安装 VScode 中的 Julia 插件，如果 Julia 在环境变量中，VScode 会自动找到并配置好；如果想自己配置或者修改 julia 解释器路径，在 setting 中搜索 Julia Extensions, 找到 Julia: Executable Path 修改即可，例如修改为 /Users/yf/.local/bin/julia-1.6
-
-	c. VScode 中执行 Julia 脚本有两种方式：点击执行三角符号，在 bash 中执行；同时按住 shift+回车，在 Julia REPL 中执行，此时可以查看变量（推荐）
-
-	d. Control+回车，会打开 VScode 中 Julia 的 REPL
+- The `shift` + `return` will run the code in REPL,
+and `control` + `return` will open the REPL in VScode.
 
 
 
