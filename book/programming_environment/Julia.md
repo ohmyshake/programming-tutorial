@@ -55,7 +55,7 @@ reference：https://github.com/johnnychen94/jill.py/issues/96
 
 
 
-## REPL Mode
+## Three Modes in REPL
 
 
 
