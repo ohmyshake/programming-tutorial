@@ -168,7 +168,7 @@ test XXX
 
 |    Name       |    Purpose    |    Way       |     
 | ------------  | ------------- | :----------: |
-| `SeisIO`       | Seismic data process          | pkg       |
+| `SeisIO`       | Seismic data processing          | pkg       |
 | `SeisNoise`   |  Ambient noise cc      | Pkg     |
 | `FwiFlow`   | CO2 simulation       |      |
 | ``   |        |      |
