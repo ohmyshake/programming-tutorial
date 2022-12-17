@@ -107,6 +107,9 @@ versioninfo() 			# 查看Julia配置信息，版本和下载源路径等
 using XXX 			# 使用某个包
 
 
+# 安装本地开发包：
+]
+dev folder_name
 ```
 
 Package managment mode:
