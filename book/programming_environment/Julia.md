@@ -18,7 +18,7 @@
     # <<< Julia <<<
     ```
 
-- (**recomend**) 中文社区提供了一个Python安装程序——jill——可以一键安装Julia环境，管理不同版本与不同版本之间的链接转换。pip 安装jill, 并添加到环境路径，使用教程见 https://github.com/johnnychen94/jill.py
+- (**recommend**) 中文社区提供了一个Python安装程序——jill——可以一键安装Julia环境，管理不同版本与不同版本之间的链接转换。pip 安装jill, 并添加到环境路径，使用教程见 https://github.com/johnnychen94/jill.py
 
 jill install 1.6 		# 安装指定版本
 
