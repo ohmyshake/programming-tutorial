@@ -98,7 +98,20 @@ if VERSION >= v"1.4"
 end
 ```
 
-## Package Managment
+
+
+
+
+## VScode IDE for Julia
+
+- Install julia extensions, and set the interpreter that you want to use.
+
+- The `shift` + `return` will run the code in REPL,
+and `control` + `return` will open the REPL in VScode.
+
+
+
+## Package
 
 ```julia
 
@@ -134,98 +147,27 @@ add SeisIO; build [Package]; precompile # 构建与预编译包?
 
 
 
+**geophysics package**:
 
+|     Name     |    Purpose    |     Way       |     
+| ------------ | ------------- | :-----------: |
+| `Revise`       | ...           |    |
+| `PkgServerClient`   | Set mirror servers for China region      |      |
+| `Plots`   |        |      |
+| `OhMyREPL`   |        |      |
+| `BenchmarkTools`   |        |      |
+| ``   |        |      |
+| ``   |        |      |
+| ``   |        |      |
+| ``   |        |      |
 
+**scientific computation-related package**:
 
-## VScode IDE for Julia
-
-- Install julia extensions, and set the interpreter that you want to use.
-
-- The `shift` + `return` will run the code in REPL,
-and `control` + `return` will open the REPL in VScode.
-
-
-
-
-
-
-8. Jupyter IDE for julia
-###########################
-
-	a. 安装插件 add IJulia 	# 我已经安装了 conda jupyter 不需要再使用 IJulia 安装一次 jupyter 
-	
-	b. Bash 中直接运行：jupyter lab or jupyter notebook, 可选择Julia解释器
-
-	c. 注意 jupyter 似乎只能识别最高版本的 Julia kernal? 我暂时没有解决方案
-
-	reference: https://julialang.github.io/IJulia.jl/stable/manual/usage/
-		   https://zhuanlan.zhihu.com/p/158912631
-
-
-
-
-9. Julia 常用安装包
-###########################
-
---. 地震学包：
-	
-	SeisIO			# 地震数据输入输出
-
-	SeisNoise 		# ambient noise 互相关
-
-	
-
-
---. 其他包：
-
-	Revise			# VScode 中调用 Julia ？？ Hot-fix 在线修复，必须第一个加载然后再加载别的包；VScode自带Revise; 但其不是万能的，不能修改常量以及结构体的定义，这种情况仍然需要重启 Julia 
-	
-	PkgServerClient  	# 自动匹配最优网络镜像
-
-	Plots 			# 画图包
-
-	IJulia 			# for jupyter
-
-	OhMyREPL 		#
-
-	Latexify			#
-
-	PowerMonitor		#
-
-	BenchmarkTools 		#
-
-	Cthulhu			# 
-
-	Debugger			#
-
-	ThreadPools		# 多线程包
-
-
-
-
-
-
-10. Julia 使用注意事项
-###########################
-
-	a. Julia community 发展很快，一些包的接口会经常发生变化，导致不同版本之间的不兼容情况，例如：
-		
-		- 使用 “SeisIO” Project.toml 文件说明需要 HDF5 = "0.12.3, 0.13" 版本
-
-		- 但使用 “SeisNoise” 需要使用 “Plots” 包，新版本的 “Plots” 不支持 HDF5 = "0.12.3, 0.13" 这些老版本，code can run but warning
-
-		- 解决办法是，使用老版本的 “Plots” 或者忽略 warning
-
-	reference: https://github.com/JuliaPlots/Plots.jl/issues/3235
-
-
-	b. Julia 的 JIT 技术导致第一次运行 code 时，速度很慢，所以适合在 IDE 中写代码，且对画图plot不太友好，建议用matplotlib可视化
-
-
-
-
-
-
+|    Name       |    Purpose    |    Way       |     
+| ------------  | ------------- | :----------: |
+| `SeisIO`       | Seismic data process          | pkg       |
+| `SeisNoise`   |  Ambient Noise cc      | Pkg     |
+| ``   |        |      |
 
 
 
