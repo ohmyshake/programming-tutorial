@@ -40,42 +40,26 @@
 - If you use `jill` to install multiple versions of julia, just want to delete one version.
 Remove the symlinks in symlink_dir, e.g., `~/.local/bin/julia-1.6`.
 
-```note 
-Wether to delete `~/.julia` folder?
+
+::::{dropdown} Wether to delete `~/.julia` folder?
+:color: info
+:icon: info
+
+::::
+
 
 * All Julia packages are installed in ~/.julia/packages/ in version-agnostic manner; whether a specific package version is used depends on the environment you're using. For instance, ~/.julia/environments/v1.6/Manifest.toml specifies all julia package versions. There isn't ~/.julia/packages/v1.6 stuff. Thus you don't need to worry about this at all.
 
 * If you want to cleanup some spaces, you can try pkg> gc in Pkg mode. Or if you insist, another way is to manually remove ~/.julia/packages folder and then pkg> instantiate to rebuild it.
 
 reference：https://github.com/johnnychen94/jill.py/issues/96
-```
 ::::
 
-2. Uninstall
-###########################
-
-	a. 二进制安装方式: MacBook 直接删除 APP 应用，然后删除 ~/.Julia 文件夹内的所有环境与安装库信息，即可。
-	
-	b. jill 包管理工具安装时,安装多个版本，但仅删除指定版本: 
-
-		* delete the julia folder in install_dir, e.g., /Applications/Julia-1.6.app
-
-		* optionally remove the symlinks in symlink_dir, e.g., ~/.local/bin/julia-1.6
-
-	c. ~/.Julia 目录是否需要删除的注意事项：
-
-		* All Julia packages are installed in ~/.julia/packages/ in version-agnostic manner; whether a specific package version is used depends on the environment you're using. For instance, ~/.julia/environments/v1.6/Manifest.toml specifies all julia package versions. There isn't ~/.julia/packages/v1.6 stuff. Thus you don't need to worry about this at all.
-
-		* If you want to cleanup some spaces, you can try pkg> gc in Pkg mode. Or if you insist, another way is to manually remove ~/.julia/packages folder and then pkg> instantiate to rebuild it.
 
 
-	reference：https://github.com/johnnychen94/jill.py/issues/96
+## REPL Mode
 
 
-
-
-3. Julia 的 REPL 命令行模式
-###########################
 
 	共4中模式(官网是5种模式)，按住 ] 进入包管理模式
 
@@ -91,7 +75,7 @@ reference：https://github.com/johnnychen94/jill.py/issues/96
 
 
 4. Julia 执行脚本
-###########################
+
 	
 	a. Bash terminal: julia 脚本名称.jl   
 
@@ -102,23 +86,11 @@ reference：https://github.com/johnnychen94/jill.py/issues/96
 
 
 
-5. 大陆用户更换源
-###########################
+## startup.jl  
+The `startup.jl ` is initialization file of julia REPL.
+Open the `~/.julia/config/startup.jl` file, and then add the following info for example:
 
-	a.在 REPL 中键入，ENV["JULIA_PKG_SERVER"]="https://mirrors.bfsu.edu.cn/julia", bfsu是北京外国语大学的镜像。每次使用都需要设置一遍.
-
-	b.使用 using PkgServerClient，利用函数 versioninfo() 查看当前Julia环境信息，会根据用户当前网络状况，自动设置到最近镜像网站。Julia中文社区的大佬写的。
-
-	c.以下加入到 startup.jl 启动文件中 (path: ~/.julia/config/startup.jl)
-
-if VERSION >= v"1.4"
-    try
-        using PkgServerClient
-    catch e
-        @warn "error while importing PkgServerClient" e
-    end
-end
-
+```julia
 if VERSION >= v"1.4"
     try
         using OhMyREPL
@@ -126,13 +98,11 @@ if VERSION >= v"1.4"
         @warn "error while using OhMyREPL" e
     end
 end
+```
 
+## Package Managment
 
-6. Julia 常用包管理命令
-###########################
-管理包环境时，首先要确保镜像是否可用，ENV["JULIA_PKG_SERVER"] 或者使用 using PkgServerClient
-
-基本模式下：
+```bash
 
 	versioninfo() 			# 查看Julia配置信息，版本和下载源路径等
 
