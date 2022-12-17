@@ -18,14 +18,15 @@
     # <<< Julia <<<
     ```
 
-- (**recommend**) 中文社区提供了一个Python安装程序——jill——可以一键安装Julia环境，管理不同版本与不同版本之间的链接转换。pip 安装jill, 并添加到环境路径，使用教程见 https://github.com/johnnychen94/jill.py
+- (**recommend**) Using [jill.py](https://github.com/johnnychen94/jill.py) to download julia and manage multiple versions. Use `pip install jill` firstly, then:
 
-jill install 1.6 		# 安装指定版本
+    ```bash
+    jill install 1.6 		# 安装指定版本
 
-jill list  			# 查看所有安装的Julia版本
+    jill list  			# 查看所有安装的Julia版本
 
-jill switch 1.6 		# 设置默认版本是1.6
-
+    jill switch 1.6 		# 设置默认版本是1.6
+    ```
 
 
 
