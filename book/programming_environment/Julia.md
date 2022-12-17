@@ -54,7 +54,7 @@ reference：https://github.com/johnnychen94/jill.py/issues/96
 ::::
 
 
-## startup.jl  
+## Startup.jl  
 The `startup.jl ` is initialization file of julia REPL.
 Open the `~/.julia/config/startup.jl` file, and then add the following info for example:
 
@@ -69,7 +69,7 @@ end
 ```
 
 
-## Three Modes in REPL
+## 3 Modes in REPL
 
 
 
