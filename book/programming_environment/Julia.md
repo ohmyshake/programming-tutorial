@@ -79,9 +79,9 @@ Open the julia firstly, and then
 
 - type `;` will into the shell mode.
 
-- type `?` will into help mode
+- type `?` will into help mode.
 
-- type `delete` will return the last mode
+- type `delete` will return the last mode.
 
 
 
