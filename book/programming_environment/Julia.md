@@ -21,11 +21,14 @@
 - (**recommend**) Using [jill.py](https://github.com/johnnychen94/jill.py) to download julia and manage multiple versions. Use `pip install jill` firstly, then:
 
     ```bash
-    jill install 1.6 		# 安装指定版本
+    # install julia with version 1.8
+    jill install 1.8 		
 
-    jill list  			# 查看所有安装的Julia版本
+    # check all versions you have installed
+    jill list  			
 
-    jill switch 1.6 		# 设置默认版本是1.6
+    # set the default version to 1.6
+    jill switch 1.6 		
     ```
 
 
