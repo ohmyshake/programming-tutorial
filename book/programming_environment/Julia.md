@@ -10,15 +10,15 @@
 
 ## Installation
 
-1. (**not recommend**)  Download `dmg` package from official website with MacBook，click install, and then add the env variable in `~/.zshrc` as following:
+- (**not recommend**)  Download `dmg` package from official website with MacBook，click install, and then add the env variable in `~/.zshrc` as following:
 
-```
+```bash
 # >>> Julia >>>
 export PATH="/Applications/Julia-1.6.app/Contents/Resources/julia/bin/:$PATH"
 # <<< Julia <<<
 ```
 
-2. (**recomend**) 中文社区提供了一个Python安装程序——jill——可以一键安装Julia环境，管理不同版本与不同版本之间的链接转换。pip 安装jill, 并添加到环境路径，使用教程见 https://github.com/johnnychen94/jill.py
+- (**recomend**) 中文社区提供了一个Python安装程序——jill——可以一键安装Julia环境，管理不同版本与不同版本之间的链接转换。pip 安装jill, 并添加到环境路径，使用教程见 https://github.com/johnnychen94/jill.py
 
 jill install 1.6 		# 安装指定版本
 
