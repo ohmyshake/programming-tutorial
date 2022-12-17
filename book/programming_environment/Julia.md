@@ -113,7 +113,7 @@ and `control` + `return` will open the REPL in VScode.
 
 ## Package
 
-```julia
+```ijulia
 $ julia
 
 # check the default info of julia
