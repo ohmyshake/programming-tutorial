@@ -115,6 +115,7 @@ and `control` + `return` will open the REPL in VScode.
 
 ```julia
 $ julia
+
 versioninfo() 			# 查看Julia配置信息，版本和下载源路径等
 
 using XXX 			# 使用某个包
