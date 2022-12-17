@@ -100,7 +100,7 @@ end
 
 ## Package Managment
 
-```bash
+```julia
 
 versioninfo() 			# 查看Julia配置信息，版本和下载源路径等
 
@@ -114,7 +114,7 @@ dev folder_name
 
 Package managment mode:
 
-```bash
+```julia
 status or st			# 查看所有安装包的版本
 # 等价于 using Pkg; Pkg.status()
 
