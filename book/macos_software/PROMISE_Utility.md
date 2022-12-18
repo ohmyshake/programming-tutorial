@@ -23,6 +23,12 @@ name: shortcuts-2
 Driver
 ```
 
+
+- `PROMISE Utility Pro for Mac`: utility for Intel Macbook.
+
+- `Pegasus32 Series Utility for Mac`: utility for Apple-M1 Mac, and will generate the `promiseutil` command-line tool after installation.
+
+
 ```{figure} ./files/promiseutil.jpg
 ---
 scale: 30%
