@@ -558,12 +558,51 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#install-matlab-in-nots">
+   Install Matlab in NOTS
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#run-matlab-in-vscode">
+   Run Matlab in VSCode
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#run-matlab-script-in-terminal">
+   Run Matlab Script in Terminal
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#reference">
+   reference
+  </a>
+ </li>
+</ul>
+
+    </nav>
 </div>
     </div>
     <div class="article row">
@@ -575,6 +614,34 @@ title="Print to PDF"
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#install-matlab-in-nots">
+   Install Matlab in NOTS
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#run-matlab-in-vscode">
+   Run Matlab in VSCode
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#run-matlab-script-in-terminal">
+   Run Matlab Script in Terminal
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#reference">
+   reference
+  </a>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -584,6 +651,84 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="matlab">
 <h1>Matlab<a class="headerlink" href="#matlab" title="Permalink to this headline">#</a></h1>
+<ul class="simple">
+<li><p>Author: <em><a class="reference external" href="https://yinfu.info/">Fu Yin</a></em></p></li>
+<li><p>Update: <em>Dec 18, 2022</em></p></li>
+<li><p>Reading: <em>30 min</em></p></li>
+</ul>
+<hr class="docutils" />
+<section id="install-matlab-in-nots">
+<h2>Install Matlab in NOTS<a class="headerlink" href="#install-matlab-in-nots" title="Permalink to this headline">#</a></h2>
+<p>Download <code class="docutils literal notranslate"><span class="pre">matlab</span></code> in Rice <a class="reference external" href="https://kb.rice.edu/page.php?id=69000">webpage</a>,
+and then install in NOTS.
+I don’t have the <code class="docutils literal notranslate"><span class="pre">sudo</span></code> permission, so I need to change the authority of <code class="docutils literal notranslate"><span class="pre">install</span></code> script.
+Take my pkg for example, <code class="docutils literal notranslate"><span class="pre">matlab_R2022b_glnxa64</span></code> is the installation pkg, and <code class="docutils literal notranslate"><span class="pre">MATLAB_R2022b</span></code> is the folder after installing.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># install matlab without sudo mode</span>
+<span class="nb">cd</span> /PathToMatlab/matlab_R2022b_glnxa64/bin/
+chmod -R <span class="m">777</span> install
+./install
+
+<span class="c1"># actiavte the license</span>
+<span class="nb">cd</span> /PathToMatlab/MATLAB_R2022b/bin
+./activate_matlab.sh
+</pre></div>
+</div>
+</section>
+<section id="run-matlab-in-vscode">
+<h2>Run Matlab in VSCode<a class="headerlink" href="#run-matlab-in-vscode" title="Permalink to this headline">#</a></h2>
+<p>Install the extensions:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Matlab</span></code>: code highlighting, code completion (this function does not work well, some codes cannot be automatically completed), real-time grammar checking,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">matlab-formatter</span></code>: code formatting,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Matlab</span> <span class="pre">Snippets</span></code> : code completion (supplement to the plug-in Matlab code completion function),</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Matlab</span> <span class="pre">Code</span> <span class="pre">Run</span></code>: run the m file and Matlab command line in the terminal of Vscode.</p></li>
+</ul>
+<p>Set the env variable in <code class="docutils literal notranslate"><span class="pre">settings.json</span></code> as following:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ open settings.json
+
+<span class="c1"># insert</span>
+<span class="s2">&quot;matlab.mlintpath&quot;</span>: <span class="s2">&quot;/Applications/MATLAB_R2022b.app/bin/maci64/mlint&quot;</span>,
+<span class="s2">&quot;matlab.matlabpath&quot;</span>: <span class="s2">&quot;/Applications/MATLAB_R2022b.app/bin/matlab&quot;</span>,
+<span class="s2">&quot;files.associations&quot;</span>: <span class="o">{</span>
+        <span class="s2">&quot;*.m&quot;</span>: <span class="s2">&quot;matlab&quot;</span>
+    <span class="o">}</span>
+</pre></div>
+</div>
+<p>Or set the varibale in <code class="docutils literal notranslate"><span class="pre">setting</span></code>:</p>
+<figure class="align-center" id="shortcuts-2">
+<a class="reference internal image-reference" href="../_images/matlab-setting.jpg"><img alt="../_images/matlab-setting.jpg" src="../_images/matlab-setting.jpg" style="width: 580.0px; height: 235.0px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 7 </span><span class="caption-text">settings.json</span><a class="headerlink" href="#shortcuts-2" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Run scripts in vscode:</p>
+<ul class="simple">
+<li><p>Type <code class="docutils literal notranslate"><span class="pre">shift</span></code> + <code class="docutils literal notranslate"><span class="pre">command</span></code> + <code class="docutils literal notranslate"><span class="pre">P</span></code> to open command panel.</p></li>
+<li><p>Type <code class="docutils literal notranslate"><span class="pre">&gt;matlab</span></code> to choose <code class="docutils literal notranslate"><span class="pre">Run</span> <span class="pre">Matlab</span> <span class="pre">File</span></code>, which will open an <code class="docutils literal notranslate"><span class="pre">TERMINAL</span></code> in VSCode terminal.</p></li>
+<li><p>Matlab script will also be run in this terminal.</p></li>
+</ul>
+</section>
+<section id="run-matlab-script-in-terminal">
+<h2>Run Matlab Script in Terminal<a class="headerlink" href="#run-matlab-script-in-terminal" title="Permalink to this headline">#</a></h2>
+<p>Add the <code class="docutils literal notranslate"><span class="pre">matlab</span></code> path into env PATH. Take running <code class="docutils literal notranslate"><span class="pre">script.m</span></code> in terminal for example:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># add file path in matlab script</span>
+addpath<span class="o">(</span>folder_path<span class="o">)</span>
+
+<span class="c1"># start matlab without open GUI</span>
+matlab -nodesktop -nosplash 
+
+<span class="c1"># run script.m in terminal</span>
+matlab -nodesktop -nosplash -r script.m
+</pre></div>
+</div>
+</section>
+<section id="reference">
+<h2>reference<a class="headerlink" href="#reference" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://zhuanlan.zhihu.com/p/257625690">https://zhuanlan.zhihu.com/p/257625690</a></p></li>
+<li><p><a class="reference external" href="https://muzing.top/posts/52276c1/">https://muzing.top/posts/52276c1/</a></p></li>
+</ul>
+</section>
 </section>
 
     <script type="text/x-thebe-config">

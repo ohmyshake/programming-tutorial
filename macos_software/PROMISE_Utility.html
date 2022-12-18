@@ -558,12 +558,41 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduction">
+   Introduction
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#dirvers-and-utilities">
+   Dirvers and Utilities
+  </a>
+ </li>
+</ul>
+
+    </nav>
 </div>
     </div>
     <div class="article row">
@@ -575,6 +604,24 @@ title="Print to PDF"
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduction">
+   Introduction
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#dirvers-and-utilities">
+   Dirvers and Utilities
+  </a>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -584,6 +631,69 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="promise-utility">
 <h1>PROMISE Utility<a class="headerlink" href="#promise-utility" title="Permalink to this headline">#</a></h1>
+<ul class="simple">
+<li><p>Author: <em><a class="reference external" href="https://yinfu.info/">Fu Yin</a></em></p></li>
+<li><p>Update: <em>Dec 18, 2022</em></p></li>
+<li><p>Reading: <em>60 min</em></p></li>
+</ul>
+<hr class="docutils" />
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>My disk’s version is <code class="docutils literal notranslate"><span class="pre">Pegasus32-R4</span></code>, the product’s website is <a class="reference external" href="https://www.promise.com/Products/Pegasus/Pegasus32">https://www.promise.com/Products/Pegasus/Pegasus32</a></p></li>
+<li><p>Resources (drivers, utilities, and manuals) can be downloaded via <a class="reference external" href="https://www.promise.com/Support/DownloadCenter/Pegasus/Pegasus32/R4#Drivers">https://www.promise.com/Support/DownloadCenter/Pegasus/Pegasus32/R4#Drivers</a></p></li>
+</ul>
+<figure class="align-center" id="promise32-r4">
+<a class="reference internal image-reference" href="../_images/promise32-R4.jpg"><img alt="../_images/promise32-R4.jpg" src="../_images/promise32-R4.jpg" style="width: 162.0px; height: 216.0px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 21 </span><span class="caption-text">My Disk</span><a class="headerlink" href="#promise32-r4" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="dirvers-and-utilities">
+<h2>Dirvers and Utilities<a class="headerlink" href="#dirvers-and-utilities" title="Permalink to this headline">#</a></h2>
+<p>Please consider to install the following drivers and utilities:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Pegasus32</span> <span class="pre">/3</span> <span class="pre">Series</span> <span class="pre">DEXT</span> <span class="pre">Driver</span> <span class="pre">for</span> <span class="pre">Apple-Silicon</span> <span class="pre">Macs</span></code>: the driver in M1 chip. (I install it in M1 but not loaded…due to some problems)</p></li>
+</ul>
+<figure class="align-center" id="promise-driver">
+<a class="reference internal image-reference" href="../_images/promise-driver.jpg"><img alt="../_images/promise-driver.jpg" src="../_images/promise-driver.jpg" style="width: 775.8px; height: 235.79999999999998px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 22 </span><span class="caption-text">Driver</span><a class="headerlink" href="#promise-driver" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">PROMISE</span> <span class="pre">Utility</span> <span class="pre">Pro</span> <span class="pre">for</span> <span class="pre">Mac</span></code>: the utility for Intel Macbook.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Pegasus32</span> <span class="pre">Series</span> <span class="pre">Utility</span> <span class="pre">for</span> <span class="pre">Mac</span></code>: the utility for Apple-M1 Mac, and will generate the <code class="docutils literal notranslate"><span class="pre">promiseutil</span></code> command-line tool after installation.</p></li>
+</ul>
+<figure class="align-center" id="promiseutil">
+<a class="reference internal image-reference" href="../_images/promiseutil.jpg"><img alt="../_images/promiseutil.jpg" src="../_images/promiseutil.jpg" style="width: 760.1999999999999px; height: 223.2px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 23 </span><span class="caption-text">Utilities</span><a class="headerlink" href="#promiseutil" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<div class="admonition-a-common-problem-is-eject-one-of-the-drives-in-pegasus-r4-system-when-it-is-working-when-plug-it-back-in-it-came-up-with-a-red-light-instead-of-blue-which-will-show-as-dead-in-the-promise-utility-how-to-recover-it admonition">
+<p class="admonition-title">A common problem is:  eject one of the drives in Pegasus R4 system when it is working, when plug it back in, it came up with a red light instead of blue, which will show as “Dead” in the Promise utility. How to recover it?</p>
+<p>Open the Terminal and type <code class="docutils literal notranslate"><span class="pre">promiseutil</span></code>(based on <code class="docutils literal notranslate"><span class="pre">Pegasus32</span> <span class="pre">Series</span> <span class="pre">Utility</span> <span class="pre">for</span> <span class="pre">Mac</span></code>), and hit Return to log into the CLI
+Force the drives back online with the following commands:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># open `cliib` mode</span>
+promiseutil
+
+<span class="c1"># input in `cliib` mode</span>
+phydrv -a online -p1
+phydrv -a online -p2
+phydrv -a online -p3
+phydrv -a online -p4
+</pre></div>
+</div>
+<p>After forcing the PDs (Physical Disks) back online, the LEDs will turn back to blue and your volume should be accessible after forcing the (3) PDs back online.</p>
+<p><strong>Reference with same problem:</strong></p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://forum.promise.com/thread/r4-array-bad/">https://forum.promise.com/thread/r4-array-bad/</a></p></li>
+<li><p><a class="reference external" href="https://forum.promise.com/thread/pegasus-r4-multiple-drive-failures/">https://forum.promise.com/thread/pegasus-r4-multiple-drive-failures/</a></p></li>
+</ul>
+</div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
