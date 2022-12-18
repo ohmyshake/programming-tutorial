@@ -17,7 +17,7 @@ chmod -R 777 install
 
 # actiavte matlab
 cd /PathToMatlab/MATLAB_R2022b/bin
-sh activate_matlab.sh
+./activate_matlab.sh
 
 ```
 
