@@ -2,7 +2,7 @@
 
 My disk's version is `Pegasus32 R4`, refer to https://www.promise.com/Products/Pegasus/Pegasus32
 
-
+Drivers can be downloaded via https://www.promise.com/Support/DownloadCenter/Pegasus/Pegasus32/R4#Drivers
 
 Open the Terminal and type `promiseutil` and hit Return to log into the CLI
 Force the drives back online with the following commands:
