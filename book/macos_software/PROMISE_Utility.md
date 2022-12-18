@@ -18,7 +18,7 @@ Please consider to install the following drivers and utilities:
 ---
 scale: 30%
 align: center
-name: shortcuts-2
+name: promise-driver
 ---
 Driver
 ```
@@ -33,7 +33,7 @@ Driver
 ---
 scale: 30%
 align: center
-name: shortcuts-2
+name: promiseutil
 ---
 Utilities
 ```
