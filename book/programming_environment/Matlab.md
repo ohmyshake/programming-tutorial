@@ -64,10 +64,13 @@ Run scripts in vscode:
 
 ## Run Matlab Script in Terminal
 
-- Add the `matlab` path into env PATH.
+Add the `matlab` path into env PATH. Take running `script.m` in terminal for example:
 
 ```bash
+# 
+matlab -nodesktop -nosplash 
 
+matlab -nodesktop -nosplash -r script.m
 ```
 
 
