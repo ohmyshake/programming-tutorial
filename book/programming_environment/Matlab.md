@@ -4,10 +4,16 @@
 ## Install Matlab in NOTS
 
 Download `matlab` in Rice [webpage](https://kb.rice.edu/page.php?id=69000),
+and then install in NOTS.
+I don't have the `sudo` permission, so  
 
 
+```bash
 
+cd ./Matlab2020/bin/
+sh activate_matlab.sh
 
+```
 
 ## Run Matlab in VSCode 
 
