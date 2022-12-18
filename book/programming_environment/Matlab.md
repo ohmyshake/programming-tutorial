@@ -26,6 +26,8 @@ cd /PathToMatlab/MATLAB_R2022b/bin
 Install the extensions, `Matlab`, `matlab-formatter`, `Matlab Snippets`, and `Matlab Code Run`. Set the env variable in `settings.json` as following:
 
 ```bash
+$ open settings.json
+
 "matlab.mlintpath": "/Applications/MATLAB_R2022b.app/bin/maci64/mlint",
 "matlab.matlabpath": "/Applications/MATLAB_R2022b.app/bin/matlab",
 "files.associations": {
