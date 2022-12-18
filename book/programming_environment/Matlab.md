@@ -62,6 +62,11 @@ Run scripts in vscode:
 
 
 
+## Run Matlab Script in Terminal
+
+
+
+
 
 
 ## reference
