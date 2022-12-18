@@ -17,7 +17,7 @@ Please consider to install the following drivers and utilities:
 
 ```{figure} ./files/promise-driver.jpg
 ---
-scale: 50%
+scale: 30%
 align: center
 name: shortcuts-2
 ---
@@ -26,7 +26,7 @@ Driver
 
 ```{figure} ./files/promiseutil.jpg
 ---
-scale: 50%
+scale: 30%
 align: center
 name: shortcuts-2
 ---
