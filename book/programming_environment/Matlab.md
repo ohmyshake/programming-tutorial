@@ -56,7 +56,8 @@ settings.json
 
 Run scripts in vscode:
 
-- Type `shift` + `command` + `P` to open command panel, and then type `>matlab` to choose `Run Matlab File`, which will open an `TERMINAL` in VSCode terminal. Matlab script will also be run in this terminal.
+- Type `shift` + `command` + `P` to open command panel.
+- Type `>matlab` to choose `Run Matlab File`, which will open an `TERMINAL` in VSCode terminal. Matlab script will also be run in this terminal.
 
 
 
