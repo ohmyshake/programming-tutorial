@@ -15,7 +15,7 @@
 
 ```{figure} ./files/promise32-R4.jpg
 ---
-scale: 30%
+scale: 10%
 align: center
 name: promise32-R4
 ---
