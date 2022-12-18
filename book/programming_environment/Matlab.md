@@ -1,8 +1,18 @@
 # Matlab
 
+
+## Install Matlab in NOTS
+
+s
+
+Download `matlab` in Rice [webpage](https://kb.rice.edu/page.php?id=69000)
+
+
+
+
 ## Run Matlab in VSCode 
 
-Install the extension
+Install the extensions, `Matlab`, `matlab-formatter`, `Matlab Snippets`, and `Matlab Code Run`.
 
 ```bash
 # change the permission 
