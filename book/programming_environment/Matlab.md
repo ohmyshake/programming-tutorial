@@ -36,7 +36,16 @@ $ open settings.json
     }
 ```
 
-matlab-setting.jpg
+
+
+```{figure} ./files/matlab-setting.jpg
+---
+scale: 50%
+align: center
+name: shortcuts-2
+---
+settings.json
+```
 
 ## reference
 
