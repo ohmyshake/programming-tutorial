@@ -7,12 +7,15 @@ Download `matlab` in Rice [webpage](https://kb.rice.edu/page.php?id=69000),
 and then install in NOTS.
 I don't have the `sudo` permission, so  
 
+`matlab_R2022b_glnxa64` is the installation pkg, and `MATLAB_R2022b` is the folder after installing.
+
 
 ```bash
-
+cd /PathToMatlab/matlab_R2022b_glnxa64/bin/
+chmod -R 777 install
 ./install
 
-cd ./Matlab2020/bin/
+cd /PathToMatlab/MATLAB_R2022b/bin
 sh activate_matlab.sh
 
 ```
