@@ -23,7 +23,7 @@ cd /PathToMatlab/MATLAB_R2022b/bin
 
 ## Run Matlab in VSCode 
 
-Install the extensions, 
+Install the extensions: 
 - `Matlab`: code highlighting, code completion (this function does not work well, some codes cannot be automatically completed), real-time grammar checking, 
 - `matlab-formatter`: code formatting, 
 - `Matlab Snippets` : code completion (supplement to the plug-in Matlab code completion function), 
