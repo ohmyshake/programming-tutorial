@@ -8,12 +8,8 @@ Drivers can be downloaded via https://www.promise.com/Support/DownloadCenter/Peg
 
 :::{admonition} A common problem is:  eject one of the drives in Pegasus R4 system when it is working, when plug it back in, it came up with a red light instead of blue, which will show as "Dead" in the Promise utility. How to recover it?
 
-
-
-
 Open the Terminal and type `promiseutil` and hit Return to log into the CLI
 Force the drives back online with the following commands:
-
 
 
 ```bash
@@ -28,8 +24,9 @@ phydrv -a online -p4
 ```
 
 After forcing the PDs (Physical Disks) back online, the LEDs will turn back to blue and your volume should be accessible after forcing the (3) PDs back online.
-:::
 
-Reference:
+**Reference with same problem:**
 - https://forum.promise.com/thread/r4-array-bad/
 - https://forum.promise.com/thread/pegasus-r4-multiple-drive-failures/
+:::
+
