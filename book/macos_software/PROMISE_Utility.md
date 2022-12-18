@@ -8,7 +8,7 @@ Drivers can be downloaded via https://www.promise.com/Support/DownloadCenter/Peg
 
 :::{admonition} A common problem is:  eject one of the drives in Pegasus R4 system when it is working, when plug it back in, it came up with a red light instead of blue, which will show as "Dead" in the Promise utility. How to recover it?
 
-Open the Terminal and type `promiseutil` and hit Return to log into the CLI
+Open the Terminal and type `promiseutil`(based on `Pegasus32 Series Utility for Mac`), and hit Return to log into the CLI
 Force the drives back online with the following commands:
 
 
