@@ -36,6 +36,8 @@ $ open settings.json
     }
 ```
 
+matlab-setting.jpg
+
 ## reference
 
 - https://zhuanlan.zhihu.com/p/257625690
