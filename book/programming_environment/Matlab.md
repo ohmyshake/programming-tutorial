@@ -23,7 +23,12 @@ cd /PathToMatlab/MATLAB_R2022b/bin
 
 ## Run Matlab in VSCode 
 
-Install the extensions, `Matlab`, `matlab-formatter`, `Matlab Snippets`, and `Matlab Code Run`. Set the env variable in `settings.json` as following:
+Install the extensions, 
+- `Matlab` for code highlighting, code completion (this function does not work well, some codes cannot be automatically completed), real-time grammar checking, 
+- `matlab-formatter` for code formatting, 
+- `Matlab Snippets` for code completion (supplement to the plug-in Matlab code completion function), 
+- `Matlab Code Run` for running the m file and Matlab command line in the terminal of Vscode. 
+Set the env variable in `settings.json` as following:
 
 ```bash
 $ open settings.json
