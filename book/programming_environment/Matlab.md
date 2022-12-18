@@ -28,6 +28,7 @@ Install the extensions, `Matlab`, `matlab-formatter`, `Matlab Snippets`, and `Ma
 ```bash
 $ open settings.json
 
+# insert
 "matlab.mlintpath": "/Applications/MATLAB_R2022b.app/bin/maci64/mlint",
 "matlab.matlabpath": "/Applications/MATLAB_R2022b.app/bin/matlab",
 "files.associations": {
