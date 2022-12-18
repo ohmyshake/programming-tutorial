@@ -23,7 +23,7 @@ cd /PathToMatlab/MATLAB_R2022b/bin
 
 ## Run Matlab in VSCode 
 
-Install the extensions, `Matlab`, `matlab-formatter`, `Matlab Snippets`, and `Matlab Code Run`.
+Install the extensions, `Matlab`, `matlab-formatter`, `Matlab Snippets`, and `Matlab Code Run`. Set the env variable in `settings.json`.
 
 ```bash
 "matlab.mlintpath": "/Applications/MATLAB_R2022b.app/bin/maci64/mlint",
