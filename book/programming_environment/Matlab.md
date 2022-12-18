@@ -3,8 +3,6 @@
 
 ## Install Matlab in NOTS
 
-s
-
 Download `matlab` in Rice [webpage](https://kb.rice.edu/page.php?id=69000)
 
 
