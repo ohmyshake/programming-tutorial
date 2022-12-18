@@ -68,7 +68,7 @@ Add the `matlab` path into env PATH. Take running `script.m` in terminal for exa
 
 ```bash
 # add file path in matlab script
-addpath( genpath(folder) );
+addpath(folder_path)
 
 # start matlab without open GUI
 matlab -nodesktop -nosplash 
