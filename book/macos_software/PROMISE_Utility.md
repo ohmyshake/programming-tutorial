@@ -24,9 +24,9 @@ Driver
 ```
 
 
-- `PROMISE Utility Pro for Mac`: utility for Intel Macbook.
+- `PROMISE Utility Pro for Mac`: the utility for Intel Macbook.
 
-- `Pegasus32 Series Utility for Mac`: utility for Apple-M1 Mac, and will generate the `promiseutil` command-line tool after installation.
+- `Pegasus32 Series Utility for Mac`: the utility for Apple-M1 Mac, and will generate the `promiseutil` command-line tool after installation.
 
 
 ```{figure} ./files/promiseutil.jpg
