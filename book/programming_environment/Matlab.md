@@ -7,7 +7,7 @@ Download `matlab` in Rice [webpage](https://kb.rice.edu/page.php?id=69000),
 and then install in NOTS.
 I don't have the `sudo` permission, so I need to change the authority of `install` script. 
 
-The `matlab_R2022b_glnxa64` is the installation pkg, and `MATLAB_R2022b` is the folder after installing.
+Take my pkg for example, `matlab_R2022b_glnxa64` is the installation pkg, and `MATLAB_R2022b` is the folder after installing.
 
 
 ```bash
