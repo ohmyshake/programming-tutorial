@@ -28,6 +28,7 @@ Install the extensions,
 - `matlab-formatter`: code formatting, 
 - `Matlab Snippets` : code completion (supplement to the plug-in Matlab code completion function), 
 - `Matlab Code Run`: run the m file and Matlab command line in the terminal of Vscode. 
+
 Set the env variable in `settings.json` as following:
 
 ```bash
