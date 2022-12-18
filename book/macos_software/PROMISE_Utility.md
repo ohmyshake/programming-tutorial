@@ -12,6 +12,15 @@
 - Resources (drivers, utilities, and manuals) can be downloaded via https://www.promise.com/Support/DownloadCenter/Pegasus/Pegasus32/R4#Drivers
 
 
+
+```{figure} ./files/promise32-R4.jpg
+---
+scale: 30%
+align: center
+name: promise32-R4
+---
+My Disk
+```
 ## Dirvers and Utilities
 
 Please consider to install the following drivers and utilities:
