@@ -14,7 +14,6 @@ Please consider to install the following drivers and utilities:
 - `Pegasus32 /3 Series DEXT Driver for Apple-Silicon Macs`: the driver in M1 chip. (I install it in M1 but not loaded...due to some problems)
 
 
-
 ```{figure} ./files/promise-driver.jpg
 ---
 scale: 30%
