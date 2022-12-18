@@ -10,12 +10,12 @@ Take my pkg for example, `matlab_R2022b_glnxa64` is the installation pkg, and `M
 
 
 ```bash
-# install matlab
+# install matlab without sudo mode
 cd /PathToMatlab/matlab_R2022b_glnxa64/bin/
 chmod -R 777 install
 ./install
 
-# actiavte matlab
+# actiavte the license
 cd /PathToMatlab/MATLAB_R2022b/bin
 ./activate_matlab.sh
 
@@ -26,14 +26,11 @@ cd /PathToMatlab/MATLAB_R2022b/bin
 Install the extensions, `Matlab`, `matlab-formatter`, `Matlab Snippets`, and `Matlab Code Run`.
 
 ```bash
-# change the permission 
-chmod -R 777 /Path_to_matlab_pkg/bin/glnxa64
-
-# install without sudo mode
-./install
-
-# activate the license
-./activate_matlab.sh
+"matlab.mlintpath": "/Applications/MATLAB_R2022b.app/bin/maci64/mlint",
+"matlab.matlabpath": "/Applications/MATLAB_R2022b.app/bin/matlab",
+"files.associations": {
+        "*.m": "matlab"
+    }
 ```
 
 ## reference
