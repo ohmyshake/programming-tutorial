@@ -21,4 +21,5 @@ After forcing the PDs (Physical Disks) back online, the LEDs will turn back to b
 
 
 Reference:
+- https://forum.promise.com/thread/r4-array-bad/
 - https://forum.promise.com/thread/pegasus-r4-multiple-drive-failures/
