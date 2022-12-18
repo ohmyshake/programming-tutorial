@@ -1,5 +1,10 @@
 # PROMISE Utility
 
+- Author: *{{Fu}}*
+- Update: *Dec 18, 2022*
+- Reading: *60 min*
+
+---
 
 ## Introduction
 - My disk's version is `Pegasus32-R4`, the product's website is https://www.promise.com/Products/Pegasus/Pegasus32
