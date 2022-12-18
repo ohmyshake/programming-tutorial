@@ -10,7 +10,10 @@ Force the drives back online with the following commands:
 
 
 ```bash
+# open `cliib` mode
 promiseutil
+
+# input in `cliib` mode
 phydrv -a online -p1
 phydrv -a online -p2
 phydrv -a online -p3
