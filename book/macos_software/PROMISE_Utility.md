@@ -18,3 +18,7 @@ phydrv -a online -p4
 ```
 
 After forcing the PDs (Physical Disks) back online, the LEDs will turn back to blue and your volume should be accessible after forcing the (3) PDs back online.
+
+
+Reference:
+- https://forum.promise.com/thread/pegasus-r4-multiple-drive-failures/
