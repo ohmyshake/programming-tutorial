@@ -1,8 +1,8 @@
 # PROMISE Utility
 
-My disk's version is `Pegasus32 R4`, refer to https://www.promise.com/Products/Pegasus/Pegasus32
+My disk's version is `Pegasus32 R4`, the product website is https://www.promise.com/Products/Pegasus/Pegasus32
 
-Drivers can be downloaded via https://www.promise.com/Support/DownloadCenter/Pegasus/Pegasus32/R4#Drivers
+Resources (drivers, utilities, and manuals) can be downloaded via https://www.promise.com/Support/DownloadCenter/Pegasus/Pegasus32/R4#Drivers
 
 
 
