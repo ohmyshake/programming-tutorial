@@ -36,7 +36,7 @@ $ open settings.json
     }
 ```
 
-
+Or set the varibale in `setting`:
 
 ```{figure} ./files/matlab-setting.jpg
 ---
