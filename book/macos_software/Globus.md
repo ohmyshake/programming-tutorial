@@ -8,3 +8,16 @@
 
 
 
+```{figure} ./files/promise32-R4.jpg
+---
+scale: 15%
+align: center
+name: promise32-R4
+---
+My Disk
+```
+
+
+
+
+
