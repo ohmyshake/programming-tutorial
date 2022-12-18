@@ -67,6 +67,9 @@ Run scripts in vscode:
 Add the `matlab` path into env PATH. Take running `script.m` in terminal for example:
 
 ```bash
+# add file path in matlab script
+addpath( genpath(folder) );
+
 # start matlab without open GUI
 matlab -nodesktop -nosplash 
 
