@@ -19,7 +19,7 @@ My Disk
 
 ## Introduction
 
-[Globus](https://www.globus.org/) is a secure, reliable **research data management** service. It works as a bridge between the remote endpoint and the local endpoint.
+[Globus](https://www.globus.org/) is a secure, reliable **research data management** service. It works as a bridge between the remote endpoint and the local endpoint,  and it’s a better alternative tool for [rsync](https://rsync.samba.org/).
 
 
 :::{admonition} What is the Globus?
