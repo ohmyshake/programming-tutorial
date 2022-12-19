@@ -32,7 +32,7 @@ existing identities, via just a web browser.
 
 ## Create Account
 
-1. Create Globus ID
+### Create Globus ID
 
 
 
