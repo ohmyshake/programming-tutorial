@@ -44,9 +44,15 @@ existing identities, via just a web browser.
 ### 2. Shell Script
 
 
+```bash
+pip install globus-cli
+```
 
 ### 3. Python Script
 
+```bash
+pip install globus-sdk
+```
 
 ## Reference
 
