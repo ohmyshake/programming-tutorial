@@ -30,6 +30,24 @@ existing identities, via just a web browser.
 :::
 
 
+## Create Account
+
+
+
+
+## Transfer Data
+
+### 1. WebGUI
+
+
+
+### 2. Shell Script
+
+
+
+### 3. Python Script
+
+
 ## Reference
 
 - [Feng's blog](http://marscfeng.github.io/post/Fast-data-transfer-sync-using-globus/)
