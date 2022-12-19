@@ -21,10 +21,13 @@ My Disk
 
 [Globus](https://www.globus.org/) is a secure, reliable **research data management** service. It works as a bridge between the remote Endpoint and the local Endpoint.
 
+
+:::{admonition} What is the Globus?
 With Globus, subscribers can move, share, publish & discover data via a single
 interface – whether your files live on a supercomputer, lab cluster, tape archive,
 public cloud or your laptop, you can manage this data from anywhere, using your
-existing identities, via just a web browser. --- from Globus
+existing identities, via just a web browser.
+:::
 
 
 ## Reference
