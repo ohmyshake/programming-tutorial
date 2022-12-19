@@ -8,14 +8,7 @@
 
 
 
-<!-- ```{figure} ./files/promise32-R4.jpg
----
-scale: 15%
-align: center
-name: promise32-R4
----
-My Disk
-``` -->
+
 
 ## Introduction
 
@@ -58,3 +51,14 @@ existing identities, via just a web browser.
 ## Reference
 
 - [Feng's blog](http://marscfeng.github.io/post/Fast-data-transfer-sync-using-globus/)
+
+
+
+```{figure} ./files/promise32-R4.jpg
+---
+scale: 15%
+align: center
+name: promise32-R4
+---
+My Disk
+```
