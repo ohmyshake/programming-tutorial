@@ -32,6 +32,13 @@ existing identities, via just a web browser.
 
 ## Create Account
 
+1. create your globus ID on globus
+
+
+
+
+### Download Globus Connect Personal for Mac
+[Download Globus Connect Personal for Mac](https://docs.globus.org/how-to/globus-connect-personal-mac/)
 
 
 
