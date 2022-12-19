@@ -17,6 +17,10 @@ name: promise32-R4
 My Disk
 ```
 
+## Introduction
+
+[Globus](https://www.globus.org/) is a secure, reliable **research data management** service. It works as a bridge between the remote Endpoint and the local Endpoint
+
 
 
 ## Reference
