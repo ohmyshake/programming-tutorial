@@ -29,7 +29,7 @@ existing identities, via just a web browser.
 
 Globus needs to know your identity.
 
-- Signing in with your `Google` or `ORCiD ID` credentials, or if your `organization` has been set up with Globus.
+- Signing in with your `Google` or `ORCiD ID` credentials, or if your `Organization` has been set up with Globus showing in figure ~/ref
 
 - Otherwise, create and sign into Globus using a Globus ID
 
