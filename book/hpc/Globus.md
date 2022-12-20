@@ -129,6 +129,7 @@ $ ep1=ddb59aef-6d04-11e5-ba46-xxxxxxxxxx
 # now we can use the endpoint in a human readable fashion
 globus endpoint show $ep1
 ```
+
 ```{figure} ./files/globus-m1-endpoint.jpg
 ---
 scale: 35%
@@ -142,7 +143,14 @@ Globus M1-max Endpoint ID
 - Get Endpoint ID via `Globus Web App`:
 
 
-
+```{figure} ./files/globus-m1-endpoint-app.jpg
+---
+scale: 35%
+align: center
+name: globus-m1-endpoint-app
+---
+Globus M1-max Endpoint ID in Globus Web App
+```
 
 
 
