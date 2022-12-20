@@ -90,7 +90,7 @@ pip install globus-cli
 
 **Login:**
 
-- When you login successfully, it will generate a file `.globus/cli/storage.db` which will remerber you login info, so avoids the repeated login actions next time. 
+- When you login successfully, it will generate a file `.globus/cli/storage.db`, which will remerber you login info, so avoids the repeated login actions next time. 
 
 ```bash
 globus login
