@@ -141,6 +141,11 @@ Globus M1-max Endpoint ID
 
 - Get Endpoint ID via `Globus Web App`
 
+
+
+
+
+
 ### 3. Python Script
 
 ```bash
