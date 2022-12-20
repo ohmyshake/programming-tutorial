@@ -93,6 +93,15 @@ pip install globus-cli
 globus login
 ```
 
+```{figure} ./files/globus-cli-login.jpg
+---
+scale: 50%
+align: center
+name: globus-cli-login
+---
+Globus Login in Terminal
+```
+
 
 ### 3. Python Script
 
