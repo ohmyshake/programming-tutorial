@@ -50,7 +50,14 @@ Globus Login with `Google` or `ORCiD ID`
 Most users might try to transfer data between `cluster's endpoint` and `personal PC's endpoint`, so users need to create new personal endpoint which can be refered to the 
 [tutorial](https://docs.globus.org/how-to/globus-connect-personal-mac/).
 
-
+```{figure} ./files/globus-personal-app.jpg
+---
+scale: 50%
+align: center
+name: globus-personal-app
+---
+Globus Personal App
+```
 
 ## Transfer Data
 
