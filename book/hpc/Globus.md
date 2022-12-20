@@ -117,6 +117,9 @@ Globus Login in Terminal with Authorization Code
 
 **Endpoint ID:**
 
+- Get Endpoint ID via `globus-cli`
+
+
 ```bash
 # get endpoint
 globus endpoint search "Fu's M1-max"
