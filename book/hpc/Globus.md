@@ -127,7 +127,14 @@ $ ep1=ddb59aef-6d04-11e5-ba46-xxxxxxxxxx
 # now we can use the endpoint in a human readable fashion
 globus endpoint show $ep1
 ```
-
+```{figure} ./files/globus-m1-endpoint.jpg
+---
+scale: 50%
+align: center
+name: globus-m1-endpoint
+---
+Globus M1-max Endpoint ID
+```
 
 
 ### 3. Python Script
