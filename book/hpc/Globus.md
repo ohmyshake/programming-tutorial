@@ -38,7 +38,7 @@ Globus needs to know your identity.
 
 ```{figure} ./files/globus-login.jpg
 ---
-scale: 30%
+scale: 50%
 align: center
 name: globus-login
 ---
