@@ -118,11 +118,14 @@ Globus Login in Terminal with Authorization Code
 ***Endpoint ID:**
 
 ```bash
-# method-1:
+# get endpoint
 globus endpoint search "Fu's M1-max"
 
-# method-2:
-globus get-identities -v 'oucyinfu@gmail.com'
+# copy and paste the desired Endpoint ID from the search results
+$ ep1=ddb59aef-6d04-11e5-ba46-xxxxxxxxxx
+
+# now we can use the endpoint in a human readable fashion
+globus endpoint show $ep1
 ```
 
 
