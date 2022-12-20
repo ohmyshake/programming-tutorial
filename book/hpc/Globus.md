@@ -118,7 +118,11 @@ Globus Login in Terminal with Authorization Code
 ***Endpoint ID:**
 
 ```bash
+# method-1:
 globus endpoint search "Fu's M1-max"
+
+# method-2:
+globus get-identities -v 'oucyinfu@gmail.com'
 ```
 
 
