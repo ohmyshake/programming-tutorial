@@ -119,7 +119,6 @@ Globus Login in Terminal with Authorization Code
 
 - Get Endpoint ID via `globus-cli`:
 
-
 ```bash
 # get endpoint
 globus endpoint search "Fu's M1-max"
@@ -139,6 +138,8 @@ name: globus-m1-endpoint
 Globus M1-max Endpoint ID
 ```
 
+
+- Get Endpoint ID via `Globus Web App`
 
 ### 3. Python Script
 
