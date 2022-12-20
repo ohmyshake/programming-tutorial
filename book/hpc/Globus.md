@@ -114,6 +114,14 @@ name: globus-cli-login-code
 Globus Login in Terminal with Authorization Code
 ```
 
+
+
+
+
+
+
+
+
 ### 3. Python Script
 
 ```bash
