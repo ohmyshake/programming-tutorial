@@ -63,6 +63,7 @@ Globus Personal App
 
 ### 1. WebGUI
 
+After logging in globus, you will get a webpage, which is called as `Globus Web App`.
 
 
 ### 2. Shell Script
