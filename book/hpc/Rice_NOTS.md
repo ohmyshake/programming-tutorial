@@ -30,7 +30,7 @@ The following is my data managerment, more info please refer to [Rice CRC Tutori
 
 ```{figure} ./files/nots-storage.jpg
 ---
-scale: 50%
+scale: 30%
 align: center
 name: cpu_gpu
 ---
