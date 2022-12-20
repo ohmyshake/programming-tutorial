@@ -67,7 +67,7 @@ After logging in globus, you will get a webpage like , which is called as `Globu
 
 ```{figure} ./files/globus-webapp.jpg
 ---
-scale: 30%
+scale: 40%
 align: center
 name: globus-webapp
 ---
