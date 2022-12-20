@@ -104,7 +104,7 @@ Globus Login in Terminal
 
 ```{figure} ./files/globus-cli-login-code.jpg
 ---
-scale: 50%
+scale: 30%
 align: center
 name: globus-cli-login-code
 ---
