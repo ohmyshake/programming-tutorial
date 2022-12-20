@@ -65,7 +65,7 @@ Globus Personal App
 
 - After logging in globus, you will get a webpage like {numref}`globus-webapp`, which is called as `Globus Web App`. 
 
-- You can add different `collection` and mark them in `BOOKMARKS`, and transfer data between two PCs.
+- You can add different `collection` and mark them in `BOOKMARKS`, and choose the two panel mode for your two endpoints to transfer data between two PCs.
 
 - After globus submits your work, just wait your data at the directory you set.
 
