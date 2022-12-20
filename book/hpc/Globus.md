@@ -117,8 +117,9 @@ Globus Login in Terminal with Authorization Code
 
 ***Endpoint ID:**
 
+```bash
 
-
+```
 
 
 
