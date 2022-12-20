@@ -61,9 +61,20 @@ Globus Personal App
 
 ## Transfer Data
 
-### 1. WebGUI
+### 1. WebApp
 
-After logging in globus, you will get a webpage, which is called as `Globus Web App`.
+After logging in globus, you will get a webpage like , which is called as `Globus Web App`.
+
+```{figure} ./files/globus-webapp.jpg
+---
+scale: 50%
+align: center
+name: globus-webapp
+---
+Globus Web App
+```
+
+
 
 
 ### 2. Shell Script
