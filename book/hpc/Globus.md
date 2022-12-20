@@ -115,7 +115,7 @@ Globus Login in Terminal with Authorization Code
 ```
 
 
-***Endpoint ID:**
+**Endpoint ID:**
 
 ```bash
 # get endpoint
