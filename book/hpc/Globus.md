@@ -63,7 +63,7 @@ Globus Personal App
 
 ### 1. WebApp
 
-After logging in globus, you will get a webpage like {numref}`globus-webapp`, which is called as `Globus Web App`. You can add different `collection` and mark them in `BOOKMARKS`, and transfer data between 2 PCs.
+After logging in globus, you will get a webpage like {numref}`globus-webapp`, which is called as `Globus Web App`. You can add different `collection` and mark them in `BOOKMARKS`, and transfer data between two PCs.
 
 ```{figure} ./files/globus-webapp.jpg
 ---
