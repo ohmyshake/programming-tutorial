@@ -39,9 +39,9 @@ NOTS Resources
 
 
 :::{warning}
-`/scratch` is not permanent storage, which is to be used only for job I/O.  Delete everything you do not need for another run at the end of the job or move to `/storage/hpc/work` for analysis. Staff may periodically delete files from the `/scratch` file system even if files are less than 14 days old.
+- `/scratch` is not permanent storage, which is to be used only for job I/O.  Delete everything you do not need for another run at the end of the job or move to `/storage/hpc/work` for analysis. Staff may periodically delete files from the `/scratch` file system even if files are less than 14 days old.
 
-`/storage/hpc/work` is only available on the login nodes. Data can be copied between `/storage/hpc/work` and `/scratch` before/after running jobs.
+- `/storage/hpc/work` is only available on the login nodes. Data can be copied between `/storage/hpc/work` and `/scratch` before/after running jobs.
 :::
 
 
