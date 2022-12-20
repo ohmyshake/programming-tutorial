@@ -12,7 +12,14 @@
 Set up on the cluster (NOTS) please follow the instructions to apply for an account, https://kb.rice.edu/108221, and put your advisor down as
 your sponsor if your PI has the account.
 
-
+```{figure} ./files/nots-account.jpg
+---
+scale: 30%
+align: center
+name: nots-account
+---
+NOTS Account Application
+```
 
 
 ## File Management
