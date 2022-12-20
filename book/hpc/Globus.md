@@ -67,7 +67,7 @@ Globus Personal App
 
 - You can add different `collection` and mark them in `BOOKMARKS`, and choose the two panel mode for your two endpoints to transfer data between two PCs.
 
-- After globus submits your work, just wait your data at the directory you set.
+- After globus submits your work, you can find the mission process in `ACTIVITY` part.
 
 ```{figure} ./files/globus-webapp.jpg
 ---
