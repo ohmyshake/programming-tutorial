@@ -35,6 +35,17 @@ Globus needs to know your identity.
 
 - PS: if you are a student in Joanthan's group, just email Rice IT team to add `condo` from jonathan's storage into your `collection`.
 
+
+```{figure} ./files/globus-login.jpg
+---
+scale: 30%
+align: center
+name: globus-login
+---
+Globus Login with `Google` or `ORCiD ID`
+```
+
+
 ### Download Globus Connect Personal for Mac
 [Download Globus Connect Personal for Mac](https://docs.globus.org/how-to/globus-connect-personal-mac/)
 
@@ -65,11 +76,3 @@ pip install globus-sdk
 
 
 
-```{figure} ./files/promise32-R4.jpg
----
-scale: 15%
-align: center
-name: promise32-R4
----
-My Disk
-```
