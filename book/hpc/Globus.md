@@ -17,7 +17,7 @@
 
 :::{admonition} What is the Globus?
 With Globus, subscribers can move, share, publish & discover data via a single
-interface – whether your files live on a supercomputer, lab cluster, tape archive,
+interface, whether your files live on a supercomputer, lab cluster, tape archive,
 public cloud or your laptop, you can manage this data from anywhere, using your
 existing identities, via just a web browser.
 :::
