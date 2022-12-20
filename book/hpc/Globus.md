@@ -140,7 +140,7 @@ Globus M1-max Endpoint ID
 ```
 
 
-- Get Endpoint ID via `Globus Web App`:
+- Get Endpoint ID via `Globus Web App`, click the specified collections to show detailed info, then the `UUID` is the Endpoint ID:
 
 
 ```{figure} ./files/globus-m1-endpoint-app.jpg
