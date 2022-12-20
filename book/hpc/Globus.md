@@ -28,7 +28,7 @@ existing identities, via just a web browser.
 ### Create Globus ID
 
 
-You email rice IT team to add `condo` from jonathan's storage into your `collection`.
+If you are a student in Joanthan's group, just email rice IT team to add `condo` from jonathan's storage into your `collection`.
 
 ### Download Globus Connect Personal for Mac
 [Download Globus Connect Personal for Mac](https://docs.globus.org/how-to/globus-connect-personal-mac/)
