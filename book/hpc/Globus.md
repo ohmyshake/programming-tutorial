@@ -27,7 +27,9 @@ existing identities, via just a web browser.
 
 ### Create Globus ID
 
-- Globus needs to know your identity. This can be done by signing in with your `Google` or `ORCiD ID` credentials, or if your `organization` has been set up with Globus.
+Globus needs to know your identity.
+
+- Signing in with your `Google` or `ORCiD ID` credentials, or if your `organization` has been set up with Globus.
 
 - Otherwise, create and sign into Globus using a Globus ID
 
