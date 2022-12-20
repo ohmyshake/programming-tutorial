@@ -47,7 +47,7 @@ Globus Login with `Google` or `ORCiD ID`
 
 
 ### Download Globus Connect Personal for Mac
-Most users might try to transfer data between cluster's endpoint and personal PC's endpoint, so users need to create new personal endpoint which can be refered to the 
+Most users might try to transfer data between `cluster's endpoint` and `personal PC's endpoint`, so users need to create new personal endpoint which can be refered to the 
 [tutorial](https://docs.globus.org/how-to/globus-connect-personal-mac/).
 
 
