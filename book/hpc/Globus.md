@@ -63,7 +63,7 @@ Globus Personal App
 
 ### 1. WebApp
 
-After logging in globus, you will get a webpage like , which is called as `Globus Web App`.
+After logging in globus, you will get a webpage like {numref}`globus-webapp` , which is called as `Globus Web App`.
 
 ```{figure} ./files/globus-webapp.jpg
 ---
