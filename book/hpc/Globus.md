@@ -129,7 +129,7 @@ globus endpoint show $ep1
 ```
 ```{figure} ./files/globus-m1-endpoint.jpg
 ---
-scale: 30%
+scale: 40%
 align: center
 name: globus-m1-endpoint
 ---
