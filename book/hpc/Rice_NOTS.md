@@ -32,9 +32,9 @@ The following is my data managerment, more info please refer to [Rice CRC Tutori
 ---
 scale: 30%
 align: center
-name: cpu_gpu
+name: nots-storage
 ---
-NOTS Resources 
+NOTS Storage 
 ```
 
 
