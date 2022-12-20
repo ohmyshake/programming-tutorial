@@ -139,7 +139,7 @@ Globus M1-max Endpoint ID
 ```
 
 
-- Get Endpoint ID via `Globus Web App`
+- Get Endpoint ID via `Globus Web App`:
 
 
 
