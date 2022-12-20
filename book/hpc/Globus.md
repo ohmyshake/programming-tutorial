@@ -88,6 +88,12 @@ Sometimes you may have a lot of files (not a single file) to transfer, you need 
 pip install globus-cli
 ```
 
+**Login:**
+```bash
+globus login
+```
+
+
 ### 3. Python Script
 
 ```bash
