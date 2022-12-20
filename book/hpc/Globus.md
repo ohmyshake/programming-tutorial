@@ -102,6 +102,14 @@ name: globus-cli-login
 Globus Login in Terminal
 ```
 
+```{figure} ./files/globus-cli-login-code.jpg
+---
+scale: 50%
+align: center
+name: globus-cli-login-code
+---
+Globus Login in Terminal with Authorization Code
+```
 
 ### 3. Python Script
 
