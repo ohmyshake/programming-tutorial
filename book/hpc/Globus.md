@@ -31,7 +31,7 @@ Globus needs to know your identity.
 
 - Signing in with your `Google` or `ORCiD ID` credentials, or if your `Organization` has been set up with Globus, showing in {numref}`globus-login`.
 
-- Otherwise, create and sign into Globus using a Globus ID
+- Otherwise, create and sign into Globus using a `Globus ID`
 
 - PS: if you are a student in Joanthan's group, just email Rice IT team to add `condo` from jonathan's storage into your `collection`.
 
