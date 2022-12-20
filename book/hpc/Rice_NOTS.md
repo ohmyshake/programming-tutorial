@@ -20,13 +20,6 @@ your sponsor if your PI has the account.
 The following is my data managerment, more info please refer to [Rice CRC Tutorial](https://kb.rice.edu/108237).
 
 
-<!-- | **Filesystem**   | **Use** | **Physical Path** | **Size** | **Quota** | **Type** | **Purge Policy** | 
-| :-----| :---- | :---- | :----: | :----: |:----: |:----: | 
-| Home directories | <font color=red>Only configuration file (eg. `.zshrc` `.vscode-server`)</font> |/home | 5 TB | 10 GB | NFS |none | 
-|Group Project directories| <font color=red>Not use now</font> |/projects |20 TB |100 GB per group |NFS| none |  
-|Work storage space |	<font color=red> Install software and store small data </font>|	/storage/hpc/work|	456 TB|	2 TB per group|	NFS	|none | 
-|Shared Scratch high performance I/O | <font color=red> Workspace </font>|/scratch |157 TB |None|Lustre|14 days| 
-|Local Scratch on each node| <font color=red> Not use now </font>|/tmp|4 TB|None|Local|at the end of each job |  -->
 
 ```{figure} ./files/nots-storage.jpg
 ---
