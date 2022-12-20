@@ -44,6 +44,7 @@ parts:
     - file: hpc/Make_Cmake
     - file: hpc/Pybind11_Cython 
     - file: hpc/Slurm
+    - file: hpc/Globus
     - file: hpc/Rice_NOTS
     - file: hpc/Azure
     - file: hpc/Amazon_S3
@@ -62,7 +63,6 @@ parts:
     # maxdepth: 2
     chapters:
     - file: macos_software/MacSoftware
-    - file: macos_software/Globus
     - file: macos_software/ImageMagick
     - file: macos_software/Otter
     - file: macos_software/PROMISE_Utility
