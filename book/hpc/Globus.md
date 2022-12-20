@@ -82,7 +82,7 @@ Globus Web App
 
 
 ### 2. Shell Script
-Sometimes you may have a lot of files (not a single file) to transfer, you need to write a script to do this work. [`globus-cli`](https://docs.globus.org/cli/) provides a command-line shell tool to transfer data, and install it firstly:
+Sometimes you may have a lot of files (not a single file) to transfer, you need to write a script to do this work. [`globus-cli`](https://docs.globus.org/cli/) provides a `command-line-shell` tool to transfer data, and install it firstly:
 
 ```bash
 pip install globus-cli
