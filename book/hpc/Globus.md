@@ -252,8 +252,8 @@ source_endpoint_id = "xxxx-xxxx..."  # jonathan's condo
 dest_endpoint_id = "xxxx-xxxx..."  # nots's scratch
 
 # single file
-a1 = "/hpc-demo/docs/getbatchError.m" 
-a2 = "/fy21/hpc-demo/docs/getbatchError.m"
+a1 = "/hpc-demo/docs/getbatchError.m" # source file's path
+a2 = "/fy21/hpc-demo/docs/getbatchError.m" # destination file's path
 # directory
 b1 = "/hpc-demo/docs"
 b2 = "/fy21/hpc-demo/docs_new"
