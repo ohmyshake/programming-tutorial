@@ -124,7 +124,7 @@ Globus Login in Terminal with Authorization Code
 globus endpoint search "Fu's M1-max"
 
 # copy and paste the desired Endpoint ID from the search results
-$ ep1=f34fbbd4-6708-11ed-8422-xxxxxxxxxx
+ep1=f34fbbd4-6708-11ed-8422-xxxxxxxxxx
 
 # now we can use the endpoint in a human readable fashion
 globus endpoint show $ep1
