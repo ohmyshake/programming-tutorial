@@ -248,5 +248,5 @@ pip install globus-sdk
 
 - [Feng's blog](http://marscfeng.github.io/post/Fast-data-transfer-sync-using-globus/)
 
-
+- [Globus Docs](https://docs.globus.org/)
 
