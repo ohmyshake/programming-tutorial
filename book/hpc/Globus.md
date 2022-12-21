@@ -156,7 +156,7 @@ Globus M1-max Endpoint ID in Globus Web App
 
 **Filesystem Operations**
 
-Demonstrates the synchronous commands of `mkdir`, `rename`, and `ls`.
+- Demonstrates the synchronous commands of `mkdir`, `rename`, and `ls`.
 
 ```bash
 # Tutorial Endpoint ID found from 'globus endpoint search Tutorial'
@@ -176,8 +176,12 @@ $ globus ls $ep1:\~/
 cli_example_dir_renamed/
 ```
 
+**Single Item Transfers**
+
+- Submits transfer requests for a file and a directory from one Globus Tutorial Endpoint to another
 
 
+**Batch Transfers**
 
 ### 3. Python Script
 
