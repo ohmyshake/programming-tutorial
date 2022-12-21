@@ -7,18 +7,18 @@
 
 Welcome to **Programming Notebook**, a notebook mainly about my scientific notes and gains in learning **Programming** and **Geophysics**, and I am very glad if it is helpful for your research. The notebook is powered by [Jupyter Book](https://jupyterbook.org/en/stable/intro.html), which uses [MyST](https://sphinx-design.readthedocs.io/en/sbt-theme/grids.html) Markdown syntax.
 
-Main content:
+**Main contents:**
 
-- Programming Environment
-- App Development
-- Parallel Computing and HPC Platform
-- Machine Learning and Deep Learning
-- MacOS Software
-- Geophysics Software
+- Programming environment
+- App development
+- Parallel computing and HPC platform
+- Machine learning and deep learning
+- Mac software
+- Geophysics software
 
 
 ## Sponsoring ✨
-**If you enjoy the blog, please consider sponsoring 🍿 :**
+**🍿 If you enjoy the blog, please consider sponsoring 🍿**
 
 
 
