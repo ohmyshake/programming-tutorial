@@ -273,7 +273,7 @@ fout.write('\t --recursive') # these are recursive transfers in the batch
 fout.write('\n')
 fout.close()
 
-command = "globus transfer %s  %s  --label '%s'  --batch %s" % (source_endpoint_id, dest_endpoint_id, label, input_txt)
+command = "globus transfer %s %s --label '%s' --batch %s" % (source_endpoint_id, dest_endpoint_id, label, input_txt)
 os.system(command)
 ```
 
