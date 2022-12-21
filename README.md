@@ -24,13 +24,13 @@ Welcome to **Programming Notebook**, a notebook mainly about my scientific notes
 
 
 
-⏬ &nbsp; For Chinese guys:
+⏬ &nbsp; For chinese friends:
 
 | `Alipay` | `WeChat` | 
 | :---: | :---: | 
 |<div align=center> <img src=./book/intro_files/Alipay.jpg width=50% /> </div>| <div align=center> <img src=./book/intro_files/WeChat.jpg width=50% /> </div>|
 
-⏬ &nbsp; For Non-Chinese guys:
+⏬ &nbsp; For non-chinese friends:
 
 | `Buy Me a Coffee` | `PayPal` | 
 | :---: | :---: | 
