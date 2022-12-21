@@ -22,7 +22,8 @@ Main content:
 
 | `Alipay` | `WeChat` | 
 | --- | --- | 
-| ![Alipay](./book/intro_files/Alipay.jpg)| ![WeChat](./book/intro_files/WeChat.jpg)| 
+| <img src=./book/intro_files/Alipay.jpg width=50% /> | <img src=./book/intro_files/WeChat.jpg width=50% /> |
+
 
 
 
