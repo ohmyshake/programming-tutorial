@@ -209,6 +209,19 @@ file2.txt file2.txt # inline-comments are also allowed
 file3.txt file3.txt
 ```
 
+```bash
+# Tutorial Endpoint IDs found from 'globus endpoint search Tutorial'
+$ ep1=ddb59aef-6d04-11e5-ba46-22000b92c6ec
+$ ep2=ddb59af0-6d04-11e5-ba46-22000b92c6ec
+
+# pass `--batch` mode an input .txt file
+# all paths from stdin are relative to the paths supplied here
+$ globus transfer $ep1:/share/godata/ $ep2:~/ \
+    --label "CLI Batch" \
+    --batch in.txt
+Message: The transfer has been accepted and a task has been created and queued for execution
+Task ID: 306900e0-dda1-11e6-9d11-22000a1e3b52
+```
 
 
 
