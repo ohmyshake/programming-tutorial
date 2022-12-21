@@ -1,7 +1,7 @@
 
 # Programming-Notebook
 
-[![Build](https://github.com/OUCyf/Programming-Notebook/actions/workflows/build.yml/badge.svg)](https://github.com/OUCyf/Programming-Notebook/actions/workflows/build.yml)
+[![Build and Deploy](https://github.com/OUCyf/Programming-Notebook/actions/workflows/deploy.yml/badge.svg)](https://github.com/OUCyf/Programming-Notebook/actions/workflows/deploy.yml)
 
 ## About the Book ✨
 
