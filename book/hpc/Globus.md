@@ -180,6 +180,23 @@ cli_example_dir_renamed/
 
 - Submits transfer requests for a file and a directory from one Globus Tutorial Endpoint to another
 
+```bash
+# Tutorial Endpoint IDs found from 'globus endpoint search Tutorial'
+$ ep1=ddb59aef-6d04-11e5-ba46-22000b92c6ec
+$ ep2=ddb59af0-6d04-11e5-ba46-22000b92c6ec
+
+# transfer file1.txt from one endpoint to another
+$ globus transfer $ep1:/share/godata/file1.txt $ep2:\~/file1.txt \
+    --label "CLI single file"
+Message: The transfer has been accepted and a task has been created and queued for execution
+Task ID: 466a5962-dda0-11e6-9d11-22000a1e3b52
+
+# recursively transfer the godata folder from one endpoint to another
+$ globus transfer $ep1:/share/godata $ep2:~/godata \
+    --recursive --label "CLI single folder"
+Message: The transfer has been accepted and a task has been created and queued for execution
+Task ID: 47477b62-dda0-11e6-9d11-22000a1e3b52
+```
 
 **Batch Transfers**
 
