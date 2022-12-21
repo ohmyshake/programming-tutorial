@@ -38,7 +38,7 @@ print("this is some stderr", file=sys.stderr)
 print(a)
 ```
 
-## 
+## Multithreading Speeds Up Downloading Files
 
 http://dong.sh/posts/pythonftpparallelsdownload/
 
