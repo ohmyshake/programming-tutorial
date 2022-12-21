@@ -2,7 +2,6 @@
 # Programming-Notebook
 
 [![Build and Deploy](https://github.com/OUCyf/Programming-Notebook/actions/workflows/deploy.yml/badge.svg)](https://github.com/OUCyf/Programming-Notebook/actions/workflows/deploy.yml)
-
 [![The MIT License](https://img.shields.io/github/license/OUCyf/Programming-Notebook)](https://opensource.org/licenses/MIT)
 
 
