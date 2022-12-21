@@ -248,8 +248,8 @@ import os
 
 input_txt = "input.txt"
 label = "CLI batch single file and directory"
-source_endpoint_id = "65194284-3dc1-4b0f-bc3c-2921c96c31cb"  # jonathan's condo
-dest_endpoint_id = "8937d0dd-5669-48e5-8402-d1ab3533bb4c"  # nots's scratch
+source_endpoint_id = "xxxx-xxxx..."  # jonathan's condo
+dest_endpoint_id = "xxxx-xxxx..."  # nots's scratch
 
 # single file
 a1 = "/hpc-demo/docs/getbatchError.m" 
