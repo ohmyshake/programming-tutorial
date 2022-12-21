@@ -242,6 +242,12 @@ There are some app-examples using the python SDK, https://github.com/globus/nati
 
 ### 4. Python Script
 
+
+
+
+
+
+
 ## Reference
 
 - [Feng's blog](http://marscfeng.github.io/post/Fast-data-transfer-sync-using-globus/)
