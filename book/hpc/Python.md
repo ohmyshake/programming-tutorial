@@ -40,7 +40,6 @@ for i in range(0,10):
   fout.write('\t')
   fout.write(str(i+0.5)) 
   fout.write('\n')
-
 fout.close()
 
 command = "globus transfer %s %s --label '%s' --batch %s" % (source_endpoint_id, dest_endpoint_id, label, input_txt)
