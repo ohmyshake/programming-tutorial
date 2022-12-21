@@ -31,7 +31,7 @@ File-IO Subprocess Numpy h5py
 
 ### write files
 fout = open("input.txt", 'w') 
-fout.write('# [source_file_path]\t[dest_file_path]\n')
+fout.write('# i \t i+0.5 \n')
 for i in range(0,10):
   fout.write(str(i)) 
   fout.write('\t')
