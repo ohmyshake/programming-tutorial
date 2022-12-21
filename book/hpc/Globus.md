@@ -277,7 +277,11 @@ command = "globus transfer %s %s --label '%s' --batch %s" % (source_endpoint_id,
 os.system(command)
 ```
 
-
+```bash
+# [source_file_path]	[dest_file_path]
+/hpc-demo/docs/getbatchError.m	/fy21/hpc-demo/docs/getbatchError.m
+/hpc-demo/docs	/fy21/hpc-demo/docs_new	 --recursive
+```
 
 
 ## Reference
