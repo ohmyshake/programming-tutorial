@@ -227,6 +227,8 @@ Note that only one task was needed even though there are multiple files to be tr
 :::
 
 
+**[More example here](https://docs.globus.org/cli/examples/)**
+
 ### 3. Python Script
 
 ```bash
