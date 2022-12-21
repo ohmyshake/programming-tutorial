@@ -198,6 +198,21 @@ Task ID: 47477b62-dda0-11e6-9d11-22000a1e3b52
 
 **Batch Transfers**
 
+- Uses a .txt file to request multiple files in one transfer request.
+
+```bash
+# this is the contents of in.txt:
+# a list of source paths followed by destination paths
+
+file1.txt file1.txt
+file2.txt file2.txt # inline-comments are also allowed
+file3.txt file3.txt
+```
+
+
+
+
+
 ### 3. Python Script
 
 ```bash
