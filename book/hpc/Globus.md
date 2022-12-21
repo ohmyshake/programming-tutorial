@@ -191,8 +191,7 @@ Message: The transfer has been accepted and a task has been created and queued f
 Task ID: 466a5962-dda0-11e6-9d11-22000a1e3b52
 
 # recursively transfer the godata folder from one endpoint to another
-$ globus transfer $ep1:/share/godata $ep2:~/godata \
-    --recursive --label "CLI single folder"
+$ globus transfer $ep1:/share/godata $ep2:~/godata --recursive --label "CLI single folder"
 Message: The transfer has been accepted and a task has been created and queued for execution
 Task ID: 47477b62-dda0-11e6-9d11-22000a1e3b52
 ```
