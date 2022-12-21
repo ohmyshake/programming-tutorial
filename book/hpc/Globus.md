@@ -229,7 +229,7 @@ Note that only one task was needed even though there are multiple files to be tr
 
 **[More example here](https://docs.globus.org/cli/examples/)**
 
-### 3. Python Script
+### 3. Globus-Sdk
 This SDK provides a convenient Pythonic interface to `Globus web APIs`, including the `Transfer API` and the Globus `Auth API` (tools for authenticating logins). Documentation for the APIs is available at https://docs.globus.org/api/, install it firstly:
 
 ```bash
@@ -240,7 +240,7 @@ There are some app-examples using the python SDK, https://github.com/globus/nati
 
 
 
-###
+### 4. Python Script
 
 ## Reference
 
