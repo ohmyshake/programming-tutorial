@@ -1,6 +1,6 @@
 # Introduction ✨
 
-Welcome to **Programming Notebook**, a notebook mainly about my scientific notes and gains in learning **Programming** and **Geophysics**, and I am very glad if it is helpful for your researches. 
+Welcome to **Programming Notebook**, a notebook mainly about my scientific notes and gains in learning **Programming** and **Geophysics**, and I am very glad if it is helpful for your research. 
 
 ```{margin} About Author
 I'm [**Fu Yin**](https://yinfu.info/), a geophysics graduate student at Rice University.
@@ -100,7 +100,7 @@ Useful geophysics softwares.
 
 ## About the Book ✨
 
-The notebook is powered by [Jupyter Book](https://jupyterbook.org/en/stable/intro.html), which use [MyST](https://sphinx-design.readthedocs.io/en/sbt-theme/grids.html) Markdown syntax.
+The notebook is powered by [Jupyter Book](https://jupyterbook.org/en/stable/intro.html), which uses [MyST](https://sphinx-design.readthedocs.io/en/sbt-theme/grids.html) Markdown syntax.
 
 
 All the source files are edited in VSCode, `run_jb_build.py` is a Python script to build the HTML and fresh it in Chrome browser automatically. 
