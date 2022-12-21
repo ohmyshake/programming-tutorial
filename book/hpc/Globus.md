@@ -277,6 +277,8 @@ command = "globus transfer %s %s --label '%s' --batch %s" % (source_endpoint_id,
 os.system(command)
 ```
 
+`input.txt` file is showing below:
+
 ```bash
 # [source_file_path]	[dest_file_path]
 /hpc-demo/docs/getbatchError.m	/fy21/hpc-demo/docs/getbatchError.m
