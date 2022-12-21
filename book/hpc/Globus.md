@@ -222,9 +222,9 @@ $ globus transfer $ep1:/share/godata/ $ep2:~/ --label "CLI Batch" --batch input.
 Message: The transfer has been accepted and a task has been created and queued for execution
 Task ID: 306900e0-dda1-11e6-9d11-22000a1e3b52
 ```
-
+:::{admonition} Only One Task?
 Note that only one task was needed even though there are multiple files to be transferred.
-
+:::
 
 
 ### 3. Python Script
