@@ -253,7 +253,7 @@ label = "CLI batch single file and directory"
 source_endpoint_id = "xxxx-xxxx..."  # jonathan's condo
 dest_endpoint_id = "xxxx-xxxx..."  # nots's scratch
 
-### single file
+### single-file
 a1 = "/hpc-demo/docs/getbatchError.m" # source file's path
 a2 = "/fy21/hpc-demo/docs/getbatchError.m" # destination file's path
 ### directory
