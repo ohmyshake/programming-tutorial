@@ -256,6 +256,11 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="Globus.html">
+   Globus
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="Rice_NOTS.html">
    NOTS
   </a>
@@ -297,11 +302,6 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1">
   <a class="reference internal" href="../macos_software/MacSoftware.html">
    Mac Software
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../macos_software/Globus.html">
-   Globus
   </a>
  </li>
  <li class="toctree-l1">
@@ -627,21 +627,24 @@ title="Print to PDF"
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#file-io">
+   File IO
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#numpy">
+   Numpy
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#subprocess">
    Subprocess
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#manual">
-     Manual
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#case-1">
-     Case-1
-    </a>
-   </li>
-  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#multithreading-speeds-up-downloading-files">
+   Multithreading Speeds Up Downloading Files
+  </a>
  </li>
 </ul>
 
@@ -663,21 +666,24 @@ title="Print to PDF"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#file-io">
+   File IO
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#numpy">
+   Numpy
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#subprocess">
    Subprocess
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#manual">
-     Manual
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#case-1">
-     Case-1
-    </a>
-   </li>
-  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#multithreading-speeds-up-downloading-files">
+   Multithreading Speeds Up Downloading Files
+  </a>
  </li>
 </ul>
 
@@ -698,13 +704,33 @@ title="Print to PDF"
 </ul>
 <hr class="docutils" />
 <p>File-IO Subprocess Numpy h5py</p>
+<section id="file-io">
+<h2>File IO<a class="headerlink" href="#file-io" title="Permalink to this headline">#</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">### read files</span>
+
+
+<span class="c1">### write files</span>
+<span class="n">fout</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;input.txt&quot;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> 
+<span class="n">fout</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;# i </span><span class="se">\t</span><span class="s1"> i+0.5 </span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">):</span>
+  <span class="n">fout</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">))</span> 
+  <span class="n">fout</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">)</span>
+  <span class="n">fout</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mf">0.5</span><span class="p">))</span> 
+  <span class="n">fout</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">fout</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+<section id="numpy">
+<h2>Numpy<a class="headerlink" href="#numpy" title="Permalink to this headline">#</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
 <section id="subprocess">
 <h2>Subprocess<a class="headerlink" href="#subprocess" title="Permalink to this headline">#</a></h2>
-<section id="manual">
-<h3>Manual<a class="headerlink" href="#manual" title="Permalink to this headline">#</a></h3>
-</section>
-<section id="case-1">
-<h3>Case-1<a class="headerlink" href="#case-1" title="Permalink to this headline">#</a></h3>
 <div class="cell tag_hide-input tag_hide-output tag_output_scroll tag_remove-stderr tag_raises-exception docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>import sys
@@ -733,6 +759,9 @@ this is some stdout
 </div>
 </div>
 </section>
+<section id="multithreading-speeds-up-downloading-files">
+<h2>Multithreading Speeds Up Downloading Files<a class="headerlink" href="#multithreading-speeds-up-downloading-files" title="Permalink to this headline">#</a></h2>
+<p><a class="reference external" href="http://dong.sh/posts/pythonftpparallelsdownload/">http://dong.sh/posts/pythonftpparallelsdownload/</a></p>
 </section>
 </section>
 

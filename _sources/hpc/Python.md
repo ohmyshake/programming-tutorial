@@ -23,13 +23,34 @@ kernelspec:
 File-IO Subprocess Numpy h5py 
 
 
+## File IO
+
+```python
+### read files
+
+
+### write files
+fout = open("input.txt", 'w') 
+fout.write('# i \t i+0.5 \n')
+for i in range(0,10):
+  fout.write(str(i)) 
+  fout.write('\t')
+  fout.write(str(i+0.5)) 
+  fout.write('\n')
+fout.close()
+```
+
+## Numpy
+
+```python
+import numpy as np
+
+a = np.ones(10)
+```
 
 
 ## Subprocess
 
-### Manual
-
-### Case-1
 
 ```{code-cell} ipython3
 :tags: [hide-input,hide-output,output_scroll,remove-stderr,raises-exception]
@@ -41,5 +62,7 @@ print("this is some stderr", file=sys.stderr)
 print(a)
 ```
 
+## Multithreading Speeds Up Downloading Files
 
+http://dong.sh/posts/pythonftpparallelsdownload/
 

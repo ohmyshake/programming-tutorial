@@ -1,0 +1,1035 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Globus &#8212; Programming Notebook</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="canonical" href="https://seismology101.github.io/Notebook/hpc/Globus.html" />
+    <link rel="shortcut icon" href="../_static/logo.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="NOTS" href="Rice_NOTS.html" />
+    <link rel="prev" title="Slurm" href="Slurm.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Programming Notebook</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Introduction ✨
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Programming Environment
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../programming_environment/Overview.html">
+   Overview
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../programming_environment/Xcode.html">
+   Xcode
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../programming_environment/Homebrew.html">
+   Homebrew
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../programming_environment/Iterm2_Zsh.html">
+   Iterm2 &amp; Zsh
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../programming_environment/SSH.html">
+   SSH &amp; SSHFS
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../programming_environment/Git.html">
+   Git &amp; Github
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../programming_environment/VScode.html">
+   VSCode
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../programming_environment/Latex.html">
+   Latex
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../programming_environment/GUN.html">
+   GUN
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../programming_environment/Python.html">
+   Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../programming_environment/Julia.html">
+   Julia
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../programming_environment/Matlab.html">
+   Matlab
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../programming_environment/Shell_Manual.html">
+   Shell Manual
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../programming_environment/Shortcuts.html">
+   Shortcuts
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  App Development
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../apps/Python_Package.html">
+   Python Package
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../apps/Pyside6.html">
+   Pyside6
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../apps/Dash.html">
+   Dash
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../apps/Docker.html">
+   Docker
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Parallel Computing and HPC Platform
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Python.html">
+   Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Python_HPC.html">
+   Python HPC
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="C%2B%2B.html">
+   C++
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Make_Cmake.html">
+   Make Cmake
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Pybind11_Cython.html">
+   Pybind11 Cython
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Slurm.html">
+   Slurm
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Globus
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Rice_NOTS.html">
+   NOTS
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Azure.html">
+   Azure
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Amazon_S3.html">
+   Amazon S3
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  ML and DL
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ml_dl/Scipy.html">
+   Scipy
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ml_dl/PyTorch.html">
+   PyTorch
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  MacOS Software
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../macos_software/MacSoftware.html">
+   Mac Software
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../macos_software/ImageMagick.html">
+   ImageMagick
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../macos_software/Otter.html">
+   Otter
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../macos_software/PROMISE_Utility.html">
+   PROMISE Utility
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Geo Software
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../geo_software/GeoSoftware.html">
+   Geophysics Software
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../geo_software/Matplotlib.html">
+   Matplotlib
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../geo_software/PyGMT.html">
+   PyGMT
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../geo_software/SAC.html">
+   SAC
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../geo_software/Obspy.html">
+   Obspy
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../geo_software/DAS_format.html">
+   DAS Data Format
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../geo_software/CPS.html">
+   CPS
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../geo_software/SPECFEM.html">
+   SPECFEM
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../geo_software/Gmsh.html">
+   Gmsh
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../geo_software/Paraview.html">
+   Paraview
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../geo_software/FwiFlow.html">
+   FwiFlow
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../geo_software/GEOSX.html">
+   GEOSX
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Links
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../links/link.html">
+   Links ✨
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://yinfu.info/">
+   About Me
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/Seismology101/Notebook"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/Seismology101/Notebook/issues/new?title=Issue%20on%20page%20%2Fhpc/Globus.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/hpc/Globus.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduction">
+   Introduction
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#create-account">
+   Create Account
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#create-globus-id">
+     Create Globus ID
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#download-globus-connect-personal-for-mac">
+     Download Globus Connect Personal for Mac
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#transfer-data">
+   Transfer Data
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#webapp">
+     1. WebApp
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#globus-cli">
+     2. Globus-Cli
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#globus-sdk">
+     3. Globus-Sdk
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#python-script">
+     4. Python Script
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#reference">
+   Reference
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Globus</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduction">
+   Introduction
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#create-account">
+   Create Account
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#create-globus-id">
+     Create Globus ID
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#download-globus-connect-personal-for-mac">
+     Download Globus Connect Personal for Mac
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#transfer-data">
+   Transfer Data
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#webapp">
+     1. WebApp
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#globus-cli">
+     2. Globus-Cli
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#globus-sdk">
+     3. Globus-Sdk
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#python-script">
+     4. Python Script
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#reference">
+   Reference
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="globus">
+<h1>Globus<a class="headerlink" href="#globus" title="Permalink to this headline">#</a></h1>
+<ul class="simple">
+<li><p>Author: <em><a class="reference external" href="https://yinfu.info/">Fu Yin</a></em></p></li>
+<li><p>Update: <em>Dec 18, 2022</em></p></li>
+<li><p>Reading: <em>30 min</em></p></li>
+</ul>
+<hr class="docutils" />
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">#</a></h2>
+<p><a class="reference external" href="https://www.globus.org/">Globus</a> is a secure, reliable <strong>research data management</strong> service. It works as a bridge between the remote endpoint and the local endpoint,  and it’s a better alternative tool for <a class="reference external" href="https://rsync.samba.org/">rsync</a>.</p>
+<div class="admonition-what-is-the-globus admonition">
+<p class="admonition-title">What is the Globus?</p>
+<p>With Globus, subscribers can move, share, publish &amp; discover data via a single
+interface, whether your files live on a supercomputer, lab cluster, tape archive,
+public cloud or your laptop, you can manage this data from anywhere, using your
+existing identities, via just a web browser.</p>
+</div>
+</section>
+<section id="create-account">
+<h2>Create Account<a class="headerlink" href="#create-account" title="Permalink to this headline">#</a></h2>
+<section id="create-globus-id">
+<h3>Create Globus ID<a class="headerlink" href="#create-globus-id" title="Permalink to this headline">#</a></h3>
+<p>Globus needs to know your identity.</p>
+<ul class="simple">
+<li><p>Signing in with your <code class="docutils literal notranslate"><span class="pre">Google</span></code> or <code class="docutils literal notranslate"><span class="pre">ORCiD</span> <span class="pre">ID</span></code> credentials, or if your <code class="docutils literal notranslate"><span class="pre">Organization</span></code> has been set up with Globus, showing in <a class="reference internal" href="#globus-login"><span class="std std-numref">Fig. 15</span></a>.</p></li>
+<li><p>Otherwise, create and sign into Globus using a <code class="docutils literal notranslate"><span class="pre">Globus</span> <span class="pre">ID</span></code></p></li>
+<li><p>PS: if you are a student in Joanthan’s group, just email Rice IT team to add <code class="docutils literal notranslate"><span class="pre">condo</span></code> from jonathan’s storage into your <code class="docutils literal notranslate"><span class="pre">collection</span></code>.</p></li>
+</ul>
+<figure class="align-center" id="globus-login">
+<a class="reference internal image-reference" href="../_images/globus-login.jpg"><img alt="../_images/globus-login.jpg" src="../_images/globus-login.jpg" style="width: 356.0px; height: 373.5px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 15 </span><span class="caption-text">Globus Login with <code class="docutils literal notranslate"><span class="pre">Google</span></code> or <code class="docutils literal notranslate"><span class="pre">ORCiD</span> <span class="pre">ID</span></code></span><a class="headerlink" href="#globus-login" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="download-globus-connect-personal-for-mac">
+<h3>Download Globus Connect Personal for Mac<a class="headerlink" href="#download-globus-connect-personal-for-mac" title="Permalink to this headline">#</a></h3>
+<p>Most users might try to transfer data between <code class="docutils literal notranslate"><span class="pre">cluster's</span> <span class="pre">endpoint</span></code> and <code class="docutils literal notranslate"><span class="pre">personal</span> <span class="pre">PC's</span> <span class="pre">endpoint</span></code>, so users need to create new personal endpoint which can be refered to the
+<a class="reference external" href="https://docs.globus.org/how-to/globus-connect-personal-mac/">tutorial</a>.</p>
+<figure class="align-center" id="globus-personal-app">
+<a class="reference internal image-reference" href="../_images/globus-personal-app.jpg"><img alt="../_images/globus-personal-app.jpg" src="../_images/globus-personal-app.jpg" style="width: 295.0px; height: 204.0px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 16 </span><span class="caption-text">Globus Personal App</span><a class="headerlink" href="#globus-personal-app" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+</section>
+<section id="transfer-data">
+<h2>Transfer Data<a class="headerlink" href="#transfer-data" title="Permalink to this headline">#</a></h2>
+<section id="webapp">
+<h3>1. WebApp<a class="headerlink" href="#webapp" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>After logging in globus, you will get a webpage like <a class="reference internal" href="#globus-webapp"><span class="std std-numref">Fig. 17</span></a>, which is called as <code class="docutils literal notranslate"><span class="pre">Globus</span> <span class="pre">Web</span> <span class="pre">App</span></code>.</p></li>
+<li><p>You can add different <code class="docutils literal notranslate"><span class="pre">collection</span></code> and mark them in <code class="docutils literal notranslate"><span class="pre">BOOKMARKS</span></code>, and choose the two panel mode for your two endpoints to transfer data between two PCs.</p></li>
+<li><p>After globus submits your work, you can find the mission process in <code class="docutils literal notranslate"><span class="pre">ACTIVITY</span></code> part.</p></li>
+</ul>
+<figure class="align-center" id="globus-webapp">
+<a class="reference internal image-reference" href="../_images/globus-webapp.jpg"><img alt="../_images/globus-webapp.jpg" src="../_images/globus-webapp.jpg" style="width: 524.0px; height: 360.8px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 17 </span><span class="caption-text">Globus Web App</span><a class="headerlink" href="#globus-webapp" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="globus-cli">
+<h3>2. Globus-Cli<a class="headerlink" href="#globus-cli" title="Permalink to this headline">#</a></h3>
+<p>Sometimes you may have a lot of files (not a single file) to transfer, you need to write a script to do this work. <a class="reference external" href="https://docs.globus.org/cli/"><code class="docutils literal notranslate"><span class="pre">globus-cli</span></code></a> provides a <code class="docutils literal notranslate"><span class="pre">command-line-shell</span></code> tool to transfer data, and install it following the <a class="reference external" href="https://github.com/globus/globus-cli">open source code in github</a>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip install globus-cli
+</pre></div>
+</div>
+<p><strong>Login:</strong></p>
+<ul class="simple">
+<li><p>When you login successfully, it will generate a file in <code class="docutils literal notranslate"><span class="pre">.globus/cli/storage.db</span></code>, which will remember your login info, avoiding the repeated login actions next time.</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>globus login
+</pre></div>
+</div>
+<figure class="align-center" id="globus-cli-login">
+<a class="reference internal image-reference" href="../_images/globus-cli-login.jpg"><img alt="../_images/globus-cli-login.jpg" src="../_images/globus-cli-login.jpg" style="width: 429.5px; height: 172.5px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 18 </span><span class="caption-text">Globus Login in Terminal</span><a class="headerlink" href="#globus-cli-login" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-center" id="globus-cli-login-code">
+<a class="reference internal image-reference" href="../_images/globus-cli-login-code.jpg"><img alt="../_images/globus-cli-login-code.jpg" src="../_images/globus-cli-login-code.jpg" style="width: 448.0px; height: 260.0px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 19 </span><span class="caption-text">Globus Login in Terminal with Authorization Code</span><a class="headerlink" href="#globus-cli-login-code" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p><strong>Endpoint ID:</strong></p>
+<ul class="simple">
+<li><p>Approach-1: get Endpoint ID via <code class="docutils literal notranslate"><span class="pre">globus-cli</span></code>, take <code class="docutils literal notranslate"><span class="pre">Fu's</span> <span class="pre">M1-max</span></code> for example which is my personal endpoint name:</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># get endpoint</span>
+globus endpoint search <span class="s2">&quot;Fu&#39;s M1-max&quot;</span>
+
+<span class="c1"># copy and paste the desired Endpoint ID from the search results</span>
+<span class="nv">ep1</span><span class="o">=</span>f34fbbd4-6708-11ed-8422-xxxxxxxxxx
+
+<span class="c1"># now we can use the endpoint in a human readable fashion</span>
+globus endpoint show <span class="nv">$ep1</span>
+</pre></div>
+</div>
+<figure class="align-center" id="globus-m1-endpoint">
+<a class="reference internal image-reference" href="../_images/globus-m1-endpoint.jpg"><img alt="../_images/globus-m1-endpoint.jpg" src="../_images/globus-m1-endpoint.jpg" style="width: 416.84999999999997px; height: 227.14999999999998px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 20 </span><span class="caption-text">Globus M1-max Endpoint ID</span><a class="headerlink" href="#globus-m1-endpoint" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<ul class="simple">
+<li><p>Approach-2: get Endpoint ID via <code class="docutils literal notranslate"><span class="pre">Globus</span> <span class="pre">Web</span> <span class="pre">App</span></code>, click the specified collections to show detailed info, then the <code class="docutils literal notranslate"><span class="pre">UUID</span></code> is the Endpoint ID:</p></li>
+</ul>
+<figure class="align-center" id="globus-m1-endpoint-app">
+<a class="reference internal image-reference" href="../_images/globus-m1-endpoint-app.jpg"><img alt="../_images/globus-m1-endpoint-app.jpg" src="../_images/globus-m1-endpoint-app.jpg" style="width: 466.9px; height: 316.4px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 21 </span><span class="caption-text">Globus M1-max Endpoint ID in Globus Web App</span><a class="headerlink" href="#globus-m1-endpoint-app" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p><strong>Filesystem Operations</strong></p>
+<ul class="simple">
+<li><p>Demonstrates the synchronous commands of <code class="docutils literal notranslate"><span class="pre">mkdir</span></code>, <code class="docutils literal notranslate"><span class="pre">rename</span></code>, and <code class="docutils literal notranslate"><span class="pre">ls</span></code>.</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Tutorial Endpoint ID found from &#39;globus endpoint search Tutorial&#39;</span>
+$ <span class="nv">ep1</span><span class="o">=</span>ddb59aef-6d04-11e5-ba46-22000b92c6ec
+
+<span class="c1"># Make a new directory</span>
+$ globus mkdir <span class="nv">$ep1</span>:<span class="se">\~</span>/cli_example_dir
+The directory was created successfully
+
+<span class="c1"># Rename the directory</span>
+$ globus rename <span class="nv">$ep1</span>:<span class="se">\~</span>/cli_example_dir <span class="nv">$ep1</span>:<span class="se">\~</span>/cli_example_dir_renamed
+File or directory renamed successfully
+
+<span class="c1"># Show the directory contents after the changes</span>
+<span class="c1"># (assuming ~/ was empty before these commands)</span>
+$ globus ls <span class="nv">$ep1</span>:<span class="se">\~</span>/
+cli_example_dir_renamed/
+</pre></div>
+</div>
+<p><strong>Single Item Transfers</strong></p>
+<ul class="simple">
+<li><p>Submits transfer requests for a file and a directory from one Globus Tutorial Endpoint to another</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Tutorial Endpoint IDs found from &#39;globus endpoint search Tutorial&#39;</span>
+$ <span class="nv">ep1</span><span class="o">=</span>ddb59aef-6d04-11e5-ba46-22000b92c6ec
+$ <span class="nv">ep2</span><span class="o">=</span>ddb59af0-6d04-11e5-ba46-22000b92c6ec
+
+<span class="c1"># transfer file1.txt from one endpoint to another</span>
+$ globus transfer <span class="nv">$ep1</span>:/share/godata/file1.txt <span class="nv">$ep2</span>:<span class="se">\~</span>/file1.txt --label <span class="s2">&quot;CLI single file&quot;</span>
+Message: The transfer has been accepted and a task has been created and queued <span class="k">for</span> execution
+Task ID: 466a5962-dda0-11e6-9d11-22000a1e3b52
+
+<span class="c1"># recursively transfer the godata folder from one endpoint to another</span>
+$ globus transfer <span class="nv">$ep1</span>:/share/godata <span class="nv">$ep2</span>:~/godata --recursive --label <span class="s2">&quot;CLI single folder&quot;</span>
+Message: The transfer has been accepted and a task has been created and queued <span class="k">for</span> execution
+Task ID: 47477b62-dda0-11e6-9d11-22000a1e3b52
+</pre></div>
+</div>
+<p><strong>Batch Transfers</strong></p>
+<ul class="simple">
+<li><p>Uses a <code class="docutils literal notranslate"><span class="pre">input.txt</span></code> file to request multiple files in one transfer request.</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># this is the contents of in.txt:</span>
+<span class="c1"># a list of source paths followed by destination paths</span>
+
+file1.txt file1.txt
+file2.txt file2.txt <span class="c1"># inline-comments are also allowed</span>
+file3.txt file3.txt
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">--batch</span></code> on <code class="docutils literal notranslate"><span class="pre">input.txt</span></code></p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Tutorial Endpoint IDs found from &#39;globus endpoint search Tutorial&#39;</span>
+$ <span class="nv">ep1</span><span class="o">=</span>ddb59aef-6d04-11e5-ba46-22000b92c6ec
+$ <span class="nv">ep2</span><span class="o">=</span>ddb59af0-6d04-11e5-ba46-22000b92c6ec
+
+<span class="c1"># pass `--batch` mode an input .txt file</span>
+<span class="c1"># all paths from stdin are relative to the paths supplied here</span>
+$ globus transfer <span class="nv">$ep1</span>:/share/godata/ <span class="nv">$ep2</span>:~/ --label <span class="s2">&quot;CLI Batch&quot;</span> --batch input.txt
+Message: The transfer has been accepted and a task has been created and queued <span class="k">for</span> execution
+Task ID: 306900e0-dda1-11e6-9d11-22000a1e3b52
+</pre></div>
+</div>
+<div class="admonition-only-one-task admonition">
+<p class="admonition-title">Only One Task?</p>
+<p>Note that only one task was needed even though there are multiple files to be transferred.</p>
+</div>
+<p><strong><a class="reference external" href="https://docs.globus.org/cli/examples/">More example here</a></strong></p>
+</section>
+<section id="globus-sdk">
+<h3>3. Globus-Sdk<a class="headerlink" href="#globus-sdk" title="Permalink to this headline">#</a></h3>
+<p>This SDK provides a convenient Pythonic interface to <code class="docutils literal notranslate"><span class="pre">Globus</span> <span class="pre">web</span> <span class="pre">APIs</span></code>, including the <code class="docutils literal notranslate"><span class="pre">Transfer</span> <span class="pre">API</span></code> and the Globus <code class="docutils literal notranslate"><span class="pre">Auth</span> <span class="pre">API</span></code> (tools for authenticating logins). Documentation for the APIs is available at <a class="reference external" href="https://docs.globus.org/api/">https://docs.globus.org/api/</a>, install it firstly:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip install globus-sdk
+</pre></div>
+</div>
+<p>There are some app-examples using the python SDK, <a class="reference external" href="https://github.com/globus/native-app-examples">https://github.com/globus/native-app-examples</a>. But it is hard to use, and I recommend to use <code class="docutils literal notranslate"><span class="pre">globus-cli</span></code> to transfer data.</p>
+</section>
+<section id="python-script">
+<h3>4. Python Script<a class="headerlink" href="#python-script" title="Permalink to this headline">#</a></h3>
+<p>Here is an example using <code class="docutils literal notranslate"><span class="pre">globus-cli</span></code> to transfer data (single file and directory) between two endpoints, and note the <code class="docutils literal notranslate"><span class="pre">input.txt</span></code> file has <strong>two columns</strong>, the first column is <code class="docutils literal notranslate"><span class="pre">source</span> <span class="pre">file's</span> <span class="pre">path</span></code> and the second column is <code class="docutils literal notranslate"><span class="pre">destination</span> <span class="pre">file's</span> <span class="pre">path</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+
+<span class="n">input_txt</span> <span class="o">=</span> <span class="s2">&quot;input.txt&quot;</span>
+<span class="n">label</span> <span class="o">=</span> <span class="s2">&quot;CLI batch single file and directory&quot;</span>
+<span class="n">source_endpoint_id</span> <span class="o">=</span> <span class="s2">&quot;xxxx-xxxx...&quot;</span>  <span class="c1"># jonathan&#39;s condo</span>
+<span class="n">dest_endpoint_id</span> <span class="o">=</span> <span class="s2">&quot;xxxx-xxxx...&quot;</span>  <span class="c1"># nots&#39;s scratch</span>
+
+<span class="c1">### single_file</span>
+<span class="n">a1</span> <span class="o">=</span> <span class="s2">&quot;/hpc-demo/docs/getbatchError.m&quot;</span> <span class="c1"># source file&#39;s path</span>
+<span class="n">a2</span> <span class="o">=</span> <span class="s2">&quot;/fy21/hpc-demo/docs/getbatchError.m&quot;</span> <span class="c1"># destination file&#39;s path</span>
+<span class="c1">### directory</span>
+<span class="n">b1</span> <span class="o">=</span> <span class="s2">&quot;/hpc-demo/docs&quot;</span>
+<span class="n">b2</span> <span class="o">=</span> <span class="s2">&quot;/fy21/hpc-demo/docs_new&quot;</span>
+
+<span class="n">fout</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">input_txt</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> 
+<span class="n">fout</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;# [source_file_path]</span><span class="se">\t</span><span class="s1">[dest_file_path]</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">fout</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">a1</span><span class="p">)</span> 
+<span class="n">fout</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">fout</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">a2</span><span class="p">)</span> 
+<span class="n">fout</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">fout</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">b1</span><span class="p">)</span>
+<span class="n">fout</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">fout</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">b2</span><span class="p">)</span> 
+<span class="n">fout</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1"> --recursive&#39;</span><span class="p">)</span> <span class="c1"># these are recursive transfers in the batch</span>
+<span class="n">fout</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">fout</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+<span class="n">command</span> <span class="o">=</span> <span class="s2">&quot;globus transfer </span><span class="si">%s</span><span class="s2"> </span><span class="si">%s</span><span class="s2"> --label &#39;</span><span class="si">%s</span><span class="s2">&#39; --batch </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">source_endpoint_id</span><span class="p">,</span> <span class="n">dest_endpoint_id</span><span class="p">,</span> <span class="n">label</span><span class="p">,</span> <span class="n">input_txt</span><span class="p">)</span>
+<span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="n">command</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">input.txt</span></code> file is showing below:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># [source_file_path]	[dest_file_path]</span>
+/hpc-demo/docs/getbatchError.m	/fy21/hpc-demo/docs/getbatchError.m
+/hpc-demo/docs	/fy21/hpc-demo/docs_new	 --recursive
+</pre></div>
+</div>
+</section>
+</section>
+<section id="reference">
+<h2>Reference<a class="headerlink" href="#reference" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="http://marscfeng.github.io/post/Fast-data-transfer-sync-using-globus/">Feng’s blog</a></p></li>
+<li><p><a class="reference external" href="https://docs.globus.org/">Globus Docs</a></p></li>
+</ul>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./hpc"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="Slurm.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Slurm</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="Rice_NOTS.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">NOTS</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Fu Yin<br/>
+  
+      &copy; Copyright 2021–2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

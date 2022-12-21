@@ -55,7 +55,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Azure" href="Azure.html" />
-    <link rel="prev" title="Slurm" href="Slurm.html" />
+    <link rel="prev" title="Globus" href="Globus.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -255,6 +255,11 @@ const thebe_selector_output = ".output, .cell_output"
    Slurm
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Globus.html">
+   Globus
+  </a>
+ </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
    NOTS
@@ -297,11 +302,6 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1">
   <a class="reference internal" href="../macos_software/MacSoftware.html">
    Mac Software
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../macos_software/Globus.html">
-   Globus
   </a>
  </li>
  <li class="toctree-l1">
@@ -581,6 +581,11 @@ title="Print to PDF"
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#apply-an-account">
+   Apply an Account
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#file-management">
    File Management
   </a>
@@ -620,6 +625,11 @@ title="Print to PDF"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#apply-an-account">
+   Apply an Account
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#file-management">
    File Management
   </a>
@@ -657,66 +667,32 @@ title="Print to PDF"
 <li><p>Reading: <em>10 min</em></p></li>
 </ul>
 <hr class="docutils" />
+<section id="apply-an-account">
+<h2>Apply an Account<a class="headerlink" href="#apply-an-account" title="Permalink to this headline">#</a></h2>
+<p>Set up on the cluster (NOTS) please follow the instructions to apply for an account, <a class="reference external" href="https://kb.rice.edu/108221">https://kb.rice.edu/108221</a>, and put your advisor down as
+your sponsor if your PI has the account.</p>
+<figure class="align-center" id="nots-account">
+<a class="reference internal image-reference" href="../_images/nots-account.jpg"><img alt="../_images/nots-account.jpg" src="../_images/nots-account.jpg" style="width: 322.2px; height: 271.2px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 22 </span><span class="caption-text">NOTS Account Application</span><a class="headerlink" href="#nots-account" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
 <section id="file-management">
 <h2>File Management<a class="headerlink" href="#file-management" title="Permalink to this headline">#</a></h2>
 <p>The following is my data managerment, more info please refer to <a class="reference external" href="https://kb.rice.edu/108237">Rice CRC Tutorial</a>.</p>
-<table class="colwidths-auto table">
-<thead>
-<tr class="row-odd"><th class="text-align:left head"><p><strong>Filesystem</strong></p></th>
-<th class="text-align:left head"><p><strong>Use</strong></p></th>
-<th class="text-align:left head"><p><strong>Physical Path</strong></p></th>
-<th class="text-align:center head"><p><strong>Size</strong></p></th>
-<th class="text-align:center head"><p><strong>Quota</strong></p></th>
-<th class="text-align:center head"><p><strong>Type</strong></p></th>
-<th class="text-align:center head"><p><strong>Purge Policy</strong></p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td class="text-align:left"><p>Home directories</p></td>
-<td class="text-align:left"><p><font color=red>Only configuration file (eg. <code class="docutils literal notranslate"><span class="pre">.zshrc</span></code> <code class="docutils literal notranslate"><span class="pre">.vscode-server</span></code>)</font></p></td>
-<td class="text-align:left"><p>/home</p></td>
-<td class="text-align:center"><p>5 TB</p></td>
-<td class="text-align:center"><p>10 GB</p></td>
-<td class="text-align:center"><p>NFS</p></td>
-<td class="text-align:center"><p>none</p></td>
-</tr>
-<tr class="row-odd"><td class="text-align:left"><p>Group Project directories</p></td>
-<td class="text-align:left"><p><font color=red>Not use now</font></p></td>
-<td class="text-align:left"><p>/projects</p></td>
-<td class="text-align:center"><p>20 TB</p></td>
-<td class="text-align:center"><p>100 GB per group</p></td>
-<td class="text-align:center"><p>NFS</p></td>
-<td class="text-align:center"><p>none</p></td>
-</tr>
-<tr class="row-even"><td class="text-align:left"><p>Work storage space</p></td>
-<td class="text-align:left"><p><font color=red> Install software and store small data </font></p></td>
-<td class="text-align:left"><p>/storage/hpc/work</p></td>
-<td class="text-align:center"><p>456 TB</p></td>
-<td class="text-align:center"><p>2 TB per group</p></td>
-<td class="text-align:center"><p>NFS</p></td>
-<td class="text-align:center"><p>none</p></td>
-</tr>
-<tr class="row-odd"><td class="text-align:left"><p>Shared Scratch high performance I/O</p></td>
-<td class="text-align:left"><p><font color=red> Workspace </font></p></td>
-<td class="text-align:left"><p>/scratch</p></td>
-<td class="text-align:center"><p>157 TB</p></td>
-<td class="text-align:center"><p>None</p></td>
-<td class="text-align:center"><p>Lustre</p></td>
-<td class="text-align:center"><p>14 days</p></td>
-</tr>
-<tr class="row-even"><td class="text-align:left"><p>Local Scratch on each node</p></td>
-<td class="text-align:left"><p><font color=red> Not use now </font></p></td>
-<td class="text-align:left"><p>/tmp</p></td>
-<td class="text-align:center"><p>4 TB</p></td>
-<td class="text-align:center"><p>None</p></td>
-<td class="text-align:center"><p>Local</p></td>
-<td class="text-align:center"><p>at the end of each job</p></td>
-</tr>
-</tbody>
-</table>
+<figure class="align-center" id="nots-storage">
+<a class="reference internal image-reference" href="../_images/nots-storage.jpg"><img alt="../_images/nots-storage.jpg" src="../_images/nots-storage.jpg" style="width: 541.8px; height: 165.0px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 23 </span><span class="caption-text">NOTS Storage</span><a class="headerlink" href="#nots-storage" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p><code class="docutils literal notranslate"><span class="pre">/scratch</span></code> is not permanent storage, which is to be used only for job I/O.  Delete everything you do not need for another run at the end of the job or move to <code class="docutils literal notranslate"><span class="pre">/storage/hpc/work</span></code> for analysis. Staff may periodically delete files from the <code class="docutils literal notranslate"><span class="pre">/scratch</span></code> file system even if files are less than 14 days old.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">/scratch</span></code> is not permanent storage, which is to be used only for job I/O.  Delete everything you do not need for another run at the end of the job or move to <code class="docutils literal notranslate"><span class="pre">/storage/hpc/work</span></code> for analysis. Staff may periodically delete files from the <code class="docutils literal notranslate"><span class="pre">/scratch</span></code> file system even if files are less than 14 days old.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">/storage/hpc/work</span></code> is only available on the login nodes. Data can be copied between <code class="docutils literal notranslate"><span class="pre">/storage/hpc/work</span></code> and <code class="docutils literal notranslate"><span class="pre">/scratch</span></code> before/after running jobs.</p></li>
+</ul>
 </div>
 </section>
 <section id="computing-resources">
@@ -724,7 +700,7 @@ title="Print to PDF"
 <figure class="align-center" id="cpu-gpu">
 <a class="reference internal image-reference" href="../_images/cpu_gpu.jpg"><img alt="../_images/cpu_gpu.jpg" src="../_images/cpu_gpu.jpg" style="width: 631.0px; height: 193.0px;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 15 </span><span class="caption-text">NOTS Resources</span><a class="headerlink" href="#cpu-gpu" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 24 </span><span class="caption-text">NOTS Resources</span><a class="headerlink" href="#cpu-gpu" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
@@ -917,11 +893,11 @@ For example:</p>
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="Slurm.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="Globus.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Slurm</p>
+            <p class="prev-next-title">Globus</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="Azure.html" title="next page">
