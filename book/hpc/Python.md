@@ -42,6 +42,13 @@ fout.close()
 
 ## Numpy
 
+```python
+import numpy as np
+
+np.ones(10)
+```
+
+
 ## Subprocess
 
 
