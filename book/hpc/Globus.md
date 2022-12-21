@@ -243,6 +243,8 @@ There are some app-examples using the python SDK, https://github.com/globus/nati
 ### 4. Python Script
 
 
+Here is an example using `globus-cli` to transfer data (single file and directory) between two endpoints
+
 ```python
 import os
 
