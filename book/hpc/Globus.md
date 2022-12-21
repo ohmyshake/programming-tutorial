@@ -223,6 +223,7 @@ Message: The transfer has been accepted and a task has been created and queued f
 Task ID: 306900e0-dda1-11e6-9d11-22000a1e3b52
 ```
 
+Note that only one task was needed even though there are multiple files to be transferred.
 
 
 
