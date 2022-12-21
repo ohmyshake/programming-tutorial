@@ -230,7 +230,7 @@ Note that only one task was needed even though there are multiple files to be tr
 **[More example here](https://docs.globus.org/cli/examples/)**
 
 ### 3. Python Script
-This SDK provides a convenient Pythonic interface to `Globus web APIs`, including the `Transfer API` and the Globus `Auth API` (tools for authenticating logins). Documentation for the APIs is available at https://docs.globus.org/api/.
+This SDK provides a convenient Pythonic interface to `Globus web APIs`, including the `Transfer API` and the Globus `Auth API` (tools for authenticating logins). Documentation for the APIs is available at https://docs.globus.org/api/, install it firstly:
 
 ```bash
 pip install globus-sdk
