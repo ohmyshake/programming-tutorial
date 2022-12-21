@@ -27,9 +27,6 @@ File-IO Subprocess Numpy h5py
 
 ## Subprocess
 
-### Manual
-
-### Case-1
 
 ```{code-cell} ipython3
 :tags: [hide-input,hide-output,output_scroll,remove-stderr,raises-exception]
@@ -41,5 +38,7 @@ print("this is some stderr", file=sys.stderr)
 print(a)
 ```
 
+## 
 
+http://dong.sh/posts/pythonftpparallelsdownload/
 
