@@ -243,7 +243,7 @@ There are some app-examples using the python SDK, https://github.com/globus/nati
 ### 4. Python Script
 
 
-Here is an example using `globus-cli` to transfer data (single file and directory) between two endpoints, and note the `input.txt` file has **two columns**, the first column is `source file's path` and the second column is ``destination file's path.
+Here is an example using `globus-cli` to transfer data (single file and directory) between two endpoints, and note the `input.txt` file has **two columns**, the first column is `source file's path` and the second column is `destination file's path`.
 
 ```python
 import os
