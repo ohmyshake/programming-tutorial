@@ -26,6 +26,10 @@ File-IO Subprocess Numpy h5py
 ## File IO
 
 ```python
+### read files
+
+
+### write files
 fout = open("input.txt", 'w') 
 fout.write('# [source_file_path]\t[dest_file_path]\n')
 for i in range(0,10):
