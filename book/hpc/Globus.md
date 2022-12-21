@@ -236,12 +236,9 @@ This SDK provides a convenient Pythonic interface to `Globus web APIs`, includin
 pip install globus-sdk
 ```
 
-There are some app-examples using the python SDK, https://github.com/globus/native-app-examples
-
-```python
+There are some app-examples using the python SDK, https://github.com/globus/native-app-examples. But it is hard to use, and I recommend to use `Shell Script` to transfer data.
 
 
-```
 
 
 
