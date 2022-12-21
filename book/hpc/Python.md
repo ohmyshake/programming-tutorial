@@ -26,14 +26,7 @@ File-IO Subprocess Numpy h5py
 ## File IO
 
 ```python
-input_txt = "input.txt"
-
-### single_file
-a1 = "/hpc-demo/docs/getbatchError.m" # source file's path
-a2 = "/fy21/hpc-demo/docs/getbatchError.m" # destination file's path
-
-
-fout = open(input_txt, 'w') 
+fout = open("input.txt", 'w') 
 fout.write('# [source_file_path]\t[dest_file_path]\n')
 for i in range(0,10):
   fout.write(str(i)) 
@@ -41,9 +34,6 @@ for i in range(0,10):
   fout.write(str(i+0.5)) 
   fout.write('\n')
 fout.close()
-
-command = "globus transfer %s %s --label '%s' --batch %s" % (source_endpoint_id, dest_endpoint_id, label, input_txt)
-os.system(command)
 ```
 
 
