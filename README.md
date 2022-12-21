@@ -21,18 +21,15 @@ Main content:
 ⏬ &nbsp; For Non-Chinese guys:
 
 | `Buy Me A Coffee` | `PayPal` | 
-| --- | --- | 
+| :---: | :---: | 
 | [!["Buy Me A Coffee"](https://user-images.githubusercontent.com/1376749/120938564-50c59780-c6e1-11eb-814f-22a0399623c5.png)](https://www.buymeacoffee.com/yinfu) | [![Support via PayPal](https://cdn.jsdelivr.net/gh/twolfson/paypal-github-button@1.0.0/dist/button.svg )](https://www.paypal.me/yinfu123) |
-
 
 
 ⏬ &nbsp; For Chinese guys:
 
 | `Alipay` | `WeChat` | 
-| --- | --- | 
+| :---: | :---: | 
 |<div align=center> <img src=./book/intro_files/Alipay.jpg width=50% /> </div>| <div align=center> <img src=./book/intro_files/WeChat.jpg width=50% /> </div>|
-
-
 
 
 
