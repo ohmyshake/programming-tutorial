@@ -243,7 +243,37 @@ There are some app-examples using the python SDK, https://github.com/globus/nati
 ### 4. Python Script
 
 
+```python
+import os
 
+input_txt = "input.txt"
+label = "CLI batch single file and directory"
+source_endpoint_id = "65194284-3dc1-4b0f-bc3c-2921c96c31cb"  # jonathan's condo
+dest_endpoint_id = "8937d0dd-5669-48e5-8402-d1ab3533bb4c"  # nots's scratch
+
+# single file
+a1 = "/hpc-demo/docs/getbatchError.m" 
+a2 = "/fy21/hpc-demo/docs/getbatchError.m"
+# directory
+b1 = "/hpc-demo/docs"
+b2 = "/fy21/hpc-demo/docs_new"
+
+fout = open(input_txt, 'w') 
+fout.write('# [source_file_path]\t[dest_file_path]\n')
+fout.write(a1) 
+fout.write('\t')
+fout.write(a2) 
+fout.write('\n')
+fout.write(b1)
+fout.write('\t')
+fout.write(b2) 
+fout.write('\t --recursive') # these are recursive transfers in the batch
+fout.write('\n')
+fout.close()
+
+command = "globus transfer %s  %s  --label '%s'  --batch %s" % (source_endpoint_id, dest_endpoint_id, label, input_txt)
+os.system(command)
+```
 
 
 
