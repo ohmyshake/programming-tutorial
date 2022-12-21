@@ -3,6 +3,9 @@
 
 [![Build and Deploy](https://github.com/OUCyf/Programming-Notebook/actions/workflows/deploy.yml/badge.svg)](https://github.com/OUCyf/Programming-Notebook/actions/workflows/deploy.yml)
 
+[![The MIT License](https://img.shields.io/github/license/OUCyf/Programming-Notebook)](https://opensource.org/licenses/MIT)
+
+
 ## About the Book ✨
 
 Welcome to **Programming Notebook**, a notebook mainly about my scientific notes and gains in learning **Programming** and **Geophysics**, and I am very glad if it is helpful for your research. The notebook is powered by [Jupyter Book](https://jupyterbook.org/en/stable/intro.html), which uses [MyST](https://sphinx-design.readthedocs.io/en/sbt-theme/grids.html) Markdown syntax.
