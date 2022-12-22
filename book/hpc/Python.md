@@ -25,6 +25,19 @@ File-IO Subprocess Numpy h5py
 
 ## File IO
 
+### read files
+
+```python
+file = "./file.txt"
+with open(file, "r") as f:
+    allfile = []
+    for readline in f:
+        onefile = readline.rstrip('\n')
+        allfile.append(onefile)
+```
+
+
+
 ```python
 ### read files
 
