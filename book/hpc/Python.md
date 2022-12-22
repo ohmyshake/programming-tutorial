@@ -48,13 +48,9 @@ with open(file, "r") as f:
         allfile.append(onefile)
 ```
 
-
+### write files
 
 ```python
-### read files
-
-
-### write files
 fout = open("input.txt", 'w') 
 fout.write('# i \t i+0.5 \n')
 for i in range(0,10):
