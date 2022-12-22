@@ -27,6 +27,13 @@ File-IO Subprocess Numpy h5py
 
 ### read files
 
+```bash
+UTC190419001218.sgy
+UTC190419001233.sgy
+UTC190419001248.sgy
+UTC190419001303.sgy
+```
+
 ```python
 file = "./file.txt"
 with open(file, "r") as f:
