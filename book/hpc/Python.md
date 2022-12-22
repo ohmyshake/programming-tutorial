@@ -37,6 +37,8 @@ UTC190419001248.sgy
 UTC190419001303.sgy
 ```
 
+Read it into a `list`
+
 ```python
 file = "./file.txt"
 with open(file, "r") as f:
