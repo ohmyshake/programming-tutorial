@@ -25,7 +25,7 @@ File-IO Subprocess Numpy h5py
 
 ## File IO
 
-### read files
+### read file
 
 
 If the `file.txt` is like the following format whose each line has a separate content:
@@ -48,7 +48,7 @@ with open(file, "r") as f:
         allfile.append(onefile)
 ```
 
-### write files
+### write file
 
 ```python
 fout = open("input.txt", 'w') 
