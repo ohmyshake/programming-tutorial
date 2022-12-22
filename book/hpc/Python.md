@@ -27,6 +27,9 @@ File-IO Subprocess Numpy h5py
 
 ### read files
 
+
+If the `file.txt` is like the following format whose each line has a separate content:
+
 ```bash
 UTC190419001218.sgy
 UTC190419001233.sgy
