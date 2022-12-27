@@ -124,7 +124,7 @@ One `process` can generate many `thread` missions, and a process is cheap than a
 
 - `Distributed Computing`: it can be that many ordinary home computers are connected through traditional network cables. The transmission and communication speed of different computing points is very slow, and the tasks performed are very fragmented. Compared with cluster computing `share memory or message for communication`, distributed computing  communicate `via network`. (e.g. `spark`, `hadoop`)
 
-- For example: by installing Raspberry Pi and Bluetooth wireless data transmission on many node seismographs, the node seismographs have simple calculation functions, and the waveform data can be transmitted between seismographs for calculation (such as earthquake detection, cross-correlation calculation, etc.) . This can also be called distributed computing.
+- For example: by installing Raspberry Pi (for computing) and Bluetooth wireless (for data transmission) on many node seismographs, the node seismographs have simple calculation functions, and the waveform data can be transmitted between seismographs for calculation (such as earthquake detection, cross-correlation calculation, etc.) . This can also be called distributed computing.
 
 :::{admonition} Storage and Distributed Storage
 - `Ordinary Storage`, such as the hard disk on the server, is connected to the server through a `SAS cable` (ultra-fast transmission speed, such as 10G/s). At this time, the read and write speed of the server is affected by the `disk IO speed`, and the general disk speed is only 1G/s, but a server will be connected to multiple disks, as long as the transmission speed of multiple disks does not exceed 10G/s of the SAS line, reading and writing missions will not be affected. 
