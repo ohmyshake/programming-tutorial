@@ -9,7 +9,7 @@
 
 ## Multiple Threading
 
-
+Global Interpreter Lock (GIL)
 
 
 ## Multiple Processing
