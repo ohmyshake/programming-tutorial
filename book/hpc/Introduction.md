@@ -10,9 +10,8 @@
 
 ## Preliminary Knowledge
 
-:::{dropdown} How the CPU works? The concept of `thread`, `process`, `Round-robin scheduling`, `CPU-bound`, `I/O bound`, `disk read speed` and `bandwidth`, where is the time spent for a task? How many threads and processes we use are appropriate?
-:color: info
-:icon: info
+How the CPU works? The concept of `thread`, `process`, `Round-robin scheduling`, `CPU-bound`, `I/O bound`, `disk read speed` and `bandwidth`, where is the time spent for a task? How many threads and processes we use are appropriate?
+
 
 `Round-robin (RR) scheduling` is one of the algorithms employed by process and network schedulers in computing. As the term is generally used, time slices (also known as time quanta) are assigned to `each process` or `thread` in equal portions and in circular order, handling all processes without priority (also known as cyclic executive). 
 
@@ -63,7 +62,7 @@ A schematic diagram process and thread
 - `Disk bound (small data files)`: same as network I/O, for example, you need to read many data files to do computing, the whole process is `send read data mission via CPU` --> `IO system reads data into memory` --> `do computing task`. When you read many small files, the `disk read speed` and `bandwidth` is not the limitation factor, and the main time is spent on other operations such as finding the address of the small file (`seek time`). So when IO system reads data into memory, your CPU is free at this time, you can use `multi-threads` to enhance the efficiency.
 
 - `Disk bound (big data files)`: single thread or process is well. Under this circumstance, the limitation is the `disk read speed` and `bandwidth`, and the multi-threads reading will not significantly increase the speed. 
-:::
+
 
 
 
