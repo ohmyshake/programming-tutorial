@@ -41,7 +41,9 @@ Computationally intensive, utilizes multiple processes, and takes full advantage
 :color: info
 :icon: info
 
-s
+- `CPU-bound`
+
+- `I/O bound`
 :::
 
 
