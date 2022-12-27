@@ -8,7 +8,7 @@
 
 ## Introduction
 
-Parallel computing 
+`Parallel computing` includes Cluster Computing, Distributed Computing, and Cloud Computing
 
 
 
@@ -19,7 +19,7 @@ Parallel computing share-memory for communication
 
 distributed computing share-nothing, communicate via network (spark, hadoop)
 
-cloud computing
+
 
 ## Multiple Threading
 
