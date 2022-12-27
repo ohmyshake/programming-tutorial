@@ -85,7 +85,7 @@ The following are the main three ways for hpc computing:
 :color: info
 :icon: info
 
-Due to the `Round-robin scheduling`
+Due to the `Round-robin scheduling`, a CPU core will only execute one thread at a time
 
 
 
