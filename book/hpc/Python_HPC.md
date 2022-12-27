@@ -66,7 +66,7 @@ One `process` can generate many `thread` missions, and a process is cheap than a
 :::
 
 
-
+### Cluster Computing
 
 `Parallel Computing` is the general name  `Cluster Computing`, `Distributed Computing`, and `Cloud Computing`.
 
