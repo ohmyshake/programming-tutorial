@@ -8,7 +8,7 @@
 
 ## Introduction
 
-`Parallel computing` includes `Cluster Computing`, `Distributed Computing`, and `Cloud Computing`
+`Parallel Computing` includes `Cluster Computing`, `Distributed Computing`, and `Cloud Computing`
 
 
 
