@@ -45,9 +45,11 @@ One `process` can generate many `thread` missions, and a process is cheap than a
 
 
 
-- For a task, not only `cpu computing` takes the time, but `Network I/O` and `Disk I/O` also take the time. 
-    - When you send a task (read data) to system, the system will order disk to read data into memory, `Disk I/O` is dependent on HDD speed. - When you send a task to download data in Internet, you need to gain data via network, which is dependent on `bandwidth`
-    - `cpu computing` mainly includes using memory to compute some data, 
+For a task, not only `cpu computing` takes the time, but `Network I/O` and `Disk I/O` also take the time:
+
+- When you send a task (read data) to system, the system will order disk to read data into memory, `Disk I/O` is dependent on HDD speed. 
+- When you send a task to download data in Internet, you need to gain data via network, which is dependent on `bandwidth`
+- `cpu computing` mainly includes using memory to compute some data, 
 
 Due to the `Round-robin scheduling`, a CPU core will only execute one process at same time. So how many threads and processes we use are appropriate? 
 
