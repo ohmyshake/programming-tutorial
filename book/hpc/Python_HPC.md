@@ -22,6 +22,8 @@ There is no guarantees of correctness, and if you spot an error or a doubtful st
 - `CUDA` the full name is compute unified device architecture. Have more threads for computing, but we need to write `kernel function` to run code in those threads.
 :::
 
+
+
 - `Distributed Computing`:
 
 - `Cloud Computing`:
