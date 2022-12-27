@@ -11,7 +11,7 @@
 ## Preliminary Knowledge
 
 
-### What is the cores?
+### What is the cores in CPU?
 
 `node`,`physical cores`, `computing cores`, and `Hyper-Threading Technology`?
 
