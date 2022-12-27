@@ -37,14 +37,25 @@ The following are the main three ways for hpc computing:
 Computationally intensive, utilizes multiple processes, and takes full advantage of multiple CPUs. Maybe, you will have doubts, since multi-threading can be executed in parallel, isn't it also suitable for computing-intensive tasks? In theory, this is the case, but here it is said that multi-process is more suitable. It means that when the amount of data is relatively large and there is no logical dependence between computing tasks, multi-process is more suitable. Because each process will have its own process memory space, each process is naturally isolated. While multiple threads share the same memory space, synchronization between threads must be considered. None of these problems are necessary for computationally intensive tasks. So we say that computing-intensive tasks are more suitable for multi-processing.
 :::
 
+
+:::{dropdown} How the CPU works? `Round-robin scheduling`, `CPU-bound`, and `I/O bound` concepts.
+:color: info
+:icon: info
+
+
+
+:::
+
+
+
+
+
+
 :::{dropdown} Due to the `Hyper-Threading Technology`, how many threads we use are appropriate? And same for how many processes?
 :color: info
 :icon: info
 
-Round-robin scheduling
-
-
-
+Due to the `Round-robin scheduling`
 - `CPU-bound` mission: `computing cores` + 1, or `computing cores` * 2.
 
 - `I/O bound` mission: `computing cores` / 0.1.
