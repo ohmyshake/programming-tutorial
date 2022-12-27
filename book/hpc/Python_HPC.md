@@ -96,8 +96,8 @@ Due to the `Round-robin scheduling`, a CPU core will only execute one thread at 
     - If you use `multi-threads` to do this task, when you wait the response of network, you can run other threads to send requests, and thus enhance the utilization rate of CPU. 
     - If you use `multi-processes`  to do this task, if will also save much time as same as `multi-threads` approach. But creating many processes is more expensive (in memory and time aspects) than creating multi threads. So we use multi threads.
 
-- `Disk bound (small data files)`: same as network I/O, for example, you need to read many data files to do computing, the whole process is `send read data mission via CPU` --> `IO system reads data into memory` --> `do computing task`. When IO system reads data into memory, your CPU is free at this time, so you can use 
-When you read many small files, the `bandwidth` is not the limitation factor, and the main time is spent on other operations such as finding the address of the small file
+- `Disk bound (small data files)`: same as network I/O, for example, you need to read many data files to do computing, the whole process is `send read data mission via CPU` --> `IO system reads data into memory` --> `do computing task`. 
+When you read many small files, the `bandwidth` is not the limitation factor, and the main time is spent on other operations such as finding the address of the small file. So when IO system reads data into memory, your CPU is free at this time, you can use `multi-threads` to enhance the efficiency.
 
 - `Disk bound (big data files)`:
 
