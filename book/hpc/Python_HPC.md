@@ -141,11 +141,10 @@ One `process` can generate many `thread` missions, and a process is cheap than a
 
 - `Cloud Computing`: cloud computing is a combination of the cluster computing and the distributed computing. 
 
-- Distributed computing is like scattered self-service ticket collection at railway stations
-
-- cluster (supercomputing) computing (centralized ticket collection at railway station counters)
-
-- cloud computing (Amazon, Google Cloud) (all ticket collection windows at railway stations)
+- There is a metaphor:
+    - Distributed computing is like scattered self-service ticket collection at railway stations
+    - cluster (supercomputing) computing (centralized ticket collection at railway station counters)
+    - cloud computing (Amazon, Google Cloud) (all ticket collection windows at railway stations)
 
 
 
