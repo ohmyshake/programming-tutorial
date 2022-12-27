@@ -33,7 +33,15 @@ The following are the main three ways for hpc computing:
 `Round-robin (RR) scheduling` is one of the algorithms employed by process and network schedulers in computing. As the term is generally used, time slices (also known as time quanta) are assigned to each process in equal portions and in circular order, handling all processes without priority (also known as cyclic executive). One `process` can generate many `thread` mission
 
 
-Round_Robin_Schedule_Example
+
+```{figure} ./files/Round_Robin_Schedule_Example.jpg
+---
+scale: 50%
+align: center
+name: Round_Robin_Schedule_Example
+---
+Round Robin Schedule Example
+```
 
 Due to the `Round-robin scheduling`, a CPU core will only execute one thread at same time. For a task, not only `cpu computing` takes the time, but `Network I/O` and `Disk I/O` also take the time.
 
