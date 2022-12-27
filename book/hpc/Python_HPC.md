@@ -88,6 +88,14 @@ One `process` can generate many `thread` missions, and a process is cheap than a
 
 
 
+```{figure} ./files/model_hpc_schematic.webp
+---
+scale: 50%
+align: center
+name: model_hpc_schematic
+---
+A schematic diagram HPC computing
+```
 
 
 
