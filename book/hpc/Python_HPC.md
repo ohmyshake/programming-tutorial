@@ -45,7 +45,7 @@ One `process` can generate many `thread` missions, and a process is cheap than a
 
 
 
-For a task, not only `cpu computing` takes the time, but `Network I/O` and `Disk I/O` also take the time. `cpu computing` mainly includes using memory to compute some data
+For a task, not only `cpu computing` takes the time, but `Network I/O` and `Disk I/O` also take the time. `cpu computing` mainly includes using memory to compute some data, when you send a task (read data) to system, the system will order disk to read data into memory, `Disk I/O`
 
 
 
