@@ -88,7 +88,6 @@ The following are the main three ways for hpc computing:
 Due to the `Round-robin scheduling`, a CPU core will only execute one thread at same time. For a task, not only `cpu computing` takes the time, but `Network I/O` and `Disk I/O` also take the time.
 
 
-
 - `CPU-bound`: `computing cores + 1`, or `computing cores * 2`. I'd like personally to use computing cores + 1 choice.
 
 - `Network I/O`: it depends, the empirical formula is `computing cores / 0.1`, for example in a network IO task, the whole process is `send requestion via CPU` --> `send back data via network (network IO)` --> `parse requestion vis cpu`. But after you send the request via CPU, your CPU is free, and the work is to wait network to send back data, so the utilization rate of CPU is not high at this time. 
