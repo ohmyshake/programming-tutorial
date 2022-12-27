@@ -35,7 +35,7 @@ The following are the main three ways for hpc computing:
 
 
 
-:::{dropdown} What is the `node`,`physical cores`, `computing cores`, and `Hyper-Threading Technology`.
+:::{dropdown} What is the `node`,`physical cores`, `computing cores`, and `Hyper-Threading Technology`?
 :color: info
 :icon: info
 
