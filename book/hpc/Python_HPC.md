@@ -13,7 +13,7 @@
 - `Cluster Computing`: the most common cluster is `High-performance clusters (HPC)`
 
 :::{admonition} Admonition
-There is no guarantees of correctness, and if you spot an error or a doubtful statement, kindly let me know.
+The following are the main 3 ways for hpc computing:
 
 - `OpenMP` the full name is open multi-processing, support `c`, `c++`, and `fortran` language, `gcc` and `clang` of compilers. Share memory for same process.
 
