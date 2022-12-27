@@ -38,6 +38,7 @@ parts:
     # numbered: True 
     # maxdepth: 2
     chapters:
+    - file: hpc/Introduction
     - file: hpc/Python 
     - file: hpc/Python_HPC 
     - file: hpc/C++ 
