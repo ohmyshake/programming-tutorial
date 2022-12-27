@@ -12,12 +12,15 @@
 
 - `Cluster Computing`: the most common cluster is `High-performance clusters (HPC)`
 
+:::{admonition} Admonition
+There is no guarantees of correctness, and if you spot an error or a doubtful statement, kindly let me know.
+
 - `OpenMP` the full name is open multi-processing, support `c`, `c++`, and `fortran` language, `gcc` and `clang` of compilers. Share memory for same process.
 
 - `OpenMPI` the full name is open message passing interface. Do not share memory, send message between different processes.
 
 - `CUDA` the full name is compute unified device architecture. Have more threads for computing, but we need to write `kernel function` to run code in those threads.
-
+:::
 
 - `Distributed Computing`:
 
