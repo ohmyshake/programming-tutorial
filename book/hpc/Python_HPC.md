@@ -53,31 +53,6 @@ The following are the main three ways for hpc computing:
 
 
 
-
-:::{dropdown} What is the **`openmpi+openmp hybrid`** mode?
-:color: info
-:icon: info
-
-- For large-scale operations of cluster jobs: `openmpi+openmp hybrid`. Usually, `MPI` is used for communication between `nodes`, and `OpenMP` is used for calculation within a `single node`. The communication speed within the node is fast, and is slow between nodes. 
-
-- For example, in the seismic forward simulation in the petroleum industry, N nodes are opened at the same time, each node is forwarded with one shot, and each shot uses several CPUs for calculation.
-:::
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 :::{dropdown} `OpenMP` and `OpenMPI`, which one is more suitable for parallel computing?
 :color: info
 :icon: info
@@ -93,6 +68,15 @@ The following are the main three ways for hpc computing:
 
 
 
+
+:::{dropdown} What is the **`openmpi+openmp hybrid`** mode?
+:color: info
+:icon: info
+
+- For large-scale operations of cluster jobs: `openmpi+openmp hybrid`. Usually, `MPI` is used for communication between `nodes`, and `OpenMP` is used for calculation within a `single node`. The communication speed within the node is fast, and is slow between nodes. 
+
+- For example, in the seismic forward simulation in the petroleum industry, N nodes are opened at the same time, each node is forwarded with one shot, and each shot uses several CPUs for calculation.
+:::
 
 
 
