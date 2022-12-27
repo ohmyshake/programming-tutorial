@@ -98,7 +98,7 @@ Due to the `Round-robin scheduling`, a CPU core will only execute one thread at 
 
 - `Disk bound` (small data files): same as network I/O, for example, you need to read many data to do computing, the whole process is `send read data mission via CPU` --> `IO system reads data into memory` --> `do computing task`. When IO system reads data into memory, your CPU is free at this time, so you can use 
 
-- `Disk bound` (big data files)
+- `Disk bound` (big data files):
 
 :::
 
