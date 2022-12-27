@@ -89,7 +89,7 @@ One `process` can generate many `thread` missions, and a process is cheap than a
 
 
 
-:::{dropdown} `OpenMP` and `OpenMPI`, which one is more suitable for parallel computing?
+:::{dropdown} Which one is more suitable for parallel computing, `OpenMP` and `OpenMPI`?
 :color: info
 :icon: info
 
