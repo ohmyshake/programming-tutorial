@@ -70,7 +70,7 @@ One `process` can generate many `thread` missions, and a process is cheap than a
 
 `Parallel Computing` is the general name  `Cluster Computing`, `Distributed Computing`, and `Cloud Computing`.
 
-- `Cluster Computing`: the most common cluster is `High-performance clusters (HPC)`
+- `Cluster Computing`: cluster computing is a single-task, high-efficiency computing group, and there are fast communication lines between different nodes, and the most common cluster is `High-performance clusters (HPC)`
 
 :::{admonition} Admonition
 The following are the main three ways for hpc computing:
