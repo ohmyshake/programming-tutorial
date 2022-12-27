@@ -41,9 +41,11 @@ name: Round_Robin_Schedule_Example
 Round Robin Schedule Example from Wikipedia
 ```
 
-One `process` can generate many `thread` missions, and a process is cheap than a thread. Why? When a process is suspended, it needs to record the state at this time. When a process resumes, it needs to collect the state of the previous moment and then execute the program. We call this working time is `context switching` time.
+One `process` can generate many `thread` missions, and a process is cheap than a thread. Why? When a process is suspended, it needs to record the state at this time. When a process resumes, it needs to collect the state of the previous moment and then execute the program. We call this working time is `context switching` time. 
 
-For a task, not only `cpu computing` takes the time, but `Network I/O` and `Disk I/O` also take the time.
+
+
+For a task, not only `cpu computing` takes the time, but `Network I/O` and `Disk I/O` also take the time. `cpu computing` mainly includes using memory to compute some data
 
 
 
