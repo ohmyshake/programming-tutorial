@@ -74,18 +74,6 @@ One `process` can generate many `thread` missions, and a process is cheap than a
 :::
 
 
-:::{dropdown} 
-:color: info
-:icon: info
-
-
-
-:::
-
-
-
-
-
 
 
 
