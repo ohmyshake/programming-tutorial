@@ -38,7 +38,7 @@ The following are the main three ways for hpc computing:
 
 - In theory, this is the case, but here it is said that multi-process is more suitable. It means that when the amount of data is relatively large and there is no logical dependence between computing tasks, multi-process is more suitable. Because **each process will have its own process memory space, each process is naturally isolated**. 
 
-- While multiple threads share the same memory space, synchronization between threads must be considered. None of these problems are necessary for computationally intensive tasks (`CPU-bound`). So we say that computing-intensive tasks are more suitable for multi-processing.
+- While `multiple threads` share the same memory space, synchronization between threads must be considered. None of these problems are necessary for computationally intensive tasks (`CPU-bound`). So we say that computing-intensive tasks are more suitable for multi-processing.
 :::
 
 
