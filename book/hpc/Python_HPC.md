@@ -85,7 +85,7 @@ The following are the main three ways for hpc computing:
 :color: info
 :icon: info
 
-Due to the `Round-robin scheduling`, a CPU core will only execute one thread at same time. But 
+Due to the `Round-robin scheduling`, a CPU core will only execute one thread at same time. For a task, not only `cpu computing` takes the time, but `Network I/O` and `Disk I/O` also take time
 
 
 
