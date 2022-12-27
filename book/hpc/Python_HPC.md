@@ -16,7 +16,7 @@
 The following are the main three ways for hpc computing:
 
 - `OpenMP` the full name is open multi-processing, support `c`, `c++`, and `fortran` language, `gcc` and `clang` of compilers. 
-**Shared memory** (all threads can access all variables, just call the variable name), belongs to the **one process**, and cannot work on multiple nodes in the cluster (distributed memory), only on a single node. The programming is simple, just divide the for loop. If you read a variable into memory and open multiple threads to access a certain part of this variable at the same time, it will not be affected. As long as multiple threads do not write at the same time, it is safe. If you want to write, you need to lock it.
+**Shared memory** (all threads can access all variables, just call the variable name), belongs to the **one process**, and cannot work on multiple nodes in the cluster (distributed memory), but work only on a single node. The programming is simple, just divide the for loop. If you read a variable into memory and open multiple threads to access a certain part of this variable at the same time, it will not be affected. As long as multiple threads do not write at the same time, it is safe. If you want to write, you need to lock it.
 
 - `OpenMPI` the full name is open message passing interface. **Not share memory**, send messages between different processes.
 
