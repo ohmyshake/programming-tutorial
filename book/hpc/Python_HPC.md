@@ -24,7 +24,7 @@ The following are the main three ways for hpc computing:
 
 **Note:**
 
-- For large-scale operations of cluster jobs: openmpi+openmp hybrid. Usually, `MPI` is used for communication between `nodes`, and `OpenMP` is used for calculation within a `single node`. The communication speed within the node is fast, and between nodes is slow. For example, in the forward simulation in the petroleum industry, N nodes are opened at the same time, each node is forwarded with one shot, and each shot uses several CPUs for calculation.
+- For large-scale operations of cluster jobs: openmpi+openmp hybrid. Usually, `MPI` is used for communication between `nodes`, and `OpenMP` is used for calculation within a `single node`. The communication speed within the node is fast, and is slow between nodes. For example, in the forward simulation in the petroleum industry, N nodes are opened at the same time, each node is forwarded with one shot, and each shot uses several CPUs for calculation.
 
 - For clusters, a cluster has multiple node nodes, each node can have multiple CPUs (physical cores), each CPU can have multiple cpu cores (computing cores), and each core can run two threads. Because a thread belongs to a process, a single process can only run under a single node, so threads cannot share memory across nodes. As for the physical core, the laptop we buy has a cpu chip, which is a single physical core, but this chip may have 4 cores, and there are 4 computing cores.
 :::
