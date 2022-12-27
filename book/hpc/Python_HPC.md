@@ -24,7 +24,7 @@ The following are the main three ways for hpc computing:
 :::
 
 
-:::{dropdown} What is the `**openmpi+openmp hybrid**` mode?
+:::{dropdown} What is the **`openmpi+openmp hybrid`** mode?
 :color: info
 :icon: info
 
