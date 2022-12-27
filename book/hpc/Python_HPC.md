@@ -40,7 +40,7 @@ scale: 50%
 align: center
 name: Round_Robin_Schedule_Example
 ---
-Round Robin Schedule Example
+Round Robin Schedule Example from
 ```
 
 Due to the `Round-robin scheduling`, a CPU core will only execute one thread at same time. For a task, not only `cpu computing` takes the time, but `Network I/O` and `Disk I/O` also take the time.
