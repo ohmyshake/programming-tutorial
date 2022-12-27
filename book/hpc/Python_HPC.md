@@ -121,7 +121,7 @@ One `process` can generate many `thread` missions, and a process is cheap than a
 
 - `Distributed Computing`: it can be that many ordinary home computers are connected through traditional network cables. The transmission and communication speed of different computing points is very slow, and the tasks performed are very fragmented.
 
-:::{admonition} Admonition
+:::{admonition} Storage and Distributed Storage
 The following are the main three ways for hpc computing:
 :::
 
