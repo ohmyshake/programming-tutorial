@@ -6,11 +6,9 @@
 
 ---
 
-## What is the Parallel Computing?
 
-`Parallel Computing` is the general name  `Cluster Computing`, `Distributed Computing`, and `Cloud Computing`.
 
-### Preliminary Knowledge
+## Preliminary Knowledge
 
 :::{dropdown} How the CPU works? The concept of `thread`, `process`, `Round-robin scheduling`, `CPU-bound`, `I/O bound`, `disk read speed` and `bandwidth`, where is the time spent for a task? How many threads and processes we use are appropriate?
 :color: info
@@ -79,6 +77,11 @@ A schematic diagram process and thread
 
 - Because a thread belongs to a process, **a single process can only run under a single node**, so **threads cannot share memory across nodes**. As for the physical core, the laptop we buy has a cpu chip, which is a single physical core, but this chip may have 4 cores, and there are 4 computing cores.
 :::
+
+
+## What is the Parallel Computing?
+
+`Parallel Computing` is the general name  `Cluster Computing`, `Distributed Computing`, and `Cloud Computing`.
 
 
 ### Cluster Computing
