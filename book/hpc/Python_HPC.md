@@ -144,7 +144,7 @@ One `process` can generate many `thread` missions, and a process is cheap than a
 - There is a metaphor:
     - `Cluster Computing` (supercomputing) is like centralized ticket collection at railway station counters.
     - `Distributed Computing` is like scattered self-service ticket collection at railway stations.
-    - `Cloud Computing` (Amazon, Micrsoft, and Google cloud service) is like all ticket collection windows at railway stations.
+    - `Cloud Computing` (e.g. Amazon, Micrsoft, and Google cloud service) is like all ticket collection windows at railway stations.
 
 
 
