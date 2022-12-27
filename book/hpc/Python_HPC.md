@@ -36,7 +36,7 @@ The following are the main three ways for hpc computing:
 
 - For clusters, a cluster has multiple node nodes, each node can have multiple CPUs (`physical cores`), each CPU can have multiple cpu cores (`computing cores`), and each core can run two threads which is called `Hyper-Threading Technology`. 
 
-- Because a thread belongs to a process, a single process can only run under a single node, so **threads cannot share memory across nodes**. As for the physical core, the laptop we buy has a cpu chip, which is a single physical core, but this chip may have 4 cores, and there are 4 computing cores.
+- Because a thread belongs to a process, **a single process can only run under a single node**, so **threads cannot share memory across nodes**. As for the physical core, the laptop we buy has a cpu chip, which is a single physical core, but this chip may have 4 cores, and there are 4 computing cores.
 :::
 
 
