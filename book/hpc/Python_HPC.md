@@ -8,7 +8,7 @@
 
 ## Introduction
 
-`Parallel Computing` is the general name  `Cluster Computing`, `Distributed Computing`, and `Cloud Computing`
+`Parallel Computing` is the general name  `Cluster Computing`, `Distributed Computing`, and `Cloud Computing`.
 
 
 
