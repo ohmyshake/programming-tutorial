@@ -11,7 +11,9 @@
 ## Preliminary Knowledge
 
 
-### What is the `node`,`physical cores`, `computing cores`, and `Hyper-Threading Technology`?
+### What is the cores?
+
+`node`,`physical cores`, `computing cores`, and `Hyper-Threading Technology`?
 
 
 - For clusters, a cluster has multiple node nodes, each node can have multiple CPUs (`physical cores`), each CPU can have multiple cpu cores (`computing cores`), and each core can run two threads which is called `Hyper-Threading Technology`. 
