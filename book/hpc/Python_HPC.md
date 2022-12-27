@@ -14,7 +14,9 @@
 
 
 - `Distributed Computing`:
+
 - `Cloud Computing`:
+
 High-performance (HPC)clusters
 
 Parallel computing share-memory for communication
