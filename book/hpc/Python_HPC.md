@@ -44,8 +44,7 @@ Round Robin Schedule Example from Wikipedia
 One `process` can generate many `thread` missions, and a process is cheap than a thread. Why? When a process is suspended, it needs to record the state at this time. When a process resumes, it needs to collect the state of the previous moment and then execute the program. We call this working time is `context switching` time. 
 
 
-
-For a task, not only `cpu computing` takes the time, but `Network I/O` and `Disk I/O` also take the time:
+**Question:** for a task, not only `cpu computing` takes the time, but `Network I/O` and `Disk I/O` also take the time:
 
 - When you send a task (read data) to system, the system will order disk to read data into memory, `Disk I/O` is dependent on HDD speed. 
 - When you send a task to download data in Internet, you need to gain data via network, `Network I/O` is dependent on `bandwidth`. Imagine there are 10 lanes on a road, and a car runs on each lane. (a lane is a thread)
