@@ -124,7 +124,7 @@ One `process` can generate many `thread` missions, and a process is cheap than a
 :::{admonition} Storage and Distributed Storage
 - Storage, such as the hard disk on the server, is connected to the server through a `SAS cable` (ultra-fast transmission speed, such as 10G/s). At this time, the read and write speed of the server is affected by the `disk IO speed`, and the general disk speed is only 1G/s, but a server will be connected to multiple disks, as long as the transmission speed of multiple disks does not exceed 10G/s of the SAS line, reading and writing missions will not be affected. 
 
-- It can be seen from the above that the traditional hard disk storage method has defects. The speed of reading data is very slow, and the total bandwidth is constant. Many people read data at the same time, and the speed will slow down seriously; at the same time, if reading a large file, it can only be read serially. 
+- It can be seen from the above that the traditional hard disk storage method has defects. The speed of reading data is very slow, and the total `bandwidth` is constant. If many people read data at the same time, and the speed will slow down seriously; at the same time, if reading a large file, it can only be read serially. 
 
 - Distributed storage is to divide a piece of data into many small pieces and store them in multiple hard disks respectively. When reading this file data, it will read a lot of small pieces from multiple hard disks at the same time, and finally stitch them into one big piece, similar to parallel reading. It means that the speed will be very fast; but the disadvantage is that if one hard disk is broken, all distributed storage data will be broken; but is the scalability of distributed storage good?
 :::
