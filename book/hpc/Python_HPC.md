@@ -86,6 +86,9 @@ The following are the main three ways for hpc computing:
 :icon: info
 
 Due to the `Round-robin scheduling`
+
+
+
 - `CPU-bound` mission: `computing cores` + 1, or `computing cores` * 2.
 
 - `I/O bound` mission: `computing cores` / 0.1.
