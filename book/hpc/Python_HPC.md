@@ -135,7 +135,7 @@ One `process` can generate many `thread` missions, and a process is cheap than a
 :::
 
 
-- `Cloud Computing`:
+- `Cloud Computing`: cloud computing is a combination of the cluster computing and the distributed computing.
 
 
 
