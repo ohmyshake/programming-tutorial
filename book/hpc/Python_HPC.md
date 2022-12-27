@@ -17,7 +17,7 @@ The following are the main three ways for hpc computing:
 
 - `OpenMP` the full name is open multi-processing, support `c`, `c++`, and `fortran` language, `gcc` and `clang` of compilers. **Share memory** for same process.
 
-- `OpenMPI` the full name is open message passing interface. **Not share memory**, send message between different processes.
+- `OpenMPI` the full name is open message passing interface. **Not share memory**, send messages between different processes.
 
 - `CUDA` the full name is compute unified device architecture. GPU has many many threads for computing, and we need to write `kernel function` to run code in those threads. GPU computing is not independent, usually the data is send to GPU via CPU, and this process is called `heterogeneous computing`.
 :::
