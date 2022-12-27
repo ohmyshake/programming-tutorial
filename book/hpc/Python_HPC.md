@@ -89,7 +89,7 @@ Due to the `Round-robin scheduling`, a CPU core will only execute one thread at 
 
 
 
-- `CPU-bound` mission: `computing cores` + 1, or `computing cores` * 2.
+- `CPU-bound` mission: `computing cores + 1`, or `computing cores * 2`. I'd like to use `computing cores + 1`
 
 - `I/O bound` mission: `computing cores` / 0.1.
 :::
