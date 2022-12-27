@@ -10,7 +10,40 @@
 
 ## Preliminary Knowledge
 
-How the CPU works? The concept of `thread`, `process`, `Round-robin scheduling`, `CPU-bound`, `I/O bound`, `disk read speed` and `bandwidth`, where is the time spent for a task? How many threads and processes we use are appropriate?
+
+### What is the `node`,`physical cores`, `computing cores`, and `Hyper-Threading Technology`?
+
+
+- For clusters, a cluster has multiple node nodes, each node can have multiple CPUs (`physical cores`), each CPU can have multiple cpu cores (`computing cores`), and each core can run two threads which is called `Hyper-Threading Technology`. 
+
+- Because a thread belongs to a process, **a single process can only run under a single node**, so **threads cannot share memory across nodes**. As for the physical core, the laptop we buy has a cpu chip, which is a single physical core, but this chip may have 4 cores, and there are 4 computing cores.
+
+
+```{figure} ./files/model_singlethreading.webp
+---
+scale: 30%
+align: center
+name: model_singlethreading
+---
+Single Threading Technology
+```
+
+```{figure} ./files/model_hyperthreading.webp
+---
+scale: 30%
+align: center
+name: model_hyperthreading
+---
+Hyper Threading Technology
+```
+
+
+
+
+
+### How the CPU works? 
+
+The concept of `thread`, `process`, `Round-robin scheduling`, `CPU-bound`, `I/O bound`, `disk read speed` and `bandwidth`, where is the time spent for a task? How many threads and processes we use are appropriate?
 
 
 `Round-robin (RR) scheduling` is one of the algorithms employed by process and network schedulers in computing. As the term is generally used, time slices (also known as time quanta) are assigned to `each process` or `thread` in equal portions and in circular order, handling all processes without priority (also known as cyclic executive). 
@@ -68,34 +101,7 @@ A schematic diagram process and thread
 
 
 
-:::{dropdown} What is the `node`,`physical cores`, `computing cores`, and `Hyper-Threading Technology`?
-:color: info
-:icon: info
 
-- For clusters, a cluster has multiple node nodes, each node can have multiple CPUs (`physical cores`), each CPU can have multiple cpu cores (`computing cores`), and each core can run two threads which is called `Hyper-Threading Technology`. 
-
-- Because a thread belongs to a process, **a single process can only run under a single node**, so **threads cannot share memory across nodes**. As for the physical core, the laptop we buy has a cpu chip, which is a single physical core, but this chip may have 4 cores, and there are 4 computing cores.
-:::
-
-```{figure} ./files/model_singlethreading.webp
----
-scale: 30%
-align: center
-name: model_singlethreading
----
-Single Threading Technology
-```
-
-
-
-```{figure} ./files/model_hyperthreading.webp
----
-scale: 30%
-align: center
-name: model_hyperthreading
----
-Hyper Threading Technology
-```
 
 
 
