@@ -10,9 +10,11 @@
 
 `Parallel Computing` is the general name  `Cluster Computing`, `Distributed Computing`, and `Cloud Computing`.
 
+- `Cluster Computing`:
 
 
-
+- `Distributed Computing`:
+- `Cloud Computing`:
 High-performance (HPC)clusters
 
 Parallel computing share-memory for communication
