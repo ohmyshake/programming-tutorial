@@ -14,8 +14,6 @@
 
 - `OpenMP` the full name is open multi-processing, support `c`, `c++`, and `fortran` language, `gcc` and `clang` of compilers.
 
-
-
 - `OpenMPI` the full name is open message passing interface
 
 - `CUDA` the full name is compute unified device architecture
