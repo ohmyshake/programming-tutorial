@@ -52,7 +52,7 @@ One `process` can generate many `thread` missions, and a process is cheap than a
 
 - When you send a task to download data in Internet, you need to gain data via network, `Network I/O` is dependent on `bandwidth`. Imagine there are 10 lanes on a road, and a car runs on each lane. (a lane is a thread)
 
-- `cpu computing` mainly includes using memory to compute some data, 
+- `cpu computing` mainly includes using memory to compute some data. 
 
 
 
