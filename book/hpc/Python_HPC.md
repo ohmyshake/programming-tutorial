@@ -41,7 +41,7 @@ Computationally intensive, utilizes multiple processes, and takes full advantage
 :color: info
 :icon: info
 
-- `CPU-bound` mission: `computing cores` + 1, or `computing cores` * 2
+- `CPU-bound` mission: `computing cores` + 1, or `computing cores` * 2.
 
 - `I/O bound` mission: 
 :::
