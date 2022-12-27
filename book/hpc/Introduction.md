@@ -78,6 +78,17 @@ A schematic diagram process and thread
 :::
 
 
+```{figure} ./files/model_hyperthreading.webp
+---
+scale: 50%
+align: center
+name: model_hyperthreading
+---
+Hyper_Threading Technology
+```
+
+
+
 ## What is the Parallel Computing?
 
 `Parallel Computing` is the general name  `Cluster Computing`, `Distributed Computing`, and `Cloud Computing`.
