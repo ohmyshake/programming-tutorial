@@ -41,7 +41,7 @@ name: Round_Robin_Schedule_Example
 Round Robin Schedule Example from Wikipedia
 ```
 
-One `process` can generate many `thread` missions
+One `process` can generate many `thread` missions, and a process is cheap than a thread. Why? When a process is suspended, it needs to record the state at this time. When a process resumes, it needs to collect the state of the previous moment and then execute the program.
 
 
 Due to the `Round-robin scheduling`, a CPU core will only execute one thread at same time. For a task, not only `cpu computing` takes the time, but `Network I/O` and `Disk I/O` also take the time.
