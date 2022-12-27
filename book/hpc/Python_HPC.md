@@ -15,7 +15,7 @@
 :::{admonition} Admonition
 The following are the main three ways for hpc computing:
 
-- `OpenMP` the full name is open multi-processing, support `c`, `c++`, and `fortran` language, `gcc` and `clang` of compilers. Share memory for same process.
+- `OpenMP` the full name is open multi-processing, support `c`, `c++`, and `fortran` language, `gcc` and `clang` of compilers. **Share memory** for same process.
 
 - `OpenMPI` the full name is open message passing interface. Do not share memory, send message between different processes.
 
