@@ -26,7 +26,7 @@ The following are the main three ways for hpc computing:
 
 
 
-:::{dropdown} How the CPU works? `Round-robin scheduling`, `CPU-bound`, and `I/O bound` concepts.
+:::{dropdown} How the CPU works? `Round-robin scheduling`, `CPU-bound`, `I/O bound`, `disk read speed` and `bandwidth` concepts.
 :color: info
 :icon: info
 
