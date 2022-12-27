@@ -91,7 +91,7 @@ Due to the `Round-robin scheduling`, a CPU core will only execute one thread at 
 
 - `CPU-bound` mission: `computing cores + 1`, or `computing cores * 2`. I'd like personally to use `computing cores + 1` choice.
 
-- `I/O bound` mission: it depends, the empirical formula is `computing cores / 0.1` for `Network I/O`, for example in a network IO task, the whole process is `send requestion via network` --> `send back data via network (network IO)` --> `parse requestion`
+- `I/O bound` mission: it depends, the empirical formula is `computing cores / 0.1` for `Network I/O`, for example in a network IO task, the whole process is `send requestion via cpu` --> `send back data via network (network IO)` --> `parse requestion`. But when
 :::
 
 
