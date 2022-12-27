@@ -6,7 +6,11 @@
 
 ---
 
-## Introduction
+## What is the Parallel Computing?
+
+`Parallel Computing` is the general name  `Cluster Computing`, `Distributed Computing`, and `Cloud Computing`.
+
+### Prerequisite Knowledge
 
 :::{dropdown} How the CPU works? The concept of `thread`, `process`, `Round-robin scheduling`, `CPU-bound`, `I/O bound`, `disk read speed` and `bandwidth`, where is the time spent for a task? How many threads and processes we use are appropriate?
 :color: info
@@ -68,7 +72,6 @@ One `process` can generate many `thread` missions, and a process is cheap than a
 
 ### Cluster Computing
 
-`Parallel Computing` is the general name  `Cluster Computing`, `Distributed Computing`, and `Cloud Computing`.
 
 - `Cluster Computing`: cluster computing is a single-task, high-efficiency computing group, and there are fast communication lines between different nodes, and the most common cluster is `High-performance clusters (HPC)`
 
