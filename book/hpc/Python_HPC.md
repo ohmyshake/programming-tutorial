@@ -72,9 +72,7 @@ One `process` can generate many `thread` missions, and a process is cheap than a
 
 - `Cluster Computing`: cluster computing is a single-task, high-efficiency computing group, and there are fast communication lines between different nodes, and the most common cluster is `High-performance clusters (HPC)`
 
-:::{admonition} Admonition
-The following are the main three ways for hpc computing:
-
+:::{admonition} The main three ways for HPC computing:
 - `OpenMP` the full name is open multi-processing, support `c`, `c++`, and `fortran` language, `gcc` and `clang` of compilers. 
 **Shared memory** (all threads can access all variables, just call the variable name), belongs to the **one process**, and cannot work on multiple nodes in the cluster (distributed memory), but work only on a single node. As long as multiple threads do not write at the same time, it is safe, and if you want to write, you need to use `lock` function.
 
@@ -122,6 +120,11 @@ The following are the main three ways for hpc computing:
 
 
 - `Distributed Computing`: it can be that many ordinary home computers are connected through traditional network cables. The transmission and communication speed of different computing points is very slow, and the tasks performed are very fragmented.
+
+:::{admonition} Admonition
+The following are the main three ways for hpc computing:
+:::
+
 
 - `Cloud Computing`:
 
