@@ -77,6 +77,16 @@ A schematic diagram process and thread
 - Because a thread belongs to a process, **a single process can only run under a single node**, so **threads cannot share memory across nodes**. As for the physical core, the laptop we buy has a cpu chip, which is a single physical core, but this chip may have 4 cores, and there are 4 computing cores.
 :::
 
+```{figure} ./files/model_singlethreading.webp
+---
+scale: 50%
+align: center
+name: model_singlethreading
+---
+Single Threading Technology
+```
+
+
 
 ```{figure} ./files/model_hyperthreading.webp
 ---
@@ -84,7 +94,7 @@ scale: 50%
 align: center
 name: model_hyperthreading
 ---
-Hyper_Threading Technology
+Hyper Threading Technology
 ```
 
 
