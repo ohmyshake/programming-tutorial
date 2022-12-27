@@ -79,7 +79,7 @@ A schematic diagram process and thread
 
 ```{figure} ./files/model_singlethreading.webp
 ---
-scale: 50%
+scale: 30%
 align: center
 name: model_singlethreading
 ---
@@ -90,7 +90,7 @@ Single Threading Technology
 
 ```{figure} ./files/model_hyperthreading.webp
 ---
-scale: 50%
+scale: 30%
 align: center
 name: model_hyperthreading
 ---
