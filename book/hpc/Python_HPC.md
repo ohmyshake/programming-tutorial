@@ -163,6 +163,14 @@ A schematic diagram distributed computing
     - `Cloud Computing` (e.g. Amazon, Micrsoft, and Google cloud service) is like all ticket collection windows at railway stations.
 
 
+```{figure} ./files/model_cloud-computing.webp
+---
+scale: 50%
+align: center
+name: model_cloud-computing
+---
+A schematic diagram cloud computing
+```
 
 
 
