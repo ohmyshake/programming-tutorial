@@ -12,7 +12,7 @@
 
 - `Cluster Computing`: the most common cluster is `High-performance clusters (HPC)`
 
-- `OpenMP` the full name is open multi-processing, support `c`, `c++`, and `fortran` language, `gcc` and `clang` of compilers.
+- `OpenMP` the full name is open multi-processing, support `c`, `c++`, and `fortran` language, `gcc` and `clang` of compilers. Share memory
 
 - `OpenMPI` the full name is open message passing interface
 
