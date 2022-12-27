@@ -12,6 +12,15 @@ Parallel computing
 
 
 
+
+High-performance (HPC)clusters
+
+Parallel computing share-memory for communication
+
+distributed computing share-nothing, communicate via network (spark, hadoop)
+
+cloud computing
+
 ## Multiple Threading
 
 
