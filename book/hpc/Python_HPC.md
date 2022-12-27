@@ -29,6 +29,17 @@ Round Robin Schedule Example from Wikipedia
 
 One `process` can generate many `thread` missions, and a process is cheap than a thread. Why? When a process is suspended, it needs to record the state at this time. When a process resumes, it needs to collect the state of the previous moment and then execute the program. We call this working time is `context switching` time. 
 
+```{figure} ./files/model_multithreaded_process.png
+---
+scale: 90%
+align: center
+name: model_multithreaded_process
+---
+A schematic diagram process and thread
+```
+
+
+
 
 **Question:** where is the time spent for a task?
 
