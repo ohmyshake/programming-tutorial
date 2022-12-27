@@ -50,7 +50,7 @@ One `process` can generate many `thread` missions, and a process is cheap than a
 - When you send a task to download data in Internet, you need to gain data via network, `Network I/O` is dependent on `bandwidth`. Imagine there are 10 lanes on a road, and a car runs on each lane. (a lane is a thread)
 - `cpu computing` mainly includes using memory to compute some data, 
 
-Due to the `Round-robin scheduling`, a CPU core will only execute one process at same time. So how many threads and processes we use are appropriate? 
+**Question:** due to the `Round-robin scheduling`, a CPU core will only execute one process at same time. So how many threads and processes we use are appropriate? 
 
 
 - `CPU-bound`: `computing cores + 1`, or `computing cores * 2`. I'd like personally to use computing cores + 1 choice.
