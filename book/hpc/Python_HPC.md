@@ -91,12 +91,12 @@ Due to the `Round-robin scheduling`, a CPU core will only execute one thread at 
 
 - `CPU-bound`: `computing cores + 1`, or `computing cores * 2`. I'd like personally to use computing cores + 1 choice.
 
-- `Network I/O`: it depends, the empirical formula is `computing cores / 0.1`, for example in a network IO task, the whole process is `send requestion via cpu` --> `send back data via network (network IO)` --> `parse requestion vis cpu`. But after you send the request via cpu, your cpu is free, and the work is to wait network to send back data, so the utilization rate of cpu is not high at this time. 
+- `Network I/O`: it depends, the empirical formula is `computing cores / 0.1`, for example in a network IO task, the whole process is `send requestion via CPU` --> `send back data via network (network IO)` --> `parse requestion vis cpu`. But after you send the request via cpu, your cpu is free, and the work is to wait network to send back data, so the utilization rate of cpu is not high at this time. 
     - If you use `a process` to do this task, you must need to wait network IO time, and after that you can run next step code. 
     - If you use `multi-threads` to do this task, when you wait the response of network, you can run other threads to send requests, and thus enhance the utilization rate of CPU. 
     - If you use `multi-processes`  to do this task, if will also save much time as same as `multi-threads` approach. But creating many processes is more expensive (in memory and time aspects) than creating multi threads. So we use multi threads.
 
-- `Disk bound`: same as network I/O
+- `Disk bound`: same as network I/O, for example, you need to read many data to do computing, the whole process is `send read data mission via CPU`
 
 
 :::
