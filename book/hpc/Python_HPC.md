@@ -30,7 +30,7 @@ The following are the main three ways for hpc computing:
 
 
 
-:::{dropdown} How the CPU works? `Round-robin scheduling`, `CPU-bound`, and `I/O bound` concepts.
+:::{dropdown} What is the `node`,`physical cores`, `computing cores`, and `Hyper-Threading Technology`.
 :color: info
 :icon: info
 
