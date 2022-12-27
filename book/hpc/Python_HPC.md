@@ -21,8 +21,12 @@ The following are the main three ways for hpc computing:
 - `OpenMPI` the full name is open message passing interface. Each processes has **independent memory**, and different processes can communicate (with performance memory overhead), suitable for various tasks such as large clusters with multiple nodes.
 
 - `CUDA` the full name is compute unified device architecture. GPU has many many threads for computing, and we need to write `kernel function` to run code in those threads. GPU computing is not independent, usually the data is send to GPU via CPU, and this process is called `heterogeneous computing`.
+:::
 
-**Note:**
+
+:::{dropdown} What is the `node`,`physical cores`, `computing cores`, and `Hyper-Threading Technology`.
+:color: info
+:icon: info
 
 - For large-scale operations of cluster jobs: `openmpi+openmp hybrid`. Usually, `MPI` is used for communication between `nodes`, and `OpenMP` is used for calculation within a `single node`. The communication speed within the node is fast, and is slow between nodes. For example, in the seismic forward simulation in the petroleum industry, N nodes are opened at the same time, each node is forwarded with one shot, and each shot uses several CPUs for calculation.
 :::
