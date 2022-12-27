@@ -31,7 +31,7 @@ One `process` can generate many `thread` missions, and a process is cheap than a
 
 ```{figure} ./files/model_multithreaded_process.png
 ---
-scale: 90%
+scale: 30%
 align: center
 name: model_multithreaded_process
 ---
