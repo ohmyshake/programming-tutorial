@@ -48,7 +48,7 @@ One `process` can generate many `thread` missions, and a process is cheap than a
 For a task, not only `cpu computing` takes the time, but `Network I/O` and `Disk I/O` also take the time:
 
 - When you send a task (read data) to system, the system will order disk to read data into memory, `Disk I/O` is dependent on HDD speed. 
-- When you send a task to download data in Internet, you need to gain data via network, `Network I/O` is dependent on `bandwidth`
+- When you send a task to download data in Internet, you need to gain data via network, `Network I/O` is dependent on `bandwidth`. Imagine there are 10 lanes on a road, and a car runs on each lane. (a lane is a thread)
 - `cpu computing` mainly includes using memory to compute some data, 
 
 Due to the `Round-robin scheduling`, a CPU core will only execute one process at same time. So how many threads and processes we use are appropriate? 
@@ -60,7 +60,7 @@ Due to the `Round-robin scheduling`, a CPU core will only execute one process at
     - If you use `a process` to do this task, you must need to wait network IO time, and after that you can run next step code. 
     - If you use `multi-threads` to do this task, when you wait the response of network, you can run other threads to send requests, and thus enhance the utilization rate of CPU. 
     - If you use `multi-processes`  to do this task, if will also save much time as same as `multi-threads` approach. But creating many processes is more expensive (in memory and time aspects) than creating multi threads. Why? At this time, the working time of multiple processes is spent on `context switching`, because the CPU has time slicing and runs different processes at different times. So multi-process will use more time then multi-thread.
-    - The limitation is `bandwidth` (network transmission speed, e.g. 100 MB/s), because the bandwidth is a constant number, it is useless to use more threads. Imagine there are 10 lanes on a road, and a car runs on each lane. (a lane is a thread)
+    - The limitation is `bandwidth` (network transmission speed, e.g. 100 MB/s), because the bandwidth is a constant number, it is useless to use more threads. 
 
 - `Disk bound (small data files)`: same as network I/O, for example, you need to read many data files to do computing, the whole process is `send read data mission via CPU` --> `IO system reads data into memory` --> `do computing task`. When you read many small files, the `disk read speed` and `bandwidth` is not the limitation factor, and the main time is spent on other operations such as finding the address of the small file (`seek time`). So when IO system reads data into memory, your CPU is free at this time, you can use `multi-threads` to enhance the efficiency.
 
