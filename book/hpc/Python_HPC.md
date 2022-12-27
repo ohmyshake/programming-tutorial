@@ -44,7 +44,7 @@ Round Robin Schedule Example from Wikipedia
 One `process` can generate many `thread` missions, and a process is cheap than a thread. Why? When a process is suspended, it needs to record the state at this time. When a process resumes, it needs to collect the state of the previous moment and then execute the program. We call this working time is `context switching` time.
 
 
-Due to the `Round-robin scheduling`, a CPU core will only execute one process at same time. For a task, not only `cpu computing` takes the time, but `Network I/O` and `Disk I/O` also take the time.
+Due to the `Round-robin scheduling`, a CPU core will only execute one process at same time. So how many threads and processes we use are appropriate? For a task, not only `cpu computing` takes the time, but `Network I/O` and `Disk I/O` also take the time.
 
 
 - `CPU-bound`: `computing cores + 1`, or `computing cores * 2`. I'd like personally to use computing cores + 1 choice.
