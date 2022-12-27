@@ -30,7 +30,7 @@ The following are the main three ways for hpc computing:
 :::
 
 
-:::{dropdown} `OpenMP` and `OpenMPI`, which one is more suitable for parallel computing
+:::{dropdown} `OpenMP` and `OpenMPI`, which one is more suitable for parallel computing?
 :color: info
 :icon: info
 
