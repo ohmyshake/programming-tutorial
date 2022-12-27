@@ -126,7 +126,7 @@ One `process` can generate many `thread` missions, and a process is cheap than a
 
 - It can be seen from the above that the traditional hard disk storage method has defects. The speed of reading data is very slow, and the total `bandwidth` is constant. If many people read data at the same time, and the speed will slow down seriously; and if reading `a large file`, it can only be `read serially`. 
 
-- `Distributed Storage` is to divide a piece of data into many small pieces, and **store them in multiple disks respectively**. When reading a big file data, it will read a lot of small pieces from multiple hard disks at the same time, and finally stitch them into one big piece, similar to parallel reading. It means that the speed will be very fast; but the disadvantage is that if one hard disk is broken, all distributed storage data will be broken; but is the scalability of distributed storage good?
+- `Distributed Storage` is to divide a piece of data into many small pieces, and **store them in multiple disks respectively**. When reading a big file data, it will read a lot of small pieces from multiple disks at the same time, and finally stitch them into one big piece, similar to parallel reading. It means that the speed will be very fast; but the disadvantage is that if one hard disk is broken, all distributed storage data will be broken; but is the scalability of distributed storage good?
 :::
 
 
