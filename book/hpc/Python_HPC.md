@@ -96,7 +96,7 @@ Due to the `Round-robin scheduling`, a CPU core will only execute one thread at 
     - If you use `multi-threads` to do this task, when you wait the response of network, you can run other threads to send requests, and thus enhance the utilization rate of CPU. 
     - If you use `multi-processes`  to do this task, if will also save much time as same as `multi-threads` approach. But creating many processes is more expensive (in memory and time aspects) than creating multi threads. So we use multi threads.
 
-- `Disk bound`:
+- `Disk bound`: same as network I/O
 
 
 :::
