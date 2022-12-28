@@ -204,6 +204,11 @@ Thread pool in python
 
 Now let's introduce `concurrent.futures` package in python.
 
+1. When ThreadPoolExecutor constructs an instance, pass in the max_workers parameter to set the maximum number of threads that can run simultaneously in the thread pool.
+2. Use the submit function to submit the task (function name and parameters) that the thread needs to execute to the thread pool, and return the handle of the task (similar to files and drawing). Note that submit is not blocked, but returns immediately.
+3. Through the task handle returned by the submit function, you can use the done method to determine whether the task is over. From the following example, it can be seen that since the task has a delay of 2s, it is judged immediately after task1 is submitted that task1 has not been completed, and it is judged after a delay of 4s that task1 is completed.
+4. Use the cancel method to cancel the submitted task. If the task is already running in the thread pool, it cannot be canceled. In this example, the thread pool size is set to 2 and the task is already running, so the cancellation fails. If the size of the thread pool is changed to 1, then task1 is submitted first, and task2 is still waiting in line. At this time, it can be successfully canceled.
+5. Use the result method to get the return value of the task. Note: this method is blocked.
 
 #### **Create a thread pool, submit a task, get the results**
 
