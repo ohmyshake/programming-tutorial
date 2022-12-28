@@ -36,7 +36,7 @@ GIL in python
 ```
 
 ```{code-cell} ipython3
-:tags: [hide-input]
+# :tags: [hide-input]
 
 import threading
 print("ss")
