@@ -78,9 +78,10 @@ from queue import Queue
 
 # do a function: square a number
 def job(l,q):
+    new_list = l
     for i in range(len(l)):
-        l[i] = l[i]**2
-    q.put(l)
+        new_list[i] = l[i]**2
+    q.put(new_list)
 
 def multithreading():
     # create a quene
