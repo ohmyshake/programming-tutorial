@@ -69,7 +69,7 @@ if __name__ == '__main__':
     main()
 ```
 
-**s:**
+**Quence function:**
 
 ```{code-cell} ipython3
 import threading
