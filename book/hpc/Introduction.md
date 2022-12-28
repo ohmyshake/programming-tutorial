@@ -213,7 +213,7 @@ A schematic diagram distributed computing
 
 ```{figure} ./files/model_cloud-computing.webp
 ---
-scale: 90%
+scale: 80%
 align: center
 name: model_cloud-computing
 ---
