@@ -328,10 +328,24 @@ print("main ")
 :color: info
 :icon: info
 
+- The first thing we think of is **data compression**. Usually, when a browser sends a request, it will carry an `Accept-Encoding` header field, which contains a list of compression formats supported by the browser, such as `gzip`, `deflate`, `br`, etc., so that the server can choose one of them. The compression algorithm is put into the `Content-Encoding` response header, and the original data is compressed and sent to the browser.
 
+- `Chunked` transfer is to disassemble a large file, break it into multiple small blocks, and distribute these small blocks to the browser in batches, and the browser will assemble and restore them after receiving them. In this way, the browser and the server do not need to store all the files in the memory, only send and receive a small part each time, the network will not be occupied by large files for a long time, and resources such as memory and bandwidth are also saved. `Transfer-Encoding` and `Content-Length` are mutually exclusive, and these two fields cannot appear in the response message at the same time, and the transmission of a response message is either of known length or unknown length (chunked), this must be remembered.
+
+- `Range Requests` allow the client to use a dedicated field in the request header to indicate that only a part of the file is fetched. The header must include `Accept-Ranges: bytes`.
 :::
 
 
+
+
+```{figure} ../files/http_transfer.png
+---
+scale: 20%
+align: center
+name: http_transfer
+---
+Transfer Big Data via Http 
+```
 
 
 :::{admonition} urllib and requests
