@@ -266,7 +266,7 @@ for task in as_completed(all_task):
     print("mission{} down load success".format(data))
 ```
 
-**Analysics:**
+**Analysis:**
 5 tasks, 2 threads. Since a maximum of 2 threads are allowed to be executed at the same time when the thread pool is constructed, task 1 and task 2 are executed at the same time. Judging from the output of heavy code, after task 1 and task 2 are executed, the for loop Enter the blocking state, until the end of task 1 or task 2, for will continue to execute task 3 / task 4, and ensure that only two tasks are executed at the same time.
 
 
