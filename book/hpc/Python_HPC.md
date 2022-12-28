@@ -53,7 +53,7 @@ def main():
     # start a thread
     thread.start()
 
-    # wait this thread finished running, then run following code
+    # wait this thread finished running, then run following code. Also called `block thread`
     thread.join()
 
     # see how many threads is running now
