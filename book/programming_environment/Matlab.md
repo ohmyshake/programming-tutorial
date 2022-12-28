@@ -54,7 +54,7 @@ Or set the varibale in `setting`:
 ---
 scale: 50%
 align: center
-name: shortcuts-2
+name: matlab-setting
 ---
 settings.json
 ```
