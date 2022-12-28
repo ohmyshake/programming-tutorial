@@ -296,7 +296,20 @@ for data in executor.map(download_video,urls):
 #### **wait function:**
 
 
+```{code-cell} ipython3
+from concurrent.futures import ThreadPoolExecutor, wait, ALL_COMPLETED, FIRST_COMPLETED
+import time
 
+def download_video(index):
+    time.sleep(2)
+    print("download video {} finished at {}".format(index,time.strftime('%Y-%m-%d %H:%M:%S', time.gmtime())))
+    return index
+executor = ThreadPoolExecutor(max_workers=2)
+urls = [0.1, 0.2, 0.3, 0.4, 0.5]
+all_task = [executor.submit(download_video,(url)) for url in urls]
+wait(all_task,return_when=ALL_COMPLETED)
+print("main ")
+```
 
 ## Multiple Processing
 
