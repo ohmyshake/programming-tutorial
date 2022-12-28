@@ -320,6 +320,206 @@ print("main ")
 
 
 
+
+```{code-cell} ipython3
+:tags: [hide-input]
+import os
+import requests
+from tqdm import tqdm
+from faker import Faker
+from retry import retry
+from pathlib import Path
+from concurrent.futures import ThreadPoolExecutor, as_completed
+
+
+cpu_cores = os.cpu_count()
+requests.packages.urllib3.disable_warnings()
+
+
+class downloader_https():
+    def __init__(self, url, show_info = True, resume=True, filename=None, num_threads=cpu_cores, timeout=10, chunk_size=1024*1000, header=None, proxies=None):
+        """
+        :param url: 下载地址
+        :param filename: 指定下载文件名 不指定则根据url截取命名
+        """
+        self.url = url
+        self.show_info = show_info
+        self.resume = resume
+        self.chunk_size = chunk_size  # 设置下载文件块大小 单位为字节（多线程下载时，一个线程下载一小块）
+        self.filename = filename
+        self.num_threads = num_threads
+        self.proxies = proxies
+        self.timeout = timeout
+        self.file_type = None
+        self.accept_ranges = None
+        self.content_length = None
+        self.transfer_encoding = None
+        if header is None:
+            self.header = {}
+            self.header.setdefault('User-Agent', Faker().user_agent())
+        elif 'User-Agent' not in header:
+            self.header.setdefault('User-Agent', Faker().user_agent())
+        else:
+            self.header = header
+
+    @retry(tries=3)
+    def check_url(self):
+        """
+        判断url是否支持断点续传功能 and 是否支持多线程（文件内容是否为零）
+        """
+        # 文件处理
+        _, filename = os.path.split(self.url)
+        self.filename = self.filename or filename
+
+        res = requests.head(self.url, headers=self.header, proxies=self.proxies, timeout=self.timeout, allow_redirects=True, verify=False)  # verify=False 关闭ssl双向验证，解决访问https报错问题
+
+        if not (200 <= res.status_code < 400):
+            raise Exception('Bad request!')
+
+        headers = res.headers
+        self.file_type = headers.get('Content-Type')
+        self.accept_ranges = headers.get('Accept-Ranges')
+        self.transfer_encoding = headers.get('Transfer-Encoding')
+
+        if self.transfer_encoding == "chunked" or self.transfer_encoding == "gzip, chunked":
+            self.num_threads = 1
+            self.content_length = 0
+        else:
+            lengths = headers.get('Content-Length')
+            if lengths == None:
+                self.content_length = 0
+            else:
+                self.content_length = int(lengths)
+
+
+    def get_range(self, start=0):
+        """
+        根据设置的缓存大小以及文件大小划分字节序列
+        eg: [(0, 1023), (1024, 2047), (2048, 3071) ...]
+        """
+        if self.transfer_encoding == "chunked" or self.transfer_encoding == "gzip, chunked":
+            _range = [(start, '')]
+        else:
+            lst = range(start, self.content_length, self.chunk_size)   
+            _range = list(zip(lst[:-1], [i - 1 for i in lst[1:]]))
+            _range.append((lst[-1], ''))
+
+        return _range
+
+
+    @retry(tries=5)
+    def download_by_piece(self, _range):
+        start, stop = _range
+        headers = {**self.header, **{"Range": f"bytes={start}-{stop}"}} # merge
+
+        res = requests.get(self.url, headers=headers, proxies=self.proxies, timeout=self.timeout, allow_redirects=True, verify=False)
+        if res.status_code != 206:
+            raise Exception(f'Request raise error, url: {self.url}, range: {_range}')
+        return _range, res.content
+
+
+    def download(self):
+        start = 0
+        self.check_url()
+
+        if self.accept_ranges != "bytes":
+            if self.show_info:
+                print(f'--- Mission ---: {self.url} download from scratch || with single thread, do not support breakpoint resuming')
+            
+            file_path = Path(self.filename)
+
+            res = requests.get(self.url, 
+                                headers=self.header, 
+                                proxies=self.proxies, 
+                                timeout=self.timeout, 
+                                allow_redirects=True, 
+                                verify=False)
+
+            if res.status_code != 206:
+                raise Exception(f'Request raise error, url: {self.url}')
+ 
+            # 将下载的块写入文件
+            open(file_path, 'w').close()  # 生成0文件
+            with open(self.filename, 'rb+') as fp:
+                fp.seek(0)
+                fp.write(res.content)
+
+            if self.show_info:
+                print(f'--- File ---: {self.filename} download completely')
+        else:
+            file_path = Path(self.filename)
+
+            if self.resume:
+                open(file_path, 'w+').close()
+                start = 0
+                if self.show_info:
+                    print(f'--- Mission ---: {self.url} download from scratch || with {self.num_threads} threads, support breakpoint resuming')
+
+            else:
+                if file_path.exists():
+                    # 文件已存在 并且支持断点续传，可以从现有文件基础上继续下载
+                    start = file_path.lstat().st_size
+                    if self.show_info:
+                        print(f'--- Mission ---: {self.url} download from breakpoint || with {self.num_threads} threads, support breakpoint resuming')
+
+                    # If file have already downloaded 
+                    if start == self.content_length:
+                        if self.show_info:
+                            print(f'--- File ---: {self.filename} has already been downloaded completely')
+                        return
+                else:
+                    open(file_path, 'w+').close() # 生成文件
+                    start = 0
+                    if self.show_info:
+                        print(f'--- Mission ---: {self.url} download from scratch || with {self.num_threads} threads, support breakpoint resuming')
+
+            # 初始化进度条
+            if self.show_info:
+                pbar = tqdm(total=self.content_length,
+                        initial=start,
+                        unit='B',
+                        unit_scale=True,
+                        desc=self.filename,
+                        unit_divisor=1024)
+            
+            # 使用多线池来创建线程
+            with ThreadPoolExecutor(max_workers=self.num_threads) as pool:
+                res = [pool.submit(self.download_by_piece, r) for r in self.get_range(start=start)] # or use map function
+
+                # 将下载的块写入文件
+                with open(self.filename, 'rb+') as fp:
+                    for item in as_completed(res):
+                        _range, content = item.result()
+                        start, stop = _range
+                        fp.seek(start)
+                        fp.write(content)
+                        # 更新进度条
+                        if self.show_info:
+                            pbar.update(self.chunk_size)
+
+            if self.show_info:
+                pbar.close()
+                print(f'--- File ---: {self.filename} download completely')
+
+
+    def print(self):
+        self.check_url()
+        print( "self.url = ", self.url, '\n',
+            "self.resume = ", self.resume, '\n',
+            "self.chunk_size = ", self.chunk_size, '\n',  # 设置下载文件块大小 单位为字节（多线程下载时，一个线程下载一小块）
+            "self.filename = ", self.filename, '\n',
+            "self.num_threads = ", self.num_threads, '\n',
+            "self.proxies = ", self.proxies, '\n',
+            "self.timeout = ", self.timeout, '\n',
+            "self.file_type = ", self.file_type, '\n',
+            "self.accept_ranges = ", self.accept_ranges, '\n',
+            "self.content_length = ", self.content_length, '\n',
+            "self.transfer_encoding = ", self.transfer_encoding, '\n',
+            "self.header = ", self.header
+            )
+
+```
+
 ## Reference
 
 1. https://www.codersrc.com/archives/6707.html
