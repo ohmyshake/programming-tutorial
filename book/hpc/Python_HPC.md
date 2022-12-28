@@ -35,7 +35,13 @@ name: python_gil
 GIL in python
 ```
 
+```{code-cell} ipython3
+:tags: [hide-input]
 
+import threading
+print("ss")
+
+```
 
 ### Thread Pool
 
