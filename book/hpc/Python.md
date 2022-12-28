@@ -13,10 +13,11 @@ kernelspec:
 
 # Python
 
-- Author: *{{Fu}}*
-- Update: *July 29, 2022*
-- Reading: *30 min*
 
 ---
 
 
+This section mainly records the parallel computing strategy in python.
+
+```{tableofcontents}
+```
