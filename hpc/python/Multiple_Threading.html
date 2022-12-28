@@ -1,0 +1,1559 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Multiple Threading &#8212; Programming Notebook</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="canonical" href="https://OUCyf.github.io/Programming-Notebook/hpc/python/Multiple_Threading.html" />
+    <link rel="shortcut icon" href="../../_static/logo.png"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Programming Notebook</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    Introduction ✨
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Programming Environment
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../programming_environment/Overview.html">
+   Overview
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../programming_environment/Xcode.html">
+   Xcode
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../programming_environment/Homebrew.html">
+   Homebrew
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../programming_environment/Iterm2_Zsh.html">
+   Iterm2 &amp; Zsh
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../programming_environment/SSH.html">
+   SSH &amp; SSHFS
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../programming_environment/Git.html">
+   Git &amp; Github
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../programming_environment/VScode.html">
+   VSCode
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../programming_environment/Latex.html">
+   Latex
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../programming_environment/GUN.html">
+   GUN
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../programming_environment/Python.html">
+   Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../programming_environment/Julia.html">
+   Julia
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../programming_environment/Matlab.html">
+   Matlab
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../programming_environment/Shell_Manual.html">
+   Shell Manual
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../programming_environment/Shortcuts.html">
+   Shortcuts
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  App Development
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../apps/Python_Package.html">
+   Python Package
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../apps/Pyside6.html">
+   Pyside6
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../apps/Dash.html">
+   Dash
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../apps/Docker.html">
+   Docker
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Parallel Computing and HPC Platform
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Introduction.html">
+   Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../C%2B%2B.html">
+   C++
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Make_Cmake.html">
+   Make Cmake
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Pybind11_Cython.html">
+   Pybind11 Cython
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Slurm.html">
+   Slurm
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Globus.html">
+   Globus
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Rice_NOTS.html">
+   NOTS
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Azure.html">
+   Azure
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Amazon_S3.html">
+   Amazon S3
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  ML and DL
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../ml_dl/Scipy.html">
+   Scipy
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../ml_dl/PyTorch.html">
+   PyTorch
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  MacOS Software
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../macos_software/MacSoftware.html">
+   Mac Software
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../macos_software/ImageMagick.html">
+   ImageMagick
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../macos_software/Otter.html">
+   Otter
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../macos_software/PROMISE_Utility.html">
+   PROMISE Utility
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Geo Software
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../geo_software/GeoSoftware.html">
+   Geophysics Software
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../geo_software/Matplotlib.html">
+   Matplotlib
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../geo_software/PyGMT.html">
+   PyGMT
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../geo_software/SAC.html">
+   SAC
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../geo_software/Obspy.html">
+   Obspy
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../geo_software/DAS_format.html">
+   DAS Data Format
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../geo_software/CPS.html">
+   CPS
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../geo_software/SPECFEM.html">
+   SPECFEM
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../geo_software/Gmsh.html">
+   Gmsh
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../geo_software/Paraview.html">
+   Paraview
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../geo_software/FwiFlow.html">
+   FwiFlow
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../geo_software/GEOSX.html">
+   GEOSX
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Links
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../links/link.html">
+   Links ✨
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://yinfu.info/">
+   About Me
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/OUCyf/Programming-Notebook/main?urlpath=tree/book/hpc/python/Multiple_Threading.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/OUCyf/Programming-Notebook"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/OUCyf/Programming-Notebook/issues/new?title=Issue%20on%20page%20%2Fhpc/python/Multiple_Threading.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../../_sources/hpc/python/Multiple_Threading.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download notebook file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-code"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="../../_sources/hpc/python/Multiple_Threading.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#global-interpreter-lock">
+   Global Interpreter Lock
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#threading">
+   threading
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#create-a-thread-start-a-thread-and-join-function">
+     1. create a thread, start a thread, and join function:
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#quene-function-get-the-results-from-multiple-threads">
+     2. quene function: get the results from multiple threads
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#gil-is-not-suitable-for-cpu-bound-task">
+     3. GIL is not suitable for
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       CPU
+      </span>
+      <span class="pre">
+       bound
+      </span>
+     </code>
+     task:
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#gil-lock-function">
+     4. GIL lock function:
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#threadpoolexecutor">
+   ThreadPoolExecutor
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#create-a-thread-pool-submit-a-task-get-the-results">
+     1. create a thread pool, submit a task, get the results
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#as-completed-function">
+     2. as_completed function:
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#map-function">
+     3. map function:
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#wait-function">
+     4. wait function:
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#http-downloder-project">
+   Http Downloder Project
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#reference">
+   Reference
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Multiple Threading</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#global-interpreter-lock">
+   Global Interpreter Lock
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#threading">
+   threading
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#create-a-thread-start-a-thread-and-join-function">
+     1. create a thread, start a thread, and join function:
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#quene-function-get-the-results-from-multiple-threads">
+     2. quene function: get the results from multiple threads
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#gil-is-not-suitable-for-cpu-bound-task">
+     3. GIL is not suitable for
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       CPU
+      </span>
+      <span class="pre">
+       bound
+      </span>
+     </code>
+     task:
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#gil-lock-function">
+     4. GIL lock function:
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#threadpoolexecutor">
+   ThreadPoolExecutor
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#create-a-thread-pool-submit-a-task-get-the-results">
+     1. create a thread pool, submit a task, get the results
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#as-completed-function">
+     2. as_completed function:
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#map-function">
+     3. map function:
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#wait-function">
+     4. wait function:
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#http-downloder-project">
+   Http Downloder Project
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#reference">
+   Reference
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="multiple-threading">
+<h1>Multiple Threading<a class="headerlink" href="#multiple-threading" title="Permalink to this headline">#</a></h1>
+<ul class="simple">
+<li><p>Author: <em><a class="reference external" href="https://yinfu.info/">Fu Yin</a></em></p></li>
+<li><p>Update: <em>Dec 26, 2022</em></p></li>
+<li><p>Reading: <em>120 min</em></p></li>
+</ul>
+<hr class="docutils" />
+<section id="global-interpreter-lock">
+<h2>Global Interpreter Lock<a class="headerlink" href="#global-interpreter-lock" title="Permalink to this headline">#</a></h2>
+<p>Because of the existence of <code class="docutils literal notranslate"><span class="pre">Global</span> <span class="pre">Interpreter</span> <span class="pre">Lock</span> <span class="pre">(GIL)</span></code>, multi-threads code in multi-cores system can only run one thread at a time. Each thread needs to <code class="docutils literal notranslate"><span class="pre">acquire</span></code> a lock before it can run, and after the thread finishes running, the lock is <code class="docutils literal notranslate"><span class="pre">released</span></code>, and another thread acquires the lock again. So multiple threading is sutiable for <code class="docutils literal notranslate"><span class="pre">IO</span> <span class="pre">bound</span></code> mission, not the <code class="docutils literal notranslate"><span class="pre">CPU</span> <span class="pre">bound</span></code> mission</p>
+<figure class="align-center" id="python-gil">
+<a class="reference internal image-reference" href="../../_images/python_gil.webp"><img alt="../../_images/python_gil.webp" src="../../_images/python_gil.webp" style="width: 588.6px; height: 209.4px;" /></a>
+<figcaption>
+<p><span class="caption-text">GIL in python</span><a class="headerlink" href="#python-gil" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="threading">
+<h2>threading<a class="headerlink" href="#threading" title="Permalink to this headline">#</a></h2>
+<p>Now let’s introduce the <code class="docutils literal notranslate"><span class="pre">threading</span></code> package in python.</p>
+<section id="create-a-thread-start-a-thread-and-join-function">
+<h3>1. create a thread, start a thread, and join function:<a class="headerlink" href="#create-a-thread-start-a-thread-and-join-function" title="Permalink to this headline">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>import threading
+import time
+
+def thread_job():
+    print(&#39;thread_job start\n&#39;)
+    print(&#39;This is a thread of %s \n&#39; % threading.current_thread())
+    print(&#39;thread_job finish\n&#39;)
+
+def main():
+    # add a new thread
+    thread = threading.Thread(target=thread_job, name=&quot;thread_job&quot;)
+
+    # start a thread
+    thread.start()
+
+    # wait this thread finished running, then run following code. Also called `block thread`
+    thread.join()
+
+    # see how many threads is running now
+    print(&quot;There are&quot;, threading.active_count(), &#39;threads is running now\n&#39;) 
+
+    # see the thread list
+    print(&quot;The running threads list is:&quot;, threading.enumerate(), &#39;\n&#39;) 
+
+    # which one thread is running now
+    print(&quot;The thread&quot;, threading.current_thread(), &#39;is running now\n&#39;) 
+
+if __name__ == &#39;__main__&#39;:
+    main()
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>thread_job start
+
+This is a thread of &lt;Thread(thread_job, started 140133223360064)&gt; 
+
+thread_job finish
+
+There are 7 threads is running now
+
+The running threads list is: [&lt;_MainThread(MainThread, started 140133976980352)&gt;, &lt;Thread(IOPub, started daemon 140133864871488)&gt;, &lt;Heartbeat(Heartbeat, started daemon 140133777012288)&gt;, &lt;Thread(Thread-3, started daemon 140133575685696)&gt;, &lt;Thread(Thread-4, started daemon 140133558904384)&gt;, &lt;ControlThread(Control, started daemon 140133542123072)&gt;, &lt;ParentPollerUnix(Thread-2, started daemon 140133240141376)&gt;] 
+
+The thread &lt;_MainThread(MainThread, started 140133976980352)&gt; is running now
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="quene-function-get-the-results-from-multiple-threads">
+<h3>2. quene function: get the results from multiple threads<a class="headerlink" href="#quene-function-get-the-results-from-multiple-threads" title="Permalink to this headline">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>import threading
+import time
+from queue import Queue
+
+# do a function: square a number
+def job(l,q):
+    new_list = l.copy()
+    for i in range(len(l)):
+        new_list[i] = l[i]**2
+    q.put(new_list)
+
+def multithreading():
+    # create a quene
+    q = Queue()
+
+    threads = []
+    data = [[1,2,3],[3,4,5],[4,4,4],[5,5,5]]
+
+    # create 4 threads
+    for i in range(4):
+        t = threading.Thread(target=job, args=(data[i], q))
+        t.start()
+        threads.append(t)
+
+    for thread in threads:
+        thread.join()
+    
+    # get the results from multi-threads
+    results = []
+    for _ in range(4):
+          results.append(q.get())
+    print(&quot;Input:&quot;, data)
+    print(&quot;Output:&quot;, results)
+
+if __name__ == &#39;__main__&#39;:
+    multithreading()
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Input: [[1, 2, 3], [3, 4, 5], [4, 4, 4], [5, 5, 5]]
+Output: [[1, 4, 9], [9, 16, 25], [16, 16, 16], [25, 25, 25]]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="gil-is-not-suitable-for-cpu-bound-task">
+<h3>3. GIL is not suitable for <code class="docutils literal notranslate"><span class="pre">CPU</span> <span class="pre">bound</span></code> task:<a class="headerlink" href="#gil-is-not-suitable-for-cpu-bound-task" title="Permalink to this headline">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>import threading
+from queue import Queue
+import copy
+import time
+
+def job(l, q):
+    res = sum(l)
+    q.put(res)
+
+def multithreading(l):
+    q = Queue()
+    threads = []
+    for i in range(4):
+        t = threading.Thread(target=job, args=(copy.copy(l), q), name=&#39;T%i&#39; % i)
+        t.start()
+        threads.append(t)
+    [t.join() for t in threads]
+    total = 0
+    for _ in range(4):
+        total += q.get()
+    print(total)
+
+def normal(l):
+    total = sum(l)
+    print(total)
+
+if __name__ == &#39;__main__&#39;:
+    l = list(range(1000000))
+    s_t = time.time()
+    normal(l*4)
+    print(&#39;normal: &#39;,time.time()-s_t)
+    s_t = time.time()
+    multithreading(l)
+    print(&#39;multithreading: &#39;, time.time()-s_t)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1999998000000
+normal:  0.05971193313598633
+1999998000000
+multithreading:  0.056832075119018555
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="gil-lock-function">
+<h3>4. GIL lock function:<a class="headerlink" href="#gil-lock-function" title="Permalink to this headline">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>import threading
+
+def job1():
+    global A, lock
+    lock.acquire()
+    for i in range(10):
+        A += 1
+        print(&#39;job1&#39;, A)
+    lock.release()
+
+def job2():
+    global A, lock
+    lock.acquire()
+    for i in range(10):
+        A += 10
+        print(&#39;job2&#39;, A)
+    lock.release()
+
+if __name__ == &#39;__main__&#39;:
+    lock = threading.Lock()
+    A = 0
+    t1 = threading.Thread(target=job1)
+    t2 = threading.Thread(target=job2)
+    t1.start()
+    t2.start()
+    t1.join()
+    t2.join()
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>job1 1
+job1 2
+job1 3
+job1 4
+job1 5
+job1 6
+job1 7
+job1 8
+job1 9
+job1 10
+job2 20
+job2 30
+job2 40
+job2 50
+job2 60
+job2 70
+job2 80
+job2 90
+job2 100
+job2 110
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="threadpoolexecutor">
+<h2>ThreadPoolExecutor<a class="headerlink" href="#threadpoolexecutor" title="Permalink to this headline">#</a></h2>
+<p>A <code class="docutils literal notranslate"><span class="pre">thread</span> <span class="pre">pool</span></code> maintains multiple threads waiting for tasks to be allocated for <code class="docutils literal notranslate"><span class="pre">concurrent</span></code> execution by the supervising program. By maintaining a pool of threads, the model increases performance and avoids latency in execution due to frequent creation and destruction of threads for short-lived tasks. The number of available threads is tuned to the computing resources available to the program, such as a parallel task queue after completion of execution.</p>
+<p>One benefit of a thread pool over creating a new thread for each task is that <strong>thread creation and destruction overhead is restricted to the initial creation of the pool</strong>, which may result in better performance and better system stability. Creating and destroying a thread and its associated resources can be an expensive process in terms of time. An excessive number of threads in reserve, however, wastes memory, and context-switching between the runnable threads invokes performance penalties.</p>
+<figure class="align-center" id="thread-pool">
+<a class="reference internal image-reference" href="../../_images/thread_pool.png"><img alt="../../_images/thread_pool.png" src="../../_images/thread_pool.png" style="width: 576.0px; height: 298.0px;" /></a>
+<figcaption>
+<p><span class="caption-text">Thread pool in python</span><a class="headerlink" href="#thread-pool" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Now let’s introduce <code class="docutils literal notranslate"><span class="pre">concurrent.futures</span></code> package in python.</p>
+<ol class="simple">
+<li><p>When <code class="docutils literal notranslate"><span class="pre">ThreadPoolExecutor</span></code> constructs an instance, pass in the <code class="docutils literal notranslate"><span class="pre">max_workers</span></code> parameter to set the maximum number of threads that can <code class="docutils literal notranslate"><span class="pre">run</span> <span class="pre">simultaneously</span></code> in the thread pool.</p></li>
+<li><p>Use the <code class="docutils literal notranslate"><span class="pre">submit</span></code> function to submit the task (function name and parameters) that the thread needs to execute to the thread pool, and return the handle of the task (similar to files and drawing). Note that submit is <code class="docutils literal notranslate"><span class="pre">not</span> <span class="pre">blocked</span></code>, and returns immediately.</p></li>
+<li><p>Through the task handle returned by the submit function, you can use the <code class="docutils literal notranslate"><span class="pre">done</span></code> method to determine whether the task is over.</p></li>
+<li><p>Use the <code class="docutils literal notranslate"><span class="pre">cancel</span></code> method to cancel the submitted task. If the task is already running in the thread pool, it cannot be canceled. In this example, the thread pool size is set to 0.2 and the task is already running, so the cancellation fails. If the size of the thread pool is changed to 0.1, then task1 is submitted first, and task2 is still waiting in line. At this time, it can be successfully canceled.</p></li>
+<li><p>Use the <code class="docutils literal notranslate"><span class="pre">result</span></code> method to get the return value of the task. Note: <strong>result method is blocked</strong>.</p></li>
+</ol>
+<div class="admonition-what-s-the-different-between-threading-and-concurrent-futures-packages admonition">
+<p class="admonition-title">What’s the different between <code class="docutils literal notranslate"><span class="pre">threading</span></code> and <code class="docutils literal notranslate"><span class="pre">concurrent.futures</span></code> packages?</p>
+<p>u</p>
+</div>
+<section id="create-a-thread-pool-submit-a-task-get-the-results">
+<h3>1. create a thread pool, submit a task, get the results<a class="headerlink" href="#create-a-thread-pool-submit-a-task-get-the-results" title="Permalink to this headline">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>import time
+from concurrent.futures import ThreadPoolExecutor
+
+def down_video(times):
+    time.sleep(times)
+    print(&quot;down video {}s finished&quot;.format(times))
+    return times
+
+# create a thread pool with max_workers threads
+executor = ThreadPoolExecutor(max_workers=2)
+
+# submit a task into thread pool，and submit function will return immediately with blocking
+task1 = executor.submit(down_video, (0.2))
+task2 = executor.submit(down_video, (0.1))
+
+# `done` function is used to check whether the task is finished
+print(&quot;task 1 is finished?：&quot;,task1.done())
+
+# `cancel` function is used to cancel the task before the thread put into thread-pool 
+print(&quot;cancel task 2：&quot;,task2.cancel())
+
+time.sleep(1)
+print(&quot;task 1 is finished?：&quot;,task1.done())
+
+# `result` is used to get the results of a thread
+print(&quot;task1&#39;s results: &quot;, task1.result())
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>task 1 is finished?： False
+cancel task 2： False
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>down video 0.1s finished
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>down video 0.2s finished
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>task 1 is finished?： True
+task1&#39;s results:  0.2
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="as-completed-function">
+<h3>2. as_completed function:<a class="headerlink" href="#as-completed-function" title="Permalink to this headline">#</a></h3>
+<p>Although the <code class="docutils literal notranslate"><span class="pre">done</span></code> function provides a method for judging whether the task is over, it is not very practical, because we don’t know when the thread ends, and we need to always judge whether each task is over. At this time, you can use the <code class="docutils literal notranslate"><span class="pre">as_completed</span></code> method to retrieve the results of all tasks at once.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">as_completed</span></code> method is a generator that will block when no task is completed. When a certain task is completed, it can continue to execute the statement after the for loop, and then continue to block until all tasks end.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>from concurrent.futures import ThreadPoolExecutor, as_completed
+import time
+
+def download_video(index):
+    time.sleep(0.1)
+    print(&quot;download video {} finished at {}&quot;.format(index,time.strftime(&#39;%Y-%m-%d %H:%M:%S&#39;, time.gmtime())))
+    return index
+
+executor = ThreadPoolExecutor(max_workers=2)
+urls = [1, 2, 3, 4, 5]
+all_task = [executor.submit(download_video, (url)) for url in urls]
+
+for task in as_completed(all_task):
+    data = task.result()
+    print(&quot;task {} down load success&quot;.format(data))
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>download video 1 finished at 2022-12-28 22:00:24
+task 1 down load success
+download video 2 finished at 2022-12-28 22:00:24
+task 2 down load success
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>download video 3 finished at 2022-12-28 22:00:24
+task 3 down load success
+download video 4 finished at 2022-12-28 22:00:24
+task 4 down load success
+download video 5 finished at 2022-12-28 22:00:24
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>task 5 down load success
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Analysis:</strong>
+5 tasks, 2 threads. Since a maximum of 2 threads are allowed to be executed at the same time when the thread pool is constructed, task 1 and task 2 are executed at the same time. Judging from the output of heavy code, after task 1 and task 2 are executed, the for loop Enter the blocking state, until the end of task 1 or task 2, for will continue to execute task 3 / task 4, and ensure that only two tasks are executed at the same time.</p>
+</section>
+<section id="map-function">
+<h3>3. map function:<a class="headerlink" href="#map-function" title="Permalink to this headline">#</a></h3>
+<p>The difference from the <code class="docutils literal notranslate"><span class="pre">as_completed</span></code> method is that the <code class="docutils literal notranslate"><span class="pre">map</span></code> method can guarantee <strong>the order of tasks</strong>. For example: if you download 5 videos at the same time, even if the second video is downloaded before the first video, it will be blocked and wait for the first video to download. After the completion and notification of the main thread, the second downloaded video will be notified back to the main thread to ensure that the tasks are completed in order. Here is an example to illustrate:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>from concurrent.futures import ThreadPoolExecutor, as_completed
+import time
+
+def download_video(index):
+    time.sleep(index)
+    print(&quot;download video {} finished at {}&quot;.format(index,time.strftime(&#39;%Y-%m-%d %H:%M:%S&#39;, time.gmtime())))
+    return index
+
+executor = ThreadPoolExecutor(max_workers=2)
+urls = [0.3, 0.2, 0.1, 0.4, 0.5]
+for data in executor.map(download_video,urls):
+    print(&quot;task {} down load success&quot;.format(data))
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>download video 0.2 finished at 2022-12-28 22:00:24
+download video 0.3 finished at 2022-12-28 22:00:24
+task 0.3 down load success
+task 0.2 down load success
+download video 0.1 finished at 2022-12-28 22:00:24
+task 0.1 down load success
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>download video 0.4 finished at 2022-12-28 22:00:25
+task 0.4 down load success
+download video 0.5 finished at 2022-12-28 22:00:25
+task 0.5 down load success
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="wait-function">
+<h3>4. wait function:<a class="headerlink" href="#wait-function" title="Permalink to this headline">#</a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">wait</span></code> method is somewhat similar to the thread <code class="docutils literal notranslate"><span class="pre">join</span></code> method, which can <code class="docutils literal notranslate"><span class="pre">block</span></code> the main thread until all the threads in the thread pool have completed their operations.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">wait</span></code> method receives 3 parameters, the <code class="docutils literal notranslate"><span class="pre">waiting</span> <span class="pre">task</span> <span class="pre">sequence</span></code>, the <code class="docutils literal notranslate"><span class="pre">timeout</span> <span class="pre">time</span></code> and the <code class="docutils literal notranslate"><span class="pre">waiting</span> <span class="pre">condition</span></code>. The wait condition <code class="docutils literal notranslate"><span class="pre">return_when</span></code> defaults to <code class="docutils literal notranslate"><span class="pre">ALL_COMPLETED</span></code>, indicating that all tasks are to be completed. You can see that in the running results, all tasks are indeed completed, and the main thread prints out main. The waiting condition can also be set to <code class="docutils literal notranslate"><span class="pre">FIRST_COMPLETED</span></code>, indicating that the first task is completed and the wait is stopped.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>from concurrent.futures import ThreadPoolExecutor, wait, ALL_COMPLETED, FIRST_COMPLETED
+import time
+
+def download_video(index):
+    time.sleep(0.1)
+    print(&quot;download video {} finished at {}&quot;.format(index,time.strftime(&#39;%Y-%m-%d %H:%M:%S&#39;, time.gmtime())))
+    return index
+executor = ThreadPoolExecutor(max_workers=2)
+urls = [0.1, 0.2, 0.3, 0.4, 0.5]
+all_task = [executor.submit(download_video,(url)) for url in urls]
+wait(all_task,return_when=ALL_COMPLETED)
+print(&quot;main &quot;)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>download video 0.1 finished at 2022-12-28 22:00:25
+download video 0.2 finished at 2022-12-28 22:00:25
+download video 0.3 finished at 2022-12-28 22:00:25
+download video 0.4 finished at 2022-12-28 22:00:25
+download video 0.5 finished at 2022-12-28 22:00:25
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>main 
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="http-downloder-project">
+<h2>Http Downloder Project<a class="headerlink" href="#http-downloder-project" title="Permalink to this headline">#</a></h2>
+<p>In this project, I use a multi-threaded method to download large file data, and support breakpoint transmission.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header sd-bg-info sd-bg-text-info">
+<span class="sd-summary-icon"><svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-info" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M8 1.5a6.5 6.5 0 100 13 6.5 6.5 0 000-13zM0 8a8 8 0 1116 0A8 8 0 010 8zm6.5-.25A.75.75 0 017.25 7h1a.75.75 0 01.75.75v2.75h.25a.75.75 0 010 1.5h-2a.75.75 0 010-1.5h.25v-2h-.25a.75.75 0 01-.75-.75zM8 6a1 1 0 100-2 1 1 0 000 2z"></path></svg></span>Do you know how to transfer large data via <code class="docutils literal notranslate"><span class="pre">http</span></code>?<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<ul class="simple">
+<li><p class="sd-card-text">The first thing we think of is <strong>data compression</strong>. Usually, when a browser sends a request, it will carry an <code class="docutils literal notranslate"><span class="pre">Accept-Encoding</span></code> header field, which contains a list of compression formats supported by the browser, such as <code class="docutils literal notranslate"><span class="pre">gzip</span></code>, <code class="docutils literal notranslate"><span class="pre">deflate</span></code>, <code class="docutils literal notranslate"><span class="pre">br</span></code>, etc., so that the server can choose one of them. The compression algorithm is put into the <code class="docutils literal notranslate"><span class="pre">Content-Encoding</span></code> response header, and the original data is compressed and sent to the browser.</p></li>
+<li><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">Chunked</span></code> transfer is to disassemble a large file, break it into multiple small blocks, and distribute these small blocks to the browser in batches, and the browser will assemble and restore them after receiving them. In this way, the browser and the server do not need to store all the files in the memory, only send and receive a small part each time, the network will not be occupied by large files for a long time, and resources such as memory and bandwidth are also saved. <code class="docutils literal notranslate"><span class="pre">Transfer-Encoding</span></code> and <code class="docutils literal notranslate"><span class="pre">Content-Length</span></code> are mutually exclusive, and these two fields cannot appear in the response message at the same time, and the transmission of a response message is either of known length or unknown length (chunked), this must be remembered.</p></li>
+<li><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">Range</span> <span class="pre">Requests</span></code> allow the client to use a dedicated field in the request header to indicate that only a part of the file is fetched. The header must include <code class="docutils literal notranslate"><span class="pre">Accept-Ranges:</span> <span class="pre">bytes</span></code>.</p></li>
+</ul>
+</div>
+</details><figure class="align-center" id="http-transfer">
+<a class="reference internal image-reference" href="../../_images/http_transfer.png"><img alt="../../_images/http_transfer.png" src="../../_images/http_transfer.png" style="width: 727.1999999999999px; height: 231.6px;" /></a>
+<figcaption>
+<p><span class="caption-text">Transfer Big Data via Http</span><a class="headerlink" href="#http-transfer" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<div class="admonition-difference-between-urllib-and-requests-package-in-python admonition">
+<p class="admonition-title">Difference between <code class="docutils literal notranslate"><span class="pre">urllib</span></code> and <code class="docutils literal notranslate"><span class="pre">requests</span></code> package in python</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">urllib3</span></code> is the most commonly used network service package in python.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">requests</span></code> uses <code class="docutils literal notranslate"><span class="pre">urllib3</span></code> under the hood and make it even simpler to make requests and retrieve data, and it aims for an easier-to-use API.</p></li>
+</ul>
+</div>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>import os
+import requests
+from tqdm import tqdm
+from faker import Faker
+from retry import retry
+from pathlib import Path
+from concurrent.futures import ThreadPoolExecutor, as_completed
+
+
+cpu_cores = os.cpu_count()
+requests.packages.urllib3.disable_warnings()
+
+
+class downloader_https():
+    def __init__(self, url, show_info = True, resume=True, filename=None, num_threads=cpu_cores, timeout=10, chunk_size=1024*1000, header=None, proxies=None):
+        &quot;&quot;&quot;
+        :param url: 下载地址
+        :param filename: 指定下载文件名 不指定则根据url截取命名
+        &quot;&quot;&quot;
+        self.url = url
+        self.show_info = show_info
+        self.resume = resume
+        self.chunk_size = chunk_size  # 设置下载文件块大小 单位为字节（多线程下载时，一个线程下载一小块）
+        self.filename = filename
+        self.num_threads = num_threads
+        self.proxies = proxies
+        self.timeout = timeout
+        self.file_type = None
+        self.accept_ranges = None
+        self.content_length = None
+        self.transfer_encoding = None
+        if header is None:
+            self.header = {}
+            self.header.setdefault(&#39;User-Agent&#39;, Faker().user_agent())
+        elif &#39;User-Agent&#39; not in header:
+            self.header.setdefault(&#39;User-Agent&#39;, Faker().user_agent())
+        else:
+            self.header = header
+
+    @retry(tries=3)
+    def check_url(self):
+        &quot;&quot;&quot;
+        判断url是否支持断点续传功能 and 是否支持多线程（文件内容是否为零）
+        &quot;&quot;&quot;
+        # 文件处理
+        _, filename = os.path.split(self.url)
+        self.filename = self.filename or filename
+
+        res = requests.head(self.url, headers=self.header, proxies=self.proxies, timeout=self.timeout, allow_redirects=True, verify=False)  # verify=False 关闭ssl双向验证，解决访问https报错问题
+
+        if not (200 &lt;= res.status_code &lt; 400):
+            raise Exception(&#39;Bad request!&#39;)
+
+        headers = res.headers
+        self.file_type = headers.get(&#39;Content-Type&#39;)
+        self.accept_ranges = headers.get(&#39;Accept-Ranges&#39;)
+        self.transfer_encoding = headers.get(&#39;Transfer-Encoding&#39;)
+
+        if self.transfer_encoding == &quot;chunked&quot; or self.transfer_encoding == &quot;gzip, chunked&quot;:
+            self.num_threads = 1
+            self.content_length = 0
+        else:
+            lengths = headers.get(&#39;Content-Length&#39;)
+            if lengths == None:
+                self.content_length = 0
+            else:
+                self.content_length = int(lengths)
+
+
+    def get_range(self, start=0):
+        &quot;&quot;&quot;
+        根据设置的缓存大小以及文件大小划分字节序列
+        eg: [(0, 1023), (1024, 2047), (2048, 3071) ...]
+        &quot;&quot;&quot;
+        if self.transfer_encoding == &quot;chunked&quot; or self.transfer_encoding == &quot;gzip, chunked&quot;:
+            _range = [(start, &#39;&#39;)]
+        else:
+            lst = range(start, self.content_length, self.chunk_size)   
+            _range = list(zip(lst[:-1], [i - 1 for i in lst[1:]]))
+            _range.append((lst[-1], &#39;&#39;))
+
+        return _range
+
+
+    @retry(tries=5)
+    def download_by_piece(self, _range):
+        start, stop = _range
+        headers = {**self.header, **{&quot;Range&quot;: f&quot;bytes={start}-{stop}&quot;}} # merge
+
+        res = requests.get(self.url, headers=headers, proxies=self.proxies, timeout=self.timeout, allow_redirects=True, verify=False)
+        if res.status_code != 206:
+            raise Exception(f&#39;Request raise error, url: {self.url}, range: {_range}&#39;)
+        return _range, res.content
+
+
+    def download(self):
+        start = 0
+        self.check_url()
+
+        if self.accept_ranges != &quot;bytes&quot;:
+            if self.show_info:
+                print(f&#39;--- Mission ---: {self.url} download from scratch || with single thread, do not support breakpoint resuming&#39;)
+            
+            file_path = Path(self.filename)
+
+            res = requests.get(self.url, 
+                                headers=self.header, 
+                                proxies=self.proxies, 
+                                timeout=self.timeout, 
+                                allow_redirects=True, 
+                                verify=False)
+
+            if res.status_code != 206:
+                raise Exception(f&#39;Request raise error, url: {self.url}&#39;)
+ 
+            # 将下载的块写入文件
+            open(file_path, &#39;w&#39;).close()  # 生成0文件
+            with open(self.filename, &#39;rb+&#39;) as fp:
+                fp.seek(0)
+                fp.write(res.content)
+
+            if self.show_info:
+                print(f&#39;--- File ---: {self.filename} download completely&#39;)
+        else:
+            file_path = Path(self.filename)
+
+            if self.resume:
+                open(file_path, &#39;w+&#39;).close()
+                start = 0
+                if self.show_info:
+                    print(f&#39;--- Mission ---: {self.url} download from scratch || with {self.num_threads} threads, support breakpoint resuming&#39;)
+
+            else:
+                if file_path.exists():
+                    # 文件已存在 并且支持断点续传，可以从现有文件基础上继续下载
+                    start = file_path.lstat().st_size
+                    if self.show_info:
+                        print(f&#39;--- Mission ---: {self.url} download from breakpoint || with {self.num_threads} threads, support breakpoint resuming&#39;)
+
+                    # If file have already downloaded 
+                    if start == self.content_length:
+                        if self.show_info:
+                            print(f&#39;--- File ---: {self.filename} has already been downloaded completely&#39;)
+                        return
+                else:
+                    open(file_path, &#39;w+&#39;).close() # 生成文件
+                    start = 0
+                    if self.show_info:
+                        print(f&#39;--- Mission ---: {self.url} download from scratch || with {self.num_threads} threads, support breakpoint resuming&#39;)
+
+            # 初始化进度条
+            if self.show_info:
+                pbar = tqdm(total=self.content_length,
+                        initial=start,
+                        unit=&#39;B&#39;,
+                        unit_scale=True,
+                        desc=self.filename,
+                        unit_divisor=1024)
+            
+            # 使用多线池来创建线程
+            with ThreadPoolExecutor(max_workers=self.num_threads) as pool:
+                res = [pool.submit(self.download_by_piece, r) for r in self.get_range(start=start)] # or use map function
+
+                # 将下载的块写入文件
+                with open(self.filename, &#39;rb+&#39;) as fp:
+                    for item in as_completed(res):
+                        _range, content = item.result()
+                        start, stop = _range
+                        fp.seek(start)
+                        fp.write(content)
+                        # 更新进度条
+                        if self.show_info:
+                            pbar.update(self.chunk_size)
+
+            if self.show_info:
+                pbar.close()
+                print(f&#39;--- File ---: {self.filename} download completely&#39;)
+
+
+    def print(self):
+        self.check_url()
+        print( &quot;self.url = &quot;, self.url, &#39;\n&#39;,
+            &quot;self.resume = &quot;, self.resume, &#39;\n&#39;,
+            &quot;self.chunk_size = &quot;, self.chunk_size, &#39;\n&#39;,  # 设置下载文件块大小 单位为字节（多线程下载时，一个线程下载一小块）
+            &quot;self.filename = &quot;, self.filename, &#39;\n&#39;,
+            &quot;self.num_threads = &quot;, self.num_threads, &#39;\n&#39;,
+            &quot;self.proxies = &quot;, self.proxies, &#39;\n&#39;,
+            &quot;self.timeout = &quot;, self.timeout, &#39;\n&#39;,
+            &quot;self.file_type = &quot;, self.file_type, &#39;\n&#39;,
+            &quot;self.accept_ranges = &quot;, self.accept_ranges, &#39;\n&#39;,
+            &quot;self.content_length = &quot;, self.content_length, &#39;\n&#39;,
+            &quot;self.transfer_encoding = &quot;, self.transfer_encoding, &#39;\n&#39;,
+            &quot;self.header = &quot;, self.header
+            )
+
+if __name__ == &#39;__main__&#39;:
+    url = &quot;https://github.com/OUCyf/Latex-Template-Rice-USTC/raw/gh-pages/main.pdf&quot;
+    d = downloader_https(url, 
+            num_threads = 4,
+            show_info = False,
+            resume = True, 
+            chunk_size = 1024*100, 
+            filename = None,  
+            header = None, 
+            proxies = None, 
+            timeout = 10)
+    d.download()
+    d.print()
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">9</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">os</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">requests</span>
+<span class="ne">----&gt; </span><span class="mi">3</span> <span class="kn">from</span> <span class="nn">tqdm</span> <span class="kn">import</span> <span class="n">tqdm</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="kn">from</span> <span class="nn">faker</span> <span class="kn">import</span> <span class="n">Faker</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="kn">from</span> <span class="nn">retry</span> <span class="kn">import</span> <span class="n">retry</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;tqdm&#39;
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="reference">
+<h2>Reference<a class="headerlink" href="#reference" title="Permalink to this headline">#</a></h2>
+<ol class="simple">
+<li><p><a class="reference external" href="https://www.codersrc.com/archives/6707.html">https://www.codersrc.com/archives/6707.html</a></p></li>
+<li><p><a class="reference external" href="https://github.com/MorvanZhou/tutorials/tree/master/threadingTUT">https://github.com/MorvanZhou/tutorials/tree/master/threadingTUT</a></p></li>
+<li><p><a class="reference external" href="https://www.cnblogs.com/traditional/p/15373999.html">https://www.cnblogs.com/traditional/p/15373999.html</a></p></li>
+<li><p><a class="reference external" href="https://www.51cto.com/article/665492.html">https://www.51cto.com/article/665492.html</a></p></li>
+<li><p><a class="reference external" href="https://github.com/wikizero/downloader">https://github.com/wikizero/downloader</a></p></li>
+</ol>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./hpc/python"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Fu Yin<br/>
+  
+      &copy; Copyright 2021–2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

@@ -35,7 +35,7 @@ More info can be found in https://blog.tai2.net/how-to-use-otter-en.html
 ---
 scale: 40%
 align: center
-name: diskutil-list
+name: otter
 ---
 My `Loopback` setting
 ```
@@ -44,7 +44,7 @@ My `Loopback` setting
 ---
 scale: 30%
 align: center
-name: diskutil-list
+name: otter_input
 ---
 My `Sound` input setting
 ```
@@ -53,7 +53,7 @@ My `Sound` input setting
 ---
 scale: 30%
 align: center
-name: diskutil-list
+name: otter_output
 ---
 My `Sound` output setting
 ```
@@ -65,7 +65,7 @@ Now if you use `Zoom`, you need set Microphones same as system as following:
 ---
 scale: 60%
 align: center
-name: diskutil-list
+name: otter_zoom
 ---
 My `Zoom` setting
 ```

@@ -6,56 +6,54 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Python HPC &#8212; Programming Notebook</title>
+    <title>Ray &#8212; Programming Notebook</title>
     
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
-    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
   <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
   <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/design-tabs.js"></script>
+    <script src="../../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <link rel="canonical" href="https://seismology101.github.io/Notebook/hpc/Python_HPC.html" />
-    <link rel="shortcut icon" href="../_static/logo.png"/>
-    <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="C++" href="C%2B%2B.html" />
-    <link rel="prev" title="Python" href="Python.html" />
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="canonical" href="https://OUCyf.github.io/Programming-Notebook/hpc/python/Ray.html" />
+    <link rel="shortcut icon" href="../../_static/logo.png"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -90,19 +88,19 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="bd-sidebar noprint" id="site-navigation">
     <div class="bd-sidebar__content">
         <div class="bd-sidebar__top"><div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="../index.html">
+    <a class="navbar-brand text-wrap" href="../../index.html">
       
         <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
         
       
       
-      <img src="../_static/logo.png" class="logo" alt="logo">
+      <img src="../../_static/logo.png" class="logo" alt="logo">
       
       
       <h1 class="site-logo" id="site-title">Programming Notebook</h1>
       
     </a>
-</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
@@ -110,7 +108,7 @@ const thebe_selector_output = ".output, .cell_output"
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
-                <a class="reference internal" href="../intro.html">
+                <a class="reference internal" href="../../intro.html">
                     Introduction ✨
                 </a>
             </li>
@@ -122,72 +120,72 @@ const thebe_selector_output = ".output, .cell_output"
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../programming_environment/Overview.html">
+  <a class="reference internal" href="../../programming_environment/Overview.html">
    Overview
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../programming_environment/Xcode.html">
+  <a class="reference internal" href="../../programming_environment/Xcode.html">
    Xcode
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../programming_environment/Homebrew.html">
+  <a class="reference internal" href="../../programming_environment/Homebrew.html">
    Homebrew
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../programming_environment/Iterm2_Zsh.html">
+  <a class="reference internal" href="../../programming_environment/Iterm2_Zsh.html">
    Iterm2 &amp; Zsh
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../programming_environment/SSH.html">
+  <a class="reference internal" href="../../programming_environment/SSH.html">
    SSH &amp; SSHFS
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../programming_environment/Git.html">
+  <a class="reference internal" href="../../programming_environment/Git.html">
    Git &amp; Github
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../programming_environment/VScode.html">
+  <a class="reference internal" href="../../programming_environment/VScode.html">
    VSCode
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../programming_environment/Latex.html">
+  <a class="reference internal" href="../../programming_environment/Latex.html">
    Latex
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../programming_environment/GUN.html">
+  <a class="reference internal" href="../../programming_environment/GUN.html">
    GUN
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../programming_environment/Python.html">
+  <a class="reference internal" href="../../programming_environment/Python.html">
    Python
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../programming_environment/Julia.html">
+  <a class="reference internal" href="../../programming_environment/Julia.html">
    Julia
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../programming_environment/Matlab.html">
+  <a class="reference internal" href="../../programming_environment/Matlab.html">
    Matlab
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../programming_environment/Shell_Manual.html">
+  <a class="reference internal" href="../../programming_environment/Shell_Manual.html">
    Shell Manual
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../programming_environment/Shortcuts.html">
+  <a class="reference internal" href="../../programming_environment/Shortcuts.html">
    Shortcuts
   </a>
  </li>
@@ -199,22 +197,22 @@ const thebe_selector_output = ".output, .cell_output"
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../apps/Python_Package.html">
+  <a class="reference internal" href="../../apps/Python_Package.html">
    Python Package
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../apps/Pyside6.html">
+  <a class="reference internal" href="../../apps/Pyside6.html">
    Pyside6
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../apps/Dash.html">
+  <a class="reference internal" href="../../apps/Dash.html">
    Dash
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../apps/Docker.html">
+  <a class="reference internal" href="../../apps/Docker.html">
    Docker
   </a>
  </li>
@@ -224,54 +222,49 @@ const thebe_selector_output = ".output, .cell_output"
   Parallel Computing and HPC Platform
  </span>
 </p>
-<ul class="current nav bd-sidenav">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="Python.html">
-   Python
-  </a>
- </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   Python HPC
+  <a class="reference internal" href="../Introduction.html">
+   Introduction
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="C%2B%2B.html">
+  <a class="reference internal" href="../C%2B%2B.html">
    C++
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="Make_Cmake.html">
+  <a class="reference internal" href="../Make_Cmake.html">
    Make Cmake
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="Pybind11_Cython.html">
+  <a class="reference internal" href="../Pybind11_Cython.html">
    Pybind11 Cython
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="Slurm.html">
+  <a class="reference internal" href="../Slurm.html">
    Slurm
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="Globus.html">
+  <a class="reference internal" href="../Globus.html">
    Globus
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="Rice_NOTS.html">
+  <a class="reference internal" href="../Rice_NOTS.html">
    NOTS
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="Azure.html">
+  <a class="reference internal" href="../Azure.html">
    Azure
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="Amazon_S3.html">
+  <a class="reference internal" href="../Amazon_S3.html">
    Amazon S3
   </a>
  </li>
@@ -283,12 +276,12 @@ const thebe_selector_output = ".output, .cell_output"
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../ml_dl/Scipy.html">
+  <a class="reference internal" href="../../ml_dl/Scipy.html">
    Scipy
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../ml_dl/PyTorch.html">
+  <a class="reference internal" href="../../ml_dl/PyTorch.html">
    PyTorch
   </a>
  </li>
@@ -300,22 +293,22 @@ const thebe_selector_output = ".output, .cell_output"
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../macos_software/MacSoftware.html">
+  <a class="reference internal" href="../../macos_software/MacSoftware.html">
    Mac Software
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../macos_software/ImageMagick.html">
+  <a class="reference internal" href="../../macos_software/ImageMagick.html">
    ImageMagick
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../macos_software/Otter.html">
+  <a class="reference internal" href="../../macos_software/Otter.html">
    Otter
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../macos_software/PROMISE_Utility.html">
+  <a class="reference internal" href="../../macos_software/PROMISE_Utility.html">
    PROMISE Utility
   </a>
  </li>
@@ -327,62 +320,62 @@ const thebe_selector_output = ".output, .cell_output"
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../geo_software/GeoSoftware.html">
+  <a class="reference internal" href="../../geo_software/GeoSoftware.html">
    Geophysics Software
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../geo_software/Matplotlib.html">
+  <a class="reference internal" href="../../geo_software/Matplotlib.html">
    Matplotlib
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../geo_software/PyGMT.html">
+  <a class="reference internal" href="../../geo_software/PyGMT.html">
    PyGMT
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../geo_software/SAC.html">
+  <a class="reference internal" href="../../geo_software/SAC.html">
    SAC
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../geo_software/Obspy.html">
+  <a class="reference internal" href="../../geo_software/Obspy.html">
    Obspy
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../geo_software/DAS_format.html">
+  <a class="reference internal" href="../../geo_software/DAS_format.html">
    DAS Data Format
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../geo_software/CPS.html">
+  <a class="reference internal" href="../../geo_software/CPS.html">
    CPS
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../geo_software/SPECFEM.html">
+  <a class="reference internal" href="../../geo_software/SPECFEM.html">
    SPECFEM
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../geo_software/Gmsh.html">
+  <a class="reference internal" href="../../geo_software/Gmsh.html">
    Gmsh
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../geo_software/Paraview.html">
+  <a class="reference internal" href="../../geo_software/Paraview.html">
    Paraview
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../geo_software/FwiFlow.html">
+  <a class="reference internal" href="../../geo_software/FwiFlow.html">
    FwiFlow
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../geo_software/GEOSX.html">
+  <a class="reference internal" href="../../geo_software/GEOSX.html">
    GEOSX
   </a>
  </li>
@@ -394,7 +387,7 @@ const thebe_selector_output = ".output, .cell_output"
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../links/link.html">
+  <a class="reference internal" href="../../links/link.html">
    Links ✨
   </a>
  </li>
@@ -476,7 +469,7 @@ title="Fullscreen mode"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://github.com/Seismology101/Notebook"
+        <a href="https://github.com/OUCyf/Programming-Notebook"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -493,7 +486,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/Seismology101/Notebook/issues/new?title=Issue%20on%20page%20%2Fhpc/Python_HPC.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/OUCyf/Programming-Notebook/issues/new?title=Issue%20on%20page%20%2Fhpc/python/Ray.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -521,7 +514,7 @@ title="Open an issue"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../_sources/hpc/Python_HPC.md"
+        <a href="../../_sources/hpc/python/Ray.md"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -558,100 +551,23 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
-  
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
-</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
-    </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#multiple-processing">
-   Multiple Processing
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#mpi4py">
-   Mpi4py
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#numba">
-   Numba
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#cupy">
-   Cupy
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#ray">
-   Ray
-  </a>
- </li>
-</ul>
-
-    </nav>
 </div>
     </div>
     <div class="article row">
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Python HPC</h1>
+                <h1>Ray</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#multiple-processing">
-   Multiple Processing
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#mpi4py">
-   Mpi4py
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#numba">
-   Numba
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#cupy">
-   Cupy
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#ray">
-   Ray
-  </a>
- </li>
-</ul>
-
-                        </nav>
                     </div>
                 </div>
             </div>
@@ -659,23 +575,8 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="python-hpc">
-<h1>Python HPC<a class="headerlink" href="#python-hpc" title="Permalink to this headline">#</a></h1>
-<section id="multiple-processing">
-<h2>Multiple Processing<a class="headerlink" href="#multiple-processing" title="Permalink to this headline">#</a></h2>
-</section>
-<section id="mpi4py">
-<h2>Mpi4py<a class="headerlink" href="#mpi4py" title="Permalink to this headline">#</a></h2>
-</section>
-<section id="numba">
-<h2>Numba<a class="headerlink" href="#numba" title="Permalink to this headline">#</a></h2>
-</section>
-<section id="cupy">
-<h2>Cupy<a class="headerlink" href="#cupy" title="Permalink to this headline">#</a></h2>
-</section>
-<section id="ray">
-<h2>Ray<a class="headerlink" href="#ray" title="Permalink to this headline">#</a></h2>
-</section>
+  <section class="tex2jax_ignore mathjax_ignore" id="ray">
+<h1>Ray<a class="headerlink" href="#ray" title="Permalink to this headline">#</a></h1>
 </section>
 
     <script type="text/x-thebe-config">
@@ -691,7 +592,7 @@ title="Print to PDF"
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./hpc"
+            path: "./hpc/python"
         },
         predefinedOutput: true
     }
@@ -705,20 +606,6 @@ title="Print to PDF"
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="Python.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Python</p>
-        </div>
-    </a>
-    <a class='right-next' id="next-link" href="C%2B%2B.html" title="next page">
-    <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">C++</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
-    </a>
 </div>
             </footer>
         </div>
@@ -740,7 +627,7 @@ title="Print to PDF"
     </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
 
 
   </body>

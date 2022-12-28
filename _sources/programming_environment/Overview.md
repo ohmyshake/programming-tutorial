@@ -38,7 +38,7 @@ Working...
 
 ## APP
 
-Complete list in my mac please check [Mac-Software.md](./macos_software/MacSoftware.md) list. Here are several resources website.
+Complete list in my mac please check [Mac-Software.md](../macos_software/MacSoftware.md) list. Here are several resources website.
 
 - [**awesome-mac**](https://github.com/jaywcjlove/awesome-mac) is a github collecting awesome macOS software.
 

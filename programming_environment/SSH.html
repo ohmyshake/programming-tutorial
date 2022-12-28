@@ -50,7 +50,7 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <link rel="canonical" href="https://seismology101.github.io/Notebook/programming_environment/SSH.html" />
+    <link rel="canonical" href="https://OUCyf.github.io/Programming-Notebook/programming_environment/SSH.html" />
     <link rel="shortcut icon" href="../_static/logo.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -226,13 +226,8 @@ const thebe_selector_output = ".output, .cell_output"
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../hpc/Python.html">
-   Python
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../hpc/Python_HPC.html">
-   Python HPC
+  <a class="reference internal" href="../hpc/Introduction.html">
+   Introduction
   </a>
  </li>
  <li class="toctree-l1">
@@ -476,7 +471,7 @@ title="Fullscreen mode"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://github.com/Seismology101/Notebook"
+        <a href="https://github.com/OUCyf/Programming-Notebook"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -493,7 +488,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/Seismology101/Notebook/issues/new?title=Issue%20on%20page%20%2Fprogramming_environment/SSH.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/OUCyf/Programming-Notebook/issues/new?title=Issue%20on%20page%20%2Fprogramming_environment/SSH.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -738,8 +733,8 @@ total <span class="m">32</span>
 <p>The user public key is stored in the <code class="docutils literal notranslate"><span class="pre">~/.ssh/authorized_keys</span></code> file on the server. Each public key occupies a line. If the file does not exist, you can manually create it.</p>
 <p>The permission of the <code class="docutils literal notranslate"><span class="pre">authorized_keys</span></code> file must be set to <code class="docutils literal notranslate"><span class="pre">644</span></code>, that is, only the file owner can write.</p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="696daa21-a493-447b-bcd8-8a62558f3210" name="ffb65bff-c660-4fab-9bb7-c5641edb27d4" type="radio">
-</input><label class="sd-tab-label" for="696daa21-a493-447b-bcd8-8a62558f3210">
+<input checked="checked" id="6b3a654d-f972-4495-940b-c32843104aa8" name="01e0a1e1-ffe7-45f6-b64e-b199c1a9e954" type="radio">
+</input><label class="sd-tab-label" for="6b3a654d-f972-4495-940b-c32843104aa8">
 Manually Uploading a Public Key</label><div class="sd-tab-content docutils">
 <p>User can edit the <code class="docutils literal notranslate"><span class="pre">authorized_keys</span></code> file manually and paste the public key into it, or can run the following command on the local computer.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cat ~/.ssh/id_rsa.pub <span class="p">|</span> ssh user@host <span class="s2">&quot;mkdir -p ~/.ssh &amp;&amp; cat &gt;&gt; ~/.ssh/authorized_keys&quot;</span>
@@ -747,8 +742,8 @@ chmod <span class="m">644</span> ~/.ssh/authorized_keys
 </pre></div>
 </div>
 </div>
-<input id="67f356d1-29b2-4be0-b760-319d2674e7ba" name="ffb65bff-c660-4fab-9bb7-c5641edb27d4" type="radio">
-</input><label class="sd-tab-label" for="67f356d1-29b2-4be0-b760-319d2674e7ba">
+<input id="67aa8092-e53d-4cca-ab71-0e294374b162" name="01e0a1e1-ffe7-45f6-b64e-b199c1a9e954" type="radio">
+</input><label class="sd-tab-label" for="67aa8092-e53d-4cca-ab71-0e294374b162">
 ssh-copy-id</label><div class="sd-tab-content docutils">
 <p>OpenSSH comes with the <code class="docutils literal notranslate"><span class="pre">ssh-copy-id</span></code> command to automatically copy the public key to the <code class="docutils literal notranslate"><span class="pre">~/.</span> <span class="pre">SSH</span> <span class="pre">/authorized_keys</span></code> file on the remote server. If the <code class="docutils literal notranslate"><span class="pre">~/.ssh/authorized_keys</span></code> file does not exist, the <code class="docutils literal notranslate"><span class="pre">ssh-copy-id</span></code> command automatically creates the file.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ssh-copy-id -i ~/.ssh/id_rsa.pub user@host

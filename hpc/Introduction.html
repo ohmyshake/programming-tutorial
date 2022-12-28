@@ -1,0 +1,915 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Introduction &#8212; Programming Notebook</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="canonical" href="https://OUCyf.github.io/Programming-Notebook/hpc/Introduction.html" />
+    <link rel="shortcut icon" href="../_static/logo.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="C++" href="C%2B%2B.html" />
+    <link rel="prev" title="Docker" href="../apps/Docker.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Programming Notebook</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Introduction ✨
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Programming Environment
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../programming_environment/Overview.html">
+   Overview
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../programming_environment/Xcode.html">
+   Xcode
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../programming_environment/Homebrew.html">
+   Homebrew
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../programming_environment/Iterm2_Zsh.html">
+   Iterm2 &amp; Zsh
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../programming_environment/SSH.html">
+   SSH &amp; SSHFS
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../programming_environment/Git.html">
+   Git &amp; Github
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../programming_environment/VScode.html">
+   VSCode
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../programming_environment/Latex.html">
+   Latex
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../programming_environment/GUN.html">
+   GUN
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../programming_environment/Python.html">
+   Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../programming_environment/Julia.html">
+   Julia
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../programming_environment/Matlab.html">
+   Matlab
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../programming_environment/Shell_Manual.html">
+   Shell Manual
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../programming_environment/Shortcuts.html">
+   Shortcuts
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  App Development
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../apps/Python_Package.html">
+   Python Package
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../apps/Pyside6.html">
+   Pyside6
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../apps/Dash.html">
+   Dash
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../apps/Docker.html">
+   Docker
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Parallel Computing and HPC Platform
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="C%2B%2B.html">
+   C++
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Make_Cmake.html">
+   Make Cmake
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Pybind11_Cython.html">
+   Pybind11 Cython
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Slurm.html">
+   Slurm
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Globus.html">
+   Globus
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Rice_NOTS.html">
+   NOTS
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Azure.html">
+   Azure
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Amazon_S3.html">
+   Amazon S3
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  ML and DL
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ml_dl/Scipy.html">
+   Scipy
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ml_dl/PyTorch.html">
+   PyTorch
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  MacOS Software
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../macos_software/MacSoftware.html">
+   Mac Software
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../macos_software/ImageMagick.html">
+   ImageMagick
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../macos_software/Otter.html">
+   Otter
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../macos_software/PROMISE_Utility.html">
+   PROMISE Utility
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Geo Software
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../geo_software/GeoSoftware.html">
+   Geophysics Software
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../geo_software/Matplotlib.html">
+   Matplotlib
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../geo_software/PyGMT.html">
+   PyGMT
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../geo_software/SAC.html">
+   SAC
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../geo_software/Obspy.html">
+   Obspy
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../geo_software/DAS_format.html">
+   DAS Data Format
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../geo_software/CPS.html">
+   CPS
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../geo_software/SPECFEM.html">
+   SPECFEM
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../geo_software/Gmsh.html">
+   Gmsh
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../geo_software/Paraview.html">
+   Paraview
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../geo_software/FwiFlow.html">
+   FwiFlow
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../geo_software/GEOSX.html">
+   GEOSX
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Links
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../links/link.html">
+   Links ✨
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://yinfu.info/">
+   About Me
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/OUCyf/Programming-Notebook"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/OUCyf/Programming-Notebook/issues/new?title=Issue%20on%20page%20%2Fhpc/Introduction.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/hpc/Introduction.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#preliminary-knowledge">
+   Preliminary Knowledge
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#what-is-the-cores-in-cpu">
+     What is the cores in CPU?
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#how-the-cpu-works">
+     How the CPU works?
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-is-the-parallel-computing">
+   What is the Parallel Computing?
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#cluster-computing">
+     Cluster Computing
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#distributed-computing">
+     Distributed Computing
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#cloud-computing">
+     Cloud Computing
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Introduction</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#preliminary-knowledge">
+   Preliminary Knowledge
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#what-is-the-cores-in-cpu">
+     What is the cores in CPU?
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#how-the-cpu-works">
+     How the CPU works?
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-is-the-parallel-computing">
+   What is the Parallel Computing?
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#cluster-computing">
+     Cluster Computing
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#distributed-computing">
+     Distributed Computing
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#cloud-computing">
+     Cloud Computing
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="introduction">
+<h1>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">#</a></h1>
+<ul class="simple">
+<li><p>Author: <em><a class="reference external" href="https://yinfu.info/">Fu Yin</a></em></p></li>
+<li><p>Update: <em>Dec 26, 2022</em></p></li>
+<li><p>Reading: <em>120 min</em></p></li>
+</ul>
+<hr class="docutils" />
+<section id="preliminary-knowledge">
+<h2>Preliminary Knowledge<a class="headerlink" href="#preliminary-knowledge" title="Permalink to this headline">#</a></h2>
+<section id="what-is-the-cores-in-cpu">
+<h3>What is the cores in CPU?<a class="headerlink" href="#what-is-the-cores-in-cpu" title="Permalink to this headline">#</a></h3>
+<p>The concepts of the <code class="docutils literal notranslate"><span class="pre">node</span></code>, <code class="docutils literal notranslate"><span class="pre">physical</span> <span class="pre">cores</span></code>, <code class="docutils literal notranslate"><span class="pre">computing</span> <span class="pre">cores</span></code>, and <code class="docutils literal notranslate"><span class="pre">Hyper-Threading</span> <span class="pre">Technology</span></code>:</p>
+<ul class="simple">
+<li><p>For clusters, a cluster has multiple node nodes, each node can have multiple CPUs (<code class="docutils literal notranslate"><span class="pre">physical</span> <span class="pre">cores</span></code>), each CPU can have multiple cpu cores (<code class="docutils literal notranslate"><span class="pre">computing</span> <span class="pre">cores</span></code>), and each core can run two threads which is called <code class="docutils literal notranslate"><span class="pre">Hyper-Threading</span> <span class="pre">Technology</span></code>.</p></li>
+<li><p>One process can have many threads, after CPU dispatched, those threads can run in different <code class="docutils literal notranslate"><span class="pre">computing</span> <span class="pre">cores</span></code>.</p></li>
+<li><p>Because a thread belongs to a process, <strong>a single process can only run under a single node</strong>, so <strong>threads cannot share memory across nodes</strong>. As for the physical core, the laptop we buy has a cpu chip, which is a single <code class="docutils literal notranslate"><span class="pre">physical</span> <span class="pre">core</span></code>, but this chip may have 4 cores, and there are 4 <code class="docutils literal notranslate"><span class="pre">computing</span> <span class="pre">cores</span></code>.</p></li>
+</ul>
+<figure class="align-center" id="model-singlethreading">
+<a class="reference internal image-reference" href="../_images/model_singlethreading.webp"><img alt="../_images/model_singlethreading.webp" src="../_images/model_singlethreading.webp" style="width: 366.0px; height: 354.59999999999997px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 15 </span><span class="caption-text">Single Threading Technology</span><a class="headerlink" href="#model-singlethreading" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-center" id="model-hyperthreading">
+<a class="reference internal image-reference" href="../_images/model_hyperthreading.webp"><img alt="../_images/model_hyperthreading.webp" src="../_images/model_hyperthreading.webp" style="width: 367.8px; height: 375.0px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 16 </span><span class="caption-text">Hyper Threading Technology</span><a class="headerlink" href="#model-hyperthreading" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="how-the-cpu-works">
+<h3>How the CPU works?<a class="headerlink" href="#how-the-cpu-works" title="Permalink to this headline">#</a></h3>
+<p>The concept of <code class="docutils literal notranslate"><span class="pre">thread</span></code>, <code class="docutils literal notranslate"><span class="pre">process</span></code>, <code class="docutils literal notranslate"><span class="pre">Round-robin</span> <span class="pre">scheduling</span></code>, <code class="docutils literal notranslate"><span class="pre">CPU-bound</span></code>, <code class="docutils literal notranslate"><span class="pre">I/O</span> <span class="pre">bound</span></code>, <code class="docutils literal notranslate"><span class="pre">disk</span> <span class="pre">read</span> <span class="pre">speed</span></code> and <code class="docutils literal notranslate"><span class="pre">bandwidth</span></code>, where is the time spent for a task? How many threads and processes we use are appropriate?</p>
+<p><code class="docutils literal notranslate"><span class="pre">Round-robin</span> <span class="pre">(RR)</span> <span class="pre">scheduling</span></code> is one of the algorithms employed by process and network schedulers in computing. As the term is generally used, time slices (also known as time quanta) are assigned to <code class="docutils literal notranslate"><span class="pre">each</span> <span class="pre">process</span></code> or <code class="docutils literal notranslate"><span class="pre">thread</span></code> in equal portions and in circular order, handling all processes without priority (also known as cyclic executive).</p>
+<figure class="align-center" id="round-robin-schedule-example">
+<a class="reference internal image-reference" href="../_images/Round_Robin_Schedule_Example.jpg"><img alt="../_images/Round_Robin_Schedule_Example.jpg" src="../_images/Round_Robin_Schedule_Example.jpg" style="width: 541.0px; height: 210.5px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 17 </span><span class="caption-text">Round Robin Schedule Example from Wikipedia</span><a class="headerlink" href="#round-robin-schedule-example" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>One <code class="docutils literal notranslate"><span class="pre">process</span></code> can generate many <code class="docutils literal notranslate"><span class="pre">thread</span></code> missions, and a process is cheap than a thread. Why? When a process is suspended, it needs to record the state at this time. When a process resumes, it needs to collect the state of the previous moment and then execute the program. We call this working time is <code class="docutils literal notranslate"><span class="pre">context</span> <span class="pre">switching</span></code> time.</p>
+<p><code class="docutils literal notranslate"><span class="pre">Thread</span></code> is the smallest scheduling unit. <code class="docutils literal notranslate"><span class="pre">Process</span></code> is the smallest unit of operating system resource allocation (memory, graphics card, disk), and a thread is the smallest unit of execution scheduling (that is, cpu scheduling) (cpu sees threads instead of processes). A process can have one or more Threads share process resources between threads. Through this paradigm, the cost of creating and destroying processes can be reduced, the number of processes can be reduced, and the process can be kept relatively stable. So just keep scheduling threads.</p>
+<figure class="align-center" id="model-multithreaded-process">
+<a class="reference internal image-reference" href="../_images/model_multithreaded_process.png"><img alt="../_images/model_multithreaded_process.png" src="../_images/model_multithreaded_process.png" style="width: 192.0px; height: 181.3px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 18 </span><span class="caption-text">A schematic diagram process and thread</span><a class="headerlink" href="#model-multithreaded-process" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p><strong>Question: where is the time spent for a task?</strong></p>
+<ul class="simple">
+<li><p>For a task, not only <code class="docutils literal notranslate"><span class="pre">cpu</span> <span class="pre">computing</span></code> takes the time, but <code class="docutils literal notranslate"><span class="pre">Network</span> <span class="pre">I/O</span></code> and <code class="docutils literal notranslate"><span class="pre">Disk</span> <span class="pre">I/O</span></code> also take the time.</p></li>
+<li><p>When you send a task (read data) to system, the system will order disk to read data into memory, <code class="docutils literal notranslate"><span class="pre">Disk</span> <span class="pre">I/O</span></code> is dependent on HDD speed (<code class="docutils literal notranslate"><span class="pre">disk</span> <span class="pre">read</span> <span class="pre">speed</span></code>).</p></li>
+<li><p>When you send a task to download data in Internet, you need to gain data via network, <code class="docutils literal notranslate"><span class="pre">Network</span> <span class="pre">I/O</span></code> is dependent on <code class="docutils literal notranslate"><span class="pre">bandwidth</span></code>. Imagine there are 10 lanes on a road, and a car runs on each lane. (a lane is a thread)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">cpu</span> <span class="pre">computing</span></code> mainly includes using memory to compute some data.</p></li>
+</ul>
+<p><strong>Question: due to the <code class="docutils literal notranslate"><span class="pre">Round-robin</span> <span class="pre">scheduling</span></code>, a CPU core will only execute one process at same time. So how many threads and processes we use are appropriate?</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">CPU-bound</span></code>: <code class="docutils literal notranslate"><span class="pre">computing</span> <span class="pre">cores</span> <span class="pre">+</span> <span class="pre">1</span></code>, or <code class="docutils literal notranslate"><span class="pre">computing</span> <span class="pre">cores</span> <span class="pre">*</span> <span class="pre">2</span></code>. I’d like personally to use computing cores + 1 choice.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Network</span> <span class="pre">I/O</span></code>: it depends, the empirical formula is <code class="docutils literal notranslate"><span class="pre">computing</span> <span class="pre">cores</span> <span class="pre">/</span> <span class="pre">0.1</span></code>, for example in a network IO task, the whole process is <code class="docutils literal notranslate"><span class="pre">send</span> <span class="pre">requestion</span> <span class="pre">via</span> <span class="pre">CPU</span></code> –&gt; <code class="docutils literal notranslate"><span class="pre">send</span> <span class="pre">back</span> <span class="pre">data</span> <span class="pre">via</span> <span class="pre">network</span> <span class="pre">(network</span> <span class="pre">IO)</span></code> –&gt; <code class="docutils literal notranslate"><span class="pre">parse</span> <span class="pre">requestion</span> <span class="pre">vis</span> <span class="pre">cpu</span></code>. But after you send the request via CPU, your CPU is free, and the work is to wait network to send back data, so the utilization rate of CPU is not high at this time.</p>
+<ul>
+<li><p>If you use <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">process</span></code> to do this task, you must need to wait network IO time, and after that you can run next step code.</p></li>
+<li><p>If you use <code class="docutils literal notranslate"><span class="pre">multi-threads</span></code> to do this task, when you wait the response of network, you can run other threads to send requests, and thus enhance the utilization rate of CPU.</p></li>
+<li><p>If you use <code class="docutils literal notranslate"><span class="pre">multi-processes</span></code>  to do this task, if will also save much time as same as <code class="docutils literal notranslate"><span class="pre">multi-threads</span></code> approach. But creating many processes is more expensive (in memory and time aspects) than creating multi threads. Why? At this time, the working time of multiple processes is spent on <code class="docutils literal notranslate"><span class="pre">context</span> <span class="pre">switching</span></code>, because the CPU has time slicing and runs different processes at different times. So multi-process will use more time then multi-thread.</p></li>
+<li><p>The limitation is <code class="docutils literal notranslate"><span class="pre">bandwidth</span></code> (network transmission speed, e.g. 100 MB/s), because the bandwidth is a constant number, it is useless to use more threads.</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Disk</span> <span class="pre">bound</span> <span class="pre">(small</span> <span class="pre">data</span> <span class="pre">files)</span></code>: same as network I/O, for example, you need to read many data files to do computing, the whole process is <code class="docutils literal notranslate"><span class="pre">send</span> <span class="pre">read</span> <span class="pre">data</span> <span class="pre">mission</span> <span class="pre">via</span> <span class="pre">CPU</span></code> –&gt; <code class="docutils literal notranslate"><span class="pre">IO</span> <span class="pre">system</span> <span class="pre">reads</span> <span class="pre">data</span> <span class="pre">into</span> <span class="pre">memory</span></code> –&gt; <code class="docutils literal notranslate"><span class="pre">do</span> <span class="pre">computing</span> <span class="pre">task</span></code>. When you read many small files, the <code class="docutils literal notranslate"><span class="pre">disk</span> <span class="pre">read</span> <span class="pre">speed</span></code> and <code class="docutils literal notranslate"><span class="pre">bandwidth</span></code> is not the limitation factor, and the main time is spent on other operations such as finding the address of the small file (<code class="docutils literal notranslate"><span class="pre">seek</span> <span class="pre">time</span></code>). So when IO system reads data into memory, your CPU is free at this time, you can use <code class="docutils literal notranslate"><span class="pre">multi-threads</span></code> to enhance the efficiency.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Disk</span> <span class="pre">bound</span> <span class="pre">(big</span> <span class="pre">data</span> <span class="pre">files)</span></code>: single thread or process is well. Under this circumstance, the limitation is the <code class="docutils literal notranslate"><span class="pre">disk</span> <span class="pre">read</span> <span class="pre">speed</span></code> and <code class="docutils literal notranslate"><span class="pre">bandwidth</span></code>, and the multi-threads reading will not significantly increase the speed.</p></li>
+</ul>
+</section>
+</section>
+<section id="what-is-the-parallel-computing">
+<h2>What is the Parallel Computing?<a class="headerlink" href="#what-is-the-parallel-computing" title="Permalink to this headline">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">Parallel</span> <span class="pre">Computing</span></code> is the general name  <code class="docutils literal notranslate"><span class="pre">Cluster</span> <span class="pre">Computing</span></code>, <code class="docutils literal notranslate"><span class="pre">Distributed</span> <span class="pre">Computing</span></code>, and <code class="docutils literal notranslate"><span class="pre">Cloud</span> <span class="pre">Computing</span></code>.</p>
+<section id="cluster-computing">
+<h3>Cluster Computing<a class="headerlink" href="#cluster-computing" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Cluster</span> <span class="pre">Computing</span></code>: cluster computing is a single-task, high-efficiency computing group, and there are fast communication lines between different nodes, and the most common cluster is <code class="docutils literal notranslate"><span class="pre">High-performance</span> <span class="pre">clusters</span> <span class="pre">(HPC)</span></code></p></li>
+</ul>
+<div class="admonition-the-main-three-ways-for-hpc-computing admonition">
+<p class="admonition-title">The main three ways for HPC computing:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">OpenMP</span></code> the full name is open multi-processing, support <code class="docutils literal notranslate"><span class="pre">c</span></code>, <code class="docutils literal notranslate"><span class="pre">c++</span></code>, and <code class="docutils literal notranslate"><span class="pre">fortran</span></code> language, <code class="docutils literal notranslate"><span class="pre">gcc</span></code> and <code class="docutils literal notranslate"><span class="pre">clang</span></code> of compilers.
+<strong>Shared memory</strong> (all threads can access all variables, just call the variable name), belongs to the <strong>one process</strong>, and cannot work on multiple nodes in the cluster (distributed memory), but work only on a single node. As long as multiple threads do not write at the same time, it is safe, and if you want to write, you need to use <code class="docutils literal notranslate"><span class="pre">lock</span></code> function.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">OpenMPI</span></code> the full name is open message passing interface. Each processes has <strong>independent memory</strong>, and different processes can communicate (with performance memory overhead), suitable for various tasks such as large clusters with multiple nodes.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">CUDA</span></code> the full name is compute unified device architecture. GPU has many many threads for computing, and we need to write <code class="docutils literal notranslate"><span class="pre">kernel</span> <span class="pre">function</span></code> to run code in those threads. GPU computing is not independent, usually the data is send to GPU via CPU, and this process is called <code class="docutils literal notranslate"><span class="pre">heterogeneous</span> <span class="pre">computing</span></code>.</p></li>
+</ul>
+</div>
+<figure class="align-center" id="model-hpc-schematic">
+<a class="reference internal image-reference" href="../_images/model_hpc_schematic.webp"><img alt="../_images/model_hpc_schematic.webp" src="../_images/model_hpc_schematic.webp" style="width: 543.2px; height: 312.8px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 19 </span><span class="caption-text">A schematic diagram HPC computing</span><a class="headerlink" href="#model-hpc-schematic" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header sd-bg-info sd-bg-text-info">
+<span class="sd-summary-icon"><svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-info" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M8 1.5a6.5 6.5 0 100 13 6.5 6.5 0 000-13zM0 8a8 8 0 1116 0A8 8 0 010 8zm6.5-.25A.75.75 0 017.25 7h1a.75.75 0 01.75.75v2.75h.25a.75.75 0 010 1.5h-2a.75.75 0 010-1.5h.25v-2h-.25a.75.75 0 01-.75-.75zM8 6a1 1 0 100-2 1 1 0 000 2z"></path></svg></span>Which one is more suitable for parallel computing, <code class="docutils literal notranslate"><span class="pre">OpenMP</span></code> and <code class="docutils literal notranslate"><span class="pre">OpenMPI</span></code>?<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">CPU-bound</span></code>, utilizes multiple processes, and takes full advantage of multiple CPUs. Maybe, you will have doubts, since multi-threading can be executed in parallel, isn’t it also suitable for computing-intensive tasks?</p>
+<ul class="simple">
+<li><p class="sd-card-text">In theory, <code class="docutils literal notranslate"><span class="pre">multi-process</span></code> is more suitable. It means that when the amount of data is relatively large and there is no logical dependence between computing tasks, multi-process is more suitable. Because <strong>each process will have its own process memory space, each process is naturally isolated</strong>.</p></li>
+<li><p class="sd-card-text">While <code class="docutils literal notranslate"><span class="pre">multiple</span> <span class="pre">threads</span></code> share the same memory space, synchronization between threads must be considered. None of these problems are necessary for computationally intensive tasks (<code class="docutils literal notranslate"><span class="pre">CPU-bound</span></code>). So we say that computing-intensive tasks are more suitable for multi-processing.</p></li>
+</ul>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header sd-bg-info sd-bg-text-info">
+<span class="sd-summary-icon"><svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-info" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M8 1.5a6.5 6.5 0 100 13 6.5 6.5 0 000-13zM0 8a8 8 0 1116 0A8 8 0 010 8zm6.5-.25A.75.75 0 017.25 7h1a.75.75 0 01.75.75v2.75h.25a.75.75 0 010 1.5h-2a.75.75 0 010-1.5h.25v-2h-.25a.75.75 0 01-.75-.75zM8 6a1 1 0 100-2 1 1 0 000 2z"></path></svg></span>What is the <strong><code class="docutils literal notranslate"><span class="pre">openmpi+openmp</span> <span class="pre">hybrid</span></code></strong> mode?<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<ul class="simple">
+<li><p class="sd-card-text">For large-scale operations of cluster jobs: <code class="docutils literal notranslate"><span class="pre">openmpi+openmp</span> <span class="pre">hybrid</span></code>. Usually, <code class="docutils literal notranslate"><span class="pre">MPI</span></code> is used for communication between <code class="docutils literal notranslate"><span class="pre">nodes</span></code>, and <code class="docutils literal notranslate"><span class="pre">OpenMP</span></code> is used for calculation within a <code class="docutils literal notranslate"><span class="pre">single</span> <span class="pre">node</span></code>. The communication speed within the node is fast, and is slow between nodes.</p></li>
+<li><p class="sd-card-text">For example, in the seismic forward simulation in the petroleum industry, N nodes are opened at the same time, each node is forwarded with one shot, and each shot uses several CPUs for calculation.</p></li>
+</ul>
+</div>
+</details></section>
+<section id="distributed-computing">
+<h3>Distributed Computing<a class="headerlink" href="#distributed-computing" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Distributed</span> <span class="pre">Computing</span></code>: it can be that many ordinary home computers are connected through traditional network cables. The transmission and communication speed of different computing points is very slow, and the tasks performed are very fragmented. Compared with cluster computing <code class="docutils literal notranslate"><span class="pre">share</span> <span class="pre">memory</span> <span class="pre">or</span> <span class="pre">message</span> <span class="pre">for</span> <span class="pre">communication</span></code>, distributed computing  communicate <code class="docutils literal notranslate"><span class="pre">via</span> <span class="pre">network</span></code>. (e.g. <code class="docutils literal notranslate"><span class="pre">spark</span></code>, <code class="docutils literal notranslate"><span class="pre">hadoop</span></code>)</p></li>
+<li><p>For example: by installing Raspberry Pi (for computing) and Bluetooth wireless (for data transmission) on many node seismographs, the node seismographs will have the simple calculation function (such as earthquake detection, cross-correlation calculation, etc.) and the data transfer function, which can also be called distributed computing.</p></li>
+</ul>
+<div class="admonition-storage-and-distributed-storage admonition">
+<p class="admonition-title">Storage and Distributed Storage</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Ordinary</span> <span class="pre">Storage</span></code>, such as the hard disk on the server, is connected to the server through a <code class="docutils literal notranslate"><span class="pre">SAS</span> <span class="pre">cable</span></code> (ultra-fast transmission speed, such as 10G/s). At this time, the read and write speed of the server is affected by the <code class="docutils literal notranslate"><span class="pre">disk</span> <span class="pre">IO</span> <span class="pre">speed</span></code>, and the general disk speed is only 1G/s, but a server will be connected to multiple disks, as long as the transmission speed of multiple disks does not exceed 10G/s of the SAS line, reading and writing missions will not be affected.</p></li>
+<li><p>It can be seen from the above that the traditional hard disk storage method has defects. The speed of reading data is very slow, and the total <code class="docutils literal notranslate"><span class="pre">bandwidth</span></code> is constant. If many people read data at the same time, and the speed will slow down seriously; and if reading <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">large</span> <span class="pre">file</span></code>, it can only be <code class="docutils literal notranslate"><span class="pre">read</span> <span class="pre">serially</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Distributed</span> <span class="pre">Storage</span></code> is to divide a piece of data into many small pieces, and <strong>store them in multiple disks respectively</strong>. When reading a big file data, it will read a lot of small pieces from multiple disks at the same time, and finally stitch them into one big piece, similar to parallel reading. It means that the speed will be very fast; but the disadvantage is that if one hard disk is broken, all distributed storage data will be broken; but the latest <code class="docutils literal notranslate"><span class="pre">distributed</span> <span class="pre">array</span> <span class="pre">storage</span></code> technology can solve this problem.</p></li>
+</ul>
+</div>
+<figure class="align-center" id="model-distributed-computing">
+<a class="reference internal image-reference" href="../_images/model-distributed-computing.png"><img alt="../_images/model-distributed-computing.png" src="../_images/model-distributed-computing.png" style="width: 576.0px; height: 324.0px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 20 </span><span class="caption-text">A schematic diagram distributed computing</span><a class="headerlink" href="#model-distributed-computing" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="cloud-computing">
+<h3>Cloud Computing<a class="headerlink" href="#cloud-computing" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Cloud</span> <span class="pre">Computing</span></code>: cloud computing is a combination of the cluster computing and the distributed computing.</p></li>
+<li><p>There is a metaphor:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">Cluster</span> <span class="pre">Computing</span></code> (supercomputing) is like centralized ticket collection at railway station counters.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Distributed</span> <span class="pre">Computing</span></code> is like scattered self-service ticket collection at railway stations.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Cloud</span> <span class="pre">Computing</span></code> (e.g. Amazon, Micrsoft, and Google cloud service) is like all ticket collection windows at railway stations.</p></li>
+</ul>
+</li>
+</ul>
+<figure class="align-center" id="model-cloud-computing">
+<a class="reference internal image-reference" href="../_images/model_cloud-computing.webp"><img alt="../_images/model_cloud-computing.webp" src="../_images/model_cloud-computing.webp" style="width: 520.1px; height: 433.29999999999995px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 21 </span><span class="caption-text">A schematic diagram cloud computing</span><a class="headerlink" href="#model-cloud-computing" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./hpc"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="../apps/Docker.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Docker</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="C%2B%2B.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">C++</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Fu Yin<br/>
+  
+      &copy; Copyright 2021–2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>
