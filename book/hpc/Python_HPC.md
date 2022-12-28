@@ -111,7 +111,7 @@ if __name__ == '__main__':
 ```
 
 
-#### GIL
+#### GIL is not suitable for `CPU bound` task
 
 ```{code-cell} ipython3
 import threading
