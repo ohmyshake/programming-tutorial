@@ -206,7 +206,7 @@ Now let's introduce `concurrent.futures` package in python.
 
 
 ```{code-cell} ipython3
-import current
+from concurrent.futures import
 
 
 ```
