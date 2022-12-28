@@ -208,13 +208,16 @@ Now let's introduce `concurrent.futures` package in python.
 ```{code-cell} ipython3
 from concurrent.futures import ThreadPoolExecutor
 import time
-# 参数times用来模拟下载的时间
+
 def down_video(times):
     time.sleep(times)
     print("down video {}s finished".format(times))
     return times
+
+# create a thread pool with max_workers threads
 executor = ThreadPoolExecutor(max_workers=2)
-# 通过submit函数提交执行的函数到线程池中，submit函数立即返回，不阻塞
+
+# submit a task into thread pool，and submit function will return immediately with blocking
 task1 = executor.submit(down_video, (3))
 task2 = executor.submit(down_video, (2))
 # done方法用于判定某个任务是否完成
