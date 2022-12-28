@@ -52,7 +52,7 @@ def thread_job():
 def main():
     thread = threading.Thread(target=thread_job,)
     thread.start()
-    print("There are ", threading.active_count(), 'threads is running now\n') # see how many threads is running now
+    print("There are", threading.active_count(), 'threads is running now\n') # see how many threads is running now
     print(threading.enumerate(), '\n') # see the thread list
     print(threading.current_thread(), '\n') # which one thread is running now
 if __name__ == '__main__':
