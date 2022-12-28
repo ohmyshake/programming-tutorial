@@ -35,6 +35,9 @@ name: python_gil
 GIL in python
 ```
 
+Now let's introduce the `threading` package in python.
+
+
 #### **Create a thread, start a thread, and join function:**
 
 ```{code-cell} ipython3
