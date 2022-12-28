@@ -249,7 +249,7 @@ Although the `done` function provides a method for judging whether the task is o
 The `as_completed` method is a generator that will block when no task is completed. When a certain task is completed, it can continue to execute the statement after the for loop, and then continue to block until all tasks end.
 
 ```{code-cell} ipython3
-from concurrent.futures import ThreadPoolExecutor
+from concurrent.futures import ThreadPoolExecutor, as_completed
 import time
 
 def download_video(index):
