@@ -55,7 +55,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Multiple Processing" href="Multiple_Processing.html" />
-    <link rel="prev" title="Python" href="../python.html" />
+    <link rel="prev" title="Basic Command" href="Basic_Command.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -240,6 +240,11 @@ const thebe_selector_output = ".output, .cell_output"
    </i>
   </label>
   <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="Basic_Command.html">
+     Basic Command
+    </a>
+   </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
      Multiple Threading
@@ -908,15 +913,15 @@ if __name__ == &#39;__main__&#39;:
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>thread_job start
 
-This is a thread of &lt;Thread(thread_job, started 140528427460160)&gt; 
+This is a thread of &lt;Thread(thread_job, started 140027174573632)&gt; 
 
 thread_job finish
 
 There are 7 threads is running now
 
-The running threads list is: [&lt;_MainThread(MainThread, started 140529179466624)&gt;, &lt;Thread(IOPub, started daemon 140529067398720)&gt;, &lt;Heartbeat(Heartbeat, started daemon 140528981112384)&gt;, &lt;Thread(Thread-3, started daemon 140528779785792)&gt;, &lt;Thread(Thread-4, started daemon 140528763004480)&gt;, &lt;ControlThread(Control, started daemon 140528746223168)&gt;, &lt;ParentPollerUnix(Thread-2, started daemon 140528444241472)&gt;] 
+The running threads list is: [&lt;_MainThread(MainThread, started 140027853314944)&gt;, &lt;Thread(IOPub, started daemon 140027741115968)&gt;, &lt;Heartbeat(Heartbeat, started daemon 140027724334656)&gt;, &lt;Thread(Thread-3, started daemon 140027459790400)&gt;, &lt;Thread(Thread-4, started daemon 140027443009088)&gt;, &lt;ControlThread(Control, started daemon 140027208136256)&gt;, &lt;ParentPollerUnix(Thread-2, started daemon 140027191354944)&gt;] 
 
-The thread &lt;_MainThread(MainThread, started 140529179466624)&gt; is running now
+The thread &lt;_MainThread(MainThread, started 140027853314944)&gt; is running now
 </pre></div>
 </div>
 </div>
@@ -1016,13 +1021,9 @@ if __name__ == &#39;__main__&#39;:
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1999998000000
-normal:  0.08024096488952637
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1999998000000
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>multithreading:  0.07912588119506836
+normal:  0.05241274833679199
+1999998000000
+multithreading:  0.0495448112487793
 </pre></div>
 </div>
 </div>
@@ -1187,18 +1188,20 @@ for task in as_completed(all_task):
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>download video 1 finished at 2022-12-28 22:07:25
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>download video 1 finished at 2022-12-28 22:14:34
 task 1 down load success
-download video 2 finished at 2022-12-28 22:07:25
+download video 2 finished at 2022-12-28 22:14:34
 task 2 down load success
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>download video 3 finished at 2022-12-28 22:07:25
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>download video 3 finished at 2022-12-28 22:14:34
 task 3 down load success
-download video 4 finished at 2022-12-28 22:07:25
+download video 4 finished at 2022-12-28 22:14:34
 task 4 down load success
-download video 5 finished at 2022-12-28 22:07:25
-task 5 down load success
+download video 5 finished at 2022-12-28 22:14:35
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>task 5 down load success
 </pre></div>
 </div>
 </div>
@@ -1227,17 +1230,17 @@ for data in executor.map(download_video,urls):
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>download video 0.2 finished at 2022-12-28 22:07:26
-download video 0.3 finished at 2022-12-28 22:07:26
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>download video 0.2 finished at 2022-12-28 22:14:35
+download video 0.3 finished at 2022-12-28 22:14:35
 task 0.3 down load success
 task 0.2 down load success
-download video 0.1 finished at 2022-12-28 22:07:26
+download video 0.1 finished at 2022-12-28 22:14:35
 task 0.1 down load success
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>download video 0.4 finished at 2022-12-28 22:07:26
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>download video 0.4 finished at 2022-12-28 22:14:35
 task 0.4 down load success
-download video 0.5 finished at 2022-12-28 22:07:26
+download video 0.5 finished at 2022-12-28 22:14:35
 task 0.5 down load success
 </pre></div>
 </div>
@@ -1266,14 +1269,12 @@ print(&quot;main &quot;)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>download video 0.1 finished at 2022-12-28 22:07:26
-download video 0.2 finished at 2022-12-28 22:07:26
-download video 0.3 finished at 2022-12-28 22:07:26
-download video 0.4 finished at 2022-12-28 22:07:26
-download video 0.5 finished at 2022-12-28 22:07:26
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>main 
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>download video 0.1 finished at 2022-12-28 22:14:35
+download video 0.2 finished at 2022-12-28 22:14:35
+download video 0.3 finished at 2022-12-28 22:14:36
+download video 0.4 finished at 2022-12-28 22:14:36
+download video 0.5 finished at 2022-12-28 22:14:36
+main 
 </pre></div>
 </div>
 </div>
@@ -1577,11 +1578,11 @@ if __name__ == &#39;__main__&#39;:
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="../python.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="Basic_Command.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Python</p>
+            <p class="prev-next-title">Basic Command</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="Multiple_Processing.html" title="next page">
