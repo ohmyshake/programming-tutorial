@@ -36,10 +36,6 @@ GIL in python
 ```
 
 
-
-<!-- :tags: [hide-input] -->
-
-
 ```{code-cell} ipython3
 import threading
 import time
