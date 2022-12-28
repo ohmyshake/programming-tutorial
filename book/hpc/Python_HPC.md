@@ -35,7 +35,7 @@ name: python_gil
 GIL in python
 ```
 
-### The `threading` Package
+### `threading`
 
 Now let's introduce the `threading` package in python.
 
@@ -188,7 +188,7 @@ if __name__ == '__main__':
     t2.join()
 ```
 
-### ThreadPoolExecutor: a popular used thread pool
+### `ThreadPoolExecutor`
 
 A `thread pool` maintains multiple threads waiting for tasks to be allocated for `concurrent` execution by the supervising program. By maintaining a pool of threads, the model increases performance and avoids latency in execution due to frequent creation and destruction of threads for short-lived tasks. The number of available threads is tuned to the computing resources available to the program, such as a parallel task queue after completion of execution.
 
