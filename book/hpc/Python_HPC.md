@@ -54,16 +54,6 @@ def T2_job():
     time.sleep(1)
     print('T2 finish\n')
 
-def main():
-    added_thread = threading.Thread(target=thread_job, name='T1')
-    thread2 = threading.Thread(target=T2_job, name='T2')
-    added_thread.start()
-    thread2.start()
-    thread2.join()
-    added_thread.join()
-
-    print('all done\n')
-
 
 
 def thread_job():
@@ -87,6 +77,10 @@ def main():
 
     thread1 = threading.Thread(target=T1_job, name='T1')
     thread2 = threading.Thread(target=T2_job, name='T2')
+    added_thread.start()
+    thread2.start()
+    thread2.join()
+    added_thread.join()
 
 if __name__ == '__main__':
     main()
