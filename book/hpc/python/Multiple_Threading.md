@@ -523,7 +523,7 @@ if __name__ == '__main__':
     d = downloader_https(url, 
             num_threads=4,
             show_info = True,
-            overwrite=True, 
+            resume=True, 
             chunk_size=1024*100, 
             filename=None,  
             header=None, 
