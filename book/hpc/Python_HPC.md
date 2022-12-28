@@ -242,7 +242,12 @@ print("task1's results: ", task1.result())
 ```
 
 
-#### **s**
+#### **as_completed function:**
+
+Although the `done` function provides a method for judging whether the task is over, it is not very practical, because we don't know when the thread ends, and we need to always judge whether each task is over. At this time, you can use the `as_completed` method to retrieve the results of all tasks at once.
+
+The `as_completed` method is a generator that will block when no task is completed. When a certain task is completed, it can continue to execute the statement after the for loop, and then continue to block until all tasks end.
+
 ```{code-cell} ipython3
 from concurrent.futures import ThreadPoolExecutor
 
