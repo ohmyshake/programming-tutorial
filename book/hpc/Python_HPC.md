@@ -102,6 +102,7 @@ def multithreading():
     results = []
     for _ in range(4):
           results.append(q.get())
+    print("Input:", data)
     print("Output:", results)
 
 if __name__ == '__main__':
