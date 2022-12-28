@@ -289,6 +289,15 @@ for data in executor.map(download_video,urls):
     print("task {} down load success".format(data))
 ```
 
+
+
+
+
+#### **wait function:**
+
+
+
+
 ## Multiple Processing
 
 
