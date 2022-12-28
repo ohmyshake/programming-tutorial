@@ -206,7 +206,7 @@ Now let's introduce `concurrent.futures` package in python.
 
 
 ```{code-cell} ipython3
-from concurrent.futures import
+from concurrent.futures import ThreadPoolExecutor
 
 
 ```
