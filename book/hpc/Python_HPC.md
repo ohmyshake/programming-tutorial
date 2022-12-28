@@ -204,7 +204,7 @@ Thread pool in python
 
 Now let's introduce `concurrent.futures` package in python.
 
-#### 
+#### **Create a thread pool, submit a task, get the results**
 
 ```{code-cell} ipython3
 from concurrent.futures import ThreadPoolExecutor
