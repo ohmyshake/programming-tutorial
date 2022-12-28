@@ -209,6 +209,12 @@ Now let's introduce `concurrent.futures` package in python.
 4. Use the `cancel` method to cancel the submitted task. If the task is already running in the thread pool, it cannot be canceled. In this example, the thread pool size is set to 0.2 and the task is already running, so the cancellation fails. If the size of the thread pool is changed to 0.1, then task1 is submitted first, and task2 is still waiting in line. At this time, it can be successfully canceled.
 5. Use the `result` method to get the return value of the task. Note: **result method is blocked**.
 
+
+:::{admonition} What's the different between `threading` and `concurrent.futures` packages?
+u
+:::
+
+
 ### 1. create a thread pool, submit a task, get the results
 
 ```{code-cell} ipython3
