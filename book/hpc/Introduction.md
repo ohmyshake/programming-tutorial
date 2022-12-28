@@ -65,7 +65,7 @@ Round Robin Schedule Example from Wikipedia
 
 One `process` can generate many `thread` missions, and a process is cheap than a thread. Why? When a process is suspended, it needs to record the state at this time. When a process resumes, it needs to collect the state of the previous moment and then execute the program. We call this working time is `context switching` time. 
 
-`Thread` is the smallest scheduling unit. `Process` is the smallest unit of operating system resource allocation (memory, graphics card, disk), and a thread is the smallest unit of execution scheduling (that is, cpu scheduling) (cpu sees threads instead of processes). A process can have one or more Threads share process resources between threads. Through this paradigm, the cost of creating and destroying processes can be reduced, the number of processes can be reduced, and the process can be kept relatively stable. Just keep scheduling threads.
+`Thread` is the smallest scheduling unit. `Process` is the smallest unit of operating system resource allocation (memory, graphics card, disk), and a thread is the smallest unit of execution scheduling (that is, cpu scheduling) (cpu sees threads instead of processes). A process can have one or more Threads share process resources between threads. Through this paradigm, the cost of creating and destroying processes can be reduced, the number of processes can be reduced, and the process can be kept relatively stable. So just keep scheduling threads.
 
 ```{figure} ./files/model_multithreaded_process.png
 ---
