@@ -35,6 +35,7 @@ name: python_gil
 GIL in python
 ```
 
+**Create a thread, start a thread, and wait thread finished running:**
 
 ```{code-cell} ipython3
 import threading
