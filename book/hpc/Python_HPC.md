@@ -263,7 +263,7 @@ all_task = [executor.submit(download_video, (url)) for url in urls]
 
 for task in as_completed(all_task):
     data = task.result()
-    print("mission{} down load success".format(data))
+    print("task {} down load success".format(data))
 ```
 
 **Analysis:**
@@ -274,8 +274,20 @@ for task in as_completed(all_task):
 
 The difference from the `as_completed` method is that the `map` method can guarantee **the order of tasks**. For example: if you download 5 videos at the same time, even if the second video is downloaded before the first video, it will be blocked and wait for the first video to download. After the completion and notification of the main thread, the second downloaded video will be notified back to the main thread to ensure that the tasks are completed in order. Here is an example to illustrate:
 
+```{code-cell} ipython3
+from concurrent.futures import ThreadPoolExecutor, as_completed
+import time
 
+def download_video(index):
+    time.sleep(index)
+    print("download video {} finished at {}".format(index,time.strftime('%Y-%m-%d %H:%M:%S', time.gmtime())))
+    return index
 
+executor = ThreadPoolExecutor(max_workers=2)
+urls = [3, 2, 1, 4, 5]
+for data in executor.map(download_video,urls):
+    print("task {} down load success".format(data))
+```
 
 ## Multiple Processing
 
