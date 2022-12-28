@@ -78,7 +78,7 @@ from queue import Queue
 
 # do a function: square a number
 def job(l,q):
-    new_list = l
+    new_list = l.copy()
     for i in range(len(l)):
         new_list[i] = l[i]**2
     q.put(new_list)
