@@ -305,7 +305,7 @@ The `wait` method is somewhat similar to the thread `join` method, which can `bl
 
 The `wait` method receives 3 parameters, the `waiting task sequence`, the `timeout time` and the `waiting condition`. The wait condition `return_when` defaults to `ALL_COMPLETED`, indicating that all tasks are to be completed. You can see that in the running results, all tasks are indeed completed, and the main thread prints out main. The waiting condition can also be set to `FIRST_COMPLETED`, indicating that the first task is completed and the wait is stopped.
 
-```{code-cell} ipython3
+```{code-cell} ipython
 from concurrent.futures import ThreadPoolExecutor, wait, ALL_COMPLETED, FIRST_COMPLETED
 import time
 
@@ -357,7 +357,7 @@ Transfer Big Data via Http
 :::
 
 
-```{code-cell} ipython3
+```{code-cell} ipython
 :tags: [hide-input]
 import os
 import requests

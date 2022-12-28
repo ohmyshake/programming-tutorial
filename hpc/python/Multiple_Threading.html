@@ -913,15 +913,15 @@ if __name__ == &#39;__main__&#39;:
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>thread_job start
 
-This is a thread of &lt;Thread(thread_job, started 139759611532864)&gt; 
+This is a thread of &lt;Thread(thread_job, started 139943389165120)&gt; 
 
 thread_job finish
 
 There are 7 threads is running now
 
-The running threads list is: [&lt;_MainThread(MainThread, started 139760282188672)&gt;, &lt;Thread(IOPub, started daemon 139760169948736)&gt;, &lt;Heartbeat(Heartbeat, started daemon 139760153167424)&gt;, &lt;Thread(Thread-3, started daemon 139759896749632)&gt;, &lt;Thread(Thread-4, started daemon 139759879968320)&gt;, &lt;ControlThread(Control, started daemon 139759645095488)&gt;, &lt;ParentPollerUnix(Thread-2, started daemon 139759628314176)&gt;] 
+The running threads list is: [&lt;_MainThread(MainThread, started 139944219528064)&gt;, &lt;Thread(IOPub, started daemon 139944107554368)&gt;, &lt;Heartbeat(Heartbeat, started daemon 139944090773056)&gt;, &lt;Thread(Thread-3, started daemon 139943825364544)&gt;, &lt;Thread(Thread-4, started daemon 139943724709440)&gt;, &lt;ControlThread(Control, started daemon 139943707928128)&gt;, &lt;ParentPollerUnix(Thread-2, started daemon 139943691146816)&gt;] 
 
-The thread &lt;_MainThread(MainThread, started 139760282188672)&gt; is running now
+The thread &lt;_MainThread(MainThread, started 139944219528064)&gt; is running now
 </pre></div>
 </div>
 </div>
@@ -1021,9 +1021,9 @@ if __name__ == &#39;__main__&#39;:
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1999998000000
-normal:  0.06756138801574707
+normal:  0.06735086441040039
 1999998000000
-multithreading:  0.0622859001159668
+multithreading:  0.06679272651672363
 </pre></div>
 </div>
 </div>
@@ -1191,17 +1191,17 @@ for task in as_completed(all_task):
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>download video 1 finished at 2022-12-28 22:29:57
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>download video 1 finished at 2022-12-28 22:38:39
 task 1 down load success
-download video 2 finished at 2022-12-28 22:29:57
+download video 2 finished at 2022-12-28 22:38:39
 task 2 down load success
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>download video 3 finished at 2022-12-28 22:29:57
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>download video 3 finished at 2022-12-28 22:38:39
+download video 4 finished at 2022-12-28 22:38:39
 task 3 down load success
-download video 4 finished at 2022-12-28 22:29:57
 task 4 down load success
-download video 5 finished at 2022-12-28 22:29:57
+download video 5 finished at 2022-12-28 22:38:39
 task 5 down load success
 </pre></div>
 </div>
@@ -1231,17 +1231,17 @@ for data in executor.map(download_video,urls):
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>download video 0.2 finished at 2022-12-28 22:29:57
-download video 0.3 finished at 2022-12-28 22:29:57
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>download video 0.2 finished at 2022-12-28 22:38:39
+download video 0.3 finished at 2022-12-28 22:38:40
 task 0.3 down load success
 task 0.2 down load success
-download video 0.1 finished at 2022-12-28 22:29:57
+download video 0.1 finished at 2022-12-28 22:38:40
 task 0.1 down load success
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>download video 0.4 finished at 2022-12-28 22:29:57
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>download video 0.4 finished at 2022-12-28 22:38:40
 task 0.4 down load success
-download video 0.5 finished at 2022-12-28 22:29:58
+download video 0.5 finished at 2022-12-28 22:38:40
 task 0.5 down load success
 </pre></div>
 </div>
@@ -1270,13 +1270,13 @@ print(&quot;main &quot;)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>download video 0.1 finished at 2022-12-28 22:29:58
-download video 0.2 finished at 2022-12-28 22:29:58
-download video 0.3 finished at 2022-12-28 22:29:58
-download video 0.4 finished at 2022-12-28 22:29:58
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>download video 0.1 finished at 2022-12-28 22:38:40
+download video 0.2 finished at 2022-12-28 22:38:40
+download video 0.3 finished at 2022-12-28 22:38:40
+download video 0.4 finished at 2022-12-28 22:38:40
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>download video 0.5 finished at 2022-12-28 22:29:58
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>download video 0.5 finished at 2022-12-28 22:38:40
 main 
 </pre></div>
 </div>
@@ -1538,7 +1538,7 @@ if __name__ == &#39;__main__&#39;:
  self.accept_ranges =  bytes 
  self.content_length =  393563 
  self.transfer_encoding =  None 
- self.header =  {&#39;User-Agent&#39;: &#39;Mozilla/5.0 (X11; Linux i686) AppleWebKit/533.2 (KHTML, like Gecko) Chrome/31.0.848.0 Safari/533.2&#39;}
+ self.header =  {&#39;User-Agent&#39;: &#39;Opera/9.86.(Windows NT 5.2; nl-AW) Presto/2.9.169 Version/11.00&#39;}
 </pre></div>
 </div>
 </div>
