@@ -12,6 +12,15 @@
 Global Interpreter Lock (GIL)
 
 
+```{figure} ./files/python_gil.webp
+---
+scale: 70%
+align: center
+name: python_gil
+---
+GIL in python
+```
+
 ## Multiple Processing
 
 
