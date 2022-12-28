@@ -325,6 +325,12 @@ print("main ")
 
 :::
 
+
+urllib and requests
+
+
+
+
 ```{code-cell} ipython3
 :tags: [hide-input]
 import os
