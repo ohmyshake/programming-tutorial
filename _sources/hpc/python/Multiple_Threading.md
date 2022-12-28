@@ -361,7 +361,7 @@ Transfer Big Data via Http
 :::
 
 
-```{code-cell}ipython3
+```{code-cell} ipython3
 :tags: [hide-input]
 import os
 import requests
