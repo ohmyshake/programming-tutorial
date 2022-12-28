@@ -349,6 +349,7 @@ Transfer Big Data via Http
 
 
 :::{admonition} Difference between `urllib` and `requests` package in python
+- `urllib3` is the most commonly used network service package in python.
 - `requests` uses `urllib3` under the hood and make it even simpler to make requests and retrieve. data. `requests` internally uses `urllib3`, but it aims for an easier-to-use API.
 - 
 :::
