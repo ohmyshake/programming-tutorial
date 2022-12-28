@@ -84,6 +84,7 @@ def job(l,q):
 def multithreading():
     # create a quene
     q = Queue()
+    
     threads = []
     data = [[1,2,3],[3,4,5],[4,4,4],[5,5,5]]
     for i in range(4):
