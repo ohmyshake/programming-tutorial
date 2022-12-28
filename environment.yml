@@ -9,3 +9,7 @@ dependencies:
   - matplotlib
   - jupyter-book>=0.13
   - pygmt
+  - json5
+  - faker
+  - tqdm
+  - retry

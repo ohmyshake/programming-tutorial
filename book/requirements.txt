@@ -4,3 +4,6 @@ numpy
 obspy
 pygmt
 json5
+faker
+tqdm
+retry

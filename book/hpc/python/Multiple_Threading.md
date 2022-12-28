@@ -211,7 +211,8 @@ Now let's introduce `concurrent.futures` package in python.
 
 
 :::{admonition} What's the different between `threading` and `concurrent.futures` packages?
-u
+- `threading` is a common used package in python with a low-level API.
+- The `concurrent.futures` module encapsulates `thread` to provides a high-level interface for asynchronously executing callables. The asynchronous execution can be performed with threads, using `ThreadPoolExecutor`, or separate processes, using `ProcessPoolExecutor`. Both implement the same interface, which is defined by the abstract Executor class.
 :::
 
 
