@@ -54,6 +54,8 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="shortcut icon" href="../../_static/logo.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Multiple Processing" href="Multiple_Processing.html" />
+    <link rel="prev" title="Python" href="../python.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -222,11 +224,53 @@ const thebe_selector_output = ".output, .cell_output"
   Parallel Computing and HPC Platform
  </span>
 </p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../Introduction.html">
    Introduction
   </a>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="../python.html">
+   Python
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Multiple Threading
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Multiple_Processing.html">
+     Multiple Processing
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Mpi4py.html">
+     Mpi4py
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Cython.html">
+     Cython
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="GPU.html">
+     GPU
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Ray.html">
+     Ray
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../C%2B%2B.html">
@@ -818,7 +862,7 @@ title="Print to PDF"
 <figure class="align-center" id="python-gil">
 <a class="reference internal image-reference" href="../../_images/python_gil.webp"><img alt="../../_images/python_gil.webp" src="../../_images/python_gil.webp" style="width: 588.6px; height: 209.4px;" /></a>
 <figcaption>
-<p><span class="caption-text">GIL in python</span><a class="headerlink" href="#python-gil" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 22 </span><span class="caption-text">GIL in python</span><a class="headerlink" href="#python-gil" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
@@ -864,15 +908,15 @@ if __name__ == &#39;__main__&#39;:
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>thread_job start
 
-This is a thread of &lt;Thread(thread_job, started 140133223360064)&gt; 
+This is a thread of &lt;Thread(thread_job, started 140528427460160)&gt; 
 
 thread_job finish
 
 There are 7 threads is running now
 
-The running threads list is: [&lt;_MainThread(MainThread, started 140133976980352)&gt;, &lt;Thread(IOPub, started daemon 140133864871488)&gt;, &lt;Heartbeat(Heartbeat, started daemon 140133777012288)&gt;, &lt;Thread(Thread-3, started daemon 140133575685696)&gt;, &lt;Thread(Thread-4, started daemon 140133558904384)&gt;, &lt;ControlThread(Control, started daemon 140133542123072)&gt;, &lt;ParentPollerUnix(Thread-2, started daemon 140133240141376)&gt;] 
+The running threads list is: [&lt;_MainThread(MainThread, started 140529179466624)&gt;, &lt;Thread(IOPub, started daemon 140529067398720)&gt;, &lt;Heartbeat(Heartbeat, started daemon 140528981112384)&gt;, &lt;Thread(Thread-3, started daemon 140528779785792)&gt;, &lt;Thread(Thread-4, started daemon 140528763004480)&gt;, &lt;ControlThread(Control, started daemon 140528746223168)&gt;, &lt;ParentPollerUnix(Thread-2, started daemon 140528444241472)&gt;] 
 
-The thread &lt;_MainThread(MainThread, started 140133976980352)&gt; is running now
+The thread &lt;_MainThread(MainThread, started 140529179466624)&gt; is running now
 </pre></div>
 </div>
 </div>
@@ -972,9 +1016,13 @@ if __name__ == &#39;__main__&#39;:
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1999998000000
-normal:  0.05971193313598633
-1999998000000
-multithreading:  0.056832075119018555
+normal:  0.08024096488952637
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1999998000000
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>multithreading:  0.07912588119506836
 </pre></div>
 </div>
 </div>
@@ -1048,7 +1096,7 @@ job2 110
 <figure class="align-center" id="thread-pool">
 <a class="reference internal image-reference" href="../../_images/thread_pool.png"><img alt="../../_images/thread_pool.png" src="../../_images/thread_pool.png" style="width: 576.0px; height: 298.0px;" /></a>
 <figcaption>
-<p><span class="caption-text">Thread pool in python</span><a class="headerlink" href="#thread-pool" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 23 </span><span class="caption-text">Thread pool in python</span><a class="headerlink" href="#thread-pool" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Now let’s introduce <code class="docutils literal notranslate"><span class="pre">concurrent.futures</span></code> package in python.</p>
@@ -1139,20 +1187,18 @@ for task in as_completed(all_task):
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>download video 1 finished at 2022-12-28 22:00:24
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>download video 1 finished at 2022-12-28 22:07:25
 task 1 down load success
-download video 2 finished at 2022-12-28 22:00:24
+download video 2 finished at 2022-12-28 22:07:25
 task 2 down load success
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>download video 3 finished at 2022-12-28 22:00:24
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>download video 3 finished at 2022-12-28 22:07:25
 task 3 down load success
-download video 4 finished at 2022-12-28 22:00:24
+download video 4 finished at 2022-12-28 22:07:25
 task 4 down load success
-download video 5 finished at 2022-12-28 22:00:24
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>task 5 down load success
+download video 5 finished at 2022-12-28 22:07:25
+task 5 down load success
 </pre></div>
 </div>
 </div>
@@ -1181,17 +1227,17 @@ for data in executor.map(download_video,urls):
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>download video 0.2 finished at 2022-12-28 22:00:24
-download video 0.3 finished at 2022-12-28 22:00:24
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>download video 0.2 finished at 2022-12-28 22:07:26
+download video 0.3 finished at 2022-12-28 22:07:26
 task 0.3 down load success
 task 0.2 down load success
-download video 0.1 finished at 2022-12-28 22:00:24
+download video 0.1 finished at 2022-12-28 22:07:26
 task 0.1 down load success
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>download video 0.4 finished at 2022-12-28 22:00:25
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>download video 0.4 finished at 2022-12-28 22:07:26
 task 0.4 down load success
-download video 0.5 finished at 2022-12-28 22:00:25
+download video 0.5 finished at 2022-12-28 22:07:26
 task 0.5 down load success
 </pre></div>
 </div>
@@ -1220,11 +1266,11 @@ print(&quot;main &quot;)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>download video 0.1 finished at 2022-12-28 22:00:25
-download video 0.2 finished at 2022-12-28 22:00:25
-download video 0.3 finished at 2022-12-28 22:00:25
-download video 0.4 finished at 2022-12-28 22:00:25
-download video 0.5 finished at 2022-12-28 22:00:25
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>download video 0.1 finished at 2022-12-28 22:07:26
+download video 0.2 finished at 2022-12-28 22:07:26
+download video 0.3 finished at 2022-12-28 22:07:26
+download video 0.4 finished at 2022-12-28 22:07:26
+download video 0.5 finished at 2022-12-28 22:07:26
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>main 
@@ -1253,7 +1299,7 @@ download video 0.5 finished at 2022-12-28 22:00:25
 </details><figure class="align-center" id="http-transfer">
 <a class="reference internal image-reference" href="../../_images/http_transfer.png"><img alt="../../_images/http_transfer.png" src="../../_images/http_transfer.png" style="width: 727.1999999999999px; height: 231.6px;" /></a>
 <figcaption>
-<p><span class="caption-text">Transfer Big Data via Http</span><a class="headerlink" href="#http-transfer" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 24 </span><span class="caption-text">Transfer Big Data via Http</span><a class="headerlink" href="#http-transfer" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <div class="admonition-difference-between-urllib-and-requests-package-in-python admonition">
@@ -1531,6 +1577,20 @@ if __name__ == &#39;__main__&#39;:
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="../python.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Python</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="Multiple_Processing.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Multiple Processing</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
             </footer>
         </div>

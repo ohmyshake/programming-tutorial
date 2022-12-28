@@ -230,6 +230,48 @@ const thebe_selector_output = ".output, .cell_output"
    Introduction
   </a>
  </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="python.html">
+   Python
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="python/Multiple_Threading.html">
+     Multiple Threading
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="python/Multiple_Processing.html">
+     Multiple Processing
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="python/Mpi4py.html">
+     Mpi4py
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="python/Cython.html">
+     Cython
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="python/GPU.html">
+     GPU
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="python/Ray.html">
+     Ray
+    </a>
+   </li>
+  </ul>
+ </li>
  <li class="toctree-l1">
   <a class="reference internal" href="C%2B%2B.html">
    C++
@@ -737,14 +779,14 @@ existing identities, via just a web browser.</p>
 <h3>Create Globus ID<a class="headerlink" href="#create-globus-id" title="Permalink to this headline">#</a></h3>
 <p>Globus needs to know your identity.</p>
 <ul class="simple">
-<li><p>Signing in with your <code class="docutils literal notranslate"><span class="pre">Google</span></code> or <code class="docutils literal notranslate"><span class="pre">ORCiD</span> <span class="pre">ID</span></code> credentials, or if your <code class="docutils literal notranslate"><span class="pre">Organization</span></code> has been set up with Globus, showing in <a class="reference internal" href="#globus-login"><span class="std std-numref">Fig. 22</span></a>.</p></li>
+<li><p>Signing in with your <code class="docutils literal notranslate"><span class="pre">Google</span></code> or <code class="docutils literal notranslate"><span class="pre">ORCiD</span> <span class="pre">ID</span></code> credentials, or if your <code class="docutils literal notranslate"><span class="pre">Organization</span></code> has been set up with Globus, showing in <a class="reference internal" href="#globus-login"><span class="std std-numref">Fig. 25</span></a>.</p></li>
 <li><p>Otherwise, create and sign into Globus using a <code class="docutils literal notranslate"><span class="pre">Globus</span> <span class="pre">ID</span></code></p></li>
 <li><p>PS: if you are a student in Joanthan’s group, just email Rice IT team to add <code class="docutils literal notranslate"><span class="pre">condo</span></code> from jonathan’s storage into your <code class="docutils literal notranslate"><span class="pre">collection</span></code>.</p></li>
 </ul>
 <figure class="align-center" id="globus-login">
 <a class="reference internal image-reference" href="../_images/globus-login.jpg"><img alt="../_images/globus-login.jpg" src="../_images/globus-login.jpg" style="width: 356.0px; height: 373.5px;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 22 </span><span class="caption-text">Globus Login with <code class="docutils literal notranslate"><span class="pre">Google</span></code> or <code class="docutils literal notranslate"><span class="pre">ORCiD</span> <span class="pre">ID</span></code></span><a class="headerlink" href="#globus-login" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 25 </span><span class="caption-text">Globus Login with <code class="docutils literal notranslate"><span class="pre">Google</span></code> or <code class="docutils literal notranslate"><span class="pre">ORCiD</span> <span class="pre">ID</span></code></span><a class="headerlink" href="#globus-login" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
@@ -755,7 +797,7 @@ existing identities, via just a web browser.</p>
 <figure class="align-center" id="globus-personal-app">
 <a class="reference internal image-reference" href="../_images/globus-personal-app.jpg"><img alt="../_images/globus-personal-app.jpg" src="../_images/globus-personal-app.jpg" style="width: 295.0px; height: 204.0px;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 23 </span><span class="caption-text">Globus Personal App</span><a class="headerlink" href="#globus-personal-app" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 26 </span><span class="caption-text">Globus Personal App</span><a class="headerlink" href="#globus-personal-app" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
@@ -765,14 +807,14 @@ existing identities, via just a web browser.</p>
 <section id="webapp">
 <h3>1. WebApp<a class="headerlink" href="#webapp" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
-<li><p>After logging in globus, you will get a webpage like <a class="reference internal" href="#globus-webapp"><span class="std std-numref">Fig. 24</span></a>, which is called as <code class="docutils literal notranslate"><span class="pre">Globus</span> <span class="pre">Web</span> <span class="pre">App</span></code>.</p></li>
+<li><p>After logging in globus, you will get a webpage like <a class="reference internal" href="#globus-webapp"><span class="std std-numref">Fig. 27</span></a>, which is called as <code class="docutils literal notranslate"><span class="pre">Globus</span> <span class="pre">Web</span> <span class="pre">App</span></code>.</p></li>
 <li><p>You can add different <code class="docutils literal notranslate"><span class="pre">collection</span></code> and mark them in <code class="docutils literal notranslate"><span class="pre">BOOKMARKS</span></code>, and choose the two panel mode for your two endpoints to transfer data between two PCs.</p></li>
 <li><p>After globus submits your work, you can find the mission process in <code class="docutils literal notranslate"><span class="pre">ACTIVITY</span></code> part.</p></li>
 </ul>
 <figure class="align-center" id="globus-webapp">
 <a class="reference internal image-reference" href="../_images/globus-webapp.jpg"><img alt="../_images/globus-webapp.jpg" src="../_images/globus-webapp.jpg" style="width: 524.0px; height: 360.8px;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 24 </span><span class="caption-text">Globus Web App</span><a class="headerlink" href="#globus-webapp" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 27 </span><span class="caption-text">Globus Web App</span><a class="headerlink" href="#globus-webapp" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
@@ -792,13 +834,13 @@ existing identities, via just a web browser.</p>
 <figure class="align-center" id="globus-cli-login">
 <a class="reference internal image-reference" href="../_images/globus-cli-login.jpg"><img alt="../_images/globus-cli-login.jpg" src="../_images/globus-cli-login.jpg" style="width: 429.5px; height: 172.5px;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 25 </span><span class="caption-text">Globus Login in Terminal</span><a class="headerlink" href="#globus-cli-login" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 28 </span><span class="caption-text">Globus Login in Terminal</span><a class="headerlink" href="#globus-cli-login" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <figure class="align-center" id="globus-cli-login-code">
 <a class="reference internal image-reference" href="../_images/globus-cli-login-code.jpg"><img alt="../_images/globus-cli-login-code.jpg" src="../_images/globus-cli-login-code.jpg" style="width: 448.0px; height: 260.0px;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 26 </span><span class="caption-text">Globus Login in Terminal with Authorization Code</span><a class="headerlink" href="#globus-cli-login-code" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 29 </span><span class="caption-text">Globus Login in Terminal with Authorization Code</span><a class="headerlink" href="#globus-cli-login-code" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p><strong>Endpoint ID:</strong></p>
@@ -818,7 +860,7 @@ globus endpoint show <span class="nv">$ep1</span>
 <figure class="align-center" id="globus-m1-endpoint">
 <a class="reference internal image-reference" href="../_images/globus-m1-endpoint.jpg"><img alt="../_images/globus-m1-endpoint.jpg" src="../_images/globus-m1-endpoint.jpg" style="width: 416.84999999999997px; height: 227.14999999999998px;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 27 </span><span class="caption-text">Globus M1-max Endpoint ID</span><a class="headerlink" href="#globus-m1-endpoint" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 30 </span><span class="caption-text">Globus M1-max Endpoint ID</span><a class="headerlink" href="#globus-m1-endpoint" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <ul class="simple">
@@ -827,7 +869,7 @@ globus endpoint show <span class="nv">$ep1</span>
 <figure class="align-center" id="globus-m1-endpoint-app">
 <a class="reference internal image-reference" href="../_images/globus-m1-endpoint-app.jpg"><img alt="../_images/globus-m1-endpoint-app.jpg" src="../_images/globus-m1-endpoint-app.jpg" style="width: 466.9px; height: 316.4px;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 28 </span><span class="caption-text">Globus M1-max Endpoint ID in Globus Web App</span><a class="headerlink" href="#globus-m1-endpoint-app" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 31 </span><span class="caption-text">Globus M1-max Endpoint ID in Globus Web App</span><a class="headerlink" href="#globus-m1-endpoint-app" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p><strong>Filesystem Operations</strong></p>

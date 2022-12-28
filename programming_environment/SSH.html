@@ -230,6 +230,48 @@ const thebe_selector_output = ".output, .cell_output"
    Introduction
   </a>
  </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../hpc/python.html">
+   Python
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../hpc/python/Multiple_Threading.html">
+     Multiple Threading
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../hpc/python/Multiple_Processing.html">
+     Multiple Processing
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../hpc/python/Mpi4py.html">
+     Mpi4py
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../hpc/python/Cython.html">
+     Cython
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../hpc/python/GPU.html">
+     GPU
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../hpc/python/Ray.html">
+     Ray
+    </a>
+   </li>
+  </ul>
+ </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../hpc/C%2B%2B.html">
    C++
@@ -733,8 +775,8 @@ total <span class="m">32</span>
 <p>The user public key is stored in the <code class="docutils literal notranslate"><span class="pre">~/.ssh/authorized_keys</span></code> file on the server. Each public key occupies a line. If the file does not exist, you can manually create it.</p>
 <p>The permission of the <code class="docutils literal notranslate"><span class="pre">authorized_keys</span></code> file must be set to <code class="docutils literal notranslate"><span class="pre">644</span></code>, that is, only the file owner can write.</p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="6b3a654d-f972-4495-940b-c32843104aa8" name="01e0a1e1-ffe7-45f6-b64e-b199c1a9e954" type="radio">
-</input><label class="sd-tab-label" for="6b3a654d-f972-4495-940b-c32843104aa8">
+<input checked="checked" id="e3733aff-7e16-40e6-be2c-d2f071dbf02d" name="17383e47-b44f-4809-bcde-0dac0f5d75a4" type="radio">
+</input><label class="sd-tab-label" for="e3733aff-7e16-40e6-be2c-d2f071dbf02d">
 Manually Uploading a Public Key</label><div class="sd-tab-content docutils">
 <p>User can edit the <code class="docutils literal notranslate"><span class="pre">authorized_keys</span></code> file manually and paste the public key into it, or can run the following command on the local computer.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cat ~/.ssh/id_rsa.pub <span class="p">|</span> ssh user@host <span class="s2">&quot;mkdir -p ~/.ssh &amp;&amp; cat &gt;&gt; ~/.ssh/authorized_keys&quot;</span>
@@ -742,8 +784,8 @@ chmod <span class="m">644</span> ~/.ssh/authorized_keys
 </pre></div>
 </div>
 </div>
-<input id="67aa8092-e53d-4cca-ab71-0e294374b162" name="01e0a1e1-ffe7-45f6-b64e-b199c1a9e954" type="radio">
-</input><label class="sd-tab-label" for="67aa8092-e53d-4cca-ab71-0e294374b162">
+<input id="90891555-b861-42a1-98a5-997851fcaf6b" name="17383e47-b44f-4809-bcde-0dac0f5d75a4" type="radio">
+</input><label class="sd-tab-label" for="90891555-b861-42a1-98a5-997851fcaf6b">
 ssh-copy-id</label><div class="sd-tab-content docutils">
 <p>OpenSSH comes with the <code class="docutils literal notranslate"><span class="pre">ssh-copy-id</span></code> command to automatically copy the public key to the <code class="docutils literal notranslate"><span class="pre">~/.</span> <span class="pre">SSH</span> <span class="pre">/authorized_keys</span></code> file on the remote server. If the <code class="docutils literal notranslate"><span class="pre">~/.ssh/authorized_keys</span></code> file does not exist, the <code class="docutils literal notranslate"><span class="pre">ssh-copy-id</span></code> command automatically creates the file.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ssh-copy-id -i ~/.ssh/id_rsa.pub user@host
