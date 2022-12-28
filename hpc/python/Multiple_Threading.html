@@ -913,15 +913,15 @@ if __name__ == &#39;__main__&#39;:
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>thread_job start
 
-This is a thread of &lt;Thread(thread_job, started 140027174573632)&gt; 
+This is a thread of &lt;Thread(thread_job, started 139759611532864)&gt; 
 
 thread_job finish
 
 There are 7 threads is running now
 
-The running threads list is: [&lt;_MainThread(MainThread, started 140027853314944)&gt;, &lt;Thread(IOPub, started daemon 140027741115968)&gt;, &lt;Heartbeat(Heartbeat, started daemon 140027724334656)&gt;, &lt;Thread(Thread-3, started daemon 140027459790400)&gt;, &lt;Thread(Thread-4, started daemon 140027443009088)&gt;, &lt;ControlThread(Control, started daemon 140027208136256)&gt;, &lt;ParentPollerUnix(Thread-2, started daemon 140027191354944)&gt;] 
+The running threads list is: [&lt;_MainThread(MainThread, started 139760282188672)&gt;, &lt;Thread(IOPub, started daemon 139760169948736)&gt;, &lt;Heartbeat(Heartbeat, started daemon 139760153167424)&gt;, &lt;Thread(Thread-3, started daemon 139759896749632)&gt;, &lt;Thread(Thread-4, started daemon 139759879968320)&gt;, &lt;ControlThread(Control, started daemon 139759645095488)&gt;, &lt;ParentPollerUnix(Thread-2, started daemon 139759628314176)&gt;] 
 
-The thread &lt;_MainThread(MainThread, started 140027853314944)&gt; is running now
+The thread &lt;_MainThread(MainThread, started 139760282188672)&gt; is running now
 </pre></div>
 </div>
 </div>
@@ -1021,9 +1021,9 @@ if __name__ == &#39;__main__&#39;:
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1999998000000
-normal:  0.05241274833679199
+normal:  0.06756138801574707
 1999998000000
-multithreading:  0.0495448112487793
+multithreading:  0.0622859001159668
 </pre></div>
 </div>
 </div>
@@ -1110,7 +1110,10 @@ job2 110
 </ol>
 <div class="admonition-what-s-the-different-between-threading-and-concurrent-futures-packages admonition">
 <p class="admonition-title">What’s the different between <code class="docutils literal notranslate"><span class="pre">threading</span></code> and <code class="docutils literal notranslate"><span class="pre">concurrent.futures</span></code> packages?</p>
-<p>u</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">threading</span></code> is a common used package in python with a low-level API.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">concurrent.futures</span></code> module encapsulates <code class="docutils literal notranslate"><span class="pre">thread</span></code> to provides a high-level interface for asynchronously executing callables. The asynchronous execution can be performed with threads, using <code class="docutils literal notranslate"><span class="pre">ThreadPoolExecutor</span></code>, or separate processes, using <code class="docutils literal notranslate"><span class="pre">ProcessPoolExecutor</span></code>. Both implement the same interface, which is defined by the abstract Executor class.</p></li>
+</ul>
 </div>
 <section id="create-a-thread-pool-submit-a-task-get-the-results">
 <h3>1. create a thread pool, submit a task, get the results<a class="headerlink" href="#create-a-thread-pool-submit-a-task-get-the-results" title="Permalink to this headline">#</a></h3>
@@ -1188,20 +1191,18 @@ for task in as_completed(all_task):
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>download video 1 finished at 2022-12-28 22:14:34
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>download video 1 finished at 2022-12-28 22:29:57
 task 1 down load success
-download video 2 finished at 2022-12-28 22:14:34
+download video 2 finished at 2022-12-28 22:29:57
 task 2 down load success
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>download video 3 finished at 2022-12-28 22:14:34
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>download video 3 finished at 2022-12-28 22:29:57
 task 3 down load success
-download video 4 finished at 2022-12-28 22:14:34
+download video 4 finished at 2022-12-28 22:29:57
 task 4 down load success
-download video 5 finished at 2022-12-28 22:14:35
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>task 5 down load success
+download video 5 finished at 2022-12-28 22:29:57
+task 5 down load success
 </pre></div>
 </div>
 </div>
@@ -1230,17 +1231,17 @@ for data in executor.map(download_video,urls):
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>download video 0.2 finished at 2022-12-28 22:14:35
-download video 0.3 finished at 2022-12-28 22:14:35
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>download video 0.2 finished at 2022-12-28 22:29:57
+download video 0.3 finished at 2022-12-28 22:29:57
 task 0.3 down load success
 task 0.2 down load success
-download video 0.1 finished at 2022-12-28 22:14:35
+download video 0.1 finished at 2022-12-28 22:29:57
 task 0.1 down load success
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>download video 0.4 finished at 2022-12-28 22:14:35
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>download video 0.4 finished at 2022-12-28 22:29:57
 task 0.4 down load success
-download video 0.5 finished at 2022-12-28 22:14:35
+download video 0.5 finished at 2022-12-28 22:29:58
 task 0.5 down load success
 </pre></div>
 </div>
@@ -1269,11 +1270,13 @@ print(&quot;main &quot;)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>download video 0.1 finished at 2022-12-28 22:14:35
-download video 0.2 finished at 2022-12-28 22:14:35
-download video 0.3 finished at 2022-12-28 22:14:36
-download video 0.4 finished at 2022-12-28 22:14:36
-download video 0.5 finished at 2022-12-28 22:14:36
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>download video 0.1 finished at 2022-12-28 22:29:58
+download video 0.2 finished at 2022-12-28 22:29:58
+download video 0.3 finished at 2022-12-28 22:29:58
+download video 0.4 finished at 2022-12-28 22:29:58
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>download video 0.5 finished at 2022-12-28 22:29:58
 main 
 </pre></div>
 </div>
@@ -1524,16 +1527,18 @@ if __name__ == &#39;__main__&#39;:
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">9</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">os</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">requests</span>
-<span class="ne">----&gt; </span><span class="mi">3</span> <span class="kn">from</span> <span class="nn">tqdm</span> <span class="kn">import</span> <span class="n">tqdm</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="kn">from</span> <span class="nn">faker</span> <span class="kn">import</span> <span class="n">Faker</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="kn">from</span> <span class="nn">retry</span> <span class="kn">import</span> <span class="n">retry</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;tqdm&#39;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>self.url =  https://github.com/OUCyf/Latex-Template-Rice-USTC/raw/gh-pages/main.pdf 
+ self.resume =  True 
+ self.chunk_size =  102400 
+ self.filename =  main.pdf 
+ self.num_threads =  4 
+ self.proxies =  None 
+ self.timeout =  10 
+ self.file_type =  application/octet-stream 
+ self.accept_ranges =  bytes 
+ self.content_length =  393563 
+ self.transfer_encoding =  None 
+ self.header =  {&#39;User-Agent&#39;: &#39;Mozilla/5.0 (X11; Linux i686) AppleWebKit/533.2 (KHTML, like Gecko) Chrome/31.0.848.0 Safari/533.2&#39;}
 </pre></div>
 </div>
 </div>
