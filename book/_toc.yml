@@ -39,8 +39,15 @@ parts:
     # maxdepth: 2
     chapters:
     - file: hpc/Introduction
-    - file: hpc/Python/ 
-    - file: hpc/Python_HPC 
+    - file: hpc/Python
+      sections:
+      - file: hpc/Python/basic_command
+      - file: hpc/Python/Multiple_Threading
+      - file: hpc/Python/Multiple_Processing
+      - file: hpc/Python/Mpi4py
+      - file: hpc/Python/GPU  # numba cupy
+      - file: hpc/Python/Ray
+      - file: hpc/Python/ 
     - file: hpc/C++ 
     - file: hpc/Make_Cmake
     - file: hpc/Pybind11_Cython 
