@@ -47,7 +47,7 @@ import threading
 
 
 def thread_job():
-    print('This is a thread of %s' % threading.current_thread())
+    print('This is a thread of %s \n' % threading.current_thread())
 
 def main():
     thread = threading.Thread(target=thread_job,)
