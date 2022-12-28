@@ -81,6 +81,7 @@ def main():
     thread2.start()
     thread2.join()
     thread1.join()
+    print('all done\n')
 
 if __name__ == '__main__':
     main()
