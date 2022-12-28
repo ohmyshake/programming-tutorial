@@ -328,7 +328,9 @@ print("main ")
 
 urllib and requests
 
-
+:::{admonition} urllib and requests
+urllib and requests
+:::
 
 
 ```{code-cell} ipython3
