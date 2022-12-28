@@ -43,9 +43,6 @@ GIL in python
 ```{code-cell} ipython3
 import threading
 
-#def main():
-
-
 def thread_job():
     print('This is a thread of %s \n' % threading.current_thread())
 
@@ -60,7 +57,7 @@ def main():
 
     # which one thread is running now
     print("The thread", threading.current_thread(), 'is running now\n') 
-    
+
 if __name__ == '__main__':
     main()
 
