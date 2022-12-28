@@ -20,11 +20,11 @@ kernelspec:
 
 
 
-### Global Interpreter Lock
+## Global Interpreter Lock
 
 Because of the existence of `Global Interpreter Lock (GIL)`, multi-threads code in multi-cores system can only run one thread at a time. Each thread needs to `acquire` a lock before it can run, and after the thread finishes running, the lock is `released`, and another thread acquires the lock again. So multiple threading is sutiable for `IO bound` mission, not the `CPU bound` mission
 
-```{figure} ./files/python_gil.webp
+```{figure} ../files/python_gil.webp
 ---
 scale: 60%
 align: center
@@ -33,12 +33,12 @@ name: python_gil
 GIL in python
 ```
 
-### `threading`
+## `threading`
 
 Now let's introduce the `threading` package in python.
 
 
-#### **Create a thread, start a thread, and join function:**
+### **Create a thread, start a thread, and join function:**
 
 ```{code-cell} ipython3
 import threading
@@ -72,7 +72,7 @@ if __name__ == '__main__':
     main()
 ```
 
-#### **Quene function: get the results from multiple threads** 
+### **Quene function: get the results from multiple threads** 
 
 ```{code-cell} ipython3
 import threading
@@ -114,7 +114,7 @@ if __name__ == '__main__':
 ```
 
 
-#### **GIL is not suitable for `CPU bound` task:**
+### **GIL is not suitable for `CPU bound` task:**
 
 ```{code-cell} ipython3
 import threading
@@ -154,7 +154,7 @@ if __name__ == '__main__':
 ```
 
 
-#### **GIL lock function:**
+### **GIL lock function:**
 
 ```{code-cell} ipython3
 import threading
@@ -186,13 +186,13 @@ if __name__ == '__main__':
     t2.join()
 ```
 
-### `ThreadPoolExecutor`
+## `ThreadPoolExecutor`
 
 A `thread pool` maintains multiple threads waiting for tasks to be allocated for `concurrent` execution by the supervising program. By maintaining a pool of threads, the model increases performance and avoids latency in execution due to frequent creation and destruction of threads for short-lived tasks. The number of available threads is tuned to the computing resources available to the program, such as a parallel task queue after completion of execution.
 
 One benefit of a thread pool over creating a new thread for each task is that **thread creation and destruction overhead is restricted to the initial creation of the pool**, which may result in better performance and better system stability. Creating and destroying a thread and its associated resources can be an expensive process in terms of time. An excessive number of threads in reserve, however, wastes memory, and context-switching between the runnable threads invokes performance penalties.
 
-```{figure} ./files/thread_pool.png
+```{figure} ../files/thread_pool.png
 ---
 scale: 20%
 align: center
@@ -209,7 +209,7 @@ Now let's introduce `concurrent.futures` package in python.
 4. Use the `cancel` method to cancel the submitted task. If the task is already running in the thread pool, it cannot be canceled. In this example, the thread pool size is set to 0.2 and the task is already running, so the cancellation fails. If the size of the thread pool is changed to 0.1, then task1 is submitted first, and task2 is still waiting in line. At this time, it can be successfully canceled.
 5. Use the `result` method to get the return value of the task. Note: **result method is blocked**.
 
-#### **Create a thread pool, submit a task, get the results**
+### **Create a thread pool, submit a task, get the results**
 
 ```{code-cell} ipython3
 import time
@@ -241,7 +241,7 @@ print("task1's results: ", task1.result())
 ```
 
 
-#### **as_completed function:**
+### **as_completed function:**
 
 Although the `done` function provides a method for judging whether the task is over, it is not very practical, because we don't know when the thread ends, and we need to always judge whether each task is over. At this time, you can use the `as_completed` method to retrieve the results of all tasks at once.
 
@@ -269,7 +269,7 @@ for task in as_completed(all_task):
 5 tasks, 2 threads. Since a maximum of 2 threads are allowed to be executed at the same time when the thread pool is constructed, task 1 and task 2 are executed at the same time. Judging from the output of heavy code, after task 1 and task 2 are executed, the for loop Enter the blocking state, until the end of task 1 or task 2, for will continue to execute task 3 / task 4, and ensure that only two tasks are executed at the same time.
 
 
-#### **map function:**
+### **map function:**
 
 The difference from the `as_completed` method is that the `map` method can guarantee **the order of tasks**. For example: if you download 5 videos at the same time, even if the second video is downloaded before the first video, it will be blocked and wait for the first video to download. After the completion and notification of the main thread, the second downloaded video will be notified back to the main thread to ensure that the tasks are completed in order. Here is an example to illustrate:
 
@@ -292,7 +292,7 @@ for data in executor.map(download_video,urls):
 
 
 
-#### **wait function:**
+### **wait function:**
 
 The `wait` method is somewhat similar to the thread `join` method, which can `block` the main thread until all the threads in the thread pool have completed their operations.
 
@@ -313,24 +313,7 @@ wait(all_task,return_when=ALL_COMPLETED)
 print("main ")
 ```
 
-## Multiple Processing
 
-
-
-## Mpi4py 
-
-
-
-## GPU
-
-### Numba 
-
-
-### Cupy 
-
-
-
-## Ray
 
 
 
