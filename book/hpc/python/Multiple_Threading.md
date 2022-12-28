@@ -324,6 +324,8 @@ print("main ")
 
 ## Http Downloder Project
 
+In this project, I use a multi-threaded method to download large file data, and support breakpoint transmission.
+
 :::{dropdown} Do you know how to transfer large data via `http`?
 :color: info
 :icon: info
