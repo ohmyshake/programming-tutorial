@@ -323,11 +323,12 @@ print("main ")
 
 
 
+## GPU
 
-## Numba 
+### Numba 
 
 
-## Cupy 
+### Cupy 
 
 
 
