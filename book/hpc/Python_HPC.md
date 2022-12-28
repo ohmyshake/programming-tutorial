@@ -35,9 +35,12 @@ name: python_gil
 GIL in python
 ```
 
-```{code-cell} ipython3
-# :tags: [hide-input]
 
+
+<!-- :tags: [hide-input] -->
+
+
+```{code-cell} ipython3
 import threading
 print("ss")
 
