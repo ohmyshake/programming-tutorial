@@ -28,7 +28,7 @@ a thread pool maintains multiple threads waiting for tasks to be allocated for c
 
 ```{figure} ./files/thread_pool.png
 ---
-scale: 60%
+scale: 20%
 align: center
 name: thread_pool
 ---
