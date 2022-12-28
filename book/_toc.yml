@@ -39,7 +39,7 @@ parts:
     # maxdepth: 2
     chapters:
     - file: hpc/Introduction
-    - file: hpc/Python 
+    - file: hpc/Python/ 
     - file: hpc/Python_HPC 
     - file: hpc/C++ 
     - file: hpc/Make_Cmake
@@ -95,36 +95,3 @@ parts:
 
 
 
-
-################################################################
-################################################################
-
-  # - caption: Earthquake Source
-  #   # numbered: True 
-  #   # maxdepth: 2
-  #   chapters:
-  #   - file: earthquake_source/Source_Theory
-  #   - file: earthquake_source/Moment_Tensor_Decompose
-
-  # - caption: Ambient Noise
-  #   # numbered: True 
-  #   # maxdepth: 2
-  #   chapters:
-  #   - file: ambient_noise/Cross_Correlation
-  #   - file: ambient_noise/Noise_Source_Analysis
-
-  # - caption: Surface Wave
-  #   # numbered: True 
-  #   # maxdepth: 2
-  #   chapters:
-  #   - file: surface_wave/Rayleigh_Wave
-  #   - file: surface_wave/Love_Wave
-  #   - file: surface_wave/Sensitivity_Kernal
-
-  # - caption: Coda Wave
-  #   # numbered: True 
-  #   # maxdepth: 2
-  #   chapters:
-  #   - file: coda_wave/Theory
-  #   - file: coda_wave/Sensitivity_Kernal
-  #   - file: coda_wave/Velocity_Change
