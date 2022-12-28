@@ -79,7 +79,7 @@ A schematic diagram process and thread
 
 
 
-**Question:** where is the time spent for a task?
+**Question: where is the time spent for a task?**
 
 - For a task, not only `cpu computing` takes the time, but `Network I/O` and `Disk I/O` also take the time.
 
@@ -90,7 +90,7 @@ A schematic diagram process and thread
 - `cpu computing` mainly includes using memory to compute some data. 
 
 
-**Question:** due to the `Round-robin scheduling`, a CPU core will only execute one process at same time. So how many threads and processes we use are appropriate? 
+**Question: due to the `Round-robin scheduling`, a CPU core will only execute one process at same time. So how many threads and processes we use are appropriate?** 
 
 - `CPU-bound`: `computing cores + 1`, or `computing cores * 2`. I'd like personally to use computing cores + 1 choice.
 
