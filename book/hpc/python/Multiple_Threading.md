@@ -521,14 +521,14 @@ class downloader_https():
 if __name__ == '__main__':
     url = "https://github.com/OUCyf/Latex-Template-Rice-USTC/raw/gh-pages/main.pdf"
     d = downloader_https(url, 
-            num_threads=4,
+            num_threads = 4,
             show_info = True,
-            resume=True, 
-            chunk_size=1024*100, 
-            filename=None,  
-            header=None, 
-            proxies=None, 
-            timeout=10)
+            resume = True, 
+            chunk_size = 1024*100, 
+            filename = None,  
+            header = None, 
+            proxies = None, 
+            timeout = 10)
     d.download()
     d.print()
 ```
