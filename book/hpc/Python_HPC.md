@@ -272,6 +272,10 @@ for task in as_completed(all_task):
 
 #### **map function:**
 
+The difference from the `as_completed` method is that the `map` method can guarantee **the order of tasks**. For example: if you download 5 videos at the same time, even if the second video is downloaded before the first video, it will be blocked and wait for the first video to download. After the completion and notification of the main thread, the second downloaded video will be notified back to the main thread to ensure that the tasks are completed in order. Here is an example to illustrate:
+
+
+
 
 ## Multiple Processing
 
