@@ -229,13 +229,13 @@ task1 = executor.submit(down_video, (0.2))
 task2 = executor.submit(down_video, (0.1))
 
 # `done` function is used to check whether the task is finished
-print("任务1是否已经完成：",task1.done())
+print("task 1 is finished?：",task1.done())
 
 # `cancel` function is used to cancel the task before the thread put into thread-pool 
-print("取消任务2：",task2.cancel())
+print("cancel task 2：",task2.cancel())
 
 time.sleep(1)
-print("任务1是否已经完成：",task1.done())
+print("task 1 is finished?：",task1.done())
 
 # `result` is used to get the results of a thread
 print("task1's results: ", task1.result())
@@ -250,7 +250,20 @@ The `as_completed` method is a generator that will block when no task is complet
 
 ```{code-cell} ipython3
 from concurrent.futures import ThreadPoolExecutor
+import time
 
+def download_video(index):
+    time.sleep(0.1)
+    print("download video {} finished at {}".format(index,time.strftime('%Y-%m-%d %H:%M:%S', time.gmtime())))
+    return index
+
+executor = ThreadPoolExecutor(max_workers=2)
+urls = [1, 2, 3, 4, 5]
+all_task = [executor.submit(download_video, (url)) for url in urls]
+
+for task in as_completed(all_task):
+    data = task.result()
+    print("mission{} down load success".format(data))
 ```
 
 ## Multiple Processing
