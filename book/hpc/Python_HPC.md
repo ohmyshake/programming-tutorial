@@ -47,8 +47,12 @@ def thread_job():
     print('This is a thread of %s \n' % threading.current_thread())
 
 def main():
+    # add a new thread
     thread = threading.Thread(target=thread_job,)
+
+    # start a thread
     thread.start()
+
     # see how many threads is running now
     print("There are", threading.active_count(), 'threads is running now\n') 
 
