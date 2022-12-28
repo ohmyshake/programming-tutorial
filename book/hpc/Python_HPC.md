@@ -43,12 +43,6 @@ GIL in python
 ```{code-cell} ipython3
 import threading
 import time
-def thread_job():
-    print('T1 start\n')
-    for i in range(10):
-        time.sleep(0.1)
-    print('T1 finish\n')
-
 
 def T1_job():
     print('T1 start\n')
@@ -90,6 +84,9 @@ def main():
 
     # which one thread is running now
     print("The thread", threading.current_thread(), 'is running now\n') 
+
+    thread1 = threading.Thread(target=T1_job, name='T1')
+    thread2 = threading.Thread(target=T2_job, name='T2')
 
 if __name__ == '__main__':
     main()
