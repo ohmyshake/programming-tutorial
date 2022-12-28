@@ -360,7 +360,7 @@ Transfer Big Data via Http
 :::
 
 
-```{code-cell} ipython3
+```{code-cell}
 :tags: [hide-input]
 import os
 import requests
@@ -573,7 +573,7 @@ if __name__ == '__main__':
 ```
 
 
-```{code-cell} ipython3
+```{code-cell}
 import numpy as np
 import matplotlib.pyplot as plt
 plt.ion()

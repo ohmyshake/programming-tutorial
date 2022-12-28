@@ -780,8 +780,8 @@ total <span class="m">32</span>
 <p>The user public key is stored in the <code class="docutils literal notranslate"><span class="pre">~/.ssh/authorized_keys</span></code> file on the server. Each public key occupies a line. If the file does not exist, you can manually create it.</p>
 <p>The permission of the <code class="docutils literal notranslate"><span class="pre">authorized_keys</span></code> file must be set to <code class="docutils literal notranslate"><span class="pre">644</span></code>, that is, only the file owner can write.</p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="7d17c56b-11b7-46af-95ff-79ce82626cc8" name="33c39c0a-f5b4-470a-9399-80a3fcf95e07" type="radio">
-</input><label class="sd-tab-label" for="7d17c56b-11b7-46af-95ff-79ce82626cc8">
+<input checked="checked" id="7ff75668-ba03-4fa2-ade3-0b1a8081d638" name="8ba776f8-1055-43ba-91e8-92bcac1179e2" type="radio">
+</input><label class="sd-tab-label" for="7ff75668-ba03-4fa2-ade3-0b1a8081d638">
 Manually Uploading a Public Key</label><div class="sd-tab-content docutils">
 <p>User can edit the <code class="docutils literal notranslate"><span class="pre">authorized_keys</span></code> file manually and paste the public key into it, or can run the following command on the local computer.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cat ~/.ssh/id_rsa.pub <span class="p">|</span> ssh user@host <span class="s2">&quot;mkdir -p ~/.ssh &amp;&amp; cat &gt;&gt; ~/.ssh/authorized_keys&quot;</span>
@@ -789,8 +789,8 @@ chmod <span class="m">644</span> ~/.ssh/authorized_keys
 </pre></div>
 </div>
 </div>
-<input id="64ac1d1e-372d-4cc1-9128-baec952c8d31" name="33c39c0a-f5b4-470a-9399-80a3fcf95e07" type="radio">
-</input><label class="sd-tab-label" for="64ac1d1e-372d-4cc1-9128-baec952c8d31">
+<input id="afaa75a5-f328-4d87-b219-32016d3c9aba" name="8ba776f8-1055-43ba-91e8-92bcac1179e2" type="radio">
+</input><label class="sd-tab-label" for="afaa75a5-f328-4d87-b219-32016d3c9aba">
 ssh-copy-id</label><div class="sd-tab-content docutils">
 <p>OpenSSH comes with the <code class="docutils literal notranslate"><span class="pre">ssh-copy-id</span></code> command to automatically copy the public key to the <code class="docutils literal notranslate"><span class="pre">~/.</span> <span class="pre">SSH</span> <span class="pre">/authorized_keys</span></code> file on the remote server. If the <code class="docutils literal notranslate"><span class="pre">~/.ssh/authorized_keys</span></code> file does not exist, the <code class="docutils literal notranslate"><span class="pre">ssh-copy-id</span></code> command automatically creates the file.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ssh-copy-id -i ~/.ssh/id_rsa.pub user@host

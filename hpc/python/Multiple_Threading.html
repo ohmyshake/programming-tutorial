@@ -913,15 +913,15 @@ if __name__ == &#39;__main__&#39;:
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>thread_job start
 
-This is a thread of &lt;Thread(thread_job, started 140016990807616)&gt; 
+This is a thread of &lt;Thread(thread_job, started 140209727465024)&gt; 
 
 thread_job finish
 
 There are 7 threads is running now
 
-The running threads list is: [&lt;_MainThread(MainThread, started 140017751985024)&gt;, &lt;Thread(IOPub, started daemon 140017639994944)&gt;, &lt;Heartbeat(Heartbeat, started daemon 140017544459840)&gt;, &lt;Thread(Thread-3, started daemon 140017343133248)&gt;, &lt;Thread(Thread-4, started daemon 140017326351936)&gt;, &lt;ControlThread(Control, started daemon 140017309570624)&gt;, &lt;ParentPollerUnix(Thread-2, started daemon 140017007588928)&gt;] 
+The running threads list is: [&lt;_MainThread(MainThread, started 140210481617792)&gt;, &lt;Thread(IOPub, started daemon 140210369500736)&gt;, &lt;Heartbeat(Heartbeat, started daemon 140210281117248)&gt;, &lt;Thread(Thread-3, started daemon 140210079790656)&gt;, &lt;Thread(Thread-4, started daemon 140210063009344)&gt;, &lt;ControlThread(Control, started daemon 140210046228032)&gt;, &lt;ParentPollerUnix(Thread-2, started daemon 140209744246336)&gt;] 
 
-The thread &lt;_MainThread(MainThread, started 140017751985024)&gt; is running now
+The thread &lt;_MainThread(MainThread, started 140210481617792)&gt; is running now
 </pre></div>
 </div>
 </div>
@@ -1021,9 +1021,9 @@ if __name__ == &#39;__main__&#39;:
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1999998000000
-normal:  0.06688475608825684
+normal:  0.05403256416320801
 1999998000000
-multithreading:  0.06831908226013184
+multithreading:  0.05234026908874512
 </pre></div>
 </div>
 </div>
@@ -1191,20 +1191,18 @@ for task in as_completed(all_task):
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>download video 1 finished at 2022-12-28 22:47:22
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>download video 1 finished at 2022-12-28 22:58:56
 task 1 down load success
-download video 2 finished at 2022-12-28 22:47:22
+download video 2 finished at 2022-12-28 22:58:56
 task 2 down load success
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>download video 3 finished at 2022-12-28 22:47:22
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>download video 3 finished at 2022-12-28 22:58:56
 task 3 down load success
-download video 4 finished at 2022-12-28 22:47:22
+download video 4 finished at 2022-12-28 22:58:56
 task 4 down load success
-download video 5 finished at 2022-12-28 22:47:22
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>task 5 down load success
+download video 5 finished at 2022-12-28 22:58:56
+task 5 down load success
 </pre></div>
 </div>
 </div>
@@ -1233,17 +1231,17 @@ for data in executor.map(download_video,urls):
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>download video 0.2 finished at 2022-12-28 22:47:23
-download video 0.3 finished at 2022-12-28 22:47:23
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>download video 0.2 finished at 2022-12-28 22:58:56
+download video 0.3 finished at 2022-12-28 22:58:56
 task 0.3 down load success
 task 0.2 down load success
-download video 0.1 finished at 2022-12-28 22:47:23
+download video 0.1 finished at 2022-12-28 22:58:56
 task 0.1 down load success
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>download video 0.4 finished at 2022-12-28 22:47:23
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>download video 0.4 finished at 2022-12-28 22:58:57
 task 0.4 down load success
-download video 0.5 finished at 2022-12-28 22:47:23
+download video 0.5 finished at 2022-12-28 22:58:57
 task 0.5 down load success
 </pre></div>
 </div>
@@ -1272,11 +1270,11 @@ print(&quot;main &quot;)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>download video 0.1 finished at 2022-12-28 22:47:23
-download video 0.2 finished at 2022-12-28 22:47:23
-download video 0.3 finished at 2022-12-28 22:47:23
-download video 0.4 finished at 2022-12-28 22:47:23
-download video 0.5 finished at 2022-12-28 22:47:24
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>download video 0.1 finished at 2022-12-28 22:58:57
+download video 0.2 finished at 2022-12-28 22:58:57
+download video 0.3 finished at 2022-12-28 22:58:57
+download video 0.4 finished at 2022-12-28 22:58:57
+download video 0.5 finished at 2022-12-28 22:58:57
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>main 
@@ -1540,7 +1538,7 @@ if __name__ == &#39;__main__&#39;:
  self.accept_ranges =  bytes 
  self.content_length =  393563 
  self.transfer_encoding =  None 
- self.header =  {&#39;User-Agent&#39;: &#39;Opera/8.71.(Windows NT 6.2; ha-NG) Presto/2.9.182 Version/10.00&#39;}
+ self.header =  {&#39;User-Agent&#39;: &#39;Mozilla/5.0 (compatible; MSIE 7.0; Windows NT 5.0; Trident/4.0)&#39;}
 </pre></div>
 </div>
 </div>
@@ -1560,7 +1558,7 @@ ax.scatter(x, y, c=y, s=x)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7f582e8428b0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7f850c1818b0&gt;
 </pre></div>
 </div>
 <img alt="../../_images/Multiple_Threading_18_1.png" src="../../_images/Multiple_Threading_18_1.png" />
