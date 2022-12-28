@@ -202,6 +202,9 @@ name: thread_pool
 Thread pool in python
 ```
 
+Now let's introduce `concurrent.futures` package in python.
+
+
 ```{code-cell} ipython3
 import current
 
