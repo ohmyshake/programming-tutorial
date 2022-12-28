@@ -69,6 +69,38 @@ if __name__ == '__main__':
     main()
 ```
 
+**s:**
+```{code-cell} ipython3
+import threading
+import time
+from queue import Queue
+
+def job(l,q):
+    for i in range(len(l)):
+        l[i] = l[i]**2
+    q.put(l)
+
+def multithreading():
+    q = Queue()
+    threads = []
+    data = [[1,2,3],[3,4,5],[4,4,4],[5,5,5]]
+    for i in range(4):
+        t = threading.Thread(target=job, args=(data[i], q))
+        t.start()
+        threads.append(t)
+    for thread in threads:
+        thread.join()
+    results = []
+    for _ in range(4):
+          results.append(q.get())
+    print(results)
+
+if __name__ == '__main__':
+    multithreading()
+```
+
+
+
 ### Thread Pool
 
 A `thread pool` maintains multiple threads waiting for tasks to be allocated for `concurrent` execution by the supervising program. By maintaining a pool of threads, the model increases performance and avoids latency in execution due to frequent creation and destruction of threads for short-lived tasks. The number of available threads is tuned to the computing resources available to the program, such as a parallel task queue after completion of execution.
