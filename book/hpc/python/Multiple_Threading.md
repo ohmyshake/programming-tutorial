@@ -1,8 +1,11 @@
 ---
 jupytext:
+  formats: md:myst
   text_representation:
     extension: .md
     format_name: myst
+    format_version: 0.13
+    jupytext_version: 1.10.3
 kernelspec:
   display_name: Python 3
   language: python
@@ -305,7 +308,7 @@ The `wait` method is somewhat similar to the thread `join` method, which can `bl
 
 The `wait` method receives 3 parameters, the `waiting task sequence`, the `timeout time` and the `waiting condition`. The wait condition `return_when` defaults to `ALL_COMPLETED`, indicating that all tasks are to be completed. You can see that in the running results, all tasks are indeed completed, and the main thread prints out main. The waiting condition can also be set to `FIRST_COMPLETED`, indicating that the first task is completed and the wait is stopped.
 
-```{code-cell} ipython
+```{code-cell} ipython3
 from concurrent.futures import ThreadPoolExecutor, wait, ALL_COMPLETED, FIRST_COMPLETED
 import time
 
@@ -357,7 +360,7 @@ Transfer Big Data via Http
 :::
 
 
-```{code-cell} ipython
+```{code-cell} ipython3
 :tags: [hide-input]
 import os
 import requests
@@ -568,6 +571,20 @@ if __name__ == '__main__':
     d.download()
     d.print()
 ```
+
+
+```{code-cell} ipython3
+import numpy as np
+import matplotlib.pyplot as plt
+plt.ion()
+
+x = np.arange(500)
+y = np.random.randn(500)
+
+fig, ax = plt.subplots()
+ax.scatter(x, y, c=y, s=x)
+```
+
 
 ## Reference
 
