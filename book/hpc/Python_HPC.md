@@ -295,6 +295,7 @@ for data in executor.map(download_video,urls):
 
 #### **wait function:**
 
+The `wait` method is somewhat similar to the thread `join` method, which can `block` the main thread until all the threads in the thread pool have completed their operations! The example code is as follows:
 
 ```{code-cell} ipython3
 from concurrent.futures import ThreadPoolExecutor, wait, ALL_COMPLETED, FIRST_COMPLETED
