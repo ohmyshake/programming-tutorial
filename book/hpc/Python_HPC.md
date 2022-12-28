@@ -199,11 +199,11 @@ name: thread_pool
 Thread pool in python
 ```
 
+```{code-cell} ipython3
+import current
 
 
-
-
-
+```
 
 ## Multiple Processing
 
