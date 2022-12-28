@@ -138,7 +138,7 @@ A schematic diagram process and thread
 
 ```{figure} ./files/model_hpc_schematic.webp
 ---
-scale: 50%
+scale: 40%
 align: center
 name: model_hpc_schematic
 ---
@@ -194,7 +194,7 @@ A schematic diagram HPC computing
 
 ```{figure} ./files/model-distributed-computing.png
 ---
-scale: 50%
+scale: 30%
 align: center
 name: model-distributed-computing
 ---
