@@ -1,11 +1,12 @@
 ---
 jupytext:
+  cell_metadata_filter: -all
   formats: md:myst
   text_representation:
     extension: .md
     format_name: myst
     format_version: 0.13
-    jupytext_version: 1.10.3
+    jupytext_version: 1.11.5
 kernelspec:
   display_name: Python 3
   language: python
@@ -360,7 +361,7 @@ Transfer Big Data via Http
 :::
 
 
-```{code-cell}
+```{code-cell}ipython3
 :tags: [hide-input]
 import os
 import requests
@@ -573,17 +574,6 @@ if __name__ == '__main__':
 ```
 
 
-```{code-cell}
-import numpy as np
-import matplotlib.pyplot as plt
-plt.ion()
-
-x = np.arange(500)
-y = np.random.randn(500)
-
-fig, ax = plt.subplots()
-ax.scatter(x, y, c=y, s=x)
-```
 
 
 ## Reference
