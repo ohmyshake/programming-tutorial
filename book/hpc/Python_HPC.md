@@ -44,24 +44,20 @@ GIL in python
 import threading
 import time
 
-def T1_job():
-    print('T1 start\n')
-    print('T1 finish\n')
-
-def T2_job():
-    print('T2 start\n')
-    time.sleep(1)
-    print('T2 finish\n')
-
 def thread_job():
+    print('thread_job start\n')
     print('This is a thread of %s \n' % threading.current_thread())
+    print('thread_job finish\n')
 
 def main():
     # add a new thread
-    thread = threading.Thread(target=thread_job,)
+    thread = threading.Thread(target=thread_job, name="thread_job")
 
     # start a thread
     thread.start()
+
+    # wait this thread finished running, then run following code
+    thread.join()
 
     # see how many threads is running now
     print("There are", threading.active_count(), 'threads is running now\n') 
@@ -72,13 +68,6 @@ def main():
     # which one thread is running now
     print("The thread", threading.current_thread(), 'is running now\n') 
 
-    thread1 = threading.Thread(target=T1_job, name='T1')
-    thread2 = threading.Thread(target=T2_job, name='T2')
-    thread1.start()
-    thread2.start()
-    thread2.join()
-    thread1.join()
-    print('all done\n')
 
 if __name__ == '__main__':
     main()
