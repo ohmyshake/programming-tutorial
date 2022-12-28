@@ -231,7 +231,7 @@ time.sleep(4)
 print("任务1是否已经完成：",task1.done())
 
 # `result` is used to get the results of a thread
-print(task1.result())
+print("task1's results: ", task1.result())
 ```
 
 ## Multiple Processing
