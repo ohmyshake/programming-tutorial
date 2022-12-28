@@ -48,13 +48,10 @@ def T1_job():
     print('T1 start\n')
     print('T1 finish\n')
 
-
 def T2_job():
     print('T2 start\n')
     time.sleep(1)
     print('T2 finish\n')
-
-
 
 def thread_job():
     print('This is a thread of %s \n' % threading.current_thread())
