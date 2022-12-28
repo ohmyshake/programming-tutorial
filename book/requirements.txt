@@ -1,3 +1,4 @@
+ipython
 jupyter-book
 matplotlib
 numpy
