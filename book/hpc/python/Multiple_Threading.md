@@ -318,8 +318,12 @@ print("main ")
 
 ## Http Downloder Project
 
+:::{dropdown} Do you know how to transfer large data via `http`?
+:color: info
+:icon: info
 
 
+:::
 
 ```{code-cell} ipython3
 :tags: [hide-input]
