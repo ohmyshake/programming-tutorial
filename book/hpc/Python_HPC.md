@@ -9,8 +9,8 @@
 
 ## Multiple Threading
 
-Global Interpreter Lock (GIL)
 
+Because of the existence of `Global Interpreter Lock (GIL)`, multi-threads code in multi-cores system can only run one thread at a time
 
 ```{figure} ./files/python_gil.webp
 ---
