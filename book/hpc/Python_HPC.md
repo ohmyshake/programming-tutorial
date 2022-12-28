@@ -69,7 +69,7 @@ if __name__ == '__main__':
     main()
 ```
 
-**Quene function: get the results from multiple threads** 
+#### **Quene function: get the results from multiple threads** 
 
 ```{code-cell} ipython3
 import threading
