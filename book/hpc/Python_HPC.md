@@ -204,11 +204,12 @@ Thread pool in python
 
 Now let's introduce `concurrent.futures` package in python.
 
+
 #### **Create a thread pool, submit a task, get the results**
 
 ```{code-cell} ipython3
-from concurrent.futures import ThreadPoolExecutor
 import time
+from concurrent.futures import ThreadPoolExecutor
 
 def down_video(times):
     time.sleep(times)
@@ -233,6 +234,13 @@ print("任务1是否已经完成：",task1.done())
 
 # `result` is used to get the results of a thread
 print("task1's results: ", task1.result())
+```
+
+
+#### **s**
+```{code-cell} ipython3
+from concurrent.futures import ThreadPoolExecutor
+
 ```
 
 ## Multiple Processing
