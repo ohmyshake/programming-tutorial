@@ -569,3 +569,5 @@ if __name__ == '__main__':
 
 1. https://www.codersrc.com/archives/6707.html
 2. https://github.com/MorvanZhou/tutorials/tree/master/threadingTUT
+3. https://www.cnblogs.com/traditional/p/15373999.html
+4. https://www.51cto.com/article/665492.html
