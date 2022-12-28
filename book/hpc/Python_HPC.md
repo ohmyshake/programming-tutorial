@@ -76,6 +76,7 @@ import threading
 import time
 from queue import Queue
 
+# do a function: square a number
 def job(l,q):
     for i in range(len(l)):
         l[i] = l[i]**2
