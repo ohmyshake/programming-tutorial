@@ -309,7 +309,7 @@ from concurrent.futures import ThreadPoolExecutor, wait, ALL_COMPLETED, FIRST_CO
 import time
 
 def download_video(index):
-    time.sleep(2)
+    time.sleep(0.1)
     print("download video {} finished at {}".format(index,time.strftime('%Y-%m-%d %H:%M:%S', time.gmtime())))
     return index
 executor = ThreadPoolExecutor(max_workers=2)
