@@ -225,8 +225,8 @@ def down_video(times):
 executor = ThreadPoolExecutor(max_workers=2)
 
 # submit a task into thread pool，and submit function will return immediately with blocking
-task1 = executor.submit(down_video, (3))
-task2 = executor.submit(down_video, (2))
+task1 = executor.submit(down_video, (0.2))
+task2 = executor.submit(down_video, (0.1))
 
 # `done` function is used to check whether the task is finished
 print("任务1是否已经完成：",task1.done())
@@ -234,7 +234,7 @@ print("任务1是否已经完成：",task1.done())
 # `cancel` function is used to cancel the task before the thread put into thread-pool 
 print("取消任务2：",task2.cancel())
 
-time.sleep(4)
+time.sleep(1)
 print("任务1是否已经完成：",task1.done())
 
 # `result` is used to get the results of a thread
