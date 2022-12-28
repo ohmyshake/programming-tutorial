@@ -348,8 +348,9 @@ Transfer Big Data via Http
 ```
 
 
-:::{admonition} urllib and requests
-urllib and requests
+:::{admonition} Difference between `urllib` and `requests` package in python
+- `requests` uses `urllib3` under the hood and make it even simpler to make requests and retrieve. data.
+- 
 :::
 
 
