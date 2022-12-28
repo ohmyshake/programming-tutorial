@@ -340,7 +340,7 @@ print("main ")
 
 ```{figure} ../files/http_transfer.png
 ---
-scale: 20%
+scale: 60%
 align: center
 name: http_transfer
 ---
