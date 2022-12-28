@@ -284,7 +284,7 @@ def download_video(index):
     return index
 
 executor = ThreadPoolExecutor(max_workers=2)
-urls = [3, 2, 1, 4, 5]
+urls = [0.3, 0.2, 0.1, 0.4, 0.5]
 for data in executor.map(download_video,urls):
     print("task {} down load success".format(data))
 ```
