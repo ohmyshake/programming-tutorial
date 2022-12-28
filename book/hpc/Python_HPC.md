@@ -220,8 +220,10 @@ executor = ThreadPoolExecutor(max_workers=2)
 # submit a task into thread pool，and submit function will return immediately with blocking
 task1 = executor.submit(down_video, (3))
 task2 = executor.submit(down_video, (2))
-# done方法用于判定某个任务是否完成
+
+# done function is used for check whether the task is finished
 print("任务1是否已经完成：",task1.done())
+
 # cancel方法用于取消某个任务,该任务没有放入线程池中才能取消成功
 print("取消任务2：",task2.cancel())
 time.sleep(4)
