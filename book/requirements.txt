@@ -3,6 +3,7 @@ jupyter-book
 matplotlib
 numpy
 obspy
+Pygments
 pygmt
 json5
 faker

@@ -9,6 +9,7 @@ dependencies:
   - matplotlib
   - jupyter-book>=0.13
   - ipython
+  - Pygments
   - pygmt
   - json5
   - faker
