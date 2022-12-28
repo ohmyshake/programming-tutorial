@@ -88,18 +88,21 @@ def multithreading():
 
     threads = []
     data = [[1,2,3],[3,4,5],[4,4,4],[5,5,5]]
+
+    # create 4 threads
     for i in range(4):
         t = threading.Thread(target=job, args=(data[i], q))
         t.start()
         threads.append(t)
+
     for thread in threads:
         thread.join()
-    results = []
-
+    
     # get the results from multi-threads
+    results = []
     for _ in range(4):
           results.append(q.get())
-    print(results)
+    print("Output:", results)
 
 if __name__ == '__main__':
     multithreading()
