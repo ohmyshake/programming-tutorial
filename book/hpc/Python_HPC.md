@@ -35,6 +35,8 @@ name: python_gil
 GIL in python
 ```
 
+### threading package
+
 Now let's introduce the `threading` package in python.
 
 
