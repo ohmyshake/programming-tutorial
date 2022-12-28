@@ -14,7 +14,7 @@ Because of the existence of `Global Interpreter Lock (GIL)`, multi-threads code 
 
 ```{figure} ./files/python_gil.webp
 ---
-scale: 70%
+scale: 60%
 align: center
 name: python_gil
 ---
