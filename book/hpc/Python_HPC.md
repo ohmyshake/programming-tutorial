@@ -57,9 +57,9 @@ def main():
 
     # see the thread list
     print("The running threads list is:", threading.enumerate(), '\n') 
-    
+
     # which one thread is running now
-    print(threading.current_thread(), '\n') 
+    print("The thread", threading.current_thread(), 'is running now\n') 
 if __name__ == '__main__':
     main()
 
