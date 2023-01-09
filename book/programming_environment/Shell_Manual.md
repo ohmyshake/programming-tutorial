@@ -180,7 +180,11 @@ ps -ef | grep yinfu | awk '{ print $2 }' | xargs kill -9
 ## nohup
 
 ```bash
-nohup 
+# start
+nohup command > command.log 2>&1& echo $! > command.pid
+
+# kill
+kill `cat command.pid`
 ```
 
 
