@@ -75,6 +75,7 @@ from pathlib import Path
 
 output_path = "./DAS_DATA"
 
+# check whether exists
 Path(output_path).is_dir()
 
 Path.mkdir(Path(output_path))
