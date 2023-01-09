@@ -58,7 +58,7 @@ def main():
 
 
 #%% Main
-url = "file:///Users/yinfu/src/Seiscode-Notebook-new/book/_build/html/intro.html"
+url = "file:///Users/yinfu/src/Programming_Notebook/book/_build/html/intro.html"
 book= "./book"         # jupyter-book build ./book
 sleep_time = 0.1        # unit/s
 
