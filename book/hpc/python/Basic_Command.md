@@ -85,7 +85,6 @@ abs_path = Path(output_path).joinpath(url.split('/')[-1]).absolute()
 
 # convert to string
 abs_filename = str(abs_path)
-
 ```
 
 
