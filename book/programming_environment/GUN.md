@@ -242,7 +242,7 @@ table th:nth-of-type(2) {
 
 
 
-### fftw3
+### FFTW3
 
 #### 1.Install via brew
 
