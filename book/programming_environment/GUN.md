@@ -342,9 +342,9 @@ cd $(FFTW_FOLDER)
 
 ./configure --prefix=$(PWD) \
     --with-pic \
-	--enable-single 
+    --enable-single 
     --enable-shared  \
-	--enable-avx2 --enable-avx \
+    --enable-avx2 --enable-avx \
     --enable-sse --enable-sse2 \
 
 make -j 4 
