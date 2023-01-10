@@ -372,6 +372,8 @@ make install
     ```
     If your machine supports `SSE`, you should see the `-msse` flag in the output.
 
+- `--enable-shared` to create shared, rather than static, libraries.
+
 - The `--with-pic` option tells the `./configure` script to build FFTW with position-independent code (PIC). `PIC` is a form of machine code that can be relocated at runtime, and is typically used when building shared libraries. Building FFTW with PIC can allow the library to be used in shared libraries and plugins, which can be loaded and unloaded dynamically at runtime.
 
 - The `--enable-single` option tells the `./configure` script to enable single precision (float) support in FFTW. This allows FFTW to compute discrete Fourier transforms (DFTs) of single precision floating-point arrays, in addition to the default double precision (double) support.
