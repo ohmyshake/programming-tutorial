@@ -266,6 +266,7 @@ If the installation was successful, you should be able to use the FFTW library i
 - The `-I` option to include header file
 - The `-L` option to include package
 
+Refer to https://www.runoob.com/w3cnote/gcc-parameter-detail.html
 
 :::{dropdown} The example **`fftw.cpp`** file is here:
 :color: info
