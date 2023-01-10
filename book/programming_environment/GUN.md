@@ -362,13 +362,13 @@ make install
     ```bash
     gcc -mavx -E -v - </dev/null 2>&1 | grep cc1
     ```
-    If your machine supports SSE, you should see the -msse flag in the output.
+    If your machine supports SSE, you should see the `-mavx` flag in the output.
 
 - M1 does not support SSE instructions, check:
     ```bash
     `gcc -msse -E -v - </dev/null 2>&1 | grep cc1`
     ```
-    If your machine supports SSE, you should see the -msse flag in the output.
+    If your machine supports SSE, you should see the `-msse` flag in the output.
 :::
 
 
