@@ -304,6 +304,9 @@ int main() {
 
 
 ```bash
+FFTW_VERSION=3.3.9
+FFTW_FOLDER=fftw-$(FFTW_VERSION)
+
 # install
 wget http://fftw.org/fftw-$(FFTW_VERSION).tar.gz
 tar -xvf fftw-$(FFTW_VERSION).tar.gz
