@@ -320,7 +320,7 @@ rm fftw-$(FFTW_VERSION).tar.gz
 **Install:**
 
 :::::{tab-set}
-::::{tab-item} Foreign
+::::{tab-item} M1
 ```bash
 cd $(FFTW_FOLDER)
 
@@ -336,7 +336,7 @@ make install
 ::::
 
 
-::::{tab-item} China
+::::{tab-item} Linux
 ```bash
 cd $(FFTW_FOLDER)
 
