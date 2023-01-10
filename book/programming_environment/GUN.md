@@ -250,9 +250,11 @@ table th:nth-of-type(2) {
 # install
 brew install fftw
 
-# For compilers to find fftw3
+# compile
 g++ fftw.cpp -o fftw -I/opt/homebrew/opt/fftw/include -L/opt/homebrew/opt/fftw/lib -lfftw3 -lm
 
+# run
+./fftw
 ```
 
 - The `-lfftw3` option tell the compiler to link the FFTW library.
@@ -301,6 +303,9 @@ int main() {
 
 
 ```bash
+
+
+
 gcc fftw.c -I/Users/yinfu/Downloads/fftw-3.3.10/include -L/Users/yinfu/Downloads/fftw-3.3.10/lib -lfftw3
 ```
 
