@@ -251,7 +251,7 @@ table th:nth-of-type(2) {
 brew install fftw
 
 # For compilers to find fftw3
-gcc fftw.c -I/opt/homebrew/opt/fftw/include -L/opt/homebrew/opt/fftw/lib -lfftw3
+gcc fftw.c -o test -I/opt/homebrew/opt/fftw/include -L/opt/homebrew/opt/fftw/lib -lfftw3
 
 ```
 
