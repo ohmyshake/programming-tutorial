@@ -301,7 +301,7 @@ int main() {
 
 #### 2.Install from source
 
-**Download FFTW Package**
+**Download FFTW Package:**
 
 ```bash
 FFTW_VERSION=3.3.10
@@ -317,6 +317,7 @@ rm fftw-$(FFTW_VERSION).tar.gz
 
 
 
+**Install:**
 
 :::::{tab-set}
 ::::{tab-item} Foreign
