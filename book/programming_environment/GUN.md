@@ -338,8 +338,8 @@ gcc fftw.c -o fftw -lfftw3 -lm -I/Users/yinfu/Downloads/fftw-3.3.10/include -L/U
 
 ./configure --prefix=$(PWD) CFLAGS="-arch arm64 -arch x86_64 -mmacosx-version-min=11.0"
 
-http://www.fftw.org/fftw2_doc/fftw_6.html
 
+https://www.fftw.org/fftw3_doc/Installation-on-Unix.html
 
 ## Resource
 
