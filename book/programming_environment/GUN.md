@@ -313,13 +313,14 @@ wget http://fftw.org/fftw-$(FFTW_VERSION).tar.gz
 tar -xvf fftw-$(FFTW_VERSION).tar.gz
 
 rm fftw-$(FFTW_VERSION).tar.gz
-
-
 ```
 
 
 
 
+
+:::::{tab-set}
+::::{tab-item} Foreign
 ```bash
 cd $(FFTW_FOLDER)
 
@@ -332,7 +333,10 @@ cd $(FFTW_FOLDER)
 make -j 4 
 make install
 ```
+::::
 
+
+::::{tab-item} China
 ```bash
 cd $(FFTW_FOLDER)
 
@@ -346,6 +350,14 @@ cd $(FFTW_FOLDER)
 make -j 4 
 make install
 ```
+::::
+
+
+
+
+:::{note}
+Please check [Homebrew](https://brew.sh/index_zh-cn.html) webpage for more info.
+:::
 
 Note: 
 
