@@ -248,7 +248,7 @@ table th:nth-of-type(2) {
 
 
 
-#### 1.Install from source
+#### 2.Install from source
 
 
 ## Resource
