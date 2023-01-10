@@ -334,6 +334,27 @@ make install
 ```
 
 ```bash
+cd $(FFTW_FOLDER)
+
+./configure --prefix=$(PWD) \
+    --build=x86_64-apple-darwin20 --with-pic \
+	--enable-single --enable-shared  \
+	--enable-avx2 --enable-avx \
+        --enable-sse --enable-sse2 \
+
+make -j 4 
+make install
+```
+
+Note: 
+
+gcc -mavx -E -v - </dev/null 2>&1 | grep cc1
+
+gcc -msse -E -v - </dev/null 2>&1 | grep cc1
+
+
+
+```bash
 # compile
 gcc fftw.c -o fftw -lfftw3 -lm -I/Users/yinfu/Downloads/fftw-3.3.10/include -L/Users/yinfu/Downloads/fftw-3.3.10/lib
 
@@ -344,8 +365,6 @@ gcc fftw.c -o fftw -lfftw3 -lm -I/Users/yinfu/Downloads/fftw-3.3.10/include -L/U
 - The `--build` option to specify the code installed in an M1-based Mac.
 
 
-
-./configure --prefix=$(PWD) CFLAGS="-arch arm64 -arch x86_64 -mmacosx-version-min=11.0"
 
 
 https://www.fftw.org/fftw3_doc/Installation-on-Unix.html
