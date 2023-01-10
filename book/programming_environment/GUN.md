@@ -319,7 +319,7 @@ cd $(FFTW_FOLDER)
 ./configure --prefix=$(PWD) \
 	--enable-single --enable-shared --with-pic \
 	--enable-avx2 --enable-avx \
-    --enable-sse --enable-sse2
+    --enable-sse --enable-sse2 \
 
 make -j 4 
 make install
