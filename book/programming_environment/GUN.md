@@ -366,9 +366,6 @@ gcc -msse -E -v - </dev/null 2>&1 | grep cc1
 
 ```bash
 gcc fftw.c -o fftw -lfftw3 -lm -I/Users/yinfu/Downloads/fftw-3.3.10/include -L/Users/yinfu/Downloads/fftw-3.3.10/lib
-
-# run
-./fftw
 ```
 
 - The `--build` option to specify the code installed in an M1-based Mac.
