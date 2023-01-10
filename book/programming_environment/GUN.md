@@ -247,10 +247,12 @@ table th:nth-of-type(2) {
 #### 1.Install via brew
 
 ```bash
+# install
 brew install fftw
 
-# # For compilers to find libomp you may need to set for Makefile
--L/opt/homebrew/opt/libomp/lib -I/opt/homebrew/opt/libomp/include
+# For compilers to find fftw3
+gcc fftw.c -I/opt/homebrew/opt/fftw/include -L/opt/homebrew/opt/fftw/lib -lfftw3
+
 ```
 
 
