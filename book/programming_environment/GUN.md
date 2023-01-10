@@ -257,7 +257,8 @@ g++ fftw.cpp -o fftw -I/opt/homebrew/opt/fftw/include -L/opt/homebrew/opt/fftw/l
 
 - The `-lfftw3` option tell the compiler to link the FFTW library.
 - The `-lm` option tell the compiler to the math library.
-
+- The `-I` option to include header file
+- The `-L` option to include package
 
 
 :::{dropdown} The example **`fftw.cpp`** file is here:
