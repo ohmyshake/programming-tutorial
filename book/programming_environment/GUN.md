@@ -251,11 +251,42 @@ table th:nth-of-type(2) {
 brew install fftw
 
 # For compilers to find fftw3
-gcc fftw.c -o test -I/opt/homebrew/opt/fftw/include -L/opt/homebrew/opt/fftw/lib -lfftw3
+g++ fftw.cpp -o fftw -I/opt/homebrew/opt/fftw/include -L/opt/homebrew/opt/fftw/lib -lfftw3 -lm
 
 ```
 
+:::{dropdown} The example **`openmpi.cpp`** file is here:
+:color: info
+:icon: info
+```c++
+#include <fftw3.h>
+#include <iostream>
 
+int main() {
+  // Set up the input signal and allocate space for the output
+  const int N = 8;
+  double input[N] = {1, 2, 3, 4, 5, 6, 7, 8};
+  fftw_complex output[N];
+
+  // Set up the FFTW plan
+  fftw_plan plan = fftw_plan_dft_r2c_1d(N, input, output, FFTW_ESTIMATE);
+
+  // Execute the plan
+  fftw_execute(plan);
+
+  // Print the result
+  std::cout << "Output: " << std::endl;
+  for (int i = 0; i < N; i++) {
+    std::cout << output[i][0] << " + " << output[i][1] << "i" << std::endl;
+  }
+
+  // Clean up
+  fftw_destroy_plan(plan);
+
+  return 0;
+}
+```
+:::
 
 
 
