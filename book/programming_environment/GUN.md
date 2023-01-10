@@ -378,6 +378,8 @@ make install
 
 - The `--enable-single` option tells the `./configure` script to enable single precision (float) support in FFTW. This allows FFTW to compute discrete Fourier transforms (DFTs) of single precision floating-point arrays, in addition to the default double precision (double) support.
 By default, FFTW is built with double precision support only, so you will need to use the `--enable-single` option if you want to use single precision arrays with FFTW.
+
+More information can be found in https://www.fftw.org/fftw3_doc/Installation-on-Unix.html
 :::
 
 
@@ -390,7 +392,7 @@ gcc fftw.c -o fftw -lfftw3 -lm -I/Users/yinfu/Downloads/fftw-3.3.10/include -L/U
 
 
 
-https://www.fftw.org/fftw3_doc/Installation-on-Unix.html
+
 
 ## Resource
 
