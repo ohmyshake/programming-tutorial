@@ -247,6 +247,7 @@ table th:nth-of-type(2) {
 #### 1.Install via brew
 
 ```bash
+ls
 $ brew install fftw
 ```
 
