@@ -299,7 +299,7 @@ int main() {
 
 
 
-#### 2.Install from source
+#### 2.Install from source on M1
 
 
 
