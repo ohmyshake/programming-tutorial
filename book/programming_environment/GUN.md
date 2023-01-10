@@ -203,8 +203,6 @@ clang++ -I/opt/homebrew/Cellar/open-mpi/4.1.4_2/include
 ## Configuration
 
 
-### VSCode
-
 Download the plugin, `C/C++`, in VSCode Extensions
 
 - Manual refer to [`Miscrosoft docs`](https://code.visualstudio.com/docs/python/python-tutorial)
