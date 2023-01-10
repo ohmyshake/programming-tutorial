@@ -324,10 +324,10 @@ rm fftw-$(FFTW_VERSION).tar.gz
 cd $(FFTW_FOLDER)
 
 ./configure --prefix=$(PWD) \
-    --build=x86_64-apple-darwin20 --with-pic \
-	--enable-single --enable-shared  \
-	--enable-avx2 --enable-avx \
-        --enable-sse --enable-sse2 \
+    --with-pic \
+	--enable-single \
+    --enable-shared  \
+    --build=x86_64-apple-darwin20
 
 make -j 4 
 make install
@@ -337,10 +337,11 @@ make install
 cd $(FFTW_FOLDER)
 
 ./configure --prefix=$(PWD) \
-    --build=x86_64-apple-darwin20 --with-pic \
-	--enable-single --enable-shared  \
+    --with-pic \
+	--enable-single 
+    --enable-shared  \
 	--enable-avx2 --enable-avx \
-        --enable-sse --enable-sse2 \
+    --enable-sse --enable-sse2 \
 
 make -j 4 
 make install
