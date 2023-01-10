@@ -231,7 +231,7 @@ table th:nth-of-type(2) {
 
 |    Name       |    Purpose    |    Way       |     
 | ------------  | ------------- | :----------: |
-| `fftw3`   | ...       |      |
+| `fftw3`   | ...       | `brew` and https://www.fftw.org/     |
 | ``   | ...       |      |
 
 **Seismology package**:
