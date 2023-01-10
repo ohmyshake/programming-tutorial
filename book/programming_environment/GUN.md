@@ -327,7 +327,7 @@ cd $(FFTW_FOLDER)
 ./configure --prefix=$(PWD) \
     --with-pic \
 	--enable-single \
-    --enable-shared  \
+    --enable-shared \
     --build=x86_64-apple-darwin20
 
 make -j 4 
