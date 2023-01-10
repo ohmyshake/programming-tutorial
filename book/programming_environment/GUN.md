@@ -251,7 +251,7 @@ table th:nth-of-type(2) {
 brew install fftw
 
 # compile
-g++ fftw.cpp -o fftw -I/opt/homebrew/opt/fftw/include -L/opt/homebrew/opt/fftw/lib -lfftw3 -lm
+g++ fftw.cpp -o fftw -lfftw3 -lm -I/opt/homebrew/opt/fftw/include -L/opt/homebrew/opt/fftw/lib
 
 # run
 ./fftw
@@ -307,7 +307,7 @@ int main() {
 
 
 # compile
-gcc fftw.c -I/Users/yinfu/Downloads/fftw-3.3.10/include -L/Users/yinfu/Downloads/fftw-3.3.10/lib -lfftw3
+gcc fftw.c -o fftw -lfftw3 -lm -I/Users/yinfu/Downloads/fftw-3.3.10/include -L/Users/yinfu/Downloads/fftw-3.3.10/lib
 
 # run
 ./fftw
