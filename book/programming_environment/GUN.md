@@ -360,7 +360,7 @@ make install
 
 - M1 does not support AVX instructions, You can check if your machine supports SSE by running the following command:
 `gcc -mavx -E -v - </dev/null 2>&1 | grep cc1`
-
+If your machine supports SSE, you should see the -msse flag in the output.
 - M1 does not support SSE instructions,
 `gcc -msse -E -v - </dev/null 2>&1 | grep cc1`
 :::
