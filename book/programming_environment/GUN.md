@@ -356,19 +356,15 @@ make install
 
 
 :::{note}
-Please check [Homebrew](https://brew.sh/index_zh-cn.html) webpage for more info.
-:::
-
-Note: 
-
 gcc -mavx -E -v - </dev/null 2>&1 | grep cc1
 
 gcc -msse -E -v - </dev/null 2>&1 | grep cc1
+:::
 
 
+**Compile:**
 
 ```bash
-# compile
 gcc fftw.c -o fftw -lfftw3 -lm -I/Users/yinfu/Downloads/fftw-3.3.10/include -L/Users/yinfu/Downloads/fftw-3.3.10/lib
 
 # run
