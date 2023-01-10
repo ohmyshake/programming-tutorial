@@ -315,8 +315,6 @@ rm fftw-$(FFTW_VERSION).tar.gz
 ```
 
 
-
-
 **Install:**
 
 :::::{tab-set}
