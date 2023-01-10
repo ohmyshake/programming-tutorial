@@ -389,7 +389,7 @@ More information can be found in https://www.fftw.org/fftw3_doc/Installation-on-
 **Compile:**
 
 ```bash
-gcc fftw.c -o fftw -lfftw3 -lm -I/Absolute/path/include -L/Absolute/path/lib
+g++ fftw.pp -o fftw -lfftw3 -lm -I/Absolute/path/include -L/Absolute/path/lib
 ```
 
 
