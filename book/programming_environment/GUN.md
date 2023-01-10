@@ -303,10 +303,14 @@ int main() {
 
 
 ```bash
+# install
 
 
-
+# compile
 gcc fftw.c -I/Users/yinfu/Downloads/fftw-3.3.10/include -L/Users/yinfu/Downloads/fftw-3.3.10/lib -lfftw3
+
+# run
+./fftw
 ```
 
 
