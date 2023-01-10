@@ -386,7 +386,7 @@ More information can be found in https://www.fftw.org/fftw3_doc/Installation-on-
 **Compile:**
 
 ```bash
-gcc fftw.c -o fftw -lfftw3 -lm -I/Users/yinfu/Downloads/fftw-3.3.10/include -L/Users/yinfu/Downloads/fftw-3.3.10/lib
+gcc fftw.c -o fftw -lfftw3 -lm -I/Absolute/path/include -L/Absolute/path/lib
 ```
 
 
