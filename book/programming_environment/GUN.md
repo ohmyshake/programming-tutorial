@@ -309,11 +309,8 @@ int main() {
 ```bash
 FFTW_VERSION=3.3.10
 FFTW_FOLDER=fftw-$(FFTW_VERSION)
-
 wget http://fftw.org/fftw-$(FFTW_VERSION).tar.gz
-
 tar -xvf fftw-$(FFTW_VERSION).tar.gz
-
 rm fftw-$(FFTW_VERSION).tar.gz
 ```
 
