@@ -304,7 +304,7 @@ int main() {
 
 
 ```bash
-FFTW_VERSION=3.3.9
+FFTW_VERSION=3.3.10
 FFTW_FOLDER=fftw-$(FFTW_VERSION)
 
 # install
