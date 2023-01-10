@@ -358,7 +358,7 @@ make install
 :::{note}
 - The `--build` option to specify the code installed in an M1-based Mac.
 
-- M1 does not support AVX instructions,
+- M1 does not support AVX instructions, You can check if your machine supports SSE by running the following command:
 `gcc -mavx -E -v - </dev/null 2>&1 | grep cc1`
 
 - M1 does not support SSE instructions,
