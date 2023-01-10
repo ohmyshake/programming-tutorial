@@ -299,7 +299,7 @@ int main() {
 
 
 
-#### 2.Install from source on M1
+#### 2.Install from source
 
 
 
@@ -314,6 +314,13 @@ tar -xvf fftw-$(FFTW_VERSION).tar.gz
 
 rm fftw-$(FFTW_VERSION).tar.gz
 
+
+```
+
+
+
+
+```bash
 cd $(FFTW_FOLDER)
 
 ./configure --prefix=$(PWD) \
@@ -324,7 +331,9 @@ cd $(FFTW_FOLDER)
 
 make -j 4 
 make install
+```
 
+```bash
 # compile
 gcc fftw.c -o fftw -lfftw3 -lm -I/Users/yinfu/Downloads/fftw-3.3.10/include -L/Users/yinfu/Downloads/fftw-3.3.10/lib
 
