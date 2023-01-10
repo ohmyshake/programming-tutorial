@@ -356,8 +356,12 @@ make install
 
 
 :::{note}
+- The `--build` option to specify the code installed in an M1-based Mac.
+
+- M1 does not support AVX instructions
 gcc -mavx -E -v - </dev/null 2>&1 | grep cc1
 
+- M1 does not support SSE instructions
 gcc -msse -E -v - </dev/null 2>&1 | grep cc1
 :::
 
@@ -367,8 +371,6 @@ gcc -msse -E -v - </dev/null 2>&1 | grep cc1
 ```bash
 gcc fftw.c -o fftw -lfftw3 -lm -I/Users/yinfu/Downloads/fftw-3.3.10/include -L/Users/yinfu/Downloads/fftw-3.3.10/lib
 ```
-
-- The `--build` option to specify the code installed in an M1-based Mac.
 
 
 
