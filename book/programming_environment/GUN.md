@@ -263,8 +263,9 @@ gcc fftw.c -I/opt/homebrew/opt/fftw/include -L/opt/homebrew/opt/fftw/lib -lfftw3
 
 
 
-
-
+```bash
+gcc fftw.c -I/Users/yinfu/Downloads/fftw-3.3.10/include -L/Users/yinfu/Downloads/fftw-3.3.10/lib -lfftw3
+```
 
 
 
