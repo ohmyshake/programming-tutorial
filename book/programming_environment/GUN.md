@@ -355,7 +355,9 @@ make install
 
 
 
-:::{note}
+:::{dropdown} explaination of `configure` parameters:
+:color: info
+:icon: info
 - The `--build` option to specify the code installed in an `M1-based Mac`.
 
 - M1 does not support `AVX` instructions, check if your machine supports SSE:
