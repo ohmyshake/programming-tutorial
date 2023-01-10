@@ -246,9 +246,21 @@ table th:nth-of-type(2) {
 
 #### 1.Install via brew
 
+```bash
+$ brew install fftw
+```
+
+
+
 
 
 #### 2.Install from source
+
+
+
+
+
+
 
 
 ## Resource
