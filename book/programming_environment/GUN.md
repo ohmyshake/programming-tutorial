@@ -356,7 +356,7 @@ make install
 
 
 :::{note}
-- The `--build` option to specify the code installed in an M1-based Mac.
+- The `--build` option to specify the code installed in an `M1-based Mac`.
 
 - M1 does not support `AVX` instructions, check if your machine supports SSE:
     ```bash
