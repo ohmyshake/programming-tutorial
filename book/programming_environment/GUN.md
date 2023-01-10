@@ -324,7 +324,7 @@ rm fftw-$(FFTW_VERSION).tar.gz
 ```bash
 cd $(FFTW_FOLDER)
 
-./configure --prefix=$(PWD) \
+./configure --prefix=/Absolute/path \
     --with-pic \
     --enable-single \
     --enable-shared \
@@ -340,7 +340,7 @@ make install
 ```bash
 cd $(FFTW_FOLDER)
 
-./configure --prefix=$(PWD) \
+./configure --prefix=/Absolute/path \
     --with-pic \
     --enable-single 
     --enable-shared  \
