@@ -364,10 +364,10 @@ make install
     ```
     If your machine supports SSE, you should see the -msse flag in the output.
 
-- M1 does not support SSE instructions, check
-```bash
-`gcc -msse -E -v - </dev/null 2>&1 | grep cc1`
-```
+- M1 does not support SSE instructions, check:
+    ```bash
+    `gcc -msse -E -v - </dev/null 2>&1 | grep cc1`
+    ```
 :::
 
 
