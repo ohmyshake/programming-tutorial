@@ -256,6 +256,7 @@ g++ fftw.cpp -o fftw -lfftw3 -lm -I/opt/homebrew/opt/fftw/include -L/opt/homebre
 # run
 ./fftw
 ```
+If the installation was successful, you should be able to use the FFTW library in your C/C++ programs by including the `fftw3.h` header file and linking against the `libfftw3.a` library. You may need to specify the path to the `fftw3.h` header file and the `libfftw3.a` library using the `-I` and `-L` options when compiling your code.
 
 - The `-lfftw3` option tell the compiler to link the FFTW library.
 - The `-lm` option tell the compiler to the math library.
