@@ -257,7 +257,7 @@ g++ fftw.cpp -o fftw -I/opt/homebrew/opt/fftw/include -L/opt/homebrew/opt/fftw/l
 
 
 
-:::{dropdown} The example **`openmpi.cpp`** file is here:
+:::{dropdown} The example **`fftw.cpp`** file is here:
 :color: info
 :icon: info
 ```c++
