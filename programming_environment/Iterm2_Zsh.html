@@ -773,11 +773,11 @@ title="Print to PDF"
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1">#------------------------------------------#</span>
 <span class="c1">#-------- &gt;&gt;&gt; 1. OhMyZsh &amp; p10k &gt;&gt;&gt; -------#</span>
 <span class="c1">#------------------------------------------#</span>
-<span class="nb">echo</span> <span class="s2">&quot;\n~ Hi! you can use *neofetch* for detailed info (from ~/.zshrc)&quot;</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;\n~ Hi! you can use *neofetch* for detailed info (from ~/.zshrc)&quot;</span>
 
 <span class="c1"># [1].enable Powerlevel10k instant prompt</span>
-<span class="k">if</span> <span class="o">[[</span> -r <span class="s2">&quot;</span><span class="si">${</span><span class="nv">XDG_CACHE_HOME</span><span class="k">:-</span><span class="nv">$HOME</span><span class="p">/.cache</span><span class="si">}</span><span class="s2">/p10k-instant-prompt-</span><span class="si">${</span><span class="p">(%)</span><span class="k">:-</span><span class="p">%n</span><span class="si">}</span><span class="s2">.zsh&quot;</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then</span>
-  <span class="nb">source</span> <span class="s2">&quot;</span><span class="si">${</span><span class="nv">XDG_CACHE_HOME</span><span class="k">:-</span><span class="nv">$HOME</span><span class="p">/.cache</span><span class="si">}</span><span class="s2">/p10k-instant-prompt-</span><span class="si">${</span><span class="p">(%)</span><span class="k">:-</span><span class="p">%n</span><span class="si">}</span><span class="s2">.zsh&quot;</span>
+<span class="k">if</span><span class="w"> </span><span class="o">[[</span><span class="w"> </span>-r<span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">XDG_CACHE_HOME</span><span class="k">:-</span><span class="nv">$HOME</span><span class="p">/.cache</span><span class="si">}</span><span class="s2">/p10k-instant-prompt-</span><span class="si">${</span><span class="p">(%)</span><span class="k">:-</span><span class="p">%n</span><span class="si">}</span><span class="s2">.zsh&quot;</span><span class="w"> </span><span class="o">]]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">  </span><span class="nb">source</span><span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">XDG_CACHE_HOME</span><span class="k">:-</span><span class="nv">$HOME</span><span class="p">/.cache</span><span class="si">}</span><span class="s2">/p10k-instant-prompt-</span><span class="si">${</span><span class="p">(%)</span><span class="k">:-</span><span class="p">%n</span><span class="si">}</span><span class="s2">.zsh&quot;</span>
 <span class="k">fi</span>
 
 
@@ -788,34 +788,34 @@ title="Print to PDF"
 
 <span class="c1"># [3].use p10k theme and set &#39;POWERLEVEL9K_INSTANT_PROMPT=off&#39;. </span>
 <span class="c1"># To customize prompt, run `p10k configure` or edit &#39;~/.p10k.zsh&#39;</span>
-<span class="o">[[</span> ! -f ~/.p10k.zsh <span class="o">]]</span> <span class="o">||</span> <span class="nb">source</span> ~/.p10k.zsh
-<span class="nb">typeset</span> -g <span class="nv">POWERLEVEL9K_INSTANT_PROMPT</span><span class="o">=</span>off
+<span class="o">[[</span><span class="w"> </span>!<span class="w"> </span>-f<span class="w"> </span>~/.p10k.zsh<span class="w"> </span><span class="o">]]</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="nb">source</span><span class="w"> </span>~/.p10k.zsh
+<span class="nb">typeset</span><span class="w"> </span>-g<span class="w"> </span><span class="nv">POWERLEVEL9K_INSTANT_PROMPT</span><span class="o">=</span>off
 
 
 <span class="c1"># [4].set font</span>
-<span class="nv">POWERLEVEL9K_MODE</span><span class="o">=</span><span class="s2">&quot;nerdfont-complete&quot;</span> 
+<span class="nv">POWERLEVEL9K_MODE</span><span class="o">=</span><span class="s2">&quot;nerdfont-complete&quot;</span><span class="w"> </span>
 
 
 <span class="c1"># [5].path to your oh-my-zsh installation and zsh&#39;s theme.</span>
-<span class="nb">export</span> <span class="nv">ZSH</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$HOME</span><span class="s2">/.oh-my-zsh&quot;</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">ZSH</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$HOME</span><span class="s2">/.oh-my-zsh&quot;</span>
 <span class="nv">ZSH_THEME</span><span class="o">=</span><span class="s2">&quot;powerlevel10k/powerlevel10k&quot;</span>
-<span class="nb">source</span> ~/.oh-my-zsh/custom/themes/powerlevel10k/powerlevel10k.zsh-theme
+<span class="nb">source</span><span class="w"> </span>~/.oh-my-zsh/custom/themes/powerlevel10k/powerlevel10k.zsh-theme
 
 
 <span class="c1"># [6].which plugins would you like to load?</span>
 <span class="nv">plugins</span><span class="o">=(</span>
-    git
-    extract
-    autojump
-    zsh-autosuggestions
-    zsh-syntax-highlighting
-    poetry
+<span class="w">    </span>git
+<span class="w">    </span>extract
+<span class="w">    </span>autojump
+<span class="w">    </span>zsh-autosuggestions
+<span class="w">    </span>zsh-syntax-highlighting
+<span class="w">    </span>poetry
 <span class="o">)</span>
-<span class="nb">source</span> <span class="nv">$ZSH</span>/oh-my-zsh.sh
+<span class="nb">source</span><span class="w"> </span><span class="nv">$ZSH</span>/oh-my-zsh.sh
 
 
 <span class="c1"># [7].use colors</span>
-<span class="nb">alias</span> <span class="nv">lc</span><span class="o">=</span><span class="s1">&#39;colorls -lA --sd&#39;</span>
+<span class="nb">alias</span><span class="w"> </span><span class="nv">lc</span><span class="o">=</span><span class="s1">&#39;colorls -lA --sd&#39;</span>
 
 
 
@@ -824,7 +824,7 @@ title="Print to PDF"
 <span class="c1">#------------------------------------------#</span>
 
 <span class="c1"># &gt;&gt;&gt; homebrew &gt;&gt;&gt;</span>
-<span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span>/opt/homebrew/bin:<span class="nv">$PATH</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">PATH</span><span class="o">=</span>/opt/homebrew/bin:<span class="nv">$PATH</span>
 <span class="c1"># export HOMEBREW_NO_INSTALL_CLEANUP=TRUE</span>
 <span class="c1"># export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.ustc.edu.cn/homebrew-bottles/bottles</span>
 <span class="c1"># &lt;&lt;&lt; homebrew &lt;&lt;&lt;</span>
@@ -844,96 +844,96 @@ pfetch
 
 
 <span class="c1"># &gt;&gt;&gt; yinfu_code path &gt;&gt;&gt;</span>
-<span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span>/Users/yinfu/bin:<span class="si">${</span><span class="nv">PATH</span><span class="si">}</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">PATH</span><span class="o">=</span>/Users/yinfu/bin:<span class="si">${</span><span class="nv">PATH</span><span class="si">}</span>
 <span class="c1"># &lt;&lt;&lt; yinfu_code path &lt;&lt;&lt;</span>
 
 
 <span class="c1"># &gt;&gt;&gt; sshfs alias &gt;&gt;&gt;</span>
-<span class="nb">alias</span> sshfs-nots<span class="o">=</span><span class="s1">&#39;sshfs -o follow_symlinks -p 22 fy21@nots.rice.edu:/ /Users/yinfu/share1/&#39;</span>
-<span class="nb">alias</span> resshfs-nots<span class="o">=</span><span class="s1">&#39;umount -f /Users/yinfu/share1; sshfs-nots&#39;</span>
+<span class="nb">alias</span><span class="w"> </span>sshfs-nots<span class="o">=</span><span class="s1">&#39;sshfs -o follow_symlinks -p 22 fy21@nots.rice.edu:/ /Users/yinfu/share1/&#39;</span>
+<span class="nb">alias</span><span class="w"> </span>resshfs-nots<span class="o">=</span><span class="s1">&#39;umount -f /Users/yinfu/share1; sshfs-nots&#39;</span>
 <span class="c1"># the following command may be wrong sometime</span>
 <span class="c1"># alias resshfs-nots=&#39;diskutil umountDisk /Users/yinfu/share1; sshfs-nots&#39;</span>
 <span class="c1"># &lt;&lt;&lt; sshfs alias &lt;&lt;&lt;</span>
 
 
 <span class="c1"># &gt;&gt;&gt; brew&#39;s git &gt;&gt;&gt;</span>
-<span class="nb">export</span> <span class="nv">GIT</span><span class="o">=</span>/opt/homebrew/Cellar/git/2.38.1
-<span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="nv">$GIT</span>/bin:<span class="nv">$PATH</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">GIT</span><span class="o">=</span>/opt/homebrew/Cellar/git/2.38.1
+<span class="nb">export</span><span class="w"> </span><span class="nv">PATH</span><span class="o">=</span><span class="nv">$GIT</span>/bin:<span class="nv">$PATH</span>
 <span class="c1"># &lt;&lt;&lt; brew&#39;s git &lt;&lt;&lt;</span>
 
 
 <span class="c1"># &gt;&gt;&gt; conda &gt;&gt;&gt;</span>
 <span class="c1"># !! Contents within this block are managed by &#39;conda init&#39; !!</span>
-<span class="nv">__conda_setup</span><span class="o">=</span><span class="s2">&quot;</span><span class="k">$(</span><span class="s1">&#39;/Users/yinfu/miniconda3/bin/conda&#39;</span> <span class="s1">&#39;shell.zsh&#39;</span> <span class="s1">&#39;hook&#39;</span> <span class="m">2</span>&gt; /dev/null<span class="k">)</span><span class="s2">&quot;</span>
-<span class="k">if</span> <span class="o">[</span> <span class="nv">$?</span> -eq <span class="m">0</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
-    <span class="nb">eval</span> <span class="s2">&quot;</span><span class="nv">$__conda_setup</span><span class="s2">&quot;</span>
+<span class="nv">__conda_setup</span><span class="o">=</span><span class="s2">&quot;</span><span class="k">$(</span><span class="s1">&#39;/Users/yinfu/miniconda3/bin/conda&#39;</span><span class="w"> </span><span class="s1">&#39;shell.zsh&#39;</span><span class="w"> </span><span class="s1">&#39;hook&#39;</span><span class="w"> </span><span class="m">2</span>&gt;<span class="w"> </span>/dev/null<span class="k">)</span><span class="s2">&quot;</span>
+<span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="nv">$?</span><span class="w"> </span>-eq<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">    </span><span class="nb">eval</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$__conda_setup</span><span class="s2">&quot;</span>
 <span class="k">else</span>
-    <span class="k">if</span> <span class="o">[</span> -f <span class="s2">&quot;/Users/yinfu/miniconda3/etc/profile.d/conda.sh&quot;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
-        . <span class="s2">&quot;/Users/yinfu/miniconda3/etc/profile.d/conda.sh&quot;</span>
-    <span class="k">else</span>
-        <span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="s2">&quot;/Users/yinfu/miniconda3/bin:</span><span class="nv">$PATH</span><span class="s2">&quot;</span>
-    <span class="k">fi</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>-f<span class="w"> </span><span class="s2">&quot;/Users/yinfu/miniconda3/etc/profile.d/conda.sh&quot;</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">        </span>.<span class="w"> </span><span class="s2">&quot;/Users/yinfu/miniconda3/etc/profile.d/conda.sh&quot;</span>
+<span class="w">    </span><span class="k">else</span>
+<span class="w">        </span><span class="nb">export</span><span class="w"> </span><span class="nv">PATH</span><span class="o">=</span><span class="s2">&quot;/Users/yinfu/miniconda3/bin:</span><span class="nv">$PATH</span><span class="s2">&quot;</span>
+<span class="w">    </span><span class="k">fi</span>
 <span class="k">fi</span>
-<span class="nb">unset</span> __conda_setup
+<span class="nb">unset</span><span class="w"> </span>__conda_setup
 <span class="c1"># &lt;&lt;&lt; conda &lt;&lt;&lt;</span>
 
 
 <span class="c1"># &gt;&gt;&gt; sac &gt;&gt;&gt;</span>
-<span class="nb">export</span> <span class="nv">SACHOME</span><span class="o">=</span>/usr/local/sac
-<span class="nb">export</span> <span class="nv">SACAUX</span><span class="o">=</span><span class="si">${</span><span class="nv">SACHOME</span><span class="si">}</span>/aux
-<span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="si">${</span><span class="nv">SACHOME</span><span class="si">}</span>/bin:<span class="si">${</span><span class="nv">PATH</span><span class="si">}</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">SACHOME</span><span class="o">=</span>/usr/local/sac
+<span class="nb">export</span><span class="w"> </span><span class="nv">SACAUX</span><span class="o">=</span><span class="si">${</span><span class="nv">SACHOME</span><span class="si">}</span>/aux
+<span class="nb">export</span><span class="w"> </span><span class="nv">PATH</span><span class="o">=</span><span class="si">${</span><span class="nv">SACHOME</span><span class="si">}</span>/bin:<span class="si">${</span><span class="nv">PATH</span><span class="si">}</span>
 
-<span class="nb">export</span> <span class="nv">SAC_DISPLAY_COPYRIGHT</span><span class="o">=</span><span class="m">1</span>
-<span class="nb">export</span> <span class="nv">SAC_PPK_LARGE_CROSSHAIRS</span><span class="o">=</span><span class="m">1</span>
-<span class="nb">export</span> <span class="nv">SAC_USE_DATABASE</span><span class="o">=</span><span class="m">0</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">SAC_DISPLAY_COPYRIGHT</span><span class="o">=</span><span class="m">1</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">SAC_PPK_LARGE_CROSSHAIRS</span><span class="o">=</span><span class="m">1</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">SAC_USE_DATABASE</span><span class="o">=</span><span class="m">0</span>
 <span class="c1"># &lt;&lt;&lt; sac &lt;&lt;&lt;</span>
 
 
 <span class="c1"># &gt;&gt;&gt; pygmt &gt;&gt;&gt;</span>
-<span class="nb">export</span> <span class="nv">GMT_DATADIR</span><span class="o">=</span>/Users/yinfu/data/GMTDB/
+<span class="nb">export</span><span class="w"> </span><span class="nv">GMT_DATADIR</span><span class="o">=</span>/Users/yinfu/data/GMTDB/
 <span class="c1"># &lt;&lt;&lt; pygmt &lt;&lt;&lt;</span>
 
 
 <span class="c1"># &gt;&gt;&gt; poetry &gt;&gt;&gt;</span>
-<span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="s2">&quot;/Users/yinfu/.local/bin:</span><span class="nv">$PATH</span><span class="s2">&quot;</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">PATH</span><span class="o">=</span><span class="s2">&quot;/Users/yinfu/.local/bin:</span><span class="nv">$PATH</span><span class="s2">&quot;</span>
 <span class="c1"># &lt;&lt;&lt; poetry &lt;&lt;&lt;</span>
 
 
 <span class="c1"># &gt;&gt;&gt; VSCode &gt;&gt;&gt;</span>
-vscode <span class="o">()</span> <span class="o">{</span> <span class="nv">VSCODE_CWD</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$PWD</span><span class="s2">&quot;</span> open -n -b <span class="s2">&quot;com.microsoft.VSCode&quot;</span> --args <span class="nv">$*</span> <span class="p">;</span><span class="o">}</span>
+vscode<span class="w"> </span><span class="o">()</span><span class="w"> </span><span class="o">{</span><span class="w"> </span><span class="nv">VSCODE_CWD</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$PWD</span><span class="s2">&quot;</span><span class="w"> </span>open<span class="w"> </span>-n<span class="w"> </span>-b<span class="w"> </span><span class="s2">&quot;com.microsoft.VSCode&quot;</span><span class="w"> </span>--args<span class="w"> </span><span class="nv">$*</span><span class="w"> </span><span class="p">;</span><span class="o">}</span>
 <span class="c1"># &lt;&lt;&lt; VSCode &lt;&lt;&lt;</span>
 
 
 <span class="c1"># &gt;&gt;&gt; gem &gt;&gt;&gt;</span>
-<span class="nb">export</span> <span class="nv">GEM_HOME</span><span class="o">=</span><span class="nv">$HOME</span>/gems
-<span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="nv">$HOME</span>/gems/bin:<span class="nv">$PATH</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">GEM_HOME</span><span class="o">=</span><span class="nv">$HOME</span>/gems
+<span class="nb">export</span><span class="w"> </span><span class="nv">PATH</span><span class="o">=</span><span class="nv">$HOME</span>/gems/bin:<span class="nv">$PATH</span>
 <span class="c1"># &lt;&lt;&lt; gem &lt;&lt;&lt;</span>
 
 
 <span class="c1"># &gt;&gt;&gt; julia &gt;&gt;&gt;</span>
-<span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span>/Users/yinfu/.local/bin:<span class="nv">$PATH</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">PATH</span><span class="o">=</span>/Users/yinfu/.local/bin:<span class="nv">$PATH</span>
 <span class="c1"># &lt;&lt;&lt; julia &lt;&lt;&lt;</span>
 
 
 <span class="c1"># &gt;&gt;&gt; Globus &gt;&gt;&gt;</span>
-<span class="k">if</span> <span class="nb">type</span> globus &gt; /dev/null <span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span><span class="p">;</span> <span class="k">then</span>
-    <span class="nb">eval</span> <span class="s2">&quot;</span><span class="k">$(</span>globus --zsh-completer<span class="k">)</span><span class="s2">&quot;</span>
+<span class="k">if</span><span class="w"> </span><span class="nb">type</span><span class="w"> </span>globus<span class="w"> </span>&gt;<span class="w"> </span>/dev/null<span class="w"> </span><span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">    </span><span class="nb">eval</span><span class="w"> </span><span class="s2">&quot;</span><span class="k">$(</span>globus<span class="w"> </span>--zsh-completer<span class="k">)</span><span class="s2">&quot;</span>
 <span class="k">fi</span>
 <span class="c1"># &lt;&lt;&lt; Globus &lt;&lt;&lt;</span>
 
 
 <span class="c1"># &gt;&gt;&gt; brew&#39;s gcc (GNU) &gt;&gt;&gt;</span>
-<span class="nb">alias</span> <span class="nv">gcc</span><span class="o">=</span><span class="s1">&#39;gcc-12&#39;</span>
-<span class="nb">alias</span> g++<span class="o">=</span><span class="s1">&#39;g++-12&#39;</span>
+<span class="nb">alias</span><span class="w"> </span><span class="nv">gcc</span><span class="o">=</span><span class="s1">&#39;gcc-12&#39;</span>
+<span class="nb">alias</span><span class="w"> </span>g++<span class="o">=</span><span class="s1">&#39;g++-12&#39;</span>
 <span class="c1"># &lt;&lt;&lt; brew&#39;s gcc (GNU) &lt;&lt;&lt;</span>
 
 
 <span class="c1"># &gt;&gt;&gt; specfem2d &gt;&gt;&gt;</span>
 <span class="c1"># To suppress any potential limit to the size of the Unix stack.</span>
-<span class="nb">ulimit</span> -S -s unlimited
+<span class="nb">ulimit</span><span class="w"> </span>-S<span class="w"> </span>-s<span class="w"> </span>unlimited
 
 <span class="c1"># bin</span>
-<span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span>/Users/yinfu/package/specfem2d/bin:<span class="si">${</span><span class="nv">PATH</span><span class="si">}</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">PATH</span><span class="o">=</span>/Users/yinfu/package/specfem2d/bin:<span class="si">${</span><span class="nv">PATH</span><span class="si">}</span>
 <span class="c1"># &lt;&lt;&lt; specfem2d &lt;&lt;&lt;</span>
 
 
@@ -964,11 +964,11 @@ vscode <span class="o">()</span> <span class="o">{</span> <span class="nv">VSCOD
 <section id="zsh">
 <h2>Zsh<a class="headerlink" href="#zsh" title="Permalink to this headline">#</a></h2>
 <p>Type <code class="docutils literal notranslate"><span class="pre">Zsh</span> <span class="pre">--version</span></code> in terminal. If the Zsh version is displayed, then Zsh is installed. Otherwise, you need to install Zsh.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>brew install zsh
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>brew<span class="w"> </span>install<span class="w"> </span>zsh
 </pre></div>
 </div>
 <p>Run the following command to set the default Shell to Zsh:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>chsh -s <span class="k">$(</span>which zsh<span class="k">)</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>chsh<span class="w"> </span>-s<span class="w"> </span><span class="k">$(</span>which<span class="w"> </span>zsh<span class="k">)</span>
 </pre></div>
 </div>
 <div class="admonition note">
@@ -983,7 +983,7 @@ vscode <span class="o">()</span> <span class="o">{</span> <span class="nv">VSCOD
 <h2>Oh-My-Zsh<a class="headerlink" href="#oh-my-zsh" title="Permalink to this headline">#</a></h2>
 <p>Oh My Zsh is an open source, community-driven framework for managing your zsh configuration.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># install</span>
-sh -c <span class="s2">&quot;</span><span class="k">$(</span>curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh<span class="k">)</span><span class="s2">&quot;</span>
+sh<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;</span><span class="k">$(</span>curl<span class="w"> </span>-fsSL<span class="w"> </span>https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh<span class="k">)</span><span class="s2">&quot;</span>
 </pre></div>
 </div>
 <p>This command will create the <code class="docutils literal notranslate"><span class="pre">~/.oh-my-zsh</span></code> directory, downloads oh my zsh to this directory, and generates the default Zsh configuration file <code class="docutils literal notranslate"><span class="pre">~/.zshrc</span></code>. The backup of the old configuration will be moved to a file like <code class="docutils literal notranslate"><span class="pre">~/.zshrc.pre-oh-my-zsh</span></code>.</p>
@@ -992,19 +992,19 @@ sh -c <span class="s2">&quot;</span><span class="k">$(</span>curl -fsSL https://
 <p>To use a different theme, modify the <strong>ZSH_THEME</strong> variable in the <code class="docutils literal notranslate"><span class="pre">~/.zshrc</span></code> configuration file.
 For example, I use <a class="reference external" href="https://github.com/romkatv/powerlevel10k">Powerlevel10k</a> theme.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># install</span>
-git clone --depth<span class="o">=</span><span class="m">1</span> https://github.com/romkatv/powerlevel10k.git <span class="si">${</span><span class="nv">ZSH_CUSTOM</span><span class="k">:-</span><span class="p">~/.oh-my-zsh/custom</span><span class="si">}</span>/themes/powerlevel10k
+git<span class="w"> </span>clone<span class="w"> </span>--depth<span class="o">=</span><span class="m">1</span><span class="w"> </span>https://github.com/romkatv/powerlevel10k.git<span class="w"> </span><span class="si">${</span><span class="nv">ZSH_CUSTOM</span><span class="k">:-</span><span class="p">~/.oh-my-zsh/custom</span><span class="si">}</span>/themes/powerlevel10k
 
 <span class="c1"># then open `~/.zshrc` and set `ZSH_THEME`:</span>
 <span class="nv">ZSH_THEME</span><span class="o">=</span><span class="s2">&quot;powerlevel10k/powerlevel10k</span>
 </pre></div>
 </div>
 <p>Run the following command to start the automatic configuration process:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>p10k configure
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>p10k<span class="w"> </span>configure
 </pre></div>
 </div>
 <p>After executing the command, p10k is initialized: <code class="docutils literal notranslate"><span class="pre">~/.p10k.zsh</span></code> is generated in the root directory, and some code will be written at the bottom of <code class="docutils literal notranslate"><span class="pre">~/.zshrc</span></code> as following:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.</span>
-<span class="o">[[</span> ! -f ~/.p10k.zsh <span class="o">]]</span> <span class="o">||</span> <span class="nb">source</span> ~/.p10k.zsh
+<span class="o">[[</span><span class="w"> </span>!<span class="w"> </span>-f<span class="w"> </span>~/.p10k.zsh<span class="w"> </span><span class="o">]]</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="nb">source</span><span class="w"> </span>~/.p10k.zsh
 </pre></div>
 </div>
 <p>To disable the p10k configuration, you only need to delete <code class="docutils literal notranslate"><span class="pre">~/.p10k.zsh</span></code> file and the preceding code.</p>
@@ -1025,11 +1025,11 @@ And set the font option in <code class="docutils literal notranslate"><span clas
 <h3>add plugin<a class="headerlink" href="#add-plugin" title="Permalink to this headline">#</a></h3>
 <p>Download different plugins to <code class="docutils literal notranslate"><span class="pre">~/.oh-my-zsh/plugins</span></code> directory, and modify the plugins variable in the <code class="docutils literal notranslate"><span class="pre">~/.zshrc</span></code> configuration file as following:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">plugins</span><span class="o">=(</span>
-    git
-    extract
-    autojump
-    zsh-autosuggestions
-    zsh-syntax-highlighting
+<span class="w">    </span>git
+<span class="w">    </span>extract
+<span class="w">    </span>autojump
+<span class="w">    </span>zsh-autosuggestions
+<span class="w">    </span>zsh-syntax-highlighting
 <span class="o">)</span>
 </pre></div>
 </div>
@@ -1038,31 +1038,31 @@ And set the font option in <code class="docutils literal notranslate"><span clas
 <li><p><a class="reference external" href="https://github.com/wting/autojump">autojump</a>: a faster way to navigate your filesystem. Jump to a directory that contains <code class="docutils literal notranslate"><span class="pre">foo</span></code>. Before enabling autojump, install firstly:</p></li>
 </ul>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="13221946-112b-4f1f-89a0-f91bf43691c4" name="860fd04d-67d7-45f4-85b7-44164d5f7f51" type="radio">
-</input><label class="sd-tab-label" for="13221946-112b-4f1f-89a0-f91bf43691c4">
+<input checked="checked" id="a3b8176f-f75f-4cc6-8427-d33ac2a72416" name="085b185f-c98c-4173-a2d0-c002bd442310" type="radio">
+</input><label class="sd-tab-label" for="a3b8176f-f75f-4cc6-8427-d33ac2a72416">
 Use</label><div class="sd-tab-content docutils">
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>j foo
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>j<span class="w"> </span>foo
 </pre></div>
 </div>
 </div>
-<input id="a6864091-8bd4-454f-9072-b65d92c2af15" name="860fd04d-67d7-45f4-85b7-44164d5f7f51" type="radio">
-</input><label class="sd-tab-label" for="a6864091-8bd4-454f-9072-b65d92c2af15">
+<input id="9abc1fea-9120-463e-8daa-e9809d005397" name="085b185f-c98c-4173-a2d0-c002bd442310" type="radio">
+</input><label class="sd-tab-label" for="9abc1fea-9120-463e-8daa-e9809d005397">
 Source Code</label><div class="sd-tab-content docutils">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># download &#39;autojump&#39; to &#39;/.oh-my-zsh/custom&#39;</span>
-git clone git://github.com/wting/autojump.git <span class="nv">$ZSH_CUSTOM</span>/plugins/autojump
+git<span class="w"> </span>clone<span class="w"> </span>git://github.com/wting/autojump.git<span class="w"> </span><span class="nv">$ZSH_CUSTOM</span>/plugins/autojump
 
 <span class="c1"># go to &#39;autojump&#39; folder</span>
-<span class="nb">cd</span> <span class="nv">$ZSH_CUSTOM</span>/plugins/autojump
+<span class="nb">cd</span><span class="w"> </span><span class="nv">$ZSH_CUSTOM</span>/plugins/autojump
 
 <span class="c1"># python install.py:</span>
 ./install.py
 </pre></div>
 </div>
 </div>
-<input id="b7b7e834-338d-4456-ad39-21e753016ff4" name="860fd04d-67d7-45f4-85b7-44164d5f7f51" type="radio">
-</input><label class="sd-tab-label" for="b7b7e834-338d-4456-ad39-21e753016ff4">
+<input id="8a3308c7-67e8-4e08-805a-6c0222b08085" name="085b185f-c98c-4173-a2d0-c002bd442310" type="radio">
+</input><label class="sd-tab-label" for="8a3308c7-67e8-4e08-805a-6c0222b08085">
 Brew</label><div class="sd-tab-content docutils">
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>brew install autojump
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>brew<span class="w"> </span>install<span class="w"> </span>autojump
 </pre></div>
 </div>
 </div>
@@ -1070,26 +1070,26 @@ Brew</label><div class="sd-tab-content docutils">
 <ul class="simple">
 <li><p><a class="reference external" href="https://github.com/zsh-users/zsh-autosuggestions">zsh-autosuggestions</a>: command auto-complete plug-in, when you enter several letters of a command, it will automatically complete the command according to the historical input.</p></li>
 </ul>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/zsh-users/zsh-autosuggestions<span class="w"> </span>~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
 </pre></div>
 </div>
 <ul class="simple">
 <li><p><a class="reference external" href="https://github.com/zsh-users/zsh-syntax-highlighting">zsh-syntax-highlighting</a>: highlight available Zsh commands.</p></li>
 </ul>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/zsh-users/zsh-syntax-highlighting.git<span class="w"> </span>~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
 
 <span class="c1"># This plug-in needs to be the last bit in the list of plug-ins in the configuration file ~/.zshrc</span>
-<span class="nv">plugins</span><span class="o">=([</span>plugins...<span class="o">]</span> zsh-syntax-highlighting<span class="o">)</span>
+<span class="nv">plugins</span><span class="o">=([</span>plugins...<span class="o">]</span><span class="w"> </span>zsh-syntax-highlighting<span class="o">)</span>
 </pre></div>
 </div>
 <ul class="simple">
 <li><p><a class="reference external" href="https://github.com/athityakumar/colorls">colorls</a>: File directory beautification plug-in</p></li>
 </ul>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># install</span>
-gem install colorls
+gem<span class="w"> </span>install<span class="w"> </span>colorls
 
 <span class="c1"># set alias in ~/.zshrc file</span>
-<span class="nb">alias</span> <span class="nv">lc</span><span class="o">=</span><span class="s1">&#39;colorls -lA --sd&#39;</span>
+<span class="nb">alias</span><span class="w"> </span><span class="nv">lc</span><span class="o">=</span><span class="s1">&#39;colorls -lA --sd&#39;</span>
 
 <span class="c1"># use</span>
 lc
@@ -1101,7 +1101,7 @@ lc
 <h2>Terminal in VSCode<a class="headerlink" href="#terminal-in-vscode" title="Permalink to this headline">#</a></h2>
 <p>VSCode terminal can comes with a consistent interface, that just simply sets the font in VSCode setting as:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># set in vscode setting</span>
-terminal <span class="nv">font</span> <span class="o">=</span> MesloLGS NF
+terminal<span class="w"> </span><span class="nv">font</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>MesloLGS<span class="w"> </span>NF
 </pre></div>
 </div>
 </section>

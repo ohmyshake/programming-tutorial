@@ -826,14 +826,14 @@ existing identities, via just a web browser.</p>
 <section id="globus-cli">
 <h3>2. Globus-Cli<a class="headerlink" href="#globus-cli" title="Permalink to this headline">#</a></h3>
 <p>Sometimes you may have a lot of files (not a single file) to transfer, you need to write a script to do this work. <a class="reference external" href="https://docs.globus.org/cli/"><code class="docutils literal notranslate"><span class="pre">globus-cli</span></code></a> provides a <code class="docutils literal notranslate"><span class="pre">command-line-shell</span></code> tool to transfer data, and install it following the <a class="reference external" href="https://github.com/globus/globus-cli">open source code in github</a>:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip install globus-cli
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>globus-cli
 </pre></div>
 </div>
 <p><strong>Login:</strong></p>
 <ul class="simple">
 <li><p>When you login successfully, it will generate a file in <code class="docutils literal notranslate"><span class="pre">.globus/cli/storage.db</span></code>, which will remember your login info, avoiding the repeated login actions next time.</p></li>
 </ul>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>globus login
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>globus<span class="w"> </span>login
 </pre></div>
 </div>
 <figure class="align-center" id="globus-cli-login">
@@ -853,13 +853,13 @@ existing identities, via just a web browser.</p>
 <li><p>Approach-1: get Endpoint ID via <code class="docutils literal notranslate"><span class="pre">globus-cli</span></code>, take <code class="docutils literal notranslate"><span class="pre">Fu's</span> <span class="pre">M1-max</span></code> for example which is my personal endpoint name:</p></li>
 </ul>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># get endpoint</span>
-globus endpoint search <span class="s2">&quot;Fu&#39;s M1-max&quot;</span>
+globus<span class="w"> </span>endpoint<span class="w"> </span>search<span class="w"> </span><span class="s2">&quot;Fu&#39;s M1-max&quot;</span>
 
 <span class="c1"># copy and paste the desired Endpoint ID from the search results</span>
 <span class="nv">ep1</span><span class="o">=</span>f34fbbd4-6708-11ed-8422-xxxxxxxxxx
 
 <span class="c1"># now we can use the endpoint in a human readable fashion</span>
-globus endpoint show <span class="nv">$ep1</span>
+globus<span class="w"> </span>endpoint<span class="w"> </span>show<span class="w"> </span><span class="nv">$ep1</span>
 </pre></div>
 </div>
 <figure class="align-center" id="globus-m1-endpoint">
@@ -882,19 +882,19 @@ globus endpoint show <span class="nv">$ep1</span>
 <li><p>Demonstrates the synchronous commands of <code class="docutils literal notranslate"><span class="pre">mkdir</span></code>, <code class="docutils literal notranslate"><span class="pre">rename</span></code>, and <code class="docutils literal notranslate"><span class="pre">ls</span></code>.</p></li>
 </ul>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Tutorial Endpoint ID found from &#39;globus endpoint search Tutorial&#39;</span>
-$ <span class="nv">ep1</span><span class="o">=</span>ddb59aef-6d04-11e5-ba46-22000b92c6ec
+$<span class="w"> </span><span class="nv">ep1</span><span class="o">=</span>ddb59aef-6d04-11e5-ba46-22000b92c6ec
 
 <span class="c1"># Make a new directory</span>
-$ globus mkdir <span class="nv">$ep1</span>:<span class="se">\~</span>/cli_example_dir
-The directory was created successfully
+$<span class="w"> </span>globus<span class="w"> </span>mkdir<span class="w"> </span><span class="nv">$ep1</span>:<span class="se">\~</span>/cli_example_dir
+The<span class="w"> </span>directory<span class="w"> </span>was<span class="w"> </span>created<span class="w"> </span>successfully
 
 <span class="c1"># Rename the directory</span>
-$ globus rename <span class="nv">$ep1</span>:<span class="se">\~</span>/cli_example_dir <span class="nv">$ep1</span>:<span class="se">\~</span>/cli_example_dir_renamed
-File or directory renamed successfully
+$<span class="w"> </span>globus<span class="w"> </span>rename<span class="w"> </span><span class="nv">$ep1</span>:<span class="se">\~</span>/cli_example_dir<span class="w"> </span><span class="nv">$ep1</span>:<span class="se">\~</span>/cli_example_dir_renamed
+File<span class="w"> </span>or<span class="w"> </span>directory<span class="w"> </span>renamed<span class="w"> </span>successfully
 
 <span class="c1"># Show the directory contents after the changes</span>
 <span class="c1"># (assuming ~/ was empty before these commands)</span>
-$ globus ls <span class="nv">$ep1</span>:<span class="se">\~</span>/
+$<span class="w"> </span>globus<span class="w"> </span>ls<span class="w"> </span><span class="nv">$ep1</span>:<span class="se">\~</span>/
 cli_example_dir_renamed/
 </pre></div>
 </div>
@@ -903,18 +903,18 @@ cli_example_dir_renamed/
 <li><p>Submits transfer requests for a file and a directory from one Globus Tutorial Endpoint to another</p></li>
 </ul>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Tutorial Endpoint IDs found from &#39;globus endpoint search Tutorial&#39;</span>
-$ <span class="nv">ep1</span><span class="o">=</span>ddb59aef-6d04-11e5-ba46-22000b92c6ec
-$ <span class="nv">ep2</span><span class="o">=</span>ddb59af0-6d04-11e5-ba46-22000b92c6ec
+$<span class="w"> </span><span class="nv">ep1</span><span class="o">=</span>ddb59aef-6d04-11e5-ba46-22000b92c6ec
+$<span class="w"> </span><span class="nv">ep2</span><span class="o">=</span>ddb59af0-6d04-11e5-ba46-22000b92c6ec
 
 <span class="c1"># transfer file1.txt from one endpoint to another</span>
-$ globus transfer <span class="nv">$ep1</span>:/share/godata/file1.txt <span class="nv">$ep2</span>:<span class="se">\~</span>/file1.txt --label <span class="s2">&quot;CLI single file&quot;</span>
-Message: The transfer has been accepted and a task has been created and queued <span class="k">for</span> execution
-Task ID: 466a5962-dda0-11e6-9d11-22000a1e3b52
+$<span class="w"> </span>globus<span class="w"> </span>transfer<span class="w"> </span><span class="nv">$ep1</span>:/share/godata/file1.txt<span class="w"> </span><span class="nv">$ep2</span>:<span class="se">\~</span>/file1.txt<span class="w"> </span>--label<span class="w"> </span><span class="s2">&quot;CLI single file&quot;</span>
+Message:<span class="w"> </span>The<span class="w"> </span>transfer<span class="w"> </span>has<span class="w"> </span>been<span class="w"> </span>accepted<span class="w"> </span>and<span class="w"> </span>a<span class="w"> </span>task<span class="w"> </span>has<span class="w"> </span>been<span class="w"> </span>created<span class="w"> </span>and<span class="w"> </span>queued<span class="w"> </span><span class="k">for</span><span class="w"> </span>execution
+Task<span class="w"> </span>ID:<span class="w"> </span>466a5962-dda0-11e6-9d11-22000a1e3b52
 
 <span class="c1"># recursively transfer the godata folder from one endpoint to another</span>
-$ globus transfer <span class="nv">$ep1</span>:/share/godata <span class="nv">$ep2</span>:~/godata --recursive --label <span class="s2">&quot;CLI single folder&quot;</span>
-Message: The transfer has been accepted and a task has been created and queued <span class="k">for</span> execution
-Task ID: 47477b62-dda0-11e6-9d11-22000a1e3b52
+$<span class="w"> </span>globus<span class="w"> </span>transfer<span class="w"> </span><span class="nv">$ep1</span>:/share/godata<span class="w"> </span><span class="nv">$ep2</span>:~/godata<span class="w"> </span>--recursive<span class="w"> </span>--label<span class="w"> </span><span class="s2">&quot;CLI single folder&quot;</span>
+Message:<span class="w"> </span>The<span class="w"> </span>transfer<span class="w"> </span>has<span class="w"> </span>been<span class="w"> </span>accepted<span class="w"> </span>and<span class="w"> </span>a<span class="w"> </span>task<span class="w"> </span>has<span class="w"> </span>been<span class="w"> </span>created<span class="w"> </span>and<span class="w"> </span>queued<span class="w"> </span><span class="k">for</span><span class="w"> </span>execution
+Task<span class="w"> </span>ID:<span class="w"> </span>47477b62-dda0-11e6-9d11-22000a1e3b52
 </pre></div>
 </div>
 <p><strong>Batch Transfers</strong></p>
@@ -924,23 +924,23 @@ Task ID: 47477b62-dda0-11e6-9d11-22000a1e3b52
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># this is the contents of in.txt:</span>
 <span class="c1"># a list of source paths followed by destination paths</span>
 
-file1.txt file1.txt
-file2.txt file2.txt <span class="c1"># inline-comments are also allowed</span>
-file3.txt file3.txt
+file1.txt<span class="w"> </span>file1.txt
+file2.txt<span class="w"> </span>file2.txt<span class="w"> </span><span class="c1"># inline-comments are also allowed</span>
+file3.txt<span class="w"> </span>file3.txt
 </pre></div>
 </div>
 <ul class="simple">
 <li><p>Use <code class="docutils literal notranslate"><span class="pre">--batch</span></code> on <code class="docutils literal notranslate"><span class="pre">input.txt</span></code></p></li>
 </ul>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Tutorial Endpoint IDs found from &#39;globus endpoint search Tutorial&#39;</span>
-$ <span class="nv">ep1</span><span class="o">=</span>ddb59aef-6d04-11e5-ba46-22000b92c6ec
-$ <span class="nv">ep2</span><span class="o">=</span>ddb59af0-6d04-11e5-ba46-22000b92c6ec
+$<span class="w"> </span><span class="nv">ep1</span><span class="o">=</span>ddb59aef-6d04-11e5-ba46-22000b92c6ec
+$<span class="w"> </span><span class="nv">ep2</span><span class="o">=</span>ddb59af0-6d04-11e5-ba46-22000b92c6ec
 
 <span class="c1"># pass `--batch` mode an input .txt file</span>
 <span class="c1"># all paths from stdin are relative to the paths supplied here</span>
-$ globus transfer <span class="nv">$ep1</span>:/share/godata/ <span class="nv">$ep2</span>:~/ --label <span class="s2">&quot;CLI Batch&quot;</span> --batch input.txt
-Message: The transfer has been accepted and a task has been created and queued <span class="k">for</span> execution
-Task ID: 306900e0-dda1-11e6-9d11-22000a1e3b52
+$<span class="w"> </span>globus<span class="w"> </span>transfer<span class="w"> </span><span class="nv">$ep1</span>:/share/godata/<span class="w"> </span><span class="nv">$ep2</span>:~/<span class="w"> </span>--label<span class="w"> </span><span class="s2">&quot;CLI Batch&quot;</span><span class="w"> </span>--batch<span class="w"> </span>input.txt
+Message:<span class="w"> </span>The<span class="w"> </span>transfer<span class="w"> </span>has<span class="w"> </span>been<span class="w"> </span>accepted<span class="w"> </span>and<span class="w"> </span>a<span class="w"> </span>task<span class="w"> </span>has<span class="w"> </span>been<span class="w"> </span>created<span class="w"> </span>and<span class="w"> </span>queued<span class="w"> </span><span class="k">for</span><span class="w"> </span>execution
+Task<span class="w"> </span>ID:<span class="w"> </span>306900e0-dda1-11e6-9d11-22000a1e3b52
 </pre></div>
 </div>
 <div class="admonition-only-one-task admonition">
@@ -952,7 +952,7 @@ Task ID: 306900e0-dda1-11e6-9d11-22000a1e3b52
 <section id="globus-sdk">
 <h3>3. Globus-Sdk<a class="headerlink" href="#globus-sdk" title="Permalink to this headline">#</a></h3>
 <p>This SDK provides a convenient Pythonic interface to <code class="docutils literal notranslate"><span class="pre">Globus</span> <span class="pre">web</span> <span class="pre">APIs</span></code>, including the <code class="docutils literal notranslate"><span class="pre">Transfer</span> <span class="pre">API</span></code> and the Globus <code class="docutils literal notranslate"><span class="pre">Auth</span> <span class="pre">API</span></code> (tools for authenticating logins). Documentation for the APIs is available at <a class="reference external" href="https://docs.globus.org/api/">https://docs.globus.org/api/</a>, install it firstly:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip install globus-sdk
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>globus-sdk
 </pre></div>
 </div>
 <p>There are some app-examples using the python SDK, <a class="reference external" href="https://github.com/globus/native-app-examples">https://github.com/globus/native-app-examples</a>. But it is hard to use, and I recommend to use <code class="docutils literal notranslate"><span class="pre">globus-cli</span></code> to transfer data.</p>
@@ -993,8 +993,8 @@ Task ID: 306900e0-dda1-11e6-9d11-22000a1e3b52
 </div>
 <p>The <code class="docutils literal notranslate"><span class="pre">input.txt</span></code> file is showing below:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># [source_file_path]	[dest_file_path]</span>
-/hpc-demo/docs/getbatchError.m	/fy21/hpc-demo/docs/getbatchError.m
-/hpc-demo/docs	/fy21/hpc-demo/docs_new	 --recursive
+/hpc-demo/docs/getbatchError.m<span class="w">	</span>/fy21/hpc-demo/docs/getbatchError.m
+/hpc-demo/docs<span class="w">	</span>/fy21/hpc-demo/docs_new<span class="w">	 </span>--recursive
 </pre></div>
 </div>
 </section>

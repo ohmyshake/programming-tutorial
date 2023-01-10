@@ -755,43 +755,43 @@ which means I can’t use <code class="docutils literal notranslate"><span class
 but I let the administrator change it to <code class="docutils literal notranslate"><span class="pre">zsh</span></code> which is a old version.
 So I install <code class="docutils literal notranslate"><span class="pre">zsh</span></code> by myself, and auto-run new zsh when I login.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># use wget to download source package </span>
-wget -O zsh.tar.xz https://sourceforge.net/projects/zsh/files/latest/download
+wget<span class="w"> </span>-O<span class="w"> </span>zsh.tar.xz<span class="w"> </span>https://sourceforge.net/projects/zsh/files/latest/download
 
 <span class="c1"># decompress the package</span>
-xz -d zsh.tar.xz
-tar -xvf zsh.tar
+xz<span class="w"> </span>-d<span class="w"> </span>zsh.tar.xz
+tar<span class="w"> </span>-xvf<span class="w"> </span>zsh.tar
 
 <span class="c1"># configuration</span>
-<span class="nb">cd</span> zsh
-./configure --prefix<span class="o">=</span>/storage/hpc/work/ja62/fy21/software/zsh/bin/zsh
+<span class="nb">cd</span><span class="w"> </span>zsh
+./configure<span class="w"> </span>--prefix<span class="o">=</span>/storage/hpc/work/ja62/fy21/software/zsh/bin/zsh
 
 <span class="c1"># install</span>
-make 
-make install
+make<span class="w"> </span>
+make<span class="w"> </span>install
 
 <span class="c1"># auto launch when login bash</span>
-vim ~/.bashrc
-<span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span>/storage/hpc/work/ja62/fy21/software/zsh/bin:<span class="nv">$PATH</span>
+vim<span class="w"> </span>~/.bashrc
+<span class="nb">export</span><span class="w"> </span><span class="nv">PATH</span><span class="o">=</span>/storage/hpc/work/ja62/fy21/software/zsh/bin:<span class="nv">$PATH</span>
 </pre></div>
 </div>
 <div class="dropdown admonition">
 <p class="admonition-title">How to start new <code class="docutils literal notranslate"><span class="pre">zsh</span></code> when login?</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>vim ~/.zshrc
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>vim<span class="w"> </span>~/.zshrc
 
 <span class="c1"># Output:</span>
 <span class="c1"># [1].run Fu&#39;s zsh when login at the first time</span>
-<span class="nv">ZshName</span><span class="o">=</span><span class="k">$(</span>which zsh<span class="k">)</span>
-<span class="k">if</span> <span class="o">[</span> <span class="s2">&quot;</span><span class="nv">$ZshName</span><span class="s2">&quot;</span> <span class="o">=</span> <span class="s2">&quot;/usr/bin/zsh&quot;</span> <span class="o">]</span><span class="p">;</span><span class="k">then</span>
-  <span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span>/storage/hpc/work/ja62/fy21/software/zsh/bin:<span class="nv">$PATH</span>
-  <span class="nb">echo</span> <span class="s2">&quot;Now run Fu&#39;s zsh...\nVersion: </span><span class="k">$(</span>zsh --version<span class="k">)</span><span class="s2">\nPath: </span><span class="k">$(</span>which zsh<span class="k">)</span><span class="s2">\n&quot;</span>
-  zsh
+<span class="nv">ZshName</span><span class="o">=</span><span class="k">$(</span>which<span class="w"> </span>zsh<span class="k">)</span>
+<span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$ZshName</span><span class="s2">&quot;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;/usr/bin/zsh&quot;</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="k">then</span>
+<span class="w">  </span><span class="nb">export</span><span class="w"> </span><span class="nv">PATH</span><span class="o">=</span>/storage/hpc/work/ja62/fy21/software/zsh/bin:<span class="nv">$PATH</span>
+<span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Now run Fu&#39;s zsh...\nVersion: </span><span class="k">$(</span>zsh<span class="w"> </span>--version<span class="k">)</span><span class="s2">\nPath: </span><span class="k">$(</span>which<span class="w"> </span>zsh<span class="k">)</span><span class="s2">\n&quot;</span>
+<span class="w">  </span>zsh
 <span class="k">fi</span>
-<span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span>/storage/hpc/work/ja62/fy21/software/zsh/bin:<span class="nv">$PATH</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">PATH</span><span class="o">=</span>/storage/hpc/work/ja62/fy21/software/zsh/bin:<span class="nv">$PATH</span>
 
 
 <span class="c1"># [2].source global definitions</span>
-<span class="k">if</span> <span class="o">[</span> -f /etc/zshrc <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
-	. /etc/zshrc
+<span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>-f<span class="w"> </span>/etc/zshrc<span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">	</span>.<span class="w"> </span>/etc/zshrc
 <span class="k">fi</span>
 </pre></div>
 </div>
@@ -857,10 +857,10 @@ vim ~/.bashrc
 <p>The following is an example named with <code class="docutils literal notranslate"><span class="pre">jobs.slurm</span></code>,
 and some common command to run the job.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># submit a job</span>
-sbatch jobs.slurm
+sbatch<span class="w"> </span>jobs.slurm
 
 <span class="c1"># check the state of job</span>
-sacct -j JobID
+sacct<span class="w"> </span>-j<span class="w"> </span>JobID
 </pre></div>
 </div>
 <p><strong>The <code class="docutils literal notranslate"><span class="pre">jobs.slurm</span></code> content:</strong></p>
@@ -889,11 +889,11 @@ sacct -j JobID
 
 
 <span class="c1"># load package</span>
-module load GCC
+module<span class="w"> </span>load<span class="w"> </span>GCC
 
 <span class="c1"># run job</span>
-srun <span class="nb">echo</span> <span class="s2">&quot;ssss&quot;</span> &gt;&gt; <span class="m">2</span>.txt
-srun python ./mission.py
+srun<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;ssss&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span><span class="m">2</span>.txt
+srun<span class="w"> </span>python<span class="w"> </span>./mission.py
 </pre></div>
 </div>
 <div class="admonition warning">

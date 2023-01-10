@@ -203,23 +203,14 @@ clang++ -I/opt/homebrew/Cellar/open-mpi/4.1.4_2/include
 ## Configuration
 
 
-### VSCode
-
 Download the plugin, `C/C++`, in VSCode Extensions
 
 - Manual refer to [`Miscrosoft docs`](https://code.visualstudio.com/docs/python/python-tutorial)
 
 
-### Makefile
-
-MacOS comes with `make`.
-
-### CMake
-
-Install via `brew install cmake` in MacOS system.
 
 
-### Package
+## Package
 
 <style>
 table th:first-of-type {
@@ -238,7 +229,7 @@ table th:nth-of-type(2) {
 
 |    Name       |    Purpose    |    Way       |     
 | ------------  | ------------- | :----------: |
-| ``   | ...       |      |
+| `fftw3`   | ...       | `brew` and https://www.fftw.org/     |
 | ``   | ...       |      |
 
 **Seismology package**:
@@ -247,6 +238,158 @@ table th:nth-of-type(2) {
 | ------------ | ------------- | :-----------: |
 | ``   |        |      |
 | ``   |        |      |
+
+
+
+
+### FFTW3
+
+[FFTW](http://fftw.org/), the Fastest Fourier Transform in the West, is a C subroutine library for computing the discrete Fourier transform (DFT).
+
+
+#### 1.Install via brew
+
+```bash
+# install
+brew install fftw
+
+# compile
+g++ fftw.cpp -o fftw -lfftw3 -lm -I/opt/homebrew/opt/fftw/include -L/opt/homebrew/opt/fftw/lib
+
+# run
+./fftw
+```
+If the installation was successful, you should be able to use the FFTW library in your C/C++ programs by including the `fftw3.h` header file and linking against the `libfftw3.a` library. You may need to specify the path to the `fftw3.h` header file and the `libfftw3.a` library using the `-I` and `-L` options when compiling your code.
+
+- The `-lfftw3` option tell the compiler to link the FFTW library.
+- The `-lm` option tell the compiler to the math library.
+- The `-I` option to include header file
+- The `-L` option to include package
+
+Refer to https://www.runoob.com/w3cnote/gcc-parameter-detail.html
+
+:::{dropdown} The example **`fftw.cpp`** file is here:
+:color: info
+:icon: info
+```c++
+#include <fftw3.h>
+#include <iostream>
+
+int main() {
+  // Set up the input signal and allocate space for the output
+  const int N = 8;
+  double input[N] = {1, 2, 3, 4, 5, 6, 7, 8};
+  fftw_complex output[N];
+
+  // Set up the FFTW plan
+  fftw_plan plan = fftw_plan_dft_r2c_1d(N, input, output, FFTW_ESTIMATE);
+
+  // Execute the plan
+  fftw_execute(plan);
+
+  // Print the result
+  std::cout << "Output: " << std::endl;
+  for (int i = 0; i < N; i++) {
+    std::cout << output[i][0] << " + " << output[i][1] << "i" << std::endl;
+  }
+
+  // Clean up
+  fftw_destroy_plan(plan);
+
+  return 0;
+}
+```
+:::
+
+
+
+#### 2.Install from source
+
+**Download FFTW Package:**
+
+```bash
+FFTW_VERSION=3.3.10
+FFTW_FOLDER=fftw-$(FFTW_VERSION)
+wget http://fftw.org/fftw-$(FFTW_VERSION).tar.gz
+tar -xvf fftw-$(FFTW_VERSION).tar.gz
+rm fftw-$(FFTW_VERSION).tar.gz
+```
+
+
+**Install:**
+
+:::::{tab-set}
+::::{tab-item} M1
+```bash
+cd $(FFTW_FOLDER)
+
+./configure CC=gcc --prefix=/Absolute/path \
+    --with-pic \
+    --enable-single \
+    --enable-shared \
+    --build=x86_64-apple-darwin20
+
+make -j 4 
+make install
+```
+::::
+
+
+::::{tab-item} Linux
+```bash
+cd $(FFTW_FOLDER)
+
+./configure CC=gcc --prefix=/Absolute/path \
+    --with-pic \
+    --enable-single 
+    --enable-shared  \
+    --enable-avx2 --enable-avx \
+    --enable-sse --enable-sse2 \
+
+make -j 4 
+make install
+```
+::::
+:::::
+
+
+
+:::{dropdown} explaination of `configure` parameters:
+:color: info
+:icon: info
+- The `--build` option to specify the code installed in an `M1-based Mac`.
+
+- M1 does not support `AVX` instructions, check if your machine supports SSE:
+    ```bash
+    gcc -mavx -E -v - </dev/null 2>&1 | grep cc1
+    ```
+    If your machine supports `AVX`, you should see the `-mavx` flag in the output.
+
+- M1 does not support `SSE` instructions, check:
+    ```bash
+    gcc -msse -E -v - </dev/null 2>&1 | grep cc1
+    ```
+    If your machine supports `SSE`, you should see the `-msse` flag in the output.
+
+- `--enable-shared` to create shared, rather than static, libraries.
+
+- The `--with-pic` option tells the `./configure` script to build FFTW with position-independent code (PIC). `PIC` is a form of machine code that can be relocated at runtime, and is typically used when building shared libraries. Building FFTW with PIC can allow the library to be used in shared libraries and plugins, which can be loaded and unloaded dynamically at runtime.
+
+- The `--enable-single` option tells the `./configure` script to enable single precision (float) support in FFTW. This allows FFTW to compute discrete Fourier transforms (DFTs) of single precision floating-point arrays, in addition to the default double precision (double) support.
+By default, FFTW is built with double precision support only, so you will need to use the `--enable-single` option if you want to use single precision arrays with FFTW.
+
+More information can be found in https://www.fftw.org/fftw3_doc/Installation-on-Unix.html
+:::
+
+
+**Compile:**
+
+```bash
+g++ fftw.pp -o fftw -lfftw3 -lm -I/Absolute/path/include -L/Absolute/path/lib
+```
+
+
+
 
 
 

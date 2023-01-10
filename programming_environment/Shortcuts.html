@@ -1015,7 +1015,7 @@ table th:nth-of-type(2) {
 <li><p>Copy and paste the following code</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">variable</span><span class="o">=</span><span class="s2">&quot;&#39;</span><span class="nv">$1</span><span class="s2">&#39;&quot;</span>
 <span class="nv">the_script</span><span class="o">=</span><span class="s1">&#39;tell application &quot;terminal&quot; to do script &quot;jupyter lab &#39;</span>
-osascript -e <span class="s2">&quot;</span><span class="si">${</span><span class="nv">the_script</span><span class="si">}${</span><span class="nv">variable</span><span class="si">}</span><span class="s2">\&quot;&quot;</span>
+osascript<span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">the_script</span><span class="si">}${</span><span class="nv">variable</span><span class="si">}</span><span class="s2">\&quot;&quot;</span>
 </pre></div>
 </div>
 </li>

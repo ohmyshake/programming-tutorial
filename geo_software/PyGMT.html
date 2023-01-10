@@ -787,19 +787,19 @@ title="Print to PDF"
 <h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">#</a></h2>
 <p>It’s recommended to install <code class="docutils literal notranslate"><span class="pre">Pygmt</span></code> into <code class="docutils literal notranslate"><span class="pre">base</span></code> environment.</p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="d72ec456-894f-4e99-bddc-5df250c645cf" name="aed6ad0f-8437-4e04-bc55-6152ad98576c" type="radio">
-</input><label class="sd-tab-label" for="d72ec456-894f-4e99-bddc-5df250c645cf">
+<input checked="checked" id="346804de-c521-4e4c-9fc3-613efb48bbfc" name="a557c67f-6fb3-495f-993a-87bea5a9c7df" type="radio">
+</input><label class="sd-tab-label" for="346804de-c521-4e4c-9fc3-613efb48bbfc">
 conda</label><div class="sd-tab-content docutils">
 <p>Simple installation using conda:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ conda install --channel conda-forge pygmt
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>conda<span class="w"> </span>install<span class="w"> </span>--channel<span class="w"> </span>conda-forge<span class="w"> </span>pygmt
 </pre></div>
 </div>
 </div>
-<input id="87687009-f887-4690-b6d8-4f26d53c6a21" name="aed6ad0f-8437-4e04-bc55-6152ad98576c" type="radio">
-</input><label class="sd-tab-label" for="87687009-f887-4690-b6d8-4f26d53c6a21">
+<input id="97928ad3-cca7-4685-990b-1e447c376aa6" name="a557c67f-6fb3-495f-993a-87bea5a9c7df" type="radio">
+</input><label class="sd-tab-label" for="97928ad3-cca7-4685-990b-1e447c376aa6">
 mamba</label><div class="sd-tab-content docutils">
 <p>If you use mamba:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ mamba install --channel conda-forge pygmt
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>mamba<span class="w"> </span>install<span class="w"> </span>--channel<span class="w"> </span>conda-forge<span class="w"> </span>pygmt
 </pre></div>
 </div>
 </div>
@@ -815,13 +815,13 @@ mamba</label><div class="sd-tab-content docutils">
 <p>The <code class="docutils literal notranslate"><span class="pre">GMT</span></code> data server currently has multiple <a class="reference external" href="https://www.generic-mapping-tools.org/mirrors/">mirrors</a> around the world.
 Run the following command to set your mirror channel:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># If you are in China</span>
-$ gmt <span class="nb">set</span> GMT_DATA_SERVER http://china.generic-mapping-tools.org
+$<span class="w"> </span>gmt<span class="w"> </span><span class="nb">set</span><span class="w"> </span>GMT_DATA_SERVER<span class="w"> </span>http://china.generic-mapping-tools.org
 
 <span class="c1"># If you are in US West Coast</span>
-$ gmt <span class="nb">set</span> GMT_DATA_SERVER http://sdsc-opentopography.generic-mapping-tools.org
+$<span class="w"> </span>gmt<span class="w"> </span><span class="nb">set</span><span class="w"> </span>GMT_DATA_SERVER<span class="w"> </span>http://sdsc-opentopography.generic-mapping-tools.org
 
 <span class="c1"># Show URL of the remote GMT data server</span>
-$ gmt --show-dataserver
+$<span class="w"> </span>gmt<span class="w"> </span>--show-dataserver
 </pre></div>
 </div>
 <p>Then the above command will generate a <code class="docutils literal notranslate"><span class="pre">gmt.conf</span></code> file in your current path, copy it to the <code class="docutils literal notranslate"><span class="pre">GMT</span></code> user directory <code class="docutils literal notranslate"><span class="pre">~/.gmt</span></code>.</p>
@@ -837,23 +837,23 @@ $ gmt --show-dataserver
 <li><p>More info please check <a class="reference external" href="https://docs.gmt-china.org/latest/dataset/#id2">GMT Chinese Manual …</a></p></li>
 </ul>
 <p>I have downloaded the <code class="docutils literal notranslate"><span class="pre">Earth_relief</span></code> dataset into <code class="docutils literal notranslate"><span class="pre">~/.gmt/server/earth/earth_relief</span></code> directory, with the resolution is <code class="docutils literal notranslate"><span class="pre">30s</span></code> which equal to <code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">kilometer</span></code>(size of ~778M). Download data by the following command <code class="docutils literal notranslate"><span class="pre">gmt</span> <span class="pre">get</span></code>:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ gmt get -Ddata<span class="o">=</span>earth_relief -I30s
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>gmt<span class="w"> </span>get<span class="w"> </span>-Ddata<span class="o">=</span>earth_relief<span class="w"> </span>-I30s
 </pre></div>
 </div>
 <p><strong>Custom Data</strong></p>
 <p>Users can also customize their own database directory to store their own data in it, compared with the default directory <code class="docutils literal notranslate"><span class="pre">~/.gmt/server</span></code>. My database directory is <code class="docutils literal notranslate"><span class="pre">~/data/GMTDB/</span></code>, add the following lines into your configuration file.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ vim ~/.zshrc
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>vim<span class="w"> </span>~/.zshrc
 <span class="c1"># &gt;&gt;&gt; pygmt(base) initialize &gt;&gt;&gt;</span>
-<span class="nb">export</span> <span class="nv">GMT_DATADIR</span><span class="o">=</span>/Users/yinfu/data/GMTDB/
+<span class="nb">export</span><span class="w"> </span><span class="nv">GMT_DATADIR</span><span class="o">=</span>/Users/yinfu/data/GMTDB/
 <span class="c1"># &lt;&lt;&lt; pygmt(base) initialize &lt;&lt;&lt;</span>
 </pre></div>
 </div>
 <p>Then you can check the whether it has successed:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Show full path of user&#39;s ~/.gmt dir</span>
-$ gmt --show-userdir
+$<span class="w"> </span>gmt<span class="w"> </span>--show-userdir
 
 <span class="c1"># Show directory/ies with user data.</span>
-$ gmt --show-datadir
+$<span class="w"> </span>gmt<span class="w"> </span>--show-datadir
 </pre></div>
 </div>
 </section>

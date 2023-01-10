@@ -882,13 +882,13 @@ Why <code class="docutils literal notranslate"><span class="pre">tlmgr</span></c
 </div>
 </details><p class="sd-card-text">The uninstallation instructions provided by the <a class="reference external" href="https://www.tug.org/mactex/uninstalling.html">official website</a>:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Uninstalling TeX</span>
-sudo rm -r /usr/local/texlive/2022 <span class="c1"># In general, we can also see that there is another directory called &quot;texmf-local&quot; under TexLive path. It is just an empty directory tree according to offical website. If you are obsessive-compulsive, delete it.</span>
+sudo<span class="w"> </span>rm<span class="w"> </span>-r<span class="w"> </span>/usr/local/texlive/2022<span class="w"> </span><span class="c1"># In general, we can also see that there is another directory called &quot;texmf-local&quot; under TexLive path. It is just an empty directory tree according to offical website. If you are obsessive-compulsive, delete it.</span>
 
 <span class="c1"># Uninstalling the GUI Applications</span>
-sudo rm -r /Applications/Tex 
+sudo<span class="w"> </span>rm<span class="w"> </span>-r<span class="w"> </span>/Applications/Tex<span class="w"> </span>
 
 <span class="c1"># Uninstalling the TeX Distribution Data Structure</span>
-sudo rm -r /Library/TeX
+sudo<span class="w"> </span>rm<span class="w"> </span>-r<span class="w"> </span>/Library/TeX
 </pre></div>
 </div>
 </div>
@@ -899,10 +899,10 @@ sudo rm -r /Library/TeX
 <h3>Latexmk<a class="headerlink" href="#latexmk" title="Permalink to this headline">#</a></h3>
 <p>If you use <code class="docutils literal notranslate"><span class="pre">cross-references</span></code> or use <code class="docutils literal notranslate"><span class="pre">BibTeX</span></code> for your bibliography, you often have to run compiling command such as <code class="docutils literal notranslate"><span class="pre">xelatex</span></code> to do those work, which need <strong>compile multiple times</strong>.</p>
 <p>The following code is about how to compile the document with <code class="docutils literal notranslate"><span class="pre">BibTex</span></code> references, refer to the <a class="reference external" href="https://www.cnblogs.com/yifdu25/p/8330652.html">example</a>.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>xelatex -shell-escape file.tex
-bibtex file.aux
-xelatex -shell-escape file.tex
-xelatex -shell-escape file.tex
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>xelatex<span class="w"> </span>-shell-escape<span class="w"> </span>file.tex
+bibtex<span class="w"> </span>file.aux
+xelatex<span class="w"> </span>-shell-escape<span class="w"> </span>file.tex
+xelatex<span class="w"> </span>-shell-escape<span class="w"> </span>file.tex
 </pre></div>
 </div>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
@@ -919,15 +919,15 @@ xelatex -shell-escape file.tex
 </div>
 </details><p><a class="reference external" href="https://ctan.org/pkg/latexmk?lang=en">Latexmk</a>, a <code class="docutils literal notranslate"><span class="pre">Perl</span></code> script, only needs compile one time. It completely automates the process of generating a <code class="docutils literal notranslate"><span class="pre">LaTex</span></code> document. <code class="docutils literal notranslate"><span class="pre">Latexmk</span></code> is part of <code class="docutils literal notranslate"><span class="pre">MacTeX</span></code> and <code class="docutils literal notranslate"><span class="pre">MikTeX</span></code> and it is bundled with many Linux Distributions.</p>
 <p><strong><code class="docutils literal notranslate"><span class="pre">Running</span> <span class="pre">latexmk</span></code></strong></p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>latexmk file.tex
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>latexmk<span class="w"> </span>file.tex
 </pre></div>
 </div>
 <p><strong><code class="docutils literal notranslate"><span class="pre">Cleaning</span> <span class="pre">Up</span></code></strong></p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>latexmk -c
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>latexmk<span class="w"> </span>-c
 </pre></div>
 </div>
 <p><strong><code class="docutils literal notranslate"><span class="pre">Specify</span> <span class="pre">&quot;xelatex&quot;</span> <span class="pre">Compile</span></code></strong></p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>latexmk -xelatex file.tex
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>latexmk<span class="w"> </span>-xelatex<span class="w"> </span>file.tex
 </pre></div>
 </div>
 </section>
@@ -935,19 +935,19 @@ xelatex -shell-escape file.tex
 <h3>Makefile<a class="headerlink" href="#makefile" title="Permalink to this headline">#</a></h3>
 <p>You can run <code class="docutils literal notranslate"><span class="pre">make</span></code> and <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">clean</span></code> for your <code class="docutils literal notranslate"><span class="pre">main.tex</span></code> document. The following is the content of <code class="docutils literal notranslate"><span class="pre">Makefile</span></code> file:</p>
 <div class="toggle docutils container">
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ cat Makefile
-<span class="nv">MAIN</span> <span class="o">=</span> main
-<span class="nv">LATEXMK</span> <span class="o">=</span> latexmk -xelatex -shell-escape
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>cat<span class="w"> </span>Makefile
+<span class="nv">MAIN</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>main
+<span class="nv">LATEXMK</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>latexmk<span class="w"> </span>-xelatex<span class="w"> </span>-shell-escape
 
-all: main clean
+all:<span class="w"> </span>main<span class="w"> </span>clean
 
 main:
-	<span class="k">$(</span>LATEXMK<span class="k">)</span> <span class="k">$(</span>MAIN<span class="k">)</span>.tex
+<span class="w">	</span><span class="k">$(</span>LATEXMK<span class="k">)</span><span class="w"> </span><span class="k">$(</span>MAIN<span class="k">)</span>.tex
 
-clean: 
-	latexmk -c <span class="k">$(</span>MAIN<span class="k">)</span>.tex
-	rm -r _minted-main
-	rm -r *.bbl
+clean:<span class="w"> </span>
+<span class="w">	</span>latexmk<span class="w"> </span>-c<span class="w"> </span><span class="k">$(</span>MAIN<span class="k">)</span>.tex
+<span class="w">	</span>rm<span class="w"> </span>-r<span class="w"> </span>_minted-main
+<span class="w">	</span>rm<span class="w"> </span>-r<span class="w"> </span>*.bbl
 </pre></div>
 </div>
 </div>
@@ -962,45 +962,45 @@ clean:
 <p>Here is my <code class="docutils literal notranslate"><span class="pre">.vscode/settings.json</span></code> file:</p>
 <div class="toggle docutils container">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">{</span>
-    <span class="s2">&quot;latex-workshop.intellisense.package.enabled&quot;</span>: true,
-    <span class="s2">&quot;latex-workshop.intellisense.unimathsymbols.enabled&quot;</span>: true,
-    <span class="s2">&quot;latex-workshop.latex.build.forceRecipeUsage&quot;</span>: true,
-    <span class="s2">&quot;latex-workshop.latex.recipes&quot;</span>: <span class="o">[</span>
-        <span class="o">{</span>
-            <span class="s2">&quot;name&quot;</span>: <span class="s2">&quot;latexmk -xelatex&quot;</span>,
-            <span class="s2">&quot;tools&quot;</span>: <span class="o">[</span><span class="s2">&quot;latexmk -xelatex&quot;</span><span class="o">]</span>
-        <span class="o">}</span>
-    <span class="o">]</span>,
-    <span class="s2">&quot;latex-workshop.latex.tools&quot;</span>: <span class="o">[</span>
-        <span class="o">{</span>
-            <span class="s2">&quot;name&quot;</span>: <span class="s2">&quot;xelatex&quot;</span>,
-            <span class="s2">&quot;command&quot;</span>: <span class="s2">&quot;xelatex&quot;</span>,   // <span class="s2">&quot;/Library/TeX/texbin/xelatex&quot;</span>
-            <span class="s2">&quot;args&quot;</span>: <span class="o">[</span>
-                <span class="s2">&quot;-shell-escape&quot;</span>,    // use pygments to highlight syntax code
-                <span class="s2">&quot;-synctex=1&quot;</span>,
-                <span class="s2">&quot;-interaction=nonstopmode&quot;</span>,
-                <span class="s2">&quot;-file-line-error&quot;</span>,
-                <span class="s2">&quot;%DOCFILE%&quot;</span>
-            <span class="o">]</span>
-        <span class="o">}</span>,
-        <span class="o">{</span>
-            <span class="s2">&quot;name&quot;</span>: <span class="s2">&quot;latexmk -xelatex&quot;</span>,
-            <span class="s2">&quot;command&quot;</span>: <span class="s2">&quot;latexmk&quot;</span>,   // <span class="s2">&quot;/Library/TeX/texbin/latexmk&quot;</span>
-            <span class="s2">&quot;args&quot;</span>: <span class="o">[</span>
-                <span class="s2">&quot;-xelatex&quot;</span>,
-                <span class="s2">&quot;-shell-escape&quot;</span>,    // use pygments to highlight syntax code
-                <span class="s2">&quot;-file-line-error&quot;</span>,
-                <span class="s2">&quot;-halt-on-error&quot;</span>,
-                <span class="s2">&quot;-interaction=nonstopmode&quot;</span>,
-                <span class="s2">&quot;-synctex=1&quot;</span>,
-                <span class="s2">&quot;-pv-&quot;</span>,
-                <span class="s2">&quot;-pvc-&quot;</span>,
-                <span class="s2">&quot;-outdir=%OUTDIR%&quot;</span>,
-                <span class="s2">&quot;%DOCFILE%&quot;</span>
-            <span class="o">]</span>,
-            <span class="s2">&quot;env&quot;</span>: <span class="o">{}</span>
-        <span class="o">}</span>
-    <span class="o">]</span>
+<span class="w">    </span><span class="s2">&quot;latex-workshop.intellisense.package.enabled&quot;</span>:<span class="w"> </span>true,
+<span class="w">    </span><span class="s2">&quot;latex-workshop.intellisense.unimathsymbols.enabled&quot;</span>:<span class="w"> </span>true,
+<span class="w">    </span><span class="s2">&quot;latex-workshop.latex.build.forceRecipeUsage&quot;</span>:<span class="w"> </span>true,
+<span class="w">    </span><span class="s2">&quot;latex-workshop.latex.recipes&quot;</span>:<span class="w"> </span><span class="o">[</span>
+<span class="w">        </span><span class="o">{</span>
+<span class="w">            </span><span class="s2">&quot;name&quot;</span>:<span class="w"> </span><span class="s2">&quot;latexmk -xelatex&quot;</span>,
+<span class="w">            </span><span class="s2">&quot;tools&quot;</span>:<span class="w"> </span><span class="o">[</span><span class="s2">&quot;latexmk -xelatex&quot;</span><span class="o">]</span>
+<span class="w">        </span><span class="o">}</span>
+<span class="w">    </span><span class="o">]</span>,
+<span class="w">    </span><span class="s2">&quot;latex-workshop.latex.tools&quot;</span>:<span class="w"> </span><span class="o">[</span>
+<span class="w">        </span><span class="o">{</span>
+<span class="w">            </span><span class="s2">&quot;name&quot;</span>:<span class="w"> </span><span class="s2">&quot;xelatex&quot;</span>,
+<span class="w">            </span><span class="s2">&quot;command&quot;</span>:<span class="w"> </span><span class="s2">&quot;xelatex&quot;</span>,<span class="w">   </span>//<span class="w"> </span><span class="s2">&quot;/Library/TeX/texbin/xelatex&quot;</span>
+<span class="w">            </span><span class="s2">&quot;args&quot;</span>:<span class="w"> </span><span class="o">[</span>
+<span class="w">                </span><span class="s2">&quot;-shell-escape&quot;</span>,<span class="w">    </span>//<span class="w"> </span>use<span class="w"> </span>pygments<span class="w"> </span>to<span class="w"> </span>highlight<span class="w"> </span>syntax<span class="w"> </span>code
+<span class="w">                </span><span class="s2">&quot;-synctex=1&quot;</span>,
+<span class="w">                </span><span class="s2">&quot;-interaction=nonstopmode&quot;</span>,
+<span class="w">                </span><span class="s2">&quot;-file-line-error&quot;</span>,
+<span class="w">                </span><span class="s2">&quot;%DOCFILE%&quot;</span>
+<span class="w">            </span><span class="o">]</span>
+<span class="w">        </span><span class="o">}</span>,
+<span class="w">        </span><span class="o">{</span>
+<span class="w">            </span><span class="s2">&quot;name&quot;</span>:<span class="w"> </span><span class="s2">&quot;latexmk -xelatex&quot;</span>,
+<span class="w">            </span><span class="s2">&quot;command&quot;</span>:<span class="w"> </span><span class="s2">&quot;latexmk&quot;</span>,<span class="w">   </span>//<span class="w"> </span><span class="s2">&quot;/Library/TeX/texbin/latexmk&quot;</span>
+<span class="w">            </span><span class="s2">&quot;args&quot;</span>:<span class="w"> </span><span class="o">[</span>
+<span class="w">                </span><span class="s2">&quot;-xelatex&quot;</span>,
+<span class="w">                </span><span class="s2">&quot;-shell-escape&quot;</span>,<span class="w">    </span>//<span class="w"> </span>use<span class="w"> </span>pygments<span class="w"> </span>to<span class="w"> </span>highlight<span class="w"> </span>syntax<span class="w"> </span>code
+<span class="w">                </span><span class="s2">&quot;-file-line-error&quot;</span>,
+<span class="w">                </span><span class="s2">&quot;-halt-on-error&quot;</span>,
+<span class="w">                </span><span class="s2">&quot;-interaction=nonstopmode&quot;</span>,
+<span class="w">                </span><span class="s2">&quot;-synctex=1&quot;</span>,
+<span class="w">                </span><span class="s2">&quot;-pv-&quot;</span>,
+<span class="w">                </span><span class="s2">&quot;-pvc-&quot;</span>,
+<span class="w">                </span><span class="s2">&quot;-outdir=%OUTDIR%&quot;</span>,
+<span class="w">                </span><span class="s2">&quot;%DOCFILE%&quot;</span>
+<span class="w">            </span><span class="o">]</span>,
+<span class="w">            </span><span class="s2">&quot;env&quot;</span>:<span class="w"> </span><span class="o">{}</span>
+<span class="w">        </span><span class="o">}</span>
+<span class="w">    </span><span class="o">]</span>
 <span class="o">}</span>
 </pre></div>
 </div>

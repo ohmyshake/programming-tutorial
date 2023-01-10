@@ -738,19 +738,19 @@ title="Print to PDF"
 <section id="install">
 <h2>Install<a class="headerlink" href="#install" title="Permalink to this headline">#</a></h2>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="ec40761d-f565-400a-a207-7aec4319c467" name="32a9197d-5c69-4748-9160-bcc1b692b9b6" type="radio">
-</input><label class="sd-tab-label" for="ec40761d-f565-400a-a207-7aec4319c467">
+<input checked="checked" id="0e9f8f1b-02cc-452a-b5bc-f9dec20799e0" name="39b6a31c-a40d-4b34-b828-207e77d75a23" type="radio">
+</input><label class="sd-tab-label" for="0e9f8f1b-02cc-452a-b5bc-f9dec20799e0">
 Foreign</label><div class="sd-tab-content docutils">
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Please check <a class="reference external" href="https://brew.sh/index_zh-cn.html">Homebrew</a> webpage for more info.</p>
 </div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>/bin/bash -c <span class="s2">&quot;</span><span class="k">$(</span>curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh<span class="k">)</span><span class="s2">&quot;</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>/bin/bash<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;</span><span class="k">$(</span>curl<span class="w"> </span>-fsSL<span class="w"> </span>https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh<span class="k">)</span><span class="s2">&quot;</span>
 </pre></div>
 </div>
 </div>
-<input id="1bb329b3-2263-440e-b713-fad515ab7135" name="32a9197d-5c69-4748-9160-bcc1b692b9b6" type="radio">
-</input><label class="sd-tab-label" for="1bb329b3-2263-440e-b713-fad515ab7135">
+<input id="ba47d5ad-7b98-46b6-b9fc-592351855c32" name="39b6a31c-a40d-4b34-b828-207e77d75a23" type="radio">
+</input><label class="sd-tab-label" for="ba47d5ad-7b98-46b6-b9fc-592351855c32">
 China</label><div class="sd-tab-content docutils">
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -763,34 +763,34 @@ China</label><div class="sd-tab-content docutils">
 <li><p>如果你是初次安装，这里使用中科大源:</p></li>
 </ul>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># 1.执行安装脚本</span>
-<span class="nb">export</span> <span class="nv">HOMEBREW_BREW_GIT_REMOTE</span><span class="o">=</span><span class="s2">&quot;https://mirrors.ustc.edu.cn/brew.git&quot;</span>
-<span class="nb">export</span> <span class="nv">HOMEBREW_CORE_GIT_REMOTE</span><span class="o">=</span><span class="s2">&quot;https://mirrors.ustc.edu.cn/homebrew-core.git&quot;</span>
-/bin/bash -c <span class="s2">&quot;</span><span class="k">$(</span>curl -fsSL https://gitee.com/ineo6/homebrew-install/raw/master/install.sh<span class="k">)</span><span class="s2">&quot;</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">HOMEBREW_BREW_GIT_REMOTE</span><span class="o">=</span><span class="s2">&quot;https://mirrors.ustc.edu.cn/brew.git&quot;</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">HOMEBREW_CORE_GIT_REMOTE</span><span class="o">=</span><span class="s2">&quot;https://mirrors.ustc.edu.cn/homebrew-core.git&quot;</span>
+/bin/bash<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;</span><span class="k">$(</span>curl<span class="w"> </span>-fsSL<span class="w"> </span>https://gitee.com/ineo6/homebrew-install/raw/master/install.sh<span class="k">)</span><span class="s2">&quot;</span>
 
 <span class="c1"># 2.安装完成后设置 bottles 镜像</span>
-<span class="nb">echo</span> <span class="s1">&#39;export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.ustc.edu.cn/homebrew-bottles/bottles&#39;</span> &gt;&gt; ~/.zshrc
-<span class="nb">source</span> ~/.zshrc
+<span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.ustc.edu.cn/homebrew-bottles/bottles&#39;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>~/.zshrc
+<span class="nb">source</span><span class="w"> </span>~/.zshrc
 </pre></div>
 </div>
 <ul class="simple">
 <li><p>如果你已经安装过，需要换源:</p></li>
 </ul>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># 1. 设置中科大源</span>
-git -C <span class="s2">&quot;</span><span class="k">$(</span>brew --repo<span class="k">)</span><span class="s2">&quot;</span> remote set-url origin https://mirrors.ustc.edu.cn/brew.git
-git -C <span class="s2">&quot;</span><span class="k">$(</span>brew --repo homebrew/core<span class="k">)</span><span class="s2">&quot;</span> remote set-url origin https://mirrors.ustc.edu.cn/homebrew-core.git
-git -C <span class="s2">&quot;</span><span class="k">$(</span>brew --repo homebrew/cask<span class="k">)</span><span class="s2">&quot;</span> remote set-url origin https://mirrors.ustc.edu.cn/homebrew-cask.git
+git<span class="w"> </span>-C<span class="w"> </span><span class="s2">&quot;</span><span class="k">$(</span>brew<span class="w"> </span>--repo<span class="k">)</span><span class="s2">&quot;</span><span class="w"> </span>remote<span class="w"> </span>set-url<span class="w"> </span>origin<span class="w"> </span>https://mirrors.ustc.edu.cn/brew.git
+git<span class="w"> </span>-C<span class="w"> </span><span class="s2">&quot;</span><span class="k">$(</span>brew<span class="w"> </span>--repo<span class="w"> </span>homebrew/core<span class="k">)</span><span class="s2">&quot;</span><span class="w"> </span>remote<span class="w"> </span>set-url<span class="w"> </span>origin<span class="w"> </span>https://mirrors.ustc.edu.cn/homebrew-core.git
+git<span class="w"> </span>-C<span class="w"> </span><span class="s2">&quot;</span><span class="k">$(</span>brew<span class="w"> </span>--repo<span class="w"> </span>homebrew/cask<span class="k">)</span><span class="s2">&quot;</span><span class="w"> </span>remote<span class="w"> </span>set-url<span class="w"> </span>origin<span class="w"> </span>https://mirrors.ustc.edu.cn/homebrew-cask.git
 
 <span class="c1"># 2. 设置 bottles 镜像</span>
-<span class="nb">echo</span> <span class="s1">&#39;export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.ustc.edu.cn/homebrew-bottles/bottles&#39;</span> &gt;&gt; ~/.zshrc
-<span class="nb">source</span> ~/.zshrc
+<span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.ustc.edu.cn/homebrew-bottles/bottles&#39;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>~/.zshrc
+<span class="nb">source</span><span class="w"> </span>~/.zshrc
 </pre></div>
 </div>
 <ul class="simple">
 <li><p>恢复默认源</p></li>
 </ul>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git -C <span class="s2">&quot;</span><span class="k">$(</span>brew --repo<span class="k">)</span><span class="s2">&quot;</span> remote set-url origin https://github.com/Homebrew/brew.git
-git -C <span class="s2">&quot;</span><span class="k">$(</span>brew --repo homebrew/core<span class="k">)</span><span class="s2">&quot;</span> remote set-url origin https://github.com/Homebrew/homebrew-core.git
-git -C <span class="s2">&quot;</span><span class="k">$(</span>brew --repo homebrew/cask<span class="k">)</span><span class="s2">&quot;</span> remote set-url origin https://github.com/Homebrew/homebrew-cask.git
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>-C<span class="w"> </span><span class="s2">&quot;</span><span class="k">$(</span>brew<span class="w"> </span>--repo<span class="k">)</span><span class="s2">&quot;</span><span class="w"> </span>remote<span class="w"> </span>set-url<span class="w"> </span>origin<span class="w"> </span>https://github.com/Homebrew/brew.git
+git<span class="w"> </span>-C<span class="w"> </span><span class="s2">&quot;</span><span class="k">$(</span>brew<span class="w"> </span>--repo<span class="w"> </span>homebrew/core<span class="k">)</span><span class="s2">&quot;</span><span class="w"> </span>remote<span class="w"> </span>set-url<span class="w"> </span>origin<span class="w"> </span>https://github.com/Homebrew/homebrew-core.git
+git<span class="w"> </span>-C<span class="w"> </span><span class="s2">&quot;</span><span class="k">$(</span>brew<span class="w"> </span>--repo<span class="w"> </span>homebrew/cask<span class="k">)</span><span class="s2">&quot;</span><span class="w"> </span>remote<span class="w"> </span>set-url<span class="w"> </span>origin<span class="w"> </span>https://github.com/Homebrew/homebrew-cask.git
 </pre></div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">homebrew-bottles</span></code> 配置只能手动删除，将 <code class="docutils literal notranslate"><span class="pre">~/.zshrc</span></code> 文件中的 <code class="docutils literal notranslate"><span class="pre">HOMEBREW_BOTTLE_DOMAIN=https://mirrors.xxx.com</span></code> 内容删除，并执行 <code class="docutils literal notranslate"><span class="pre">source</span> <span class="pre">~/.zshrc</span></code></p>
@@ -800,8 +800,8 @@ git -C <span class="s2">&quot;</span><span class="k">$(</span>brew --repo homebr
 <section id="uninstall">
 <h2>Uninstall<a class="headerlink" href="#uninstall" title="Permalink to this headline">#</a></h2>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="6d925252-0061-4d74-a2d2-ffcd204bb26b" name="263288d1-3f95-4026-b2e4-978a5e5230dd" type="radio">
-</input><label class="sd-tab-label" for="6d925252-0061-4d74-a2d2-ffcd204bb26b">
+<input checked="checked" id="00dad64f-d6df-4691-a3cf-6a5c4135d0c1" name="74cc2e44-82fc-4a60-a08f-3eb28a4fefc1" type="radio">
+</input><label class="sd-tab-label" for="00dad64f-d6df-4691-a3cf-6a5c4135d0c1">
 Foreign</label><div class="sd-tab-content docutils">
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -810,19 +810,19 @@ Foreign</label><div class="sd-tab-content docutils">
 <a class="reference external" href="https://github.com/homebrew/install#uninstall-homebrew">https://github.com/homebrew/install#uninstall-homebrew</a></p>
 </div>
 <p>Uninstall script from the Homebrew/install repository</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>/bin/bash -c <span class="s2">&quot;</span><span class="k">$(</span>curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/uninstall.sh<span class="k">)</span><span class="s2">&quot;</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>/bin/bash<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;</span><span class="k">$(</span>curl<span class="w"> </span>-fsSL<span class="w"> </span>https://raw.githubusercontent.com/Homebrew/install/HEAD/uninstall.sh<span class="k">)</span><span class="s2">&quot;</span>
 </pre></div>
 </div>
 <p>If you want to run the Homebrew uninstaller non-interactively, you can use:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">NONINTERACTIVE</span><span class="o">=</span><span class="m">1</span> /bin/bash -c <span class="s2">&quot;</span><span class="k">$(</span>curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/uninstall.sh<span class="k">)</span><span class="s2">&quot;</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">NONINTERACTIVE</span><span class="o">=</span><span class="m">1</span><span class="w"> </span>/bin/bash<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;</span><span class="k">$(</span>curl<span class="w"> </span>-fsSL<span class="w"> </span>https://raw.githubusercontent.com/Homebrew/install/HEAD/uninstall.sh<span class="k">)</span><span class="s2">&quot;</span>
 </pre></div>
 </div>
 </div>
-<input id="9e5e82e2-b762-40a5-8243-95bcf057e1a9" name="263288d1-3f95-4026-b2e4-978a5e5230dd" type="radio">
-</input><label class="sd-tab-label" for="9e5e82e2-b762-40a5-8243-95bcf057e1a9">
+<input id="f899c181-db84-467e-a3da-2033ab1442b4" name="74cc2e44-82fc-4a60-a08f-3eb28a4fefc1" type="radio">
+</input><label class="sd-tab-label" for="f899c181-db84-467e-a3da-2033ab1442b4">
 China</label><div class="sd-tab-content docutils">
 <p>使用官方脚本同样会遇到uninstall地址无法访问问题，可以使用下面脚本:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>/bin/bash -c <span class="s2">&quot;</span><span class="k">$(</span>curl -fsSL https://gitee.com/ineo6/homebrew-install/raw/master/uninstall.sh<span class="k">)</span><span class="s2">&quot;</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>/bin/bash<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;</span><span class="k">$(</span>curl<span class="w"> </span>-fsSL<span class="w"> </span>https://gitee.com/ineo6/homebrew-install/raw/master/uninstall.sh<span class="k">)</span><span class="s2">&quot;</span>
 </pre></div>
 </div>
 </div>
@@ -832,28 +832,28 @@ China</label><div class="sd-tab-content docutils">
 <h2>Manual<a class="headerlink" href="#manual" title="Permalink to this headline">#</a></h2>
 <p>Once Homebrew is installed, you can use the brew commands provided by Homebrew.  Check <a class="reference external" href="https://docs.brew.sh/Manpage">documentation</a> for detailed manual.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># 模糊搜索与 wget 相关的软件</span>
-brew search wget
+brew<span class="w"> </span>search<span class="w"> </span>wget
 
 <span class="c1"># 安装 wget 软件包</span>
-brew install wget
+brew<span class="w"> </span>install<span class="w"> </span>wget
 
 <span class="c1"># 安装 Visual Studio Code, 其是带图形界面的软件，因而这里需要使用 --cask 选项</span>
-brew install --cask visual-studio-code
+brew<span class="w"> </span>install<span class="w"> </span>--cask<span class="w"> </span>visual-studio-code
 
 <span class="c1"># 升级某个软件</span>
-brew upgrade xxx
+brew<span class="w"> </span>upgrade<span class="w"> </span>xxx
 
 <span class="c1"># 卸载某个软件</span>
-brew uninstall xxx
+brew<span class="w"> </span>uninstall<span class="w"> </span>xxx
 
 <span class="c1"># Brew 安装列表</span>
-brew list
+brew<span class="w"> </span>list
 
 <span class="c1"># 查看brew配置信息</span>
-brew config
+brew<span class="w"> </span>config
 
 <span class="c1"># 查看安装了多少package</span>
-brew info
+brew<span class="w"> </span>info
 </pre></div>
 </div>
 <div class="admonition tip">

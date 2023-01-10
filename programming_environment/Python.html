@@ -756,24 +756,24 @@ Installing Anaconda is equivalent to installing the <code class="docutils litera
 </details><ol>
 <li><p>Download <a class="reference external" href="https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-x86_64.sh">Miniconda3 macOS Intel x86 64-bit bash</a>.</p></li>
 <li><p>Install Miniconda</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>bash Miniconda3-latest-MacOSX-x86_64.sh
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>bash<span class="w"> </span>Miniconda3-latest-MacOSX-x86_64.sh
 </pre></div>
 </div>
 <p>Miniconda will be installed into <code class="docutils literal notranslate"><span class="pre">~/miniconda3</span></code> path in M1 by default. The installation package will write the initialization statement to the <code class="docutils literal notranslate"><span class="pre">shell</span></code>’s configuration file, e.g. <code class="docutils literal notranslate"><span class="pre">~/.zshrc</span></code> in my Mac.</p>
 <div class="toggle docutils container">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># &gt;&gt;&gt; conda initialize &gt;&gt;&gt;</span>
 <span class="c1"># !! Contents within this block are managed by &#39;conda init&#39; !!</span>
-<span class="nv">__conda_setup</span><span class="o">=</span><span class="s2">&quot;</span><span class="k">$(</span><span class="s1">&#39;/Users/yinfu/opt/miniconda3/bin/conda&#39;</span> <span class="s1">&#39;shell.zsh&#39;</span> <span class="s1">&#39;hook&#39;</span> <span class="m">2</span>&gt; /dev/null<span class="k">)</span><span class="s2">&quot;</span>
-<span class="k">if</span> <span class="o">[</span> <span class="nv">$?</span> -eq <span class="m">0</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
-    <span class="nb">eval</span> <span class="s2">&quot;</span><span class="nv">$__conda_setup</span><span class="s2">&quot;</span>
+<span class="nv">__conda_setup</span><span class="o">=</span><span class="s2">&quot;</span><span class="k">$(</span><span class="s1">&#39;/Users/yinfu/opt/miniconda3/bin/conda&#39;</span><span class="w"> </span><span class="s1">&#39;shell.zsh&#39;</span><span class="w"> </span><span class="s1">&#39;hook&#39;</span><span class="w"> </span><span class="m">2</span>&gt;<span class="w"> </span>/dev/null<span class="k">)</span><span class="s2">&quot;</span>
+<span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="nv">$?</span><span class="w"> </span>-eq<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">    </span><span class="nb">eval</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$__conda_setup</span><span class="s2">&quot;</span>
 <span class="k">else</span>
-    <span class="k">if</span> <span class="o">[</span> -f <span class="s2">&quot;/Users/yinfu/opt/miniconda3/etc/profile.d/conda.sh&quot;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
-        . <span class="s2">&quot;/Users/yinfu/opt/miniconda3/etc/profile.d/conda.sh&quot;</span>
-    <span class="k">else</span>
-        <span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="s2">&quot;/Users/yinfu/opt/miniconda3/bin:</span><span class="nv">$PATH</span><span class="s2">&quot;</span>
-    <span class="k">fi</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>-f<span class="w"> </span><span class="s2">&quot;/Users/yinfu/opt/miniconda3/etc/profile.d/conda.sh&quot;</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">        </span>.<span class="w"> </span><span class="s2">&quot;/Users/yinfu/opt/miniconda3/etc/profile.d/conda.sh&quot;</span>
+<span class="w">    </span><span class="k">else</span>
+<span class="w">        </span><span class="nb">export</span><span class="w"> </span><span class="nv">PATH</span><span class="o">=</span><span class="s2">&quot;/Users/yinfu/opt/miniconda3/bin:</span><span class="nv">$PATH</span><span class="s2">&quot;</span>
+<span class="w">    </span><span class="k">fi</span>
 <span class="k">fi</span>
-<span class="nb">unset</span> __conda_setup
+<span class="nb">unset</span><span class="w"> </span>__conda_setup
 <span class="c1"># &lt;&lt;&lt; conda initialize &lt;&lt;&lt;</span>
 </pre></div>
 </div>
@@ -788,13 +788,13 @@ Installing Anaconda is equivalent to installing the <code class="docutils litera
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
 </summary><div class="sd-summary-content sd-card-body docutils">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># delete install directory</span>
-rm -rf ~/miniconda3
+rm<span class="w"> </span>-rf<span class="w"> </span>~/miniconda3
 
 <span class="c1"># delete environment variable</span>
-vim ~/.zshrc
+vim<span class="w"> </span>~/.zshrc
 
 <span class="c1"># delete configuration files</span>
-rm -rf ~/.condarc ~/.conda ~/.continuum
+rm<span class="w"> </span>-rf<span class="w"> </span>~/.condarc<span class="w"> </span>~/.conda<span class="w"> </span>~/.continuum
 </pre></div>
 </div>
 </div>
@@ -827,48 +827,48 @@ rm -rf ~/.condarc ~/.conda ~/.continuum
 </div>
 </details><p>Install <code class="docutils literal notranslate"><span class="pre">mamba</span></code></p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="7ebbb0a8-844a-4f96-a7a3-e61a7fd22212" name="52f84e83-64e9-4847-b0d2-55f23c12b177" type="radio">
-</input><label class="sd-tab-label" for="7ebbb0a8-844a-4f96-a7a3-e61a7fd22212">
+<input checked="checked" id="d04d1c2c-23bc-43dc-9d83-ef74d7ecfb3f" name="98c8953f-21d2-4890-a470-4a465a68d287" type="radio">
+</input><label class="sd-tab-label" for="d04d1c2c-23bc-43dc-9d83-ef74d7ecfb3f">
 Foreign</label><div class="sd-tab-content docutils">
 <p>To get <code class="docutils literal notranslate"><span class="pre">mamba</span></code> via <code class="docutils literal notranslate"><span class="pre">conda</span></code>, just install it into the base environment from the <code class="docutils literal notranslate"><span class="pre">conda-forge</span></code> channel:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda install mamba -n base -c conda-forge
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>install<span class="w"> </span>mamba<span class="w"> </span>-n<span class="w"> </span>base<span class="w"> </span>-c<span class="w"> </span>conda-forge
 </pre></div>
 </div>
 </div>
-<input id="0d43b301-2b7e-4d46-aa58-0938b623f1d0" name="52f84e83-64e9-4847-b0d2-55f23c12b177" type="radio">
-</input><label class="sd-tab-label" for="0d43b301-2b7e-4d46-aa58-0938b623f1d0">
+<input id="5c556cb0-1871-4b0d-8a0c-adfa922519e7" name="98c8953f-21d2-4890-a470-4a465a68d287" type="radio">
+</input><label class="sd-tab-label" for="5c556cb0-1871-4b0d-8a0c-adfa922519e7">
 China</label><div class="sd-tab-content docutils">
 <p><code class="docutils literal notranslate"><span class="pre">mamba</span></code> uses the configuration file of <code class="docutils literal notranslate"><span class="pre">conda</span></code>. Therefore, you need to configure <code class="docutils literal notranslate"><span class="pre">~/.condarc</span></code> file  before using Mamba.
 Use <a class="reference external" href="https://mirrors.tuna.tsinghua.edu.cn/help/anaconda/">Tsinghua</a> mirror to speed up the download of softwares.
 Here is my <code class="docutils literal notranslate"><span class="pre">~/.condarc</span></code> file:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cat ~/.condarc
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cat<span class="w"> </span>~/.condarc
 
 <span class="c1"># output</span>
 channels:
-  - defaults
-show_channel_urls: <span class="nb">true</span>
+<span class="w">  </span>-<span class="w"> </span>defaults
+show_channel_urls:<span class="w"> </span><span class="nb">true</span>
 default_channels:
-  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main
-  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/r
-  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/msys2
+<span class="w">  </span>-<span class="w"> </span>https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main
+<span class="w">  </span>-<span class="w"> </span>https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/r
+<span class="w">  </span>-<span class="w"> </span>https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/msys2
 custom_channels:
-  conda-forge: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
-  msys2: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
-  bioconda: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
-  menpo: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
-  pytorch: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
-  pytorch-lts: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
-  simpleitk: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
+<span class="w">  </span>conda-forge:<span class="w"> </span>https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
+<span class="w">  </span>msys2:<span class="w"> </span>https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
+<span class="w">  </span>bioconda:<span class="w"> </span>https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
+<span class="w">  </span>menpo:<span class="w"> </span>https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
+<span class="w">  </span>pytorch:<span class="w"> </span>https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
+<span class="w">  </span>pytorch-lts:<span class="w"> </span>https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
+<span class="w">  </span>simpleitk:<span class="w"> </span>https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
 </pre></div>
 </div>
 <p>Then you can use <code class="docutils literal notranslate"><span class="pre">conda</span></code> to install <code class="docutils literal notranslate"><span class="pre">mamba</span></code>, and just install it into the <strong>base environment</strong> from the <code class="docutils literal notranslate"><span class="pre">conda-forge</span></code> channel:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda install mamba -n base -c conda-forge
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>install<span class="w"> </span>mamba<span class="w"> </span>-n<span class="w"> </span>base<span class="w"> </span>-c<span class="w"> </span>conda-forge
 </pre></div>
 </div>
 </div>
 </div>
 <p>Now you can use <code class="docutils literal notranslate"><span class="pre">mamba</span></code> to manage your packages, e.g.:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mamba install numpy
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mamba<span class="w"> </span>install<span class="w"> </span>numpy
 </pre></div>
 </div>
 <div class="admonition warning">

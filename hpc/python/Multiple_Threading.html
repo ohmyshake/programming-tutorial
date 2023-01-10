@@ -878,50 +878,50 @@ title="Print to PDF"
 <h3>1. create a thread, start a thread, and join function:<a class="headerlink" href="#create-a-thread-start-a-thread-and-join-function" title="Permalink to this headline">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>import threading
-import time
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">threading</span>
+<span class="kn">import</span> <span class="nn">time</span>
 
-def thread_job():
-    print(&#39;thread_job start\n&#39;)
-    print(&#39;This is a thread of %s \n&#39; % threading.current_thread())
-    print(&#39;thread_job finish\n&#39;)
+<span class="k">def</span> <span class="nf">thread_job</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;thread_job start</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;This is a thread of </span><span class="si">%s</span><span class="s1"> </span><span class="se">\n</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">threading</span><span class="o">.</span><span class="n">current_thread</span><span class="p">())</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;thread_job finish</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
 
-def main():
-    # add a new thread
-    thread = threading.Thread(target=thread_job, name=&quot;thread_job&quot;)
+<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+    <span class="c1"># add a new thread</span>
+    <span class="n">thread</span> <span class="o">=</span> <span class="n">threading</span><span class="o">.</span><span class="n">Thread</span><span class="p">(</span><span class="n">target</span><span class="o">=</span><span class="n">thread_job</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;thread_job&quot;</span><span class="p">)</span>
 
-    # start a thread
-    thread.start()
+    <span class="c1"># start a thread</span>
+    <span class="n">thread</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
 
-    # wait this thread finished running, then run following code. Also called `block thread`
-    thread.join()
+    <span class="c1"># wait this thread finished running, then run following code. Also called `block thread`</span>
+    <span class="n">thread</span><span class="o">.</span><span class="n">join</span><span class="p">()</span>
 
-    # see how many threads is running now
-    print(&quot;There are&quot;, threading.active_count(), &#39;threads is running now\n&#39;) 
+    <span class="c1"># see how many threads is running now</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;There are&quot;</span><span class="p">,</span> <span class="n">threading</span><span class="o">.</span><span class="n">active_count</span><span class="p">(),</span> <span class="s1">&#39;threads is running now</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span> 
 
-    # see the thread list
-    print(&quot;The running threads list is:&quot;, threading.enumerate(), &#39;\n&#39;) 
+    <span class="c1"># see the thread list</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The running threads list is:&quot;</span><span class="p">,</span> <span class="n">threading</span><span class="o">.</span><span class="n">enumerate</span><span class="p">(),</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span> 
 
-    # which one thread is running now
-    print(&quot;The thread&quot;, threading.current_thread(), &#39;is running now\n&#39;) 
+    <span class="c1"># which one thread is running now</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The thread&quot;</span><span class="p">,</span> <span class="n">threading</span><span class="o">.</span><span class="n">current_thread</span><span class="p">(),</span> <span class="s1">&#39;is running now</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span> 
 
-if __name__ == &#39;__main__&#39;:
-    main()
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">main</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>thread_job start
 
-This is a thread of &lt;Thread(thread_job, started 139680389527104)&gt; 
+This is a thread of &lt;Thread(thread_job, started 139878125786688)&gt; 
 
 thread_job finish
 
 There are 7 threads is running now
 
-The running threads list is: [&lt;_MainThread(MainThread, started 139681150671744)&gt;, &lt;Thread(IOPub, started daemon 139681038710336)&gt;, &lt;Heartbeat(Heartbeat, started daemon 139681021929024)&gt;, &lt;Thread(Thread-3, started daemon 139680657962560)&gt;, &lt;Thread(Thread-4, started daemon 139680758617664)&gt;, &lt;ControlThread(Control, started daemon 139680641181248)&gt;, &lt;ParentPollerUnix(Thread-2, started daemon 139680624399936)&gt;] 
+The running threads list is: [&lt;_MainThread(MainThread, started 139878803884928)&gt;, &lt;Thread(IOPub, started daemon 139878691812928)&gt;, &lt;Heartbeat(Heartbeat, started daemon 139878675031616)&gt;, &lt;Thread(Thread-3, started daemon 139878411003456)&gt;, &lt;Thread(Thread-4, started daemon 139878394222144)&gt;, &lt;ControlThread(Control, started daemon 139878159349312)&gt;, &lt;ParentPollerUnix(Thread-2, started daemon 139878142568000)&gt;] 
 
-The thread &lt;_MainThread(MainThread, started 139681150671744)&gt; is running now
+The thread &lt;_MainThread(MainThread, started 139878803884928)&gt; is running now
 </pre></div>
 </div>
 </div>
@@ -931,42 +931,42 @@ The thread &lt;_MainThread(MainThread, started 139681150671744)&gt; is running n
 <h3>2. quene function: get the results from multiple threads<a class="headerlink" href="#quene-function-get-the-results-from-multiple-threads" title="Permalink to this headline">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>import threading
-import time
-from queue import Queue
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">threading</span>
+<span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">from</span> <span class="nn">queue</span> <span class="kn">import</span> <span class="n">Queue</span>
 
-# do a function: square a number
-def job(l,q):
-    new_list = l.copy()
-    for i in range(len(l)):
-        new_list[i] = l[i]**2
-    q.put(new_list)
+<span class="c1"># do a function: square a number</span>
+<span class="k">def</span> <span class="nf">job</span><span class="p">(</span><span class="n">l</span><span class="p">,</span><span class="n">q</span><span class="p">):</span>
+    <span class="n">new_list</span> <span class="o">=</span> <span class="n">l</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">l</span><span class="p">)):</span>
+        <span class="n">new_list</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">l</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">**</span><span class="mi">2</span>
+    <span class="n">q</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="n">new_list</span><span class="p">)</span>
 
-def multithreading():
-    # create a quene
-    q = Queue()
+<span class="k">def</span> <span class="nf">multithreading</span><span class="p">():</span>
+    <span class="c1"># create a quene</span>
+    <span class="n">q</span> <span class="o">=</span> <span class="n">Queue</span><span class="p">()</span>
 
-    threads = []
-    data = [[1,2,3],[3,4,5],[4,4,4],[5,5,5]]
+    <span class="n">threads</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],[</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">],[</span><span class="mi">4</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">4</span><span class="p">],[</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">]]</span>
 
-    # create 4 threads
-    for i in range(4):
-        t = threading.Thread(target=job, args=(data[i], q))
-        t.start()
-        threads.append(t)
+    <span class="c1"># create 4 threads</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
+        <span class="n">t</span> <span class="o">=</span> <span class="n">threading</span><span class="o">.</span><span class="n">Thread</span><span class="p">(</span><span class="n">target</span><span class="o">=</span><span class="n">job</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">q</span><span class="p">))</span>
+        <span class="n">t</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+        <span class="n">threads</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
 
-    for thread in threads:
-        thread.join()
+    <span class="k">for</span> <span class="n">thread</span> <span class="ow">in</span> <span class="n">threads</span><span class="p">:</span>
+        <span class="n">thread</span><span class="o">.</span><span class="n">join</span><span class="p">()</span>
     
-    # get the results from multi-threads
-    results = []
-    for _ in range(4):
-          results.append(q.get())
-    print(&quot;Input:&quot;, data)
-    print(&quot;Output:&quot;, results)
+    <span class="c1"># get the results from multi-threads</span>
+    <span class="n">results</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
+          <span class="n">results</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">q</span><span class="o">.</span><span class="n">get</span><span class="p">())</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Input:&quot;</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Output:&quot;</span><span class="p">,</span> <span class="n">results</span><span class="p">)</span>
 
-if __name__ == &#39;__main__&#39;:
-    multithreading()
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">multithreading</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -982,48 +982,48 @@ Output: [[1, 4, 9], [9, 16, 25], [16, 16, 16], [25, 25, 25]]
 <h3>3. GIL is not suitable for <code class="docutils literal notranslate"><span class="pre">CPU</span> <span class="pre">bound</span></code> task:<a class="headerlink" href="#gil-is-not-suitable-for-cpu-bound-task" title="Permalink to this headline">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>import threading
-from queue import Queue
-import copy
-import time
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">threading</span>
+<span class="kn">from</span> <span class="nn">queue</span> <span class="kn">import</span> <span class="n">Queue</span>
+<span class="kn">import</span> <span class="nn">copy</span>
+<span class="kn">import</span> <span class="nn">time</span>
 
-def job(l, q):
-    res = sum(l)
-    q.put(res)
+<span class="k">def</span> <span class="nf">job</span><span class="p">(</span><span class="n">l</span><span class="p">,</span> <span class="n">q</span><span class="p">):</span>
+    <span class="n">res</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">l</span><span class="p">)</span>
+    <span class="n">q</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
 
-def multithreading(l):
-    q = Queue()
-    threads = []
-    for i in range(4):
-        t = threading.Thread(target=job, args=(copy.copy(l), q), name=&#39;T%i&#39; % i)
-        t.start()
-        threads.append(t)
-    [t.join() for t in threads]
-    total = 0
-    for _ in range(4):
-        total += q.get()
-    print(total)
+<span class="k">def</span> <span class="nf">multithreading</span><span class="p">(</span><span class="n">l</span><span class="p">):</span>
+    <span class="n">q</span> <span class="o">=</span> <span class="n">Queue</span><span class="p">()</span>
+    <span class="n">threads</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
+        <span class="n">t</span> <span class="o">=</span> <span class="n">threading</span><span class="o">.</span><span class="n">Thread</span><span class="p">(</span><span class="n">target</span><span class="o">=</span><span class="n">job</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="n">copy</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">l</span><span class="p">),</span> <span class="n">q</span><span class="p">),</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;T</span><span class="si">%i</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">i</span><span class="p">)</span>
+        <span class="n">t</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+        <span class="n">threads</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+    <span class="p">[</span><span class="n">t</span><span class="o">.</span><span class="n">join</span><span class="p">()</span> <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">threads</span><span class="p">]</span>
+    <span class="n">total</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
+        <span class="n">total</span> <span class="o">+=</span> <span class="n">q</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">total</span><span class="p">)</span>
 
-def normal(l):
-    total = sum(l)
-    print(total)
+<span class="k">def</span> <span class="nf">normal</span><span class="p">(</span><span class="n">l</span><span class="p">):</span>
+    <span class="n">total</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">l</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">total</span><span class="p">)</span>
 
-if __name__ == &#39;__main__&#39;:
-    l = list(range(1000000))
-    s_t = time.time()
-    normal(l*4)
-    print(&#39;normal: &#39;,time.time()-s_t)
-    s_t = time.time()
-    multithreading(l)
-    print(&#39;multithreading: &#39;, time.time()-s_t)
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">l</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1000000</span><span class="p">))</span>
+    <span class="n">s_t</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+    <span class="n">normal</span><span class="p">(</span><span class="n">l</span><span class="o">*</span><span class="mi">4</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;normal: &#39;</span><span class="p">,</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span><span class="o">-</span><span class="n">s_t</span><span class="p">)</span>
+    <span class="n">s_t</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+    <span class="n">multithreading</span><span class="p">(</span><span class="n">l</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;multithreading: &#39;</span><span class="p">,</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span><span class="o">-</span><span class="n">s_t</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1999998000000
-normal:  0.06012845039367676
+normal:  0.05362081527709961
 1999998000000
-multithreading:  0.06031632423400879
+multithreading:  0.05097556114196777
 </pre></div>
 </div>
 </div>
@@ -1033,33 +1033,33 @@ multithreading:  0.06031632423400879
 <h3>4. GIL lock function:<a class="headerlink" href="#gil-lock-function" title="Permalink to this headline">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>import threading
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">threading</span>
 
-def job1():
-    global A, lock
-    lock.acquire()
-    for i in range(10):
-        A += 1
-        print(&#39;job1&#39;, A)
-    lock.release()
+<span class="k">def</span> <span class="nf">job1</span><span class="p">():</span>
+    <span class="k">global</span> <span class="n">A</span><span class="p">,</span> <span class="n">lock</span>
+    <span class="n">lock</span><span class="o">.</span><span class="n">acquire</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+        <span class="n">A</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;job1&#39;</span><span class="p">,</span> <span class="n">A</span><span class="p">)</span>
+    <span class="n">lock</span><span class="o">.</span><span class="n">release</span><span class="p">()</span>
 
-def job2():
-    global A, lock
-    lock.acquire()
-    for i in range(10):
-        A += 10
-        print(&#39;job2&#39;, A)
-    lock.release()
+<span class="k">def</span> <span class="nf">job2</span><span class="p">():</span>
+    <span class="k">global</span> <span class="n">A</span><span class="p">,</span> <span class="n">lock</span>
+    <span class="n">lock</span><span class="o">.</span><span class="n">acquire</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+        <span class="n">A</span> <span class="o">+=</span> <span class="mi">10</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;job2&#39;</span><span class="p">,</span> <span class="n">A</span><span class="p">)</span>
+    <span class="n">lock</span><span class="o">.</span><span class="n">release</span><span class="p">()</span>
 
-if __name__ == &#39;__main__&#39;:
-    lock = threading.Lock()
-    A = 0
-    t1 = threading.Thread(target=job1)
-    t2 = threading.Thread(target=job2)
-    t1.start()
-    t2.start()
-    t1.join()
-    t2.join()
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">lock</span> <span class="o">=</span> <span class="n">threading</span><span class="o">.</span><span class="n">Lock</span><span class="p">()</span>
+    <span class="n">A</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">t1</span> <span class="o">=</span> <span class="n">threading</span><span class="o">.</span><span class="n">Thread</span><span class="p">(</span><span class="n">target</span><span class="o">=</span><span class="n">job1</span><span class="p">)</span>
+    <span class="n">t2</span> <span class="o">=</span> <span class="n">threading</span><span class="o">.</span><span class="n">Thread</span><span class="p">(</span><span class="n">target</span><span class="o">=</span><span class="n">job2</span><span class="p">)</span>
+    <span class="n">t1</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+    <span class="n">t2</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+    <span class="n">t1</span><span class="o">.</span><span class="n">join</span><span class="p">()</span>
+    <span class="n">t2</span><span class="o">.</span><span class="n">join</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -1119,32 +1119,32 @@ job2 110
 <h3>1. create a thread pool, submit a task, get the results<a class="headerlink" href="#create-a-thread-pool-submit-a-task-get-the-results" title="Permalink to this headline">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>import time
-from concurrent.futures import ThreadPoolExecutor
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">from</span> <span class="nn">concurrent.futures</span> <span class="kn">import</span> <span class="n">ThreadPoolExecutor</span>
 
-def down_video(times):
-    time.sleep(times)
-    print(&quot;down video {}s finished&quot;.format(times))
-    return times
+<span class="k">def</span> <span class="nf">down_video</span><span class="p">(</span><span class="n">times</span><span class="p">):</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="n">times</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;down video </span><span class="si">{}</span><span class="s2">s finished&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">times</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">times</span>
 
-# create a thread pool with max_workers threads
-executor = ThreadPoolExecutor(max_workers=2)
+<span class="c1"># create a thread pool with max_workers threads</span>
+<span class="n">executor</span> <span class="o">=</span> <span class="n">ThreadPoolExecutor</span><span class="p">(</span><span class="n">max_workers</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
 
-# submit a task into thread pool，and submit function will return immediately with blocking
-task1 = executor.submit(down_video, (0.2))
-task2 = executor.submit(down_video, (0.1))
+<span class="c1"># submit a task into thread pool，and submit function will return immediately with blocking</span>
+<span class="n">task1</span> <span class="o">=</span> <span class="n">executor</span><span class="o">.</span><span class="n">submit</span><span class="p">(</span><span class="n">down_video</span><span class="p">,</span> <span class="p">(</span><span class="mf">0.2</span><span class="p">))</span>
+<span class="n">task2</span> <span class="o">=</span> <span class="n">executor</span><span class="o">.</span><span class="n">submit</span><span class="p">(</span><span class="n">down_video</span><span class="p">,</span> <span class="p">(</span><span class="mf">0.1</span><span class="p">))</span>
 
-# `done` function is used to check whether the task is finished
-print(&quot;task 1 is finished?：&quot;,task1.done())
+<span class="c1"># `done` function is used to check whether the task is finished</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;task 1 is finished?：&quot;</span><span class="p">,</span><span class="n">task1</span><span class="o">.</span><span class="n">done</span><span class="p">())</span>
 
-# `cancel` function is used to cancel the task before the thread put into thread-pool 
-print(&quot;cancel task 2：&quot;,task2.cancel())
+<span class="c1"># `cancel` function is used to cancel the task before the thread put into thread-pool </span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;cancel task 2：&quot;</span><span class="p">,</span><span class="n">task2</span><span class="o">.</span><span class="n">cancel</span><span class="p">())</span>
 
-time.sleep(1)
-print(&quot;task 1 is finished?：&quot;,task1.done())
+<span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;task 1 is finished?：&quot;</span><span class="p">,</span><span class="n">task1</span><span class="o">.</span><span class="n">done</span><span class="p">())</span>
 
-# `result` is used to get the results of a thread
-print(&quot;task1&#39;s results: &quot;, task1.result())
+<span class="c1"># `result` is used to get the results of a thread</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;task1&#39;s results: &quot;</span><span class="p">,</span> <span class="n">task1</span><span class="o">.</span><span class="n">result</span><span class="p">())</span>
 </pre></div>
 </div>
 </div>
@@ -1172,37 +1172,39 @@ task1&#39;s results:  0.2
 <p>The <code class="docutils literal notranslate"><span class="pre">as_completed</span></code> method is a generator that will block when no task is completed. When a certain task is completed, it can continue to execute the statement after the for loop, and then continue to block until all tasks end.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>from concurrent.futures import ThreadPoolExecutor, as_completed
-import time
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">concurrent.futures</span> <span class="kn">import</span> <span class="n">ThreadPoolExecutor</span><span class="p">,</span> <span class="n">as_completed</span>
+<span class="kn">import</span> <span class="nn">time</span>
 
-def download_video(index):
-    time.sleep(0.1)
-    print(&quot;download video {} finished at {}&quot;.format(index,time.strftime(&#39;%Y-%m-%d %H:%M:%S&#39;, time.gmtime())))
-    return index
+<span class="k">def</span> <span class="nf">download_video</span><span class="p">(</span><span class="n">index</span><span class="p">):</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.1</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;download video </span><span class="si">{}</span><span class="s2"> finished at </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">index</span><span class="p">,</span><span class="n">time</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%Y-%m-</span><span class="si">%d</span><span class="s1"> %H:%M:%S&#39;</span><span class="p">,</span> <span class="n">time</span><span class="o">.</span><span class="n">gmtime</span><span class="p">())))</span>
+    <span class="k">return</span> <span class="n">index</span>
 
-executor = ThreadPoolExecutor(max_workers=2)
-urls = [1, 2, 3, 4, 5]
-all_task = [executor.submit(download_video, (url)) for url in urls]
+<span class="n">executor</span> <span class="o">=</span> <span class="n">ThreadPoolExecutor</span><span class="p">(</span><span class="n">max_workers</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">urls</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<span class="n">all_task</span> <span class="o">=</span> <span class="p">[</span><span class="n">executor</span><span class="o">.</span><span class="n">submit</span><span class="p">(</span><span class="n">download_video</span><span class="p">,</span> <span class="p">(</span><span class="n">url</span><span class="p">))</span> <span class="k">for</span> <span class="n">url</span> <span class="ow">in</span> <span class="n">urls</span><span class="p">]</span>
 
-for task in as_completed(all_task):
-    data = task.result()
-    print(&quot;task {} down load success&quot;.format(data))
+<span class="k">for</span> <span class="n">task</span> <span class="ow">in</span> <span class="n">as_completed</span><span class="p">(</span><span class="n">all_task</span><span class="p">):</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">task</span><span class="o">.</span><span class="n">result</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;task </span><span class="si">{}</span><span class="s2"> down load success&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">data</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>download video 1 finished at 2022-12-28 23:43:00
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>download video 1 finished at 2023-01-10 06:00:40
 task 1 down load success
-download video 2 finished at 2022-12-28 23:43:00
+download video 2 finished at 2023-01-10 06:00:40
 task 2 down load success
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>download video 3 finished at 2022-12-28 23:43:00
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>download video 3 finished at 2023-01-10 06:00:40
 task 3 down load success
-download video 4 finished at 2022-12-28 23:43:00
+download video 4 finished at 2023-01-10 06:00:40
 task 4 down load success
-download video 5 finished at 2022-12-28 23:43:00
-task 5 down load success
+download video 5 finished at 2023-01-10 06:00:40
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>task 5 down load success
 </pre></div>
 </div>
 </div>
@@ -1215,33 +1217,33 @@ task 5 down load success
 <p>The difference from the <code class="docutils literal notranslate"><span class="pre">as_completed</span></code> method is that the <code class="docutils literal notranslate"><span class="pre">map</span></code> method can guarantee <strong>the order of tasks</strong>. For example: if you download 5 videos at the same time, even if the second video is downloaded before the first video, it will be blocked and wait for the first video to download. After the completion and notification of the main thread, the second downloaded video will be notified back to the main thread to ensure that the tasks are completed in order. Here is an example to illustrate:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>from concurrent.futures import ThreadPoolExecutor, as_completed
-import time
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">concurrent.futures</span> <span class="kn">import</span> <span class="n">ThreadPoolExecutor</span><span class="p">,</span> <span class="n">as_completed</span>
+<span class="kn">import</span> <span class="nn">time</span>
 
-def download_video(index):
-    time.sleep(index)
-    print(&quot;download video {} finished at {}&quot;.format(index,time.strftime(&#39;%Y-%m-%d %H:%M:%S&#39;, time.gmtime())))
-    return index
+<span class="k">def</span> <span class="nf">download_video</span><span class="p">(</span><span class="n">index</span><span class="p">):</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="n">index</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;download video </span><span class="si">{}</span><span class="s2"> finished at </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">index</span><span class="p">,</span><span class="n">time</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%Y-%m-</span><span class="si">%d</span><span class="s1"> %H:%M:%S&#39;</span><span class="p">,</span> <span class="n">time</span><span class="o">.</span><span class="n">gmtime</span><span class="p">())))</span>
+    <span class="k">return</span> <span class="n">index</span>
 
-executor = ThreadPoolExecutor(max_workers=2)
-urls = [0.3, 0.2, 0.1, 0.4, 0.5]
-for data in executor.map(download_video,urls):
-    print(&quot;task {} down load success&quot;.format(data))
+<span class="n">executor</span> <span class="o">=</span> <span class="n">ThreadPoolExecutor</span><span class="p">(</span><span class="n">max_workers</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">urls</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.3</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">data</span> <span class="ow">in</span> <span class="n">executor</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">download_video</span><span class="p">,</span><span class="n">urls</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;task </span><span class="si">{}</span><span class="s2"> down load success&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">data</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>download video 0.2 finished at 2022-12-28 23:43:00
-download video 0.3 finished at 2022-12-28 23:43:00
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>download video 0.2 finished at 2023-01-10 06:00:40
+download video 0.3 finished at 2023-01-10 06:00:40
 task 0.3 down load success
 task 0.2 down load success
-download video 0.1 finished at 2022-12-28 23:43:00
+download video 0.1 finished at 2023-01-10 06:00:40
 task 0.1 down load success
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>download video 0.4 finished at 2022-12-28 23:43:01
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>download video 0.4 finished at 2023-01-10 06:00:41
 task 0.4 down load success
-download video 0.5 finished at 2022-12-28 23:43:01
+download video 0.5 finished at 2023-01-10 06:00:41
 task 0.5 down load success
 </pre></div>
 </div>
@@ -1254,27 +1256,27 @@ task 0.5 down load success
 <p>The <code class="docutils literal notranslate"><span class="pre">wait</span></code> method receives 3 parameters, the <code class="docutils literal notranslate"><span class="pre">waiting</span> <span class="pre">task</span> <span class="pre">sequence</span></code>, the <code class="docutils literal notranslate"><span class="pre">timeout</span> <span class="pre">time</span></code> and the <code class="docutils literal notranslate"><span class="pre">waiting</span> <span class="pre">condition</span></code>. The wait condition <code class="docutils literal notranslate"><span class="pre">return_when</span></code> defaults to <code class="docutils literal notranslate"><span class="pre">ALL_COMPLETED</span></code>, indicating that all tasks are to be completed. You can see that in the running results, all tasks are indeed completed, and the main thread prints out main. The waiting condition can also be set to <code class="docutils literal notranslate"><span class="pre">FIRST_COMPLETED</span></code>, indicating that the first task is completed and the wait is stopped.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>from concurrent.futures import ThreadPoolExecutor, wait, ALL_COMPLETED, FIRST_COMPLETED
-import time
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">concurrent.futures</span> <span class="kn">import</span> <span class="n">ThreadPoolExecutor</span><span class="p">,</span> <span class="n">wait</span><span class="p">,</span> <span class="n">ALL_COMPLETED</span><span class="p">,</span> <span class="n">FIRST_COMPLETED</span>
+<span class="kn">import</span> <span class="nn">time</span>
 
-def download_video(index):
-    time.sleep(0.1)
-    print(&quot;download video {} finished at {}&quot;.format(index,time.strftime(&#39;%Y-%m-%d %H:%M:%S&#39;, time.gmtime())))
-    return index
-executor = ThreadPoolExecutor(max_workers=2)
-urls = [0.1, 0.2, 0.3, 0.4, 0.5]
-all_task = [executor.submit(download_video,(url)) for url in urls]
-wait(all_task,return_when=ALL_COMPLETED)
-print(&quot;main &quot;)
+<span class="k">def</span> <span class="nf">download_video</span><span class="p">(</span><span class="n">index</span><span class="p">):</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.1</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;download video </span><span class="si">{}</span><span class="s2"> finished at </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">index</span><span class="p">,</span><span class="n">time</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%Y-%m-</span><span class="si">%d</span><span class="s1"> %H:%M:%S&#39;</span><span class="p">,</span> <span class="n">time</span><span class="o">.</span><span class="n">gmtime</span><span class="p">())))</span>
+    <span class="k">return</span> <span class="n">index</span>
+<span class="n">executor</span> <span class="o">=</span> <span class="n">ThreadPoolExecutor</span><span class="p">(</span><span class="n">max_workers</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">urls</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">]</span>
+<span class="n">all_task</span> <span class="o">=</span> <span class="p">[</span><span class="n">executor</span><span class="o">.</span><span class="n">submit</span><span class="p">(</span><span class="n">download_video</span><span class="p">,(</span><span class="n">url</span><span class="p">))</span> <span class="k">for</span> <span class="n">url</span> <span class="ow">in</span> <span class="n">urls</span><span class="p">]</span>
+<span class="n">wait</span><span class="p">(</span><span class="n">all_task</span><span class="p">,</span><span class="n">return_when</span><span class="o">=</span><span class="n">ALL_COMPLETED</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;main &quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>download video 0.1 finished at 2022-12-28 23:43:01
-download video 0.2 finished at 2022-12-28 23:43:01
-download video 0.3 finished at 2022-12-28 23:43:01
-download video 0.4 finished at 2022-12-28 23:43:01
-download video 0.5 finished at 2022-12-28 23:43:01
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>download video 0.1 finished at 2023-01-10 06:00:41
+download video 0.2 finished at 2023-01-10 06:00:41
+download video 0.3 finished at 2023-01-10 06:00:41
+download video 0.4 finished at 2023-01-10 06:00:41
+download video 0.5 finished at 2023-01-10 06:00:41
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>main 
@@ -1315,214 +1317,214 @@ download video 0.5 finished at 2022-12-28 23:43:01
 </div>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>import os
-import requests
-from tqdm import tqdm
-from faker import Faker
-from retry import retry
-from pathlib import Path
-from concurrent.futures import ThreadPoolExecutor, as_completed
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">from</span> <span class="nn">tqdm</span> <span class="kn">import</span> <span class="n">tqdm</span>
+<span class="kn">from</span> <span class="nn">faker</span> <span class="kn">import</span> <span class="n">Faker</span>
+<span class="kn">from</span> <span class="nn">retry</span> <span class="kn">import</span> <span class="n">retry</span>
+<span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
+<span class="kn">from</span> <span class="nn">concurrent.futures</span> <span class="kn">import</span> <span class="n">ThreadPoolExecutor</span><span class="p">,</span> <span class="n">as_completed</span>
 
 
-cpu_cores = os.cpu_count()
-requests.packages.urllib3.disable_warnings()
+<span class="n">cpu_cores</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">cpu_count</span><span class="p">()</span>
+<span class="n">requests</span><span class="o">.</span><span class="n">packages</span><span class="o">.</span><span class="n">urllib3</span><span class="o">.</span><span class="n">disable_warnings</span><span class="p">()</span>
 
 
-class downloader_https():
-    def __init__(self, url, show_info = True, resume=True, filename=None, num_threads=cpu_cores, timeout=10, chunk_size=1024*1000, header=None, proxies=None):
-        &quot;&quot;&quot;
-        :param url: 下载地址
-        :param filename: 指定下载文件名 不指定则根据url截取命名
-        &quot;&quot;&quot;
-        self.url = url
-        self.show_info = show_info
-        self.resume = resume
-        self.chunk_size = chunk_size  # 设置下载文件块大小 单位为字节（多线程下载时，一个线程下载一小块）
-        self.filename = filename
-        self.num_threads = num_threads
-        self.proxies = proxies
-        self.timeout = timeout
-        self.file_type = None
-        self.accept_ranges = None
-        self.content_length = None
-        self.transfer_encoding = None
-        if header is None:
-            self.header = {}
-            self.header.setdefault(&#39;User-Agent&#39;, Faker().user_agent())
-        elif &#39;User-Agent&#39; not in header:
-            self.header.setdefault(&#39;User-Agent&#39;, Faker().user_agent())
-        else:
-            self.header = header
+<span class="k">class</span> <span class="nc">downloader_https</span><span class="p">():</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">show_info</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="n">resume</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">num_threads</span><span class="o">=</span><span class="n">cpu_cores</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">chunk_size</span><span class="o">=</span><span class="mi">1024</span><span class="o">*</span><span class="mi">1000</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">proxies</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        :param url: 下载地址</span>
+<span class="sd">        :param filename: 指定下载文件名 不指定则根据url截取命名</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">url</span> <span class="o">=</span> <span class="n">url</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">show_info</span> <span class="o">=</span> <span class="n">show_info</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">resume</span> <span class="o">=</span> <span class="n">resume</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">chunk_size</span> <span class="o">=</span> <span class="n">chunk_size</span>  <span class="c1"># 设置下载文件块大小 单位为字节（多线程下载时，一个线程下载一小块）</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">filename</span> <span class="o">=</span> <span class="n">filename</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">num_threads</span> <span class="o">=</span> <span class="n">num_threads</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">proxies</span> <span class="o">=</span> <span class="n">proxies</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">timeout</span> <span class="o">=</span> <span class="n">timeout</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">file_type</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">accept_ranges</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">content_length</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">transfer_encoding</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="k">if</span> <span class="n">header</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">header</span> <span class="o">=</span> <span class="p">{}</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">header</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="s1">&#39;User-Agent&#39;</span><span class="p">,</span> <span class="n">Faker</span><span class="p">()</span><span class="o">.</span><span class="n">user_agent</span><span class="p">())</span>
+        <span class="k">elif</span> <span class="s1">&#39;User-Agent&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">header</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">header</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="s1">&#39;User-Agent&#39;</span><span class="p">,</span> <span class="n">Faker</span><span class="p">()</span><span class="o">.</span><span class="n">user_agent</span><span class="p">())</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">header</span> <span class="o">=</span> <span class="n">header</span>
 
-    @retry(tries=3)
-    def check_url(self):
-        &quot;&quot;&quot;
-        判断url是否支持断点续传功能 and 是否支持多线程（文件内容是否为零）
-        &quot;&quot;&quot;
-        # 文件处理
-        _, filename = os.path.split(self.url)
-        self.filename = self.filename or filename
+    <span class="nd">@retry</span><span class="p">(</span><span class="n">tries</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">check_url</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        判断url是否支持断点续传功能 and 是否支持多线程（文件内容是否为零）</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># 文件处理</span>
+        <span class="n">_</span><span class="p">,</span> <span class="n">filename</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">url</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">filename</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">filename</span> <span class="ow">or</span> <span class="n">filename</span>
 
-        res = requests.head(self.url, headers=self.header, proxies=self.proxies, timeout=self.timeout, allow_redirects=True, verify=False)  # verify=False 关闭ssl双向验证，解决访问https报错问题
+        <span class="n">res</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">header</span><span class="p">,</span> <span class="n">proxies</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">proxies</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">timeout</span><span class="p">,</span> <span class="n">allow_redirects</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">verify</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>  <span class="c1"># verify=False 关闭ssl双向验证，解决访问https报错问题</span>
 
-        if not (200 &lt;= res.status_code &lt; 400):
-            raise Exception(&#39;Bad request!&#39;)
+        <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="mi">200</span> <span class="o">&lt;=</span> <span class="n">res</span><span class="o">.</span><span class="n">status_code</span> <span class="o">&lt;</span> <span class="mi">400</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s1">&#39;Bad request!&#39;</span><span class="p">)</span>
 
-        headers = res.headers
-        self.file_type = headers.get(&#39;Content-Type&#39;)
-        self.accept_ranges = headers.get(&#39;Accept-Ranges&#39;)
-        self.transfer_encoding = headers.get(&#39;Transfer-Encoding&#39;)
+        <span class="n">headers</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">headers</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">file_type</span> <span class="o">=</span> <span class="n">headers</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;Content-Type&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">accept_ranges</span> <span class="o">=</span> <span class="n">headers</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;Accept-Ranges&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">transfer_encoding</span> <span class="o">=</span> <span class="n">headers</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;Transfer-Encoding&#39;</span><span class="p">)</span>
 
-        if self.transfer_encoding == &quot;chunked&quot; or self.transfer_encoding == &quot;gzip, chunked&quot;:
-            self.num_threads = 1
-            self.content_length = 0
-        else:
-            lengths = headers.get(&#39;Content-Length&#39;)
-            if lengths == None:
-                self.content_length = 0
-            else:
-                self.content_length = int(lengths)
-
-
-    def get_range(self, start=0):
-        &quot;&quot;&quot;
-        根据设置的缓存大小以及文件大小划分字节序列
-        eg: [(0, 1023), (1024, 2047), (2048, 3071) ...]
-        &quot;&quot;&quot;
-        if self.transfer_encoding == &quot;chunked&quot; or self.transfer_encoding == &quot;gzip, chunked&quot;:
-            _range = [(start, &#39;&#39;)]
-        else:
-            lst = range(start, self.content_length, self.chunk_size)   
-            _range = list(zip(lst[:-1], [i - 1 for i in lst[1:]]))
-            _range.append((lst[-1], &#39;&#39;))
-
-        return _range
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">transfer_encoding</span> <span class="o">==</span> <span class="s2">&quot;chunked&quot;</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">transfer_encoding</span> <span class="o">==</span> <span class="s2">&quot;gzip, chunked&quot;</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">num_threads</span> <span class="o">=</span> <span class="mi">1</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">content_length</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">lengths</span> <span class="o">=</span> <span class="n">headers</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;Content-Length&#39;</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">lengths</span> <span class="o">==</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">content_length</span> <span class="o">=</span> <span class="mi">0</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">content_length</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">lengths</span><span class="p">)</span>
 
 
-    @retry(tries=5)
-    def download_by_piece(self, _range):
-        start, stop = _range
-        headers = {**self.header, **{&quot;Range&quot;: f&quot;bytes={start}-{stop}&quot;}} # merge
+    <span class="k">def</span> <span class="nf">get_range</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">start</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        根据设置的缓存大小以及文件大小划分字节序列</span>
+<span class="sd">        eg: [(0, 1023), (1024, 2047), (2048, 3071) ...]</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">transfer_encoding</span> <span class="o">==</span> <span class="s2">&quot;chunked&quot;</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">transfer_encoding</span> <span class="o">==</span> <span class="s2">&quot;gzip, chunked&quot;</span><span class="p">:</span>
+            <span class="n">_range</span> <span class="o">=</span> <span class="p">[(</span><span class="n">start</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">lst</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">content_length</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">chunk_size</span><span class="p">)</span>   
+            <span class="n">_range</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">lst</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">lst</span><span class="p">[</span><span class="mi">1</span><span class="p">:]]))</span>
+            <span class="n">_range</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">lst</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="s1">&#39;&#39;</span><span class="p">))</span>
 
-        res = requests.get(self.url, headers=headers, proxies=self.proxies, timeout=self.timeout, allow_redirects=True, verify=False)
-        if res.status_code != 206:
-            raise Exception(f&#39;Request raise error, url: {self.url}, range: {_range}&#39;)
-        return _range, res.content
+        <span class="k">return</span> <span class="n">_range</span>
 
 
-    def download(self):
-        start = 0
-        self.check_url()
+    <span class="nd">@retry</span><span class="p">(</span><span class="n">tries</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">download_by_piece</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">_range</span><span class="p">):</span>
+        <span class="n">start</span><span class="p">,</span> <span class="n">stop</span> <span class="o">=</span> <span class="n">_range</span>
+        <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="o">**</span><span class="bp">self</span><span class="o">.</span><span class="n">header</span><span class="p">,</span> <span class="o">**</span><span class="p">{</span><span class="s2">&quot;Range&quot;</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;bytes=</span><span class="si">{</span><span class="n">start</span><span class="si">}</span><span class="s2">-</span><span class="si">{</span><span class="n">stop</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">}}</span> <span class="c1"># merge</span>
 
-        if self.accept_ranges != &quot;bytes&quot;:
-            if self.show_info:
-                print(f&#39;--- Mission ---: {self.url} download from scratch || with single thread, do not support breakpoint resuming&#39;)
+        <span class="n">res</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">proxies</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">proxies</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">timeout</span><span class="p">,</span> <span class="n">allow_redirects</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">verify</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">res</span><span class="o">.</span><span class="n">status_code</span> <span class="o">!=</span> <span class="mi">206</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Request raise error, url: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">url</span><span class="si">}</span><span class="s1">, range: </span><span class="si">{</span><span class="n">_range</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">_range</span><span class="p">,</span> <span class="n">res</span><span class="o">.</span><span class="n">content</span>
+
+
+    <span class="k">def</span> <span class="nf">download</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">start</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">check_url</span><span class="p">()</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">accept_ranges</span> <span class="o">!=</span> <span class="s2">&quot;bytes&quot;</span><span class="p">:</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">show_info</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;--- Mission ---: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">url</span><span class="si">}</span><span class="s1"> download from scratch || with single thread, do not support breakpoint resuming&#39;</span><span class="p">)</span>
             
-            file_path = Path(self.filename)
+            <span class="n">file_path</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">filename</span><span class="p">)</span>
 
-            res = requests.get(self.url, 
-                                headers=self.header, 
-                                proxies=self.proxies, 
-                                timeout=self.timeout, 
-                                allow_redirects=True, 
-                                verify=False)
+            <span class="n">res</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">url</span><span class="p">,</span> 
+                                <span class="n">headers</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">header</span><span class="p">,</span> 
+                                <span class="n">proxies</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">proxies</span><span class="p">,</span> 
+                                <span class="n">timeout</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">timeout</span><span class="p">,</span> 
+                                <span class="n">allow_redirects</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> 
+                                <span class="n">verify</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 
-            if res.status_code != 206:
-                raise Exception(f&#39;Request raise error, url: {self.url}&#39;)
+            <span class="k">if</span> <span class="n">res</span><span class="o">.</span><span class="n">status_code</span> <span class="o">!=</span> <span class="mi">206</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Request raise error, url: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">url</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
  
-            # 将下载的块写入文件
-            open(file_path, &#39;w&#39;).close()  # 生成0文件
-            with open(self.filename, &#39;rb+&#39;) as fp:
-                fp.seek(0)
-                fp.write(res.content)
+            <span class="c1"># 将下载的块写入文件</span>
+            <span class="nb">open</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>  <span class="c1"># 生成0文件</span>
+            <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">filename</span><span class="p">,</span> <span class="s1">&#39;rb+&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fp</span><span class="p">:</span>
+                <span class="n">fp</span><span class="o">.</span><span class="n">seek</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+                <span class="n">fp</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">res</span><span class="o">.</span><span class="n">content</span><span class="p">)</span>
 
-            if self.show_info:
-                print(f&#39;--- File ---: {self.filename} download completely&#39;)
-        else:
-            file_path = Path(self.filename)
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">show_info</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;--- File ---: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">filename</span><span class="si">}</span><span class="s1"> download completely&#39;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">file_path</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">filename</span><span class="p">)</span>
 
-            if self.resume:
-                open(file_path, &#39;w+&#39;).close()
-                start = 0
-                if self.show_info:
-                    print(f&#39;--- Mission ---: {self.url} download from scratch || with {self.num_threads} threads, support breakpoint resuming&#39;)
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">resume</span><span class="p">:</span>
+                <span class="nb">open</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span> <span class="s1">&#39;w+&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+                <span class="n">start</span> <span class="o">=</span> <span class="mi">0</span>
+                <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">show_info</span><span class="p">:</span>
+                    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;--- Mission ---: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">url</span><span class="si">}</span><span class="s1"> download from scratch || with </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">num_threads</span><span class="si">}</span><span class="s1"> threads, support breakpoint resuming&#39;</span><span class="p">)</span>
 
-            else:
-                if file_path.exists():
-                    # 文件已存在 并且支持断点续传，可以从现有文件基础上继续下载
-                    start = file_path.lstat().st_size
-                    if self.show_info:
-                        print(f&#39;--- Mission ---: {self.url} download from breakpoint || with {self.num_threads} threads, support breakpoint resuming&#39;)
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">file_path</span><span class="o">.</span><span class="n">exists</span><span class="p">():</span>
+                    <span class="c1"># 文件已存在 并且支持断点续传，可以从现有文件基础上继续下载</span>
+                    <span class="n">start</span> <span class="o">=</span> <span class="n">file_path</span><span class="o">.</span><span class="n">lstat</span><span class="p">()</span><span class="o">.</span><span class="n">st_size</span>
+                    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">show_info</span><span class="p">:</span>
+                        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;--- Mission ---: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">url</span><span class="si">}</span><span class="s1"> download from breakpoint || with </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">num_threads</span><span class="si">}</span><span class="s1"> threads, support breakpoint resuming&#39;</span><span class="p">)</span>
 
-                    # If file have already downloaded 
-                    if start == self.content_length:
-                        if self.show_info:
-                            print(f&#39;--- File ---: {self.filename} has already been downloaded completely&#39;)
-                        return
-                else:
-                    open(file_path, &#39;w+&#39;).close() # 生成文件
-                    start = 0
-                    if self.show_info:
-                        print(f&#39;--- Mission ---: {self.url} download from scratch || with {self.num_threads} threads, support breakpoint resuming&#39;)
+                    <span class="c1"># If file have already downloaded </span>
+                    <span class="k">if</span> <span class="n">start</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">content_length</span><span class="p">:</span>
+                        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">show_info</span><span class="p">:</span>
+                            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;--- File ---: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">filename</span><span class="si">}</span><span class="s1"> has already been downloaded completely&#39;</span><span class="p">)</span>
+                        <span class="k">return</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="nb">open</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span> <span class="s1">&#39;w+&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">close</span><span class="p">()</span> <span class="c1"># 生成文件</span>
+                    <span class="n">start</span> <span class="o">=</span> <span class="mi">0</span>
+                    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">show_info</span><span class="p">:</span>
+                        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;--- Mission ---: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">url</span><span class="si">}</span><span class="s1"> download from scratch || with </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">num_threads</span><span class="si">}</span><span class="s1"> threads, support breakpoint resuming&#39;</span><span class="p">)</span>
 
-            # 初始化进度条
-            if self.show_info:
-                pbar = tqdm(total=self.content_length,
-                        initial=start,
-                        unit=&#39;B&#39;,
-                        unit_scale=True,
-                        desc=self.filename,
-                        unit_divisor=1024)
+            <span class="c1"># 初始化进度条</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">show_info</span><span class="p">:</span>
+                <span class="n">pbar</span> <span class="o">=</span> <span class="n">tqdm</span><span class="p">(</span><span class="n">total</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">content_length</span><span class="p">,</span>
+                        <span class="n">initial</span><span class="o">=</span><span class="n">start</span><span class="p">,</span>
+                        <span class="n">unit</span><span class="o">=</span><span class="s1">&#39;B&#39;</span><span class="p">,</span>
+                        <span class="n">unit_scale</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                        <span class="n">desc</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">filename</span><span class="p">,</span>
+                        <span class="n">unit_divisor</span><span class="o">=</span><span class="mi">1024</span><span class="p">)</span>
             
-            # 使用多线池来创建线程
-            with ThreadPoolExecutor(max_workers=self.num_threads) as pool:
-                res = [pool.submit(self.download_by_piece, r) for r in self.get_range(start=start)] # or use map function
+            <span class="c1"># 使用多线池来创建线程</span>
+            <span class="k">with</span> <span class="n">ThreadPoolExecutor</span><span class="p">(</span><span class="n">max_workers</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">num_threads</span><span class="p">)</span> <span class="k">as</span> <span class="n">pool</span><span class="p">:</span>
+                <span class="n">res</span> <span class="o">=</span> <span class="p">[</span><span class="n">pool</span><span class="o">.</span><span class="n">submit</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">download_by_piece</span><span class="p">,</span> <span class="n">r</span><span class="p">)</span> <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_range</span><span class="p">(</span><span class="n">start</span><span class="o">=</span><span class="n">start</span><span class="p">)]</span> <span class="c1"># or use map function</span>
 
-                # 将下载的块写入文件
-                with open(self.filename, &#39;rb+&#39;) as fp:
-                    for item in as_completed(res):
-                        _range, content = item.result()
-                        start, stop = _range
-                        fp.seek(start)
-                        fp.write(content)
-                        # 更新进度条
-                        if self.show_info:
-                            pbar.update(self.chunk_size)
+                <span class="c1"># 将下载的块写入文件</span>
+                <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">filename</span><span class="p">,</span> <span class="s1">&#39;rb+&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fp</span><span class="p">:</span>
+                    <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">as_completed</span><span class="p">(</span><span class="n">res</span><span class="p">):</span>
+                        <span class="n">_range</span><span class="p">,</span> <span class="n">content</span> <span class="o">=</span> <span class="n">item</span><span class="o">.</span><span class="n">result</span><span class="p">()</span>
+                        <span class="n">start</span><span class="p">,</span> <span class="n">stop</span> <span class="o">=</span> <span class="n">_range</span>
+                        <span class="n">fp</span><span class="o">.</span><span class="n">seek</span><span class="p">(</span><span class="n">start</span><span class="p">)</span>
+                        <span class="n">fp</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">content</span><span class="p">)</span>
+                        <span class="c1"># 更新进度条</span>
+                        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">show_info</span><span class="p">:</span>
+                            <span class="n">pbar</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">chunk_size</span><span class="p">)</span>
 
-            if self.show_info:
-                pbar.close()
-                print(f&#39;--- File ---: {self.filename} download completely&#39;)
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">show_info</span><span class="p">:</span>
+                <span class="n">pbar</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+                <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;--- File ---: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">filename</span><span class="si">}</span><span class="s1"> download completely&#39;</span><span class="p">)</span>
 
 
-    def print(self):
-        self.check_url()
-        print( &quot;self.url = &quot;, self.url, &#39;\n&#39;,
-            &quot;self.resume = &quot;, self.resume, &#39;\n&#39;,
-            &quot;self.chunk_size = &quot;, self.chunk_size, &#39;\n&#39;,  # 设置下载文件块大小 单位为字节（多线程下载时，一个线程下载一小块）
-            &quot;self.filename = &quot;, self.filename, &#39;\n&#39;,
-            &quot;self.num_threads = &quot;, self.num_threads, &#39;\n&#39;,
-            &quot;self.proxies = &quot;, self.proxies, &#39;\n&#39;,
-            &quot;self.timeout = &quot;, self.timeout, &#39;\n&#39;,
-            &quot;self.file_type = &quot;, self.file_type, &#39;\n&#39;,
-            &quot;self.accept_ranges = &quot;, self.accept_ranges, &#39;\n&#39;,
-            &quot;self.content_length = &quot;, self.content_length, &#39;\n&#39;,
-            &quot;self.transfer_encoding = &quot;, self.transfer_encoding, &#39;\n&#39;,
-            &quot;self.header = &quot;, self.header
-            )
+    <span class="k">def</span> <span class="nf">print</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">check_url</span><span class="p">()</span>
+        <span class="nb">print</span><span class="p">(</span> <span class="s2">&quot;self.url = &quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">url</span><span class="p">,</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span>
+            <span class="s2">&quot;self.resume = &quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">resume</span><span class="p">,</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span>
+            <span class="s2">&quot;self.chunk_size = &quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">chunk_size</span><span class="p">,</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span>  <span class="c1"># 设置下载文件块大小 单位为字节（多线程下载时，一个线程下载一小块）</span>
+            <span class="s2">&quot;self.filename = &quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">filename</span><span class="p">,</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span>
+            <span class="s2">&quot;self.num_threads = &quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">num_threads</span><span class="p">,</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span>
+            <span class="s2">&quot;self.proxies = &quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">proxies</span><span class="p">,</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span>
+            <span class="s2">&quot;self.timeout = &quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">timeout</span><span class="p">,</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span>
+            <span class="s2">&quot;self.file_type = &quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">file_type</span><span class="p">,</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span>
+            <span class="s2">&quot;self.accept_ranges = &quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">accept_ranges</span><span class="p">,</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span>
+            <span class="s2">&quot;self.content_length = &quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">content_length</span><span class="p">,</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span>
+            <span class="s2">&quot;self.transfer_encoding = &quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">transfer_encoding</span><span class="p">,</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span>
+            <span class="s2">&quot;self.header = &quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">header</span>
+            <span class="p">)</span>
 
-if __name__ == &#39;__main__&#39;:
-    url = &quot;https://github.com/OUCyf/Latex-Template-Rice-USTC/raw/gh-pages/main.pdf&quot;
-    d = downloader_https(url, 
-            num_threads = 4,
-            show_info = False,
-            resume = True, 
-            chunk_size = 1024*100, 
-            filename = None,  
-            header = None, 
-            proxies = None, 
-            timeout = 10)
-    d.download()
-    d.print()
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://github.com/OUCyf/Latex-Template-Rice-USTC/raw/gh-pages/main.pdf&quot;</span>
+    <span class="n">d</span> <span class="o">=</span> <span class="n">downloader_https</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> 
+            <span class="n">num_threads</span> <span class="o">=</span> <span class="mi">4</span><span class="p">,</span>
+            <span class="n">show_info</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+            <span class="n">resume</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> 
+            <span class="n">chunk_size</span> <span class="o">=</span> <span class="mi">1024</span><span class="o">*</span><span class="mi">100</span><span class="p">,</span> 
+            <span class="n">filename</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>  
+            <span class="n">header</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> 
+            <span class="n">proxies</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> 
+            <span class="n">timeout</span> <span class="o">=</span> <span class="mi">10</span><span class="p">)</span>
+    <span class="n">d</span><span class="o">.</span><span class="n">download</span><span class="p">()</span>
+    <span class="n">d</span><span class="o">.</span><span class="n">print</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -1538,7 +1540,7 @@ if __name__ == &#39;__main__&#39;:
  self.accept_ranges =  bytes 
  self.content_length =  393563 
  self.transfer_encoding =  None 
- self.header =  {&#39;User-Agent&#39;: &#39;Mozilla/5.0 (Android 3.2; Mobile; rv:8.0) Gecko/8.0 Firefox/8.0&#39;}
+ self.header =  {&#39;User-Agent&#39;: &#39;Opera/9.25.(X11; Linux i686; crh-UA) Presto/2.9.185 Version/11.00&#39;}
 </pre></div>
 </div>
 </div>

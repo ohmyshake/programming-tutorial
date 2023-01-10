@@ -679,13 +679,13 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#subprocess">
-   Subprocess
+  <a class="reference internal nav-link" href="#pathlib">
+   Pathlib
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#multithreading-speeds-up-downloading-files">
-   Multithreading Speeds Up Downloading Files
+  <a class="reference internal nav-link" href="#subprocess">
+   Subprocess
   </a>
  </li>
 </ul>
@@ -718,13 +718,13 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#subprocess">
-   Subprocess
+  <a class="reference internal nav-link" href="#pathlib">
+   Pathlib
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#multithreading-speeds-up-downloading-files">
-   Multithreading Speeds Up Downloading Files
+  <a class="reference internal nav-link" href="#subprocess">
+   Subprocess
   </a>
  </li>
 </ul>
@@ -785,15 +785,34 @@ UTC190419001303.sgy
 </pre></div>
 </div>
 </section>
+<section id="pathlib">
+<h2>Pathlib<a class="headerlink" href="#pathlib" title="Permalink to this headline">#</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
+<span class="n">output_path</span> <span class="o">=</span> <span class="s2">&quot;./DAS_DATA&quot;</span>
+
+<span class="c1"># check whether exists</span>
+<span class="n">Path</span><span class="p">(</span><span class="n">output_path</span><span class="p">)</span><span class="o">.</span><span class="n">is_dir</span><span class="p">()</span>
+
+<span class="c1"># make file</span>
+<span class="n">Path</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">Path</span><span class="p">(</span><span class="n">output_path</span><span class="p">))</span>
+
+<span class="c1"># absolute path</span>
+<span class="n">abs_path</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">output_path</span><span class="p">)</span><span class="o">.</span><span class="n">joinpath</span><span class="p">(</span><span class="n">url</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span><span class="o">.</span><span class="n">absolute</span><span class="p">()</span>
+
+<span class="c1"># convert to string</span>
+<span class="n">abs_filename</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">abs_path</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
 <section id="subprocess">
 <h2>Subprocess<a class="headerlink" href="#subprocess" title="Permalink to this headline">#</a></h2>
 <div class="cell tag_hide-input tag_hide-output tag_output_scroll tag_remove-stderr tag_raises-exception docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>import sys
-print(&quot;this is some stdddout&quot;)
-print(&quot;this is some stdout&quot;)
-print(&quot;this is some stderr&quot;, file=sys.stderr)
-print(a)
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;this is some stdddout&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;this is some stdout&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;this is some stderr&quot;</span><span class="p">,</span> <span class="n">file</span><span class="o">=</span><span class="n">sys</span><span class="o">.</span><span class="n">stderr</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -814,10 +833,6 @@ this is some stdout
 </div>
 </div>
 </div>
-</section>
-<section id="multithreading-speeds-up-downloading-files">
-<h2>Multithreading Speeds Up Downloading Files<a class="headerlink" href="#multithreading-speeds-up-downloading-files" title="Permalink to this headline">#</a></h2>
-<p><a class="reference external" href="http://dong.sh/posts/pythonftpparallelsdownload/">http://dong.sh/posts/pythonftpparallelsdownload/</a></p>
 </section>
 </section>
 

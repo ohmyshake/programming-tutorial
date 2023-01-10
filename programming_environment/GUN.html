@@ -673,26 +673,28 @@ title="Print to PDF"
   <a class="reference internal nav-link" href="#configuration">
    Configuration
   </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#package">
+   Package
+  </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#vscode">
-     VSCode
+    <a class="reference internal nav-link" href="#fftw3">
+     FFTW3
     </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#makefile">
-     Makefile
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#cmake">
-     CMake
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#package">
-     Package
-    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#install-via-brew">
+       1.Install via brew
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#install-from-source">
+       2.Install from source
+      </a>
+     </li>
+    </ul>
    </li>
   </ul>
  </li>
@@ -771,26 +773,28 @@ title="Print to PDF"
   <a class="reference internal nav-link" href="#configuration">
    Configuration
   </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#package">
+   Package
+  </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#vscode">
-     VSCode
+    <a class="reference internal nav-link" href="#fftw3">
+     FFTW3
     </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#makefile">
-     Makefile
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#cmake">
-     CMake
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#package">
-     Package
-    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#install-via-brew">
+       1.Install via brew
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#install-from-source">
+       2.Install from source
+      </a>
+     </li>
+    </ul>
    </li>
   </ul>
  </li>
@@ -828,14 +832,14 @@ title="Print to PDF"
 <h3><code class="docutils literal notranslate"><span class="pre">clang</span></code> compiler + <code class="docutils literal notranslate"><span class="pre">openmp</span></code><a class="headerlink" href="#clang-compiler-openmp" title="Permalink to this headline">#</a></h3>
 <p>The clang compiler doesn’t bring <strong><code class="docutils literal notranslate"><span class="pre">openmp</span></code></strong> package, and install openmp for clang compiler:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Install</span>
-brew install openmp
+brew<span class="w"> </span>install<span class="w"> </span>openmp
 
 <span class="c1"># For compilers to find libomp you may need to set for Makefile</span>
-<span class="nb">export</span> <span class="nv">LDFLAGS</span><span class="o">=</span><span class="s2">&quot;-L/opt/homebrew/opt/libomp/lib&quot;</span>
-<span class="nb">export</span> <span class="nv">CPPFLAGS</span><span class="o">=</span><span class="s2">&quot;-I/opt/homebrew/opt/libomp/include&quot;</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">LDFLAGS</span><span class="o">=</span><span class="s2">&quot;-L/opt/homebrew/opt/libomp/lib&quot;</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">CPPFLAGS</span><span class="o">=</span><span class="s2">&quot;-I/opt/homebrew/opt/libomp/include&quot;</span>
 
 <span class="c1"># Or compile directly (eg: c++ script)</span>
-clang++ openmp.cpp -o openmp -Xpreprocessor -fopenmp -lomp -I/opt/homebrew/opt/libomp/include  -L/opt/homebrew/opt/libomp/lib 
+clang++<span class="w"> </span>openmp.cpp<span class="w"> </span>-o<span class="w"> </span>openmp<span class="w"> </span>-Xpreprocessor<span class="w"> </span>-fopenmp<span class="w"> </span>-lomp<span class="w"> </span>-I/opt/homebrew/opt/libomp/include<span class="w">  </span>-L/opt/homebrew/opt/libomp/lib<span class="w"> </span>
 </pre></div>
 </div>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
@@ -845,13 +849,13 @@ clang++ openmp.cpp -o openmp -Xpreprocessor -fopenmp -lomp -I/opt/homebrew/opt/l
 <div class="sd-summary-up docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
 </summary><div class="sd-summary-content sd-card-body docutils">
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span><span class="c1">  </span><span class="cp"></span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;omp.h&gt;</span><span class="c1">  </span><span class="cp"></span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span><span class="c1">  </span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;omp.h&gt;</span><span class="c1">  </span>
 
 <span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span><span class="w">  </span>
 <span class="w">  </span>
 <span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(){</span><span class="w">  </span>
-<span class="w">    </span><span class="n">omp_set_num_threads</span><span class="p">(</span><span class="mi">15</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">omp_set_num_threads</span><span class="p">(</span><span class="mi">15</span><span class="p">);</span>
 <span class="w">    </span><span class="cp">#pragma omp parallel  </span>
 <span class="w">    </span><span class="p">{</span><span class="w">  </span>
 <span class="w">        </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Hello World!</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span><span class="w">  </span>
@@ -869,15 +873,15 @@ clang++ openmp.cpp -o openmp -Xpreprocessor -fopenmp -lomp -I/opt/homebrew/opt/l
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
 </summary><div class="sd-summary-content sd-card-body docutils">
 <p class="sd-card-text">The first time I compile the <code class="docutils literal notranslate"><span class="pre">openmp</span></code> code, I got an error as following:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Undefined symbols <span class="k">for</span> architecture arm64:
-  <span class="s2">&quot;___kmpc_fork_call&quot;</span>, referenced from:
-      _main <span class="k">in</span> main-4f8dcc.o
-ld: symbol<span class="o">(</span>s<span class="o">)</span> not found <span class="k">for</span> architecture arm64
-clang: error: linker <span class="nb">command</span> failed with <span class="nb">exit</span> code <span class="m">1</span> <span class="o">(</span>use -v to see invocation<span class="o">)</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Undefined<span class="w"> </span>symbols<span class="w"> </span><span class="k">for</span><span class="w"> </span>architecture<span class="w"> </span>arm64:
+<span class="w">  </span><span class="s2">&quot;___kmpc_fork_call&quot;</span>,<span class="w"> </span>referenced<span class="w"> </span>from:
+<span class="w">      </span>_main<span class="w"> </span><span class="k">in</span><span class="w"> </span>main-4f8dcc.o
+ld:<span class="w"> </span>symbol<span class="o">(</span>s<span class="o">)</span><span class="w"> </span>not<span class="w"> </span>found<span class="w"> </span><span class="k">for</span><span class="w"> </span>architecture<span class="w"> </span>arm64
+clang:<span class="w"> </span>error:<span class="w"> </span>linker<span class="w"> </span><span class="nb">command</span><span class="w"> </span>failed<span class="w"> </span>with<span class="w"> </span><span class="nb">exit</span><span class="w"> </span>code<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="o">(</span>use<span class="w"> </span>-v<span class="w"> </span>to<span class="w"> </span>see<span class="w"> </span>invocation<span class="o">)</span>
 </pre></div>
 </div>
 <p class="sd-card-text">Then run the following command, it worked well now:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ln -s /opt/homebrew/opt/libomp/lib/libomp.dylib /usr/local/lib/libomp.dylib
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ln<span class="w"> </span>-s<span class="w"> </span>/opt/homebrew/opt/libomp/lib/libomp.dylib<span class="w"> </span>/usr/local/lib/libomp.dylib
 </pre></div>
 </div>
 <p class="sd-card-text">Refer to <a class="reference external" href="https://stackoverflow.com/questions/71061894/how-to-install-openmp-on-mac-m1">https://stackoverflow.com/questions/71061894/how-to-install-openmp-on-mac-m1</a></p>
@@ -888,19 +892,19 @@ clang: error: linker <span class="nb">command</span> failed with <span class="nb
 <p>After installing Command Line Tools for Xcode, M1 chip use clang to compile <strong><code class="docutils literal notranslate"><span class="pre">.c</span> <span class="pre">file</span></code></strong> and clang++ to compile <strong><code class="docutils literal notranslate"><span class="pre">.cpp</span> <span class="pre">file</span></code></strong>.
 And at this moment, M1 chip also has gcc and g++, but they are the <strong><code class="docutils literal notranslate"><span class="pre">soft</span> <span class="pre">links</span></code></strong> to clang compiler.</p>
 <p>To install <code class="docutils literal notranslate"><span class="pre">gcc</span></code> in M1 chip (it will also install <code class="docutils literal notranslate"><span class="pre">gfortran</span></code>), which will bring <code class="docutils literal notranslate"><span class="pre">openmp</span></code> package which is not needed to install by yourself.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>brew search gcc
-brew install gcc
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>brew<span class="w"> </span>search<span class="w"> </span>gcc
+brew<span class="w"> </span>install<span class="w"> </span>gcc
 
 <span class="c1"># To compile code directly (different from clang compiler)</span>
-g++ openmp.cpp -o openmp -fopenmp
+g++<span class="w"> </span>openmp.cpp<span class="w"> </span>-o<span class="w"> </span>openmp<span class="w"> </span>-fopenmp
 </pre></div>
 </div>
 <p>Set the environment variables as following, and you can also download different versions <code class="docutils literal notranslate"><span class="pre">gcc</span></code>:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>open ~/.zhsrc
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>open<span class="w"> </span>~/.zhsrc
 
 <span class="c1"># &gt;&gt;&gt; brew&#39;s gcc (GNU) &gt;&gt;&gt;</span>
-<span class="nb">alias</span> <span class="nv">gcc</span><span class="o">=</span><span class="s1">&#39;gcc-12&#39;</span>
-<span class="nb">alias</span> g++<span class="o">=</span><span class="s1">&#39;g++-12&#39;</span>
+<span class="nb">alias</span><span class="w"> </span><span class="nv">gcc</span><span class="o">=</span><span class="s1">&#39;gcc-12&#39;</span>
+<span class="nb">alias</span><span class="w"> </span>g++<span class="o">=</span><span class="s1">&#39;g++-12&#39;</span>
 <span class="c1"># &lt;&lt;&lt; brew&#39;s gcc (GNU) &lt;&lt;&lt;</span>
 </pre></div>
 </div>
@@ -910,23 +914,23 @@ g++ openmp.cpp -o openmp -fopenmp
 <h3>Install <code class="docutils literal notranslate"><span class="pre">openmpi</span></code><a class="headerlink" href="#install-openmpi" title="Permalink to this headline">#</a></h3>
 <p>Then install <strong><code class="docutils literal notranslate"><span class="pre">openmpi</span></code></strong>, brew will use default compiler (In my M1 chip is <code class="docutils literal notranslate"><span class="pre">clang</span></code>) to compile openmpi package.
 But we can use a custom compiler(clang or gcc) when compiling code.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>brew install open-mpi
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>brew<span class="w"> </span>install<span class="w"> </span>open-mpi
 </pre></div>
 </div>
 <p>This will install a lot of command we can use, such as
 <code class="docutils literal notranslate"><span class="pre">mpic++</span></code> <code class="docutils literal notranslate"><span class="pre">mpicxx</span></code> <code class="docutils literal notranslate"><span class="pre">mpif77</span></code> <code class="docutils literal notranslate"><span class="pre">mpifort</span></code> <code class="docutils literal notranslate"><span class="pre">mpirun</span></code> <code class="docutils literal notranslate"><span class="pre">mpicc</span></code> <code class="docutils literal notranslate"><span class="pre">mpiexec</span></code> <code class="docutils literal notranslate"><span class="pre">mpif90</span></code> and <code class="docutils literal notranslate"><span class="pre">mpioutil</span></code>.
 Take <code class="docutils literal notranslate"><span class="pre">mpic++</span></code> for example:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Check openmpi version</span>
-mpic++ --version
+mpic++<span class="w"> </span>--version
 
 <span class="c1"># Check the detail of mpic++ command</span>
-mpic++ -showme
+mpic++<span class="w"> </span>-showme
 
 <span class="c1"># Compile code using mpicc</span>
-mpic++ openmpi.cpp -o openmpi
+mpic++<span class="w"> </span>openmpi.cpp<span class="w"> </span>-o<span class="w"> </span>openmpi
 
 <span class="c1"># Run code</span>
-mpirun -np <span class="m">4</span> ./openmpi
+mpirun<span class="w"> </span>-np<span class="w"> </span><span class="m">4</span><span class="w"> </span>./openmpi
 </pre></div>
 </div>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
@@ -936,41 +940,41 @@ mpirun -np <span class="m">4</span> ./openmpi
 <div class="sd-summary-up docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
 </summary><div class="sd-summary-content sd-card-body docutils">
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span><span class="c1">  </span><span class="cp"></span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;mpi.h&gt;</span><span class="cp"></span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span><span class="c1">  </span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;mpi.h&gt;</span>
 
 <span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span><span class="w">  </span>
-<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">argc</span><span class="p">,</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">**</span><span class="n">argv</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">ierr</span><span class="p">,</span><span class="w"> </span><span class="n">num_procs</span><span class="p">,</span><span class="w"> </span><span class="n">my_id</span><span class="p">;</span><span class="w"></span>
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">argc</span><span class="p">,</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">**</span><span class="n">argv</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">ierr</span><span class="p">,</span><span class="w"> </span><span class="n">num_procs</span><span class="p">,</span><span class="w"> </span><span class="n">my_id</span><span class="p">;</span>
 
-<span class="w">    </span><span class="cm">/* find out MY process ID, and how many processes were started. */</span><span class="w"></span>
-<span class="w">    </span><span class="n">ierr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">MPI_Init</span><span class="p">(</span><span class="o">&amp;</span><span class="n">argc</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">argv</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="n">ierr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">MPI_Comm_rank</span><span class="p">(</span><span class="n">MPI_COMM_WORLD</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">my_id</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="n">ierr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">MPI_Comm_size</span><span class="p">(</span><span class="n">MPI_COMM_WORLD</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">num_procs</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="cm">/* find out MY process ID, and how many processes were started. */</span>
+<span class="w">    </span><span class="n">ierr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">MPI_Init</span><span class="p">(</span><span class="o">&amp;</span><span class="n">argc</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">argv</span><span class="p">);</span>
+<span class="w">    </span><span class="n">ierr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">MPI_Comm_rank</span><span class="p">(</span><span class="n">MPI_COMM_WORLD</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">my_id</span><span class="p">);</span>
+<span class="w">    </span><span class="n">ierr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">MPI_Comm_size</span><span class="p">(</span><span class="n">MPI_COMM_WORLD</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">num_procs</span><span class="p">);</span>
 
-<span class="w">    </span><span class="n">cout</span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Hello world! I&#39;m process &quot;</span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">my_id</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; out of &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">num_procs</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; processes&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">cout</span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Hello world! I&#39;m process &quot;</span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">my_id</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; out of &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">num_procs</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; processes&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span>
 
-<span class="w">    </span><span class="n">ierr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">MPI_Finalize</span><span class="p">();</span><span class="w"></span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="n">ierr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">MPI_Finalize</span><span class="p">();</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 </div>
 </details><p>Set our custom compiler (clang/gcc) to compile <strong><code class="docutils literal notranslate"><span class="pre">openmpi.cpp</span></code></strong> file.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Set openmpi&#39;s compiler before using mpi to compile code</span>
 <span class="c1"># [1] C++ language</span>
-<span class="nb">export</span> <span class="nv">OMPI_CXX</span><span class="o">=</span>clang++
-<span class="nb">export</span> <span class="nv">OMPI_CXX</span><span class="o">=</span>g++-12
+<span class="nb">export</span><span class="w"> </span><span class="nv">OMPI_CXX</span><span class="o">=</span>clang++
+<span class="nb">export</span><span class="w"> </span><span class="nv">OMPI_CXX</span><span class="o">=</span>g++-12
 <span class="c1"># [2] C language</span>
-<span class="nb">export</span> <span class="nv">OMPI_CC</span><span class="o">=</span>clang
-<span class="nb">export</span> <span class="nv">OMPI_CXX</span><span class="o">=</span>gcc-12
+<span class="nb">export</span><span class="w"> </span><span class="nv">OMPI_CC</span><span class="o">=</span>clang
+<span class="nb">export</span><span class="w"> </span><span class="nv">OMPI_CXX</span><span class="o">=</span>gcc-12
 
 <span class="c1"># Then use mpi to compile [c/c++] code</span>
-mpic++ openmpi.cpp -o openmpi
-mpicc xx.c -o xx
+mpic++<span class="w"> </span>openmpi.cpp<span class="w"> </span>-o<span class="w"> </span>openmpi
+mpicc<span class="w"> </span>xx.c<span class="w"> </span>-o<span class="w"> </span>xx
 
 <span class="c1"># Run code</span>
-mpirun -np <span class="m">4</span> openmpi
+mpirun<span class="w"> </span>-np<span class="w"> </span><span class="m">4</span><span class="w"> </span>openmpi
 </pre></div>
 </div>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
@@ -981,13 +985,13 @@ mpirun -np <span class="m">4</span> openmpi
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
 </summary><div class="sd-summary-content sd-card-body docutils">
 <p class="sd-card-text">Actually mpic++ is a wrapper over the system compiler. In my case, mpicc will use the clang compiler. To find what is behind mpicc you can execute the following command:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mpic++ -showme
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mpic++<span class="w"> </span>-showme
 </pre></div>
 </div>
 <p class="sd-card-text">Here is my output:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>clang++ -I/opt/homebrew/Cellar/open-mpi/4.1.4_2/include 
--L/opt/homebrew/Cellar/open-mpi/4.1.4_2/lib 
--L/opt/homebrew/opt/libevent/lib 
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>clang++<span class="w"> </span>-I/opt/homebrew/Cellar/open-mpi/4.1.4_2/include<span class="w"> </span>
+-L/opt/homebrew/Cellar/open-mpi/4.1.4_2/lib<span class="w"> </span>
+-L/opt/homebrew/opt/libevent/lib<span class="w"> </span>
 -lmpi
 </pre></div>
 </div>
@@ -996,23 +1000,13 @@ mpirun -np <span class="m">4</span> openmpi
 </section>
 <section id="configuration">
 <h2>Configuration<a class="headerlink" href="#configuration" title="Permalink to this headline">#</a></h2>
-<section id="vscode">
-<h3>VSCode<a class="headerlink" href="#vscode" title="Permalink to this headline">#</a></h3>
 <p>Download the plugin, <code class="docutils literal notranslate"><span class="pre">C/C++</span></code>, in VSCode Extensions</p>
 <ul class="simple">
 <li><p>Manual refer to <a class="reference external" href="https://code.visualstudio.com/docs/python/python-tutorial"><code class="docutils literal notranslate"><span class="pre">Miscrosoft</span> <span class="pre">docs</span></code></a></p></li>
 </ul>
 </section>
-<section id="makefile">
-<h3>Makefile<a class="headerlink" href="#makefile" title="Permalink to this headline">#</a></h3>
-<p>MacOS comes with <code class="docutils literal notranslate"><span class="pre">make</span></code>.</p>
-</section>
-<section id="cmake">
-<h3>CMake<a class="headerlink" href="#cmake" title="Permalink to this headline">#</a></h3>
-<p>Install via <code class="docutils literal notranslate"><span class="pre">brew</span> <span class="pre">install</span> <span class="pre">cmake</span></code> in MacOS system.</p>
-</section>
 <section id="package">
-<h3>Package<a class="headerlink" href="#package" title="Permalink to this headline">#</a></h3>
+<h2>Package<a class="headerlink" href="#package" title="Permalink to this headline">#</a></h2>
 <style>
 table th:first-of-type {
     width: 30%;
@@ -1033,9 +1027,9 @@ table th:nth-of-type(2) {
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>``</p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">fftw3</span></code></p></td>
 <td><p>…</p></td>
-<td class="text-align:center"><p></p></td>
+<td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">brew</span></code> and <a class="reference external" href="https://www.fftw.org/">https://www.fftw.org/</a></p></td>
 </tr>
 <tr class="row-odd"><td><p>``</p></td>
 <td><p>…</p></td>
@@ -1062,6 +1056,145 @@ table th:nth-of-type(2) {
 </tr>
 </tbody>
 </table>
+<section id="fftw3">
+<h3>FFTW3<a class="headerlink" href="#fftw3" title="Permalink to this headline">#</a></h3>
+<p><a class="reference external" href="http://fftw.org/">FFTW</a>, the Fastest Fourier Transform in the West, is a C subroutine library for computing the discrete Fourier transform (DFT).</p>
+<section id="install-via-brew">
+<h4>1.Install via brew<a class="headerlink" href="#install-via-brew" title="Permalink to this headline">#</a></h4>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># install</span>
+brew<span class="w"> </span>install<span class="w"> </span>fftw
+
+<span class="c1"># compile</span>
+g++<span class="w"> </span>fftw.cpp<span class="w"> </span>-o<span class="w"> </span>fftw<span class="w"> </span>-lfftw3<span class="w"> </span>-lm<span class="w"> </span>-I/opt/homebrew/opt/fftw/include<span class="w"> </span>-L/opt/homebrew/opt/fftw/lib
+
+<span class="c1"># run</span>
+./fftw
+</pre></div>
+</div>
+<p>If the installation was successful, you should be able to use the FFTW library in your C/C++ programs by including the <code class="docutils literal notranslate"><span class="pre">fftw3.h</span></code> header file and linking against the <code class="docutils literal notranslate"><span class="pre">libfftw3.a</span></code> library. You may need to specify the path to the <code class="docutils literal notranslate"><span class="pre">fftw3.h</span></code> header file and the <code class="docutils literal notranslate"><span class="pre">libfftw3.a</span></code> library using the <code class="docutils literal notranslate"><span class="pre">-I</span></code> and <code class="docutils literal notranslate"><span class="pre">-L</span></code> options when compiling your code.</p>
+<ul class="simple">
+<li><p>The <code class="docutils literal notranslate"><span class="pre">-lfftw3</span></code> option tell the compiler to link the FFTW library.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">-lm</span></code> option tell the compiler to the math library.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">-I</span></code> option to include header file</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">-L</span></code> option to include package</p></li>
+</ul>
+<p>Refer to <a class="reference external" href="https://www.runoob.com/w3cnote/gcc-parameter-detail.html">https://www.runoob.com/w3cnote/gcc-parameter-detail.html</a></p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header sd-bg-info sd-bg-text-info">
+<span class="sd-summary-icon"><svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-info" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M8 1.5a6.5 6.5 0 100 13 6.5 6.5 0 000-13zM0 8a8 8 0 1116 0A8 8 0 010 8zm6.5-.25A.75.75 0 017.25 7h1a.75.75 0 01.75.75v2.75h.25a.75.75 0 010 1.5h-2a.75.75 0 010-1.5h.25v-2h-.25a.75.75 0 01-.75-.75zM8 6a1 1 0 100-2 1 1 0 000 2z"></path></svg></span>The example <strong><code class="docutils literal notranslate"><span class="pre">fftw.cpp</span></code></strong> file is here:<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;fftw3.h&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="c1">// Set up the input signal and allocate space for the output</span>
+<span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">N</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">8</span><span class="p">;</span>
+<span class="w">  </span><span class="kt">double</span><span class="w"> </span><span class="n">input</span><span class="p">[</span><span class="n">N</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w"> </span><span class="mi">8</span><span class="p">};</span>
+<span class="w">  </span><span class="n">fftw_complex</span><span class="w"> </span><span class="n">output</span><span class="p">[</span><span class="n">N</span><span class="p">];</span>
+
+<span class="w">  </span><span class="c1">// Set up the FFTW plan</span>
+<span class="w">  </span><span class="n">fftw_plan</span><span class="w"> </span><span class="n">plan</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">fftw_plan_dft_r2c_1d</span><span class="p">(</span><span class="n">N</span><span class="p">,</span><span class="w"> </span><span class="n">input</span><span class="p">,</span><span class="w"> </span><span class="n">output</span><span class="p">,</span><span class="w"> </span><span class="n">FFTW_ESTIMATE</span><span class="p">);</span>
+
+<span class="w">  </span><span class="c1">// Execute the plan</span>
+<span class="w">  </span><span class="n">fftw_execute</span><span class="p">(</span><span class="n">plan</span><span class="p">);</span>
+
+<span class="w">  </span><span class="c1">// Print the result</span>
+<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Output: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">N</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">output</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; + &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">output</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;i&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
+
+<span class="w">  </span><span class="c1">// Clean up</span>
+<span class="w">  </span><span class="n">fftw_destroy_plan</span><span class="p">(</span><span class="n">plan</span><span class="p">);</span>
+
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</details></section>
+<section id="install-from-source">
+<h4>2.Install from source<a class="headerlink" href="#install-from-source" title="Permalink to this headline">#</a></h4>
+<p><strong>Download FFTW Package:</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">FFTW_VERSION</span><span class="o">=</span><span class="m">3</span>.3.10
+<span class="nv">FFTW_FOLDER</span><span class="o">=</span>fftw-<span class="k">$(</span>FFTW_VERSION<span class="k">)</span>
+wget<span class="w"> </span>http://fftw.org/fftw-<span class="k">$(</span>FFTW_VERSION<span class="k">)</span>.tar.gz
+tar<span class="w"> </span>-xvf<span class="w"> </span>fftw-<span class="k">$(</span>FFTW_VERSION<span class="k">)</span>.tar.gz
+rm<span class="w"> </span>fftw-<span class="k">$(</span>FFTW_VERSION<span class="k">)</span>.tar.gz
+</pre></div>
+</div>
+<p><strong>Install:</strong></p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="c0c27a16-a4f4-4016-92d7-0650b8ba3070" name="28c52bb2-f4e8-4313-aded-3e781829eb4a" type="radio">
+</input><label class="sd-tab-label" for="c0c27a16-a4f4-4016-92d7-0650b8ba3070">
+M1</label><div class="sd-tab-content docutils">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span><span class="k">$(</span>FFTW_FOLDER<span class="k">)</span>
+
+./configure<span class="w"> </span><span class="nv">CC</span><span class="o">=</span>gcc<span class="w"> </span>--prefix<span class="o">=</span>/Absolute/path<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--with-pic<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--enable-single<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--enable-shared<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--build<span class="o">=</span>x86_64-apple-darwin20
+
+make<span class="w"> </span>-j<span class="w"> </span><span class="m">4</span><span class="w"> </span>
+make<span class="w"> </span>install
+</pre></div>
+</div>
+</div>
+<input id="dfb0b781-6d36-4786-95af-c663be2a206b" name="28c52bb2-f4e8-4313-aded-3e781829eb4a" type="radio">
+</input><label class="sd-tab-label" for="dfb0b781-6d36-4786-95af-c663be2a206b">
+Linux</label><div class="sd-tab-content docutils">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span><span class="k">$(</span>FFTW_FOLDER<span class="k">)</span>
+
+./configure<span class="w"> </span><span class="nv">CC</span><span class="o">=</span>gcc<span class="w"> </span>--prefix<span class="o">=</span>/Absolute/path<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--with-pic<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--enable-single<span class="w"> </span>
+<span class="w">    </span>--enable-shared<span class="w">  </span><span class="se">\</span>
+<span class="w">    </span>--enable-avx2<span class="w"> </span>--enable-avx<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--enable-sse<span class="w"> </span>--enable-sse2<span class="w"> </span><span class="se">\</span>
+
+make<span class="w"> </span>-j<span class="w"> </span><span class="m">4</span><span class="w"> </span>
+make<span class="w"> </span>install
+</pre></div>
+</div>
+</div>
+</div>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header sd-bg-info sd-bg-text-info">
+<span class="sd-summary-icon"><svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-info" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M8 1.5a6.5 6.5 0 100 13 6.5 6.5 0 000-13zM0 8a8 8 0 1116 0A8 8 0 010 8zm6.5-.25A.75.75 0 017.25 7h1a.75.75 0 01.75.75v2.75h.25a.75.75 0 010 1.5h-2a.75.75 0 010-1.5h.25v-2h-.25a.75.75 0 01-.75-.75zM8 6a1 1 0 100-2 1 1 0 000 2z"></path></svg></span>explaination of <code class="docutils literal notranslate"><span class="pre">configure</span></code> parameters:<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<ul>
+<li><p class="sd-card-text">The <code class="docutils literal notranslate"><span class="pre">--build</span></code> option to specify the code installed in an <code class="docutils literal notranslate"><span class="pre">M1-based</span> <span class="pre">Mac</span></code>.</p></li>
+<li><p class="sd-card-text">M1 does not support <code class="docutils literal notranslate"><span class="pre">AVX</span></code> instructions, check if your machine supports SSE:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gcc<span class="w"> </span>-mavx<span class="w"> </span>-E<span class="w"> </span>-v<span class="w"> </span>-<span class="w"> </span>&lt;/dev/null<span class="w"> </span><span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>cc1
+</pre></div>
+</div>
+<p class="sd-card-text">If your machine supports <code class="docutils literal notranslate"><span class="pre">AVX</span></code>, you should see the <code class="docutils literal notranslate"><span class="pre">-mavx</span></code> flag in the output.</p>
+</li>
+<li><p class="sd-card-text">M1 does not support <code class="docutils literal notranslate"><span class="pre">SSE</span></code> instructions, check:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gcc<span class="w"> </span>-msse<span class="w"> </span>-E<span class="w"> </span>-v<span class="w"> </span>-<span class="w"> </span>&lt;/dev/null<span class="w"> </span><span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>cc1
+</pre></div>
+</div>
+<p class="sd-card-text">If your machine supports <code class="docutils literal notranslate"><span class="pre">SSE</span></code>, you should see the <code class="docutils literal notranslate"><span class="pre">-msse</span></code> flag in the output.</p>
+</li>
+<li><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">--enable-shared</span></code> to create shared, rather than static, libraries.</p></li>
+<li><p class="sd-card-text">The <code class="docutils literal notranslate"><span class="pre">--with-pic</span></code> option tells the <code class="docutils literal notranslate"><span class="pre">./configure</span></code> script to build FFTW with position-independent code (PIC). <code class="docutils literal notranslate"><span class="pre">PIC</span></code> is a form of machine code that can be relocated at runtime, and is typically used when building shared libraries. Building FFTW with PIC can allow the library to be used in shared libraries and plugins, which can be loaded and unloaded dynamically at runtime.</p></li>
+<li><p class="sd-card-text">The <code class="docutils literal notranslate"><span class="pre">--enable-single</span></code> option tells the <code class="docutils literal notranslate"><span class="pre">./configure</span></code> script to enable single precision (float) support in FFTW. This allows FFTW to compute discrete Fourier transforms (DFTs) of single precision floating-point arrays, in addition to the default double precision (double) support.
+By default, FFTW is built with double precision support only, so you will need to use the <code class="docutils literal notranslate"><span class="pre">--enable-single</span></code> option if you want to use single precision arrays with FFTW.</p></li>
+</ul>
+<p class="sd-card-text">More information can be found in <a class="reference external" href="https://www.fftw.org/fftw3_doc/Installation-on-Unix.html">https://www.fftw.org/fftw3_doc/Installation-on-Unix.html</a></p>
+</div>
+</details><p><strong>Compile:</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>g++<span class="w"> </span>fftw.pp<span class="w"> </span>-o<span class="w"> </span>fftw<span class="w"> </span>-lfftw3<span class="w"> </span>-lm<span class="w"> </span>-I/Absolute/path/include<span class="w"> </span>-L/Absolute/path/lib
+</pre></div>
+</div>
+</section>
 </section>
 </section>
 <section id="resource">

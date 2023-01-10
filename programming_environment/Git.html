@@ -853,16 +853,16 @@ title="Print to PDF"
 <h2>Install<a class="headerlink" href="#install" title="Permalink to this headline">#</a></h2>
 <p>MacOS uses <strong>Xcode’s</strong> <code class="docutils literal notranslate"><span class="pre">Command</span> <span class="pre">Line</span> <span class="pre">Tools</span></code> to install Git in <code class="docutils literal notranslate"><span class="pre">/usr/bin/git</span></code> directory. However, Xcode usually comes with a lower version of Git, so you need <strong>brew</strong> to upgrade. After installation, remember to add the environment variable.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># install</span>
-brew install git
+brew<span class="w"> </span>install<span class="w"> </span>git
 
 <span class="c1"># add path</span>
-vim ~/.zshrc
-&gt; <span class="nb">export</span> <span class="nv">GIT</span><span class="o">=</span>/usr/local/Cellar/git/2.37.1
-&gt; <span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="nv">$GIT</span>/bin:<span class="nv">$PATH</span>
-<span class="nb">source</span> ~/.zshrc
+vim<span class="w"> </span>~/.zshrc
+&gt;<span class="w"> </span><span class="nb">export</span><span class="w"> </span><span class="nv">GIT</span><span class="o">=</span>/usr/local/Cellar/git/2.37.1
+&gt;<span class="w"> </span><span class="nb">export</span><span class="w"> </span><span class="nv">PATH</span><span class="o">=</span><span class="nv">$GIT</span>/bin:<span class="nv">$PATH</span>
+<span class="nb">source</span><span class="w"> </span>~/.zshrc
 
 <span class="c1"># check version</span>
-git --version
+git<span class="w"> </span>--version
 </pre></div>
 </div>
 <hr class="docutils" />
@@ -877,23 +877,23 @@ git --version
 <p class="sd-card-text">The Git configuration file for each repository is stored in <code class="docutils literal notranslate"><span class="pre">.git/config</span></code> file in each repository. But the current user’s Git configuration file is stored in <code class="docutils literal notranslate"><span class="pre">~/.gitconfig</span></code> file. When configuring Git, add <code class="docutils literal notranslate"><span class="pre">--global</span></code> to apply to the current user, and if not, it applies only to the current repository.</p>
 </div>
 </details><p><strong><code class="docutils literal notranslate"><span class="pre">username</span> <span class="pre">and</span> <span class="pre">email</span></code></strong></p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git config --global user.name <span class="s2">&quot;Your Name&quot;</span>
-git config --global user.email <span class="s2">&quot;email@example.com&quot;</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.name<span class="w"> </span><span class="s2">&quot;Your Name&quot;</span>
+git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.email<span class="w"> </span><span class="s2">&quot;email@example.com&quot;</span>
 </pre></div>
 </div>
 <p><strong><code class="docutils literal notranslate"><span class="pre">color</span> <span class="pre">ui</span> <span class="pre">and</span> <span class="pre">git</span> <span class="pre">log</span></code></strong></p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># let Git show different colors</span>
-git config --global color.ui <span class="nb">true</span>
+git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>color.ui<span class="w"> </span><span class="nb">true</span>
 
 <span class="c1"># configure log command --&gt; git lg</span>
-git config --global alias.lg <span class="s2">&quot;log --color --graph --pretty=format:&#39;%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)&lt;%an&gt;%Creset&#39; --abbrev-commit&quot;</span>
+git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>alias.lg<span class="w"> </span><span class="s2">&quot;log --color --graph --pretty=format:&#39;%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)&lt;%an&gt;%Creset&#39; --abbrev-commit&quot;</span>
 </pre></div>
 </div>
 <p><strong><code class="docutils literal notranslate"><span class="pre">master</span> <span class="pre">to</span> <span class="pre">main</span></code></strong></p>
 <ul class="simple">
 <li><p>Manually modify the <code class="docutils literal notranslate"><span class="pre">~/.gitconfig</span></code> file and set <code class="docutils literal notranslate"><span class="pre">defaultBranch</span> <span class="pre">=</span> <span class="pre">main</span></code>. Or use the <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">config</span></code> command for git version &gt; v2.28:</p></li>
 </ul>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git config --global init.defaultBranch main
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>init.defaultBranch<span class="w"> </span>main
 </pre></div>
 </div>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
@@ -907,10 +907,10 @@ git config --global alias.lg <span class="s2">&quot;log --color --graph --pretty
 <p class="sd-card-text">But notice that Git’s default branch is still the master. So be careful to keep the default branch names the same. It is recommended to change the local Git’s default branch from master to main.</p>
 <p class="sd-card-text">It is not recommended  to change the default branch name for past projects. If you want to change the default branch name, you can rename it under the master default branch:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># With the &#39;-m&#39; option, you can change the branch name without affecting the git commit history from master to main.</span>
-git branch -m master main
+git<span class="w"> </span>branch<span class="w"> </span>-m<span class="w"> </span>master<span class="w"> </span>main
 
 <span class="c1"># the above changes are only local and need to be synchronized to the remote.</span>
-git push -u origin main
+git<span class="w"> </span>push<span class="w"> </span>-u<span class="w"> </span>origin<span class="w"> </span>main
 </pre></div>
 </div>
 </div>
@@ -918,14 +918,14 @@ git push -u origin main
 <p>My complete <code class="docutils literal notranslate"><span class="pre">~/.gitconfig</span></code> file showing below:</p>
 <div class="toggle docutils container">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>user<span class="o">]</span>
-	<span class="nv">name</span> <span class="o">=</span> OUCyf
-	<span class="nv">email</span> <span class="o">=</span> oucyinfu@gmail.com
+<span class="w">	</span><span class="nv">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>OUCyf
+<span class="w">	</span><span class="nv">email</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>oucyinfu@gmail.com
 <span class="o">[</span>color<span class="o">]</span>
-	<span class="nv">ui</span> <span class="o">=</span> <span class="nb">true</span>
+<span class="w">	</span><span class="nv">ui</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">true</span>
 <span class="o">[</span>alias<span class="o">]</span>
-	<span class="nv">lg</span> <span class="o">=</span> log --color --graph --pretty<span class="o">=</span>format:<span class="s1">&#39;%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)&lt;%an&gt;%Creset&#39;</span> --abbrev-commit
+<span class="w">	</span><span class="nv">lg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>log<span class="w"> </span>--color<span class="w"> </span>--graph<span class="w"> </span>--pretty<span class="o">=</span>format:<span class="s1">&#39;%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)&lt;%an&gt;%Creset&#39;</span><span class="w"> </span>--abbrev-commit
 <span class="o">[</span>init<span class="o">]</span>
-	<span class="nv">defaultBranch</span> <span class="o">=</span> main
+<span class="w">	</span><span class="nv">defaultBranch</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>main
 </pre></div>
 </div>
 </div>
@@ -942,7 +942,7 @@ git push -u origin main
 </figure>
 </div>
 <p>Then check git SSH status</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ssh -T git@github.com
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ssh<span class="w"> </span>-T<span class="w"> </span>git@github.com
 </pre></div>
 </div>
 </section>
@@ -962,8 +962,8 @@ git push -u origin main
 </div>
 </details><p>We can update the IP address manually or automatically</p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="c2d57a75-6d11-4547-b5b0-e6c3f6cae7cc" name="7b365d9a-0374-4226-be03-c0d7241e6fb8" type="radio">
-</input><label class="sd-tab-label" for="c2d57a75-6d11-4547-b5b0-e6c3f6cae7cc">
+<input checked="checked" id="e5fc570f-7a3c-4e87-84d5-e5c469f302f6" name="8e4366ff-f353-46d8-a275-f7a3043323d7" type="radio">
+</input><label class="sd-tab-label" for="e5fc570f-7a3c-4e87-84d5-e5c469f302f6">
 Manually update IP</label><div class="sd-tab-content docutils">
 <p><strong>Query the latest IP address of GitHub</strong></p>
 <p>usually query the following four domain names in <a class="reference external" href="https://ipaddress.com/website/www.github.com">ipaddress</a> website.</p>
@@ -982,22 +982,22 @@ Manually update IP</label><div class="sd-tab-content docutils">
 </ul>
 <p><strong>Change the <code class="docutils literal notranslate"><span class="pre">/etc/hosts</span></code> file</strong></p>
 <p>After querying the IP, map the IP with the website address, and add the mapping relationship to the <code class="docutils literal notranslate"><span class="pre">/etc/hosts</span></code> file with <code class="docutils literal notranslate"><span class="pre">sudo</span></code> permission. For example:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>vim /etc/hosts
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>vim<span class="w"> </span>/etc/hosts
 
 <span class="c1"># output with mapping format:  [ip] [domainName]</span>
-<span class="m">199</span>.232.69.194 github.global.ssl.Fastly.net
-<span class="m">140</span>.82.114.4 GitHub.com
-<span class="m">185</span>.199.108.153 assets-cdn.Github.com
-<span class="m">140</span>.82.114.9 codeload.Github.com
+<span class="m">199</span>.232.69.194<span class="w"> </span>github.global.ssl.Fastly.net
+<span class="m">140</span>.82.114.4<span class="w"> </span>GitHub.com
+<span class="m">185</span>.199.108.153<span class="w"> </span>assets-cdn.Github.com
+<span class="m">140</span>.82.114.9<span class="w"> </span>codeload.Github.com
 </pre></div>
 </div>
 <p><strong>Refresh the <code class="docutils literal notranslate"><span class="pre">/etc/hosts</span></code> file</strong></p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo killall -HUP mDNSResponder
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>killall<span class="w"> </span>-HUP<span class="w"> </span>mDNSResponder
 </pre></div>
 </div>
 </div>
-<input id="3114f505-c3f0-4a5a-ace1-dbe4a9d9103e" name="7b365d9a-0374-4226-be03-c0d7241e6fb8" type="radio">
-</input><label class="sd-tab-label" for="3114f505-c3f0-4a5a-ace1-dbe4a9d9103e">
+<input id="c979ba30-0e7a-4297-b751-9540319e3427" name="8e4366ff-f353-46d8-a275-f7a3043323d7" type="radio">
+</input><label class="sd-tab-label" for="c979ba30-0e7a-4297-b751-9540319e3427">
 Automatically update IP</label><div class="sd-tab-content docutils">
 <p><a class="reference external" href="https://github.com/521xueweihan/GitHub520">GitHub520</a> is a project that can real-time update the IP resolution of GitHub domain, the project server’s mirror website is <a class="reference external" href="https://raw.hellogithub.com/">HelloGitHub 镜像站</a>. Run the following python code, then the IP resolution provided by GitHub520 will be obtained in real time, and the <code class="docutils literal notranslate"><span class="pre">/etc/hosts</span></code> file is automatically modified. The code is as follows:</p>
 <div class="toggle docutils container">
@@ -1084,7 +1084,7 @@ Automatically update IP</label><div class="sd-tab-content docutils">
         <span class="n">copyfile</span><span class="p">(</span><span class="n">src</span><span class="o">=</span><span class="n">srcfile</span><span class="p">,</span> <span class="n">dst</span><span class="o">=</span><span class="n">dstfile</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">addHostsFromURL</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">hostfile</span><span class="p">,</span> <span class="n">hostsurl</span><span class="p">):</span>
-        <span class="sd">&#39;&#39;&#39;从github项目地址：读取最新的github的IP记录&#39;&#39;&#39;</span>
+<span class="w">        </span><span class="sd">&#39;&#39;&#39;从github项目地址：读取最新的github的IP记录&#39;&#39;&#39;</span>
         <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">hostfile</span><span class="p">,</span> <span class="s1">&#39;a+&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fw</span><span class="p">:</span>
             <span class="c1"># 字符串给出当前平台使用的行终止符。例如，Windows使用&#39;\r\n&#39;，Linux使用&#39;\n&#39;而Mac使用&#39;\r&#39;。</span>
             <span class="c1"># fw.write(os.linesep)</span>
@@ -1107,55 +1107,55 @@ Automatically update IP</label><div class="sd-tab-content docutils">
 <span class="c1"># localhost is used to configure the loopback interface</span>
 <span class="c1"># when the system is booting.  Do not change this entry.</span>
 <span class="c1">##</span>
-<span class="m">127</span>.0.0.1	localhost
-<span class="m">255</span>.255.255.255	broadcasthost
-::1             localhost
+<span class="m">127</span>.0.0.1<span class="w">	</span>localhost
+<span class="m">255</span>.255.255.255<span class="w">	</span>broadcasthost
+::1<span class="w">             </span>localhost
 <span class="c1"># MacWk.com Hosts Start</span>
 <span class="c1"># Macs Fan Control</span>
-<span class="m">127</span>.0.0.1 crystalidea.com
-<span class="m">127</span>.0.0.1 www.crystalidea.com
-<span class="m">127</span>.0.0.1 v3pro.crystalidea.com
+<span class="m">127</span>.0.0.1<span class="w"> </span>crystalidea.com
+<span class="m">127</span>.0.0.1<span class="w"> </span>www.crystalidea.com
+<span class="m">127</span>.0.0.1<span class="w"> </span>v3pro.crystalidea.com
 <span class="c1"># MacWk.com Hosts End</span>
 <span class="c1"># GitHub520 Host Start</span>
-<span class="m">140</span>.82.113.4                  alive.github.com
-<span class="m">140</span>.82.113.4                  live.github.com
-<span class="m">18</span>.232.140.192                github.githubassets.com
-<span class="m">140</span>.82.113.4                  central.github.com
-<span class="m">44</span>.201.249.207                desktop.githubusercontent.com
-<span class="m">140</span>.82.113.4                  assets-cdn.github.com
-<span class="m">44</span>.206.232.135                camo.githubusercontent.com
-<span class="m">151</span>.101.1.6                   github.map.fastly.net
-<span class="m">151</span>.101.1.6                   github.global.ssl.fastly.net
-<span class="m">140</span>.82.113.4                  gist.github.com
-<span class="m">185</span>.199.108.153               github.io
-<span class="m">140</span>.82.113.4                  github.com
-<span class="m">192</span>.0.66.2                    github.blog
-<span class="m">140</span>.82.113.4                  api.github.com
-<span class="m">18</span>.204.44.248                 raw.githubusercontent.com
-<span class="m">54</span>.163.208.41                 user-images.githubusercontent.com
-<span class="m">44</span>.204.67.163                 favicons.githubusercontent.com
-<span class="m">44</span>.192.65.19                  avatars5.githubusercontent.com
-<span class="m">18</span>.208.135.184                avatars4.githubusercontent.com
-<span class="m">54</span>.175.3.163                  avatars3.githubusercontent.com
-<span class="m">3</span>.239.50.191                  avatars2.githubusercontent.com
-<span class="m">54</span>.87.18.202                  avatars1.githubusercontent.com
-<span class="m">54</span>.197.52.125                 avatars0.githubusercontent.com
-<span class="m">3</span>.236.14.33                   avatars.githubusercontent.com
-<span class="m">140</span>.82.113.4                  codeload.github.com
-<span class="m">72</span>.21.206.80                  github-cloud.s3.amazonaws.com
-<span class="m">72</span>.21.206.80                  github-com.s3.amazonaws.com
-<span class="m">72</span>.21.206.80                  github-production-release-asset-2e65be.s3.amazonaws.com
-<span class="m">72</span>.21.206.80                  github-production-user-asset-6210df.s3.amazonaws.com
-<span class="m">72</span>.21.206.80                  github-production-repository-file-5c1aeb.s3.amazonaws.com
-<span class="m">185</span>.199.108.153               githubstatus.com
-<span class="m">64</span>.71.144.211                 github.community
-<span class="m">23</span>.100.27.125                 github.dev
-<span class="m">140</span>.82.113.4                  collector.github.com
-<span class="m">184</span>.72.161.117                pipelines.actions.githubusercontent.com
-<span class="m">44</span>.193.198.252                media.githubusercontent.com
-<span class="m">54</span>.196.61.168                 cloud.githubusercontent.com
-<span class="m">3</span>.236.14.33                   objects.githubusercontent.com
-<span class="m">13</span>.107.213.51                 vscode.dev
+<span class="m">140</span>.82.113.4<span class="w">                  </span>alive.github.com
+<span class="m">140</span>.82.113.4<span class="w">                  </span>live.github.com
+<span class="m">18</span>.232.140.192<span class="w">                </span>github.githubassets.com
+<span class="m">140</span>.82.113.4<span class="w">                  </span>central.github.com
+<span class="m">44</span>.201.249.207<span class="w">                </span>desktop.githubusercontent.com
+<span class="m">140</span>.82.113.4<span class="w">                  </span>assets-cdn.github.com
+<span class="m">44</span>.206.232.135<span class="w">                </span>camo.githubusercontent.com
+<span class="m">151</span>.101.1.6<span class="w">                   </span>github.map.fastly.net
+<span class="m">151</span>.101.1.6<span class="w">                   </span>github.global.ssl.fastly.net
+<span class="m">140</span>.82.113.4<span class="w">                  </span>gist.github.com
+<span class="m">185</span>.199.108.153<span class="w">               </span>github.io
+<span class="m">140</span>.82.113.4<span class="w">                  </span>github.com
+<span class="m">192</span>.0.66.2<span class="w">                    </span>github.blog
+<span class="m">140</span>.82.113.4<span class="w">                  </span>api.github.com
+<span class="m">18</span>.204.44.248<span class="w">                 </span>raw.githubusercontent.com
+<span class="m">54</span>.163.208.41<span class="w">                 </span>user-images.githubusercontent.com
+<span class="m">44</span>.204.67.163<span class="w">                 </span>favicons.githubusercontent.com
+<span class="m">44</span>.192.65.19<span class="w">                  </span>avatars5.githubusercontent.com
+<span class="m">18</span>.208.135.184<span class="w">                </span>avatars4.githubusercontent.com
+<span class="m">54</span>.175.3.163<span class="w">                  </span>avatars3.githubusercontent.com
+<span class="m">3</span>.239.50.191<span class="w">                  </span>avatars2.githubusercontent.com
+<span class="m">54</span>.87.18.202<span class="w">                  </span>avatars1.githubusercontent.com
+<span class="m">54</span>.197.52.125<span class="w">                 </span>avatars0.githubusercontent.com
+<span class="m">3</span>.236.14.33<span class="w">                   </span>avatars.githubusercontent.com
+<span class="m">140</span>.82.113.4<span class="w">                  </span>codeload.github.com
+<span class="m">72</span>.21.206.80<span class="w">                  </span>github-cloud.s3.amazonaws.com
+<span class="m">72</span>.21.206.80<span class="w">                  </span>github-com.s3.amazonaws.com
+<span class="m">72</span>.21.206.80<span class="w">                  </span>github-production-release-asset-2e65be.s3.amazonaws.com
+<span class="m">72</span>.21.206.80<span class="w">                  </span>github-production-user-asset-6210df.s3.amazonaws.com
+<span class="m">72</span>.21.206.80<span class="w">                  </span>github-production-repository-file-5c1aeb.s3.amazonaws.com
+<span class="m">185</span>.199.108.153<span class="w">               </span>githubstatus.com
+<span class="m">64</span>.71.144.211<span class="w">                 </span>github.community
+<span class="m">23</span>.100.27.125<span class="w">                 </span>github.dev
+<span class="m">140</span>.82.113.4<span class="w">                  </span>collector.github.com
+<span class="m">184</span>.72.161.117<span class="w">                </span>pipelines.actions.githubusercontent.com
+<span class="m">44</span>.193.198.252<span class="w">                </span>media.githubusercontent.com
+<span class="m">54</span>.196.61.168<span class="w">                 </span>cloud.githubusercontent.com
+<span class="m">3</span>.236.14.33<span class="w">                   </span>objects.githubusercontent.com
+<span class="m">13</span>.107.213.51<span class="w">                 </span>vscode.dev
 
 
 <span class="c1"># Update time: 2022-07-15T22:10:03+08:00</span>
@@ -1179,8 +1179,8 @@ Automatically update IP</label><div class="sd-tab-content docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
 </summary><div class="sd-summary-content sd-card-body docutils">
 <p class="sd-card-text">The following error may occur when use <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span></code> with using an agent refer to <a class="reference external" href="https://blog.csdn.net/daerzei/article/details/79528153">SSL_connect: SSL_ERROR_SYSCALL…:443</a></p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Push failed: Failed with error: unable to access <span class="s1">&#39;https://github.com/weidongcao/bigdata/&#39;</span>: 
-OpenSSL SSL_connect: SSL_ERROR_SYSCALL <span class="k">in</span> connection to github.com:443
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Push<span class="w"> </span>failed:<span class="w"> </span>Failed<span class="w"> </span>with<span class="w"> </span>error:<span class="w"> </span>unable<span class="w"> </span>to<span class="w"> </span>access<span class="w"> </span><span class="s1">&#39;https://github.com/weidongcao/bigdata/&#39;</span>:<span class="w"> </span>
+OpenSSL<span class="w"> </span>SSL_connect:<span class="w"> </span>SSL_ERROR_SYSCALL<span class="w"> </span><span class="k">in</span><span class="w"> </span>connection<span class="w"> </span>to<span class="w"> </span>github.com:443
 </pre></div>
 </div>
 <p class="sd-card-text">Git supports 3 network protocols:</p>
@@ -1190,7 +1190,7 @@ OpenSSL SSL_connect: SSL_ERROR_SYSCALL <span class="k">in</span> connection to g
 <li><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">http://...</span></code></p></li>
 </ul>
 <p class="sd-card-text">The SSH tunnel is supposed to be used when use <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span></code> command. However, if the <code class="docutils literal notranslate"><span class="pre">http</span></code> proxy is set, the <code class="docutils literal notranslate"><span class="pre">http</span></code> proxy will be used. Therefore, the above error occurs. The solution is to cancel the <code class="docutils literal notranslate"><span class="pre">http</span></code> proxy:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git config --global --unset http.proxy
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>--unset<span class="w"> </span>http.proxy
 </pre></div>
 </div>
 </div>
@@ -1210,34 +1210,34 @@ OpenSSL SSL_connect: SSL_ERROR_SYSCALL <span class="k">in</span> connection to g
 <ul class="simple">
 <li><p class="sd-card-text">Initializes a local repository and make some commit as following:</p></li>
 </ul>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git init
-git add .
-git commit -m <span class="s1">&#39;first commit&#39;</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>init
+git<span class="w"> </span>add<span class="w"> </span>.
+git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s1">&#39;first commit&#39;</span>
 </pre></div>
 </div>
 <ul class="simple">
 <li><p class="sd-card-text">Create an empty repository in GitHub, then associate the remote repository with the local repository to keep synchronization as following, <code class="docutils literal notranslate"><span class="pre">origin</span></code> is the name of the remote repository which can be replaced arbitrarily:</p></li>
 </ul>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git remote add origin git@github.com:your_github_name/repo_name.git
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>remote<span class="w"> </span>add<span class="w"> </span>origin<span class="w"> </span>git@github.com:your_github_name/repo_name.git
 </pre></div>
 </div>
 <ul class="simple">
 <li><p class="sd-card-text">Since the remote library is empty, the first time we push the <code class="docutils literal notranslate"><span class="pre">main</span></code> branch, we should add the <code class="docutils literal notranslate"><span class="pre">-u</span></code> parameter. Git will not only push the contents of the local main branch to the new remote main branch, but also associate the local main branch with the remote main branch, which can simplify the command in the future when use <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span></code> or <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">pull</span></code></p></li>
 </ul>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git push -u origin main
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>push<span class="w"> </span>-u<span class="w"> </span>origin<span class="w"> </span>main
 </pre></div>
 </div>
 <ul class="simple">
 <li><p class="sd-card-text">Now the following commands can be used:</p></li>
 </ul>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># git push</span>
-git push origin main 
+git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>main<span class="w"> </span>
 
 <span class="c1"># check the origin repository address</span>
-git remote -v 
+git<span class="w"> </span>remote<span class="w"> </span>-v<span class="w"> </span>
 
 <span class="c1"># if you want to remove the current repository address </span>
-git remote rm origin
+git<span class="w"> </span>remote<span class="w"> </span>rm<span class="w"> </span>origin
 </pre></div>
 </div>
 </div>
@@ -1245,7 +1245,7 @@ git remote rm origin
 <ul class="simple">
 <li><p>Assuming you have created a remote repository on GitHub, you can use <code class="docutils literal notranslate"><span class="pre">ssh</span></code> for <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span></code>, which is fast than <code class="docutils literal notranslate"><span class="pre">https</span></code> in China.</p></li>
 </ul>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone git@github.com:your_Github_name/reop_name.git
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>git@github.com:your_Github_name/reop_name.git
 </pre></div>
 </div>
 <p><strong>Init Submodule</strong></p>
@@ -1256,30 +1256,30 @@ git remote rm origin
 <ul class="simple">
 <li><p>For example a <code class="docutils literal notranslate"><span class="pre">.gitmodules</span></code> file contains three submodules to use:</p></li>
 </ul>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>submodule <span class="s2">&quot;pygments-style-algforopt&quot;</span><span class="o">]</span>
-    <span class="nv">path</span> <span class="o">=</span> style
-    <span class="nv">url</span> <span class="o">=</span> https://github.com/sisl/pygments-style-algforopt.git
-    <span class="nv">branch</span> <span class="o">=</span> master
-<span class="o">[</span>submodule <span class="s2">&quot;pygments-julia&quot;</span><span class="o">]</span>
-    <span class="nv">path</span> <span class="o">=</span> lexer
-    <span class="nv">url</span> <span class="o">=</span> https://github.com/sisl/pygments-julia.git
-    <span class="nv">branch</span> <span class="o">=</span> master
-<span class="o">[</span>submodule <span class="s2">&quot;juliaplots.sty&quot;</span><span class="o">]</span>
-    <span class="nv">path</span> <span class="o">=</span> juliaplots.sty
-    <span class="nv">url</span> <span class="o">=</span> https://github.com/sisl/juliaplots.sty.git
-    <span class="nv">branch</span> <span class="o">=</span> master
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>submodule<span class="w"> </span><span class="s2">&quot;pygments-style-algforopt&quot;</span><span class="o">]</span>
+<span class="w">    </span><span class="nv">path</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>style
+<span class="w">    </span><span class="nv">url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>https://github.com/sisl/pygments-style-algforopt.git
+<span class="w">    </span><span class="nv">branch</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>master
+<span class="o">[</span>submodule<span class="w"> </span><span class="s2">&quot;pygments-julia&quot;</span><span class="o">]</span>
+<span class="w">    </span><span class="nv">path</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>lexer
+<span class="w">    </span><span class="nv">url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>https://github.com/sisl/pygments-julia.git
+<span class="w">    </span><span class="nv">branch</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>master
+<span class="o">[</span>submodule<span class="w"> </span><span class="s2">&quot;juliaplots.sty&quot;</span><span class="o">]</span>
+<span class="w">    </span><span class="nv">path</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>juliaplots.sty
+<span class="w">    </span><span class="nv">url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>https://github.com/sisl/juliaplots.sty.git
+<span class="w">    </span><span class="nv">branch</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>master
 </pre></div>
 </div>
 <ul class="simple">
 <li><p>If we only need to use the <code class="docutils literal notranslate"><span class="pre">pygments-julia</span></code> and <code class="docutils literal notranslate"><span class="pre">juliaplots.sty</span></code> code, which means that do not require clone and checkout <code class="docutils literal notranslate"><span class="pre">pygments-style-algforopt</span></code>, we can use</p></li>
 </ul>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git submodule init pygments-julia juliaplots.sty
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>submodule<span class="w"> </span>init<span class="w"> </span>pygments-julia<span class="w"> </span>juliaplots.sty
 </pre></div>
 </div>
 <ul class="simple">
 <li><p>Then run the following command to clone and check them</p></li>
 </ul>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git submodule update
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>submodule<span class="w"> </span>update
 </pre></div>
 </div>
 </div>
@@ -1290,28 +1290,28 @@ git remote rm origin
 <li><p>Add changes to the local repository.</p></li>
 </ul>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Add the changes to the Index</span>
-git add &lt;filename&gt;
+git<span class="w"> </span>add<span class="w"> </span>&lt;filename&gt;
 
 <span class="c1"># Add all changes at once</span>
-git add .
+git<span class="w"> </span>add<span class="w"> </span>.
 
 <span class="c1"># check status</span>
-git status
+git<span class="w"> </span>status
 
 <span class="c1"># Add the changes from Index to local Repository</span>
-git commit -m <span class="s2">&quot;your comment&quot;</span>
+git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;your comment&quot;</span>
 </pre></div>
 </div>
 <ul class="simple">
 <li><p>Push the last changes in the <code class="docutils literal notranslate"><span class="pre">Local</span> <span class="pre">Repository</span></code> to the <code class="docutils literal notranslate"><span class="pre">Remote</span> <span class="pre">Repository</span></code> in github.</p></li>
 </ul>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git push origin main
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>main
 </pre></div>
 </div>
 <ul class="simple">
 <li><p>If you need to connect your local repository to a remote repository, use the following command</p></li>
 </ul>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git remote add origin &lt;server&gt;
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>remote<span class="w"> </span>add<span class="w"> </span>origin<span class="w"> </span>&lt;server&gt;
 </pre></div>
 </div>
 </section>
@@ -1321,46 +1321,46 @@ git commit -m <span class="s2">&quot;your comment&quot;</span>
 <li><p>Create a new branch and switch to it</p></li>
 </ul>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># new branch&#39;s name is feature</span>
-git switch -c feature_x   <span class="c1"># or: git checkout -b feature_x </span>
- 
+git<span class="w"> </span>switch<span class="w"> </span>-c<span class="w"> </span>feature_x<span class="w">   </span><span class="c1"># or: git checkout -b feature_x </span>
+<span class="w"> </span>
 <span class="c1"># create the dev branch of the remote origin to the local</span>
-git checkout -b dev origin/dev
+git<span class="w"> </span>checkout<span class="w"> </span>-b<span class="w"> </span>dev<span class="w"> </span>origin/dev
 
 <span class="c1"># switch to main branch</span>
-git switch main   <span class="c1"># or: git checkout main</span>
+git<span class="w"> </span>switch<span class="w"> </span>main<span class="w">   </span><span class="c1"># or: git checkout main</span>
 </pre></div>
 </div>
 <ul class="simple">
 <li><p>Delete a branch</p></li>
 </ul>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># delete a local branch</span>
-git branch -d &lt;branch-name&gt;
+git<span class="w"> </span>branch<span class="w"> </span>-d<span class="w"> </span>&lt;branch-name&gt;
 
 <span class="c1"># delete a remote branch</span>
-git push origin --delete &lt;branch-name&gt;
+git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>--delete<span class="w"> </span>&lt;branch-name&gt;
 </pre></div>
 </div>
 <ul class="simple">
 <li><p>Compare 2 branches</p></li>
 </ul>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># show a file list with difference between 2 branches</span>
-git diff branch1 branch2 --stat
+git<span class="w"> </span>diff<span class="w"> </span>branch1<span class="w"> </span>branch2<span class="w"> </span>--stat
 
 <span class="c1"># show detailed differences for the specified file</span>
-git diff branch1 branch2 /path/to/file
+git<span class="w"> </span>diff<span class="w"> </span>branch1<span class="w"> </span>branch2<span class="w"> </span>/path/to/file
 
 <span class="c1"># show the detailed differences of all the different files between 2 branches</span>
-git diff branch1 branch2
+git<span class="w"> </span>diff<span class="w"> </span>branch1<span class="w"> </span>branch2
 </pre></div>
 </div>
 <ul class="simple">
 <li><p>Merge 2 branches</p></li>
 </ul>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># merge the contents of the dev branch under the main branch</span>
-git merge dev
+git<span class="w"> </span>merge<span class="w"> </span>dev
 
 <span class="c1"># the &#39;--no-ff&#39; option disables fast-forward mode, and &#39;-m&#39; records the merge as a commit</span>
-git merge --no-ff -m <span class="s2">&quot;merge dev --add new blog-1&quot;</span> dev
+git<span class="w"> </span>merge<span class="w"> </span>--no-ff<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;merge dev --add new blog-1&quot;</span><span class="w"> </span>dev
 </pre></div>
 </div>
 </section>
@@ -1370,10 +1370,10 @@ git merge --no-ff -m <span class="s2">&quot;merge dev --add new blog-1&quot;</sp
 <li><p>If the team is developing on the <code class="docutils literal notranslate"><span class="pre">dev</span> <span class="pre">branch</span></code> and a teammate commits a new commit to <code class="docutils literal notranslate"><span class="pre">dev</span></code>, we need to <code class="docutils literal notranslate"><span class="pre">pull</span></code> the commit from GitHub to our local <code class="docutils literal notranslate"><span class="pre">dev</span> <span class="pre">branch</span></code> before developing</p></li>
 </ul>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># specify the link between the local dev branch and the remote origin&#39;s dev branch</span>
-git branch --set-upstream-to<span class="o">=</span>origin/dev dev
+git<span class="w"> </span>branch<span class="w"> </span>--set-upstream-to<span class="o">=</span>origin/dev<span class="w"> </span>dev
 
 <span class="c1"># pull code</span>
-git pull
+git<span class="w"> </span>pull
 </pre></div>
 </div>
 <div class="admonition note">
@@ -1384,42 +1384,42 @@ git pull
 <section id="tag">
 <h3>tag<a class="headerlink" href="#tag" title="Permalink to this headline">#</a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># tag the current branch with v1.0</span>
-git tag v1.0
+git<span class="w"> </span>tag<span class="w"> </span>v1.0
 
 <span class="c1"># show all the tags</span>
-git tag
+git<span class="w"> </span>tag
 
 <span class="c1"># show the tag v0.9&#39;s information</span>
-git show v0.9
+git<span class="w"> </span>show<span class="w"> </span>v0.9
 
 <span class="c1"># tag a previous commit，f52c633 is the &#39;commit id&#39;</span>
-git tag v0.9 f52c633
+git<span class="w"> </span>tag<span class="w"> </span>v0.9<span class="w"> </span>f52c633
 
 <span class="c1"># create a tag with instructions，&#39;-a&#39; add tga  ，&#39;-m&#39; add instructions</span>
-git tag -a v0.1 -m <span class="s2">&quot;version 0.1 released&quot;</span> 1094adb
+git<span class="w"> </span>tag<span class="w"> </span>-a<span class="w"> </span>v0.1<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;version 0.1 released&quot;</span><span class="w"> </span>1094adb
 
 <span class="c1"># delete a tag</span>
-git tag -d v0.1
+git<span class="w"> </span>tag<span class="w"> </span>-d<span class="w"> </span>v0.1
 
 <span class="c1"># push the tag to remote</span>
-git push origin v1.0
+git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>v1.0
 
 <span class="c1"># Push all local tags that have not been pushed to the remote at one time</span>
-git push origin --tags
+git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>--tags
 
 <span class="c1"># delete a remote tag (make sure that you have deleted the local tag before)</span>
-git push origin :refs/tags/v0.9
+git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>:refs/tags/v0.9
 </pre></div>
 </div>
 </section>
 <section id="log">
 <h3>log<a class="headerlink" href="#log" title="Permalink to this headline">#</a></h3>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git log --graph --pretty<span class="o">=</span>oneline --abbrev-commit
-git log --pretty<span class="o">=</span>oneline --abbrev-commit
-git log --pretty<span class="o">=</span>oneline
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>log<span class="w"> </span>--graph<span class="w"> </span>--pretty<span class="o">=</span>oneline<span class="w"> </span>--abbrev-commit
+git<span class="w"> </span>log<span class="w"> </span>--pretty<span class="o">=</span>oneline<span class="w"> </span>--abbrev-commit
+git<span class="w"> </span>log<span class="w"> </span>--pretty<span class="o">=</span>oneline
 
 <span class="c1"># check the latest commit</span>
-git log -1
+git<span class="w"> </span>log<span class="w"> </span>-1
 </pre></div>
 </div>
 </section>
@@ -1429,34 +1429,34 @@ git log -1
 <li><p>delete one file</p></li>
 </ul>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># delete test.txt from repo and commit</span>
-git rm test.txt
-git commit -m <span class="s2">&quot;remove test.txt&quot;</span>
+git<span class="w"> </span>rm<span class="w"> </span>test.txt
+git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;remove test.txt&quot;</span>
 
 <span class="c1"># use &#39;rm&#39; delete，then &#39;git add&#39; and &#39;git commit&#39;</span>
-rm text.txt
-git add .
-git commit -m <span class="s2">&quot;remove test.txt&quot;</span>
+rm<span class="w"> </span>text.txt
+git<span class="w"> </span>add<span class="w"> </span>.
+git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;remove test.txt&quot;</span>
 </pre></div>
 </div>
 <ul class="simple">
 <li><p>delete untracked files from <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code></p></li>
 </ul>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># delete untracked files</span>
-git clean -f
+git<span class="w"> </span>clean<span class="w"> </span>-f
 
 <span class="c1"># delete untracked files and their directory</span>
-git clean -fd
+git<span class="w"> </span>clean<span class="w"> </span>-fd
 
 <span class="c1"># ? cautious</span>
-git clean -xfd
+git<span class="w"> </span>clean<span class="w"> </span>-xfd
 </pre></div>
 </div>
 <ul class="simple">
 <li><p>it is highly recommended to add the <code class="docutils literal notranslate"><span class="pre">-n</span></code> parameter to see which files will be deleted first to prevent the deletion of important files by mistake</p></li>
 </ul>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clean -nxfd
-git clean -nf
-git clean -nfd
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clean<span class="w"> </span>-nxfd
+git<span class="w"> </span>clean<span class="w"> </span>-nf
+git<span class="w"> </span>clean<span class="w"> </span>-nfd
 </pre></div>
 </div>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
@@ -1469,27 +1469,27 @@ git clean -nfd
 <ul class="simple">
 <li><p class="sd-card-text">We need to remove those <code class="docutils literal notranslate"><span class="pre">.DS_Store</span></code> files from the directory which already added to git. Use the following command which will go through all the folders in your directory, and remove those files from git.</p></li>
 </ul>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>find . -name .DS_Store -print0 <span class="p">|</span> xargs -0 git rm -f --ignore-unmatch
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>find<span class="w"> </span>.<span class="w"> </span>-name<span class="w"> </span>.DS_Store<span class="w"> </span>-print0<span class="w"> </span><span class="p">|</span><span class="w"> </span>xargs<span class="w"> </span>-0<span class="w"> </span>git<span class="w"> </span>rm<span class="w"> </span>-f<span class="w"> </span>--ignore-unmatch
 </pre></div>
 </div>
 <ul class="simple">
 <li><p class="sd-card-text">Add <code class="docutils literal notranslate"><span class="pre">.DS_Store</span></code> to the file <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code>, which can be found at the top level of your repository (or create the file if it isn’t there already). You can do this easily with this command in the top directory:</p></li>
 </ul>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> .DS_Store &gt;&gt; .gitignore
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span><span class="w"> </span>.DS_Store<span class="w"> </span>&gt;&gt;<span class="w"> </span>.gitignore
 </pre></div>
 </div>
 <ul class="simple">
 <li><p class="sd-card-text">Last step, we need to actually commit the <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code> file.</p></li>
 </ul>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git status
-git add .gitignore
-git commit -m <span class="s1">&#39;.DS_Store banished!&#39;</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>status
+git<span class="w"> </span>add<span class="w"> </span>.gitignore
+git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s1">&#39;.DS_Store banished!&#39;</span>
 </pre></div>
 </div>
 <ul class="simple">
 <li><p class="sd-card-text">Clean the files recorded in <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code></p></li>
 </ul>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clean -X -f
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clean<span class="w"> </span>-X<span class="w"> </span>-f
 </pre></div>
 </div>
 </div>
@@ -1502,13 +1502,13 @@ git commit -m <span class="s1">&#39;.DS_Store banished!&#39;</span>
 </div>
 <p>在 Git 中，用<code class="docutils literal notranslate"><span class="pre">HEAD</span></code>表示当前版本, 上一个版本是<code class="docutils literal notranslate"><span class="pre">HEAD^</span></code>，上上一个版本是<code class="docutils literal notranslate"><span class="pre">HEAD^^</span></code>，往上100个版本<code class="docutils literal notranslate"><span class="pre">HEAD~100</span></code>。但推荐使用<code class="docutils literal notranslate"><span class="pre">commit</span> <span class="pre">id</span></code>来退回版本：</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># 退回到上一个版本</span>
-git reset --hard HEAD^
+git<span class="w"> </span>reset<span class="w"> </span>--hard<span class="w"> </span>HEAD^
 
 <span class="c1"># 首先查看历史 commit 的 id</span>
-git log
+git<span class="w"> </span>log
 
 <span class="c1"># 例如发现 id 是 1094a，退回到该版本</span>
-git reset --hard 1094a
+git<span class="w"> </span>reset<span class="w"> </span>--hard<span class="w"> </span>1094a
 </pre></div>
 </div>
 <div class="admonition note">
@@ -1517,10 +1517,10 @@ git reset --hard 1094a
 </div>
 <p>现在退回到过去的版本了，想回到未来的版本：</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># 要重返未来，用&#39;git reflog&#39;查看命令历史，以便确定要回到未来的哪个版本</span>
-git reflog
+git<span class="w"> </span>reflog
 
 <span class="c1"># 例如发现未来的 id 是 1094a，退回到该版本</span>
-git reset --hard 1094a
+git<span class="w"> </span>reset<span class="w"> </span>--hard<span class="w"> </span>1094a
 </pre></div>
 </div>
 </section>
@@ -1530,7 +1530,7 @@ git reset --hard 1094a
 <p class="admonition-title">Warning</p>
 <p>需要替换成最新版本的 <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">restore</span></code></p>
 </div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git checkout -- xx.txt 
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>checkout<span class="w"> </span>--<span class="w"> </span>xx.txt<span class="w"> </span>
 </pre></div>
 </div>
 </section>

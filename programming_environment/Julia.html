@@ -724,20 +724,20 @@ title="Print to PDF"
 <ul>
 <li><p>(<strong>not recommend</strong>)  Download <code class="docutils literal notranslate"><span class="pre">dmg</span></code> package from official website with MacBook，click install, and then add the env variable in <code class="docutils literal notranslate"><span class="pre">~/.zshrc</span></code> as following:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># &gt;&gt;&gt; Julia &gt;&gt;&gt;</span>
-<span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="s2">&quot;/Applications/Julia-1.6.app/Contents/Resources/julia/bin/:</span><span class="nv">$PATH</span><span class="s2">&quot;</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">PATH</span><span class="o">=</span><span class="s2">&quot;/Applications/Julia-1.6.app/Contents/Resources/julia/bin/:</span><span class="nv">$PATH</span><span class="s2">&quot;</span>
 <span class="c1"># &lt;&lt;&lt; Julia &lt;&lt;&lt;</span>
 </pre></div>
 </div>
 </li>
 <li><p>(<strong>recommend</strong>) Using <a class="reference external" href="https://github.com/johnnychen94/jill.py">jill.py</a> to download julia and manage multiple versions. Use <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">jill</span></code> firstly, then:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># install julia with version 1.8</span>
-jill install <span class="m">1</span>.8 		
+jill<span class="w"> </span>install<span class="w"> </span><span class="m">1</span>.8<span class="w"> 		</span>
 
 <span class="c1"># check all versions you have installed</span>
-jill list  			
+jill<span class="w"> </span>list<span class="w">  			</span>
 
 <span class="c1"># set the default version to 1.6</span>
-jill switch <span class="m">1</span>.6 		
+jill<span class="w"> </span>switch<span class="w"> </span><span class="m">1</span>.6<span class="w"> 		</span>
 </pre></div>
 </div>
 </li>
@@ -773,13 +773,13 @@ Remove the symlinks in symlink_dir, e.g., <code class="docutils literal notransl
 <h2>Startup.jl<a class="headerlink" href="#startup-jl" title="Permalink to this headline">#</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">startup.jl</span> </code> is initialization file of julia REPL.
 Open the <code class="docutils literal notranslate"><span class="pre">~/.julia/config/startup.jl</span></code> file, and then add the following info for example:</p>
-<div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="k">if</span><span class="w"> </span><span class="nb">VERSION</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="sa">v</span><span class="s">&quot;1.4&quot;</span><span class="w"></span>
-<span class="w">    </span><span class="k">try</span><span class="w"></span>
-<span class="w">        </span><span class="k">using</span><span class="w"> </span><span class="n">OhMyREPL</span><span class="w"></span>
-<span class="w">    </span><span class="k">catch</span><span class="w"> </span><span class="n">e</span><span class="w"></span>
-<span class="w">        </span><span class="nd">@warn</span><span class="w"> </span><span class="s">&quot;error while using OhMyREPL&quot;</span><span class="w"> </span><span class="n">e</span><span class="w"></span>
-<span class="w">    </span><span class="k">end</span><span class="w"></span>
-<span class="k">end</span><span class="w"></span>
+<div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="k">if</span><span class="w"> </span><span class="nb">VERSION</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="sa">v</span><span class="s">&quot;1.4&quot;</span>
+<span class="w">    </span><span class="k">try</span>
+<span class="w">        </span><span class="k">using</span><span class="w"> </span><span class="n">OhMyREPL</span>
+<span class="w">    </span><span class="k">catch</span><span class="w"> </span><span class="n">e</span>
+<span class="w">        </span><span class="nd">@warn</span><span class="w"> </span><span class="s">&quot;error while using OhMyREPL&quot;</span><span class="w"> </span><span class="n">e</span>
+<span class="w">    </span><span class="k">end</span>
+<span class="k">end</span>
 </pre></div>
 </div>
 </section>

@@ -68,6 +68,26 @@ a = np.ones(10)
 ```
 
 
+## Pathlib
+
+```python
+from pathlib import Path
+output_path = "./DAS_DATA"
+
+# check whether exists
+Path(output_path).is_dir()
+
+# make file
+Path.mkdir(Path(output_path))
+
+# absolute path
+abs_path = Path(output_path).joinpath(url.split('/')[-1]).absolute()
+
+# convert to string
+abs_filename = str(abs_path)
+```
+
+
 ## Subprocess
 
 
@@ -80,8 +100,4 @@ print("this is some stdout")
 print("this is some stderr", file=sys.stderr)
 print(a)
 ```
-
-## Multithreading Speeds Up Downloading Files
-
-http://dong.sh/posts/pythonftpparallelsdownload/
 

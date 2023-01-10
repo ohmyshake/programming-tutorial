@@ -724,15 +724,15 @@ title="Print to PDF"
 <section id="basic-usage">
 <h2>Basic usage<a class="headerlink" href="#basic-usage" title="Permalink to this headline">#</a></h2>
 <p>Use the <code class="docutils literal notranslate"><span class="pre">-V</span></code> parameter to check the version number</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ssh -V
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ssh<span class="w"> </span>-V
 </pre></div>
 </div>
 <p>The following commands are used to log in to the server over <code class="docutils literal notranslate"><span class="pre">SSH</span></code></p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ssh user@hostname
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ssh<span class="w"> </span>user@hostname
 </pre></div>
 </div>
 <p>By default, <code class="docutils literal notranslate"><span class="pre">SSH</span></code> connects to port <code class="docutils literal notranslate"><span class="pre">22</span></code> of the server</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ssh -p <span class="m">22</span> -X user@hostname
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ssh<span class="w"> </span>-p<span class="w"> </span><span class="m">22</span><span class="w"> </span>-X<span class="w"> </span>user@hostname
 </pre></div>
 </div>
 <ul class="simple">
@@ -751,7 +751,7 @@ title="Print to PDF"
 <p>To create the keys, a preferred command is <code class="docutils literal notranslate"><span class="pre">ssh-keygen</span></code>. And <code class="docutils literal notranslate"><span class="pre">ssh-keygen</span></code> asks a series of questions and then writes <strong><em>a private key</em></strong> and <strong><em>a matching public key</em></strong>.</p>
 <p>SSH keys are by default kept in the <code class="docutils literal notranslate"><span class="pre">~/.ssh</span></code> directory. If you do not have a <code class="docutils literal notranslate"><span class="pre">~/.ssh</span></code> directory, the <code class="docutils literal notranslate"><span class="pre">ssh-keygen</span></code> command creates it for you with the correct permissions. If an SSH key pair exists in the current location, those files are overwritten.</p>
 <p>The following ssh-keygen command generates SSH RSA public and private key files by default in the <code class="docutils literal notranslate"><span class="pre">~/.ssh</span></code> directory.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ssh-keygen -t rsa -C <span class="s2">&quot;fy21@rice.edu&quot;</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ssh-keygen<span class="w"> </span>-t<span class="w"> </span>rsa<span class="w"> </span>-C<span class="w"> </span><span class="s2">&quot;fy21@rice.edu&quot;</span>
 </pre></div>
 </div>
 <ul class="simple">
@@ -760,12 +760,12 @@ title="Print to PDF"
 <li><p><code class="docutils literal notranslate"><span class="pre">-C</span> <span class="pre">&quot;fy21&#64;rice.edu&quot;</span></code>: a comment appended to the end of the public key file to easily identify it. Normally an email address is used as the comment, but use whatever works best for your infrastructure.</p></li>
 </ul>
 <p>The <code class="docutils literal notranslate"><span class="pre">~/.ssh</span></code> directory has some personal key files and other files.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ls -l ~/.ssh
-total <span class="m">32</span>
--rw-r--r--@ <span class="m">1</span> yinfu  staff  <span class="m">1479</span> Jul <span class="m">26</span> <span class="m">16</span>:23 config
--rw-------  <span class="m">1</span> yinfu  staff  <span class="m">2602</span> Jul <span class="m">20</span> <span class="m">22</span>:53 id_rsa
--rw-r--r--  <span class="m">1</span> yinfu  staff   <span class="m">567</span> Jul <span class="m">20</span> <span class="m">22</span>:53 id_rsa.pub
--rw-------  <span class="m">1</span> yinfu  staff   <span class="m">749</span> Jul <span class="m">20</span> <span class="m">23</span>:02 known_hosts
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ls<span class="w"> </span>-l<span class="w"> </span>~/.ssh
+total<span class="w"> </span><span class="m">32</span>
+-rw-r--r--@<span class="w"> </span><span class="m">1</span><span class="w"> </span>yinfu<span class="w">  </span>staff<span class="w">  </span><span class="m">1479</span><span class="w"> </span>Jul<span class="w"> </span><span class="m">26</span><span class="w"> </span><span class="m">16</span>:23<span class="w"> </span>config
+-rw-------<span class="w">  </span><span class="m">1</span><span class="w"> </span>yinfu<span class="w">  </span>staff<span class="w">  </span><span class="m">2602</span><span class="w"> </span>Jul<span class="w"> </span><span class="m">20</span><span class="w"> </span><span class="m">22</span>:53<span class="w"> </span>id_rsa
+-rw-r--r--<span class="w">  </span><span class="m">1</span><span class="w"> </span>yinfu<span class="w">  </span>staff<span class="w">   </span><span class="m">567</span><span class="w"> </span>Jul<span class="w"> </span><span class="m">20</span><span class="w"> </span><span class="m">22</span>:53<span class="w"> </span>id_rsa.pub
+-rw-------<span class="w">  </span><span class="m">1</span><span class="w"> </span>yinfu<span class="w">  </span>staff<span class="w">   </span><span class="m">749</span><span class="w"> </span>Jul<span class="w"> </span><span class="m">20</span><span class="w"> </span><span class="m">23</span>:02<span class="w"> </span>known_hosts
 </pre></div>
 </div>
 <ul class="simple">
@@ -780,20 +780,20 @@ total <span class="m">32</span>
 <p>The user public key is stored in the <code class="docutils literal notranslate"><span class="pre">~/.ssh/authorized_keys</span></code> file on the server. Each public key occupies a line. If the file does not exist, you can manually create it.</p>
 <p>The permission of the <code class="docutils literal notranslate"><span class="pre">authorized_keys</span></code> file must be set to <code class="docutils literal notranslate"><span class="pre">644</span></code>, that is, only the file owner can write.</p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="6293b5a3-aad1-473a-97a6-fa0d6c13cae2" name="90c5d843-c2b8-45cd-9c8f-50924a34fcbd" type="radio">
-</input><label class="sd-tab-label" for="6293b5a3-aad1-473a-97a6-fa0d6c13cae2">
+<input checked="checked" id="5cdbf3a3-960c-4133-ac19-4799ae63e6dc" name="fee95b94-7b50-48f7-8066-c9418f90311b" type="radio">
+</input><label class="sd-tab-label" for="5cdbf3a3-960c-4133-ac19-4799ae63e6dc">
 Manually Uploading a Public Key</label><div class="sd-tab-content docutils">
 <p>User can edit the <code class="docutils literal notranslate"><span class="pre">authorized_keys</span></code> file manually and paste the public key into it, or can run the following command on the local computer.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cat ~/.ssh/id_rsa.pub <span class="p">|</span> ssh user@host <span class="s2">&quot;mkdir -p ~/.ssh &amp;&amp; cat &gt;&gt; ~/.ssh/authorized_keys&quot;</span>
-chmod <span class="m">644</span> ~/.ssh/authorized_keys
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cat<span class="w"> </span>~/.ssh/id_rsa.pub<span class="w"> </span><span class="p">|</span><span class="w"> </span>ssh<span class="w"> </span>user@host<span class="w"> </span><span class="s2">&quot;mkdir -p ~/.ssh &amp;&amp; cat &gt;&gt; ~/.ssh/authorized_keys&quot;</span>
+chmod<span class="w"> </span><span class="m">644</span><span class="w"> </span>~/.ssh/authorized_keys
 </pre></div>
 </div>
 </div>
-<input id="0f79568d-2283-4a21-ba90-27556cf7bdd9" name="90c5d843-c2b8-45cd-9c8f-50924a34fcbd" type="radio">
-</input><label class="sd-tab-label" for="0f79568d-2283-4a21-ba90-27556cf7bdd9">
+<input id="94bf6427-5f36-4356-a727-e3515fbc3b45" name="fee95b94-7b50-48f7-8066-c9418f90311b" type="radio">
+</input><label class="sd-tab-label" for="94bf6427-5f36-4356-a727-e3515fbc3b45">
 ssh-copy-id</label><div class="sd-tab-content docutils">
 <p>OpenSSH comes with the <code class="docutils literal notranslate"><span class="pre">ssh-copy-id</span></code> command to automatically copy the public key to the <code class="docutils literal notranslate"><span class="pre">~/.</span> <span class="pre">SSH</span> <span class="pre">/authorized_keys</span></code> file on the remote server. If the <code class="docutils literal notranslate"><span class="pre">~/.ssh/authorized_keys</span></code> file does not exist, the <code class="docutils literal notranslate"><span class="pre">ssh-copy-id</span></code> command automatically creates the file.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ssh-copy-id -i ~/.ssh/id_rsa.pub user@host
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ssh-copy-id<span class="w"> </span>-i<span class="w"> </span>~/.ssh/id_rsa.pub<span class="w"> </span>user@host
 </pre></div>
 </div>
 <div class="admonition note">
@@ -818,89 +818,89 @@ ssh-copy-id</label><div class="sd-tab-content docutils">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1">#####################################</span>
 <span class="c1"># Rice -- Prof. Jonathan&#39;s group in NOTS</span>
 <span class="c1">#####################################</span>
-Host nots
-  HostName nots.rice.edu
-  ForwardX11Trusted yes
-  ForwardX11 yes
-  User fy21
-  IdentityFile /Users/yinfu/.ssh/id_rsa
-  Port <span class="m">22</span>
+Host<span class="w"> </span>nots
+<span class="w">  </span>HostName<span class="w"> </span>nots.rice.edu
+<span class="w">  </span>ForwardX11Trusted<span class="w"> </span>yes
+<span class="w">  </span>ForwardX11<span class="w"> </span>yes
+<span class="w">  </span>User<span class="w"> </span>fy21
+<span class="w">  </span>IdentityFile<span class="w"> </span>/Users/yinfu/.ssh/id_rsa
+<span class="w">  </span>Port<span class="w"> </span><span class="m">22</span>
 
 
 <span class="c1">#####################################</span>
 <span class="c1"># USTC -- Prof. Junlun Li&#39;s group</span>
 <span class="c1">#####################################</span>
-Host li
-  HostName <span class="m">222</span>.195.76.240
-  ForwardX11Trusted yes
-  ForwardX11 yes
-  User yinfu
-  IdentityFile /Users/yinfu/.ssh/id_rsa
-  Port <span class="m">22</span>
+Host<span class="w"> </span>li
+<span class="w">  </span>HostName<span class="w"> </span><span class="m">222</span>.195.76.240
+<span class="w">  </span>ForwardX11Trusted<span class="w"> </span>yes
+<span class="w">  </span>ForwardX11<span class="w"> </span>yes
+<span class="w">  </span>User<span class="w"> </span>yinfu
+<span class="w">  </span>IdentityFile<span class="w"> </span>/Users/yinfu/.ssh/id_rsa
+<span class="w">  </span>Port<span class="w"> </span><span class="m">22</span>
 
 
 <span class="c1">#####################################</span>
 <span class="c1"># USTC -- Prof. Baoshan Wang&#39;s group</span>
 <span class="c1">#####################################</span>
-Host core
-  HostName <span class="m">222</span>.195.74.184
-  ForwardX11Trusted yes
-  ForwardX11 yes
-  User yinf
-  IdentityFile /Users/yinfu/.ssh/id_rsa
-  Port <span class="m">1010</span>
+Host<span class="w"> </span>core
+<span class="w">  </span>HostName<span class="w"> </span><span class="m">222</span>.195.74.184
+<span class="w">  </span>ForwardX11Trusted<span class="w"> </span>yes
+<span class="w">  </span>ForwardX11<span class="w"> </span>yes
+<span class="w">  </span>User<span class="w"> </span>yinf
+<span class="w">  </span>IdentityFile<span class="w"> </span>/Users/yinfu/.ssh/id_rsa
+<span class="w">  </span>Port<span class="w"> </span><span class="m">1010</span>
 
-Host m1
-  HostName <span class="m">222</span>.195.74.184
-  ForwardX11Trusted yes
-  ForwardX11 yes
-  User yinf
-  IdentityFile /Users/yinfu/.ssh/id_rsa
-  Port <span class="m">1011</span>
+Host<span class="w"> </span>m1
+<span class="w">  </span>HostName<span class="w"> </span><span class="m">222</span>.195.74.184
+<span class="w">  </span>ForwardX11Trusted<span class="w"> </span>yes
+<span class="w">  </span>ForwardX11<span class="w"> </span>yes
+<span class="w">  </span>User<span class="w"> </span>yinf
+<span class="w">  </span>IdentityFile<span class="w"> </span>/Users/yinfu/.ssh/id_rsa
+<span class="w">  </span>Port<span class="w"> </span><span class="m">1011</span>
 
-Host m2
-  HostName <span class="m">222</span>.195.74.184
-  ForwardX11Trusted yes
-  ForwardX11 yes
-  User yinf
-  IdentityFile /Users/yinfu/.ssh/id_rsa
-  Port <span class="m">1012</span>
+Host<span class="w"> </span>m2
+<span class="w">  </span>HostName<span class="w"> </span><span class="m">222</span>.195.74.184
+<span class="w">  </span>ForwardX11Trusted<span class="w"> </span>yes
+<span class="w">  </span>ForwardX11<span class="w"> </span>yes
+<span class="w">  </span>User<span class="w"> </span>yinf
+<span class="w">  </span>IdentityFile<span class="w"> </span>/Users/yinfu/.ssh/id_rsa
+<span class="w">  </span>Port<span class="w"> </span><span class="m">1012</span>
 
-Host m3
-  HostName <span class="m">222</span>.195.74.184
-  ForwardX11Trusted yes
-  ForwardX11 yes
-  User yinf
-  IdentityFile /Users/yinfu/.ssh/id_rsa
-  Port <span class="m">1013</span>
+Host<span class="w"> </span>m3
+<span class="w">  </span>HostName<span class="w"> </span><span class="m">222</span>.195.74.184
+<span class="w">  </span>ForwardX11Trusted<span class="w"> </span>yes
+<span class="w">  </span>ForwardX11<span class="w"> </span>yes
+<span class="w">  </span>User<span class="w"> </span>yinf
+<span class="w">  </span>IdentityFile<span class="w"> </span>/Users/yinfu/.ssh/id_rsa
+<span class="w">  </span>Port<span class="w"> </span><span class="m">1013</span>
 
-Host m4
-  HostName <span class="m">222</span>.195.74.184
-  ForwardX11Trusted yes
-  ForwardX11 yes
-  User yinf
-  IdentityFile /Users/yinfu/.ssh/id_rsa
-  Port <span class="m">1014</span>
+Host<span class="w"> </span>m4
+<span class="w">  </span>HostName<span class="w"> </span><span class="m">222</span>.195.74.184
+<span class="w">  </span>ForwardX11Trusted<span class="w"> </span>yes
+<span class="w">  </span>ForwardX11<span class="w"> </span>yes
+<span class="w">  </span>User<span class="w"> </span>yinf
+<span class="w">  </span>IdentityFile<span class="w"> </span>/Users/yinfu/.ssh/id_rsa
+<span class="w">  </span>Port<span class="w"> </span><span class="m">1014</span>
 
-Host crust
-  HostName <span class="m">222</span>.195.74.184
-  ForwardX11Trusted yes
-  ForwardX11 yes
-  User yinf
-  IdentityFile /Users/yinfu/.ssh/id_rsa
-  Port <span class="m">1015</span>
+Host<span class="w"> </span>crust
+<span class="w">  </span>HostName<span class="w"> </span><span class="m">222</span>.195.74.184
+<span class="w">  </span>ForwardX11Trusted<span class="w"> </span>yes
+<span class="w">  </span>ForwardX11<span class="w"> </span>yes
+<span class="w">  </span>User<span class="w"> </span>yinf
+<span class="w">  </span>IdentityFile<span class="w"> </span>/Users/yinfu/.ssh/id_rsa
+<span class="w">  </span>Port<span class="w"> </span><span class="m">1015</span>
 
 
 <span class="c1">########################################</span>
 <span class="c1"># SUSTech -- Prof. Xiaofei Chen&#39;s group</span>
 <span class="c1">########################################</span>
-Host seislab2
-  HostName <span class="m">10</span>.20.11.42
-  ForwardX11Trusted yes
-  ForwardX11 yes
-  User yinfu
-  IdentityFile /Users/yinfu/.ssh/id_rsa
-  Port <span class="m">22</span>
+Host<span class="w"> </span>seislab2
+<span class="w">  </span>HostName<span class="w"> </span><span class="m">10</span>.20.11.42
+<span class="w">  </span>ForwardX11Trusted<span class="w"> </span>yes
+<span class="w">  </span>ForwardX11<span class="w"> </span>yes
+<span class="w">  </span>User<span class="w"> </span>yinfu
+<span class="w">  </span>IdentityFile<span class="w"> </span>/Users/yinfu/.ssh/id_rsa
+<span class="w">  </span>Port<span class="w"> </span><span class="m">22</span>
 </pre></div>
 </div>
 </div>
@@ -913,8 +913,8 @@ Host seislab2
 <li><p>Download <code class="docutils literal notranslate"><span class="pre">SSHFS</span></code>, click the <em>X.dmg</em> to install.</p></li>
 </ul>
 <p>It can be used after the installation is complete, for example:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sshfs -o follow_symlinks -p <span class="m">1012</span> yinf@222.195.74.184:/ /Users/yf/share1/
-sshfs -o follow_symlinks fy21@nots.rice.edu:/ /Users/yinfu/share2/
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sshfs<span class="w"> </span>-o<span class="w"> </span>follow_symlinks<span class="w"> </span>-p<span class="w"> </span><span class="m">1012</span><span class="w"> </span>yinf@222.195.74.184:/<span class="w"> </span>/Users/yf/share1/
+sshfs<span class="w"> </span>-o<span class="w"> </span>follow_symlinks<span class="w"> </span>fy21@nots.rice.edu:/<span class="w"> </span>/Users/yinfu/share2/
 </pre></div>
 </div>
 </section>

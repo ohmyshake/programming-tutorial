@@ -792,10 +792,10 @@ title="Print to PDF"
 <section id="ln">
 <h2>ln<a class="headerlink" href="#ln" title="Permalink to this headline">#</a></h2>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Print all links</span>
-ls -al
+ls<span class="w"> </span>-al
 
 <span class="c1"># Create a link, file2 is the link of file1.</span>
-ln -s file1 file2
+ln<span class="w"> </span>-s<span class="w"> </span>file1<span class="w"> </span>file2
 </pre></div>
 </div>
 </section>
@@ -814,41 +814,41 @@ ln -s file1 file2
 <section id="conda-mamba">
 <h2>conda/mamba<a class="headerlink" href="#conda-mamba" title="Permalink to this headline">#</a></h2>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># check all packages</span>
-conda list
+conda<span class="w"> </span>list
 
 <span class="c1"># install package</span>
-conda install -c conda-forge xxx
+conda<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>xxx
 
 <span class="c1"># create new env</span>
-conda create -n envname <span class="nv">python</span><span class="o">=</span><span class="m">3</span>.9 numpy pandas
+conda<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>envname<span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="m">3</span>.9<span class="w"> </span>numpy<span class="w"> </span>pandas
 
 <span class="c1"># activate env</span>
-conda activate pygmt
+conda<span class="w"> </span>activate<span class="w"> </span>pygmt
 
 <span class="c1"># deactivate env</span>
-conda deactivate
+conda<span class="w"> </span>deactivate
 
 <span class="c1"># env list</span>
-conda env list
+conda<span class="w"> </span>env<span class="w"> </span>list
 
 <span class="c1"># remove a env</span>
-conda env remove -n yourEnv
+conda<span class="w"> </span>env<span class="w"> </span>remove<span class="w"> </span>-n<span class="w"> </span>yourEnv
 </pre></div>
 </div>
 </section>
 <section id="ssh-sshfs">
 <h2>ssh/sshfs<a class="headerlink" href="#ssh-sshfs" title="Permalink to this headline">#</a></h2>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># ssh -p port -X user@hostname</span>
-ssh -p <span class="m">22</span> -X fy21@nots.rice.edu
-ssh nots
+ssh<span class="w"> </span>-p<span class="w"> </span><span class="m">22</span><span class="w"> </span>-X<span class="w"> </span>fy21@nots.rice.edu
+ssh<span class="w"> </span>nots
 
 <span class="c1"># sshfs NOTS HPC in Rice</span>
-sshfs -o follow_symlinks fy21@nots.rice.edu:/ /Users/yinfu/share1/
+sshfs<span class="w"> </span>-o<span class="w"> </span>follow_symlinks<span class="w"> </span>fy21@nots.rice.edu:/<span class="w"> </span>/Users/yinfu/share1/
 
 <span class="c1"># set alias before in &#39;~/.zshrc&#39;</span>
-<span class="nb">alias</span> sshfs-nots<span class="o">=</span><span class="s1">&#39;sshfs -o follow_symlinks -p 22 fy21@nots.rice.edu:/ /Users/yinfu/share1/&#39;</span>
-<span class="nb">alias</span> resshfs-nots<span class="o">=</span><span class="s1">&#39;diskutil umountDisk /Users/yinfu/share1; sshfs-nots&#39;</span>
-sshfs-nots 
+<span class="nb">alias</span><span class="w"> </span>sshfs-nots<span class="o">=</span><span class="s1">&#39;sshfs -o follow_symlinks -p 22 fy21@nots.rice.edu:/ /Users/yinfu/share1/&#39;</span>
+<span class="nb">alias</span><span class="w"> </span>resshfs-nots<span class="o">=</span><span class="s1">&#39;diskutil umountDisk /Users/yinfu/share1; sshfs-nots&#39;</span>
+sshfs-nots<span class="w"> </span>
 resshfs-nots
 </pre></div>
 </div>
@@ -858,29 +858,29 @@ resshfs-nots
 <p>Use <code class="docutils literal notranslate"><span class="pre">diskutil</span></code> on MacOS, <code class="docutils literal notranslate"><span class="pre">mount/umount</span></code> on Linux.
 Disk softwares on Mac, such as <code class="docutils literal notranslate"><span class="pre">Disk</span> <span class="pre">Utility</span></code>, <code class="docutils literal notranslate"><span class="pre">Tuxera</span></code>…</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># List the partitions of a disk</span>
-diskutil list
+diskutil<span class="w"> </span>list
 
 <span class="c1"># mount a single volume</span>
-diskutil mount <span class="o">[</span>IDENTIFIER<span class="o">]</span>
-diskutil mountDisk disk2s1
+diskutil<span class="w"> </span>mount<span class="w"> </span><span class="o">[</span>IDENTIFIER<span class="o">]</span>
+diskutil<span class="w"> </span>mountDisk<span class="w"> </span>disk2s1
 
 <span class="c1"># mount an entire disk</span>
-diskutil mountDisk <span class="o">[</span>IDENTIFIER<span class="o">]</span>/<span class="o">[</span>PATH<span class="o">]</span>
-diskutil mountDisk disk2s1
-diskutil mountDisk /dev/disk2
+diskutil<span class="w"> </span>mountDisk<span class="w"> </span><span class="o">[</span>IDENTIFIER<span class="o">]</span>/<span class="o">[</span>PATH<span class="o">]</span>
+diskutil<span class="w"> </span>mountDisk<span class="w"> </span>disk2s1
+diskutil<span class="w"> </span>mountDisk<span class="w"> </span>/dev/disk2
 
 <span class="c1"># umount a single volume</span>
-diskutil umount <span class="o">[</span>IDENTIFIER<span class="o">]</span>
-diskutil umount disk2s1
+diskutil<span class="w"> </span>umount<span class="w"> </span><span class="o">[</span>IDENTIFIER<span class="o">]</span>
+diskutil<span class="w"> </span>umount<span class="w"> </span>disk2s1
 
 <span class="c1"># umount an entire disk</span>
-diskutil umountDisk <span class="o">[</span>IDENTIFIER<span class="o">]</span>/<span class="o">[</span>PATH<span class="o">]</span>
-diskutil umountDisk disk2s1
-diskutil umountDisk /dev/disk2
+diskutil<span class="w"> </span>umountDisk<span class="w"> </span><span class="o">[</span>IDENTIFIER<span class="o">]</span>/<span class="o">[</span>PATH<span class="o">]</span>
+diskutil<span class="w"> </span>umountDisk<span class="w"> </span>disk2s1
+diskutil<span class="w"> </span>umountDisk<span class="w"> </span>/dev/disk2
 
 <span class="c1"># umount sshfs</span>
-diskutil umountDisk <span class="o">[</span>PATH<span class="o">]</span>
-diskutil umountDisk /Users/yinfu/share1
+diskutil<span class="w"> </span>umountDisk<span class="w"> </span><span class="o">[</span>PATH<span class="o">]</span>
+diskutil<span class="w"> </span>umountDisk<span class="w"> </span>/Users/yinfu/share1
 </pre></div>
 </div>
 <figure class="align-center" id="diskutil-list">
@@ -894,18 +894,18 @@ diskutil umountDisk /Users/yinfu/share1
 <h2>df<a class="headerlink" href="#df" title="Permalink to this headline">#</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">df</span></code> full name is <code class="docutils literal notranslate"><span class="pre">disk</span> <span class="pre">free</span></code>.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># The space size of each currently mounted directory</span>
-df -h
+df<span class="w"> </span>-h
 
 <span class="c1"># -ll: display bytes || -lh: display KB/MB/G/T...</span>
-ls -ll
-ls -lh
+ls<span class="w"> </span>-ll
+ls<span class="w"> </span>-lh
 
 <span class="c1"># Display total file size in current directory</span>
-du -sh
+du<span class="w"> </span>-sh
 
 <span class="c1"># View the size of each file and folder in the current directory</span>
-du -h --max-depth<span class="o">=</span><span class="m">1</span>
-du -h --max-depth<span class="o">=</span><span class="m">1</span>*
+du<span class="w"> </span>-h<span class="w"> </span>--max-depth<span class="o">=</span><span class="m">1</span>
+du<span class="w"> </span>-h<span class="w"> </span>--max-depth<span class="o">=</span><span class="m">1</span>*
 </pre></div>
 </div>
 </section>
@@ -919,10 +919,10 @@ du -h --max-depth<span class="o">=</span><span class="m">1</span>*
 <h2>wc<a class="headerlink" href="#wc" title="Permalink to this headline">#</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">wc</span></code> full name is <code class="docutils literal notranslate"><span class="pre">word</span> <span class="pre">count</span></code></p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Find the lines, words, bytes, filenames of the file</span>
-wc file
+wc<span class="w"> </span>file
 
 <span class="c1"># Find the lines of the file</span>
-cat file <span class="p">|</span> wc -l
+cat<span class="w"> </span>file<span class="w"> </span><span class="p">|</span><span class="w"> </span>wc<span class="w"> </span>-l
 </pre></div>
 </div>
 </section>
@@ -945,13 +945,17 @@ q
 </section>
 <section id="kill">
 <h2>kill<a class="headerlink" href="#kill" title="Permalink to this headline">#</a></h2>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ps -ef <span class="p">|</span> grep yinfu <span class="p">|</span> awk <span class="s1">&#39;{ print $2 }&#39;</span> <span class="p">|</span> xargs <span class="nb">kill</span> -9
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ps<span class="w"> </span>-ef<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>yinfu<span class="w"> </span><span class="p">|</span><span class="w"> </span>awk<span class="w"> </span><span class="s1">&#39;{ print $2 }&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>xargs<span class="w"> </span><span class="nb">kill</span><span class="w"> </span>-9
 </pre></div>
 </div>
 </section>
 <section id="nohup">
 <h2>nohup<a class="headerlink" href="#nohup" title="Permalink to this headline">#</a></h2>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>nohup 
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># start</span>
+nohup<span class="w"> </span><span class="nb">command</span><span class="w"> </span>&gt;<span class="w"> </span>command.log<span class="w"> </span><span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span><span class="p">&amp;</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="nv">$!</span><span class="w"> </span>&gt;<span class="w"> </span>command.pid
+
+<span class="c1"># kill</span>
+<span class="nb">kill</span><span class="w"> </span><span class="sb">`</span>cat<span class="w"> </span>command.pid<span class="sb">`</span>
 </pre></div>
 </div>
 </section>

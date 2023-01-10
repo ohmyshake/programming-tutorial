@@ -725,42 +725,42 @@ title="Print to PDF"
 </li>
 </ul>
 <p><strong>read:</strong></p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ sac
- SEISMIC ANALYSIS CODE <span class="o">[</span><span class="m">07</span>/17/2022 <span class="o">(</span>Version <span class="m">102</span>.0<span class="o">)]</span>
- Copyright <span class="m">1995</span> Regents of the University of California
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>sac
+<span class="w"> </span>SEISMIC<span class="w"> </span>ANALYSIS<span class="w"> </span>CODE<span class="w"> </span><span class="o">[</span><span class="m">07</span>/17/2022<span class="w"> </span><span class="o">(</span>Version<span class="w"> </span><span class="m">102</span>.0<span class="o">)]</span>
+<span class="w"> </span>Copyright<span class="w"> </span><span class="m">1995</span><span class="w"> </span>Regents<span class="w"> </span>of<span class="w"> </span>the<span class="w"> </span>University<span class="w"> </span>of<span class="w"> </span>California
 
-SAC&gt; r cdv.n cdv.e cdv.z
+SAC&gt;<span class="w"> </span>r<span class="w"> </span>cdv.n<span class="w"> </span>cdv.e<span class="w"> </span>cdv.z
 
-SAC&gt; r cdv.?                
-./cdv.e ...cdv.n ...cdv.z   <span class="c1"># attention! Here the file is read in character sort order</span>
+SAC&gt;<span class="w"> </span>r<span class="w"> </span>cdv.?<span class="w">                </span>
+./cdv.e<span class="w"> </span>...cdv.n<span class="w"> </span>...cdv.z<span class="w">   </span><span class="c1"># attention! Here the file is read in character sort order</span>
 
-SAC&gt; r cdv.<span class="o">[</span>nez<span class="o">]</span>
-./cdv.e ...cdv.n ...cdv.z
+SAC&gt;<span class="w"> </span>r<span class="w"> </span>cdv.<span class="o">[</span>nez<span class="o">]</span>
+./cdv.e<span class="w"> </span>...cdv.n<span class="w"> </span>...cdv.z
 
-SAC&gt; r *   
-./cdv.e ...cdv.n ...cdv.z
+SAC&gt;<span class="w"> </span>r<span class="w"> </span>*<span class="w">   </span>
+./cdv.e<span class="w"> </span>...cdv.n<span class="w"> </span>...cdv.z
 
-SAC&gt; r more ./cdv.e         <span class="c1"># one MORE file, and do not delete the past files in memory</span>
+SAC&gt;<span class="w"> </span>r<span class="w"> </span>more<span class="w"> </span>./cdv.e<span class="w">         </span><span class="c1"># one MORE file, and do not delete the past files in memory</span>
 </pre></div>
 </div>
 <p><strong>write:</strong></p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>SAC&gt; w test.n test.e test.z        <span class="c1"># write into 3 new files</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>SAC&gt;<span class="w"> </span>w<span class="w"> </span>test.n<span class="w"> </span>test.e<span class="w"> </span>test.z<span class="w">        </span><span class="c1"># write into 3 new files</span>
 
-SAC&gt; w over                        <span class="c1"># overwrite the original disk files</span>
+SAC&gt;<span class="w"> </span>w<span class="w"> </span>over<span class="w">                        </span><span class="c1"># overwrite the original disk files</span>
 
-SAC&gt; wh                            <span class="c1"># only overwrite the `header` parameters to the disk files</span>
+SAC&gt;<span class="w"> </span>wh<span class="w">                            </span><span class="c1"># only overwrite the `header` parameters to the disk files</span>
 
-SAC&gt; w append .new                 <span class="c1"># add &quot;.new&quot; to the original file name</span>
-cdv.e.new cdv.n.new cdv.z.new
+SAC&gt;<span class="w"> </span>w<span class="w"> </span>append<span class="w"> </span>.new<span class="w">                 </span><span class="c1"># add &quot;.new&quot; to the original file name</span>
+cdv.e.new<span class="w"> </span>cdv.n.new<span class="w"> </span>cdv.z.new
 </pre></div>
 </div>
 </section>
 <section id="phase-pick">
 <h2>Phase Pick<a class="headerlink" href="#phase-pick" title="Permalink to this headline">#</a></h2>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>SAC&gt; qdp off
-SAC&gt; ppk p <span class="m">9</span>        <span class="c1"># plot 9 trances together</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>SAC&gt;<span class="w"> </span>qdp<span class="w"> </span>off
+SAC&gt;<span class="w"> </span>ppk<span class="w"> </span>p<span class="w"> </span><span class="m">9</span><span class="w">        </span><span class="c1"># plot 9 trances together</span>
 <span class="c1"># 键入&quot;t&quot;和&quot;0&quot;标记到时，然后按&quot;q&quot;退出ppk模式</span>
-SAC&gt; wh 
+SAC&gt;<span class="w"> </span>wh<span class="w"> </span>
 </pre></div>
 </div>
 <table class="colwidths-auto table">

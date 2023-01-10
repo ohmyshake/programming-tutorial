@@ -680,30 +680,30 @@ title="Print to PDF"
 To suppress any potential limit to the size of the Unix stack, add <code class="docutils literal notranslate"><span class="pre">ulimit</span> <span class="pre">-S</span> <span class="pre">-s</span> <span class="pre">unlimited</span></code> to <code class="docutils literal notranslate"><span class="pre">~/.zshrc</span></code>.
 Then go to specfem2d folder, and run following command to install:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Download </span>
-git clone --recursive --branch devel https://github.com/SPECFEM/specfem2d.git
+git<span class="w"> </span>clone<span class="w"> </span>--recursive<span class="w"> </span>--branch<span class="w"> </span>devel<span class="w"> </span>https://github.com/SPECFEM/specfem2d.git
 
 <span class="c1"># Configure in single precision</span>
-./configure <span class="nv">FC</span><span class="o">=</span>gfortran <span class="nv">CC</span><span class="o">=</span>gcc <span class="nv">MPIFC</span><span class="o">=</span>mpif90 <span class="nv">MPI_INC</span><span class="o">=</span>/opt/homebrew/include --with-mpi
+./configure<span class="w"> </span><span class="nv">FC</span><span class="o">=</span>gfortran<span class="w"> </span><span class="nv">CC</span><span class="o">=</span>gcc<span class="w"> </span><span class="nv">MPIFC</span><span class="o">=</span>mpif90<span class="w"> </span><span class="nv">MPI_INC</span><span class="o">=</span>/opt/homebrew/include<span class="w"> </span>--with-mpi
 
 <span class="c1"># Configure in double precision, solver&#39;s speed will be decreased</span>
-./configure <span class="nv">FC</span><span class="o">=</span>gfortran <span class="nv">CC</span><span class="o">=</span>gcc <span class="nv">MPIFC</span><span class="o">=</span>mpif90 <span class="nv">MPI_INC</span><span class="o">=</span>/opt/homebrew/include --with-mpi --enable-double-precision
+./configure<span class="w"> </span><span class="nv">FC</span><span class="o">=</span>gfortran<span class="w"> </span><span class="nv">CC</span><span class="o">=</span>gcc<span class="w"> </span><span class="nv">MPIFC</span><span class="o">=</span>mpif90<span class="w"> </span><span class="nv">MPI_INC</span><span class="o">=</span>/opt/homebrew/include<span class="w"> </span>--with-mpi<span class="w"> </span>--enable-double-precision
 
 <span class="c1"># Compile with CUDA (not finished)</span>
-./configure --with-cuda<span class="o">=</span>cuda5 <span class="nv">CUDA_FLAGS</span><span class="o">=</span>.. <span class="nv">CUDA_LIB</span><span class="o">=</span>.. <span class="nv">CUDA_INC</span><span class="o">=</span>.. <span class="nv">MPI_INC</span><span class="o">=</span>..
+./configure<span class="w"> </span>--with-cuda<span class="o">=</span>cuda5<span class="w"> </span><span class="nv">CUDA_FLAGS</span><span class="o">=</span>..<span class="w"> </span><span class="nv">CUDA_LIB</span><span class="o">=</span>..<span class="w"> </span><span class="nv">CUDA_INC</span><span class="o">=</span>..<span class="w"> </span><span class="nv">MPI_INC</span><span class="o">=</span>..
 
 <span class="c1"># Make</span>
 make
 </pre></div>
 </div>
 <p>Add executable command to environment variable:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>open ~/.zshrc
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>open<span class="w"> </span>~/.zshrc
 
 <span class="c1"># &gt;&gt;&gt; specfem2d &gt;&gt;&gt;</span>
 <span class="c1"># To suppress any potential limit to the size of the Unix stack.</span>
-<span class="nb">ulimit</span> -S -s unlimited
+<span class="nb">ulimit</span><span class="w"> </span>-S<span class="w"> </span>-s<span class="w"> </span>unlimited
 
 <span class="c1"># bin</span>
-<span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span>/Users/yinfu/package/specfem2d/bin:<span class="si">${</span><span class="nv">PATH</span><span class="si">}</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">PATH</span><span class="o">=</span>/Users/yinfu/package/specfem2d/bin:<span class="si">${</span><span class="nv">PATH</span><span class="si">}</span>
 <span class="c1"># &lt;&lt;&lt; specfem2d &lt;&lt;&lt;</span>
 </pre></div>
 </div>

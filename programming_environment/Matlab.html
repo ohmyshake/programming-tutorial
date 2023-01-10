@@ -706,12 +706,12 @@ and then install in NOTS.
 I don’t have the <code class="docutils literal notranslate"><span class="pre">sudo</span></code> permission, so I need to change the authority of <code class="docutils literal notranslate"><span class="pre">install</span></code> script.
 Take my pkg for example, <code class="docutils literal notranslate"><span class="pre">matlab_R2022b_glnxa64</span></code> is the installation pkg, and <code class="docutils literal notranslate"><span class="pre">MATLAB_R2022b</span></code> is the folder after installing.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># install matlab without sudo mode</span>
-<span class="nb">cd</span> /PathToMatlab/matlab_R2022b_glnxa64/bin/
-chmod -R <span class="m">777</span> install
+<span class="nb">cd</span><span class="w"> </span>/PathToMatlab/matlab_R2022b_glnxa64/bin/
+chmod<span class="w"> </span>-R<span class="w"> </span><span class="m">777</span><span class="w"> </span>install
 ./install
 
 <span class="c1"># actiavte the license</span>
-<span class="nb">cd</span> /PathToMatlab/MATLAB_R2022b/bin
+<span class="nb">cd</span><span class="w"> </span>/PathToMatlab/MATLAB_R2022b/bin
 ./activate_matlab.sh
 </pre></div>
 </div>
@@ -726,14 +726,14 @@ chmod -R <span class="m">777</span> install
 <li><p><code class="docutils literal notranslate"><span class="pre">Matlab</span> <span class="pre">Code</span> <span class="pre">Run</span></code>: run the m file and Matlab command line in the terminal of Vscode.</p></li>
 </ul>
 <p>Set the env variable in <code class="docutils literal notranslate"><span class="pre">settings.json</span></code> as following:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ open settings.json
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>open<span class="w"> </span>settings.json
 
 <span class="c1"># insert</span>
-<span class="s2">&quot;matlab.mlintpath&quot;</span>: <span class="s2">&quot;/Applications/MATLAB_R2022b.app/bin/maci64/mlint&quot;</span>,
-<span class="s2">&quot;matlab.matlabpath&quot;</span>: <span class="s2">&quot;/Applications/MATLAB_R2022b.app/bin/matlab&quot;</span>,
-<span class="s2">&quot;files.associations&quot;</span>: <span class="o">{</span>
-        <span class="s2">&quot;*.m&quot;</span>: <span class="s2">&quot;matlab&quot;</span>
-    <span class="o">}</span>
+<span class="s2">&quot;matlab.mlintpath&quot;</span>:<span class="w"> </span><span class="s2">&quot;/Applications/MATLAB_R2022b.app/bin/maci64/mlint&quot;</span>,
+<span class="s2">&quot;matlab.matlabpath&quot;</span>:<span class="w"> </span><span class="s2">&quot;/Applications/MATLAB_R2022b.app/bin/matlab&quot;</span>,
+<span class="s2">&quot;files.associations&quot;</span>:<span class="w"> </span><span class="o">{</span>
+<span class="w">        </span><span class="s2">&quot;*.m&quot;</span>:<span class="w"> </span><span class="s2">&quot;matlab&quot;</span>
+<span class="w">    </span><span class="o">}</span>
 </pre></div>
 </div>
 <p>Or set the varibale in <code class="docutils literal notranslate"><span class="pre">setting</span></code>:</p>
@@ -757,10 +757,10 @@ chmod -R <span class="m">777</span> install
 addpath<span class="o">(</span>folder_path<span class="o">)</span>
 
 <span class="c1"># start matlab without open GUI</span>
-matlab -nodesktop -nosplash 
+matlab<span class="w"> </span>-nodesktop<span class="w"> </span>-nosplash<span class="w"> </span>
 
 <span class="c1"># run script.m in terminal</span>
-matlab -nodesktop -nosplash -r script.m
+matlab<span class="w"> </span>-nodesktop<span class="w"> </span>-nosplash<span class="w"> </span>-r<span class="w"> </span>script.m
 </pre></div>
 </div>
 </section>

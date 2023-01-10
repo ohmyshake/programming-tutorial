@@ -751,27 +751,27 @@ title="Print to PDF"
 <p>Follow the instructions below: <a class="reference external" href="https://ealizadeh.com/blog/guide-to-python-env-pkg-dependency-using-conda-poetry/">https://ealizadeh.com/blog/guide-to-python-env-pkg-dependency-using-conda-poetry/</a></p>
 <ol>
 <li><p>Use <code class="docutils literal notranslate"><span class="pre">conda</span></code> create a new environment, only install <code class="docutils literal notranslate"><span class="pre">python</span></code></p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda env create -f environment.yml  <span class="c1"># create env according to .yml file</span>
-conda env <span class="nb">export</span> &gt; environment.yml  <span class="c1"># export .yml file</span>
-conda activate jupiter-dev  <span class="c1"># activate env</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>env<span class="w"> </span>create<span class="w"> </span>-f<span class="w"> </span>environment.yml<span class="w">  </span><span class="c1"># create env according to .yml file</span>
+conda<span class="w"> </span>env<span class="w"> </span><span class="nb">export</span><span class="w"> </span>&gt;<span class="w"> </span>environment.yml<span class="w">  </span><span class="c1"># export .yml file</span>
+conda<span class="w"> </span>activate<span class="w"> </span>jupiter-dev<span class="w">  </span><span class="c1"># activate env</span>
 </pre></div>
 </div>
 </li>
 <li><p>Use <code class="docutils literal notranslate"><span class="pre">poetry</span></code> install other python package</p>
 <p>Install poetry firstly</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl -sSL https://install.python-poetry.org <span class="p">|</span> python3 - <span class="c1"># do not use pip</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl<span class="w"> </span>-sSL<span class="w"> </span>https://install.python-poetry.org<span class="w"> </span><span class="p">|</span><span class="w"> </span>python3<span class="w"> </span>-<span class="w"> </span><span class="c1"># do not use pip</span>
 
-mkdir <span class="nv">$ZSH_CUSTOM</span>/plugins/poetry <span class="c1"># add poetry into oh-my-zsh plugins</span>
-poetry completions zsh &gt; <span class="nv">$ZSH_CUSTOM</span>/plugins/poetry/_poetry
+mkdir<span class="w"> </span><span class="nv">$ZSH_CUSTOM</span>/plugins/poetry<span class="w"> </span><span class="c1"># add poetry into oh-my-zsh plugins</span>
+poetry<span class="w"> </span>completions<span class="w"> </span>zsh<span class="w"> </span>&gt;<span class="w"> </span><span class="nv">$ZSH_CUSTOM</span>/plugins/poetry/_poetry
 </pre></div>
 </div>
 </li>
 </ol>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>poetry config virtualenvs.create <span class="nb">false</span>  <span class="c1"># do not allow poetry create env</span>
-poetry init  <span class="c1"># this command will create pyproject.toml file</span>
-poetry install  <span class="c1"># this command will install some package mentioned in &#39;pyproject.toml&#39;, and also generate a &#39;poetry.lock&#39; file</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>poetry<span class="w"> </span>config<span class="w"> </span>virtualenvs.create<span class="w"> </span><span class="nb">false</span><span class="w">  </span><span class="c1"># do not allow poetry create env</span>
+poetry<span class="w"> </span>init<span class="w">  </span><span class="c1"># this command will create pyproject.toml file</span>
+poetry<span class="w"> </span>install<span class="w">  </span><span class="c1"># this command will install some package mentioned in &#39;pyproject.toml&#39;, and also generate a &#39;poetry.lock&#39; file</span>
 <span class="c1"># Now you can change &#39;pyproject.toml&#39; by hand</span>
-poetry update <span class="c1"># update the new info in &#39;pyproject.toml&#39; into &#39;poetry.lock&#39; file</span>
+poetry<span class="w"> </span>update<span class="w"> </span><span class="c1"># update the new info in &#39;pyproject.toml&#39; into &#39;poetry.lock&#39; file</span>
 </pre></div>
 </div>
 </section>
