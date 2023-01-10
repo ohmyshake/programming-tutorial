@@ -317,7 +317,8 @@ rm fftw-$(FFTW_VERSION).tar.gz
 cd $(FFTW_FOLDER)
 
 ./configure --prefix=$(PWD) \
-	--enable-single --enable-shared --with-pic \
+    --build=x86_64-apple-darwin20 --with-pic \
+	--enable-single --enable-shared  \
 	--enable-avx2 --enable-avx \
         --enable-sse --enable-sse2 \
 
@@ -331,7 +332,7 @@ gcc fftw.c -o fftw -lfftw3 -lm -I/Users/yinfu/Downloads/fftw-3.3.10/include -L/U
 ./fftw
 ```
 
-
+./configure --prefix=$(PWD) CFLAGS="-arch arm64 -arch x86_64 -mmacosx-version-min=11.0"
 
 ## Resource
 
