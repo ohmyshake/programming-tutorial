@@ -305,7 +305,14 @@ int main() {
 
 ```bash
 # install
-
+wget http://fftw.org/fftw-$(FFTW_VERSION).tar.gz
+tar -xvf fftw-$(FFTW_VERSION).tar.gz
+rm fftw-$(FFTW_VERSION).tar.gz
+cd $(FFTW_FOLDER) \
+./configure --prefix=$(PWD) \
+		--enable-single --enable-shared --with-pic \
+		--enable-avx2 --enable-avx --enable-sse --enable-sse2 \
+make -j4 install
 
 # compile
 gcc fftw.c -o fftw -lfftw3 -lm -I/Users/yinfu/Downloads/fftw-3.3.10/include -L/Users/yinfu/Downloads/fftw-3.3.10/lib
