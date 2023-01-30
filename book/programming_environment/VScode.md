@@ -34,7 +34,9 @@ Refer to [Microsoft sync docs](https://code.visualstudio.com/docs/editor/setting
 
 - My file icon theme: `VSCode icons`
 
-- My terminal font theme: `Source Code Pro for Powerline`
+- My editor font family theme: `Source Code Pro`
+
+- My terminal font family theme: `Source Code Pro for Powerline`
 
 
 ## Plugin
