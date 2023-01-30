@@ -38,6 +38,7 @@ Refer to [Microsoft sync docs](https://code.visualstudio.com/docs/editor/setting
 
 - My terminal font family theme: `Source Code Pro for Powerline`
 
+Make sure you have installed those font in your computer, if not, you can download from https://github.com/powerline/fonts
 
 ## Plugin
 
